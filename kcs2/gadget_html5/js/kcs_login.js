@@ -359,7 +359,6 @@ function kcsStartWorldSelectHTML()
     // URL を組み立てる。
     var url = ConstServerInfo.Gadget
             + "kcs2/world.html?"
-            + "dmmuser_id=" + flashInfo.dmmLoginId + "&"
             + "osapi_root=" + ConstServerInfo.OSAPI;
 
     // iframe 要素を div ブロックに設定する。

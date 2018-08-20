@@ -1,13 +1,21 @@
 ﻿window.addEventListener('message', function (event) {
 
-    // サーバ選択後のゲーム画面への遷移要求の場合
+    // サーバ選択前
+    if (event.data == "w") {
+        if (ConstServerInfo.Gadget == event.origin + "/") {
+            Viewer_SendMessage();
+            return;
+        } else {
+            return;
+        }
+    }
+
+    // サーバ選択後
     if (event.data == "r") {
-        // 呼び出し元がログインサーバであれば、ゲーム画面へ遷移する
         if (ConstServerInfo.Gadget == event.origin + "/") {
             kcsLogin_StartLogin();
             return;
         } else {
-            // 他のサーバからの呼び出しに対しては何もしない
             return;
         }
     }
@@ -52,5 +60,14 @@ function Inspection_SendMessage(CommentId) {
 
     if (gameElement) {
         gameElement.postMessage(CommentId, userWorldInfo.worldServerAddr);
+    }
+}
+
+function Viewer_SendMessage() {
+
+    var gameElement = document.getElementById("htmlWrap").contentWindow;
+
+    if (gameElement) {
+        gameElement.postMessage(viewerInfo.id, ConstServerInfo.Gadget);
     }
 }
