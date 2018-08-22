@@ -1,0 +1,9 @@
+node_modules/
+.npm/
+npm-debug.log
+.vscode/
+jsconfig.json
+typings/
+*.DS_Store
+*.swp
+*~
