@@ -6,4 +6,5 @@ jsconfig.json
 typings/
 *.DS_Store
 *.swp
+*.lnk
 *~
