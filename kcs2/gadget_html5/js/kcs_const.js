@@ -16,7 +16,7 @@ ConstServerInfo.World_4          = "http://203.104.209.183/";
 ConstServerInfo.World_5          = "http://203.104.209.150/";
 ConstServerInfo.World_6          = "http://203.104.209.134/";
 ConstServerInfo.World_7          = "http://203.104.209.167/";
-ConstServerInfo.World_8          = "http://203.104.248.135/";
+ConstServerInfo.World_8          = "http://203.104.209.199/";
 ConstServerInfo.World_9          = "http://125.6.189.7/";
 ConstServerInfo.World_10         = "http://125.6.189.39/";
 ConstServerInfo.World_11         = "http://125.6.189.71/";
@@ -54,12 +54,12 @@ ConnectionInfo.Interval_Min   = 10;
 var MaintenanceInfo = {};
 MaintenanceInfo.IsDoing       = 0;
 MaintenanceInfo.IsEmergency   = 0;
-MaintenanceInfo.StartDateTime = Date.parse("2018/11/16 11:00:00");
-MaintenanceInfo.EndDateTime   = Date.parse("2018/11/16 22:20:00");
+MaintenanceInfo.StartDateTime = Date.parse("2018/12/26 11:00:00");
+MaintenanceInfo.EndDateTime   = Date.parse("2018/12/27 03:45:00");
 
 // Version 情報
 var VersionInfo = {};
-VersionInfo.scriptVesion      = "4.2.2.0";
+VersionInfo.scriptVesion      = "4.3.0.0";
 
 // Entrance 情報
 var EntranceInfo = {};
