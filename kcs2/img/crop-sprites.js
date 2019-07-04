@@ -1,11 +1,10 @@
 'use strict';
 
-const os = require('os');
 const fs = require('fs');
 const path = require('path');
 const pngCrop = require('png-crop');
 
-/*
+/**
  * Simple method to crop spritesmith png image into small pieces.
  *
  * Depends: npm install png-crop
