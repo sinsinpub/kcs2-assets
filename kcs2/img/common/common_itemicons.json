@@ -22,8 +22,8 @@
         },
         "common_itemicons_id_2": {
             "frame": {
-                "x": 320,
-                "y": 320,
+                "x": 400,
+                "y": 0,
                 "w": 75,
                 "h": 75
             },
@@ -482,8 +482,8 @@
         },
         "common_itemicons_id_62": {
             "frame": {
-                "x": 0,
-                "y": 0,
+                "x": 320,
+                "y": 320,
                 "w": 75,
                 "h": 75
             },
@@ -502,7 +502,7 @@
         },
         "common_itemicons_id_63": {
             "frame": {
-                "x": 400,
+                "x": 0,
                 "y": 0,
                 "w": 75,
                 "h": 75
@@ -959,6 +959,46 @@
                 "w": 75,
                 "h": 75
             }
+        },
+        "common_itemicons_id_91": {
+            "frame": {
+                "x": 480,
+                "y": 480,
+                "w": 75,
+                "h": 75
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 75,
+                "h": 75
+            },
+            "sourceSize": {
+                "w": 75,
+                "h": 75
+            }
+        },
+        "common_itemicons_id_92": {
+            "frame": {
+                "x": 560,
+                "y": 0,
+                "w": 75,
+                "h": 75
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 75,
+                "h": 75
+            },
+            "sourceSize": {
+                "w": 75,
+                "h": 75
+            }
         }
     },
     "meta": {
@@ -966,7 +1006,7 @@
         "image": "common_itemicons.png",
         "format": "RGBA8888",
         "size": {
-            "w": 555,
+            "w": 635,
             "h": 555
         },
         "scale": 1
