@@ -1,6 +1,6 @@
 @echo off
 setlocal
-set mainjs="D:\Project\kancolle-html5\kcs2\js\main.js"
+set mainjs="C:\Project\kancolle-html5\kcs2\js\main.js"
 if not "%1"=="" if not "%1"=="-s" set mainjs="%1"
 if "%1"=="-s" goto skipDownload
 if "%2"=="-s" goto skipDownload
