@@ -11,5 +11,5 @@ curl -RL -o %mainjs% "http://%serverip%/kcs2/js/main.js" -H "Referer: http://%se
 :skipDownload
 echo Formatting %mainjs%...
 rem npm install js-beautify
-node node_modules\js-beautify\js\bin\js-beautify.js --config .\jsb-config.json %mainjs% > main.formatted.js
+node node_modules\js-beautify\js\bin\js-beautify.js --config .\jsb-config.json %mainjs% > main.ofuscated.js
 endlocal
