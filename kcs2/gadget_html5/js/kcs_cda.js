@@ -42,6 +42,15 @@
         // 3: 提督名変更
         kcsInspection_CreateInspectionNickName(data[1]);
         return;
+    } else if(data[0] == "5") {
+        // 5: 設定情報を cookie に保存する
+        var options = data[1];
+        kcsOptions_Save(options);
+        return;
+    } else if(data[0] == "6") {
+        // 6: 設定情報を cookie から取得してゲーム側へ送信する
+        Options_SendMessage(kcsOptions_Load());
+        return;
     }
 }, false);
 
@@ -69,5 +78,14 @@ function Viewer_SendMessage() {
 
     if (gameElement) {
         gameElement.postMessage(viewerInfo.id, ConstServerInfo.Gadget);
+    }
+}
+
+function Options_SendMessage(options) {
+
+    var gameElement = document.getElementById("htmlWrap").contentWindow;
+
+    if (gameElement) {
+        gameElement.postMessage(options, userWorldInfo.worldServerAddr);
     }
 }
