@@ -23,7 +23,7 @@
         "common_itemicons_id_2": {
             "frame": {
                 "x": 400,
-                "y": 0,
+                "y": 80,
                 "w": 75,
                 "h": 75
             },
@@ -502,7 +502,7 @@
         },
         "common_itemicons_id_63": {
             "frame": {
-                "x": 0,
+                "x": 400,
                 "y": 0,
                 "w": 75,
                 "h": 75
@@ -522,8 +522,8 @@
         },
         "common_itemicons_id_64": {
             "frame": {
-                "x": 400,
-                "y": 80,
+                "x": 0,
+                "y": 0,
                 "w": 75,
                 "h": 75
             },
@@ -1004,6 +1004,26 @@
             "frame": {
                 "x": 560,
                 "y": 80,
+                "w": 75,
+                "h": 75
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 75,
+                "h": 75
+            },
+            "sourceSize": {
+                "w": 75,
+                "h": 75
+            }
+        },
+        "common_itemicons_id_94": {
+            "frame": {
+                "x": 560,
+                "y": 160,
                 "w": 75,
                 "h": 75
             },
