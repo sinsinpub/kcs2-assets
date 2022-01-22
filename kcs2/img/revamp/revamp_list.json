@@ -23,46 +23,6 @@
         "revamp_list_1": {
             "frame": {
                 "x": 1602,
-                "y": 611,
-                "w": 12,
-                "h": 12
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 12,
-                "h": 12
-            },
-            "sourceSize": {
-                "w": 12,
-                "h": 12
-            }
-        },
-        "revamp_list_2": {
-            "frame": {
-                "x": 1636,
-                "y": 611,
-                "w": 12,
-                "h": 12
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 12,
-                "h": 12
-            },
-            "sourceSize": {
-                "w": 12,
-                "h": 12
-            }
-        },
-        "revamp_list_3": {
-            "frame": {
-                "x": 1602,
                 "y": 585,
                 "w": 82,
                 "h": 21
@@ -80,47 +40,7 @@
                 "h": 21
             }
         },
-        "revamp_list_4": {
-            "frame": {
-                "x": 420,
-                "y": 689,
-                "w": 129,
-                "h": 45
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 129,
-                "h": 45
-            },
-            "sourceSize": {
-                "w": 129,
-                "h": 45
-            }
-        },
-        "revamp_list_5": {
-            "frame": {
-                "x": 286,
-                "y": 689,
-                "w": 129,
-                "h": 45
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 129,
-                "h": 45
-            },
-            "sourceSize": {
-                "w": 129,
-                "h": 45
-            }
-        },
-        "revamp_list_6": {
+        "revamp_list_2": {
             "frame": {
                 "x": 1552,
                 "y": 585,
@@ -140,47 +60,47 @@
                 "h": 42
             }
         },
-        "revamp_list_7": {
+        "revamp_list_3": {
             "frame": {
-                "x": 0,
-                "y": 689,
-                "w": 138,
-                "h": 63
+                "x": 1117,
+                "y": 639,
+                "w": 33,
+                "h": 21
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 138,
-                "h": 63
+                "w": 33,
+                "h": 21
             },
             "sourceSize": {
-                "w": 138,
-                "h": 63
+                "w": 33,
+                "h": 21
             }
         },
-        "revamp_list_8": {
+        "revamp_list_4": {
             "frame": {
-                "x": 143,
-                "y": 689,
-                "w": 138,
-                "h": 63
+                "x": 1155,
+                "y": 639,
+                "w": 33,
+                "h": 21
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 138,
-                "h": 63
+                "w": 33,
+                "h": 21
             },
             "sourceSize": {
-                "w": 138,
-                "h": 63
+                "w": 33,
+                "h": 21
             }
         },
-        "revamp_list_9": {
+        "revamp_list_5": {
             "frame": {
                 "x": 0,
                 "y": 639,
@@ -200,9 +120,9 @@
                 "h": 45
             }
         },
-        "revamp_list_10": {
+        "revamp_list_6": {
             "frame": {
-                "x": 1619,
+                "x": 1602,
                 "y": 611,
                 "w": 12,
                 "h": 12
@@ -220,9 +140,9 @@
                 "h": 12
             }
         },
-        "revamp_list_11": {
+        "revamp_list_7": {
             "frame": {
-                "x": 1117,
+                "x": 1193,
                 "y": 639,
                 "w": 18,
                 "h": 18
@@ -240,7 +160,7 @@
                 "h": 18
             }
         },
-        "revamp_list_12": {
+        "revamp_list_8": {
             "frame": {
                 "x": 1082,
                 "y": 639,
@@ -260,7 +180,7 @@
                 "h": 30
             }
         },
-        "revamp_list_13": {
+        "revamp_list_9": {
             "frame": {
                 "x": 1061,
                 "y": 0,
@@ -280,7 +200,7 @@
                 "h": 580
             }
         },
-        "revamp_list_14": {
+        "revamp_list_10": {
             "frame": {
                 "x": 492,
                 "y": 639,
@@ -300,7 +220,7 @@
                 "h": 31
             }
         },
-        "revamp_list_15": {
+        "revamp_list_11": {
             "frame": {
                 "x": 1205,
                 "y": 585,
@@ -320,9 +240,9 @@
                 "h": 43
             }
         },
-        "revamp_list_16": {
+        "revamp_list_12": {
             "frame": {
-                "x": 554,
+                "x": 0,
                 "y": 689,
                 "w": 45,
                 "h": 45
@@ -340,9 +260,89 @@
                 "h": 45
             }
         },
+        "revamp_list_13": {
+            "frame": {
+                "x": 50,
+                "y": 689,
+                "w": 36,
+                "h": 45
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 36,
+                "h": 45
+            },
+            "sourceSize": {
+                "w": 36,
+                "h": 45
+            }
+        },
+        "revamp_list_14": {
+            "frame": {
+                "x": 91,
+                "y": 689,
+                "w": 36,
+                "h": 45
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 36,
+                "h": 45
+            },
+            "sourceSize": {
+                "w": 36,
+                "h": 45
+            }
+        },
+        "revamp_list_15": {
+            "frame": {
+                "x": 132,
+                "y": 689,
+                "w": 36,
+                "h": 45
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 36,
+                "h": 45
+            },
+            "sourceSize": {
+                "w": 36,
+                "h": 45
+            }
+        },
+        "revamp_list_16": {
+            "frame": {
+                "x": 173,
+                "y": 689,
+                "w": 36,
+                "h": 45
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 36,
+                "h": 45
+            },
+            "sourceSize": {
+                "w": 36,
+                "h": 45
+            }
+        },
         "revamp_list_17": {
             "frame": {
-                "x": 727,
+                "x": 214,
                 "y": 689,
                 "w": 36,
                 "h": 45
@@ -362,7 +362,7 @@
         },
         "revamp_list_18": {
             "frame": {
-                "x": 768,
+                "x": 255,
                 "y": 689,
                 "w": 36,
                 "h": 45
@@ -382,7 +382,7 @@
         },
         "revamp_list_19": {
             "frame": {
-                "x": 604,
+                "x": 296,
                 "y": 689,
                 "w": 36,
                 "h": 45
@@ -401,86 +401,6 @@
             }
         },
         "revamp_list_20": {
-            "frame": {
-                "x": 850,
-                "y": 689,
-                "w": 36,
-                "h": 45
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 36,
-                "h": 45
-            },
-            "sourceSize": {
-                "w": 36,
-                "h": 45
-            }
-        },
-        "revamp_list_21": {
-            "frame": {
-                "x": 809,
-                "y": 689,
-                "w": 36,
-                "h": 45
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 36,
-                "h": 45
-            },
-            "sourceSize": {
-                "w": 36,
-                "h": 45
-            }
-        },
-        "revamp_list_22": {
-            "frame": {
-                "x": 686,
-                "y": 689,
-                "w": 36,
-                "h": 45
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 36,
-                "h": 45
-            },
-            "sourceSize": {
-                "w": 36,
-                "h": 45
-            }
-        },
-        "revamp_list_23": {
-            "frame": {
-                "x": 645,
-                "y": 689,
-                "w": 36,
-                "h": 45
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 36,
-                "h": 45
-            },
-            "sourceSize": {
-                "w": 36,
-                "h": 45
-            }
-        },
-        "revamp_list_24": {
             "frame": {
                 "x": 0,
                 "y": 585,
@@ -507,7 +427,7 @@
         "format": "RGBA8888",
         "size": {
             "w": 1691,
-            "h": 752
+            "h": 734
         },
         "scale": 1
     }
