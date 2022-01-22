@@ -1,0 +1,6 @@
+.vscode
+.travis.yml
+node_modules
+yarn.lock
+
+dist/*.js

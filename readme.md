@@ -1,13 +1,14 @@
-Frequently Used Scripts & Assets By KC3Kai since KanColle HTML5
-===============================================================
+Frequently Used Scripts & Assets since KanColle HTML5
+=====================================================
 
-Mainly Included:
+Main contents:
 
-* `api_start2`: Tracking repo of master data: https://github.com/Tibowl/api_start2
-* `kcs/gadget_html5/js`: for version and servers in `kcs_const.js`
+* `api_start2`: Tracking sub repo of master data: https://github.com/Tibowl/api_start2
+* `kcs2/gadget_html5/js`: for version and servers in `kcs_const.js`
   * For now, the updating script is blocked by access limitation of gadget server
-* `kcs/img`: image assets and cropping script
-* `kcs/resources/map`: assets of past event maps
-* `kcs/js/main.js`: tracking versions of client-side implementation
+* `kcs2/img`: image assets and cropping script
+* `kcs2/resources/map`: assets of past event maps
+* `kcs2/js/main.*.js`: tracking versions of client-side implementation
   * Beautifier script is no longer effective since `main.js` obfuscated by official
-* `kcs/js/kancolle-main`: repo of deobfuscating `main.js`: https://github.com/kcwiki/kancolle-main
+  * Use following deobfuscate scripts instead
+* `kcs2/js/kancolle-main`: modified repo of deobfuscating `main.js`: https://github.com/kcwiki/kancolle-main
