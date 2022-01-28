@@ -3,6 +3,7 @@ Frequently Used Scripts & Assets since KanColle HTML5
 
 Main contents:
 
+* `api_info`: Memo of API specifications from EO74
 * `api_start2`: Tracking sub repo of master data: https://github.com/Tibowl/api_start2
 * `kcs2/gadget_html5/js`: for version and servers in `kcs_const.js`
   * For now, the updating script is blocked by access limitation of gadget server
