@@ -194,6 +194,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				44=Helicopter
 				45=DD Tank
 				46=Heavy Bomber
+				47=Armed Boat
 
 				 1=主砲
 				 2=副砲
@@ -238,6 +239,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				44=ヘリコプター
 				45=DD戦車
 				46=大型陸上機
+				47=武装艇
 
 			[2]：カテゴリ
 				(api_mst_slotitem_equiptype を参照)
@@ -389,6 +391,11 @@ api_start2/getData	：艦娘・装備固有データその他
 				39=TBM-3W+3S
 				40=九九式艦爆改良型
 				41=大型陸上機
+				42=Do陸上攻撃機
+				43=米水上機
+				44=Barracuda攻撃機
+				45=SM.79陸上攻撃機
+				46=Corsair戦闘機
 
 		api_taik		：耐久(0)
 		api_souk		：装甲
@@ -1087,6 +1094,12 @@ api_get_member/picture_book	：艦船図鑑　図鑑登録済みのもののみ�
 			106=St. Louis級
 			107=North Carolina級
 			108=Town級
+			109=潜高型
+			110=Brooklyn級
+			111=耐氷型雑用輸送艦
+			112=Illustrious級
+			113=Conte di Cavour級
+			114=Gato級
 		api_cnum			：艦番
 		api_taik			：耐久
 		api_souk			：装甲
@@ -1945,8 +1958,12 @@ api_req_sortie/battle	：通常艦隊　昼戦
 							100=Nelson Touch
 							101=一斉射かッ…胸が熱いな！
 							102=長門、いい？ いくわよ！ 主砲一斉射ッ！
+							103=Colorado戦隊、全力斉射ッ！
 							200=瑞雲立体攻撃
 							201=海空立体攻撃
+							300=潜水艦隊攻撃
+							301=潜水艦隊攻撃
+							302=潜水艦隊攻撃
 		api_df_list		：防御艦のインデックス　[][攻撃回数]　0基点
 		api_si_list		：表示装備ID [][装備数]　数値と文字列が混在しているため注意
 		api_cl_list		：クリティカルフラグ　[][攻撃回数]　0=ミス, 1=命中, 2=クリティカル
@@ -1989,7 +2006,7 @@ api_req_battle_midnight/battle		：通常艦隊　夜戦
 		api_si_list			：表示装備ID　[][装備数]　数値型と文字列型が混在しているので注意
 		api_cl_list			：クリティカルフラグ　[][攻撃回数]　0=ミス, 1=命中, 2=クリティカル　単発カットイン攻撃では [フラグ, -1, -1] になる
 		api_sp_list			：攻撃種別
-　								0=通常攻撃
+								0=通常攻撃
 								1=連続射撃
 								2=カットイン(主砲/魚雷)
 								3=カットイン(魚雷/魚雷)
@@ -1998,9 +2015,20 @@ api_req_battle_midnight/battle		：通常艦隊　夜戦
 								6=空母カットイン
 								7=駆逐カットイン(主砲/魚雷/電探)
 								8=駆逐カットイン(魚雷/見張員/電探)
+								9=駆逐カットイン(魚雷/水雷見張員/魚雷)
+								10=駆逐カットイン(魚雷/水雷見張員/ドラム缶)
+								11=駆逐カットイン(主砲/魚雷/電探) 2hit
+								12=駆逐カットイン(魚雷/見張員/電探) 2hit
+								13=駆逐カットイン(魚雷/水雷見張員/魚雷) 2hit
+								14=駆逐カットイン(魚雷/水雷見張員/ドラム缶) 2hit
 								100=Nelson Touch
 								101=一斉射かッ…胸が熱いな！
 								102=長門、いい？ いくわよ！ 主砲一斉射ッ！
+								103=Colorado戦隊、全力斉射ッ！
+								104=金剛改二丙型僚艦夜戦突撃
+								300=潜水艦隊攻撃
+								301=潜水艦隊攻撃
+								302=潜水艦隊攻撃
 		api_damage			：与ダメージ　[][攻撃回数]　単発カットイン攻撃では [ダメージ, -1, -1] になる
 
 
@@ -2414,6 +2442,9 @@ api_get_member/mapinfo				：出撃準備　未出現海域は存在しない
 	api_air_base				：基地航空隊データ なければ存在しない
 		api_area_id				：出撃可能海域
 		(以降のメンバは api_get_member/base_air_corps と同じ)
+	api_air_base_expanded_info	: 基地航空隊拡張データ[]　現在整備Lvの情報のみ、イベント海域メンバ常に存在
+		api_area_id				: 海域ID　イベント期間外も前回の海域IDは残ってる
+		api_maintenance_level	: 整備Lv
 
 
 api_get_member/furniture	：所有家具データ
@@ -2466,6 +2497,14 @@ Request.api_req_air_corps/change_name		：基地航空隊 - 航空隊名変更
 api_req_air_corps/change_name	：基地航空隊 - 航空隊名変更
 	(情報なし)
 
+Request.api_req_air_corps/change_deployment_base		: 基地航空隊 - 同海域内中隊再設定
+	api_area_id		: 所属海域ID
+	api_base_id		: 交換先の航空隊ID
+	api_base_id_src	: 交換元の航空隊ID
+
+api_req_air_corps/change_deployment_base		: 基地航空隊 - 同海域内中隊再設定
+	api_base_items	: (変更されたした航空隊のデータ[2?]。 api_get_member/base_air_corps に同じ)
+
 Request.api_req_air_corps/set_action	：基地航空隊 - 行動指示変更
 	api_area_id		：所属海域ID
 	api_base_id		：航空隊ID　コンマ区切り配列
@@ -2495,6 +2534,12 @@ api_req_air_corps/supply		：基地航空隊 - 補給
 
 api_req_air_corps/expand_base		：基地航空隊 - 飛行場拡張
 	(拡張した航空隊のデータ[1?]。 api_get_member/base_air_corps に同じ)
+
+Request.api_req_air_corps/expand_maintenance_level		: 基地航空隊 - 整備Lv強化
+	api_area_id		: 所属海域ID　未開催のイベント海域も強化可能
+
+api_req_air_corps/expand_maintenance_level		: 基地航空隊 - 整備Lv強化
+	(情報なし)
 
 
 ['17 秋イベでフォーマット変更　要再確認]
