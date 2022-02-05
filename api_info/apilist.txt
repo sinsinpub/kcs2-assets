@@ -923,6 +923,9 @@ api_get_member/questlist	：任務
 		api_invalid_flag	：機種転換不能フラグ　0=可能, 1=不可能(装備がロックされている)
 	api_exec_count			：受領任務数
 	api_exec_type			：？
+	api_c_list				：クライアント側で達成判定用のフラグ[]　対応任務達成ときのみ存在?
+		api_no				：任務ID
+		api_c_flag			：1=達成
 
 
 Request.api_req_quest/start	：任務開始
