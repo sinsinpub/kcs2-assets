@@ -83,7 +83,7 @@
         "common_event_4": {
             "frame": {
                 "x": 188,
-                "y": 0,
+                "y": 73,
                 "w": 47,
                 "h": 68
             },
@@ -102,7 +102,7 @@
         },
         "common_event_5": {
             "frame": {
-                "x": 145,
+                "x": 186,
                 "y": 153,
                 "w": 35,
                 "h": 40
@@ -123,8 +123,8 @@
         "common_event_6": {
             "frame": {
                 "x": 188,
-                "y": 73,
-                "w": 47,
+                "y": 0,
+                "w": 48,
                 "h": 68
             },
             "rotated": false,
@@ -132,32 +132,32 @@
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 47,
+                "w": 48,
                 "h": 68
             },
             "sourceSize": {
-                "w": 47,
+                "w": 48,
                 "h": 68
             }
         },
         "common_event_7": {
             "frame": {
-                "x": 240,
-                "y": 0,
-                "w": 35,
-                "h": 39
+                "x": 104,
+                "y": 153,
+                "w": 36,
+                "h": 40
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 35,
-                "h": 39
+                "w": 36,
+                "h": 40
             },
             "sourceSize": {
-                "w": 35,
-                "h": 39
+                "w": 36,
+                "h": 40
             }
         },
         "common_event_8": {
@@ -182,8 +182,8 @@
         },
         "common_event_9": {
             "frame": {
-                "x": 185,
-                "y": 153,
+                "x": 241,
+                "y": 0,
                 "w": 35,
                 "h": 40
             },
@@ -222,7 +222,7 @@
         },
         "common_event_11": {
             "frame": {
-                "x": 104,
+                "x": 145,
                 "y": 153,
                 "w": 36,
                 "h": 40
@@ -246,7 +246,7 @@
         "image": "common_event.png",
         "format": "RGBA8888",
         "size": {
-            "w": 275,
+            "w": 276,
             "h": 221
         },
         "scale": 1
