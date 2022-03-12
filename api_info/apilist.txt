@@ -1722,7 +1722,8 @@ api_req_map/next		：進撃
 		api_supply_ship	：補給艦(艦船固有ID)
 		api_given_ship	：補給対象艦(〃)
 		api_use_num		：洋上補給アイテム使用個数
-	api_destruction_battle		：基地防空戦データ　ほぼ戦闘APIに準じる　発生した時のみ存在
+	api_destruction_flag		：超重爆迎撃戦QTEイベントフラグ　発生した時のみ存在
+	api_destruction_battle		：基地防空戦データ　ほぼ戦闘APIに準じる　発生した時のみ存在　超重爆迎撃の場合は存在しない
 		api_formation
 		api_ship_ke
 		api_ship_lv
@@ -1763,6 +1764,24 @@ api_req_map/next		：進撃
 		api_m1		：('16秋イベ) 1=スタート地点解放ギミック発動　それ以外の場合は存在しない
 	api_m1			：イベント海域ギミック開放フラグ　1=ルート解放など　進捗によって 2 の場合もある　通常は存在しない
 	api_anchorage_flag	：泊地セルでのみ存在　0=修理不可 1=修理可能
+
+
+Request.api_req_map/anchorage_repair	：緊急泊地修理
+	api_deck_rid	：出撃艦隊ID 複数艦隊の時はつなげる? (ex. 連合艦隊時は 12)
+
+api_req_map/anchorage_repair	：緊急泊地修理
+	api_used_ship			：発動させた艦娘のID (固有IDではない; 450=秋津洲改 など)
+	api_repair_ships		：修理される艦娘の固有ID []
+	api_ship_data			：艦船データ　[出撃艦隊の艦船数]　api_port/port.api_ship に準じる
+
+
+Request.api_req_map/air_raid	：超重爆迎撃戦
+	api_scc				：迎撃ボタン押したタイミング　1=早すぎか遅すぎ, 2=早いか遅い, 3=ジャスト
+								0=ボタン押されていなかった、迎撃航空隊があっても発進しないになる
+
+api_req_map/air_raid	：超重爆迎撃戦
+	api_destruction_battle		：基地防空戦データ[]　api_req_map/next.api_destruction_battle に準じる
+									作戦難易度によってメンバー数変わるみたい：甲3乙2丙1丁1
 
 
 Request.api_req_sortie/battle	：通常艦隊　昼戦
@@ -2354,6 +2373,13 @@ api_req_combined_battle/ec_midnight_battle	：通常艦隊/連合艦隊夜戦（
 		api_damage				：ダメージ [][] 
 
 
+Request.api_req_sortie/battleresult	：通常艦隊　戦闘結果
+	api_btime				：謎の乱数　実際の戦闘経過時間と関係ないみたい、未使用かも
+	api_l_value				：戦闘後各艦の残り耐久[]　味方の第一艦隊
+	api_l_value2			：戦闘後各艦の残り耐久[]　味方の第二艦隊、連合艦隊のみ存在
+	api_l_value3			：戦闘後各艦の残り耐久[]　敵の第一艦隊
+	api_l_value4			：戦闘後各艦の残り耐久[]　敵の第二艦隊、連合のみ
+
 api_req_sortie/battleresult	：通常艦隊　戦闘結果
 	api_ship_id				：敵艦船ID [艦船数]
 	api_win_rank			：勝利ランク　文字列
@@ -2401,6 +2427,7 @@ api_req_sortie/battleresult	：通常艦隊　戦闘結果
 	api_escape_flag			：退避可能艦の有無　0=なし, 1=あり
 	api_escape				：退避艦　api_escape_flag=0の時 null
 		api_escape_idx		：退避艦のインデックス　[対象艦数]　1基点　実際は[0]が対象となる
+		api_escape_type		：退避のタイプ　1=遊撃部隊退避, 2=水雷戦隊退避
 	api_next_map_ids		：次に出撃可能になった海域ID[]　海域解放時のみ存在　通常海域は数値、イベント海域は文字列なので注意
 	api_m1					：('16秋イベ)ギミック解除フラグ　1=解除(段階によって 1 以外の場合もある)　それ以外の場合存在しない
 	api_m2					：('19夏イベ)ギミック解除フラグ　1=解除(〃) それ以外の場合存在しない
@@ -2538,10 +2565,10 @@ api_req_air_corps/supply		：基地航空隊 - 補給
 api_req_air_corps/expand_base		：基地航空隊 - 飛行場拡張
 	(拡張した航空隊のデータ[1?]。 api_get_member/base_air_corps に同じ)
 
-Request.api_req_air_corps/expand_maintenance_level		: 基地航空隊 - 整備Lv強化
-	api_area_id		: 所属海域ID　未開催のイベント海域も強化可能
+Request.api_req_air_corps/expand_maintenance_level		：基地航空隊 - 整備Lv強化
+	api_area_id		：所属海域ID　未開催のイベント海域も強化可能
 
-api_req_air_corps/expand_maintenance_level		: 基地航空隊 - 整備Lv強化
+api_req_air_corps/expand_maintenance_level		：基地航空隊 - 整備Lv強化
 	(情報なし)
 
 
@@ -3565,13 +3592,6 @@ Request.api_req_member/set_friendly_request		：友軍艦隊要請
 	(情報なし)
 
 
-api_req_map/anchorage_repair	：緊急泊地修理
-	api_used_ship			：発動させた艦娘のID (固有IDではない; 450=秋津洲改 など)
-	api_repair_ships		：修理される艦娘の固有ID []
-	api_ship_data			：艦船データ　[出撃艦隊の艦船数]　api_port/port.api_ship に準じる　
-
-
-
 ◇APIが呼ばれる順番
 
 《ログイン》
@@ -3594,6 +3614,10 @@ api_req_sortie/battleresult
 [進撃]
 api_get_member/ship_deck
 api_req_map/next
+[超重爆迎撃戦開始](基地防空戦と同じランダム)
+api_req_map/air_raid
+[緊急泊地修理承諾](適したマスのみ)
+api_req_map/anchorage_repair
 [帰投]
 api_port/port
 api_get_member/slot_item
