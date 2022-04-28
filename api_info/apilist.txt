@@ -351,7 +351,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				45=夜間戦闘機
 				46=夜間攻撃機
 				47=陸上対潜哨戒機
-				48=
+				48=陸軍襲撃機
 				49=大型陸上機
 
 			[4]: 航空機カテゴリ
@@ -395,7 +395,8 @@ api_start2/getData	：艦娘・装備固有データその他
 				43=米水上機
 				44=Barracuda攻撃機
 				45=SM.79陸上攻撃機
-				46=Corsair戦闘機
+				46=Corsair戦闘機/F4U爆撃機
+				47=二式複座戦闘機/襲撃機
 
 		api_taik		：耐久(0)
 		api_souk		：装甲
@@ -1103,6 +1104,7 @@ api_get_member/picture_book	：艦船図鑑　図鑑登録済みのもののみ�
 			112=Illustrious級
 			113=Conte di Cavour級
 			114=Gato級
+			115=特2TL型
 		api_cnum			：艦番
 		api_taik			：耐久
 		api_souk			：装甲
@@ -1804,9 +1806,21 @@ api_req_sortie/battle	：通常艦隊　昼戦
 	api_e_maxhps		：敵の最大HP [艦船数]
 	api_eSlot			：敵装備スロット [艦船数][5] 空きスロットは-1
 	api_eParam			：敵基礎ステータス [艦船数][4] [0]=火力, [1]=雷装, [2]=対空, [3]=装甲
-	api_escape_idx		：退避艦インデックス　[退避艦数]　1基点　いなければ存在しない
-	api_midnight_flag	：夜戦突入可否　0=不可(昼戦で敵全滅など), 1=可能
-	api_search			：索敵成否　[0]=味方, [1]=敵　1=成功, 2=成功(未帰還機あり), 3=未帰還, 4=失敗, 5=発見, 6=発見できず
+	api_flavor_info			：敵ボス艦の情報とフレーバーテキスト[1]
+		api_boss_ship_id	：艦固有ID
+		api_type			：艦種ID　api_mst_shipのapi_stypeに参照
+		api_voice_id		：再生されるボイスファイル名
+		api_class_name		：艦型名　api_mst_shipには存在しない情報
+		api_ship_name		：艦名
+		api_message			：登場セリフのテキスト
+		api_pos_x			：グラ表示座標X
+		api_pos_y			：グラ表示座標Y
+		api_data			：グラ状態文字列？　""=一般状態, "d"=装甲破壊状態
+	api_midnight_flag		：夜戦突入可否　0=不可(昼戦で敵全滅など), 1=可能
+	api_xal01				：1=装甲破壊状態 そうでなければ存在しない　昔はapi_boss_damagedだった？
+	api_escape_idx			：退避艦インデックス　[退避艦数]　1基点　いなければ存在しない
+	api_combat_ration		：戦闘糧食補給　発動時のみ存在　艦船IDの数値配列
+	api_search				：索敵成否　[0]=味方, [1]=敵　1=成功, 2=成功(未帰還機あり), 3=未帰還, 4=失敗, 5=発見, 6=発見できず
 	api_air_base_injection	：基地航空隊　噴式強襲攻撃
 		api_plane_from		：航空機発艦可能艦インデックス　[2] [0]=味方, [1]=敵　いなければ null　味方は常に null?
 		api_air_base_data	：参加中隊リスト　[参加中隊数]
@@ -2205,7 +2219,20 @@ api_req_combined_battle/ec_battle	：通常艦隊 vs 敵連合艦隊 昼戦
 	api_fParam				：味方パラメータ [6][4] (火雷空甲)
 	api_eParam				：敵主力艦隊パラメータ [6][4] (火雷空甲)
 	api_eParam_combined		：敵随伴艦隊パラメータ [6][4] (火雷空甲)
+	api_flavor_info			：敵ボス艦の情報とフレーバーテキスト[1]
+		api_boss_ship_id	：艦固有ID
+		api_type			：艦種ID　api_mst_shipのapi_stypeに参照
+		api_voice_id		：再生されるボイスファイル名
+		api_class_name		：艦型名　api_mst_shipには存在しない情報
+		api_ship_name		：艦名
+		api_message			：登場セリフのフレーバーテキスト
+		api_pos_x			：グラ表示座標X
+		api_pos_y			：グラ表示座標Y
+		api_data			：グラ状態？　""=一般状態, "d"=装甲破壊状態
 	api_midnight_flag		：夜戦可否
+	api_xal01				：装甲破壊状態
+	api_escape_idx			：退避艦インデックス　[退避艦数]　1基点　いなければ存在しない
+	api_combat_ration		：戦闘糧食補給　発動時のみ存在　艦船IDの数値配列
 	api_search				：索敵結果 [2] 
 	api_formation			：陣形 [3] [0]=味方陣形(文字列), [1]=敵陣形(数値), [2]=交戦形態(数値)
 	api_air_base_attack		：基地航空隊攻撃 []
@@ -2644,8 +2671,18 @@ api_req_combined_battle/battle	：連合艦隊-機動部隊or輸送部隊 戦闘
 	api_e_maxhps			：
 	api_eSlot				：
 	api_eParam				：
+	api_flavor_info			：
+		api_boss_ship_id	：
+		api_type			：
+		api_voice_id		：
+		api_class_name		：
+		api_ship_name		：
+		api_message			：
+		api_pos_x			：
+		api_pos_y			：
+		api_data			：
 	api_midnight_flag		：
-	api_xal01				：？　1=装甲破壊状態 そうでなければ存在しない
+	api_xal01				：
 	api_escape_idx			：本隊の退避艦インデックス　[退避艦数]　1基点　いなければ存在しない
 	api_escape_idx_combined	：随伴の退避艦インデックス　[退避艦数]　1基点　いなければ存在しない
 	api_combat_ration		：？　本隊戦闘糧食補給　発動時のみ存在　艦船IDの数値配列
@@ -2781,7 +2818,18 @@ api_req_combined_battle/battle_water	：連合艦隊-水上部隊　戦闘　記
 	api_e_maxhps			：敵艦隊の最大HP　[艦船数]
 	api_eSlot				：敵装備スロット　[艦船数][5]
 	api_eParam				：敵ステータス　[艦船数][4]
+	api_flavor_info			：
+		api_boss_ship_id	：
+		api_type			：
+		api_voice_id		：
+		api_class_name		：
+		api_ship_name		：
+		api_message			：
+		api_pos_x			：
+		api_pos_y			：
+		api_data			：
 	api_midnight_flag		：
+	api_xal01				：
 	api_escape_idx			：本隊の退避艦インデックス　1基点　いなければ存在しない
 	api_escape_idx_combined	：随伴の退避艦インデックス　1基点　いなければ存在しない
 	api_combat_ration		：本体の戦闘糧食補給　[発動艦数]　艦船の固有ID　発動しなければ存在しない
@@ -2953,9 +3001,22 @@ api_req_combined_battle/each_battle		：連合艦隊(機動部隊) vs 敵連合�
 	api_eSlot_combined		：
 	api_eParam				：
 	api_eParam_combined		：
+	api_flavor_info			：
+		api_boss_ship_id	：
+		api_type			：
+		api_voice_id		：
+		api_class_name		：
+		api_ship_name		：
+		api_message			：
+		api_pos_x			：
+		api_pos_y			：
+		api_data			：
 	api_midnight_flag		：
+	api_xal01				：
 	api_escape_idx			：
 	api_escape_idx_combined	：
+	api_combat_ration		：
+	api_combat_ration_combined：
 	api_search				：[2]
 	api_stage_flag			：[3]
 	api_kouku				：
@@ -3057,9 +3118,22 @@ api_req_combined_battle/each_battle_water	：連合艦隊(水上部隊) vs 敵�
 	api_eSlot_combined		：[艦船数][5]
 	api_eParam				：[艦船数][4]
 	api_eParam_combined		：[艦船数][4]
+	api_flavor_info			：
+		api_boss_ship_id	：
+		api_type			：
+		api_voice_id		：
+		api_class_name		：
+		api_ship_name		：
+		api_message			：
+		api_pos_x			：
+		api_pos_y			：
+		api_data			：
 	api_midnight_flag		：
+	api_xal01				：
 	api_escape_idx			：
 	api_escape_idx_combined	：
+	api_combat_ration		：
+	api_combat_ration_combined：
 	api_search				：[2]
 	api_air_base_attack
 		api_base_id
