@@ -433,7 +433,7 @@ api_start2/getData	：艦娘・装備固有データその他
 		api_price		：価格
 		api_saleflg		：販売中?
 		api_season		：
-		api_version		：画像バージョン？
+		api_version		：画像バージョン
 		api_outside_id	：
 		api_active_flag	：
 
@@ -478,7 +478,7 @@ api_start2/getData	：艦娘・装備固有データその他
 		api_opetext		：作戦名
 		api_infotext	：作戦情報
 		api_item		：獲得アイテム
-		api_max_maphp	：海域HPゲージ最大値？夏イベ海域は全て300, 他はnull ここに載っているHPはダミー？
+		api_max_maphp	：海域HPゲージ最大値 夏イベ海域は全て300, 他はnull ここに載っているHPはダミー?
 		api_required_defeat_count	：攻略に必要な撃破数　nullあり　※HP/撃破回数等は進捗によって(ダブルゲージ等)変更されるため、これらをあてにせず mapinfo を参照すること
 		api_sally_flag	：出撃艦隊編成フラグ
 			(夏イベ時)通常海域, MI海域は[ 0, 1 ], AL海域, 本土防衛は[ 1, 0 ]
@@ -518,7 +518,7 @@ api_start2/getData	：艦娘・装備固有データその他
 	api_mst_const		：
 		api_parallel_quest_max	：
 			api_string_value	：
-			api_int_value		：「最大受領可能任務数」最大値？
+			api_int_value		：「最大受領可能任務数」最大値
 		api_boko_max_ships		：
 			api_string_value	：
 			api_int_value		：「最大保有艦娘数」最大値
@@ -539,8 +539,8 @@ api_start2/getData	：艦娘・装備固有データその他
 		api_arms_mat_count		：新型兵装資材　所要個数
 		api_sortno				：? (概ね図鑑IDだが、霞(改/二/乙), 利根(改/二), 筑摩(改/二)などで異なる)
 
-	api_mst_bgm			：母港BGMデータ？
-		api_id			：音楽ID？
+	api_mst_bgm			：母港BGMデータ
+		api_id			：音楽ID
 		api_name		：曲名
 
 	api_mst_equip_ship	：特殊装備
@@ -604,7 +604,7 @@ api_get_member/basic		：艦隊司令部情報
 	api_pt_challenged		：
 	api_pt_challenged_win	：
 	api_firstflag			：
-	api_tutorial_progress	：チュートリアル進捗？
+	api_tutorial_progress	：チュートリアル進捗?
 	api_pvp					：
 	api_medals				：甲種勲章保有数
 
@@ -629,13 +629,13 @@ api_port/port		：母港情報
 		api_onslot			：艦載機搭載数
 		api_slot_ex			：補強スロット 0=未解放, -1=未装備
 		api_kyouka			：近代化改修状態　[0]=火力, [1]=雷装, [2]=対空, [3]=装甲, [4]=運, [5]=耐久, [6]=対潜
-		api_backs			：レアリティ？
+		api_backs			：レアリティ?
 		api_fuel			：搭載燃料
 		api_bull			：搭載弾薬
 		api_slotnum			：スロット数
 		api_ndock_time		：入渠時間(ミリ秒)
 		api_ndock_item		：入渠時の消費資材　[0]=燃料, [1]=鋼材
-		api_srate			：改装☆？
+		api_srate			：改装☆?
 		api_cond			：コンディション
 		api_karyoku			：火力　[0]=現在値(装備込み), [1]=最大値
 		api_raisou			：雷装　なお、最大値は基本的にLv99時点の素ステータス
@@ -685,7 +685,7 @@ api_port/port		：母港情報
 	api_parallel_quest_count	：最大受領可能任務数
 	api_dest_ship_slot		：解体時の装備廃棄フラグ　0=保管, 1=廃棄
 	api_plane_info				：基地航空隊関連データ　要素があるときのみ存在（メンバも然り）
-		api_unset_slot			：更新された unsetslot? []　基地航空隊が更新されたときに増える？
+		api_unset_slot			：更新された unsetslot? []　基地航空隊が更新されたときに増える
 			api_type3No			：装備カテゴリID
 			api_slot_list		：装備IDリスト []
 		api_base_convert_slot	：配置転換中の装備IDリスト []
@@ -834,7 +834,7 @@ api_req_kousyou/remodel_slot	：改修工廠　改修実行
 api_get_member/ndock		：入渠ドック
 	api_member_id			：提督ID
 	api_id					：ドック番号
-	api_state				：状態　-1=ロック?, 0=空き, 1=入渠中
+	api_state				：状態　-1=ロック, 0=空き, 1=入渠中
 	api_ship_id				：入渠中艦船ID　空きは0
 	api_complete_time		：入渠完了時間
 	api_complete_time_str	：入渠完了日時
@@ -886,7 +886,7 @@ api_get_member/record	：戦績表示
 		api_win			：演習勝利回数
 		api_lose		：演習敗北回数
 		api_rate		：演習勝率
-	api_friend			：友軍艦隊数？
+	api_friend			：友軍艦隊数?
 	api_deck			：保有艦隊数
 	api_kdoc			：工廠ドック数
 	api_ndoc			：入渠ドック数
@@ -894,7 +894,7 @@ api_get_member/record	：戦績表示
 	api_slotitem		：装備保有数　[0]=現在値, [1]=最大値
 	api_furniture		：家具保有数
 	api_complate		：
-	api_large_dock		：大型艦建造可否？
+	api_large_dock		：大型艦建造可否?
 	api_material_max	：資源の自然回復上限
 
 Request.api_get_member/questlist	：任務
@@ -923,7 +923,7 @@ api_get_member/questlist	：任務
 		api_progress_flag	：進捗　0=空白(達成含む), 1=50%以上達成, 2=80%以上達成
 		api_invalid_flag	：機種転換不能フラグ　0=可能, 1=不可能(装備がロックされている)
 	api_exec_count			：受領任務数
-	api_exec_type			：？
+	api_exec_type			：?
 	api_c_list				：クライアント側で達成判定用のフラグ[]　対応任務達成ときのみ存在?
 		api_no				：任務ID
 		api_c_flag			：1=達成
@@ -951,7 +951,7 @@ api_req_quest/clearitemget		：任務達成
 	api_material		：獲得資源量(基本4種)
 	api_bounus_count	：api_bounus の数 *スペルミス注意*
 	api_bounus			：アイテム *スペルミス注意*
-		api_type		：1=資源(バケツその他4種？), 2=艦隊解放, 3=家具箱, 4=大型艦建造解放, 5=基地航空隊開放?, 6=遠征臨時補給開放, 11=艦船, 12=装備, 13=アイテム, 14=家具, 15=機種転換, 16=装備消費, 18=???, 99=イベント海域解放
+		api_type		：1=資源(バケツその他4種), 2=艦隊解放, 3=家具箱, 4=大型艦建造解放, 5=基地航空隊開放?, 6=遠征臨時補給開放, 11=艦船, 12=装備, 13=アイテム, 14=家具, 15=機種転換, 16=装備消費, 18=???, 99=イベント海域解放
 		api_count		：取得個数
 		api_item		：アイテム追加情報 一般アイテムはnull イベント海域解放時は api_count = 1 にもかかわらず null
 			(艦船の場合)
@@ -1120,7 +1120,7 @@ api_get_member/picture_book	：艦船図鑑　図鑑登録済みのもののみ�
 api_get_member/picture_book	：装備図鑑　図鑑登録済みのもののみ送られてくるので注意
 	api_list				：リスト
 		api_index_no		：図鑑No.
-		api_state			：取得フラグ？[0]=図鑑登録
+		api_state			：取得フラグ?[0]=図鑑登録
 		api_table_id		：装備ID
 		api_name			：装備名
 		api_type			：装備種別　api_start2 とは異なることがある((II)シリーズなど)
@@ -1268,7 +1268,7 @@ api_req_member/updatecomment	：提督コメント変更
 	(情報なし)
 
 api_req_ranking/getlist	：ランキング
-	api_count			：最大読み込み可能数？
+	api_count			：最大読み込み可能数?
 	api_page_count		：最大ページ数
 	api_disp_page		：表示中のページ
 	api_list			：提督リスト
@@ -1281,7 +1281,7 @@ api_req_ranking/getlist	：ランキング
 		api_medals		：甲種勲章保有数
 
 api_req_ranking/mxltvkpyuklh	：ランキング(2016/08/01~)
-	api_count			：最大読み込み可能数？
+	api_count			：最大読み込み可能数?
 	api_page_count		：最大ページ数
 	api_disp_page		：表示中のページ
 	api_list			：提督リスト
@@ -1590,7 +1590,7 @@ api_req_kaisou/preset_slot_update_name			：装備プリセット名変更
 	(情報なし)
 
 api_req_kaisou/preset_slot_expand				：装備プリセット枠拡張
-	(？)
+	(?)
 
 
 
@@ -1638,7 +1638,7 @@ api_req_map/start		：出撃　同じメンバはnextのほうが情報が新し
 	api_airsearch		：
 	api_eventmap		：
 	api_from_no			：スタート地点のセルID
-	api_distance_data	：各セルの距離データ　基地航空隊出撃時のみ存在？
+	api_distance_data	：各セルの距離データ　基地航空隊出撃時のみ存在
 		api_mapcell_id	：マスターセルID（マップ別ではなく全海域間固有ID）
 		api_distance	：距離
 
@@ -1678,7 +1678,7 @@ api_req_map/next		：進撃
 							api_event_id=7(航空戦)時は　0=航空偵察, 4=航空戦
 	api_next			：次のマスでのルート分岐の本数 0=行き止まり
 	api_bosscell_no		：ボスセルID
-	api_bosscomp		：ボス到達済みフラグ？コード中にスペルミスがあり未使用
+	api_bosscomp		：ボス到達済みフラグ? コード中にスペルミスがあり未使用
 	api_comment_kind	：0=なし 1=<敵艦隊発見!> 2=<攻撃目標発見!>? 3=<針路哨戒!>?　startにはないので注意
 	api_production_kind	：0=なし 1=索敵機発艦　startにはないので注意
 	api_cell_flavor		：「気のせいだった」特殊メッセージ　必要な時のみ存在
@@ -1687,7 +1687,7 @@ api_req_map/next		：進撃
 	api_eventmap		：イベント海域ゲージ情報
 		api_max_maphp	：ゲージ最大値
 		api_now_maphp	：ゲージ現在値
-		api_dmg			：ダメージ倍率？
+		api_dmg			：ダメージ倍率?
 		api_itemget		：海域突破報酬一覧[]　海域突破時に最終セルが非戦闘系イベント(輸送セルなど)だった場合存在
 			api_type	：1=アイテム, 3=装備, 5=家具
 			api_id		：ID
@@ -1703,7 +1703,7 @@ api_req_map/next		：進撃
 		api_count		：落とした資源の量
 		api_usemst		：4
 		api_mst_id		：落とした資源の種類　2=弾薬
-		api_icon_id		：表示アイコンID？　2=弾薬
+		api_icon_id		：表示アイコンID　2=弾薬
 		api_dentan		：電探による被害軽減フラグ(1=軽減)
 	api_get_eo_rate		：獲得戦果　次が船団護衛成功マスのときのみ存在(ゲージ破壊時追加で)
 	api_itemget_eo_result	：次が船団護衛成功マスのときのみ存在(ゲージ破壊時追加で)
@@ -1748,7 +1748,7 @@ api_req_map/next		：進撃
 				api_e_lostcount
 				api_disp_seiku
 				api_touch_plane		：[2]
-			api_stage2				：艦対空戦闘　null ?
+			api_stage2				：艦対空戦闘　常に null ?
 			api_stage3				：航空攻撃　すべて[味方 or 敵の艦船数]
 				api_frai_flag
 				api_erai_flag
@@ -1815,9 +1815,9 @@ api_req_sortie/battle	：通常艦隊　昼戦
 		api_message			：登場セリフのテキスト
 		api_pos_x			：グラ表示座標X
 		api_pos_y			：グラ表示座標Y
-		api_data			：グラ状態文字列？　""=一般状態, "d"=装甲破壊状態
+		api_data			：グラ状態文字列?　""=一般状態, "d"=装甲破壊状態
 	api_midnight_flag		：夜戦突入可否　0=不可(昼戦で敵全滅など), 1=可能
-	api_xal01				：1=装甲破壊状態 そうでなければ存在しない　昔はapi_boss_damagedだった？
+	api_xal01				：1=装甲破壊状態 そうでなければ存在しない　昔はapi_boss_damagedだった?
 	api_escape_idx			：退避艦インデックス　[退避艦数]　1基点　いなければ存在しない
 	api_combat_ration		：戦闘糧食補給　発動時のみ存在　艦船IDの数値配列
 	api_search				：索敵成否　[0]=味方, [1]=敵　1=成功, 2=成功(未帰還機あり), 3=未帰還, 4=失敗, 5=発見, 6=発見できず
@@ -1887,7 +1887,7 @@ api_req_sortie/battle	：通常艦隊　昼戦
 			api_ecl_flag	：敵被クリティカルフラグ
 			api_edam		：敵被ダメージ
 	api_friendly_info		：友軍艦隊攻撃情報　発動時のみ存在
-		api_production_type		：艦隊ID？　1=(英仏艦隊), 2=(第19駆逐隊, 挺身部隊), 3=(第四戦隊)
+		api_production_type		：艦隊ID?　1=(英仏艦隊), 2=(第19駆逐隊, 挺身部隊), 3=(第四戦隊)
 		api_ship_id				：友軍の艦船ID [艦船数]
 		api_ship_lv				：友軍のLv [艦船数]
 		api_nowhps				：友軍の現在HP [艦船数]
@@ -1895,8 +1895,8 @@ api_req_sortie/battle	：通常艦隊　昼戦
 		api_Slot				：友軍の装備スロット [艦船数][5] 空きスロットは -1
 		api_slot_ex				：友軍の装備(拡張スロット) [艦船数]
 		api_Param				：友軍の基礎ステータス [艦船数][4]; [火力, 雷装, 対空, 装甲]
-		api_voice_id			：再生されるボイスID? [艦船数]
-		api_voice_p_no			：1以上=戦闘前口上あり（口上の順番？）, 0=なし [艦船数]
+		api_voice_id			：再生されるボイスID [艦船数]
+		api_voice_p_no			：1以上=戦闘前口上あり（口上の順番?）, 0=なし [艦船数]
 	api_friendly_battle		：友軍艦隊砲撃　発動時のみ存在
 		api_flare_pos			：照明弾投射艦インデックス　[2]; [味方, 敵]　0起点、随伴艦隊は 6-11　発動しなければ-1
 		api_hougeki				：友軍艦隊攻撃　基本的に api_hougeki と同じ　[攻撃フェーズの回数]
@@ -1914,7 +1914,7 @@ api_req_sortie/battle	：通常艦隊　昼戦
 		api_stage1
 		api_state2
 		api_stage3
-		api_stage3_combined		：敵味方(友軍)ともに通常艦隊の場合はこれの子メンバは null になる？
+		api_stage3_combined		：敵味方(友軍)ともに通常艦隊の場合はこれの子メンバは null になる?
 			api_frai_flag
 			api_fbak_flag
 			api_fcl_flag
@@ -2136,7 +2136,7 @@ api_req_sortie/ld_airbattle		：通常艦隊　長距離空襲戦　存在する
 	api_kouku			：こちらからは攻撃できない模様(ダメージの項目は通常通り存在する)
 
 
-api_req_sortie/ld_shooting		：通常艦隊　敵レーダー射撃　昼戦扱い？　各値の構成と意味は api_req_sortie/battle と同じ
+api_req_sortie/ld_shooting		：通常艦隊　敵レーダー射撃　昼戦扱い　各値の構成と意味は api_req_sortie/battle と同じ
 api_deck_id				：数値型
 api_formation			：[3]　味方は単縦陣(1)固定
 api_f_nowhps			：[]
@@ -2196,7 +2196,7 @@ api_air_base_attack		：基地航空隊攻撃　[攻撃回数]　発生時のみ
 api_hougeki1			：砲撃戦　発生しなければ null
 	api_at_eflag			：[]　必ず敵(1)のはず
 	api_at_list				：[]
-	api_at_type				：[]　昼戦に準じる？
+	api_at_type				：[]　昼戦に準じる
 	api_df_list				：[][]
 	api_si_list				：[][]
 	api_cl_list				：[][]
@@ -2228,7 +2228,7 @@ api_req_combined_battle/ec_battle	：通常艦隊 vs 敵連合艦隊 昼戦
 		api_message			：登場セリフのフレーバーテキスト
 		api_pos_x			：グラ表示座標X
 		api_pos_y			：グラ表示座標Y
-		api_data			：グラ状態？　""=一般状態, "d"=装甲破壊状態
+		api_data			：グラ状態?　""=一般状態, "d"=装甲破壊状態
 	api_midnight_flag		：夜戦可否
 	api_xal01				：装甲破壊状態
 	api_escape_idx			：退避艦インデックス　[退避艦数]　1基点　いなければ存在しない
@@ -2366,16 +2366,16 @@ api_req_combined_battle/ec_midnight_battle	：通常艦隊/連合艦隊夜戦（
 	api_escape_idx			：本隊の退避艦インデックス　[退避艦数]　1基点　いなければ存在しない
 	api_escape_idx_combined	：随伴の退避艦インデックス　[退避艦数]　1基点　いなければ存在しない
 	api_friendly_info		：友軍艦隊攻撃情報　発動時のみ存在
-		api_production_type		：艦隊ID？　1=(英仏艦隊), 2=(第19駆逐隊, 挺身部隊), 3=(第四戦隊)
+		api_production_type		：艦隊ID?　1=(英仏艦隊), 2=(第19駆逐隊, 挺身部隊), 3=(第四戦隊)
 		api_ship_id				：友軍の艦船ID [艦船数]
 		api_ship_lv				：友軍のLv [艦船数]
 		api_nowhps				：友軍の現在HP [艦船数]
 		api_maxhps				：友軍の最大HP [艦船数]
 		api_Slot				：友軍の装備スロット [艦船数][5] 空きスロットは -1
 		api_Param				：友軍の基礎ステータス [艦船数][4]; [火力, 雷装, 対空, 装甲]
-		api_voice_id			：再生されるボイスID? [艦船数]
-		api_voice_p_no			：1以上=戦闘前口上あり（口上の順番？）, 0=なし [艦船数]
-	api_friendly_battle		：友軍艦隊攻撃　発動時のみ存在？
+		api_voice_id			：再生されるボイスID [艦船数]
+		api_voice_p_no			：1以上=戦闘前口上あり（口上の順番?）, 0=なし [艦船数]
+	api_friendly_battle		：友軍艦隊攻撃　発動時のみ存在
 		api_flare_pos			：照明弾投射艦インデックス　[2]; [味方, 敵]　0起点、随伴艦隊は 6-11　発動しなければ-1
 		api_hougeki				：友軍艦隊攻撃　基本的に api_hougeki と同じ　[攻撃フェーズの回数]
 			api_at_eflag			：[]
@@ -2417,8 +2417,8 @@ api_req_sortie/battleresult	：通常艦隊　戦闘結果
 	api_get_base_exp		：獲得基本経験値
 	api_get_ship_exp		：各艦の獲得経験値 [7 or 8 (7番艦が経験値入手可能な状況((空き/撃沈/退避中)ではないとき)のみ)]　[1]が旗艦　[0]と(空き/撃沈/退避)は -1
 	api_get_exp_lvup		：[味方艦船数][] 各艦の[0]獲得前経験値, [1]次のレベルの経験値(レベルキャップ到達時存在せず), (レベルアップしたなら)[2]その次のレベルの経験値, ...
-	api_dests				：敵艦撃沈数？
-	api_destsf				：敵旗艦撃沈フラグ？
+	api_dests				：敵艦撃沈数?
+	api_destsf				：敵旗艦撃沈フラグ?
 	api_quest_name			：出撃海域名
 	api_quest_level			：難易度
 	api_enemy_info			：敵艦隊情報
@@ -2436,13 +2436,13 @@ api_req_sortie/battleresult	：通常艦隊　戦闘結果
 		api_ship_type		：艦種文字列
 		api_ship_name		：艦名
 		api_ship_getmes		：ドロップメッセージ　<br> が改行
-	api_get_slotitem		：ドロップ装備情報？ api_get_flag[2]=1のときのみ存在
+	api_get_slotitem		：ドロップ装備情報 api_get_flag[2]=1のときのみ存在
 		api_slotitem_id		：装備ID
 	api_get_eventitem		：海域攻略報酬　イベント海域突破時のみ存在
 		api_type			：報酬種別 1=アイテム, 2=艦娘, 3=装備, 5=家具
 		api_id				：ID
-		api_value			：個数？
-	api_get_eventflag		：？ api_get_eventitem存在時に消滅
+		api_value			：個数
+	api_get_eventflag		：? api_get_eventitem存在時に消滅
 	api_m_suffix			：'18初秋イベ　海域攻略完了メッセージ画像のパス(の一部)　zshjdpzahswjbytw, jexxexrraiahjydb, kfwtcxpasnhtbrfp など
 	api_ope_suffix			：'18初秋イベ　作戦完了メッセージ画像のパス(の一部)　jhnhdjyijyhjgpxy など
 	api_get_exmap_rate		：EO海域攻略時：獲得戦果(文字列) それ以外は0(数値)
@@ -2488,7 +2488,7 @@ api_get_member/mapinfo				：出撃準備　未出現海域は存在しない
 		api_eventmap				：イベント海域のみ存在
 			api_now_maphp				：海域HP現在値	未設定時は9999
 			api_max_maphp				：海域HP最大値　未設定時は9999
-			api_state					：状態？　1=未攻略, 2=攻略済み
+			api_state					：状態　1=未攻略, 2=攻略済み
 			api_selected_rank			：作戦難易度　0=未設定, 1=丁, 2=丙, 3=乙, 4=甲
 		api_sally_flag				：出撃可能フラグ　[通常艦隊可否(0|1), 連合艦隊可否ビットフラグ(1=機動部隊, 2=水上部隊, 4=輸送部隊 のOR), 7隻編成可否(0|1)]　イベント海域のみ存在
 		api_defeat_count			：撃破回数　(未攻略海域に限り存在, イベント海域には存在せず)
@@ -2506,7 +2506,7 @@ api_get_member/mapinfo				：出撃準備　未出現海域は存在しない
 
 api_get_member/furniture	：所有家具データ
 	api_id				：家具ID
-	api_furniture_type	：家具カテゴリ？
+	api_furniture_type	：家具カテゴリ
 	api_furniture_no	：
 	api_furniture_id	：=api_id
 
@@ -2518,7 +2518,7 @@ api_get_member/sortie_conditions	：イベント海域への出撃条件　出�
 		api_rate		：勝率
 
 
-api_get_member/base_air_corps	：基地航空隊情報　現在は直接使用されていない？（データ構造自体は別のAPIで出現する）
+api_get_member/base_air_corps	：基地航空隊情報　現在は直接使用されていない（データ構造自体は別のAPIで出現する）
 	api_rid					：航空隊ID
 	api_name				：航空隊名
 	api_distance			：戦闘行動半径　実際の半径は api_base と api_bonus の和
@@ -2531,7 +2531,7 @@ api_get_member/base_air_corps	：基地航空隊情報　現在は直接使用�
 		api_slotid			：装備固有ID　0=なし
 		api_count			：稼働機数　未配属なら存在しない
 		api_max_count		：最大機数　〃
-		api_cond			：コンディション　1=通常, 2=黄疲労, 3=赤疲労？　未配属なら存在しない
+		api_cond			：コンディション　1=通常, 2=黄疲労, 3=赤疲労　未配属なら存在しない
 
 Request.api_req_air_corps/set_plane		：基地航空隊 - 中隊設定
 	api_area_id		：所属海域ID
@@ -2619,7 +2619,7 @@ api_req_combined_battle/airbattle	：連合艦隊-機動部隊 航空戦
 	api_search			：索敵　[0]=味方, [1]=敵	1=成功, 2=失敗?, 5=失敗
 	api_formation		：陣形/交戦形態?　[0]=味方, [1]=敵, [2]=交戦形態
 							[0|1]：1=単縦陣, 3=輪形陣, "11"-"14"=第n警戒航行序列
-							[2]：2=反航戦？
+							[2]：2=反航戦?
 	api_stage_flag		：航空戦フラグ
 	api_kouku			：航空戦情報
 		api_plane_from	：艦載機を飛ばせる艦　[0]=味方, [1]=敵　いなければ{-1}
@@ -2685,8 +2685,8 @@ api_req_combined_battle/battle	：連合艦隊-機動部隊or輸送部隊 戦闘
 	api_xal01				：
 	api_escape_idx			：本隊の退避艦インデックス　[退避艦数]　1基点　いなければ存在しない
 	api_escape_idx_combined	：随伴の退避艦インデックス　[退避艦数]　1基点　いなければ存在しない
-	api_combat_ration		：？　本隊戦闘糧食補給　発動時のみ存在　艦船IDの数値配列
-	api_combat_ration_combined：？　随伴艦隊戦闘糧食補給　発動時のみ存在　艦船IDの数値配列
+	api_combat_ration		：本隊戦闘糧食補給　発動時のみ存在　艦船IDの数値配列
+	api_combat_ration_combined：随伴艦隊戦闘糧食補給　発動時のみ存在　艦船IDの数値配列
 	api_search				：[2]
 	api_stage_flag			：[3]
 	api_kouku				：
@@ -3273,7 +3273,7 @@ api_req_combined_battle/ec_night_to_day		：対敵連合艦隊　夜昼戦
 	api_flare_pos			：[2]
 	api_n_support_flag		：夜間支援フラグ
 	api_n_support_info		：夜間支援
-		api_support_airatack	：システム上発生しない？
+		api_support_airatack	：システム上発生しない?
 		api_support_hourai		：
 			api_deck_id				：
 			api_ship_id				：[6]
@@ -3442,7 +3442,7 @@ api_req_combined_battle/ec_night_to_day		：対敵連合艦隊　夜昼戦
 	api_escape_idx			：[]
 
 
-api_req_combined_battle/ld_shooting		：連合艦隊　敵レーダー射撃　昼戦扱い？
+api_req_combined_battle/ld_shooting		：連合艦隊　敵レーダー射撃　昼戦扱い
 api_deck_id				：1 ?
 api_formation			：[3]　味方は第四警戒航行序列(14)固定
 api_f_nowhps			：[]
@@ -3486,7 +3486,7 @@ api_req_combined_battle/battleresult	：連合艦隊　戦闘結果 (味方通�
 	api_dests					：敵撃沈数?
 	api_destsf					：敵旗艦撃破?
 	api_quest_name				：出撃海域名
-	api_quest_level				：難易度？
+	api_quest_level				：難易度?
 	api_enemy_info				：敵艦隊情報
 		api_level				：
 		api_rank				：
@@ -3501,7 +3501,7 @@ api_req_combined_battle/battleresult	：連合艦隊　戦闘結果 (味方通�
 	api_get_eventitem			：海域攻略報酬
 		api_type				：1=汎用アイテム(勲章等), 2=艦娘, 3=装備
 		api_id					：各種ID
-		api_value				：個数？
+		api_value				：個数
 	api_get_eventflag			：?
 	api_get_exmap_rate			：
 	api_get_exmap_useitem_id	：
@@ -3557,7 +3557,7 @@ Request.api_req_member/payitemuse	：課金アイテム使用
 	api_force_flag			：
 
 api_req_member/payitemuse	：課金アイテム使用
-	api_caution_flag		：確認ダイアログ(資源上限により無駄が出ますが本当に使いますか？)表示フラグ？　0=非表示 1=表示?
+	api_caution_flag		：確認ダイアログ(資源上限により無駄が出ますが本当に使いますか？)表示フラグ　0=非表示 1=表示?
 
 
 Request.api_req_member/itemuse		：アイテム使用
@@ -3567,7 +3567,7 @@ Request.api_req_member/itemuse		：アイテム使用
 								上限突破する場合、これが 0 なら response で api_caution_flag が 1 になる(まだ使われない)。それで確認ダイアログを出し、yes ならば api_force_flag=1 で再送する(ここで実際に消費される)
 
 api_req_member/itemuse				：アイテム使用　api_data:null になることもある（司令部要員）ので注意
-	api_caution_flag	：確認ダイアログ(資源上限により無駄が出ますが本当に使いますか？)表示フラグ？　0=非表示 1=表示?
+	api_caution_flag	：確認ダイアログ(資源上限により無駄が出ますが本当に使いますか？)表示フラグ　0=非表示 1=表示?
 	api_flag			：1=アイテム 2=資源 3=両方
 	api_getitem			：入手アイテム[]　アイテムがない場合は [null] になる
 		api_usemst		：? 2=装備 5=アイテム 6=アイテム(設計図)
@@ -3581,7 +3581,7 @@ api_req_furniture/music_list	：ジュークボックスメニュー
 	api_id			：リスト内通し番号
 	api_name		：曲名
 	api_description	：説明文
-	api_bgm_id		：BGMID？
+	api_bgm_id		：BGMID
 	api_use_coin	：必要な家具コイン量
 	api_bgm_flag	：現在の母港BGMかどうか
 
