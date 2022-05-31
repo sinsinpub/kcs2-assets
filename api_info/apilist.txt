@@ -2505,6 +2505,7 @@ api_get_member/mapinfo				：出撃準備　未出現海域は存在しない
 		api_required_defeat_count	：攻略に必要な撃破回数　(未攻略海域に限り存在)
 		api_gauge_type				：1=撃破ゲージ 2=HPゲージ 3=揚陸(TP)ゲージ　(ゲージが存在する海域に限り存在)
 		api_gauge_num				：現在のゲージ段階(ゲージn本目)　1基点　(ゲージが存在する海域に限り存在)
+		api_s_no					：現在マップの遷移段階?　1基点　22冬イベントから、1ゲージに複数のマップ段階が存在するため?
 		api_air_base_decks			：基地航空隊出撃可能数 1以上の時のみ存在
 	api_air_base				：基地航空隊データ なければ存在しない
 		api_area_id				：出撃可能海域
