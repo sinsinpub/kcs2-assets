@@ -1059,6 +1059,26 @@
                 "w": 75,
                 "h": 75
             }
+        },
+        "common_itemicons_id_902": {
+            "frame": {
+                "x": 560,
+                "y": 320,
+                "w": 75,
+                "h": 75
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 75,
+                "h": 75
+            },
+            "sourceSize": {
+                "w": 75,
+                "h": 75
+            }
         }
     },
     "meta": {
