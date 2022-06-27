@@ -1771,6 +1771,7 @@ api_req_map/next		：進撃
 		api_m10		：('22冬イベE4から)基地航空隊の位置ギミック発動　それ以外の場合は存在しない
 	api_m1			：イベント海域ギミック開放フラグ　1=ルート解放など　進捗によって 2 の場合もある　通常は存在しない
 	api_m10			：('22冬イベ)基地航空隊の位置ギミックフラグ　EventMapUtil.getCellOpenOption によると api_m1 も一緒に基地位置を決めるっぽい?
+	api_anchorage_flag ：泊地セルでのみ存在　0=修理不可 1=修理可能
 
 
 Request.api_req_map/anchorage_repair	：緊急泊地修理
@@ -1891,7 +1892,7 @@ api_req_sortie/battle	：通常艦隊　昼戦
 			api_ebak_flag	：敵被爆撃フラグ
 			api_ecl_flag	：敵被クリティカルフラグ
 			api_edam		：敵被ダメージ
-			api_e_sp_list	：敵喰らった特殊攻撃種類　null/0=なし, 1=反跳爆撃
+			api_e_sp_list	：敵喰らった特殊攻撃種類[]　null/[0]=なし, [1]=反跳爆撃
 	api_friendly_info		：友軍艦隊攻撃情報　発動時のみ存在
 		api_production_type		：艦隊ID?　1=(英仏艦隊), 2=(第19駆逐隊, 挺身部隊), 3=(第四戦隊)
 		api_ship_id				：友軍の艦船ID [艦船数]
@@ -1953,8 +1954,8 @@ api_req_sortie/battle	：通常艦隊　昼戦
 			api_ecl_flag	：敵被クリティカルフラグ
 			api_fdam		：味方被ダメージ
 			api_edam		：敵被ダメージ
-			api_f_sp_list	：味方喰らった特殊攻撃種類?　null/0=なし, 1=反跳爆撃
-			api_e_sp_list	：敵喰らった特殊攻撃種類?　null/0=なし, 1=反跳爆撃
+			api_f_sp_list	：味方喰らった特殊攻撃種類[]　null/[0]=なし, [1]=反跳爆撃　同時に fbak_flag も立つ
+			api_e_sp_list	：敵喰らった特殊攻撃種類[]　null/[0]=なし, [1]=反跳爆撃　同時に ebak_flag も立つ
 	api_support_flag	：支援艦隊フラグ　0=なし, 1=空撃, 2=砲撃, 3=雷撃, 4=対潜
 	api_support_info	：支援艦隊情報　api_support_flag = 0 なら null
 		api_support_airatack		：空撃もしくは対潜の時有効、それ以外は null
@@ -2205,7 +2206,7 @@ api_air_base_attack		：基地航空隊攻撃　[攻撃回数]　発生時のみ
 		api_ebak_flag			：[]
 		api_ecl_flag			：[]
 		api_edam				：[]
-		api_e_sp_list			：[]
+		api_e_sp_list			：[][]
 api_hougeki1			：砲撃戦　発生しなければ null
 	api_at_eflag			：[]　必ず敵(1)のはず
 	api_at_list				：[]
@@ -2272,7 +2273,7 @@ api_req_combined_battle/ec_battle	：通常艦隊 vs 敵連合艦隊 昼戦
 			api_ebak_flag		：被爆撃フラグ [7] (-1から始まる)
 			api_ecl_flag		：クリティカルフラグ [7] (-1から始まる)
 			api_edam			：ダメージ [7] (-1から始まる)
-			api_e_sp_list		：[]
+			api_e_sp_list		：[][]
 		api_stage3_combined	：航空攻撃(対随伴艦隊) api_stage3 と同じ
 	api_air_base_rescue_type	：基地航空隊カタリナ救助活動フラグ　1～3 (吹き出しの数)　発生しなかった場合は存在しない
 	api_stage_flag			：航空戦フラグ [3]
@@ -2303,8 +2304,8 @@ api_req_combined_battle/ec_battle	：通常艦隊 vs 敵連合艦隊 昼戦
 			api_ecl_flag		：敵クリティカルフラグ [7] (-1から始まる)
 			api_fdam			：味方ダメージ [7] (-1から始まる)
 			api_edam			：敵ダメージ [7] (-1から始まる)
-			api_f_sp_list		：[]
-			api_e_sp_list		：[]
+			api_f_sp_list		：[][]
+			api_e_sp_list		：[][]
 		api_stage3_combined	：航空攻撃(対随伴艦隊) api_stage3 と同じ
 	api_support_flag		：支援攻撃フラグ
 	api_support_info		：支援攻撃
@@ -2663,14 +2664,14 @@ api_req_combined_battle/airbattle	：連合艦隊-機動部隊 航空戦
 			api_ecl_flag	：敵クリティカルフラグ
 			api_fdam		：味方被ダメージ　庇われると+0.1
 			api_edam		：敵被ダメージ
-			api_f_sp_list	：[]
-			api_e_sp_list	：[]
+			api_f_sp_list	：[][]
+			api_e_sp_list	：[][]
 		api_stage3_combined	：随伴護衛艦隊の航空攻撃
 			api_frai_flag	：味方被雷撃フラグ
 			api_fbak_flag	：味方被爆撃フラグ
 			api_fcl_flag	：味方クリティカルフラグ?
 			api_fdam		：味方被ダメージ　庇われると+0.1
-			api_f_sp_list	：[]
+			api_f_sp_list	：[][]
 	api_support_flag	：支援艦隊フラグ
 	api_support_info	：支援艦隊情報
 	api_stage_flag2		：第二次航空戦フラグ
@@ -2734,14 +2735,14 @@ api_req_combined_battle/battle	：連合艦隊-機動部隊or輸送部隊 戦闘
 			api_ecl_flag			：[艦船数?]
 			api_fdam				：[艦船数?]
 			api_edam				：[艦船数?]
-			api_f_sp_list			：[]
-			api_e_sp_list			：[]
+			api_f_sp_list			：[艦船数?][]
+			api_e_sp_list			：[艦船数?][]
 		api_stage3_combined		：
 			api_frai_flag			：[艦船数?]
 			api_fbak_flag			：[艦船数?]
 			api_fcl_flag			：[艦船数?]
 			api_fdam				：[艦船数?]
-			api_f_sp_list			：[]
+			api_f_sp_list			：[艦船数?][]
 	api_support_flag		：
 	api_support_info		：
 		api_support_airatack	：
@@ -2884,7 +2885,7 @@ api_req_combined_battle/battle_water	：連合艦隊-水上部隊　戦闘　記
 			api_ebak_flag			：[敵艦船数]
 			api_ecl_flag			：[敵艦船数]
 			api_edam				：[敵艦船数]
-			api_e_sp_list			：[]
+			api_e_sp_list			：[敵艦船数][]
 	api_stage_flag			：[3]
 	api_kouku				：
 		api_plane_from			：[2][]
@@ -2997,14 +2998,14 @@ api_req_combined_battle/ld_airbattle		：連合艦隊 長距離空襲戦　存�
 			api_ecl_flag			：[艦船数]
 			api_fdam				：[艦船数]
 			api_edam				：[艦船数]
-			api_f_sp_list			：[]
-			api_e_sp_list			：[]
+			api_f_sp_list			：[艦船数][]
+			api_e_sp_list			：[艦船数][]
 		api_stage3_combined		：
 			api_frai_flag			：[艦船数]
 			api_fbak_flag			：[艦船数]
 			api_fcl_flag			：[艦船数]
 			api_fdam				：[艦船数]
-			api_f_sp_list			：[]
+			api_f_sp_list			：[艦船数][]
 
 
 
@@ -3075,8 +3076,8 @@ api_req_combined_battle/each_battle		：連合艦隊(機動部隊) vs 敵連合�
 			api_ecl_flag			：[艦船数?]
 			api_fdam				：[艦船数?]
 			api_edam				：[艦船数?]
-			api_f_sp_list			：[]
-			api_e_sp_list			：[]
+			api_f_sp_list			：[艦船数?][]
+			api_e_sp_list			：[艦船数?][]
 		api_stage3_combined		：
 			api_frai_flag			：[艦船数?]
 			api_erai_flag			：[艦船数?]
@@ -3086,8 +3087,8 @@ api_req_combined_battle/each_battle		：連合艦隊(機動部隊) vs 敵連合�
 			api_ecl_flag			：[艦船数?]
 			api_fdam				：[艦船数?]
 			api_edam				：[艦船数?]
-			api_f_sp_list			：[]
-			api_e_sp_list			：[]
+			api_f_sp_list			：[艦船数?][]
+			api_e_sp_list			：[艦船数?][]
 	api_support_flag		：
 	api_support_info		：
 	api_opening_taisen_flag	：
@@ -3228,8 +3229,8 @@ api_req_combined_battle/each_battle_water	：連合艦隊(水上部隊) vs 敵�
 			api_ecl_flag			：[艦船数]
 			api_fdam				：[艦船数]
 			api_edam				：[艦船数]
-			api_f_sp_list			：[]
-			api_e_sp_list			：[]
+			api_f_sp_list			：[艦船数][]
+			api_e_sp_list			：[艦船数][]
 		api_stage3_combined		：
 			api_frai_flag			：[艦船数]
 			api_erai_flag			：[艦船数]
@@ -3239,8 +3240,8 @@ api_req_combined_battle/each_battle_water	：連合艦隊(水上部隊) vs 敵�
 			api_ecl_flag			：[艦船数]
 			api_fdam				：[艦船数]
 			api_edam				：[艦船数]
-			api_f_sp_list			：[]
-			api_e_sp_list			：[]
+			api_f_sp_list			：[艦船数][]
+			api_e_sp_list			：[艦船数][]
 	api_support_flag		：
 	api_support_info		：支援攻撃　api_support_flag = 0 のとき null
 	api_opening_taisen_flag	：
