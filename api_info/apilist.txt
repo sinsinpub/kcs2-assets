@@ -400,6 +400,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				46=Corsair戦闘機/F4U爆撃機
 				47=二式複座戦闘機/襲撃機
 				48=B-25
+				49=Loire 130M (仏夜偵)
 
 		api_taik		：耐久(0)
 		api_souk		：装甲
