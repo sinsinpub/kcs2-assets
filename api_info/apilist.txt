@@ -2487,7 +2487,7 @@ api_req_sortie/battleresult	：通常艦隊　戦闘結果
 	api_get_eventflag		：? api_get_eventitem存在時に消滅
 	api_select_reward_show_type	：報酬選択の演出表示方　0=最初に選択, 1=最後に選択?　選択可能なイベ海域攻略報酬が存在時のみ、'22夏イベから実装
 	api_select_reward_dict	：選択可能な海域攻略報酬　各報酬組表示され、選択した後に /get_event_selected_reward を呼んで実際報酬手に入れる。それまでもし猫ったら再度ログインの時にも同じ選択出来る
-		報酬組番号			：[2]　2や5が観測されてる。現時点では一組＆二択しか実装されてないので、番号の規則不明
+		報酬組番号			：[2]　番号のルールは不明。現時点ではマップ毎に一組＆二択しか実装されてない
 			api_type		：任務達成時の報酬選択を流用、種別api_kindに該当、数値は以下のように変換：1=>13, 2=>11, 3=>12, 4=>1(各種資源、未実装), 5=>14
 			api_id			：api_mst_idに該当、各種ID
 			api_slot_level	：api_slotitem_levelに該当、装備の改修レベル
