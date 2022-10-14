@@ -1170,6 +1170,7 @@ Request.api_req_kaisou/powerup	：近代化改修
 	api_id_items		：素材の艦船IDリスト　,区切り
 	api_id				：対象艦船ID
 	api_slot_dest_flag	：装備を廃棄するか　0=しない　1=する
+	api_limited_feed_type	：期間限定素材のタイプ　0=なし　1=南瓜
 
 api_req_kaisou/powerup			：近代化改修
 	api_powerup_flag	：改修成功フラグ　0=失敗　1=成功
