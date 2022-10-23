@@ -161,7 +161,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				 8=Radar
 				 9=Upgrades
 				10=Sonar
-				14=Daihatsu
+				14=Landing Craft
 				15=Autogyro
 				16=AntiSubmarine Patrol
 				17=Extension Armor
@@ -183,7 +183,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				33=Flying Boat
 				34=Ration
 				35=Supply
-				36=Multi-purpose Seaplane
+				36=Fighter Seaplane
 				37=Amphibious Vehicle
 				38=Land Attacker
 				39=Interceptor
