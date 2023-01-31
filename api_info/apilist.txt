@@ -403,6 +403,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				49=Loire 130M (仏夜偵)
 				50=F4U-2以後の米艦載機/AU-1
 				51=Mosquito系の英航空機
+				52=一式戦 隼II型改 (対潜哨戒機)
 
 		api_taik		：耐久(0)
 		api_souk		：装甲
