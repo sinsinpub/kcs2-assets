@@ -1648,6 +1648,7 @@ api_req_map/start		：出撃　同じメンバはnextのほうが情報が新し
 							10=長距離空襲戦
 							13=レーダー射撃
 							14=泊地
+							15=対潜空襲戦
 		api_passed		：1=通行済み　初期地点は常に0
 	api_rashin_flg		：
 	api_rashin_id		：
@@ -1835,8 +1836,9 @@ api_req_sortie/battle	：通常艦隊　昼戦
 	api_fParam			：味方基礎ステータス [艦船数][4] [0]=火力, [1]=雷装, [2]=対空, [3]=装甲
 	api_ship_ke			：敵艦船ID [艦船数]
 	api_ship_lv			：敵艦船Lv [艦船数]
-	api_e_nowhps		：敵の現在HP [艦船数]
-	api_e_maxhps		：敵の最大HP [艦船数]
+	api_e_nowhps		：敵の現在HP [艦船数]　'23春イベから"N/A"という文字列のHP値の場合があるので数値処理の際に注意を
+	api_e_maxhps		：敵の最大HP [艦船数]　'23春イベから実装された対潜兼空襲マスにて"N/A"文字列の意味は、
+							その敵空母がHPの表示もなく、一歩後ろに下がって航空戦支援(砲撃戦も攻撃)してくる上に、攻撃されることはない
 	api_eSlot			：敵装備スロット [艦船数][5] 空きスロットは-1
 	api_eParam			：敵基礎ステータス [艦船数][4] [0]=火力, [1]=雷装, [2]=対空, [3]=装甲
 	api_flavor_info			：敵ボス艦の情報とフレーバーテキスト[1]
@@ -2449,7 +2451,7 @@ Request.api_req_sortie/battleresult	：通常艦隊　戦闘結果
 	api_btime				：謎の乱数　実際の戦闘経過時間と関係ないみたい、未使用かも
 	api_l_value				：戦闘後各艦の残り耐久[]　味方の第一艦隊
 	api_l_value2			：戦闘後各艦の残り耐久[]　味方の第二艦隊、連合艦隊のみ存在
-	api_l_value3			：戦闘後各艦の残り耐久[]　敵の第一艦隊
+	api_l_value3			：戦闘後各艦の残り耐久[]　敵の第一艦隊　'23春イベから"N/A"という文字列のHP値の場合があるので注意
 	api_l_value4			：戦闘後各艦の残り耐久[]　敵の第二艦隊、連合のみ
 
 api_req_sortie/battleresult	：通常艦隊　戦闘結果
