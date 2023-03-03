@@ -2451,7 +2451,7 @@ Request.api_req_sortie/battleresult	：通常艦隊　戦闘結果
 	api_btime				：謎の乱数　実際の戦闘経過時間と関係ないみたい、未使用かも
 	api_l_value				：戦闘後各艦の残り耐久[]　味方の第一艦隊
 	api_l_value2			：戦闘後各艦の残り耐久[]　味方の第二艦隊、連合艦隊のみ存在
-	api_l_value3			：戦闘後各艦の残り耐久[]　敵の第一艦隊　'23春イベから"N/A"という文字列のHP値の場合があるので注意
+	api_l_value3			：戦闘後各艦の残り耐久[]　敵の第一艦隊　'23春イベから"N/A"(N%2fA)という文字列のHP値の場合があるので注意
 	api_l_value4			：戦闘後各艦の残り耐久[]　敵の第二艦隊、連合のみ
 
 api_req_sortie/battleresult	：通常艦隊　戦闘結果
