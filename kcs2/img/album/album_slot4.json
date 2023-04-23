@@ -960,7 +960,7 @@
                 "h": 150
             }
         },
-        "album_slot4_id_6": {
+        "album_slot4_id_54": {
             "frame": {
                 "x": 930,
                 "y": 930,
@@ -980,7 +980,7 @@
                 "h": 150
             }
         },
-        "album_slot4_id_7": {
+        "album_slot4_id_6": {
             "frame": {
                 "x": 1085,
                 "y": 0,
@@ -1000,7 +1000,7 @@
                 "h": 150
             }
         },
-        "album_slot4_id_8": {
+        "album_slot4_id_7": {
             "frame": {
                 "x": 1085,
                 "y": 155,
@@ -1020,10 +1020,30 @@
                 "h": 150
             }
         },
-        "album_slot4_id_9": {
+        "album_slot4_id_8": {
             "frame": {
                 "x": 1085,
                 "y": 310,
+                "w": 150,
+                "h": 150
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 150,
+                "h": 150
+            },
+            "sourceSize": {
+                "w": 150,
+                "h": 150
+            }
+        },
+        "album_slot4_id_9": {
+            "frame": {
+                "x": 1085,
+                "y": 465,
                 "w": 150,
                 "h": 150
             },
