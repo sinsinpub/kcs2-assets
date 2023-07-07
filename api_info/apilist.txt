@@ -696,8 +696,8 @@ api_port/port		：母港情報
 		api_locked			：保護ロック有無
 		api_locked_equip	：ロックされている装備を装備しているか
 		api_sally_area		：出撃海域　イベント中のみ存在
-		api_sp_effect_items	：リボンや襷付与された場合のみ存在
-			api_kind		：0=なし, 1=海色リボン(useitem: 98), 2=白たすき(useitem: 99)
+		api_sp_effect_items	：リボンや襷付与された場合のみ存在 []
+			api_kind		：0=なし(そもそも存在しない), 1=海色リボン(useitem: 98), 2=白たすき(useitem: 99)
 			api_houg		：上昇火力
 			api_raig		：上昇雷装
 			api_kaih		：上昇回避
