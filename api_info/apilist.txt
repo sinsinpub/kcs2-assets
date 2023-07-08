@@ -977,10 +977,12 @@ api_get_member/questlist	：任務
 		api_progress_flag	：進捗　0=空白(達成含む), 1=50%以上達成, 2=80%以上達成
 		api_invalid_flag	：機種転換不能フラグ　0=可能, 1=不可能(装備がロックされている)
 	api_exec_count			：受領任務数
-	api_exec_type			：?
-	api_c_list				：クライアント側で達成判定用のフラグ[]　対応任務達成ときのみ存在?
+	api_exec_type			：不明、クライアント側全然使ってない
+	api_c_list				：クライアント側で達成判定用のフラグ[]　対応任務達成ときのみ存在
 		api_no				：任務ID
 		api_c_flag			：1=達成
+		api_progress_flag	：2=80%以上達成状態
+		api_stage			：2=遂行中状態
 
 
 Request.api_req_quest/start	：任務開始
@@ -1410,7 +1412,6 @@ Request.api_req_practice/battle	：演習
 api_req_practice/battle	：演習　昼戦　主に api_req_sortie/battle と同じ　一部メンバが存在しない
 	api_deck_id				：
 	api_formation			：[3]
-	api_smoke_type			：演習まだ使用できない
 	api_f_nowhps			：[]
 	api_f_maxhps			：[]
 	api_fParam				：[][4]
@@ -1420,6 +1421,9 @@ api_req_practice/battle	：演習　昼戦　主に api_req_sortie/battle と同
 	api_e_maxhps			：[]
 	api_eSlot				：[][5]
 	api_eParam				：[][4]
+	api_e_effect_list		：相手艦のリボン付与状態[][]　深海にはまだないからたぶん演習のみ
+								[]の中身による以下の優先順位でバナーにリボンを表示：[2]=白たすき, [1]=海色リボン, [0]=なし。ステータス上昇してるかどうか不明
+	api_smoke_type			：演習まだ使用できない
 	api_midnight_flag		：
 	api_search				：[2]
 	api_stage_flag			：[3]
