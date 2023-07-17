@@ -744,6 +744,14 @@ api_port/port		：母港情報
 			api_slot_list		：装備IDリスト []
 		api_base_convert_slot	：配置転換中の装備IDリスト []
 
+
+Request.api_req_member/set_flagship_position	：秘書艦位置更新　一回位置変えた後もう一度母港に戻る場合発生
+	api_position_id			：0=右, 1=中央
+
+api_req_member/set_flagship_position		：秘書艦位置更新
+	(情報なし)
+
+
 api_get_member/slot_item	：装備品情報
 	api_id					：装備固有ID
 	api_slotitem_id			：装備ID
@@ -884,6 +892,10 @@ api_req_kousyou/remodel_slot	：改修工廠　改修実行
 	api_after_slot		：更新された装備データ api_get_member/slot_item参照　失敗時存在せず
 	api_use_slot_id		：消費された装備のID　使ったときのみ存在
 
+Request.api_req_kousyou/open_new_dock	：建造ドック開放
+api_req_kousyou/open_new_dock		：建造ドック開放
+	(情報なし)
+
 
 api_get_member/ndock		：入渠ドック
 	api_member_id			：提督ID
@@ -909,6 +921,10 @@ Request.api_req_nyukyo/speedchange	：バケツ使用
 	api_ndock_id		：入渠ドックID
 
 api_req_nyukyo/speedchange			：バケツ使用
+	(情報なし)
+
+Request.api_req_nyukyo/open_new_dock	：入渠ドック開放
+api_req_nyukyo/open_new_dock		：入渠ドック開放
 	(情報なし)
 
 
@@ -1316,6 +1332,10 @@ Request.api_req_hensei/preset_delete		：編成削除
 api_req_hensei/preset_delete		：編成削除
 	(情報なし)
 
+Request.api_req_hensei/preset_expand		：編成枠拡張
+api_req_hensei/preset_expand				：編成枠拡張
+	(情報なし)
+
 
 Request.api_req_member/updatedeckname	：艦隊名変更
 	api_name			：変更後の艦隊名
@@ -1656,9 +1676,9 @@ Request.api_req_kaisou/preset_slot_update_name	：装備プリセット名変更
 api_req_kaisou/preset_slot_update_name			：装備プリセット名変更
 	(情報なし)
 
-api_req_kaisou/preset_slot_expand				：装備プリセット枠拡張
-	(?)
-
+Request.api_req_kaisou/preset_slot_expand		：装備プリセット拡張
+api_req_kaisou/preset_slot_expand				：装備プリセット拡張
+	(情報なし)
 
 
 Request.api_req_map/start	：出撃
