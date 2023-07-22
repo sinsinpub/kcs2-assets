@@ -32,7 +32,8 @@ api_start2/getData	：艦娘・装備固有データその他
 		api_buildtime	：建造時間　分単位
 		api_broken		：解体資材
 		api_powup		：近代化改修強化値
-		api_backs		：レアリティ　1=藍, 2=青, 3=水, 4=銀, 5=金, 6=虹, 7=輝虹, 8=桜虹
+		api_backs		：レアリティ(背景画像名)　1=藍(c1), 2=青(c2), 3=水(c3), 4=銀(r1), 5=金(r2), 6=虹(sr1), 7=輝虹(sr2), 8=桜虹(sr3)
+							カードなどのグラフィック背景と一致してない艦が20隻以上存在する　改造・改修や建造・ドロップ・報酬及び轟沈時の背景はデータ準拠に表示するため不一致を観測できる
 		api_getmes		：取得時台詞　改行は"<br>"
 		api_afterfuel	：改装時に必要な鋼材
 		api_afterbull	：改装時に必要な弾薬
@@ -81,9 +82,11 @@ api_start2/getData	：艦娘・装備固有データその他
 	
 	api_mst_equip_exslot：補強スロットに装備可能なカテゴリ
 
-	api_mst_equip_exslot_ship		：補強スロットへの特殊装備
-		api_slotitem_id		：装備ID
-		api_ship_ids		：対象となる艦娘ID []
+	api_mst_equip_exslot_ship		：補強スロットへの特殊装備　'23年7月7日から仕様が変更された
+		api_slotitem_id		：装備ID　変更後これが消え、オブジェクトの子の名に移動
+		api_ship_ids		：対象となる艦娘ID　変更後配列[]から子の名がIDになるオブジェクト{}に, 値は1固定　ない場合は null
+		api_ctypes			：対象となる艦型IDが子の名になるオブジェクト　ない場合は null
+		api_stypes			：対象となる艦種IDが子の名になるオブジェクト　33[改良型艦本式タービン]のみ艦種99を指定している、全艦種対象という意味　ない場合は null
 
 	api_mst_stype		：艦船カテゴリ
 		api_id			：カテゴリID(艦船のstypeに対応)
@@ -449,10 +452,11 @@ api_start2/getData	：艦娘・装備固有データその他
 		api_leng		：射程
 		api_cost		：航空機のコスト　航空機でない装備には存在しない
 		api_distance	：航空機の航続距離　航空機でない装備には存在しない
-		api_rare		：レアリティ　0=コモン, 1=レア, 2=ホロ, 3=Sホロ, 4=SSホロ, 5=SSホロ', 6=SSホロ+, 7=SS++
+		api_rare		：レアリティ(背景画像名)　0=コモン(item_c1), 1=レア(item_r1), 2=ホロ(sr1), 3=Sホロ(sr1), 4=SSホロ(sr1), 5=SSホロ(sr2), 6=SSホロ+(sr2), 7=SS++(sr2)
+							カード画像にある星の数と直接関連ないが、ある時期からの装備には一致になってる　でも星は最低でも1個あるので[0=コモン]が全部星1
 		api_broken		：廃棄資材
-		api_usebull		：
-		api_version		：グラフィックバージョン? 2以上のもののみ存在
+		api_usebull		：未使用?　常に文字列 "0"
+		api_version		：グラフィックバージョン　2以上のもののみ存在
 
 	api_mst_furniture	：家具データ
 		api_id			：家具ID
@@ -461,12 +465,12 @@ api_start2/getData	：艦娘・装備固有データその他
 		api_title		：家具名
 		api_description	：説明
 		api_rarity		：レアリティ
-		api_price		：価格
-		api_saleflg		：販売中?
-		api_season		：
+		api_price		：価格　ちなみに、2000以上20000未満は特注家具職人必要, 100000以上はダイナミック割引可能、割引後価格はfloor(max(0.1 * (元値 - 100000), 0))
+		api_saleflg		：1=販売中
+		api_season		：付いてくるBGMID
 		api_version		：画像バージョン
-		api_outside_id	：
-		api_active_flag	：
+		api_outside_id	：窓の外のグラID　指定ないならデフォルトで4を表示
+		api_active_flag	：1=動くアニメーションあり
 
 	api_mst_furnituregraph	：可動家具プロパティ
 		api_id			：家具ID
