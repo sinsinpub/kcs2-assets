@@ -82,8 +82,8 @@
         },
         "common_event_4": {
             "frame": {
-                "x": 188,
-                "y": 73,
+                "x": 53,
+                "y": 153,
                 "w": 47,
                 "h": 68
             },
@@ -102,8 +102,8 @@
         },
         "common_event_5": {
             "frame": {
-                "x": 295,
-                "y": 0,
+                "x": 0,
+                "y": 226,
                 "w": 35,
                 "h": 40
             },
@@ -122,7 +122,7 @@
         },
         "common_event_6": {
             "frame": {
-                "x": 0,
+                "x": 105,
                 "y": 153,
                 "w": 47,
                 "h": 68
@@ -142,8 +142,8 @@
         },
         "common_event_7": {
             "frame": {
-                "x": 41,
-                "y": 226,
+                "x": 243,
+                "y": 180,
                 "w": 36,
                 "h": 39
             },
@@ -162,7 +162,7 @@
         },
         "common_event_8": {
             "frame": {
-                "x": 52,
+                "x": 157,
                 "y": 153,
                 "w": 47,
                 "h": 68
@@ -182,8 +182,8 @@
         },
         "common_event_9": {
             "frame": {
-                "x": 0,
-                "y": 226,
+                "x": 243,
+                "y": 90,
                 "w": 36,
                 "h": 40
             },
@@ -202,9 +202,9 @@
         },
         "common_event_10": {
             "frame": {
-                "x": 104,
+                "x": 0,
                 "y": 153,
-                "w": 47,
+                "w": 48,
                 "h": 68
             },
             "rotated": false,
@@ -212,19 +212,19 @@
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 47,
+                "w": 48,
                 "h": 68
             },
             "sourceSize": {
-                "w": 47,
+                "w": 48,
                 "h": 68
             }
         },
         "common_event_11": {
             "frame": {
-                "x": 295,
-                "y": 45,
-                "w": 35,
+                "x": 243,
+                "y": 135,
+                "w": 36,
                 "h": 40
             },
             "rotated": false,
@@ -232,11 +232,11 @@
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 35,
+                "w": 36,
                 "h": 40
             },
             "sourceSize": {
-                "w": 35,
+                "w": 36,
                 "h": 40
             }
         },
@@ -263,7 +263,7 @@
         "common_event_13": {
             "frame": {
                 "x": 243,
-                "y": 146,
+                "y": 0,
                 "w": 37,
                 "h": 40
             },
@@ -282,9 +282,9 @@
         },
         "common_event_14": {
             "frame": {
-                "x": 156,
-                "y": 153,
-                "w": 47,
+                "x": 188,
+                "y": 73,
+                "w": 50,
                 "h": 68
             },
             "rotated": false,
@@ -292,99 +292,19 @@
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 47,
+                "w": 50,
                 "h": 68
             },
             "sourceSize": {
-                "w": 47,
+                "w": 50,
                 "h": 68
             }
         },
         "common_event_15": {
             "frame": {
-                "x": 295,
-                "y": 90,
-                "w": 35,
-                "h": 40
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 35,
-                "h": 40
-            },
-            "sourceSize": {
-                "w": 35,
-                "h": 40
-            }
-        },
-        "common_event_16": {
-            "frame": {
                 "x": 243,
-                "y": 0,
-                "w": 47,
-                "h": 68
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 47,
-                "h": 68
-            },
-            "sourceSize": {
-                "w": 47,
-                "h": 68
-            }
-        },
-        "common_event_17": {
-            "frame": {
-                "x": 295,
-                "y": 180,
-                "w": 35,
-                "h": 39
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 35,
-                "h": 39
-            },
-            "sourceSize": {
-                "w": 35,
-                "h": 39
-            }
-        },
-        "common_event_18": {
-            "frame": {
-                "x": 243,
-                "y": 73,
-                "w": 47,
-                "h": 68
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 47,
-                "h": 68
-            },
-            "sourceSize": {
-                "w": 47,
-                "h": 68
-            }
-        },
-        "common_event_19": {
-            "frame": {
-                "x": 295,
-                "y": 135,
-                "w": 35,
+                "y": 45,
+                "w": 37,
                 "h": 40
             },
             "rotated": false,
@@ -392,11 +312,11 @@
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 35,
+                "w": 37,
                 "h": 40
             },
             "sourceSize": {
-                "w": 35,
+                "w": 37,
                 "h": 40
             }
         }
@@ -406,7 +326,7 @@
         "image": "common_event.png",
         "format": "RGBA8888",
         "size": {
-            "w": 330,
+            "w": 280,
             "h": 266
         },
         "scale": 1
