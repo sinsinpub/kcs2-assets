@@ -2573,13 +2573,13 @@ api_req_sortie/battleresult	：通常艦隊　戦闘結果
 		api_id				：ID　選択式の場合のID値は api_select_reward_dict の「報酬組番号」を参照
 		api_slot_level		：改修レベル
 		api_value			：個数
-	api_get_eventflag		：? api_get_eventitem存在時に消滅
+	api_get_eventflag		：api_get_eventitem存在時に消滅　すでに削除されてる?
 	api_select_reward_show_type	：報酬選択の演出表示方　0=最初に選択, 1=最後に選択?　選択可能なイベ海域攻略報酬が存在時のみ、'22夏イベから実装　'23春イベから削除
 	api_select_reward_dict	：選択可能な海域攻略報酬　各報酬組表示され、選択した後に /get_event_selected_reward を呼んで実際報酬手に入れる。それまでもし猫ったら再度ログインの時にも同じ選択出来る
-		報酬組番号			：[2]　番号はたぶんDBの中この報酬組のkey値?　'23春イベからマップ毎に複数組の二択が実装、表示順番は api_get_eventitem の順番を参照
-			api_type		：任務達成時の報酬選択を流用(/questlist.api_select_rewards 参照)、種別api_kindに該当、数値は以下のように変換：1=>13, 2=>11, 3=>12, 4=>1, 5=>14
+		報酬組番号			：[2]　番号は数字3桁、たぶん各桁はマップ、難易度、順番号。例えばE3甲一番目の選択組は 341 になる　'23春イベからマップ毎に複数組の二択が実装、表示順番は api_get_eventitem の順番を参照
+			api_type		：任務達成時の報酬選択を流用(/questlist.api_select_rewards 参照)、種別api_kindに該当、数値は以下のように変換：1=>13(アイテム), 2=>11(艦船), 3=>12(装備), 4=>1(資源), 5=>14(家具)
 			api_id			：api_mst_idに該当、各種ID
-			api_slot_level	：api_slotitem_levelに該当、装備の改修レベル
+			api_slot_level	：api_slotitem_levelに該当、装備の改修レベル (改修1以上のみ存在)
 			api_value		：api_countに該当、個数
 			api_item_no		：api_noに該当、組内の表示番号 (1から始まる連番)
 	api_m_suffix			：'18初秋イベ　海域攻略完了メッセージ画像のパス(の一部)　zshjdpzahswjbytw, jexxexrraiahjydb, kfwtcxpasnhtbrfp など
@@ -3789,10 +3789,12 @@ Request.api_req_map/select_eventmap_rank	：イベント海域難易度選択
 	api_rank		：難易度 1=丁, 2=丙, 3=乙, 4=甲
 
 api_req_map/select_eventmap_rank	：イベント海域難易度選択　場合によって内容が変わる可能性あり(メンバが消滅するなど)
-	api_now_maphp	：海域ゲージの現在値
-	api_max_maphp	：海域ゲージの最大値
-	api_gauge_type	：ゲージ種別 2=HP, 3=TP
-	api_gauge_num	：現在のゲージ本数
+	api_maphp			：ゲージ情報
+		api_now_maphp	：海域ゲージの現在値
+		api_max_maphp	：海域ゲージの最大値
+		api_gauge_type	：ゲージ種別 2=HP, 3=TP
+		api_gauge_num	：現在のゲージ本数
+	api_sally_flag		：出撃可能フラグ[]
 
 
 Request.api_req_furniture/buy		：家具購入
