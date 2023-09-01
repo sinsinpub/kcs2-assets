@@ -1458,8 +1458,8 @@ api_req_practice/battle	：演習　昼戦　主に api_req_sortie/battle と同
 	api_eParam				：[][4]
 	api_e_effect_list		：相手艦のリボン付与状態[][]　深海にはまだないからたぶん演習のみ
 								[]の中身による以下の優先順位でバナーにリボンを表示：[2]=白たすき, [1]=海色リボン, [0]=なし。ステータス上昇してるかどうか不明
-	api_smoke_type			：演習まだ使用できない
-	api_balloon_cell		：阻塞気球使用できる?
+	api_smoke_type			：0　演習まだ使用できない
+	api_balloon_cell		：0　演習まだ阻塞気球飛ばせない
 	api_midnight_flag		：
 	api_search				：[2]
 	api_stage_flag			：[3]
@@ -1531,8 +1531,8 @@ api_req_practice/midnight_battle		：演習　夜戦　主に api_req_battle_mid
 	api_e_maxhps			：[]
 	api_eSlot				：[][5]
 	api_eParam				：[][4]
-	api_smoke_type			：演習まだ使用できない
-	api_balloon_cell		：夜戦では飛ばさない
+	api_smoke_type			：0
+	api_balloon_cell		：0
 	api_touch_plane			：[2]
 	api_flare_pos			：[2]
 	api_hougeki				：
@@ -1937,7 +1937,9 @@ api_req_sortie/battle	：通常艦隊　昼戦
 		api_pos_y			：グラ表示座標Y
 		api_data			：グラ状態文字列?　""=一般状態, "d"=装甲破壊状態
 	api_smoke_type			：煙幕発生種類　0=未使用か不発、1~3=濃密度、発煙装置装備数に応じてランダム　(10周年2023年4月23日実装)
-	api_balloon_cell		：阻塞気球を飛ばす　0=ない, 1=飛ばす　条件は気球装備艦は小破未満、未退避、後方援護空母ではない。最大3個飛ばせる　'23夏後段作戦から実装
+	api_balloon_cell		：阻塞気球を飛ばせるマスフラグ　0=不可, 1=可能　'23夏後段作戦から実装
+								名前にcell(マス)ついてるから、「飛ばした戦闘」じゃなく「飛ばせるマス」って意味。実際通常海域一部の陸上型存在するマス(3-5-H、4-3ボス、4-5ボス、6-4ボス)にも1になってる、敵味方気球装備の有無が関係なく
+								それは別として、気球飛ばす表示の条件は気球装備艦は未撃沈、未退避、後方援護空母ではない。最大3個まで飛ばせる
 	api_midnight_flag		：夜戦突入可否　0=不可(昼戦で敵全滅など), 1=可能
 	api_xal01				：1=装甲破壊状態 そうでなければ存在しない　昔はapi_boss_damagedだった?
 	api_escape_idx			：退避艦インデックス　[退避艦数]　1基点　いなければ存在しない
@@ -2159,7 +2161,7 @@ api_req_battle_midnight/battle		：通常艦隊　夜戦
 	api_eSlot			：敵装備スロット [艦船数][5] 空きスロットは -1
 	api_eParam			：敵基礎ステータス [艦船数][4] [0]=火力, [1]=雷装, [2]=対空, [3]=装甲
 	api_smoke_type		：夜戦まだ発生しない?
-	api_balloon_cell	：昼戦と一緒の値だが夜戦では飛ばさない
+	api_balloon_cell	：昼戦と一緒だが、画面上飛ばさない
 	api_escape_idx		：退避艦インデックス　[退避艦数]　1基点　いなければ存在しない
 	api_touch_plane		：夜間触接機ID　[2]　[0]=味方, [1]=敵　なければ -1
 	api_flare_pos		：照明弾投射艦インデックス　[2]　[0]=味方, [1]=敵　0基点　なければ -1
@@ -2213,7 +2215,7 @@ api_req_battle_midnight/sp_midnight		：通常艦隊　開幕夜戦　基本的�
 	api_eSlot				：
 	api_eParam				：
 	api_smoke_type			：開幕夜戦使用できない
-	api_balloon_cell		：開幕夜戦では飛ばさない
+	api_balloon_cell		：開幕夜戦では飛ばせない?
 	api_n_support_flag		：夜戦支援フラグ　昼戦のそれと同じ
 	api_n_support_info		：夜戦支援　不発時は存在しない　メンバの内容についてはおそらく昼戦と同じ
 		api_support_airatack		：空撃か対潜の時に有効　それ以外なら null *スペルミス注意*
@@ -2286,7 +2288,7 @@ api_req_sortie/ld_shooting		：通常艦隊　敵レーダー射撃　昼戦扱�
 	api_e_maxhps			：[]
 	api_eSlot				：[][5]
 	api_eParam				：[][4]　索敵系フラグ(api_search)は存在しないので注意
-	api_smoke_type			：陣形選択できないので
+	api_smoke_type			：陣形選択できないので使用不可
 	api_balloon_cell		：
 	api_midnight_flag		：0 ?
 	api_air_base_injection	：基地航空隊　噴式強襲攻撃　発生時のみ存在
@@ -2372,7 +2374,7 @@ api_req_combined_battle/ec_battle	：通常艦隊 vs 敵連合艦隊 昼戦
 		api_pos_y			：グラ表示座標Y
 		api_data			：グラ状態?　""=一般状態, "d"=装甲破壊状態
 	api_smoke_type			：煙幕発生種類
-	api_balloon_cell		：阻塞気球飛ばすフラグ
+	api_balloon_cell		：阻塞気球飛ばせるフラグ
 	api_midnight_flag		：夜戦可否
 	api_xal01				：装甲破壊状態
 	api_escape_idx			：退避艦インデックス　[退避艦数]　1基点　いなければ存在しない
@@ -2533,7 +2535,7 @@ api_req_combined_battle/ec_midnight_battle	：通常艦隊/連合艦隊夜戦（
 			api_sp_list				：[]
 			api_damage				：[][]
 	api_smoke_type			：夜戦まだ発生しない?
-	api_balloon_cell		：夜戦では飛ばさない
+	api_balloon_cell		：
 	api_active_deck			：戦闘参加艦隊フラグ　[2]　[0]=味方側, [1]=敵側　1=主力艦隊, 2=随伴艦隊 
 	api_touch_plane			：夜間触接機ID [2]
 	api_flare_pos			：照明弾投射艦インデックス　[2]; [味方, 敵]　0起点　発動しなければ-1
@@ -3654,7 +3656,7 @@ api_req_combined_battle/ld_shooting		：連合艦隊　敵レーダー射撃　�
 	api_e_maxhps			：[]
 	api_eSlot				：[][5]
 	api_eParam				：[][4]　索敵系フラグ(api_search)は存在しないので注意
-	api_smoke_type			：陣形選択できないので
+	api_smoke_type			：陣形選択できないので使用不可
 	api_balloon_cell		：
 	api_midnight_flag		：0 ?
 	api_air_base_injection	：基地航空隊　噴式強襲攻撃　発生時のみ存在
