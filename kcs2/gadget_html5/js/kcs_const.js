@@ -54,12 +54,12 @@ ConnectionInfo.Interval_Min   = 10;
 var MaintenanceInfo = {};
 MaintenanceInfo.IsDoing       = 0;
 MaintenanceInfo.IsEmergency   = 0;
-MaintenanceInfo.StartDateTime = Date.parse("2023/08/08 00:00:00");
-MaintenanceInfo.EndDateTime   = Date.parse("2023/08/08 00:59:59");
+MaintenanceInfo.StartDateTime = Date.parse("2023/10/11 00:00:00");
+MaintenanceInfo.EndDateTime   = Date.parse("2023/10/11 00:59:59");
 
 // Version 情報
 var VersionInfo = {};
-VersionInfo.scriptVesion      = "5.7.1.1";
+VersionInfo.scriptVesion      = "5.7.2.0";
 
 // Entrance 情報
 var EntranceInfo = {};
@@ -89,4 +89,3 @@ EntranceInfo.World_17_User    = 2;
 EntranceInfo.World_18_User    = 2;
 EntranceInfo.World_19_User    = 2;
 EntranceInfo.World_20_User    = 2;
-2
