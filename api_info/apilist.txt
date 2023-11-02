@@ -78,7 +78,7 @@ api_start2/getData	：艦娘・装備固有データその他
 	api_mst_slotitem_equiptype		：装備カテゴリ
 		api_id			：カテゴリID(装備のtype[2]に対応)
 		api_name		：カテゴリ名
-		api_show_flg	：
+		api_show_flg	：開発結果を表示する際に装備カテゴリ名付くフラグ 0=装備名のみ
 	
 	api_mst_equip_exslot：補強スロットに装備可能なカテゴリ
 
@@ -87,6 +87,7 @@ api_start2/getData	：艦娘・装備固有データその他
 		api_ship_ids		：対象となる艦娘ID　変更後配列[]から子の名がIDになるオブジェクト{}に, 値は1固定　ない場合は null
 		api_ctypes			：対象となる艦型IDが子の名になるオブジェクト　ない場合は null
 		api_stypes			：対象となる艦種IDが子の名になるオブジェクト　33[改良型艦本式タービン]のみ艦種99を指定している、全艦種対象という意味　ない場合は null
+		api_req_level		：装備必要の最低改修レベル　'23年11月2日から追加
 
 	api_mst_stype		：艦船カテゴリ
 		api_id			：カテゴリID(艦船のstypeに対応)
@@ -750,10 +751,12 @@ api_port/port		：母港情報
 	api_parallel_quest_count	：最大受領可能任務数
 	api_dest_ship_slot		：解体時の装備廃棄フラグ　0=保管, 1=廃棄
 	api_plane_info				：基地航空隊関連データ　要素があるときのみ存在（メンバも然り）
-		api_unset_slot			：更新された unsetslot? []　基地航空隊が更新されたときに増える
+		api_unset_slot			：更新された unsetslot []　基地航空隊が更新されたときに増える
 			api_type3No			：装備カテゴリID
 			api_slot_list		：装備IDリスト []
 		api_base_convert_slot	：配置転換中の装備IDリスト []
+	api_c_flag2				：ミニイベントの度に限定アイテムの使用回数を制限用のフラグ
+	api_c_flags				：[]　上の機能と一緒、配列になってるだけ。秋刀魚とか節分豆とか南瓜とか
 
 
 Request.api_req_member/set_flagship_position	：秘書艦位置更新　一回位置変えた後もう一度母港に戻る場合発生
