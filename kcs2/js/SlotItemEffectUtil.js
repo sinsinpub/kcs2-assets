@@ -162,6 +162,9 @@ function(_nb8, _nb9, _nba) {
                 'isExecute': Boolean(_nbk.get_slotnums(84)),
                 'execFunc': _nbg.getSlot84PersonalEffect
             }, {
+                'isExecute': Boolean(_nbk.get_slotnums(85)),
+                'execFunc': _nbg.getSlot85PersonalEffect
+            }, {
                 'isExecute': Boolean(_nbk.get_slotnums(87)),
                 'execFunc': _nbg.getSlot87PersonalEffect
             }, {
@@ -776,6 +779,9 @@ function(_nb8, _nb9, _nba) {
             }, {
                 'isExecute': Boolean(_nbk.get_slotnums(518)),
                 'execFunc': _nbg.getSlot518PersonalEffect
+            }, {
+                'isExecute': Boolean(_nbk.get_slotnums(519)),
+                'execFunc': _nbg.getSlot519PersonalEffect
             }], _nbm = new _nbh.SlotItemEffectModel(), _nbn = 0, _nbo = _nbl; _nbn < _nbo.length; _nbn++) {
             var _nbp, _nbq = _nbo[_nbn];
             _nbq.isExecute && (_nbp = _nbq.execFunc(_nbk), _nbm.add(_nbp));
@@ -1020,7 +1026,7 @@ function(_ncv, _ncw, _ncx) {
     defineModule(_ncw);
     Object.defineProperty(_ncw, '__esModule', {
         'value': !0
-    }), _ncy(_ncx(950)), _ncy(_ncx(951)), _ncy(_ncx(952)), _ncy(_ncx(953)), _ncy(_ncx(954)), _ncy(_ncx(955)), _ncy(_ncx(956)), _ncy(_ncx(957)), _ncy(_ncx(958)), _ncy(_ncx(959)), _ncy(_ncx(960)), _ncy(_ncx(961)), _ncy(_ncx(962)), _ncy(_ncx(963)), _ncy(_ncx(964)), _ncy(_ncx(965)), _ncy(_ncx(966)), _ncy(_ncx(967)), _ncy(_ncx(968)), _ncy(_ncx(969)), _ncy(_ncx(970)), _ncy(_ncx(971)), _ncy(_ncx(972)), _ncy(_ncx(973)), _ncy(_ncx(974)), _ncy(_ncx(975)), _ncy(_ncx(976)), _ncy(_ncx(977)), _ncy(_ncx(978)), _ncy(_ncx(979)), _ncy(_ncx(980)), _ncy(_ncx(981)), _ncy(_ncx(982)), _ncy(_ncx(983)), _ncy(_ncx(984)), _ncy(_ncx(985)), _ncy(_ncx(986)), _ncy(_ncx(987)), _ncy(_ncx(988)), _ncy(_ncx(989)), _ncy(_ncx(990)), _ncy(_ncx(991)), _ncy(_ncx(992)), _ncy(_ncx(993)), _ncy(_ncx(994)), _ncy(_ncx(995)), _ncy(_ncx(996)), _ncy(_ncx(997)), _ncy(_ncx(998)), _ncy(_ncx(999)), _ncy(_ncx(1000)), _ncy(_ncx(1001)), _ncy(_ncx(1002)), _ncy(_ncx(1003)), _ncy(_ncx(1004)), _ncy(_ncx(1005)), _ncy(_ncx(1006)), _ncy(_ncx(1007)), _ncy(_ncx(1008)), _ncy(_ncx(1009)), _ncy(_ncx(1010)), _ncy(_ncx(1011)), _ncy(_ncx(1012)), _ncy(_ncx(1013)), _ncy(_ncx(1014)), _ncy(_ncx(1015)), _ncy(_ncx(1016)), _ncy(_ncx(1017)), _ncy(_ncx(1018)), _ncy(_ncx(1019)), _ncy(_ncx(1020)), _ncy(_ncx(1021)), _ncy(_ncx(1022)), _ncy(_ncx(1023)), _ncy(_ncx(1024)), _ncy(_ncx(1025)), _ncy(_ncx(1026)), _ncy(_ncx(1027)), _ncy(_ncx(1028)), _ncy(_ncx(1029)), _ncy(_ncx(1030)), _ncy(_ncx(1031)), _ncy(_ncx(1032)), _ncy(_ncx(1033)), _ncy(_ncx(1034)), _ncy(_ncx(1035)), _ncy(_ncx(1036)), _ncy(_ncx(1037)), _ncy(_ncx(1038)), _ncy(_ncx(1039)), _ncy(_ncx(1040)), _ncy(_ncx(1041)), _ncy(_ncx(1042)), _ncy(_ncx(1043)), _ncy(_ncx(1044)), _ncy(_ncx(1045)), _ncy(_ncx(1046)), _ncy(_ncx(1047)), _ncy(_ncx(1048)), _ncy(_ncx(1049)), _ncy(_ncx(1050)), _ncy(_ncx(1051)), _ncy(_ncx(1052)), _ncy(_ncx(1053)), _ncy(_ncx(1054)), _ncy(_ncx(1055)), _ncy(_ncx(1056)), _ncy(_ncx(1057)), _ncy(_ncx(1058)), _ncy(_ncx(1059)), _ncy(_ncx(1060)), _ncy(_ncx(1061)), _ncy(_ncx(1062)), _ncy(_ncx(1063)), _ncy(_ncx(1064)), _ncy(_ncx(1065)), _ncy(_ncx(1066)), _ncy(_ncx(1067)), _ncy(_ncx(1068)), _ncy(_ncx(1069)), _ncy(_ncx(1070)), _ncy(_ncx(1071)), _ncy(_ncx(1072)), _ncy(_ncx(1073)), _ncy(_ncx(1074)), _ncy(_ncx(1075)), _ncy(_ncx(1076)), _ncy(_ncx(1077)), _ncy(_ncx(1078)), _ncy(_ncx(1079)), _ncy(_ncx(1080)), _ncy(_ncx(1081)), _ncy(_ncx(1082)), _ncy(_ncx(1083)), _ncy(_ncx(1084)), _ncy(_ncx(1085)), _ncy(_ncx(1086)), _ncy(_ncx(1087)), _ncy(_ncx(1088)), _ncy(_ncx(1089)), _ncy(_ncx(1090)), _ncy(_ncx(1091)), _ncy(_ncx(1092)), _ncy(_ncx(1093)), _ncy(_ncx(1094)), _ncy(_ncx(1095)), _ncy(_ncx(1096)), _ncy(_ncx(1097)), _ncy(_ncx(1098)), _ncy(_ncx(1099)), _ncy(_ncx(1100)), _ncy(_ncx(1101)), _ncy(_ncx(1102)), _ncy(_ncx(1103)), _ncy(_ncx(1104)), _ncy(_ncx(1105)), _ncy(_ncx(1106)), _ncy(_ncx(1107)), _ncy(_ncx(1108)), _ncy(_ncx(1109)), _ncy(_ncx(1110)), _ncy(_ncx(1111)), _ncy(_ncx(1112)), _ncy(_ncx(1113)), _ncy(_ncx(1114)), _ncy(_ncx(1115)), _ncy(_ncx(1116)), _ncy(_ncx(1117)), _ncy(_ncx(1118)), _ncy(_ncx(1119)), _ncy(_ncx(1120)), _ncy(_ncx(1121)), _ncy(_ncx(1122)), _ncy(_ncx(1123)), _ncy(_ncx(1124)), _ncy(_ncx(1125)), _ncy(_ncx(1126)), _ncy(_ncx(1127)), _ncy(_ncx(1128)), _ncy(_ncx(1129)), _ncy(_ncx(1130)), _ncy(_ncx(1131)), _ncy(_ncx(1132)), _ncy(_ncx(1133)), _ncy(_ncx(1134)), _ncy(_ncx(1135)), _ncy(_ncx(1136)), _ncy(_ncx(1137)), _ncy(_ncx(1138)), _ncy(_ncx(1139)), _ncy(_ncx(1140)), _ncy(_ncx(1141)), _ncy(_ncx(1142)), _ncy(_ncx(1143)), _ncy(_ncx(1144)), _ncy(_ncx(1145)), _ncy(_ncx(1146)), _ncy(_ncx(1147)), _ncy(_ncx(1148)), _ncy(_ncx(1149)), _ncy(_ncx(1150)), _ncy(_ncx(1151)), _ncy(_ncx(1152)), _ncy(_ncx(1153)), _ncy(_ncx(1154)), _ncy(_ncx(1155)), _ncy(_ncx(1156)), _ncy(_ncx(1157)), _ncy(_ncx(1158)), _ncy(_ncx(1159)), _ncy(_ncx(1160)), _ncy(_ncx(1161)), _ncy(_ncx(1162)), _ncy(_ncx(1163)), _ncy(_ncx(1164)), _ncy(_ncx(1165)), _ncy(_ncx(1166)), _ncy(_ncx(1167)), _ncy(_ncx(1168)), _ncy(_ncx(1169)), _ncy(_ncx(1170)), _ncy(_ncx(1171)), _ncy(_ncx(1172)), _ncy(_ncx(1173)), _ncy(_ncx(1174)), _ncy(_ncx(1175)), _ncy(_ncx(1176)), _ncy(_ncx(1177)), _ncy(_ncx(1178)), _ncy(_ncx(1179)), _ncy(_ncx(1180)), _ncy(_ncx(1181)), _ncy(_ncx(1182)), _ncy(_ncx(1183)), _ncy(_ncx(1184)), _ncy(_ncx(1185));
+    }), _ncy(_ncx(950)), _ncy(_ncx(951)), _ncy(_ncx(952)), _ncy(_ncx(953)), _ncy(_ncx(954)), _ncy(_ncx(955)), _ncy(_ncx(956)), _ncy(_ncx(957)), _ncy(_ncx(958)), _ncy(_ncx(959)), _ncy(_ncx(960)), _ncy(_ncx(961)), _ncy(_ncx(962)), _ncy(_ncx(963)), _ncy(_ncx(964)), _ncy(_ncx(965)), _ncy(_ncx(966)), _ncy(_ncx(967)), _ncy(_ncx(968)), _ncy(_ncx(969)), _ncy(_ncx(970)), _ncy(_ncx(971)), _ncy(_ncx(972)), _ncy(_ncx(973)), _ncy(_ncx(974)), _ncy(_ncx(975)), _ncy(_ncx(976)), _ncy(_ncx(977)), _ncy(_ncx(978)), _ncy(_ncx(979)), _ncy(_ncx(980)), _ncy(_ncx(981)), _ncy(_ncx(982)), _ncy(_ncx(983)), _ncy(_ncx(984)), _ncy(_ncx(985)), _ncy(_ncx(986)), _ncy(_ncx(987)), _ncy(_ncx(988)), _ncy(_ncx(989)), _ncy(_ncx(990)), _ncy(_ncx(991)), _ncy(_ncx(992)), _ncy(_ncx(993)), _ncy(_ncx(994)), _ncy(_ncx(995)), _ncy(_ncx(996)), _ncy(_ncx(997)), _ncy(_ncx(998)), _ncy(_ncx(999)), _ncy(_ncx(1000)), _ncy(_ncx(1001)), _ncy(_ncx(1002)), _ncy(_ncx(1003)), _ncy(_ncx(1004)), _ncy(_ncx(1005)), _ncy(_ncx(1006)), _ncy(_ncx(1007)), _ncy(_ncx(1008)), _ncy(_ncx(1009)), _ncy(_ncx(1010)), _ncy(_ncx(1011)), _ncy(_ncx(1012)), _ncy(_ncx(1013)), _ncy(_ncx(1014)), _ncy(_ncx(1015)), _ncy(_ncx(1016)), _ncy(_ncx(1017)), _ncy(_ncx(1018)), _ncy(_ncx(1019)), _ncy(_ncx(1020)), _ncy(_ncx(1021)), _ncy(_ncx(1022)), _ncy(_ncx(1023)), _ncy(_ncx(1024)), _ncy(_ncx(1025)), _ncy(_ncx(1026)), _ncy(_ncx(1027)), _ncy(_ncx(1028)), _ncy(_ncx(1029)), _ncy(_ncx(1030)), _ncy(_ncx(1031)), _ncy(_ncx(1032)), _ncy(_ncx(1033)), _ncy(_ncx(1034)), _ncy(_ncx(1035)), _ncy(_ncx(1036)), _ncy(_ncx(1037)), _ncy(_ncx(1038)), _ncy(_ncx(1039)), _ncy(_ncx(1040)), _ncy(_ncx(1041)), _ncy(_ncx(1042)), _ncy(_ncx(1043)), _ncy(_ncx(1044)), _ncy(_ncx(1045)), _ncy(_ncx(1046)), _ncy(_ncx(1047)), _ncy(_ncx(1048)), _ncy(_ncx(1049)), _ncy(_ncx(1050)), _ncy(_ncx(1051)), _ncy(_ncx(1052)), _ncy(_ncx(1053)), _ncy(_ncx(1054)), _ncy(_ncx(1055)), _ncy(_ncx(1056)), _ncy(_ncx(1057)), _ncy(_ncx(1058)), _ncy(_ncx(1059)), _ncy(_ncx(1060)), _ncy(_ncx(1061)), _ncy(_ncx(1062)), _ncy(_ncx(1063)), _ncy(_ncx(1064)), _ncy(_ncx(1065)), _ncy(_ncx(1066)), _ncy(_ncx(1067)), _ncy(_ncx(1068)), _ncy(_ncx(1069)), _ncy(_ncx(1070)), _ncy(_ncx(1071)), _ncy(_ncx(1072)), _ncy(_ncx(1073)), _ncy(_ncx(1074)), _ncy(_ncx(1075)), _ncy(_ncx(1076)), _ncy(_ncx(1077)), _ncy(_ncx(1078)), _ncy(_ncx(1079)), _ncy(_ncx(1080)), _ncy(_ncx(1081)), _ncy(_ncx(1082)), _ncy(_ncx(1083)), _ncy(_ncx(1084)), _ncy(_ncx(1085)), _ncy(_ncx(1086)), _ncy(_ncx(1087)), _ncy(_ncx(1088)), _ncy(_ncx(1089)), _ncy(_ncx(1090)), _ncy(_ncx(1091)), _ncy(_ncx(1092)), _ncy(_ncx(1093)), _ncy(_ncx(1094)), _ncy(_ncx(1095)), _ncy(_ncx(1096)), _ncy(_ncx(1097)), _ncy(_ncx(1098)), _ncy(_ncx(1099)), _ncy(_ncx(1100)), _ncy(_ncx(1101)), _ncy(_ncx(1102)), _ncy(_ncx(1103)), _ncy(_ncx(1104)), _ncy(_ncx(1105)), _ncy(_ncx(1106)), _ncy(_ncx(1107)), _ncy(_ncx(1108)), _ncy(_ncx(1109)), _ncy(_ncx(1110)), _ncy(_ncx(1111)), _ncy(_ncx(1112)), _ncy(_ncx(1113)), _ncy(_ncx(1114)), _ncy(_ncx(1115)), _ncy(_ncx(1116)), _ncy(_ncx(1117)), _ncy(_ncx(1118)), _ncy(_ncx(1119)), _ncy(_ncx(1120)), _ncy(_ncx(1121)), _ncy(_ncx(1122)), _ncy(_ncx(1123)), _ncy(_ncx(1124)), _ncy(_ncx(1125)), _ncy(_ncx(1126)), _ncy(_ncx(1127)), _ncy(_ncx(1128)), _ncy(_ncx(1129)), _ncy(_ncx(1130)), _ncy(_ncx(1131)), _ncy(_ncx(1132)), _ncy(_ncx(1133)), _ncy(_ncx(1134)), _ncy(_ncx(1135)), _ncy(_ncx(1136)), _ncy(_ncx(1137)), _ncy(_ncx(1138)), _ncy(_ncx(1139)), _ncy(_ncx(1140)), _ncy(_ncx(1141)), _ncy(_ncx(1142)), _ncy(_ncx(1143)), _ncy(_ncx(1144)), _ncy(_ncx(1145)), _ncy(_ncx(1146)), _ncy(_ncx(1147)), _ncy(_ncx(1148)), _ncy(_ncx(1149)), _ncy(_ncx(1150)), _ncy(_ncx(1151)), _ncy(_ncx(1152)), _ncy(_ncx(1153)), _ncy(_ncx(1154)), _ncy(_ncx(1155)), _ncy(_ncx(1156)), _ncy(_ncx(1157)), _ncy(_ncx(1158)), _ncy(_ncx(1159)), _ncy(_ncx(1160)), _ncy(_ncx(1161)), _ncy(_ncx(1162)), _ncy(_ncx(1163)), _ncy(_ncx(1164)), _ncy(_ncx(1165)), _ncy(_ncx(1166)), _ncy(_ncx(1167)), _ncy(_ncx(1168)), _ncy(_ncx(1169)), _ncy(_ncx(1170)), _ncy(_ncx(1171)), _ncy(_ncx(1172)), _ncy(_ncx(1173)), _ncy(_ncx(1174)), _ncy(_ncx(1175)), _ncy(_ncx(1176)), _ncy(_ncx(1177)), _ncy(_ncx(1178)), _ncy(_ncx(1179)), _ncy(_ncx(1180)), _ncy(_ncx(1181)), _ncy(_ncx(1182)), _ncy(_ncx(1183)), _ncy(_ncx(1184)), _ncy(_ncx(1185)), _ncy(_ncx(1186)), _ncy(_ncx(1187));
 },
 function(_nd1, _nd2, _nd3) {
     'use strict';
@@ -5970,5 +5976,35 @@ function(_pkw, _pkx, _pky) {
         if (34 != _pl0.ctype && 56 != _pl0.ctype || (_pl3.houg += 1, _pl3.tyku += 1, _pl3.tais += 1, _pl3.kaih += 1, _pl2 = !0), 16 == _pl0.stype && (_pl3.houg += 1, _pl3.raig += 1, _pl3.kaih += 1, _pl2 = !0), 622 != _pl0.ship_id && 624 != _pl0.ship_id && 623 != _pl0.ship_id || (_pl3.houg += 1, _pl2 = !0), 622 != _pl0.ship_id && 624 != _pl0.ship_id || (_pl3.tyku += 1, _pl2 = !0), 624 == _pl0.ship_id && (_pl3.tais += 2, _pl2 = !0), 0 == _pl2) return _pl1;
         var _pl4 = _pl0.get_slotnums(518);
         return _pl1.add(_pl3.multiply(_pl4)), _pl1;
+    };
+},
+function(_pl5, _pl6, _pl7) {
+    'use strict';
+    defineModule(_pl6);
+    Object.defineProperty(_pl6, '__esModule', {
+        'value': !0
+    });
+    var _pl8 = _pl7(3);
+    _pl6.getSlot85PersonalEffect = function(_pl9) {
+        var _pla = new _pl8.SlotItemEffectModel(),
+            _plb = _pl9.get_each_level_over_nums([85]),
+            _plc = _plb[85][6],
+            _pld = _plb[85][8],
+            _ple = _plb[85][10],
+            _plf = _pl9.get_have_rader_nums().air_rader,
+            _plg = _pl9.getCountryName();
+        return 0 < _plc && (_pla.tyku += +_plc, _pla.kaih += +_plc, 1 <= _plf && (_pla.tyku += 2)), 0 < _pld && (_pla.houg += +_pld, 'ドイツ' != _plg && 'イタリア' != _plg || (_pla.tyku += +_pld, _pla.kaih += +_pld)), 0 < _ple && (_pla.kaih += +_ple, _pla.houm += +_ple, 'ドイツ' != _plg && 'イタリア' != _plg || (_pla.houg += 1)), _pla;
+    };
+},
+function(_plh, _pli, _plj) {
+    'use strict';
+    defineModule(_pli);
+    Object.defineProperty(_pli, '__esModule', {
+        'value': !0
+    });
+    var _plk = _plj(3);
+    _pli.getSlot519PersonalEffect = function(_pll) {
+        var _plm = new _plk.SlotItemEffectModel();
+        return 122 == _pll.ctype && (_plm.houm += 2, _plm.kaih += 2), 114 == _pll.ctype && (_plm.raig += 1, _plm.houm += 2, _plm.kaih += 2), _plm;
     };
 }
