@@ -19,15 +19,18 @@ outputFileSync('dist/createjs.js', createjsPatched)
   scriptVesion = readFileSync('dist/version').toString()
 
   const mainSource = readFileSync('dist/main.js').toString()
-  const [mainDecoder, mainFormatted] = beautify(mainSource, { indent_size: 2 }).split('\n! function')
-  outputFileSync('dist/decode.js', `${mainDecoder}\n${decoderSource}`)
+  const [mainDecoder, mainFormatted] = beautify(mainSource, { indent_size: 2 })
+  //  .split('\n! function')
+    .split('), ! function')
+  //outputFileSync('dist/decode.js', `${mainDecoder}\n${decoderSource}`)
+  outputFileSync('dist/decode.js', `${mainDecoder}))\n${decoderSource}`)
   outputFileSync('dist/main.patched.js', `! function${mainFormatted}`)
 
-  const decoderFunction = readFileSync('dist/decode.js')
-    .toString()
-    .match(/\nvar (.+?) = function/)[1]
+  const decoderStr = readFileSync('dist/decode.js').toString()
+  //const decoderFunction = decoderStr.match(/\nvar (.+?) = function/)[1]
+  const decoderFunction = decoderStr.match(/^function (.+?)\(.+ \{/)[1]
 
-  console.log(spawnSync('node', ['dist/decode.js', decoderFunction]).stdout.toString())
+  console.info(spawnSync('node', ['dist/decode.js', decoderFunction]).stdout.toString())
 
   const mainDecoded = readFileSync('dist/main.patched.js').toString()
   const mainPatched = mainDecoded

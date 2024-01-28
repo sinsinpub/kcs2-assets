@@ -1,6010 +1,6903 @@
-function(_nam, _nan, _nao) {
-    'use strict';
-    defineModule(_nan);
-    Object.defineProperty(_nan, '__esModule', {
-        'value': !0
-    });
-    var _nap = _nao(3),
-        _naq = _nao(947),
-        _nar = (_nas.prototype.start = function() {
-            var _nat = this._ship.getSlotitems();
-            _nat.push(this._ship.getSlotitemEx());
-            var _nau = _naq.SlotItemEffectUtil.getSlotitemEffect(this._ship, _nat),
-                _nav = _naq.SlotItemEffectUtil.getSlotitemEffect(this._ship, this._removeSlots),
-                _naw = _naq.SlotItemEffectUtil.getSlotitemEffect(this._ship, this._toSlots);
-            return {
-                'fromSlotItemEffect': this._subEffectModels(_nau, _nav),
-                'toSlotItemEffect': this._subEffectModels(_naw, _nav)
+{
+    73785: function(_l96, _l97, _l98) {
+        'use strict';
+        var _l99 = null;
+        var _l9a = this && this.__importDefault || function(_l9b) {
+            var _l9c = null;
+            return _l9b && _l9b.__esModule ? _l9b : {
+                'default': _l9b
             };
-        }, _nas.prototype._subEffectModels = function(_nax, _nay) {
-            var _naz = new _nap.SlotItemEffectModel();
-            return _naz.houg = _nax.houg - _nay.houg, _naz.raig = _nax.raig - _nay.raig, _naz.tyku = _nax.tyku - _nay.tyku, _naz.souk = _nax.souk - _nay.souk, _naz.kaih = _nax.kaih - _nay.kaih, _naz.tais = _nax.tais - _nay.tais, _naz.saku = _nax.saku - _nay.saku, _naz.baku = _nax.baku - _nay.baku, _naz.houm = _nax.houm - _nay.houm, _naz.leng = _nax.leng - _nay.leng, _naz;
-        }, _nas);
+        };
+        defineModule(_l97);
+        Object.defineProperty(_l97, '__esModule', {
+            'value': !0
+        }), _l97.SlotItemEffectParamModel = void 0;
+        var _l9d = _l9a(_l98(18622)),
+            _l9e = (function() {
+                var _l9f = null;
 
-    function _nas(_nb0, _nb1, _nb2) {
-        this._removeSlots = [], this._toSlots = [];
-        var _nb3 = (this._ship = _nb0).getSlotitems();
-        _nb3.push(_nb0.getSlotitemEx());
-        var _nb4 = _nb3.map(function(_nb5) {
-                return null == _nb5 || null != _nb1 && _nb5.memID == _nb1.memID ? null : _nb5;
+                function _l9g(_l9h, _l9i) {
+                    var _l9j = null;
+                    this.SLOT_LEVEL_MAX = 10;
+                    for (var _l9k = {}, _l9l = {}, _l9m = {}, _l9n = 0, _l9o = _l9i; _l9n < _l9o.length; _l9n++) {
+                        var _l9p = _l9o[_l9n];
+                        null != _l9p && (null == _l9k[_l9p.mstID] && (_l9k[_l9p.mstID] = new Array()), _l9k[_l9p.mstID].push(_l9p), null == _l9l[_l9p.mstID] ? _l9l[_l9p.mstID] = 1 : _l9l[_l9p.mstID] += 1, null == _l9m[_l9p.equipType] ? _l9m[_l9p.equipType] = 1 : _l9m[_l9p.equipType] += 1);
+                    }
+                    this._have_slots_dict = _l9k, this._have_slotnums_dict = _l9l, this._have_type3nums_dict = _l9m, this._ship_id = _l9h.mstID, this._yomi = _l9h.yomi, this._stype = _l9h.shipTypeID, this._ctype = _l9h.getClassType();
+                }
+                return Object.defineProperty(_l9g.prototype, 'have_slots_dict', {
+                    'get': function() {
+                        var _l9q = null;
+                        return this._have_slots_dict;
+                    },
+                    'enumerable': !1,
+                    'configurable': !0
+                }), Object.defineProperty(_l9g.prototype, 'ship_id', {
+                    'get': function() {
+                        var _l9r = null;
+                        return this._ship_id;
+                    },
+                    'enumerable': !1,
+                    'configurable': !0
+                }), Object.defineProperty(_l9g.prototype, 'yomi', {
+                    'get': function() {
+                        var _l9s = null;
+                        return this._yomi;
+                    },
+                    'enumerable': !1,
+                    'configurable': !0
+                }), Object.defineProperty(_l9g.prototype, 'stype', {
+                    'get': function() {
+                        var _l9t = null;
+                        return this._stype;
+                    },
+                    'enumerable': !1,
+                    'configurable': !0
+                }), Object.defineProperty(_l9g.prototype, 'ctype', {
+                    'get': function() {
+                        var _l9u = null;
+                        return this._ctype;
+                    },
+                    'enumerable': !1,
+                    'configurable': !0
+                }), _l9g.prototype.get_slotnums = function(_l9v) {
+                    var _l9w = null;
+                    return null == this._have_slotnums_dict[_l9v] ? 0 : this._have_slotnums_dict[_l9v];
+                }, _l9g.prototype.get_type3_nums = function(_l9x) {
+                    var _l9y = null;
+                    return null == this._have_type3nums_dict[_l9x] ? 0 : this._have_type3nums_dict[_l9x];
+                }, _l9g.prototype.have_slot_ids = function() {
+                    var _l9z = null;
+                    return Object.keys(this._have_slots_dict);
+                }, _l9g.prototype.get_each_level_nums = function(_la0) {
+                    var _la1 = null,
+                        _la2 = this._have_slots_dict[_la0],
+                        _la3 = Array.apply(null, new Array(this.SLOT_LEVEL_MAX + 1)).map(function() {
+                            return 0;
+                        });
+                    if (null != _la2)
+                        for (var _la4 = 0, _la5 = _la2; _la4 < _la5.length; _la4++) {
+                            _la3[_la5[_la4].level]++;
+                        }
+                    return _la3;
+                }, _l9g.prototype.get_each_level_over_nums = function(_la6) {
+                    var _la7 = null;
+                    for (var _la8 = this, _la9 = [], _laa = function(_lab) {
+                            var _lac = null;
+                            if (_la9[_lab] = Array.apply(null, new Array(_lad.SLOT_LEVEL_MAX + 1)).map(function() {
+                                    return 0;
+                                }), null == _lad.have_slots_dict[_lab]) return 'continue';
+                            _lad.get_each_level_nums(_lab).forEach(function(_lae, _laf) {
+                                var _lag = null;
+                                for (var _lah = 1; _lah <= _la8.SLOT_LEVEL_MAX; _lah++) _laf >= _lah && (_la9[_lab][_lah] += _lae);
+                            });
+                        }, _lad = this, _lai = 0, _laj = _la6; _lai < _laj.length; _lai++) {
+                        _laa(_laj[_lai]);
+                    }
+                    return _la9;
+                }, _l9g.prototype.get_have_rader_nums = function() {
+                    var _lak = null;
+                    for (var _lal = 0, _lam = 0, _lan = 0, _lao = this.have_slot_ids(); _lan < _lao.length; _lan++) {
+                        var _lap = _lao[_lan],
+                            _laq = _l9d.default.model.slot.getMst(_lap),
+                            _lar = _laq.equipType;
+                        12 != _lar && 13 != _lar || (_laq.sakuteki >= 5 && (_lal += this.get_slotnums(parseInt(_lap))), _laq.taiku >= 2 && (_lam += this.get_slotnums(parseInt(_lap))));
+                    }
+                    return {
+                        'water_rader': _lal,
+                        'air_rader': _lam
+                    };
+                }, _l9g.prototype.getUSSWaterRaderDict = function() {
+                    return {
+                        279: 1,
+                        307: 1,
+                        315: 1,
+                        456: 1
+                    };
+                }, _l9g.prototype.getUSSAirRaderDict = function() {
+                    return {
+                        278: 1,
+                        279: 1
+                    };
+                }, _l9g.prototype.getCountryName = function() {
+                    var _las = null;
+                    return null == _l9g.SHIP_COUNTRY[this._ctype] ? '' : _l9g.SHIP_COUNTRY[this._ctype];
+                }, _l9g.prototype.getSpItemDict_FukuhouTaikuHeisou = function() {
+                    return {
+                        10: 0,
+                        130: 0,
+                        66: 0,
+                        220: 0,
+                        71: 0,
+                        275: 0,
+                        464: 0
+                    };
+                }, _l9g.prototype.getSpItemDict_Tansou21GouDentan = function() {
+                    return {
+                        30: 0,
+                        410: 0
+                    };
+                }, _l9g.SHIP_COUNTRY = {
+                    1: '日本',
+                    2: '日本',
+                    3: '日本',
+                    4: '日本',
+                    5: '日本',
+                    6: '日本',
+                    7: '日本',
+                    8: '日本',
+                    9: '日本',
+                    10: '日本',
+                    11: '日本',
+                    12: '日本',
+                    13: '日本',
+                    14: '日本',
+                    15: '日本',
+                    16: '日本',
+                    17: '日本',
+                    18: '日本',
+                    19: '日本',
+                    20: '日本',
+                    21: '日本',
+                    22: '日本',
+                    23: '日本',
+                    24: '日本',
+                    25: '日本',
+                    26: '日本',
+                    27: '日本',
+                    28: '日本',
+                    29: '日本',
+                    30: '日本',
+                    31: '日本',
+                    32: '日本',
+                    33: '日本',
+                    34: '日本',
+                    35: '日本',
+                    36: '日本',
+                    37: '日本',
+                    38: '日本',
+                    39: '日本',
+                    40: '日本',
+                    41: '日本',
+                    42: '日本',
+                    43: '日本',
+                    44: '日本',
+                    45: '日本',
+                    46: '日本',
+                    49: '日本',
+                    50: '日本',
+                    51: '日本',
+                    52: '日本',
+                    53: '日本',
+                    54: '日本',
+                    56: '日本',
+                    59: '日本',
+                    60: '日本',
+                    62: '日本',
+                    66: '日本',
+                    71: '日本',
+                    72: '日本',
+                    74: '日本',
+                    75: '日本',
+                    76: '日本',
+                    77: '日本',
+                    85: '日本',
+                    86: '日本',
+                    90: '日本',
+                    94: '日本',
+                    97: '日本',
+                    100: '日本',
+                    101: '日本',
+                    103: '日本',
+                    104: '日本',
+                    109: '日本',
+                    111: '日本',
+                    115: '日本',
+                    117: '日本',
+                    119: '日本',
+                    120: '日本',
+                    123: '日本',
+                    65: 'アメリカ',
+                    69: 'アメリカ',
+                    83: 'アメリカ',
+                    84: 'アメリカ',
+                    87: 'アメリカ',
+                    91: 'アメリカ',
+                    93: 'アメリカ',
+                    95: 'アメリカ',
+                    99: 'アメリカ',
+                    102: 'アメリカ',
+                    105: 'アメリカ',
+                    106: 'アメリカ',
+                    107: 'アメリカ',
+                    110: 'アメリカ',
+                    114: 'アメリカ',
+                    116: 'アメリカ',
+                    118: 'アメリカ',
+                    121: 'アメリカ',
+                    122: 'アメリカ',
+                    125: 'アメリカ',
+                    67: 'イギリス',
+                    78: 'イギリス',
+                    82: 'イギリス',
+                    88: 'イギリス',
+                    108: 'イギリス',
+                    112: 'イギリス',
+                    58: 'イタリア',
+                    61: 'イタリア',
+                    64: 'イタリア',
+                    68: 'イタリア',
+                    80: 'イタリア',
+                    92: 'イタリア',
+                    113: 'イタリア',
+                    124: 'イタリア',
+                    98: 'オランダ',
+                    96: 'オーストラリア',
+                    89: 'スウェーデン',
+                    47: 'ドイツ',
+                    48: 'ドイツ',
+                    55: 'ドイツ',
+                    57: 'ドイツ',
+                    63: 'ドイツ',
+                    70: 'フランス',
+                    79: 'フランス',
+                    73: 'ロシア',
+                    81: 'ロシア'
+                }, _l9g;
+            }());
+        _l97.SlotItemEffectParamModel = _l9e;
+    },
+    16718: (_lm0, _lm1, _lm2) => {
+        'use strict';
+        var _lm3 = null;
+        defineModule(_lm1);
+        Object.defineProperty(_lm1, '__esModule', {
+            'value': !0
+        }), _lm1.TaskGetSlotItemEffectParams = void 0;
+        var _lm4 = _lm2(74496),
+            _lm5 = _lm2(82692),
+            _lm6 = (function() {
+                var _lm7 = null;
+
+                function _lm8(_lm9, _lma, _lmb) {
+                    var _lmc = null;
+                    this._removeSlots = [], this._toSlots = [], this._ship = _lm9;
+                    var _lmd = _lm9.getSlotitems();
+                    _lmd.push(_lm9.getSlotitemEx());
+                    var _lme = _lmd.map(function(_lmf) {
+                        var _lmg = null;
+                        return null == _lmf || null != _lma && _lmf.memID == _lma.memID ? null : _lmf;
+                    });
+                    this._removeSlots = _lme;
+                    var _lmh = _lme.map(function(_lmi) {
+                        return _lmi;
+                    });
+                    _lmh.push(_lmb), this._toSlots = _lmh;
+                }
+                return _lm8.prototype.start = function() {
+                    var _lmj = null,
+                        _lmk = this._ship.getSlotitems();
+                    _lmk.push(this._ship.getSlotitemEx());
+                    var _lml = _lm5.SlotItemEffectUtil.getSlotitemEffect(this._ship, _lmk),
+                        _lmm = _lm5.SlotItemEffectUtil.getSlotitemEffect(this._ship, this._removeSlots),
+                        _lmn = _lm5.SlotItemEffectUtil.getSlotitemEffect(this._ship, this._toSlots);
+                    return {
+                        'fromSlotItemEffect': this._subEffectModels(_lml, _lmm),
+                        'toSlotItemEffect': this._subEffectModels(_lmn, _lmm)
+                    };
+                }, _lm8.prototype._subEffectModels = function(_lmo, _lmp) {
+                    var _lmq = null,
+                        _lmr = new _lm4.SlotItemEffectModel();
+                    return _lmr.houg = _lmo.houg - _lmp.houg, _lmr.raig = _lmo.raig - _lmp.raig, _lmr.tyku = _lmo.tyku - _lmp.tyku, _lmr.souk = _lmo.souk - _lmp.souk, _lmr.kaih = _lmo.kaih - _lmp.kaih, _lmr.tais = _lmo.tais - _lmp.tais, _lmr.saku = _lmo.saku - _lmp.saku, _lmr.baku = _lmo.baku - _lmp.baku, _lmr.houm = _lmo.houm - _lmp.houm, _lmr.leng = _lmo.leng - _lmp.leng, _lmr;
+                }, _lm8;
+            }());
+        _lm1.TaskGetSlotItemEffectParams = _lm6;
+    },
+    69377: function(_mah, _mai, _maj) {
+        'use strict';
+        var _mak = null;
+        var _mal = this && this.__importDefault || function(_mam) {
+            var _man = null;
+            return _mam && _mam.__esModule ? _mam : {
+                'default': _mam
+            };
+        };
+        defineModule(_mai);
+        Object.defineProperty(_mai, '__esModule', {
+            'value': !0
+        }), _mai.get25mmMachinegunEffect = void 0;
+        var _mao = _maj(74496),
+            _map = _mal(_maj(18622));
+        _mai.get25mmMachinegunEffect = function(_maq) {
+            var _mar = null,
+                _mas = new _mao.SlotItemEffectModel(),
+                _mat = !1,
+                _mau = new _mao.SlotItemEffectModel(),
+                _mav = 0;
+            if (662 == _maq.ship_id || 663 == _maq.ship_id ? (_mau.tyku += 2, _mau.kaih += 1, _mat = !0) : 668 == _maq.ship_id && (_mau.tyku += 3, _mau.kaih += 2, _mat = !0), 56 == _maq.ctype && (_mau.houg += 1, _mau.tyku += 2, _mau.kaih += 2, _mat = !0, _mav = 1), 0 == _mat) return _mas;
+            var _maw = _maq.get_slotnums(39) + _maq.get_slotnums(40) + _maq.get_slotnums(49) + _maq.get_slotnums(131);
+            if (_mas.add(_mau.multiply(_maw)), 0 == _mav) return _mas;
+            for (var _max = 0, _may = 0, _maz = _maq.have_slot_ids(); _may < _maz.length; _may++) {
+                var _mb0 = _maz[_may],
+                    _mb1 = _map.default.model.slot.getMst(_mb0),
+                    _mb2 = _mb1.equipType;
+                12 != _mb2 && 13 != _mb2 || (_mb1.sakuteki >= 5 && _maq.get_slotnums(parseInt(_mb0)), _mb1.taiku >= 2 && (_max += _maq.get_slotnums(parseInt(_mb0))));
+            }
+            return _max >= 1 && 1 == _mav && (_mas.tyku += 2, _mas.kaih += 2), _mas;
+        };
+    },
+    77670: function(_mb3, _mb4, _mb5) {
+        'use strict';
+        var _mb6 = null;
+        var _mb7 = this && this.__importDefault || function(_mb8) {
+            var _mb9 = null;
+            return _mb8 && _mb8.__esModule ? _mb8 : {
+                'default': _mb8
+            };
+        };
+        defineModule(_mb4);
+        Object.defineProperty(_mb4, '__esModule', {
+            'value': !0
+        }), _mb4.get8cmAntiAircraftGunPersonalEffect = void 0;
+        var _mba = _mb5(74496),
+            _mbb = _mb7(_mb5(18622));
+        _mb4.get8cmAntiAircraftGunPersonalEffect = function(_mbc) {
+            var _mbd = null,
+                _mbe = new _mba.SlotItemEffectModel(),
+                _mbf = !1,
+                _mbg = new _mba.SlotItemEffectModel(),
+                _mbh = 0;
+            if (501 != _mbc.ship_id && 506 != _mbc.ship_id && 502 != _mbc.ship_id && 507 != _mbc.ship_id || (_mbg.tyku += 2, _mbg.kaih += 1, _mbf = !0, _mbh = 1), 501 != _mbc.ship_id && 506 != _mbc.ship_id || (_mbg.houg += 1, _mbg.tyku += 2, _mbg.kaih += 2, _mbf = !0, _mbh = 1), 0 == _mbf) return _mbe;
+            var _mbi = _mbc.get_slotnums(66) + _mbc.get_slotnums(220);
+            _mbe.add(_mbg.multiply(_mbi));
+            for (var _mbj = 0, _mbk = 0, _mbl = _mbc.have_slot_ids(); _mbk < _mbl.length; _mbk++) {
+                var _mbm = _mbl[_mbk],
+                    _mbn = _mbb.default.model.slot.getMst(_mbm),
+                    _mbo = _mbn.equipType;
+                12 != _mbo && 13 != _mbo || (_mbn.sakuteki >= 5 && _mbc.get_slotnums(parseInt(_mbm)), _mbn.taiku >= 2 && (_mbj += _mbc.get_slotnums(parseInt(_mbm))));
+            }
+            return 0 == _mbh || _mbj >= 1 && (_mbe.tyku += 1, _mbe.kaih += 2), _mbe;
+        };
+    },
+    34165: (_mbp, _mbq, _mbr) => {
+        'use strict';
+        var _mbs = null;
+        defineModule(_mbq);
+        Object.defineProperty(_mbq, '__esModule', {
+            'value': !0
+        }), _mbq.getCamouflageSlotPersonalEffect = void 0;
+        var _mbt = _mbr(74496);
+        _mbq.getCamouflageSlotPersonalEffect = function(_mbu) {
+            var _mbv = null,
+                _mbw = new _mbt.SlotItemEffectModel();
+            return 'きそ' != _mbu.yomi && 'たま' != _mbu.yomi || (_mbw.kaih = 7, _mbw.souk = 2), _mbw;
+        };
+    },
+    31127: (_mbx, _mby, _mbz) => {
+        'use strict';
+        var _mc0 = null;
+        defineModule(_mby);
+        Object.defineProperty(_mby, '__esModule', {
+            'value': !0
+        }), _mby.getHighZuiunSeriesEffect = void 0;
+        var _mc1 = _mbz(74496);
+        _mby.getHighZuiunSeriesEffect = function(_mc2) {
+            var _mc3 = null,
+                _mc4 = new _mc1.SlotItemEffectModel(),
+                _mc5 = !1,
+                _mc6 = new _mc1.SlotItemEffectModel();
+            if (662 == _mc2.ship_id ? (_mc4.houg += 3, _mc4.kaih += 1) : 663 == _mc2.ship_id || 668 == _mc2.ship_id || 501 == _mc2.ship_id || 506 == _mc2.ship_id || 553 == _mc2.ship_id || 554 == _mc2.ship_id ? (_mc6.houg += 3, _mc6.kaih += 2, _mc6.tyku += 1, _mc5 = !0) : 502 != _mc2.ship_id && 507 != _mc2.ship_id || (_mc6.houg += 2, _mc6.kaih += 2, _mc6.tyku += 1, _mc5 = !0), 0 == _mc5) return _mc4;
+            var _mc7 = 0;
+            return [237, 322, 323, 490].forEach(function(_mc8) {
+                var _mc9 = null;
+                _mc7 += _mc2.get_slotnums(_mc8);
+            }), _mc4.add(_mc6.multiply(_mc7)), _mc4;
+        };
+    },
+    81018: function(_mca, _mcb, _mcc) {
+        'use strict';
+        var _mcd = null;
+        var _mce = this && this.__importDefault || function(_mcf) {
+            var _mcg = null;
+            return _mcf && _mcf.__esModule ? _mcf : {
+                'default': _mcf
+            };
+        };
+        defineModule(_mcb);
+        Object.defineProperty(_mcb, '__esModule', {
+            'value': !0
+        }), _mcb.getRaderPrivateEffect = void 0;
+        var _mch = _mcc(74496),
+            _mci = _mce(_mcc(18622));
+        _mcb.getRaderPrivateEffect = function(_mcj) {
+            var _mck = null,
+                _mcl = new _mch.SlotItemEffectModel(),
+                _mcm = 0,
+                _mcn = 0;
+            if (569 == _mcj.ship_id || 648 == _mcj.ship_id || 961 == _mcj.ship_id || 951 == _mcj.ship_id) _mcm = 1;
+            else {
+                if (955 != _mcj.ship_id && 960 != _mcj.ship_id) return _mcl;
+                _mcm = 2, _mcn = 1;
+            }
+            for (var _mco = 0, _mcp = 0, _mcq = _mcj.have_slot_ids(); _mcp < _mcq.length; _mcp++) {
+                var _mcr = _mcq[_mcp],
+                    _mcs = _mci.default.model.slot.getMst(_mcr),
+                    _mct = _mcs.equipType;
+                12 != _mct && 13 != _mct || (_mcs.sakuteki >= 5 && _mcj.get_slotnums(parseInt(_mcr)), _mcs.taiku >= 2 && (_mco += _mcj.get_slotnums(parseInt(_mcr))));
+            }
+            if (_mco > 0 && (1 == _mcm ? (_mcl.houg += 1, _mcl.kaih += 3, _mcl.tyku += 2) : 2 == _mcm && (_mcl.tyku += 2, _mcl.kaih += 1)), 0 == _mcn) return _mcl;
+            for (var _mcu = [], _mcv = function(_mcw) {
+                    var _mcx = null;
+                    if (null == _mcj.have_slots_dict[_mcw]) return 'continue';
+                    var _mcy = _mcj.get_each_level_nums(_mcw);
+                    null == _mcu[_mcw] && (_mcu[_mcw] = []), _mcy.forEach(function(_mcz, _md0) {
+                        var _md1 = null;
+                        for (var _md2 = 1; _md2 <= _mcj.SLOT_LEVEL_MAX; _md2++) null == _mcu[_mcw][_md2] && (_mcu[_mcw][_md2] = 0), _md0 >= _md2 && (_mcu[_mcw][_md2] += _mcz);
+                    });
+                }, _md3 = 0, _md4 = [450]; _md3 < _md4.length; _md3++) {
+                _mcv(_md4[_md3]);
+            }
+            var _md5 = null != _mcu[450] ? _mcu[450][4] : 0;
+            return 1 == _mcn && _md5 > 0 && (_mcl.houg += 1, _mcl.houm += 1, _mcl.tyku += 1, _mcl.kaih += 2), _mcl;
+        };
+    },
+    56716: (_md6, _md7, _md8) => {
+        'use strict';
+        var _md9 = null;
+        defineModule(_md7);
+        Object.defineProperty(_md7, '__esModule', {
+            'value': !0
+        }), _md7.getSearchLightEffect = void 0;
+        var _mda = _md8(74496);
+        _md7.getSearchLightEffect = function(_mdb) {
+            var _mdc = null,
+                _mdd = new _mda.SlotItemEffectModel(),
+                _mde = _mdb.get_type3_nums(29);
+            return 'ひえい' == _mdb.yomi || 'きりしま' == _mdb.yomi || 'ちょうかい' == _mdb.yomi || 'じんつう' == _mdb.yomi || 'あかつき' == _mdb.yomi ? (_mdd.houg += 4, _mdd.kaih -= 1) : 'あきぐも' == _mdb.yomi ? _mdd.houg = _mdd.houg + 2 * _mde : 'ゆきかぜ' == _mdb.yomi && (_mdd.houg = _mdd.houg + _mde, _mdd.tyku = _mdd.tyku + _mde), 662 != _mdb.ship_id && 663 != _mdb.ship_id && 668 != _mdb.ship_id || (_mdd.raig += 2, _mdd.houg += 4), 'じんつう' == _mdb.yomi && (_mdd.raig += 8, _mdd.houg += 4), _mdd;
+        };
+    },
+    17713: (_mdf, _mdg, _mdh) => {
+        'use strict';
+        var _mdi = null;
+        defineModule(_mdg);
+        Object.defineProperty(_mdg, '__esModule', {
+            'value': !0
+        }), _mdg.getSearchLightLargeEffect = void 0;
+        var _mdj = _mdh(74496);
+        _mdg.getSearchLightLargeEffect = function(_mdk) {
+            var _mdl = null,
+                _mdm = new _mdj.SlotItemEffectModel();
+            'ひえい' == _mdk.yomi || 'きりしま' == _mdk.yomi ? (_mdm.houg += 6, _mdm.kaih -= 2) : 'やまと' != _mdk.yomi && 'むさし' != _mdk.yomi || (_mdm.houg += 4, _mdm.kaih -= 1);
+            var _mdn = _mdk.get_slotnums(174);
+            return 592 == _mdk.ship_id && (_mdm.houg += 3, _mdm.raig += 3, _mdn > 0 && (_mdm.raig += 5)), _mdm;
+        };
+    },
+    17213: (_mdo, _mdp, _mdq) => {
+        'use strict';
+        var _mdr = null;
+        defineModule(_mdp);
+        Object.defineProperty(_mdp, '__esModule', {
+            'value': !0
+        }), _mdp.getSlot100PersonalEffect = void 0;
+        var _mds = _mdq(74496);
+        _mdp.getSlot100PersonalEffect = function(_mdt) {
+            var _mdu = null,
+                _mdv = new _mds.SlotItemEffectModel(),
+                _mdw = new _mds.SlotItemEffectModel();
+            if (553 == _mdt.ship_id) _mdw.houg = 4;
+            else {
+                if (554 != _mdt.ship_id) return 196 == _mdt.ship_id ? (_mdv.houg = 3, _mdv) : 197 == _mdt.ship_id ? (_mdv.houg = 6, _mdv) : _mdv;
+                _mdw.houg = 4;
+            }
+            var _mdx = _mdt.get_slotnums(100);
+            return _mdv = _mdw.multiply(_mdx);
+        };
+    },
+    40176: (_mdy, _mdz, _me0) => {
+        'use strict';
+        var _me1 = null;
+        defineModule(_mdz);
+        Object.defineProperty(_mdz, '__esModule', {
+            'value': !0
+        }), _mdz.getSlot104PersonalEffect = void 0;
+        var _me2 = _me0(74496);
+        _mdz.getSlot104PersonalEffect = function(_me3) {
+            var _me4 = null,
+                _me5 = new _me2.SlotItemEffectModel(),
+                _me6 = new _me2.SlotItemEffectModel();
+            if (149 == _me3.ship_id || 591 == _me3.ship_id) _me6.houg = 2;
+            else {
+                if (150 == _me3.ship_id || 592 == _me3.ship_id) _me6.houg = 1;
+                else {
+                    if (152 == _me3.ship_id) _me6.houg = 1;
+                    else {
+                        if (151 != _me3.ship_id && 593 != _me3.ship_id && 954 != _me3.ship_id) return _me5;
+                        _me6.houg = 2, _me6.tyku = 1, _me6.kaih = 2;
+                    }
+                }
+            }
+            var _me7 = _me3.get_slotnums(104);
+            return _me5 = _me6.multiply(_me7);
+        };
+    },
+    32889: (_me8, _me9, _mea) => {
+        'use strict';
+        var _meb = null;
+        defineModule(_me9);
+        Object.defineProperty(_me9, '__esModule', {
+            'value': !0
+        }), _me9.getSlot106PersonalEffect = void 0;
+        var _mec = _mea(74496);
+        _me9.getSlot106PersonalEffect = function(_med) {
+            var _mee = null,
+                _mef = new _mec.SlotItemEffectModel(),
+                _meg = new _mec.SlotItemEffectModel();
+            if ([407, 419, 145, 151, 541, 911, 916, 593, 954, 961].indexOf(_med.ship_id) >= 0 ? (_meg.houg += 1, _meg.tyku += 2, _meg.souk += 1, _meg.kaih += 3) : ['おおよど', 'ひびき', 'かしま'].indexOf(_med.yomi) >= 0 ? (_meg.tyku += 1, _meg.souk += 1, _meg.kaih += 3) : ['やはぎ', 'ゆきかぜ', 'いそかぜ', 'あさしも', 'はまかぜ', 'かすみ', 'すずつき'].indexOf(_med.yomi) >= 0 && (_meg.tyku += 2, _meg.souk += 1, _meg.kaih += 2, 663 != _med.ship_id && 668 != _med.ship_id || (_mef.houg += 1, _mef.tyku += 1, _mef.souk += 1, _mef.kaih += 1), 668 == _med.ship_id && (_mef.tyku += 1, _mef.kaih += 1)), !_meg.exists()) return _mef;
+            var _meh = _med.get_slotnums(106) + _med.get_slotnums(450);
+            return _mef.add(_meg.multiply(_meh)), _mef;
+        };
+    },
+    15133: (_mei, _mej, _mek) => {
+        'use strict';
+        var _mel = null;
+        defineModule(_mej);
+        Object.defineProperty(_mej, '__esModule', {
+            'value': !0
+        }), _mej.getSlot115PersonalEffect = void 0;
+        var _mem = _mek(74496);
+        _mej.getSlot115PersonalEffect = function(_men) {
+            var _meo = null,
+                _mep = new _mem.SlotItemEffectModel(),
+                _meq = !1,
+                _mer = new _mem.SlotItemEffectModel(),
+                _mes = 0;
+            if (55 != _men.ctype && 47 != _men.ctype || (_mer.houg += 2, _mer.saku += 2, _mer.kaih += 1, _meq = !0, _mes = 1), 0 == _meq) return _mep;
+            var _met = _men.get_slotnums(115);
+            if (_mep.add(_mer.multiply(_met)), 0 == _mes) return _mep;
+            var _meu = _men.get_each_level_nums(115)[10];
+            return 1 == _mes && (_mep.houg += 1 * _meu, _mep.kaih += 1 * _meu), _mep;
+        };
+    },
+    55747: (_mev, _mew, _mex) => {
+        'use strict';
+        var _mey = null;
+        defineModule(_mew);
+        Object.defineProperty(_mew, '__esModule', {
+            'value': !0
+        }), _mew.getSlot118PersonalEffect = void 0;
+        var _mez = _mex(74496);
+        _mew.getSlot118PersonalEffect = function(_mf0) {
+            var _mf1 = null,
+                _mf2 = new _mez.SlotItemEffectModel(),
+                _mf3 = !1,
+                _mf4 = new _mez.SlotItemEffectModel(),
+                _mf5 = 0;
+            if (52 == _mf0.ctype && (_mf4.houg += 1, _mf4.saku += 2, _mf4.kaih += 2, _mf5 = 1, _mf3 = !0), 507 == _mf0.ship_id && (_mf4.houg += 3, _mf4.saku += 2, _mf4.kaih += 1, _mf5 = 2, _mf3 = !0), 0 == _mf3) return _mf2;
+            var _mf6 = _mf0.get_slotnums(118);
+            if (_mf2.add(_mf4.multiply(_mf6)), 0 == _mf5) return _mf2;
+            var _mf7 = _mf0.get_each_level_nums(118),
+                _mf8 = 0,
+                _mf9 = 0,
+                _mfa = 0,
+                _mfb = _mf7[10];
+            return _mf7.forEach(function(_mfc, _mfd) {
+                _mfd >= 2 && (_mf8 += _mfc), _mfd >= 5 && (_mf9 += _mfc), _mfd >= 7 && (_mfa += _mfc);
+            }), 1 == _mf5 ? (_mf2.houg += 2 * _mfb, _mf2.saku += 1 * _mfb) : 2 == _mf5 && (_mf2.houm += 1 * _mf8, _mf2.kaih += 1 * _mf9, _mf2.houg += 1 * _mfa, _mf2.houg += 1 * _mfb, _mf2.raig += 1 * _mfb, _mf2.tyku += 1 * _mfb, _mf2.saku += 1 * _mfb, _mf2.kaih += 1 * _mfb), _mf2;
+        };
+    },
+    11285: (_mfe, _mff, _mfg) => {
+        'use strict';
+        var _mfh = null;
+        defineModule(_mff);
+        Object.defineProperty(_mff, '__esModule', {
+            'value': !0
+        }), _mff.getSlot119PersonalEffect = void 0;
+        var _mfi = _mfg(74496);
+        _mff.getSlot119PersonalEffect = function(_mfj) {
+            var _mfk = null,
+                _mfl = new _mfi.SlotItemEffectModel(),
+                _mfm = new _mfi.SlotItemEffectModel();
+            34 == _mfj.ctype || 56 == _mfj.ctype ? _mfm.houg += 1 : 90 == _mfj.ctype && (_mfm.houg += 2, _mfm.raig += 1);
+            var _mfn = !0;
+            if (_mfm.exists() || (_mfn = !1), 0 == _mfn) return _mfl;
+            var _mfo = _mfj.get_slotnums(119);
+            return _mfl = _mfm.multiply(_mfo);
+        };
+    },
+    96200: (_mfp, _mfq, _mfr) => {
+        'use strict';
+        var _mfs = null;
+        defineModule(_mfq);
+        Object.defineProperty(_mfq, '__esModule', {
+            'value': !0
+        }), _mfq.getSlot120mm50GroupPersonalEffect = void 0;
+        var _mft = _mfr(74496);
+        _mfq.getSlot120mm50GroupPersonalEffect = function(_mfu) {
+            var _mfv = null,
+                _mfw = new _mft.SlotItemEffectModel(),
+                _mfx = !1,
+                _mfy = new _mft.SlotItemEffectModel(),
+                _mfz = _mfu.get_slotnums(147),
+                _mg0 = _mfu.get_slotnums(393),
+                _mg1 = _mfu.get_slotnums(394),
+                _mg2 = new _mft.SlotItemEffectModel(),
+                _mg3 = new _mft.SlotItemEffectModel();
+            if (61 == _mfu.ctype && (_mfy.houg += 1, _mfy.kaih += 1, _mfx = !0, _mg0 >= 1 && (_mg2.houg += 1, _mg2.tyku += 1), _mg1 >= 1 && (_mg3.houg += 1, _mg3.tyku += 1, _mg3.kaih += 1, 'グレカーレ' == _mfu.yomi && (_mg3.kaih += 1))), 0 == _mfx) return _mfw;
+            var _mg4 = _mfz + _mg0 + _mg1;
+            return _mfw.add(_mfy.multiply(_mg4)).add(_mg2.multiply(_mg0)).add(_mg3.multiply(_mg1)), _mfw;
+        };
+    },
+    33155: function(_mg5, _mg6, _mg7) {
+        'use strict';
+        var _mg8 = null;
+        var _mg9 = this && this.__importDefault || function(_mga) {
+            var _mgb = null;
+            return _mga && _mga.__esModule ? _mga : {
+                'default': _mga
+            };
+        };
+        defineModule(_mg6);
+        Object.defineProperty(_mg6, '__esModule', {
+            'value': !0
+        }), _mg6.getSlot121PersonalEffect = void 0;
+        var _mgc = _mg7(74496),
+            _mgd = _mg9(_mg7(18622));
+        _mg6.getSlot121PersonalEffect = function(_mge) {
+            var _mgf = null,
+                _mgg = new _mgc.SlotItemEffectModel(),
+                _mgh = 0;
+            if (54 == _mge.ctype && (_mgg.tyku += 4, _mgg.kaih += 2, _mgh = 1), 0 == _mgh) return _mgg;
+            for (var _mgi = 0, _mgj = 0, _mgk = _mge.have_slot_ids(); _mgj < _mgk.length; _mgj++) {
+                var _mgl = _mgk[_mgj],
+                    _mgm = _mgd.default.model.slot.getMst(_mgl),
+                    _mgn = _mgm.equipType;
+                12 != _mgn && 13 != _mgn || (_mgm.sakuteki >= 5 && _mge.get_slotnums(parseInt(_mgl)), _mgm.taiku >= 2 && (_mgi += _mge.get_slotnums(parseInt(_mgl))));
+            }
+            return _mgi >= 1 && (_mgg.tyku += 2, _mgg.kaih += 2), _mgg;
+        };
+    },
+    9115: function(_mgo, _mgp, _mgq) {
+        'use strict';
+        var _mgr = null;
+        var _mgs = this && this.__importDefault || function(_mgt) {
+            var _mgu = null;
+            return _mgt && _mgt.__esModule ? _mgt : {
+                'default': _mgt
+            };
+        };
+        defineModule(_mgp);
+        Object.defineProperty(_mgp, '__esModule', {
+            'value': !0
+        }), _mgp.getSlot122PersonalEffect = void 0;
+        var _mgv = _mgq(74496),
+            _mgw = _mgs(_mgq(18622));
+        _mgp.getSlot122PersonalEffect = function(_mgx) {
+            var _mgy = null,
+                _mgz = new _mgv.SlotItemEffectModel(),
+                _mh0 = 0,
+                _mh1 = 0,
+                _mh2 = !1;
+            656 == _mgx.ship_id && (_mh2 = !0, _mh0 = 1, _mh1 = 1);
+            var _mh3 = 0,
+                _mh4 = 0,
+                _mh5 = _mgx.get_each_level_nums(122),
+                _mh6 = 0;
+            if (_mh2) {
+                _mh5.forEach(function(_mh7, _mh8) {
+                    _mh8 >= 4 && (_mh6 += _mh7);
+                });
+                for (var _mh9 = 0, _mha = _mgx.have_slot_ids(); _mh9 < _mha.length; _mh9++) {
+                    var _mhb = _mha[_mh9],
+                        _mhc = _mgw.default.model.slot.getMst(_mhb),
+                        _mhd = _mhc.equipType;
+                    12 != _mhd && 13 != _mhd || (_mhc.sakuteki >= 5 && (_mh3 += _mgx.get_slotnums(parseInt(_mhb))), _mhc.taiku >= 2 && (_mh4 += _mgx.get_slotnums(parseInt(_mhb))));
+                }
+            }
+            return _mh6 > 0 && (1 == _mh1 && (_mh3 > 0 && (_mgz.houg += 4, _mgz.kaih += 3), _mh4 > 0 && (_mgz.tyku += 4, _mgz.kaih += 3)), 1 == _mh0 && (_mgz.houg += 5 * _mh6, _mgz.tyku += 3 * _mh6, _mgz.kaih += 2 * _mh6)), _mgz;
+        };
+    },
+    37173: (_mhe, _mhf, _mhg) => {
+        'use strict';
+        var _mhh = null;
+        defineModule(_mhf);
+        Object.defineProperty(_mhf, '__esModule', {
+            'value': !0
+        }), _mhf.getSlot129PersonalEffect = void 0;
+        var _mhi = _mhg(74496);
+        _mhf.getSlot129PersonalEffect = function(_mhj) {
+            var _mhk = null,
+                _mhl = new _mhi.SlotItemEffectModel(),
+                _mhm = !1,
+                _mhn = new _mhi.SlotItemEffectModel();
+            if ([66, 28, 12, 1, 5, 10, 23, 18, 30, 38, 22, 54, 101].indexOf(_mhj.ctype) >= 0 ? (_mhn.houg = 1, _mhn.raig = 2, _mhn.kaih = 2, _mhn.tais = 2, _mhn.saku = 1, _mhm = !0) : [21, 4, 20, 16, 34, 56, 41, 52].indexOf(_mhj.ctype) >= 0 ? (_mhn.houg = 1, _mhn.raig = 2, _mhn.kaih = 2, _mhn.saku = 3, _mhm = !0) : [7, 13, 29, 8, 9, 31].indexOf(_mhj.ctype) >= 0 && (_mhn.houg = 1, _mhn.kaih = 2, _mhn.saku = 3, _mhm = !0), 0 == _mhm) return _mhl;
+            var _mho = _mhj.get_slotnums(129);
+            return _mhl = _mhn.multiply(_mho);
+        };
+    },
+    73254: (_mhp, _mhq, _mhr) => {
+        'use strict';
+        var _mhs = null;
+        defineModule(_mhq);
+        Object.defineProperty(_mhq, '__esModule', {
+            'value': !0
+        }), _mhq.getSlot12PersonalEffect = void 0;
+        var _mht = _mhr(74496);
+        _mhq.getSlot12PersonalEffect = function(_mhu) {
+            var _mhv = null,
+                _mhw = new _mht.SlotItemEffectModel(),
+                _mhx = !1,
+                _mhy = new _mht.SlotItemEffectModel(),
+                _mhz = _mhu.get_slotnums(142) + _mhu.get_slotnums(460);
+            if (37 == _mhu.ctype && (_mhy.houg += 1, _mhy.kaih += 1, _mhy.houm += 1, _mhz >= 1 && (_mhw.kaih += 1, _mhw.houm += 1), _mhx = !0), 0 == _mhx) return _mhw;
+            var _mi0 = _mhu.get_slotnums(12);
+            return _mhw.add(_mhy.multiply(_mi0)), _mhw;
+        };
+    },
+    93373: (_mi1, _mi2, _mi3) => {
+        'use strict';
+        var _mi4 = null;
+        defineModule(_mi2);
+        Object.defineProperty(_mi2, '__esModule', {
+            'value': !0
+        }), _mi2.getSlot132PersonalEffect = void 0;
+        var _mi5 = _mi3(74496);
+        _mi2.getSlot132PersonalEffect = function(_mi6) {
+            var _mi7 = null,
+                _mi8 = new _mi5.SlotItemEffectModel(),
+                _mi9 = _mi6.get_each_level_nums(132),
+                _mia = 0,
+                _mib = 0,
+                _mic = 0,
+                _mid = 0,
+                _mie = 0;
+            return _mi9.forEach(function(_mif, _mig) {
+                _mig >= 3 && (_mia += _mif), _mig >= 5 && (_mib += _mif), _mig >= 7 && (_mic += _mif), _mig >= 8 && (_mid += _mif), _mig >= 9 && (_mie += _mif);
+            }), _mia >= 1 && (_mi8.kaih += 1), _mib >= 1 && (_mi8.tais += 1), _mic >= 1 && (_mi8.kaih += 1), _mid >= 1 && (_mi8.tais += 1), _mie >= 1 && (_mi8.houm += 1), _mi9[10] >= 1 && (_mi8.tais += 1), 911 != _mi6.ship_id && 916 != _mi6.ship_id && 546 != _mi6.ship_id || (_mi8.kaih += 1), 461 != _mi6.ship_id && 466 != _mi6.ship_id && 462 != _mi6.ship_id && 467 != _mi6.ship_id && 156 != _mi6.ship_id || (_mi8.kaih += 2), _mi8;
+        };
+    },
+    88838: (_mih, _mii, _mij) => {
+        'use strict';
+        var _mik = null;
+        defineModule(_mii);
+        Object.defineProperty(_mii, '__esModule', {
+            'value': !0
+        }), _mii.getSlot136PersonalEffect = void 0;
+        var _mil = _mij(74496);
+        _mii.getSlot136PersonalEffect = function(_mim) {
+            var _min = null,
+                _mio = new _mil.SlotItemEffectModel(),
+                _mip = 0;
+            if (58 != _mim.ctype && 61 != _mim.ctype && 64 != _mim.ctype && 68 != _mim.ctype && 80 != _mim.ctype && 92 != _mim.ctype && 113 != _mim.ctype && 124 != _mim.ctype || (_mio.souk += 2, _mio.kaih += 1, _mip = 1), 879 == _mim.ship_id && (_mio.souk += 1, _mio.kaih += 1), 0 == _mip) return _mio;
+            var _miq = _mim.get_each_level_nums(136),
+                _mir = 0,
+                _mis = 0,
+                _mit = _miq[10];
+            return _mip > 0 && _miq.forEach(function(_miu, _miv) {
+                _miv >= 3 && (_mir += _miu), _miv >= 6 && (_mis += _miu);
+            }), 1 == _mip && (_mir >= 1 && (_mio.souk += 1 * _mir), _mis >= 1 && (_mio.souk += 1 * _mis), _mit >= 1 && (_mio.souk += 1 * _mit)), _mio;
+        };
+    },
+    17274: (_miw, _mix, _miy) => {
+        'use strict';
+        var _miz = null;
+        defineModule(_mix);
+        Object.defineProperty(_mix, '__esModule', {
+            'value': !0
+        }), _mix.getSlot139PersonalEffect = void 0;
+        var _mj0 = _miy(74496);
+        _mix.getSlot139PersonalEffect = function(_mj1) {
+            var _mj2 = null,
+                _mj3 = new _mj0.SlotItemEffectModel(),
+                _mj4 = !1,
+                _mj5 = new _mj0.SlotItemEffectModel();
+            if (662 != _mj1.ship_id && 663 != _mj1.ship_id && 668 != _mj1.ship_id || (_mj5.houg += 2, _mj5.tyku += 1, _mj4 = !0), 0 == _mj4) return _mj3;
+            var _mj6 = _mj1.get_slotnums(139);
+            return _mj3.add(_mj5.multiply(_mj6)), _mj3;
+        };
+    },
+    21713: (_mj7, _mj8, _mj9) => {
+        'use strict';
+        var _mja = null;
+        defineModule(_mj8);
+        Object.defineProperty(_mj8, '__esModule', {
+            'value': !0
+        }), _mj8.getSlot143PersonalEffect = void 0;
+        var _mjb = _mj9(74496);
+        _mj8.getSlot143PersonalEffect = function(_mjc) {
+            var _mjd = null,
+                _mje = new _mjb.SlotItemEffectModel();
+            return 'あかぎ' == _mjc.yomi ? _mje.houg = 3 : 'かが' == _mjc.yomi || 'しょうかく' == _mjc.yomi ? _mje.houg = 2 : ('ずいかく' == _mjc.yomi || 'りゅうじょう' == _mjc.yomi) && (_mje.houg = 1), _mje;
+        };
+    },
+    59823: (_mjf, _mjg, _mjh) => {
+        'use strict';
+        var _mji = null;
+        defineModule(_mjg);
+        Object.defineProperty(_mjg, '__esModule', {
+            'value': !0
+        }), _mjg.getSlot144PersonalEffect = void 0;
+        var _mjj = _mjh(74496);
+        _mjg.getSlot144PersonalEffect = function(_mjk) {
+            var _mjl = null,
+                _mjm = new _mjj.SlotItemEffectModel();
+            return 'あかぎ' == _mjk.yomi ? _mjm.houg = 3 : 'かが' == _mjk.yomi ? _mjm.houg = 2 : 'しょうかく' == _mjk.yomi ? (_mjm.houg = 2, 461 != _mjk.ship_id && 466 != _mjk.ship_id || (_mjm.houg += 2)) : 'ずいかく' == _mjk.yomi ? (_mjm.houg = 1, 462 != _mjk.ship_id && 467 != _mjk.ship_id || (_mjm.houg += 1)) : 'りゅうじょう' == _mjk.yomi && (_mjm.houg = 1), _mjm;
+        };
+    },
+    57440: (_mjn, _mjo, _mjp) => {
+        'use strict';
+        var _mjq = null;
+        defineModule(_mjo);
+        Object.defineProperty(_mjo, '__esModule', {
+            'value': !0
+        }), _mjo.getSlot149PersonalEffect = void 0;
+        var _mjr = _mjp(74496);
+        _mjo.getSlot149PersonalEffect = function(_mjs) {
+            var _mjt = null,
+                _mju = new _mjr.SlotItemEffectModel(),
+                _mjv = new _mjr.SlotItemEffectModel(),
+                _mjw = !1;
+            return 488 == _mjs.ship_id || 141 == _mjs.ship_id || 160 == _mjs.ship_id || 622 == _mjs.ship_id || 623 == _mjs.ship_id || 656 == _mjs.ship_id || 961 == _mjs.ship_id ? (_mjv.tais = 1, _mjv.kaih = 3, _mjw = !0) : 624 == _mjs.ship_id ? (_mjv.tais = 3, _mjv.kaih = 5, _mjw = !0) : 662 == _mjs.ship_id && (_mjv.tais = 2, _mjv.kaih = 4, _mjw = !0), 54 == _mjs.ctype && (_mjv.tais = 1, _mjv.kaih = 2, _mjw = !0), 0 == _mjw ? _mju : _mju = _mjv.multiply(1);
+        };
+    },
+    29493: (_mjx, _mjy, _mjz) => {
+        'use strict';
+        var _mk0 = null;
+        defineModule(_mjy);
+        Object.defineProperty(_mjy, '__esModule', {
+            'value': !0
+        }), _mjy.getSlot14inch45CaliberGunPersonalEffect = void 0;
+        var _mk1 = _mjz(74496);
+        _mjy.getSlot14inch45CaliberGunPersonalEffect = function(_mk2) {
+            var _mk3 = null,
+                _mk4, _mk5, _mk6, _mk7 = new _mk1.SlotItemEffectModel(),
+                _mk8 = !1,
+                _mk9 = new _mk1.SlotItemEffectModel(),
+                _mka = {
+                    507: 507,
+                    508: 507
+                },
+                _mkb = _mk2.get_slotnums(507),
+                _mkc = _mk2.get_slotnums(508),
+                _mkd = _mkb + _mkc,
+                _mke = _mk2.getCountryName(),
+                _mkf = _mk2.getUSSWaterRaderDict();
+            if (125 == _mk2.ctype && (_mk9.houg += 1, _mk9.kaih += 1, _mk9.houm += 1, _mk8 = !0, _mkb >= 1 && _mkc >= 1 && (_mk7.houg += 1, _mk7.houm += 1)), 'アメリカ' == _mke && _mk2.stype >= 8 && _mk2.stype <= 10) {
+                _mk9.houg += 2, _mk9.kaih += 1, _mk9.houm += 1, _mk8 = !0;
+                for (var _mkg = 0, _mkh = 0, _mki = _mk2.have_slot_ids(); _mkh < _mki.length; _mkh++) {
+                    var _mkj = _mki[_mkh];
+                    _mkf[Number(_mkj)] && (_mkg += _mk2.get_slotnums(parseInt(_mkj)));
+                }
+                _mkg >= 1 && (_mk7.houg += 1, _mk7.kaih += 1, _mk7.houm += 2), _mkb >= 1 && _mkc >= 1 && (_mk7.houg += 1, _mk7.houm += 1, _mk7.kaih += 2);
+            }
+            else 6 != _mk2.ctype && 26 != _mk2.ctype && 2 != _mk2.ctype && 'イギリス' != _mke || (_mk7.kaih += 1, _mk7.houm += 1, _mkb >= 1 && _mkc >= 1 && (_mk7.houg += 1, _mk7.houm += 1, _mk7.kaih += 1));
+            _mk8 && _mk7.add(_mk9.multiply(_mkd));
+            for (var _mkk = {}, _mkl = {}, _mkm = {}, _mkn = function(_mko) {
+                    var _mkp = null,
+                        _mkq = Number(_mko),
+                        _mkr = _mka[_mkq];
+                    _mkk[_mkr] = null !== (_mk4 = _mkk[_mkr]) && void 0 !== _mk4 ? _mk4 : 0, _mkl[_mkr] = null !== (_mk5 = _mkl[_mkr]) && void 0 !== _mk5 ? _mk5 : 0, _mkm[_mkr] = null !== (_mk6 = _mkm[_mkr]) && void 0 !== _mk6 ? _mk6 : 0, _mk2.get_each_level_nums(_mkq).forEach(function(_mks, _mkt) {
+                        _mkt >= 3 && (_mkk[_mkr] += _mks), _mkt >= 6 && (_mkl[_mkr] += _mks), _mkt >= 9 && (_mkm[_mkr] += _mks);
+                    });
+                }, _mku = 0, _mkv = Object.keys(_mka); _mku < _mkv.length; _mku++) {
+                _mkn(_mkv[_mku]);
+            }
+            return _mkk[507] >= 1 && (_mk7.houg += 1 * _mkk[507]), _mkl[507] >= 1 && (_mk7.souk += 1 * _mkl[507]), _mkm[507] >= 1 && (_mk7.houm += 1 * _mkm[507]), _mk7;
+        };
+    },
+    66985: (_mkw, _mkx, _mky) => {
+        'use strict';
+        var _mkz = null;
+        defineModule(_mkx);
+        Object.defineProperty(_mkx, '__esModule', {
+            'value': !0
+        }), _mkx.getSlot15PersonalEffect = void 0;
+        var _ml0 = _mky(74496);
+        _mkx.getSlot15PersonalEffect = function(_ml1) {
+            var _ml2 = null,
+                _ml3 = new _ml0.SlotItemEffectModel(),
+                _ml4 = !1;
+            if ((566 == _ml1.ship_id || 567 == _ml1.ship_id || 568 == _ml1.ship_id || 648 == _ml1.ship_id || 651 == _ml1.ship_id || 656 == _ml1.ship_id || 670 == _ml1.ship_id || 915 == _ml1.ship_id || 951 == _ml1.ship_id || 'たけ' == _ml1.yomi) && (_ml4 = !0), 0 == _ml4) return _ml3;
+            var _ml5 = _ml1.get_slotnums(15);
+            return 30 == _ml1.ctype && (1 == _ml5 ? _ml3.raig = 2 : _ml5 >= 2 && (_ml3.raig = 4)), 'たけ' == _ml1.yomi && (_ml3.raig += 5, _ml3.kaih += 1), _ml3;
+        };
+    },
+    79086: (_ml6, _ml7, _ml8) => {
+        'use strict';
+        var _ml9 = null;
+        defineModule(_ml7);
+        Object.defineProperty(_ml7, '__esModule', {
+            'value': !0
+        }), _ml7.getSlot165_216PersonalEffect = void 0;
+        var _mla = _ml8(74496);
+        _ml7.getSlot165_216PersonalEffect = function(_mlb) {
+            var _mlc = null,
+                _mld = new _mla.SlotItemEffectModel();
+            return 501 != _mlb.ship_id && 506 != _mlb.ship_id && 502 != _mlb.ship_id && 507 != _mlb.ship_id || (_mld.tyku += 2, _mld.kaih += 2), _mld;
+        };
+    },
+    88102: (_mle, _mlf, _mlg) => {
+        'use strict';
+        var _mlh = null;
+        defineModule(_mlf);
+        Object.defineProperty(_mlf, '__esModule', {
+            'value': !0
+        }), _mlf.getSlot16M1PersonalEffect = void 0;
+        var _mli = _mlg(74496);
+        _mlf.getSlot16M1PersonalEffect = function(_mlj) {
+            var _mlk = null,
+                _mll = new _mli.SlotItemEffectModel(),
+                _mlm = new _mli.SlotItemEffectModel();
+            67 == _mlj.ctype || 78 == _mlj.ctype || 82 == _mlj.ctype || 88 == _mlj.ctype || 108 == _mlj.ctype || 112 == _mlj.ctype ? (_mlm.houg += 2, _mlm.souk += 1, 67 == _mlj.ctype && (_mlm.kaih -= 2)) : 149 == _mlj.ship_id || 150 == _mlj.ship_id || 151 == _mlj.ship_id || 152 == _mlj.ship_id ? (_mlm.houg += 1, _mlm.souk += 1, _mlm.kaih -= 3) : 591 == _mlj.ship_id || 592 == _mlj.ship_id ? (_mlm.houg += 2, _mlm.souk += 1, _mlm.kaih -= 2) : 593 != _mlj.ship_id && 954 != _mlj.ship_id || (_mlm.houg += 1, _mlm.souk += 1, _mlm.kaih -= 1);
+            var _mln = !0;
+            if (_mlm.exists() || (_mln = !1), 0 == _mln) return _mll;
+            var _mlo = _mlj.get_slotnums(298) + _mlj.get_slotnums(299) + _mlj.get_slotnums(300);
+            return _mll = _mlm.multiply(_mlo);
+        };
+    },
+    29240: (_mlp, _mlq, _mlr) => {
+        'use strict';
+        var _mls = null;
+        defineModule(_mlq);
+        Object.defineProperty(_mlq, '__esModule', {
+            'value': !0
+        }), _mlq.getSlot171PersonalEffect = void 0;
+        var _mlt = _mlr(74496);
+        _mlq.getSlot171PersonalEffect = function(_mlu) {
+            var _mlv = null,
+                _mlw = new _mlt.SlotItemEffectModel(),
+                _mlx = 0;
+            'アメリカ' == _mlu.getCountryName() && (_mlx = 1), 65 != _mlu.ctype && 93 != _mlu.ctype && 102 != _mlu.ctype && 107 != _mlu.ctype && 125 != _mlu.ctype || (_mlw.houg += 1, _mlw.saku += 1, _mlx = 2);
+            var _mly = _mlu.get_each_level_nums(171),
+                _mlz = 0,
+                _mm0 = 0,
+                _mm1 = 0;
+            return _mlx > 0 && (_mly.map(function(_mm2, _mm3) {
+                _mm3 >= 5 && (_mlz += _mm2), _mm3 >= 3 && (_mm0 += _mm2), _mm3 >= 8 && (_mm1 += _mm2);
+            }), 1 != _mlx && 2 != _mlx || (_mly[10] > 0 && (_mlw.houg += 1), _mlz > 0 && (_mlw.kaih += 1)), 2 == _mlx && (_mm0 > 0 && (_mlw.saku += 1), _mm1 > 0 && (_mlw.saku += 1))), _mlw;
+        };
+    },
+    40885: (_mm4, _mm5, _mm6) => {
+        'use strict';
+        var _mm7 = null;
+        defineModule(_mm5);
+        Object.defineProperty(_mm5, '__esModule', {
+            'value': !0
+        }), _mm5.getSlot174PersonalEffect = void 0;
+        var _mm8 = _mm6(74496);
+        _mm5.getSlot174PersonalEffect = function(_mm9) {
+            var _mma = null,
+                _mmb = new _mm8.SlotItemEffectModel(),
+                _mmc = new _mm8.SlotItemEffectModel();
+            if (66 == _mm9.ctype && (_mmc.raig = 1, _mmc.kaih = 2), 591 == _mm9.ship_id || 592 == _mm9.ship_id || 954 == _mm9.ship_id ? (_mmc.raig += 6, _mmc.kaih += 3) : 593 == _mm9.ship_id ? (_mmc.raig += 5, _mmc.kaih += 2) : 488 != _mm9.ship_id && 622 != _mm9.ship_id && 623 != _mm9.ship_id && 624 != _mm9.ship_id || (_mmc.houg += 2, _mmc.raig += 4, _mmc.kaih += 4), !_mmc.exists()) return _mmb;
+            var _mmd = _mm9.get_slotnums(174);
+            return _mmb = _mmc.multiply(_mmd);
+        };
+    },
+    19614: (_mme, _mmf, _mmg) => {
+        'use strict';
+        var _mmh = null;
+        defineModule(_mmf);
+        Object.defineProperty(_mmf, '__esModule', {
+            'value': !0
+        }), _mmf.getSlot179PersonalEffect = void 0;
+        var _mmi = _mmg(74496);
+        _mmf.getSlot179PersonalEffect = function(_mmj) {
+            var _mmk = null,
+                _mml = new _mmi.SlotItemEffectModel(),
+                _mmm = new _mmi.SlotItemEffectModel();
+            if (54 == _mmj.ctype && (_mmm.raig = 1), !_mmm.exists()) return _mml;
+            var _mmn = _mmj.get_slotnums(179);
+            return _mml = _mmm.multiply(_mmn);
+        };
+    },
+    87220: (_mmo, _mmp, _mmq) => {
+        'use strict';
+        var _mmr = null;
+        defineModule(_mmp);
+        Object.defineProperty(_mmp, '__esModule', {
+            'value': !0
+        }), _mmp.getSlot184PersonalEffect = void 0;
+        var _mms = _mmq(74496);
+        _mmp.getSlot184PersonalEffect = function(_mmt) {
+            var _mmu = null,
+                _mmv = new _mms.SlotItemEffectModel(),
+                _mmw = new _mms.SlotItemEffectModel();
+            if (68 == _mmt.ctype && (_mmw.houg += 1, _mmw.tyku += 2, _mmw.kaih += 3), !_mmw.exists()) return _mmv;
+            var _mmx = _mmt.get_slotnums(184);
+            return _mmv = _mmw.multiply(_mmx);
+        };
+    },
+    81367: (_mmy, _mmz, _mn0) => {
+        'use strict';
+        var _mn1 = null;
+        defineModule(_mmz);
+        Object.defineProperty(_mmz, '__esModule', {
+            'value': !0
+        }), _mmz.getSlot188PersonalEffect = void 0;
+        var _mn2 = _mn0(74496);
+        _mmz.getSlot188PersonalEffect = function(_mn3) {
+            var _mn4 = null,
+                _mn5 = new _mn2.SlotItemEffectModel(),
+                _mn6 = new _mn2.SlotItemEffectModel();
+            if (68 == _mn3.ctype && (_mn6.houg += 3, _mn6.tyku += 1, _mn6.kaih += 1), !_mn6.exists()) return _mn5;
+            var _mn7 = _mn3.get_slotnums(188);
+            return _mn5 = _mn6.multiply(_mn7);
+        };
+    },
+    13052: (_mn8, _mn9, _mna) => {
+        'use strict';
+        var _mnb = null;
+        defineModule(_mn9);
+        Object.defineProperty(_mn9, '__esModule', {
+            'value': !0
+        }), _mn9.getSlot189PersonalEffect = void 0;
+        var _mnc = _mna(74496);
+        _mn9.getSlot189PersonalEffect = function(_mnd) {
+            var _mne = null,
+                _mnf = new _mnc.SlotItemEffectModel(),
+                _mng = new _mnc.SlotItemEffectModel();
+            if (68 != _mnd.ctype && 63 != _mnd.ctype || (_mng.tyku += 1, _mng.kaih += 2), !_mng.exists()) return _mnf;
+            var _mnh = _mnd.get_slotnums(189);
+            return _mnf = _mng.multiply(_mnh);
+        };
+    },
+    66904: (_mni, _mnj, _mnk) => {
+        'use strict';
+        var _mnl = null;
+        defineModule(_mnj);
+        Object.defineProperty(_mnj, '__esModule', {
+            'value': !0
+        }), _mnj.getSlot18_52_PersonalEffect = void 0;
+        var _mnm = _mnk(74496);
+        _mnj.getSlot18_52_PersonalEffect = function(_mnn) {
+            var _mno = null,
+                _mnp = new _mnm.SlotItemEffectModel(),
+                _mnq = new _mnm.SlotItemEffectModel();
+            if (277 == _mnn.ship_id || 278 == _mnn.ship_id || 156 == _mnn.ship_id ? _mnq.houg = 1 : 594 == _mnn.ship_id || 698 == _mnn.ship_id || 646 == _mnn.ship_id ? (_mnq.houg = 1, _mnq.kaih = 1) : 599 != _mnn.ship_id && 610 != _mnn.ship_id || (_mnq.houg = 2, _mnq.kaih = 1), !_mnq.exists()) return _mnp;
+            var _mnr = _mnn.get_slotnums(18) + _mnn.get_slotnums(52);
+            return _mnp = _mnq.multiply(_mnr);
+        };
+    },
+    94968: (_mns, _mnt, _mnu) => {
+        'use strict';
+        var _mnv = null;
+        defineModule(_mnt);
+        Object.defineProperty(_mnt, '__esModule', {
+            'value': !0
+        }), _mnt.getSlot194PersonalEffect = void 0;
+        var _mnw = _mnu(74496);
+        _mnt.getSlot194PersonalEffect = function(_mnx) {
+            var _mny = null,
+                _mnz = new _mnw.SlotItemEffectModel(),
+                _mo0 = new _mnw.SlotItemEffectModel();
+            if (70 == _mnx.ctype ? (_mo0.houg += 3, _mo0.kaih += 2, _mo0.saku += 2) : 72 != _mnx.ctype && 62 != _mnx.ctype || (_mo0.kaih += 1, _mo0.saku += 2), 392 == _mnx.ship_id && (_mo0.houg += 1, _mo0.kaih += 2, _mo0.saku += 2), !_mo0.exists()) return _mnz;
+            var _mo1 = _mnx.get_slotnums(194);
+            return _mnz = _mo0.multiply(_mo1);
+        };
+    },
+    94781: (_mo2, _mo3, _mo4) => {
+        'use strict';
+        var _mo5 = null;
+        defineModule(_mo3);
+        Object.defineProperty(_mo3, '__esModule', {
+            'value': !0
+        }), _mo3.getSlot195PersonalEffect = void 0;
+        var _mo6 = _mo4(74496);
+        _mo3.getSlot195PersonalEffect = function(_mo7) {
+            var _mo8 = null,
+                _mo9 = new _mo6.SlotItemEffectModel(),
+                _moa = !1,
+                _mob = new _mo6.SlotItemEffectModel();
+            if ('アメリカ' == _mo7.getCountryName() && (_mob.houg += 1, _moa = !0), 0 == _moa) return _mo9;
+            var _moc = _mo7.get_slotnums(195);
+            return _mo9.add(_mob.multiply(_moc));
+        };
+    },
+    98137: (_mod, _moe, _mof) => {
+        'use strict';
+        var _mog = null;
+        defineModule(_moe);
+        Object.defineProperty(_moe, '__esModule', {
+            'value': !0
+        }), _moe.getSlot19PersonalEffect = void 0;
+        var _moh = _mof(74496);
+        _moe.getSlot19PersonalEffect = function(_moi) {
+            var _moj = null,
+                _mok = new _moh.SlotItemEffectModel(),
+                _mol = new _moh.SlotItemEffectModel();
+            if ('ほうしょう' == _moi.yomi && (_mol.houg = 2, _mol.kaih = 2, _mol.tais = 2, _mol.tyku = 2), 75 != _moi.ctype && 76 != _moi.ctype || (_mol.houg = 2, _mol.tais = 3), 7 == _moi.stype && (_mol.tyku += 1, _mol.kaih += 1), 894 != _moi.ship_id && 899 != _moi.ship_id || (_mol.houg += 1, _mol.kaih += 1, _mol.tais += 1, _mol.tyku += 1), !_mol.exists()) return _mok;
+            var _mom = _moi.get_slotnums(19);
+            return _mok = _mol.multiply(_mom);
+        };
+    },
+    48658: (_mon, _moo, _mop) => {
+        'use strict';
+        var _moq = null;
+        defineModule(_moo);
+        Object.defineProperty(_moo, '__esModule', {
+            'value': !0
+        }), _moo.getSlot204PersonalEffect = void 0;
+        var _mor = _mop(74496);
+        _moo.getSlot204PersonalEffect = function(_mos) {
+            var _mot = null,
+                _mou = new _mor.SlotItemEffectModel();
+            if (591 != _mos.ship_id && 592 != _mos.ship_id && 593 != _mos.ship_id && 954 != _mos.ship_id) return _mou;
+            _mou.souk = _mou.souk + 1, _mou.raig = _mou.raig + 1;
+            for (var _mov = _mos.get_each_level_nums(204), _mow = 0, _mox = 0; _mox <= 10; _mox++) _mox >= 7 && (_mow += _mov[_mox]);
+            return _mow > 0 && (_mou.souk = _mou.souk + 1), _mov[10] > 0 && (_mou.raig = _mou.raig + 1), _mou;
+        };
+    },
+    2306: (_moy, _moz, _mp0) => {
+        'use strict';
+        var _mp1 = null;
+        defineModule(_moz);
+        Object.defineProperty(_moz, '__esModule', {
+            'value': !0
+        }), _moz.getSlot217PersonalEffect = void 0;
+        var _mp2 = _mp0(74496);
+        _moz.getSlot217PersonalEffect = function(_mp3) {
+            var _mp4 = null,
+                _mp5 = new _mp2.SlotItemEffectModel(),
+                _mp6 = !1,
+                _mp7 = new _mp2.SlotItemEffectModel();
+            if (501 == _mp3.ship_id || 506 == _mp3.ship_id ? (_mp7.houg += 1, _mp7.kaih += 3, _mp7.tyku += 5, _mp6 = !0) : 502 != _mp3.ship_id && 507 != _mp3.ship_id || (_mp7.houg += 1, _mp7.kaih += 2, _mp7.tyku += 4, _mp6 = !0), 0 == _mp6) return _mp5;
+            var _mp8 = _mp3.get_slotnums(217);
+            return _mp5.add(_mp7.multiply(_mp8)), _mp5;
+        };
+    },
+    91302: function(_mp9, _mpa, _mpb) {
+        'use strict';
+        var _mpc = null;
+        var _mpd = this && this.__importDefault || function(_mpe) {
+            var _mpf = null;
+            return _mpe && _mpe.__esModule ? _mpe : {
+                'default': _mpe
+            };
+        };
+        defineModule(_mpa);
+        Object.defineProperty(_mpa, '__esModule', {
+            'value': !0
+        }), _mpa.getSlot220PersonalEffect = void 0;
+        var _mpg = _mpb(74496),
+            _mph = _mpd(_mpb(18622));
+        _mpa.getSlot220PersonalEffect = function(_mpi) {
+            var _mpj = null,
+                _mpk = new _mpg.SlotItemEffectModel(),
+                _mpl = !1,
+                _mpm = new _mpg.SlotItemEffectModel(),
+                _mpn = 0,
+                _mpo = 0;
+            if (662 == _mpi.ship_id || 663 == _mpi.ship_id || 668 == _mpi.ship_id || 501 == _mpi.ship_id || 506 == _mpi.ship_id || 502 == _mpi.ship_id || 507 == _mpi.ship_id ? (_mpm.houg += 1, _mpm.tyku += 3, _mpm.kaih += 2, _mpl = !0, _mpn = 1) : 894 != _mpi.ship_id && 899 != _mpi.ship_id || (_mpm.tyku += 2, _mpm.kaih += 2, _mpl = !0, _mpn = 1, _mpo = 1), 0 == _mpl) return _mpk;
+            var _mpp = _mpi.get_slotnums(220);
+            _mpk.add(_mpm.multiply(_mpp));
+            for (var _mpq = 0, _mpr = 0, _mps = _mpi.have_slot_ids(); _mpr < _mps.length; _mpr++) {
+                var _mpt = _mps[_mpr],
+                    _mpu = _mph.default.model.slot.getMst(_mpt),
+                    _mpv = _mpu.equipType;
+                12 != _mpv && 13 != _mpv || (_mpu.sakuteki >= 5 && _mpi.get_slotnums(parseInt(_mpt)), _mpu.taiku >= 2 && (_mpq += _mpi.get_slotnums(parseInt(_mpt))));
+            }
+            if (_mpq >= 1 && 1 == _mpn && (_mpk.tyku += 3, _mpk.kaih += 3), 0 == _mpo) return _mpk;
+            var _mpw = _mpi.get_each_level_nums(220)[10];
+            return 1 == _mpo && _mpw > 0 && (_mpk.houg += 1 * _mpw, _mpk.tyku += 1 * _mpw, _mpk.kaih += 1 * _mpw), _mpk;
+        };
+    },
+    20418: (_mpx, _mpy, _mpz) => {
+        'use strict';
+        var _mq0 = null;
+        defineModule(_mpy);
+        Object.defineProperty(_mpy, '__esModule', {
+            'value': !0
+        }), _mpy.getSlot227PersonalEffect = void 0;
+        var _mq1 = _mpz(74496);
+        _mpy.getSlot227PersonalEffect = function(_mq2) {
+            var _mq3 = null,
+                _mq4 = new _mq1.SlotItemEffectModel(),
+                _mq5 = _mq2.get_each_level_nums(227),
+                _mq6 = 0;
+            _mq5.forEach(function(_mq7, _mq8) {
+                _mq8 >= 8 && (_mq6 += _mq7);
+            }), _mq6 >= 1 && (_mq4.tais += 1 * _mq6);
+            var _mq9 = _mq5[10];
+            return _mq9 >= 1 && (_mq4.tais += 1 * _mq9), _mq4;
+        };
+    },
+    1906: (_mqa, _mqb, _mqc) => {
+        'use strict';
+        var _mqd = null;
+        defineModule(_mqb);
+        Object.defineProperty(_mqb, '__esModule', {
+            'value': !0
+        }), _mqb.getSlot228PersonalEffect = void 0;
+        var _mqe = _mqc(74496);
+        _mqb.getSlot228PersonalEffect = function(_mqf) {
+            var _mqg = null,
+                _mqh = new _mqe.SlotItemEffectModel(),
+                _mqi = new _mqe.SlotItemEffectModel();
+            if ('ほうしょう' == _mqf.yomi && (_mqi.houg = 3, _mqi.kaih = 4, _mqi.tais = 4, _mqi.tyku = 3), 75 != _mqf.ctype && 76 != _mqf.ctype || (_mqi.houg = 2, _mqi.tais = 5, _mqi.tyku = 1, _mqi.kaih = 1), 7 == _mqf.stype && (_mqi.tais += 2, _mqi.tyku += 1, _mqi.kaih += 1), 894 != _mqf.ship_id && 899 != _mqf.ship_id || (_mqi.houg += 1, _mqi.kaih += 2, _mqi.tais += 2, _mqi.tyku += 1), !_mqi.exists()) return _mqh;
+            var _mqj = _mqf.get_slotnums(228);
+            return _mqh = _mqi.multiply(_mqj);
+        };
+    },
+    61887: function(_mqk, _mql, _mqm) {
+        'use strict';
+        var _mqn = null;
+        var _mqo = this && this.__importDefault || function(_mqp) {
+            var _mqq = null;
+            return _mqp && _mqp.__esModule ? _mqp : {
+                'default': _mqp
+            };
+        };
+        defineModule(_mql);
+        Object.defineProperty(_mql, '__esModule', {
+            'value': !0
+        }), _mql.getSlot229PersonalEffect = void 0;
+        var _mqr = _mqm(74496),
+            _mqs = _mqo(_mqm(18622));
+        _mql.getSlot229PersonalEffect = function(_mqt) {
+            var _mqu = null;
+            for (var _mqv = new _mqr.SlotItemEffectModel(), _mqw = 0, _mqx = 0, _mqy = _mqt.have_slots_dict[229]; _mqx < _mqy.length; _mqx++) {
+                _mqy[_mqx].level >= 7 && _mqw++;
+            }
+            var _mqz = _mqw,
+                _mr0 = 0,
+                _mr1 = 0,
+                _mr2 = 0,
+                _mr3 = _mqt.get_slotnums(229);
+            if (622 == _mqt.ship_id || 623 == _mqt.ship_id || 624 == _mqt.ship_id) _mqv.houg += 1 * _mr3, _mqv.tyku += 1 * _mr3, _mr0 = 2;
+            else {
+                if (656 == _mqt.ship_id) _mqv.houg += 2 * _mr3, _mqv.tyku += 3 * _mr3, _mqv.tais += 2 * _mr3, _mr0 = 3;
+                else {
+                    if (0 == _mqw) return _mqv;
+                }
+            }
+            if (488 == _mqt.ship_id ? (_mqv.tyku += 3 * _mqz, _mr0 = 1) : 220 == _mqt.ship_id ? _mqv.tyku += 2 * _mqz : 23 == _mqt.ship_id ? _mqv.tyku += 1 * _mqz : 160 == _mqt.ship_id ? (_mqv.tyku += 2 * _mqz, _mr0 = 1) : 224 == _mqt.ship_id ? _mqv.tyku += 1 * _mqz : 487 == _mqt.ship_id ? (_mqv.tyku += 2 * _mqz, _mr0 = 1) : 289 == _mqt.ship_id && (_mqv.tyku += 1 * _mqz), (66 == _mqt.ctype || 28 == _mqt.ctype) && (_mqv.houg += 1 * _mqz, _mqv.tyku += 1 * _mqz, _mr1 = 1), 1 == _mqt.stype && (_mqv.houg += 1 * _mqz, _mqv.tyku += 1 * _mqz, _mr2 = 1), ('ゆら' == _mqt.yomi || 'なか' == _mqt.yomi || 'きぬ' == _mqt.yomi) && (_mqv.houg += 2 * _mqz), 0 == _mr0 + _mr1 + _mr2) return _mqv;
+            for (var _mr4 = 0, _mr5 = 0, _mr6 = 0, _mr7 = _mqt.have_slot_ids(); _mr6 < _mr7.length; _mr6++) {
+                var _mr8 = _mr7[_mr6],
+                    _mr9 = _mqs.default.model.slot.getMst(_mr8),
+                    _mra = _mr9.equipType;
+                12 != _mra && 13 != _mra || (_mr9.sakuteki >= 5 && (_mr4 += _mqt.get_slotnums(parseInt(_mr8))), _mr9.taiku >= 2 && (_mr5 += _mqt.get_slotnums(parseInt(_mr8))));
+            }
+            return 1 == _mr0 ? _mr4 > 0 && (_mqv.houg += 3, _mqv.kaih += 2) : 2 == _mr0 ? (_mr4 > 0 && (_mqv.houg += 1, _mqv.kaih += 1), _mr5 > 0 && (_mqv.tyku += 2, _mqv.kaih += 2)) : 3 == _mr0 && (_mr4 > 0 && (_mqv.houg += 2, _mqv.kaih += 2), _mr5 > 0 && (_mqv.tyku += 3, _mqv.kaih += 2)), 1 == _mr1 && _mr4 > 0 && (_mqv.houg += 2, _mqv.kaih += 3), 1 == _mr2 && _mr4 > 0 && (_mqv.houg += 1, _mqv.kaih += 4), _mqv;
+        };
+    },
+    55734: (_mrb, _mrc, _mrd) => {
+        'use strict';
+        var _mre = null;
+        defineModule(_mrc);
+        Object.defineProperty(_mrc, '__esModule', {
+            'value': !0
+        }), _mrc.getSlot234PersonalEffect = void 0;
+        var _mrf = _mrd(74496);
+        _mrc.getSlot234PersonalEffect = function(_mrg) {
+            var _mrh = null,
+                _mri = new _mrf.SlotItemEffectModel(),
+                _mrj = !1,
+                _mrk = new _mrf.SlotItemEffectModel(),
+                _mrl = _mrg.get_slotnums(142) + _mrg.get_slotnums(460);
+            if (37 == _mrg.ctype && (_mrk.houg += 1, _mrk.tyku += 1, _mrk.kaih += 1, _mrk.houm += 1, _mrl >= 1 && (_mri.tyku += 1, _mri.kaih += 1, _mri.houm += 1), _mrj = !0), 0 == _mrj) return _mri;
+            var _mrm = _mrg.get_slotnums(234);
+            return _mri.add(_mrk.multiply(_mrm)), _mri;
+        };
+    },
+    17562: function(_mrn, _mro, _mrp) {
+        'use strict';
+        var _mrq = null;
+        var _mrr = this && this.__importDefault || function(_mrs) {
+            var _mrt = null;
+            return _mrs && _mrs.__esModule ? _mrs : {
+                'default': _mrs
+            };
+        };
+        defineModule(_mro);
+        Object.defineProperty(_mro, '__esModule', {
+            'value': !0
+        }), _mro.getSlot235PersonalEffect = void 0;
+        var _mru = _mrp(74496),
+            _mrv = _mrr(_mrp(18622));
+        _mro.getSlot235PersonalEffect = function(_mrw) {
+            var _mrx = null,
+                _mry = new _mru.SlotItemEffectModel(),
+                _mrz = !1,
+                _ms0 = new _mru.SlotItemEffectModel(),
+                _ms1 = 0;
+            if (52 != _mrw.ctype && 9 != _mrw.ctype || (_ms0.houg += 2, _ms0.tyku += 1, _mrz = !0), 321 == _mrw.ship_id && (_ms0.houg += 1, _ms0.kaih += 1, _ms1 = 1), 0 == _mrz) return _mry;
+            var _ms2 = _mrw.get_slotnums(235);
+            if (_mry.add(_ms0.multiply(_ms2)), 0 == _ms1) return _mry;
+            for (var _ms3 = 0, _ms4 = 0, _ms5 = 0, _ms6 = _mrw.have_slot_ids(); _ms5 < _ms6.length; _ms5++) {
+                var _ms7 = _ms6[_ms5],
+                    _ms8 = _mrv.default.model.slot.getMst(_ms7),
+                    _ms9 = _ms8.equipType;
+                12 != _ms9 && 13 != _ms9 || (_ms8.sakuteki >= 5 && (_ms3 += _mrw.get_slotnums(parseInt(_ms7))), _ms8.taiku >= 2 && (_ms4 += _mrw.get_slotnums(parseInt(_ms7))));
+            }
+            return _ms3 >= 1 && 1 == _ms1 && (_mry.houg += 3, _mry.kaih += 2), _ms4 >= 1 && 1 == _ms1 && (_mry.tyku += 3, _mry.kaih += 3), _mry;
+        };
+    },
+    47970: (_msa, _msb, _msc) => {
+        'use strict';
+        var _msd = null;
+        defineModule(_msb);
+        Object.defineProperty(_msb, '__esModule', {
+            'value': !0
+        }), _msb.getSlot237PersonalEffect = void 0;
+        var _mse = _msc(74496);
+        _msb.getSlot237PersonalEffect = function(_msf) {
+            var _msg = null,
+                _msh = new _mse.SlotItemEffectModel(),
+                _msi = new _mse.SlotItemEffectModel();
+            if (553 == _msf.ship_id) _msi.houg = 4, _msi.kaih = 2;
+            else {
+                if (82 == _msf.ship_id) _msi.houg = 3, _msi.kaih = 1;
+                else {
+                    if (88 == _msf.ship_id) _msi.houg = 3, _msi.kaih = 1;
+                    else {
+                        if (554 == _msf.ship_id) _msi.houg = 4, _msi.kaih = 2;
+                        else {
+                            if (411 == _msf.ship_id) _msi.houg = 2;
+                            else {
+                                if (412 != _msf.ship_id) return _msh;
+                                _msi.houg = 2;
+                            }
+                        }
+                    }
+                }
+            }
+            var _msj = _msf.get_slotnums(237);
+            return _msh = _msi.multiply(_msj);
+        };
+    },
+    14386: (_msk, _msl, _msm) => {
+        'use strict';
+        var _msn = null;
+        defineModule(_msl);
+        Object.defineProperty(_msl, '__esModule', {
+            'value': !0
+        }), _msl.getSlot238_239PersonalEffect = void 0;
+        var _mso = _msm(74496);
+        _msl.getSlot238_239PersonalEffect = function(_msp) {
+            var _msq = null,
+                _msr = new _mso.SlotItemEffectModel();
+            return 501 != _msp.ship_id && 506 != _msp.ship_id && 502 != _msp.ship_id && 507 != _msp.ship_id || (_msr.kaih += 1, _msr.raig += 1), _msr;
+        };
+    },
+    82229: (_mss, _mst, _msu) => {
+        'use strict';
+        var _msv = null;
+        defineModule(_mst);
+        Object.defineProperty(_mst, '__esModule', {
+            'value': !0
+        }), _mst.getSlot242PersonalEffect = void 0;
+        var _msw = _msu(74496);
+        _mst.getSlot242PersonalEffect = function(_msx) {
+            var _msy = null,
+                _msz = new _msw.SlotItemEffectModel(),
+                _mt0 = !1,
+                _mt1 = new _msw.SlotItemEffectModel();
+            if (78 == _msx.ctype && (_mt1.houg += 2, _mt1.kaih += 1, _mt0 = !0), 'ほうしょう' == _msx.yomi && (_mt1.houg += 1, _mt0 = !0), 0 == _mt0) return _msz;
+            var _mt2 = _msx.get_slotnums(242);
+            return _msz.add(_mt1.multiply(_mt2)), _msz;
+        };
+    },
+    10325: (_mt3, _mt4, _mt5) => {
+        'use strict';
+        var _mt6 = null;
+        defineModule(_mt4);
+        Object.defineProperty(_mt4, '__esModule', {
+            'value': !0
+        }), _mt4.getSlot243PersonalEffect = void 0;
+        var _mt7 = _mt5(74496);
+        _mt4.getSlot243PersonalEffect = function(_mt8) {
+            var _mt9 = null,
+                _mta = new _mt7.SlotItemEffectModel(),
+                _mtb = !1,
+                _mtc = new _mt7.SlotItemEffectModel();
+            if (78 == _mt8.ctype && (_mtc.houg += 3, _mtc.kaih += 1, _mtb = !0), 'ほうしょう' == _mt8.yomi && (_mtc.houg += 2, _mtb = !0), 0 == _mtb) return _mta;
+            var _mtd = _mt8.get_slotnums(243);
+            return _mta.add(_mtc.multiply(_mtd)), _mta;
+        };
+    },
+    351: (_mte, _mtf, _mtg) => {
+        'use strict';
+        var _mth = null;
+        defineModule(_mtf);
+        Object.defineProperty(_mtf, '__esModule', {
+            'value': !0
+        }), _mtf.getSlot244PersonalEffect = void 0;
+        var _mti = _mtg(74496);
+        _mtf.getSlot244PersonalEffect = function(_mtj) {
+            var _mtk = null,
+                _mtl = new _mti.SlotItemEffectModel(),
+                _mtm = !1,
+                _mtn = new _mti.SlotItemEffectModel();
+            if (78 == _mtj.ctype && (_mtn.houg += 4, _mtn.kaih += 2, _mtm = !0), 'ほうしょう' == _mtj.yomi && (_mtn.houg += 3, _mtm = !0), 0 == _mtm) return _mtl;
+            var _mto = _mtj.get_slotnums(244);
+            return _mtl.add(_mtn.multiply(_mto)), _mtl;
+        };
+    },
+    61977: (_mtp, _mtq, _mtr) => {
+        'use strict';
+        var _mts = null;
+        defineModule(_mtq);
+        Object.defineProperty(_mtq, '__esModule', {
+            'value': !0
+        }), _mtq.getSlot247PersonalEffect = void 0;
+        var _mtt = _mtr(74496);
+        _mtq.getSlot247PersonalEffect = function(_mtu) {
+            var _mtv = null,
+                _mtw = new _mtt.SlotItemEffectModel(),
+                _mtx = !1,
+                _mty = new _mtt.SlotItemEffectModel(),
+                _mtz = 0;
+            if ('フランス' == _mtu.getCountryName() && (_mty.houg += 2, _mty.houm += 2, _mtx = !0, _mtz = 1), 0 == _mtx) return _mtw;
+            var _mu0 = _mtu.get_slotnums(247);
+            if (_mtw.add(_mty.multiply(_mu0)), 0 == _mtz) return _mtw;
+            var _mu1 = _mtu.get_each_level_nums(247),
+                _mu2 = 0,
+                _mu3 = 0;
+            _mtz > 0 && _mu1.forEach(function(_mu4, _mu5) {
+                _mu5 >= 4 && (_mu2 += _mu4), _mu5 >= 8 && (_mu3 += _mu4);
+            });
+            var _mu6 = _mu1[10];
+            return 1 == _mtz && (_mu2 >= 1 && (_mtw.houg += 1 * _mu2, _mtw.houm += 1 * _mu2), _mu3 >= 1 && (_mtw.kaih += 1 * _mu3, _mtw.houg += 1 * _mu3, _mtw.houm += 1 * _mu3), _mu6 >= 1 && (_mtw.kaih += 1 * _mu6, _mtw.houm += 1 * _mu6)), _mtw;
+        };
+    },
+    31797: function(_mu7, _mu8, _mu9) {
+        'use strict';
+        var _mua = null;
+        var _mub = this && this.__importDefault || function(_muc) {
+            var _mud = null;
+            return _muc && _muc.__esModule ? _muc : {
+                'default': _muc
+            };
+        };
+        defineModule(_mu8);
+        Object.defineProperty(_mu8, '__esModule', {
+            'value': !0
+        }), _mu8.getSlot266PersonalEffect2 = _mu8.getSlot266PersonalEffect = void 0;
+        var _mue = _mu9(74496),
+            _muf = _mub(_mu9(18622));
+        _mu8.getSlot266PersonalEffect = function(_mug) {
+            var _muh = null,
+                _mui = new _mue.SlotItemEffectModel(),
+                _muj = !1;
+            if (566 != _mug.ship_id && 567 != _mug.ship_id && 568 != _mug.ship_id && 656 != _mug.ship_id && 670 != _mug.ship_id && 915 != _mug.ship_id && 951 != _mug.ship_id || (_muj = !0), 0 == _muj) return _mui;
+            var _muk = _mug.get_slotnums(266);
+            return 30 == _mug.ctype && (1 == _muk ? _mui.houg = 1 : _muk >= 2 && (_mui.houg = 3)), _mui;
+        }, _mu8.getSlot266PersonalEffect2 = function(_mul) {
+            var _mum = null,
+                _mun = new _mue.SlotItemEffectModel(),
+                _muo = 0,
+                _mup = new _mue.SlotItemEffectModel();
+            if (23 == _mul.ctype || 18 == _mul.ctype ? (_mup.houg = 1, _muo = 1) : 30 == _mul.ctype && (_mup.houg = 1, _muo = 2), ('しぐれ' == _mul.yomi || 'ゆきかぜ' == _mul.yomi || 'いそかぜ' == _mul.yomi) && (_mup.kaih = 1), 961 == _mul.ship_id && (_mup.houg += 1, _mup.houm += 1, _mup.kaih += 1), !_mup.exists()) return _mun;
+            var _muq = _mul.get_slotnums(266);
+            if (_mun = _mup.multiply(_muq), 0 == _muo) return _mun;
+            for (var _mur = 0, _mus = 0, _mut = _mul.have_slot_ids(); _mus < _mut.length; _mus++) {
+                var _muu = _mut[_mus],
+                    _muv = _muf.default.model.slot.getMst(_muu),
+                    _muw = _muv.equipType;
+                (12 == _muw || 13 == _muw) && _muv.sakuteki >= 5 && (_mur += _mul.get_slotnums(parseInt(_muu)));
+            }
+            return _mur > 0 && (1 == _muo ? (_mun.houg += 1, _mun.kaih += 1, _mun.raig += 3) : 2 == _muo && (_mun.houg += 2, _mun.kaih += 1, _mun.raig += 3)), _mun;
+        };
+    },
+    45738: function(_mux, _muy, _muz) {
+        'use strict';
+        var _mv0 = null;
+        var _mv1 = this && this.__importDefault || function(_mv2) {
+            var _mv3 = null;
+            return _mv2 && _mv2.__esModule ? _mv2 : {
+                'default': _mv2
+            };
+        };
+        defineModule(_muy);
+        Object.defineProperty(_muy, '__esModule', {
+            'value': !0
+        }), _muy.getSlot267PersonalEffect2 = _muy.getSlot267PersonalEffect = void 0;
+        var _mv4 = _muz(74496),
+            _mv5 = _mv1(_muz(18622));
+        _muy.getSlot267PersonalEffect = function(_mv6) {
+            var _mv7 = null,
+                _mv8 = new _mv4.SlotItemEffectModel(),
+                _mv9 = 0,
+                _mva = 0;
+            if (38 == _mv6.ctype || 22 == _mv6.ctype) _mv9 = 2, _mva = 1;
+            else {
+                if (30 != _mv6.ctype) return _mv8;
+                _mv9 = 1, _mva = 1;
+            }
+            var _mvb = _mv6.get_slotnums(267) + _mv6.get_slotnums(366);
+            return _mv8.houg = _mv9 * _mvb, _mv8.kaih = _mva * _mvb, _mv8;
+        }, _muy.getSlot267PersonalEffect2 = function(_mvc) {
+            var _mvd = null,
+                _mve = new _mv4.SlotItemEffectModel(),
+                _mvf = _mvc.get_slotnums(267),
+                _mvg = _mvc.get_slotnums(366),
+                _mvh = _mvf + _mvg;
+            if (566 != _mvc.ship_id && 567 != _mvc.ship_id && 568 != _mvc.ship_id && 656 != _mvc.ship_id && 670 != _mvc.ship_id && 915 != _mvc.ship_id && 951 != _mvc.ship_id || (_mvf > 0 && (_mve.houg += 1), 1 == _mvg ? (_mve.houg += 1, _mve.tyku += 2) : _mvg >= 2 && (_mve.houg += 2, _mve.tyku += 4)), 38 != _mvc.ctype && 229 != _mvc.ship_id && [648, 961].indexOf(_mvc.ship_id) < 0) return _mve;
+            var _mvi = !1,
+                _mvj = !1,
+                _mvk = !1,
+                _mvl = !1,
+                _mvm = !1,
+                _mvn = !1,
+                _mvo = !1,
+                _mvp = !1,
+                _mvq = !1,
+                _mvr = !1,
+                _mvs = !1,
+                _mvt = 0,
+                _mvu = 0,
+                _mvv = 0;
+            543 == _mvc.ship_id ? (_mve.houg = 1 * _mvh, _mvj = !0) : 229 == _mvc.ship_id ? _mvk = !0 : 542 == _mvc.ship_id ? (_mve.houg = 1 * _mvh, _mvl = !0) : 563 == _mvc.ship_id ? (_mve.houg = 1 * _mvh, _mvm = !0) : 564 == _mvc.ship_id ? (_mve.houg = 1 * _mvh, _mvn = !0) : 578 == _mvc.ship_id ? (_mve.houg = 1 * _mvh, _mvo = !0) : 569 == _mvc.ship_id ? (_mve.houg = 1 * _mvh, _mvp = !0) : 649 == _mvc.ship_id ? (_mve.houg = 2 * _mvh, _mvr = !0) : 955 == _mvc.ship_id || 960 == _mvc.ship_id ? (_mve.houg = 2 * _mvh, _mvs = !0) : 648 == _mvc.ship_id ? (_mve.houg = 2 * _mvh, _mvq = !0, _mvt = 1, _mvu = 1, _mvv = 1) : 961 == _mvc.ship_id && (_mve.houg = 2 * _mvh, _mvi = !0, _mvt = 1, _mvu = 1, _mvv = 1);
+            for (var _mvw = 0, _mvx = 0, _mvy = 0, _mvz = _mvc.have_slot_ids(); _mvy < _mvz.length; _mvy++) {
+                var _mw0 = _mvz[_mvy],
+                    _mw1 = _mv5.default.model.slot.getMst(_mw0),
+                    _mw2 = _mw1.equipType;
+                12 != _mw2 && 13 != _mw2 || (_mw1.sakuteki >= 5 && (_mvw += _mvc.get_slotnums(parseInt(_mw0))), _mw1.taiku >= 2 && (_mvx += _mvc.get_slotnums(parseInt(_mw0))));
+            }
+            if (_mvw > 0 && _mvf > 0 && ((38 == _mvc.ctype || _mvq) && (_mve.houg += 2, _mve.raig += 3, _mve.kaih += 1, 955 == _mvc.ship_id ? _mve.raig -= 1 : 960 == _mvc.ship_id && (_mve.raig -= 2)), (_mvl || _mvj || _mvk || _mvm || _mvn || _mvo || _mvp || _mvq || _mvr || _mvs) && (_mve.houg += 1, _mve.raig += 3, _mve.kaih += 2)), _mvg > 0 && (_mvl || _mvj || _mvm || _mvn || _mvo || _mvk || _mvp || _mvq || _mvr || _mvi || _mvs)) {
+                1 == _mvg ? (_mve.tyku += 3, _mve.houg += 1, _mve.houm += 1) : _mvg >= 2 && (_mve.tyku += 5, _mve.houg += 3, _mve.houm += 1, 955 == _mvc.ship_id && (_mve.houg += 1)), (_mvp || _mvq) && (_mve.houg += 1, _mve.tyku += 2), _mvw > 0 && (_mve.houg += 2, _mve.kaih += 2, _mve.raig += 4, _mve.houm += 2, 960 == _mvc.ship_id && (_mve.raig -= 1, _mve.houg += 1)), _mvx > 0 && (_mve.houg += 1, _mve.kaih += 3, _mve.tyku += 5, _mve.houm += 1);
+                var _mw3 = _mvc.get_each_level_nums(366),
+                    _mw4 = 0,
+                    _mw5 = 0;
+                _mw3.forEach(function(_mw6, _mw7) {
+                    _mw7 >= 5 && (_mw4 += _mw6), _mw7 >= 8 && (_mw5 += _mw6);
+                }), _mw4 >= 1 && (_mve.houm += 1 * _mw4), _mw5 >= 1 && (_mve.houg += 1 * _mw5);
+                var _mw8 = _mw3[10];
+                _mw8 >= 1 && (_mve.houm += 1 * _mw8);
+            }
+            var _mw9 = _mvc.get_slotnums(129),
+                _mwa = _mvc.get_slotnums(74),
+                _mwb = _mvc.get_slotnums(412);
+            return _mvt > 0 && _mw9 > 0 && 1 == _mvt && (_mve.houg += 2, _mve.kaih += 3, _mve.tyku += 2), _mvv > 0 && _mwb > 0 && 1 == _mvv && (_mve.houg += 2, _mve.kaih += 3, _mve.tyku += 2), _mvu > 0 && _mwa > 0 && 1 == _mvu && (_mve.houg += 3, _mve.kaih -= 3), _mve;
+        };
+    },
+    23934: (_mwc, _mwd, _mwe) => {
+        'use strict';
+        var _mwf = null;
+        defineModule(_mwd);
+        Object.defineProperty(_mwd, '__esModule', {
+            'value': !0
+        }), _mwd.getSlot271PersonalEffect = void 0;
+        var _mwg = _mwe(74496);
+        _mwd.getSlot271PersonalEffect = function(_mwh) {
+            var _mwi = null,
+                _mwj = new _mwg.SlotItemEffectModel(),
+                _mwk = 0;
+            if (508 != _mwh.ship_id && 509 != _mwh.ship_id && 888 != _mwh.ship_id && 883 != _mwh.ship_id || (_mwk = 1), 0 == _mwk) return _mwj;
+            var _mwl = _mwh.get_each_level_nums(271),
+                _mwm = 0,
+                _mwn = 0,
+                _mwo = 0,
+                _mwp = _mwl[10];
+            return _mwk > 0 && _mwl.forEach(function(_mwq, _mwr) {
+                _mwr >= 4 && (_mwm += _mwq), _mwr >= 6 && (_mwn += _mwq), _mwr >= 8 && (_mwo += _mwq);
+            }), 1 == _mwk && (_mwm >= 1 && (_mwj.houg += 1 * _mwm), _mwn >= 1 && (_mwj.tyku += 2 * _mwn), _mwo >= 1 && (_mwj.kaih += 2 * _mwo), _mwp >= 1 && (_mwj.houg += 1 * _mwp)), _mwj;
+        };
+    },
+    17712: function(_mws, _mwt, _mwu) {
+        'use strict';
+        var _mwv = null;
+        var _mww = this && this.__importDefault || function(_mwx) {
+            var _mwy = null;
+            return _mwx && _mwx.__esModule ? _mwx : {
+                'default': _mwx
+            };
+        };
+        defineModule(_mwt);
+        Object.defineProperty(_mwt, '__esModule', {
+            'value': !0
+        }), _mwt.getSlot275PersonalEffect = void 0;
+        var _mwz = _mwu(74496),
+            _mx0 = _mww(_mwu(18622));
+        _mwt.getSlot275PersonalEffect = function(_mx1) {
+            var _mx2 = null,
+                _mx3 = new _mwz.SlotItemEffectModel(),
+                _mx4 = !1,
+                _mx5 = new _mwz.SlotItemEffectModel(),
+                _mx6 = 0,
+                _mx7 = 0;
+            if (894 != _mx1.ship_id && 899 != _mx1.ship_id || (_mx5.houg += 1, _mx5.tyku += 3, _mx5.kaih += 2, _mx4 = !0, _mx7 = 1, _mx6 = 1), 0 == _mx4) return _mx3;
+            var _mx8 = _mx1.get_slotnums(275);
+            _mx3.add(_mx5.multiply(_mx8));
+            var _mx9 = 0;
+            if (_mx6 > 0)
+                for (var _mxa = 0, _mxb = _mx1.have_slot_ids(); _mxa < _mxb.length; _mxa++) {
+                    var _mxc = _mxb[_mxa],
+                        _mxd = _mx0.default.model.slot.getMst(_mxc),
+                        _mxe = _mxd.equipType;
+                    12 != _mxe && 13 != _mxe || (_mxd.sakuteki >= 5 && _mx1.get_slotnums(parseInt(_mxc)), _mxd.taiku >= 2 && (_mx9 += _mx1.get_slotnums(parseInt(_mxc))));
+                }
+            if (1 == _mx6 && _mx9 > 0 && (_mx3.tyku += 3, _mx3.kaih += 3), 0 == _mx7) return _mx3;
+            var _mxf = _mx1.get_each_level_nums(275),
+                _mxg = 0,
+                _mxh = _mxf[10];
+            return _mx7 > 0 && _mxf.forEach(function(_mxi, _mxj) {
+                _mxj >= 7 && (_mxg += _mxi);
+            }), 1 == _mx7 && (_mxg > 0 && (_mx3.tyku += 1 * _mxg, _mx3.kaih += 1 * _mxg), _mxh > 0 && (_mx3.houg += 1 * _mxh, _mx3.tyku += 1 * _mxh, _mx3.houm += 1 * _mxh)), _mx3;
+        };
+    },
+    93733: (_mxk, _mxl, _mxm) => {
+        'use strict';
+        var _mxn = null;
+        defineModule(_mxl);
+        Object.defineProperty(_mxl, '__esModule', {
+            'value': !0
+        }), _mxl.getSlot277PersonalEffect = void 0;
+        var _mxo = _mxm(74496);
+        _mxl.getSlot277PersonalEffect = function(_mxp) {
+            var _mxq = null,
+                _mxr = new _mxo.SlotItemEffectModel(),
+                _mxs = !1,
+                _mxt = new _mxo.SlotItemEffectModel();
+            if ('アメリカ' != _mxp.getCountryName() && 67 != _mxp.ctype && 78 != _mxp.ctype && 82 != _mxp.ctype && 88 != _mxp.ctype && 108 != _mxp.ctype && 112 != _mxp.ctype || (_mxt.houg += 1, _mxt.kaih += 1, _mxs = !0), 83 == _mxp.ctype && (_mxt.houg += 1, _mxt.kaih += 1, _mxt.tyku += 1, _mxs = !0), 0 == _mxs) return _mxr;
+            var _mxu = _mxp.get_slotnums(277);
+            return _mxr.add(_mxt.multiply(_mxu)), _mxr;
+        };
+    },
+    34718: (_mxv, _mxw, _mxx) => {
+        'use strict';
+        var _mxy = null;
+        defineModule(_mxw);
+        Object.defineProperty(_mxw, '__esModule', {
+            'value': !0
+        }), _mxw.getSlot278PersonalEffect = void 0;
+        var _mxz = _mxx(74496);
+        _mxw.getSlot278PersonalEffect = function(_my0) {
+            var _my1 = null,
+                _my2 = new _mxz.SlotItemEffectModel();
+            return 'アメリカ' == _my0.getCountryName() ? (_my2.tyku += 1, _my2.kaih += 3, _my2.saku += 1) : 67 == _my0.ctype || 78 == _my0.ctype || 82 == _my0.ctype || 88 == _my0.ctype || 108 == _my0.ctype || 112 == _my0.ctype ? (_my2.tyku += 1, _my2.kaih += 2) : 96 == _my0.ctype && (_my2.tyku += 1, _my2.kaih += 1), _my2;
+        };
+    },
+    69245: (_my3, _my4, _my5) => {
+        'use strict';
+        var _my6 = null;
+        defineModule(_my4);
+        Object.defineProperty(_my4, '__esModule', {
+            'value': !0
+        }), _my4.getSlot279PersonalEffect = void 0;
+        var _my7 = _my5(74496);
+        _my4.getSlot279PersonalEffect = function(_my8) {
+            var _my9 = null,
+                _mya = new _my7.SlotItemEffectModel();
+            return 'アメリカ' == _my8.getCountryName() ? (_mya.houg += 2, _mya.tyku += 2, _mya.kaih += 3, _mya.saku += 2) : 67 == _my8.ctype || 78 == _my8.ctype || 82 == _my8.ctype || 88 == _my8.ctype || 108 == _my8.ctype || 112 == _my8.ctype ? (_mya.houg += 1, _mya.tyku += 1, _mya.kaih += 2, _mya.saku += 1) : 96 == _my8.ctype && (_mya.houg += 1, _mya.tyku += 1, _mya.kaih += 1), _mya;
+        };
+    },
+    18478: (_myb, _myc, _myd) => {
+        'use strict';
+        var _mye = null;
+        defineModule(_myc);
+        Object.defineProperty(_myc, '__esModule', {
+            'value': !0
+        }), _myc.getSlot282PersonalEffect = void 0;
+        var _myf = _myd(74496);
+        _myc.getSlot282PersonalEffect = function(_myg) {
+            var _myh = null,
+                _myi = new _myf.SlotItemEffectModel(),
+                _myj = !1,
+                _myk = !1;
+            147 != _myg.ship_id && 73 != _myg.ctype && 81 != _myg.ctype || (_myj = !0), 'ゆうばり' == _myg.yomi && (_myk = !0);
+            var _myl = new _myf.SlotItemEffectModel();
+            if ((_myj || _myk) && (_myl.houg += 2, _myl.souk += 1), !_myl.exists()) return _myi;
+            var _mym = _myg.get_slotnums(282);
+            return _myi = _myl.multiply(_mym);
+        };
+    },
+    2899: (_myn, _myo, _myp) => {
+        'use strict';
+        var _myq = null;
+        defineModule(_myo);
+        Object.defineProperty(_myo, '__esModule', {
+            'value': !0
+        }), _myo.getSlot283PersonalEffect = void 0;
+        var _myr = _myp(74496);
+        _myo.getSlot283PersonalEffect = function(_mys) {
+            var _myt = null,
+                _myu = new _myr.SlotItemEffectModel(),
+                _myv = !1;
+            147 != _mys.ship_id && 73 != _mys.ctype && 81 != _mys.ctype || (_myv = !0);
+            var _myw = new _myr.SlotItemEffectModel();
+            if (_myv && (_myw.raig += 3, _myw.houg += 1, _myw.souk += 1), !_myw.exists()) return _myu;
+            var _myx = _mys.get_slotnums(283);
+            return _myu = _myw.multiply(_myx);
+        };
+    },
+    57120: (_myy, _myz, _mz0) => {
+        'use strict';
+        var _mz1 = null;
+        defineModule(_myz);
+        Object.defineProperty(_myz, '__esModule', {
+            'value': !0
+        }), _myz.getSlot285PersonalEffect = void 0;
+        var _mz2 = _mz0(74496);
+        _myz.getSlot285PersonalEffect = function(_mz3) {
+            var _mz4 = null,
+                _mz5 = new _mz2.SlotItemEffectModel(),
+                _mz6 = !1;
+            if ([195, 426, 420, 407, 437, 326, 419, 147, 627, 665, 903, 908, 647, 666, 959].indexOf(_mz3.ship_id) >= 0 && (_mz6 = !0), 0 == _mz6) return _mz5;
+            var _mz7 = _mz3.get_each_level_nums(285),
+                _mz8 = _mz3.get_slotnums(285);
+            _mz8 > 2 && (_mz8 = 2), _mz5.raig = 2 * _mz8, _mz5.kaih = 1 * _mz8;
+            var _mz9 = _mz7[10];
+            1 == _mz9 && (_mz5.houg += 1, _mz5.raig += 1), _mz9 >= 2 && (_mz5.houg += 2, _mz5.raig += 1), _mz9 >= 3 && (_mz5.raig += 3);
+            var _mza = _mz3.get_slotnums(285);
+            return 903 == _mz3.ship_id ? (_mza >= 2 && (_mz5.raig += 2), _mza >= 3 && (_mz5.raig += 2)) : 908 != _mz3.ship_id && 959 != _mz3.ship_id || (_mza >= 2 && (_mz5.raig += 1), _mza >= 3 && (_mz5.raig += 1)), _mz5;
+        };
+    },
+    74985: function(_mzb, _mzc, _mzd) {
+        'use strict';
+        var _mze = null;
+        var _mzf = this && this.__importDefault || function(_mzg) {
+            var _mzh = null;
+            return _mzg && _mzg.__esModule ? _mzg : {
+                'default': _mzg
+            };
+        };
+        defineModule(_mzc);
+        Object.defineProperty(_mzc, '__esModule', {
+            'value': !0
+        }), _mzc.getSlot286PersonalEffect3 = _mzc.getSlot286PersonalEffect2 = _mzc.getSlot286PersonalEffect = void 0;
+        var _mzi = _mzd(74496),
+            _mzj = _mzf(_mzd(18622));
+        _mzc.getSlot286PersonalEffect = function(_mzk) {
+            var _mzl = null,
+                _mzm = new _mzi.SlotItemEffectModel(),
+                _mzn = !1;
+            if ([566, 145, 961, 498, 144, 469, 463, 468, 199, 489, 490, 464, 470, 198, 543, 567, 568, 497, 542, 563, 564, 587, 578, 569, 648, 651, 656, 649, 588, 667, 670, 915, 951, 955, 960].indexOf(_mzk.ship_id) >= 0 && (_mzn = !0), 0 == _mzn) return _mzm;
+            var _mzo = _mzk.get_each_level_nums(286),
+                _mzp = _mzk.get_slotnums(286);
+            _mzp > 2 && (_mzp = 2), _mzm.raig = 2 * _mzp, _mzm.kaih = 1 * _mzp;
+            var _mzq = _mzo[10];
+            if (1 == _mzq ? _mzm.houg = _mzm.houg + 1 : _mzq >= 2 && (_mzm.houg = _mzm.houg + 2), 30 == _mzk.ctype || 961 == _mzk.ship_id) {
+                var _mzr = _mzo[5] + _mzo[6] + _mzo[7] + _mzo[8] + _mzo[9] + _mzo[10];
+                1 == _mzr ? _mzm.raig = _mzm.raig + 1 : _mzr >= 2 && (_mzm.raig = _mzm.raig + 2);
+            }
+            return _mzm;
+        }, _mzc.getSlot286PersonalEffect2 = function(_mzs) {
+            var _mzt = null,
+                _mzu = new _mzi.SlotItemEffectModel(),
+                _mzv = !1,
+                _mzw = 0;
+            if ('たけ' == _mzs.yomi && (_mzv = !0, _mzw = 1), 0 == _mzv) return _mzu;
+            var _mzx = _mzs.get_each_level_nums(286),
+                _mzy = 0;
+            return _mzw > 0 && _mzx.forEach(function(_mzz, _n00) {
+                _n00 >= 7 && (_mzy += _mzz);
+            }), 'たけ' == _mzs.yomi && (_mzu.raig += 7, _mzu.kaih += 2, _mzy >= 1 && (_mzu.raig += 2), _mzx[10] >= 1 && (_mzu.raig += 2)), _mzu;
+        }, _mzc.getSlot286PersonalEffect3 = function(_n01) {
+            var _n02 = null,
+                _n03 = new _mzi.SlotItemEffectModel(),
+                _n04 = !1,
+                _n05 = new _mzi.SlotItemEffectModel(),
+                _n06 = 0;
+            if (662 != _n01.ship_id && 663 != _n01.ship_id && 668 != _n01.ship_id || (_n05.raig += 2, _n04 = !0, _n06 = 1), 0 == _n04) return _n03;
+            var _n07 = _n01.get_slotnums(286);
+            _n03.add(_n05.multiply(_n07));
+            for (var _n08 = 0, _n09 = 0, _n0a = _n01.have_slot_ids(); _n09 < _n0a.length; _n09++) {
+                var _n0b = _n0a[_n09],
+                    _n0c = _mzj.default.model.slot.getMst(_n0b),
+                    _n0d = _n0c.equipType;
+                12 != _n0d && 13 != _n0d || (_n0c.sakuteki >= 5 && (_n08 += _n01.get_slotnums(parseInt(_n0b))), _n0c.taiku >= 2 && _n01.get_slotnums(parseInt(_n0b)));
+            }
+            return _n08 >= 1 && 1 == _n06 && (_n03.raig += 3, _n03.kaih += 2), _n03;
+        };
+    },
+    9234: (_n0e, _n0f, _n0g) => {
+        'use strict';
+        var _n0h = null;
+        defineModule(_n0f);
+        Object.defineProperty(_n0f, '__esModule', {
+            'value': !0
+        }), _n0f.getSlot287PersonalEffect = void 0;
+        var _n0i = _n0g(74496);
+        _n0f.getSlot287PersonalEffect = function(_n0j) {
+            var _n0k = null,
+                _n0l = new _n0i.SlotItemEffectModel(),
+                _n0m = new _n0i.SlotItemEffectModel(),
+                _n0n = !1;
+            if (488 == _n0j.ship_id || 141 == _n0j.ship_id || 160 == _n0j.ship_id || 624 == _n0j.ship_id || 656 == _n0j.ship_id ? (_n0m.tais = 1, _n0m.kaih = 1, _n0n = !0) : 662 != _n0j.ship_id && 961 != _n0j.ship_id || (_n0m.tais = 3, _n0n = !0), 0 == _n0n) return _n0l;
+            var _n0o = _n0j.get_slotnums(287);
+            return _n0l = _n0m.multiply(_n0o);
+        };
+    },
+    30802: (_n0p, _n0q, _n0r) => {
+        'use strict';
+        var _n0s = null;
+        defineModule(_n0q);
+        Object.defineProperty(_n0q, '__esModule', {
+            'value': !0
+        }), _n0q.getSlot288PersonalEffect = void 0;
+        var _n0t = _n0r(74496);
+        _n0q.getSlot288PersonalEffect = function(_n0u) {
+            var _n0v = null,
+                _n0w = new _n0t.SlotItemEffectModel(),
+                _n0x = new _n0t.SlotItemEffectModel(),
+                _n0y = !1;
+            if (488 == _n0u.ship_id || 141 == _n0u.ship_id || 160 == _n0u.ship_id || 656 == _n0u.ship_id ? (_n0x.tais = 2, _n0x.kaih = 1, _n0y = !0) : 624 == _n0u.ship_id ? (_n0x.houg = 1, _n0x.tais = 3, _n0x.kaih = 2, _n0y = !0) : 662 != _n0u.ship_id && 961 != _n0u.ship_id || (_n0x.tais = 4, _n0x.kaih = 1, _n0y = !0), 0 == _n0y) return _n0w;
+            var _n0z = _n0u.get_slotnums(288);
+            return _n0w = _n0x.multiply(_n0z);
+        };
+    },
+    97002: function(_n10, _n11, _n12) {
+        'use strict';
+        var _n13 = null;
+        var _n14 = this && this.__importDefault || function(_n15) {
+            var _n16 = null;
+            return _n15 && _n15.__esModule ? _n15 : {
+                'default': _n15
+            };
+        };
+        defineModule(_n11);
+        Object.defineProperty(_n11, '__esModule', {
+            'value': !0
+        }), _n11.getSlot289PersonalEffect = void 0;
+        var _n17 = _n12(74496),
+            _n18 = _n14(_n12(18622));
+        _n11.getSlot289PersonalEffect = function(_n19) {
+            var _n1a = null,
+                _n1b = new _n17.SlotItemEffectModel(),
+                _n1c = {
+                    151: 1,
+                    593: 1,
+                    954: 1,
+                    591: 2,
+                    149: 3,
+                    150: 3,
+                    592: 3,
+                    152: 3
+                },
+                _n1d = 0,
+                _n1e = new _n17.SlotItemEffectModel();
+            if (149 == _n19.ship_id || 591 == _n19.ship_id) _n1e.houg = 2, _n1e.tyku = 1, _n1d = 1;
+            else {
+                if (150 == _n19.ship_id || 592 == _n19.ship_id) _n1e.houg = 1;
+                else {
+                    if (152 == _n19.ship_id) _n1e.houg = 1;
+                    else {
+                        if (151 != _n19.ship_id && 593 != _n19.ship_id && 954 != _n19.ship_id) return _n1b;
+                        _n1e.houg = 2, _n1e.tyku = 2, _n1e.kaih = 2, _n1d = 1;
+                    }
+                }
+            }
+            var _n1f = _n19.get_slotnums(289);
+            if (_n1b = _n1e.multiply(_n1f), _n1c[_n19.ship_id]) {
+                var _n1g = _n19.get_each_level_nums(289),
+                    _n1h = new Array();
+                _n1g.forEach(function(_n1i, _n1j) {
+                    var _n1k = null;
+                    for (var _n1l = 1; _n1l <= _n19.SLOT_LEVEL_MAX; _n1l++) _n1j >= _n1l && (null == _n1h[_n1l] && (_n1h[_n1l] = 0), _n1h[_n1l] += _n1i);
+                });
+                var _n1m = _n1c[_n19.ship_id];
+                1 == _n1m ? (_n1h[1] >= 1 && (_n1b.kaih += 1 * _n1h[1]), _n1h[3] >= 1 && (_n1b.tyku = _n1b.tyku + 1 * _n1h[3]), _n1h[5] >= 1 && (_n1b.houg = _n1b.houg + 1 * _n1h[5]), _n1h[7] >= 1 && (_n1b.kaih += 1 * _n1h[7]), _n1h[8] >= 1 && (_n1b.tyku += 1 * _n1h[8]), _n1h[9] >= 1 && (_n1b.houg += 1 * _n1h[9]), _n1h[10] >= 1 && (_n1b.kaih += 1 * _n1h[10])) : 2 == _n1m ? (_n1h[4] >= 1 && (_n1b.tyku += 1 * _n1h[4]), _n1h[6] >= 1 && (_n1b.kaih += 1 * _n1h[6]), _n1h[8] >= 1 && (_n1b.houg += 1 * _n1h[8]), _n1h[10] >= 1 && (_n1b.kaih += 1 * _n1h[10])) : 3 == _n1m && (_n1h[7] >= 1 && (_n1b.tyku += 1 * _n1h[7]), _n1h[9] >= 1 && (_n1b.houg += 1 * _n1h[9]), _n1h[10] >= 1 && (_n1b.kaih += 1 * _n1h[10]));
+            }
+            if (0 == _n1d) return _n1b;
+            for (var _n1n = 0, _n1o = 0, _n1p = _n19.have_slot_ids(); _n1o < _n1p.length; _n1o++) {
+                var _n1q = _n1p[_n1o],
+                    _n1r = _n18.default.model.slot.getMst(_n1q),
+                    _n1s = _n1r.equipType;
+                (12 == _n1s || 13 == _n1s) && _n1r.sakuteki >= 5 && (_n1n += _n19.get_slotnums(parseInt(_n1q)));
+            }
+            return _n1n > 0 && (_n1b.houg += 2, _n1b.kaih += 2), _n1b;
+        };
+    },
+    16748: function(_n1t, _n1u, _n1v) {
+        'use strict';
+        var _n1w = null;
+        var _n1x = this && this.__importDefault || function(_n1y) {
+            var _n1z = null;
+            return _n1y && _n1y.__esModule ? _n1y : {
+                'default': _n1y
+            };
+        };
+        defineModule(_n1u);
+        Object.defineProperty(_n1u, '__esModule', {
+            'value': !0
+        }), _n1u.getSlot290PersonalEffect = void 0;
+        var _n20 = _n1v(74496),
+            _n21 = _n1x(_n1v(18622));
+        _n1u.getSlot290PersonalEffect = function(_n22) {
+            var _n23 = null,
+                _n24 = new _n20.SlotItemEffectModel(),
+                _n25 = 0,
+                _n26 = new _n20.SlotItemEffectModel();
+            if (411 == _n22.ship_id) _n26.houg = 1;
+            else {
+                if (412 == _n22.ship_id) _n26.houg = 1;
+                else {
+                    if (82 == _n22.ship_id) _n26.houg = 2, _n26.tyku = 2, _n26.kaih = 1, _n25 = 1;
+                    else {
+                        if (553 == _n22.ship_id) _n26.houg = 3, _n26.tyku = 2, _n26.kaih = 1, _n26.houm = 3, _n25 = 1;
+                        else {
+                            if (88 == _n22.ship_id) _n26.houg = 2, _n26.tyku = 2, _n26.kaih = 1, _n25 = 1;
+                            else {
+                                if (554 != _n22.ship_id) return _n24;
+                                _n26.houg = 3, _n26.tyku = 2, _n26.kaih = 2, _n26.houm = 3, _n25 = 1;
+                            }
+                        }
+                    }
+                }
+            }
+            var _n27 = _n22.get_slotnums(290);
+            if (_n24 = _n26.multiply(_n27), 0 == _n25) return _n24;
+            for (var _n28 = 0, _n29 = 0, _n2a = _n22.have_slot_ids(); _n29 < _n2a.length; _n29++) {
+                var _n2b = _n2a[_n29],
+                    _n2c = _n21.default.model.slot.getMst(_n2b),
+                    _n2d = _n2c.equipType;
+                (12 == _n2d || 13 == _n2d) && _n2c.taiku >= 2 && (_n28 += _n22.get_slotnums(parseInt(_n2b)));
+            }
+            return _n28 > 0 && (_n24.tyku += 2, _n24.kaih += 3), _n24;
+        };
+    },
+    53618: (_n2e, _n2f, _n2g) => {
+        'use strict';
+        var _n2h = null;
+        defineModule(_n2f);
+        Object.defineProperty(_n2f, '__esModule', {
+            'value': !0
+        }), _n2f.getSlot291PersonalEffect = void 0;
+        var _n2i = _n2g(74496);
+        _n2f.getSlot291PersonalEffect = function(_n2j) {
+            var _n2k = null,
+                _n2l = new _n2i.SlotItemEffectModel(),
+                _n2m = new _n2i.SlotItemEffectModel();
+            if (553 == _n2j.ship_id) _n2m.houg = 6, _n2m.kaih = 1;
+            else {
+                if (554 != _n2j.ship_id) return _n2l;
+                _n2m.houg = 6, _n2m.kaih = 1;
+            }
+            var _n2n = _n2j.get_slotnums(291);
+            return _n2l = _n2m.multiply(_n2n);
+        };
+    },
+    72573: (_n2o, _n2p, _n2q) => {
+        'use strict';
+        var _n2r = null;
+        defineModule(_n2p);
+        Object.defineProperty(_n2p, '__esModule', {
+            'value': !0
+        }), _n2p.getSlot292PersonalEffect = void 0;
+        var _n2s = _n2q(74496);
+        _n2p.getSlot292PersonalEffect = function(_n2t) {
+            var _n2u = null,
+                _n2v = new _n2s.SlotItemEffectModel(),
+                _n2w = new _n2s.SlotItemEffectModel();
+            if (553 == _n2t.ship_id) _n2w.houg = 8, _n2w.kaih = 2, _n2w.tyku = 1;
+            else {
+                if (554 != _n2t.ship_id) return _n2v;
+                _n2w.houg = 8, _n2w.kaih = 2, _n2w.tyku = 1;
+            }
+            var _n2x = _n2t.get_slotnums(292);
+            return _n2v = _n2w.multiply(_n2x);
+        };
+    },
+    8955: function(_n2y, _n2z, _n30) {
+        'use strict';
+        var _n31 = null;
+        var _n32 = this && this.__importDefault || function(_n33) {
+            var _n34 = null;
+            return _n33 && _n33.__esModule ? _n33 : {
+                'default': _n33
+            };
+        };
+        defineModule(_n2z);
+        Object.defineProperty(_n2z, '__esModule', {
+            'value': !0
+        }), _n2z.getSlot293PersonalEffect = void 0;
+        var _n35 = _n30(74496),
+            _n36 = _n32(_n30(18622));
+        _n2z.getSlot293PersonalEffect = function(_n37) {
+            var _n38 = null,
+                _n39 = new _n35.SlotItemEffectModel(),
+                _n3a = new _n35.SlotItemEffectModel(),
+                _n3b = 0;
+            if (66 == _n37.ctype || 28 == _n37.ctype) _n3a.houg = 2, _n3a.tyku = 1, _n3a.kaih = 3, _n3b = 1;
+            else {
+                if (74 != _n37.ctype && 77 != _n37.ctype) return _n39;
+                _n3a.houg = 1, _n3a.tyku = 1, _n3a.kaih = 2, _n3b = 2;
+            }
+            var _n3c = _n37.get_slotnums(293);
+            _n39 = _n3a.multiply(_n3c);
+            for (var _n3d = 0, _n3e = 0, _n3f = _n37.have_slot_ids(); _n3e < _n3f.length; _n3e++) {
+                var _n3g = _n3f[_n3e],
+                    _n3h = _n36.default.model.slot.getMst(_n3g),
+                    _n3i = _n3h.equipType;
+                (12 == _n3i || 13 == _n3i) && _n3h.sakuteki >= 5 && (_n3d += _n37.get_slotnums(parseInt(_n3g)));
+            }
+            var _n3j = _n37.get_slotnums(174);
+            return 1 == _n3b ? (_n3d > 0 && (_n39.houg += 2, _n39.kaih += 3, _n39.raig += 1), 1 == _n3j ? (_n39.houg += 2, _n39.raig += 4) : _n3j >= 2 && (_n39.houg += 3, _n39.raig += 7)) : 2 == _n3b && _n3d > 0 && (_n39.houg += 2, _n39.kaih += 3, _n39.tais += 1), _n39;
+        };
+    },
+    98947: function(_n3k, _n3l, _n3m) {
+        'use strict';
+        var _n3n = null;
+        var _n3o = this && this.__importDefault || function(_n3p) {
+            var _n3q = null;
+            return _n3p && _n3p.__esModule ? _n3p : {
+                'default': _n3p
+            };
+        };
+        defineModule(_n3l);
+        Object.defineProperty(_n3l, '__esModule', {
+            'value': !0
+        }), _n3l.getSlot294PersonalEffect = void 0;
+        var _n3r = _n3m(74496),
+            _n3s = _n3o(_n3m(18622));
+        _n3l.getSlot294PersonalEffect = function(_n3t) {
+            var _n3u = null,
+                _n3v = new _n3r.SlotItemEffectModel(),
+                _n3w = new _n3r.SlotItemEffectModel(),
+                _n3x = 0,
+                _n3y = _n3t.get_slotnums(294);
+            if (12 != _n3t.ctype && 1 != _n3t.ctype && 5 != _n3t.ctype) return _n3v;
+            _n3w.houg = 1, 959 == _n3t.ship_id && (_n3w.houg += 1, _n3y >= 2 && (_n3v.houg += 2), _n3y >= 3 && (_n3v.houg += 3), _n3x = 1), _n3v.add(_n3w.multiply(_n3y));
+            for (var _n3z = 0, _n40 = 0, _n41 = _n3t.have_slot_ids(); _n40 < _n41.length; _n40++) {
+                var _n42 = _n41[_n40],
+                    _n43 = _n3s.default.model.slot.getMst(_n42),
+                    _n44 = _n43.equipType;
+                (12 == _n44 || 13 == _n44) && _n43.sakuteki >= 5 && (_n3z += _n3t.get_slotnums(parseInt(_n42)));
+            }
+            var _n45 = _n3t.get_slotnums(13),
+                _n46 = _n3t.get_slotnums(125),
+                _n47 = _n3t.get_slotnums(285),
+                _n48 = _n45 + _n46 + _n47;
+            if (_n3z > 0 && (_n3v.houg += 3, _n3v.kaih += 2, _n3v.raig += 1), 1 == _n48 ? (_n3v.houg += 1, _n3v.raig += 3) : _n48 >= 2 && (_n3v.houg += 2, _n3v.raig += 5), _n47 >= 1 && (_n3v.raig += 1), 0 == _n3x) return _n3v;
+            var _n49 = _n3t.get_each_level_nums(294),
+                _n4a = [];
+            return _n3x > 0 && _n49.forEach(function(_n4b, _n4c) {
+                var _n4d = null;
+                for (var _n4e = 1; _n4e <= _n3t.SLOT_LEVEL_MAX; _n4e++) null == _n4a[_n4e] && (_n4a[_n4e] = 0), _n4c >= _n4e && (_n4a[_n4e] += _n4b);
+            }), 1 == _n3x && (_n4a[6] >= 1 && (_n3v.houm += 4 * _n4a[6]), _n4a[7] >= 1 && (_n3v.houg = _n3v.houg + 6 * _n4a[7]), _n4a[8] >= 1 && (_n3v.houg = _n3v.houg + 1 * _n4a[8]), _n4a[9] >= 1 && (_n3v.houg = _n3v.houg + 1 * _n4a[9]), _n4a[10] >= 1 && (_n3v.houg += 1 * _n4a[10])), _n3v;
+        };
+    },
+    44726: function(_n4f, _n4g, _n4h) {
+        'use strict';
+        var _n4i = null;
+        var _n4j = this && this.__importDefault || function(_n4k) {
+            var _n4l = null;
+            return _n4k && _n4k.__esModule ? _n4k : {
+                'default': _n4k
+            };
+        };
+        defineModule(_n4g);
+        Object.defineProperty(_n4g, '__esModule', {
+            'value': !0
+        }), _n4g.getSlot295PersonalEffect = void 0;
+        var _n4m = _n4h(74496),
+            _n4n = _n4j(_n4h(18622));
+        _n4g.getSlot295PersonalEffect = function(_n4o) {
+            var _n4p = null,
+                _n4q = new _n4m.SlotItemEffectModel(),
+                _n4r = new _n4m.SlotItemEffectModel(),
+                _n4s = _n4o.get_slotnums(295);
+            if (12 != _n4o.ctype && 1 != _n4o.ctype && 5 != _n4o.ctype) return _n4q;
+            _n4r.houg = 2, _n4r.tyku = 2, 666 == _n4o.ship_id ? (_n4r.houg += 1, _n4r.tyku += 1, _n4r.tais += 1) : 959 == _n4o.ship_id && (_n4r.houg += 2, _n4s >= 2 && (_n4q.houg += 2), _n4s >= 3 && (_n4q.houg += 3)), _n4q.add(_n4r.multiply(_n4s));
+            for (var _n4t = 0, _n4u = 0, _n4v = 0, _n4w = _n4o.have_slot_ids(); _n4v < _n4w.length; _n4v++) {
+                var _n4x = _n4w[_n4v],
+                    _n4y = _n4n.default.model.slot.getMst(_n4x),
+                    _n4z = _n4y.equipType;
+                12 != _n4z && 13 != _n4z || (_n4y.sakuteki >= 5 && (_n4t += _n4o.get_slotnums(parseInt(_n4x))), _n4y.taiku >= 2 && (_n4u += _n4o.get_slotnums(parseInt(_n4x))));
+            }
+            var _n50 = _n4o.get_slotnums(13),
+                _n51 = _n4o.get_slotnums(125),
+                _n52 = _n4o.get_slotnums(285),
+                _n53 = _n50 + _n51 + _n52;
+            return _n4t > 0 && (_n4q.houg += 3, _n4q.kaih += 2, _n4q.raig += 1), 1 == _n53 ? (_n4q.houg += 1, _n4q.raig += 3) : _n53 >= 2 && (_n4q.houg += 2, _n4q.raig += 5), _n52 >= 1 && (_n4q.raig += 1), _n4u > 0 && (_n4q.tyku += 6), _n4q;
+        };
+    },
+    93065: function(_n54, _n55, _n56) {
+        'use strict';
+        var _n57 = null;
+        var _n58 = this && this.__importDefault || function(_n59) {
+            var _n5a = null;
+            return _n59 && _n59.__esModule ? _n59 : {
+                'default': _n59
+            };
+        };
+        defineModule(_n55);
+        Object.defineProperty(_n55, '__esModule', {
+            'value': !0
+        }), _n55.getSlot296PersonalEffect = void 0;
+        var _n5b = _n56(74496),
+            _n5c = _n58(_n56(18622));
+        _n55.getSlot296PersonalEffect = function(_n5d) {
+            var _n5e = null,
+                _n5f = new _n5b.SlotItemEffectModel(),
+                _n5g = new _n5b.SlotItemEffectModel();
+            1 != _n5d.ctype && 5 != _n5d.ctype && 10 != _n5d.ctype && 23 != _n5d.ctype || (_n5g.houg += 1), 10 != _n5d.ctype && 23 != _n5d.ctype || (_n5g.kaih += 1), 145 == _n5d.ship_id || 961 == _n5d.ship_id ? (_n5g.houg += 1, _n5g.tyku += 1) : 144 == _n5d.ship_id ? (_n5g.houg += 1, _n5g.raig += 1) : 469 == _n5d.ship_id || 588 == _n5d.ship_id || 667 == _n5d.ship_id || 587 == _n5d.ship_id || 242 == _n5d.ship_id ? _n5g.kaih += 1 : 497 == _n5d.ship_id ? (_n5g.houg += 1, _n5g.kaih += 1) : 244 == _n5d.ship_id ? _n5g.kaih += 1 : 498 == _n5d.ship_id ? (_n5g.tyku += 1, _n5g.kaih += 1) : 627 == _n5d.ship_id ? (_n5g.houg += 2, _n5g.raig += 1) : 903 != _n5d.ship_id && 908 != _n5d.ship_id || (_n5g.houg += 3);
+            var _n5h = !0;
+            if (_n5g.exists() || (_n5h = !1), 0 == _n5h) return _n5f;
+            var _n5i = _n5d.get_slotnums(296);
+            _n5f = _n5g.multiply(_n5i);
+            var _n5j = 0;
+            if (1 != _n5d.ctype && 5 != _n5d.ctype && 10 != _n5d.ctype || (_n5j = 1), 23 == _n5d.ctype && (_n5j = 2), 0 == _n5j) return _n5f;
+            for (var _n5k = 0, _n5l = 0, _n5m = 0, _n5n = _n5d.have_slot_ids(); _n5m < _n5n.length; _n5m++) {
+                var _n5o = _n5n[_n5m],
+                    _n5p = _n5c.default.model.slot.getMst(_n5o),
+                    _n5q = _n5p.equipType;
+                12 != _n5q && 13 != _n5q || (_n5p.sakuteki >= 5 && (_n5k += _n5d.get_slotnums(parseInt(_n5o))), _n5p.taiku >= 2 && (_n5l += _n5d.get_slotnums(parseInt(_n5o))));
+            }
+            return _n5k > 0 && (1 == _n5j ? (_n5f.houg += 1, _n5f.kaih += 2, _n5f.raig += 2) : 2 == _n5j && (_n5f.houg += 1, _n5f.kaih += 2, _n5f.raig += 3)), _n5d.get_slotnums(285) + _n5d.get_slotnums(125) >= 1 && 1 == _n5j && (_n5f.houg += 1, _n5f.raig += 3), _n5d.get_slotnums(15) + _n5d.get_slotnums(286) >= 1 && 2 == _n5j && (_n5f.houg += 1, _n5f.raig += 3), _n5l > 0 && (1 == _n5j ? _n5f.tyku += 5 : 2 == _n5j && (_n5f.tyku += 6)), _n5f;
+        };
+    },
+    85767: (_n5r, _n5s, _n5t) => {
+        'use strict';
+        var _n5u = null;
+        defineModule(_n5s);
+        Object.defineProperty(_n5s, '__esModule', {
+            'value': !0
+        }), _n5s.getSlot297PersonalEffect = void 0;
+        var _n5v = _n5t(74496);
+        _n5s.getSlot297PersonalEffect = function(_n5w) {
+            var _n5x = null,
+                _n5y = new _n5v.SlotItemEffectModel(),
+                _n5z = new _n5v.SlotItemEffectModel();
+            if (12 == _n5w.ctype) _n5z.kaih = 2;
+            else {
+                if (1 != _n5w.ctype && 5 != _n5w.ctype) return _n5y;
+                _n5z.kaih = 1;
+            }
+            var _n60 = _n5w.get_slotnums(297);
+            return _n5y = _n5z.multiply(_n60);
+        };
+    },
+    38314: (_n61, _n62, _n63) => {
+        'use strict';
+        var _n64 = null;
+        defineModule(_n62);
+        Object.defineProperty(_n62, '__esModule', {
+            'value': !0
+        }), _n62.getSlot301PersonalEffect = void 0;
+        var _n65 = _n63(74496);
+        _n62.getSlot301PersonalEffect = function(_n66) {
+            var _n67 = null,
+                _n68 = new _n65.SlotItemEffectModel(),
+                _n69 = new _n65.SlotItemEffectModel();
+            67 != _n66.ctype && 78 != _n66.ctype && 82 != _n66.ctype && 88 != _n66.ctype && 108 != _n66.ctype && 112 != _n66.ctype || (_n69.tyku += 2, _n69.kaih += 1, _n69.souk += 1);
+            var _n6a = !0;
+            if (_n69.exists() || (_n6a = !1), 0 == _n6a) return _n68;
+            var _n6b = _n66.get_slotnums(301);
+            return _n68 = _n69.multiply(_n6b);
+        };
+    },
+    59747: (_n6c, _n6d, _n6e) => {
+        'use strict';
+        var _n6f = null;
+        defineModule(_n6d);
+        Object.defineProperty(_n6d, '__esModule', {
+            'value': !0
+        }), _n6d.getSlot302PersonalEffect = void 0;
+        var _n6g = _n6e(74496);
+        _n6d.getSlot302PersonalEffect = function(_n6h) {
+            var _n6i = null,
+                _n6j = new _n6g.SlotItemEffectModel(),
+                _n6k = new _n6g.SlotItemEffectModel();
+            if (76 == _n6h.ctype && (_n6k.tais = 1, _n6k.kaih = 1), !_n6k.exists()) return _n6j;
+            var _n6l = _n6h.get_slotnums(302);
+            return _n6j = _n6k.multiply(_n6l);
+        };
+    },
+    40649: (_n6m, _n6n, _n6o) => {
+        'use strict';
+        var _n6p = null;
+        defineModule(_n6n);
+        Object.defineProperty(_n6n, '__esModule', {
+            'value': !0
+        }), _n6n.getSlot303PersonalEffect = void 0;
+        var _n6q = _n6o(74496);
+        _n6n.getSlot303PersonalEffect = function(_n6r) {
+            var _n6s = null,
+                _n6t = new _n6q.SlotItemEffectModel(),
+                _n6u = new _n6q.SlotItemEffectModel();
+            if (16 == _n6r.ctype || 4 == _n6r.ctype || 20 == _n6r.ctype || 41 == _n6r.ctype ? (_n6u.houg = 1, _n6u.tyku = 1) : 89 == _n6r.ctype && (_n6u.houg = 1, _n6u.tyku = 2, _n6u.kaih = 1), !_n6u.exists()) return _n6t;
+            var _n6v = _n6r.get_slotnums(303);
+            return _n6t = _n6u.multiply(_n6v);
+        };
+    },
+    13533: (_n6w, _n6x, _n6y) => {
+        'use strict';
+        var _n6z = null;
+        defineModule(_n6x);
+        Object.defineProperty(_n6x, '__esModule', {
+            'value': !0
+        }), _n6x.getSlot304PersonalEffect = void 0;
+        var _n70 = _n6y(74496);
+        _n6x.getSlot304PersonalEffect = function(_n71) {
+            var _n72 = null,
+                _n73 = new _n70.SlotItemEffectModel(),
+                _n74 = new _n70.SlotItemEffectModel();
+            if (16 == _n71.ctype || 4 == _n71.ctype || 20 == _n71.ctype || 41 == _n71.ctype ? (_n74.houg = 1, _n74.tais = 1, _n74.kaih = 1) : 89 == _n71.ctype && (_n74.houg = 1, _n74.tais = 2, _n74.kaih = 2), !_n74.exists()) return _n73;
+            var _n75 = _n71.get_slotnums(304);
+            return _n73 = _n74.multiply(_n75);
+        };
+    },
+    99791: (_n76, _n77, _n78) => {
+        'use strict';
+        var _n79 = null;
+        defineModule(_n77);
+        Object.defineProperty(_n77, '__esModule', {
+            'value': !0
+        }), _n77.getSlot305More320mmGunPersonalEffect = void 0;
+        var _n7a = _n78(74496);
+        _n77.getSlot305More320mmGunPersonalEffect = function(_n7b) {
+            var _n7c = null,
+                _n7d = new _n7a.SlotItemEffectModel(),
+                _n7e = _n7b.get_slotnums(426),
+                _n7f = _n7b.get_slotnums(427),
+                _n7g = _n7b.get_slotnums(428),
+                _n7h = _n7b.get_slotnums(429),
+                _n7i = _n7e + _n7f + _n7g + _n7h;
+            return 113 == _n7b.ctype ? (_n7d.houg = _n7d.houg + 2 * _n7i, _n7e >= 1 && (_n7d.houg = _n7d.houg + 1 * _n7e, _n7d.kaih = _n7d.kaih + 1 * _n7e, (_n7e >= 2 || _n7f >= 1) && (_n7d.houg = _n7d.houg + 1, _n7d.kaih = _n7d.kaih + 1)), _n7g >= 1 && (_n7d.houg = _n7d.houg + 1 * _n7g, _n7d.kaih = _n7d.kaih + 1 * _n7g, (_n7g >= 2 || _n7h >= 1) && (_n7d.houg = _n7d.houg + 2, _n7d.kaih = _n7d.kaih + 1))) : 73 == _n7b.ctype ? (_n7d.houg = _n7d.houg + 1 * _n7i, _n7e >= 1 && (_n7d.houg = _n7d.houg + 1 * _n7e, _n7d.kaih = _n7d.kaih + 1 * _n7e, (_n7e >= 2 || _n7f >= 1) && (_n7d.houg = _n7d.houg + 1)), _n7g >= 1 && (_n7d.houg = _n7d.houg + 1 * _n7g, _n7d.kaih = _n7d.kaih + 1 * _n7g, (_n7g >= 2 || _n7h >= 1) && (_n7d.houg = _n7d.houg + 1))) : 58 == _n7b.ctype && _n7g >= 1 && (_n7d.houg = _n7d.houg + 1 * _n7g, _n7d.kaih = _n7d.kaih + 2 * _n7g, (_n7g >= 2 || _n7h >= 1) && (_n7d.houg = _n7d.houg + 2, _n7d.kaih = _n7d.kaih + 1)), _n7d;
+        };
+    },
+    12138: (_n7j, _n7k, _n7l) => {
+        'use strict';
+        var _n7m = null;
+        defineModule(_n7k);
+        Object.defineProperty(_n7k, '__esModule', {
+            'value': !0
+        }), _n7k.getSlot305_And_306_PersonalEffect = void 0;
+        var _n7n = _n7l(74496);
+        _n7k.getSlot305_And_306_PersonalEffect = function(_n7o) {
+            var _n7p = null,
+                _n7q = new _n7n.SlotItemEffectModel(),
+                _n7r = new _n7n.SlotItemEffectModel();
+            if (76 == _n7o.ctype && (_n7r.tais = 1, _n7r.kaih = 1), 'しんよう' == _n7o.yomi ? (_n7r.tais += 2, _n7r.kaih += 1) : 'グラーフ・ツェッペリン' != _n7o.yomi && 'アクィラ' != _n7o.yomi || (_n7r.houg = 1, _n7r.kaih = 1), !_n7r.exists()) return _n7q;
+            var _n7s = _n7o.get_slotnums(305) + _n7o.get_slotnums(306);
+            return _n7q = _n7r.multiply(_n7s);
+        };
+    },
+    30042: (_n7t, _n7u, _n7v) => {
+        'use strict';
+        var _n7w = null;
+        defineModule(_n7u);
+        Object.defineProperty(_n7u, '__esModule', {
+            'value': !0
+        }), _n7u.getSlot307PersonalEffect = void 0;
+        var _n7x = _n7v(74496);
+        _n7u.getSlot307PersonalEffect = function(_n7y) {
+            var _n7z = null,
+                _n80 = new _n7x.SlotItemEffectModel(),
+                _n81 = new _n7x.SlotItemEffectModel();
+            if ('アメリカ' == _n7y.getCountryName() && (_n81.houg = 1, _n81.tyku = 1, _n81.kaih = 1), !_n81.exists()) return _n80;
+            var _n82 = _n7y.get_slotnums(307);
+            return _n80 = _n81.multiply(_n82);
+        };
+    },
+    33623: (_n83, _n84, _n85) => {
+        'use strict';
+        var _n86 = null;
+        defineModule(_n84);
+        Object.defineProperty(_n84, '__esModule', {
+            'value': !0
+        }), _n84.getSlot308PersonalEffect = void 0;
+        var _n87 = _n85(74496);
+        _n84.getSlot308PersonalEffect = function(_n88) {
+            var _n89 = null,
+                _n8a = new _n87.SlotItemEffectModel(),
+                _n8b = new _n87.SlotItemEffectModel();
+            if ('アメリカ' == _n88.getCountryName() && (_n8b.houg = 1, _n8b.tyku = 1, _n8b.kaih = 1), 2 == _n88.stype ? _n8b.houg += 1 : 1 == _n88.stype && (_n8b.tyku += 1, _n8b.kaih += 1), 651 != _n88.ship_id && 656 != _n88.ship_id || (_n8b.houg += 1, _n8b.tyku += 1, _n8b.kaih += 1), !_n8b.exists()) return _n8a;
+            var _n8c = _n88.get_slotnums(308);
+            return _n8a = _n8b.multiply(_n8c);
+        };
+    },
+    17732: (_n8d, _n8e, _n8f) => {
+        'use strict';
+        var _n8g = null;
+        defineModule(_n8e);
+        Object.defineProperty(_n8e, '__esModule', {
+            'value': !0
+        }), _n8e.getSlot30_410PersonalEffect = void 0;
+        var _n8h = _n8f(74496);
+        _n8e.getSlot30_410PersonalEffect = function(_n8i) {
+            var _n8j = null,
+                _n8k = new _n8h.SlotItemEffectModel();
+            return 73 != _n8i.ship_id && 501 != _n8i.ship_id && 506 != _n8i.ship_id && 502 != _n8i.ship_id && 507 != _n8i.ship_id || (_n8k.tyku += 3, _n8k.kaih += 2, _n8k.saku += 2, _n8i.get_slotnums(410) >= 1 && (_n8k.tyku += 2, _n8k.kaih += 2, _n8k.houg += 1, _n8k.souk += 1)), 54 == _n8i.ctype && (_n8k.tyku += 3, _n8k.kaih += 2, _n8k.saku += 2, _n8i.get_slotnums(410) >= 1 && (_n8k.tyku += 2, _n8k.kaih += 2, _n8k.houg += 1, _n8k.souk += 1)), _n8k;
+        };
+    },
+    85630: function(_n8l, _n8m, _n8n) {
+        'use strict';
+        var _n8o = null;
+        var _n8p = this && this.__importDefault || function(_n8q) {
+            var _n8r = null;
+            return _n8q && _n8q.__esModule ? _n8q : {
+                'default': _n8q
+            };
+        };
+        defineModule(_n8m);
+        Object.defineProperty(_n8m, '__esModule', {
+            'value': !0
+        }), _n8m.getSlot310PersonalEffect = void 0;
+        var _n8s = _n8n(74496),
+            _n8t = _n8p(_n8n(18622));
+        _n8m.getSlot310PersonalEffect = function(_n8u) {
+            var _n8v = null,
+                _n8w = new _n8s.SlotItemEffectModel(),
+                _n8x = new _n8s.SlotItemEffectModel(),
+                _n8y = new _n8s.SlotItemEffectModel();
+            34 == _n8u.ctype ? (_n8x.houg += 2, _n8x.tyku += 1, _n8x.kaih += 1, _n8y.houg += 2) : 56 == _n8u.ctype ? (_n8x.houg += 2, _n8x.kaih += 1, _n8y.houg += 2, _n8y.kaih += 2) : 90 == _n8u.ctype && (_n8x.houg += 3, _n8x.raig += 2, _n8x.tyku += 1, _n8x.kaih += 1, _n8y.houg += 1, _n8y.raig += 1);
+            var _n8z = new _n8s.SlotItemEffectModel(),
+                _n90 = new _n8s.SlotItemEffectModel();
+            622 != _n8u.ship_id && 623 != _n8u.ship_id && 624 != _n8u.ship_id || (_n8x.houg += 2, _n8x.kaih += 1, _n8x.tais += 1, _n8z.houg = 1, _n8z.raig = 1, _n90.houg = 3, _n90.kaih = 2, _n90.raig = 2);
+            var _n91 = !0;
+            if (_n8x.exists() || (_n91 = !1), 0 == _n91) return _n8w;
+            var _n92 = _n8u.get_slotnums(310) + _n8u.get_slotnums(518);
+            _n8w = _n8x.multiply(_n92);
+            for (var _n93 = 0, _n94 = 0, _n95 = 0, _n96 = [310, 518]; _n95 < _n96.length; _n95++) {
+                var _n97 = _n96[_n95],
+                    _n98 = _n8u.have_slots_dict[_n97];
+                if (null != _n98)
+                    for (var _n99 = 0, _n9a = _n98; _n99 < _n9a.length; _n99++) {
+                        var _n9b = _n9a[_n99];
+                        null != _n9b && (_n9b.level >= 7 && _n93++, _n9b.level >= 10 && _n94++);
+                    }
+            }
+            if (_n8z.exists() && _n93 > 0 && _n8w.add(_n8z.multiply(_n93)), _n8y.exists() && _n94 > 0 && _n8w.add(_n8y.multiply(_n94)), _n90.exists()) {
+                for (var _n9c = 0, _n9d = 0, _n9e = _n8u.have_slot_ids(); _n9d < _n9e.length; _n9d++) {
+                    var _n9f = _n9e[_n9d],
+                        _n9g = _n8t.default.model.slot.getMst(_n9f),
+                        _n9h = _n9g.equipType;
+                    (12 == _n9h || 13 == _n9h) && _n9g.sakuteki >= 5 && (_n9c += _n8u.get_slotnums(parseInt(_n9f)));
+                }
+                _n9c > 0 && _n8w.add(_n90);
+            }
+            return _n8w;
+        };
+    },
+    88736: (_n9i, _n9j, _n9k) => {
+        'use strict';
+        var _n9l = null;
+        defineModule(_n9j);
+        Object.defineProperty(_n9j, '__esModule', {
+            'value': !0
+        }), _n9j.getSlot313PersonalEffect = void 0;
+        var _n9m = _n9k(74496);
+        _n9j.getSlot313PersonalEffect = function(_n9n) {
+            var _n9o = null,
+                _n9p = new _n9m.SlotItemEffectModel(),
+                _n9q = new _n9m.SlotItemEffectModel();
+            87 != _n9n.ctype && 91 != _n9n.ctype || (_n9q.houg += 2, _n9q.tyku += 2, _n9q.kaih += 1, _n9q.souk += 1), 651 != _n9n.ship_id && 656 != _n9n.ship_id || (_n9q.houg += 2, _n9q.tyku += 2, _n9q.kaih += 1, _n9q.souk += 1);
+            var _n9r = !0;
+            if (_n9q.exists() || (_n9r = !1), 0 == _n9r) return _n9p;
+            var _n9s = _n9n.get_slotnums(313);
+            return _n9p = _n9q.multiply(_n9s);
+        };
+    },
+    49341: (_n9t, _n9u, _n9v) => {
+        'use strict';
+        var _n9w = null;
+        defineModule(_n9u);
+        Object.defineProperty(_n9u, '__esModule', {
+            'value': !0
+        }), _n9u.getSlot314PersonalEffect = void 0;
+        var _n9x = _n9v(74496);
+        _n9u.getSlot314PersonalEffect = function(_n9y) {
+            var _n9z = null,
+                _na0 = new _n9x.SlotItemEffectModel(),
+                _na1 = new _n9x.SlotItemEffectModel();
+            87 != _n9y.ctype && 91 != _n9y.ctype || (_na1.houg += 1, _na1.raig += 3);
+            var _na2 = !0;
+            if (_na1.exists() || (_na2 = !1), 0 == _na2) return _na0;
+            var _na3 = _n9y.get_slotnums(314);
+            return _na0 = _na1.multiply(_na3);
+        };
+    },
+    74306: (_na4, _na5, _na6) => {
+        'use strict';
+        var _na7 = null;
+        defineModule(_na5);
+        Object.defineProperty(_na5, '__esModule', {
+            'value': !0
+        }), _na5.getSlot315PersonalEffect = void 0;
+        var _na8 = _na6(74496);
+        _na5.getSlot315PersonalEffect = function(_na9) {
+            var _naa = null,
+                _nab = new _na8.SlotItemEffectModel(),
+                _nac = new _na8.SlotItemEffectModel();
+            'アメリカ' == _na9.getCountryName() && (_nac.houg += 2, _nac.kaih += 3, _nac.saku += 4), 87 != _na9.ctype && 91 != _na9.ctype || (_nac.houg += 1, _nab.leng += 1), 651 != _na9.ship_id && 656 != _na9.ship_id || (_nab.houg += 2, _nab.kaih += 2, _nab.saku += 3, _nab.leng += 1);
+            var _nad = !0;
+            if (_nac.exists() || (_nad = !1), 0 == _nad) return _nab;
+            var _nae = _na9.get_slotnums(315);
+            return _nab.add(_nac.multiply(_nae)), _nab;
+        };
+    },
+    83898: (_naf, _nag, _nah) => {
+        'use strict';
+        var _nai = null;
+        defineModule(_nag);
+        Object.defineProperty(_nag, '__esModule', {
+            'value': !0
+        }), _nag.getSlot316PersonalEffect = void 0;
+        var _naj = _nah(74496);
+        _nag.getSlot316PersonalEffect = function(_nak) {
+            var _nal = null,
+                _nam = new _naj.SlotItemEffectModel(),
+                _nan = new _naj.SlotItemEffectModel();
+            if (68 == _nak.ctype) {
+                if (_nan.houg += 4, _nan.tyku += 1, _nan.kaih += 1, !_nan.exists()) return _nam;
+                var _nao = _nak.get_slotnums(316);
+                _nam = _nan.multiply(_nao);
+            }
+            return _nam;
+        };
+    },
+    71873: (_nap, _naq, _nar) => {
+        'use strict';
+        var _nas = null;
+        defineModule(_naq);
+        Object.defineProperty(_naq, '__esModule', {
+            'value': !0
+        }), _naq.getSlot317PersonalEffect = void 0;
+        var _nat = _nar(74496);
+        _naq.getSlot317PersonalEffect = function(_nau) {
+            var _nav = null,
+                _naw = new _nat.SlotItemEffectModel(),
+                _nax = new _nat.SlotItemEffectModel(),
+                _nay = 0,
+                _naz = !1;
+            if (6 == _nau.ctype ? (_nax.houg += 2, _nax.tyku += 1, _nay = 1, _naz = !0) : 2 == _nau.ctype && (_nax.houg += 1, _nax.tyku += 1, _nax.kaih += 1, _nay = 2, _naz = !0), 149 == _nau.ship_id || 591 == _nau.ship_id || 592 == _nau.ship_id ? (_nax.houg += 2, _nax.tyku += 2, _naz = !0) : 150 == _nau.ship_id ? (_nax.houg += 1, _nax.tyku += 1, _naz = !0) : 151 == _nau.ship_id ? (_nax.houg += 1, _nax.tyku += 1, _nax.kaih += 1, _naz = !0) : 593 == _nau.ship_id ? (_nax.houg += 1, _nax.tyku += 3, _nax.kaih += 2, _naz = !0) : 954 == _nau.ship_id ? (_nax.houg += 2, _nax.tyku += 2, _nax.kaih += 1, _naz = !0) : 152 == _nau.ship_id ? (_nax.houg += 2, _nax.tyku += 1, _naz = !0) : 541 == _nau.ship_id ? (_nax.houg += 1, _nax.tyku += 2, _naz = !0) : 573 == _nau.ship_id && (_nax.houg += 2, _nax.tyku += 2, _nax.kaih += 1, _naz = !0), 0 == _naz) return _naw;
+            if (_naw.add(_nax), 0 == _nay) return _naw;
+            var _nb0 = _nau.get_each_level_nums(317),
+                _nb1 = [];
+            return _nay > 0 && _nb0.forEach(function(_nb2, _nb3) {
+                var _nb4 = null;
+                for (var _nb5 = 1; _nb5 <= _nau.SLOT_LEVEL_MAX; _nb5++) null == _nb1[_nb5] && (_nb1[_nb5] = 0), _nb3 >= _nb5 && (_nb1[_nb5] += _nb2);
+            }), 1 == _nay ? _nb1[8] >= 1 && (_naw.houm += 1) : 2 == _nay && _nb0[10] >= 1 && (_naw.houm += 1), _naw;
+        };
+    },
+    53122: function(_nb6, _nb7, _nb8) {
+        'use strict';
+        var _nb9 = null;
+        var _nba = this && this.__importDefault || function(_nbb) {
+            var _nbc = null;
+            return _nbb && _nbb.__esModule ? _nbb : {
+                'default': _nbb
+            };
+        };
+        defineModule(_nb7);
+        Object.defineProperty(_nb7, '__esModule', {
+            'value': !0
+        }), _nb7.getSlot318PersonalEffect = void 0;
+        var _nbd = _nb8(74496),
+            _nbe = _nba(_nb8(18622));
+        _nb7.getSlot318PersonalEffect = function(_nbf) {
+            var _nbg = null,
+                _nbh = new _nbd.SlotItemEffectModel(),
+                _nbi = new _nbd.SlotItemEffectModel(),
+                _nbj = new _nbd.SlotItemEffectModel(),
+                _nbk = new _nbd.SlotItemEffectModel();
+            if (411 == _nbf.ship_id || 412 == _nbf.ship_id ? _nbi.houg += 1 : 82 == _nbf.ship_id ? (_nbi.houg += 2, _nbi.tyku += 2, _nbi.kaih += 2, _nbk.tyku = 2, _nbk.kaih = 3, _nbk.houm = 1) : 553 == _nbf.ship_id ? (_nbi.houg += 2, _nbi.tyku += 2, _nbi.kaih += 2, _nbi.houm += 3, _nbk.tyku = 2, _nbk.kaih = 3, _nbk.houm = 1, _nbj.kaih = 2, _nbj.souk = 1) : 88 == _nbf.ship_id ? (_nbi.houg += 2, _nbi.tyku += 2, _nbi.kaih += 2, _nbk.tyku = 2, _nbk.kaih = 3, _nbk.houm = 1) : 541 == _nbf.ship_id || 573 == _nbf.ship_id ? (_nbi.houg += 3, _nbi.tyku += 2, _nbi.kaih += 1, _nbi.houm += 2, _nbj.houg = 2, _nbj.kaih = 2, _nbj.souk = 1, _nbj.houm = 1) : 554 == _nbf.ship_id && (_nbi.houg += 3, _nbi.tyku += 2, _nbi.kaih += 2, _nbi.houm += 3, _nbk.tyku = 2, _nbk.kaih = 3, _nbk.houm = 1, _nbj.houg = 1, _nbj.kaih = 2, _nbj.souk = 1, _nbj.houm = 1), !_nbi.exists()) return _nbh;
+            var _nbl = _nbf.get_slotnums(318);
+            if (_nbh = _nbi.multiply(_nbl), !_nbj.exists() && !_nbk.exists()) return _nbh;
+            for (var _nbm = 0, _nbn = 0, _nbo = _nbf.have_slot_ids(); _nbn < _nbo.length; _nbn++) {
+                var _nbp = _nbo[_nbn],
+                    _nbq = _nbe.default.model.slot.getMst(_nbp),
+                    _nbr = _nbq.equipType;
+                (12 == _nbr || 13 == _nbr) && _nbq.taiku >= 2 && (_nbm += _nbf.get_slotnums(parseInt(_nbp)));
+            }
+            var _nbs = _nbf.get_slotnums(290);
+            return _nbk.exists() && _nbm > 0 && 0 == _nbs && _nbh.add(_nbk), _nbj.exists() && _nbs >= 1 && _nbh.add(_nbj), _nbh;
+        };
+    },
+    51063: (_nbt, _nbu, _nbv) => {
+        'use strict';
+        var _nbw = null;
+        defineModule(_nbu);
+        Object.defineProperty(_nbu, '__esModule', {
+            'value': !0
+        }), _nbu.getSlot319PersonalEffect = void 0;
+        var _nbx = _nbv(74496);
+        _nbu.getSlot319PersonalEffect = function(_nby) {
+            var _nbz = null,
+                _nc0 = new _nbx.SlotItemEffectModel(),
+                _nc1 = new _nbx.SlotItemEffectModel();
+            if (554 != _nby.ship_id && 553 != _nby.ship_id || (_nc1.houg = 7, _nc1.tyku = 3, _nc1.kaih = 2), !_nc1.exists()) return _nc0;
+            var _nc2 = _nby.get_slotnums(319);
+            return _nc0 = _nc1.multiply(_nc2);
+        };
+    },
+    91491: (_nc3, _nc4, _nc5) => {
+        'use strict';
+        var _nc6 = null;
+        defineModule(_nc4);
+        Object.defineProperty(_nc4, '__esModule', {
+            'value': !0
+        }), _nc4.getSlot320PersonalEffect = void 0;
+        var _nc7 = _nc5(74496);
+        _nc4.getSlot320PersonalEffect = function(_nc8) {
+            var _nc9 = null,
+                _nca = new _nc7.SlotItemEffectModel(),
+                _ncb = new _nc7.SlotItemEffectModel();
+            if (553 == _nc8.ship_id) _ncb.houg = 2;
+            else {
+                if (554 == _nc8.ship_id) _ncb.houg = 4;
+                else {
+                    if (196 == _nc8.ship_id) _ncb.houg = 3;
+                    else {
+                        if (197 == _nc8.ship_id) _ncb.houg = 3;
+                        else {
+                            if (508 == _nc8.ship_id) _ncb.houg = 4;
+                            else {
+                                if (509 != _nc8.ship_id) return _nca;
+                                _ncb.houg = 4;
+                            }
+                        }
+                    }
+                }
+            }
+            var _ncc = _nc8.get_slotnums(320);
+            return _nca = _ncb.multiply(_ncc);
+        };
+    },
+    85495: (_ncd, _nce, _ncf) => {
+        'use strict';
+        var _ncg = null;
+        defineModule(_nce);
+        Object.defineProperty(_nce, '__esModule', {
+            'value': !0
+        }), _nce.getSlot322PersonalEffect = void 0;
+        var _nch = _ncf(74496);
+        _nce.getSlot322PersonalEffect = function(_nci) {
+            var _ncj = null,
+                _nck = new _nch.SlotItemEffectModel(),
+                _ncl = new _nch.SlotItemEffectModel();
+            if (554 != _nci.ship_id && 553 != _nci.ship_id || (_ncl.houg = 5, _ncl.tyku = 2, _ncl.kaih = 2, _ncl.tais = 1), !_ncl.exists()) return _nck;
+            var _ncm = _nci.get_slotnums(322);
+            return _nck = _ncl.multiply(_ncm);
+        };
+    },
+    65365: (_ncn, _nco, _ncp) => {
+        'use strict';
+        var _ncq = null;
+        defineModule(_nco);
+        Object.defineProperty(_nco, '__esModule', {
+            'value': !0
+        }), _nco.getSlot323PersonalEffect = void 0;
+        var _ncr = _ncp(74496);
+        _nco.getSlot323PersonalEffect = function(_ncs) {
+            var _nct = null,
+                _ncu = new _ncr.SlotItemEffectModel(),
+                _ncv = new _ncr.SlotItemEffectModel();
+            if (554 != _ncs.ship_id && 553 != _ncs.ship_id || (_ncv.houg = 6, _ncv.tyku = 3, _ncv.kaih = 3, _ncv.tais = 2), !_ncv.exists()) return _ncu;
+            var _ncw = _ncs.get_slotnums(323);
+            return _ncu = _ncv.multiply(_ncw);
+        };
+    },
+    98164: (_ncx, _ncy, _ncz) => {
+        'use strict';
+        var _nd0 = null;
+        defineModule(_ncy);
+        Object.defineProperty(_ncy, '__esModule', {
+            'value': !0
+        }), _ncy.getSlot324And325PersonalEffect = void 0;
+        var _nd1 = _ncz(74496);
+        _ncy.getSlot324And325PersonalEffect = function(_nd2) {
+            var _nd3 = null,
+                _nd4 = new _nd1.SlotItemEffectModel(),
+                _nd5 = new _nd1.SlotItemEffectModel();
+            if (554 == _nd2.ship_id || 646 == _nd2.ship_id ? (_nd5.houg = 2, _nd5.tais = 3, _nd5.kaih = 1) : 553 == _nd2.ship_id && (_nd5.houg = 1, _nd5.tais = 2, _nd5.kaih = 1), !_nd5.exists()) return _nd4;
+            var _nd6 = _nd2.get_slotnums(324) + _nd2.get_slotnums(325);
+            return _nd4 = _nd5.multiply(_nd6);
+        };
+    },
+    38114: (_nd7, _nd8, _nd9) => {
+        'use strict';
+        var _nda = null;
+        defineModule(_nd8);
+        Object.defineProperty(_nd8, '__esModule', {
+            'value': !0
+        }), _nd8.getSlot326PersonalEffect = void 0;
+        var _ndb = _nd9(74496);
+        _nd8.getSlot326PersonalEffect = function(_ndc) {
+            var _ndd = null,
+                _nde = new _ndb.SlotItemEffectModel(),
+                _ndf = new _ndb.SlotItemEffectModel();
+            if (646 == _ndc.ship_id ? (_ndf.houg = 3, _ndf.tais = 5, _ndf.kaih = 3) : 554 == _ndc.ship_id ? (_ndf.houg = 3, _ndf.tais = 4, _ndf.kaih = 2) : 553 == _ndc.ship_id && (_ndf.houg = 1, _ndf.tais = 3, _ndf.kaih = 1), !_ndf.exists()) return _nde;
+            var _ndg = _ndc.get_slotnums(326);
+            return _nde = _ndf.multiply(_ndg);
+        };
+    },
+    21003: (_ndh, _ndi, _ndj) => {
+        'use strict';
+        var _ndk = null;
+        defineModule(_ndi);
+        Object.defineProperty(_ndi, '__esModule', {
+            'value': !0
+        }), _ndi.getSlot327PersonalEffect = void 0;
+        var _ndl = _ndj(74496);
+        _ndi.getSlot327PersonalEffect = function(_ndm) {
+            var _ndn = null,
+                _ndo = new _ndl.SlotItemEffectModel(),
+                _ndp = new _ndl.SlotItemEffectModel();
+            if (646 == _ndm.ship_id ? (_ndp.houg = 5, _ndp.tais = 6, _ndp.kaih = 4) : 554 == _ndm.ship_id ? (_ndp.houg = 4, _ndp.tais = 5, _ndp.kaih = 2) : 553 == _ndm.ship_id && (_ndp.houg = 2, _ndp.tais = 4, _ndp.kaih = 1), !_ndp.exists()) return _ndo;
+            var _ndq = _ndm.get_slotnums(327);
+            return _ndo = _ndp.multiply(_ndq);
+        };
+    },
+    77010: (_ndr, _nds, _ndt) => {
+        'use strict';
+        var _ndu = null;
+        defineModule(_nds);
+        Object.defineProperty(_nds, '__esModule', {
+            'value': !0
+        }), _nds.getSlot328PersonalEffect = void 0;
+        var _ndv = _ndt(74496);
+        _nds.getSlot328PersonalEffect = function(_ndw) {
+            var _ndx = null,
+                _ndy = new _ndv.SlotItemEffectModel(),
+                _ndz = new _ndv.SlotItemEffectModel();
+            if ('こんごう' == _ndw.yomi ? (_ndz.houg = 1, _ndz.kaih = 1, 209 == _ndw.ship_id || 149 == _ndw.ship_id ? _ndz.houg += 1 : 591 == _ndw.ship_id && (_ndz.houg += 2, _ndz.raig += 1)) : 'ひえい' == _ndw.yomi ? (_ndz.houg = 1, _ndz.kaih = 1, 210 == _ndw.ship_id || 150 == _ndw.ship_id ? _ndz.houg += 1 : 592 == _ndw.ship_id && (_ndz.houg += 2, _ndz.tyku += 1)) : 'はるな' == _ndw.yomi ? (_ndz.houg = 1, _ndz.kaih = 1, 211 == _ndw.ship_id || 151 == _ndw.ship_id ? _ndz.houg += 1 : 593 == _ndw.ship_id ? (_ndz.houg += 1, _ndz.tyku += 2) : 954 == _ndw.ship_id && (_ndz.houg += 2, _ndz.tyku += 1)) : 'きりしま' == _ndw.yomi ? (_ndz.houg = 1, _ndz.kaih = 1, 212 != _ndw.ship_id && 152 != _ndw.ship_id || (_ndz.houg += 1)) : ('ふそう' == _ndw.yomi || 'やましろ' == _ndw.yomi || 'いせ' == _ndw.yomi || 'ひゅうが' == _ndw.yomi) && (_ndz.houg = 1), !_ndz.exists()) return _ndy;
+            var _ne0 = _ndw.get_slotnums(328);
+            return _ndy = _ndz.multiply(_ne0);
+        };
+    },
+    39126: (_ne1, _ne2, _ne3) => {
+        'use strict';
+        var _ne4 = null;
+        defineModule(_ne2);
+        Object.defineProperty(_ne2, '__esModule', {
+            'value': !0
+        }), _ne2.getSlot329PersonalEffect = void 0;
+        var _ne5 = _ne3(74496);
+        _ne2.getSlot329PersonalEffect = function(_ne6) {
+            var _ne7 = null,
+                _ne8 = new _ne5.SlotItemEffectModel(),
+                _ne9 = new _ne5.SlotItemEffectModel();
+            if ('こんごう' == _ne6.yomi ? (_ne9.houg = 1, _ne9.kaih = 1, 209 == _ne6.ship_id ? _ne9.houg += 1 : 149 == _ne6.ship_id ? (_ne9.houg += 2, _ne9.tyku += 1) : 591 == _ne6.ship_id && (_ne9.houg += 3, _ne9.tyku += 1, _ne9.raig += 2)) : 'ひえい' == _ne6.yomi ? (_ne9.houg = 1, _ne9.kaih = 1, 210 == _ne6.ship_id ? _ne9.houg += 1 : 150 == _ne6.ship_id ? (_ne9.houg += 2, _ne9.tyku += 1) : 592 == _ne6.ship_id && (_ne9.houg += 3, _ne9.tyku += 1, _ne9.raig += 2)) : 'はるな' == _ne6.yomi ? (_ne9.houg = 1, _ne9.kaih = 1, 211 == _ne6.ship_id ? _ne9.houg += 1 : 151 == _ne6.ship_id ? (_ne9.houg += 2, _ne9.tyku += 1) : 593 == _ne6.ship_id ? (_ne9.houg += 2, _ne9.tyku += 3, _ne9.raig += 1) : 954 == _ne6.ship_id && (_ne9.houg += 3, _ne9.tyku += 1, _ne9.raig += 2)) : 'きりしま' == _ne6.yomi ? (_ne9.houg = 1, _ne9.kaih = 1, 212 == _ne6.ship_id ? _ne9.houg += 1 : 152 == _ne6.ship_id && (_ne9.houg += 2, _ne9.tyku += 1)) : ('ふそう' == _ne6.yomi || 'やましろ' == _ne6.yomi || 'いせ' == _ne6.yomi || 'ひゅうが' == _ne6.yomi) && (_ne9.houg = 1), !_ne9.exists()) return _ne8;
+            var _nea = _ne6.get_slotnums(329);
+            return _ne8 = _ne9.multiply(_nea);
+        };
+    },
+    72176: (_neb, _nec, _ned) => {
+        'use strict';
+        var _nee = null;
+        defineModule(_nec);
+        Object.defineProperty(_nec, '__esModule', {
+            'value': !0
+        }), _nec.getSlot335PersonalEffect = void 0;
+        var _nef = _ned(74496);
+        _nec.getSlot335PersonalEffect = function(_neg) {
+            var _neh = null,
+                _nei = new _nef.SlotItemEffectModel(),
+                _nej = new _nef.SlotItemEffectModel();
+            if (277 == _neg.ship_id || 278 == _neg.ship_id ? (_nej.tyku = 1, _nej.kaih = 1) : 594 != _neg.ship_id && 599 != _neg.ship_id && 610 != _neg.ship_id && 646 != _neg.ship_id && 698 != _neg.ship_id || (_nej.tyku = 2, _nej.kaih = 1), !_nej.exists()) return _nei;
+            var _nek = _neg.get_slotnums(335);
+            return _nei = _nej.multiply(_nek);
+        };
+    },
+    33846: (_nel, _nem, _nen) => {
+        'use strict';
+        var _neo = null;
+        defineModule(_nem);
+        Object.defineProperty(_nem, '__esModule', {
+            'value': !0
+        }), _nem.getSlot336PersonalEffect = void 0;
+        var _nep = _nen(74496);
+        _nem.getSlot336PersonalEffect = function(_neq) {
+            var _ner = null,
+                _nes = new _nep.SlotItemEffectModel(),
+                _net = new _nep.SlotItemEffectModel();
+            if (277 == _neq.ship_id || 278 == _neq.ship_id ? (_net.houg = 1, _net.tyku = 1, _net.kaih = 1) : 594 != _neq.ship_id && 599 != _neq.ship_id && 610 != _neq.ship_id && 646 != _neq.ship_id && 698 != _neq.ship_id || (_net.houg = 1, _net.tyku = 2, _net.kaih = 1), !_net.exists()) return _nes;
+            var _neu = _neq.get_slotnums(336);
+            return _nes = _net.multiply(_neu);
+        };
+    },
+    97157: (_nev, _new, _nex) => {
+        'use strict';
+        var _ney = null;
+        defineModule(_new);
+        Object.defineProperty(_new, '__esModule', {
+            'value': !0
+        }), _new.getSlot337PersonalEffect = void 0;
+        var _nez = _nex(74496);
+        _new.getSlot337PersonalEffect = function(_nf0) {
+            var _nf1 = null,
+                _nf2 = new _nez.SlotItemEffectModel(),
+                _nf3 = new _nez.SlotItemEffectModel();
+            if (277 == _nf0.ship_id || 278 == _nf0.ship_id ? (_nf3.houg = 1, _nf3.tyku = 1, _nf3.kaih = 1) : 594 != _nf0.ship_id && 599 != _nf0.ship_id && 610 != _nf0.ship_id && 646 != _nf0.ship_id && 698 != _nf0.ship_id || (_nf3.houg = 2, _nf3.tyku = 2, _nf3.kaih = 1), !_nf3.exists()) return _nf2;
+            var _nf4 = _nf0.get_slotnums(337);
+            return _nf2 = _nf3.multiply(_nf4);
+        };
+    },
+    63406: (_nf5, _nf6, _nf7) => {
+        'use strict';
+        var _nf8 = null;
+        defineModule(_nf6);
+        Object.defineProperty(_nf6, '__esModule', {
+            'value': !0
+        }), _nf6.getSlot338PersonalEffect = void 0;
+        var _nf9 = _nf7(74496);
+        _nf6.getSlot338PersonalEffect = function(_nfa) {
+            var _nfb = null,
+                _nfc = new _nf9.SlotItemEffectModel(),
+                _nfd = new _nf9.SlotItemEffectModel();
+            if (277 == _nfa.ship_id || 278 == _nfa.ship_id ? (_nfd.houg = 1, _nfd.tyku = 1, _nfd.kaih = 2) : 594 == _nfa.ship_id || 646 == _nfa.ship_id || 698 == _nfa.ship_id ? (_nfd.houg = 1, _nfd.tyku = 2, _nfd.kaih = 3) : 599 != _nfa.ship_id && 610 != _nfa.ship_id || (_nfd.houg = 4, _nfd.tyku = 3, _nfd.kaih = 4), !_nfd.exists()) return _nfc;
+            var _nfe = _nfa.get_slotnums(338);
+            return _nfc = _nfd.multiply(_nfe);
+        };
+    },
+    66373: (_nff, _nfg, _nfh) => {
+        'use strict';
+        var _nfi = null;
+        defineModule(_nfg);
+        Object.defineProperty(_nfg, '__esModule', {
+            'value': !0
+        }), _nfg.getSlot339PersonalEffect = void 0;
+        var _nfj = _nfh(74496);
+        _nfg.getSlot339PersonalEffect = function(_nfk) {
+            var _nfl = null,
+                _nfm = new _nfj.SlotItemEffectModel(),
+                _nfn = new _nfj.SlotItemEffectModel();
+            if (277 == _nfk.ship_id || 278 == _nfk.ship_id ? (_nfn.houg = 1, _nfn.tyku = 2, _nfn.kaih = 2) : 594 == _nfk.ship_id || 646 == _nfk.ship_id || 698 == _nfk.ship_id ? (_nfn.houg = 1, _nfn.tyku = 3, _nfn.kaih = 4) : 599 != _nfk.ship_id && 610 != _nfk.ship_id || (_nfn.houg = 6, _nfn.tyku = 4, _nfn.kaih = 5), !_nfn.exists()) return _nfm;
+            var _nfo = _nfk.get_slotnums(339);
+            return _nfm = _nfn.multiply(_nfo);
+        };
+    },
+    19707: (_nfp, _nfq, _nfr) => {
+        'use strict';
+        var _nfs = null;
+        defineModule(_nfq);
+        Object.defineProperty(_nfq, '__esModule', {
+            'value': !0
+        }), _nfq.getSlot340PersonalEffect = void 0;
+        var _nft = _nfr(74496);
+        _nfq.getSlot340PersonalEffect = function(_nfu) {
+            var _nfv = null,
+                _nfw = new _nft.SlotItemEffectModel(),
+                _nfx = new _nft.SlotItemEffectModel();
+            if ('ガリバルディ' != _nfu.yomi && 'アブルッツィ' != _nfu.yomi || (_nfx.houg = 1, _nfx.tyku = 1, _nfx.kaih = 1), !_nfx.exists()) return _nfw;
+            var _nfy = _nfu.get_slotnums(340);
+            return _nfw = _nfx.multiply(_nfy);
+        };
+    },
+    63978: (_nfz, _ng0, _ng1) => {
+        'use strict';
+        var _ng2 = null;
+        defineModule(_ng0);
+        Object.defineProperty(_ng0, '__esModule', {
+            'value': !0
+        }), _ng0.getSlot341PersonalEffect = void 0;
+        var _ng3 = _ng1(74496);
+        _ng0.getSlot341PersonalEffect = function(_ng4) {
+            var _ng5 = null,
+                _ng6 = new _ng3.SlotItemEffectModel(),
+                _ng7 = new _ng3.SlotItemEffectModel();
+            if ('ガリバルディ' == _ng4.yomi || 'アブルッツィ' == _ng4.yomi ? (_ng7.houg = 2, _ng7.tyku = 1, _ng7.kaih = 1) : 'ゴトランド' == _ng4.yomi && (_ng7.houg = 1, _ng7.tyku = 1, _ng7.kaih = 1), !_ng7.exists()) return _ng6;
+            var _ng8 = _ng4.get_slotnums(341);
+            return _ng6 = _ng7.multiply(_ng8);
+        };
+    },
+    92382: (_ng9, _nga, _ngb) => {
+        'use strict';
+        var _ngc = null;
+        defineModule(_nga);
+        Object.defineProperty(_nga, '__esModule', {
+            'value': !0
+        }), _nga.getSlot342PersonalEffect = void 0;
+        var _ngd = _ngb(74496);
+        _nga.getSlot342PersonalEffect = function(_nge) {
+            var _ngf = null,
+                _ngg = new _ngd.SlotItemEffectModel(),
+                _ngh = new _ngd.SlotItemEffectModel();
+            if (277 == _nge.ship_id || 278 == _nge.ship_id || 461 == _nge.ship_id || 466 == _nge.ship_id || 462 == _nge.ship_id || 467 == _nge.ship_id ? _ngh.houg = 1 : 594 == _nge.ship_id || 646 == _nge.ship_id || 698 == _nge.ship_id ? (_ngh.houg = 2, _ngh.tyku = 1, _ngh.kaih = 1) : 599 != _nge.ship_id && 610 != _nge.ship_id || (_ngh.houg = 3, _ngh.tyku = 2, _ngh.kaih = 2), !_ngh.exists()) return _ngg;
+            var _ngi = _nge.get_slotnums(342);
+            return _ngg = _ngh.multiply(_ngi);
+        };
+    },
+    78415: (_ngj, _ngk, _ngl) => {
+        'use strict';
+        var _ngm = null;
+        defineModule(_ngk);
+        Object.defineProperty(_ngk, '__esModule', {
+            'value': !0
+        }), _ngk.getSlot343PersonalEffect = void 0;
+        var _ngn = _ngl(74496);
+        _ngk.getSlot343PersonalEffect = function(_ngo) {
+            var _ngp = null,
+                _ngq = new _ngn.SlotItemEffectModel(),
+                _ngr = new _ngn.SlotItemEffectModel();
+            if (277 == _ngo.ship_id || 278 == _ngo.ship_id ? _ngr.houg = 2 : 461 == _ngo.ship_id || 466 == _ngo.ship_id || 462 == _ngo.ship_id || 467 == _ngo.ship_id ? _ngr.houg = 1 : 594 == _ngo.ship_id || 646 == _ngo.ship_id || 698 == _ngo.ship_id ? (_ngr.houg = 3, _ngr.tyku = 2, _ngr.kaih = 1) : 599 != _ngo.ship_id && 610 != _ngo.ship_id || (_ngr.houg = 5, _ngr.tyku = 3, _ngr.kaih = 3), !_ngr.exists()) return _ngq;
+            var _ngs = _ngo.get_slotnums(343);
+            return _ngq = _ngr.multiply(_ngs);
+        };
+    },
+    23090: (_ngt, _ngu, _ngv) => {
+        'use strict';
+        var _ngw = null;
+        defineModule(_ngu);
+        Object.defineProperty(_ngu, '__esModule', {
+            'value': !0
+        }), _ngu.getSlot344PersonalEffect = void 0;
+        var _ngx = _ngv(74496);
+        _ngu.getSlot344PersonalEffect = function(_ngy) {
+            var _ngz = null,
+                _nh0 = new _ngx.SlotItemEffectModel(),
+                _nh1 = new _ngx.SlotItemEffectModel();
+            if (599 == _ngy.ship_id || 610 == _ngy.ship_id ? _nh1.houg = 3 : 555 == _ngy.ship_id || 560 == _ngy.ship_id ? (_nh1.houg = 2, _nh1.tais = 2) : 318 == _ngy.ship_id ? (_nh1.houg = 4, _nh1.tais = 1) : 282 == _ngy.ship_id ? (_nh1.houg = 2, _nh1.tais = 1) : 888 == _ngy.ship_id ? (_nh1.houg = 4, _nh1.tais = 2) : 883 == _ngy.ship_id && (_nh1.houg = 5, _nh1.tais = 2), !_nh1.exists()) return _nh0;
+            var _nh2 = _ngy.get_slotnums(344);
+            return _nh0 = _nh1.multiply(_nh2);
+        };
+    },
+    18776: (_nh3, _nh4, _nh5) => {
+        'use strict';
+        var _nh6 = null;
+        defineModule(_nh4);
+        Object.defineProperty(_nh4, '__esModule', {
+            'value': !0
+        }), _nh4.getSlot345PersonalEffect = void 0;
+        var _nh7 = _nh5(74496);
+        _nh4.getSlot345PersonalEffect = function(_nh8) {
+            var _nh9 = null,
+                _nha = new _nh7.SlotItemEffectModel(),
+                _nhb = new _nh7.SlotItemEffectModel();
+            if (599 == _nh8.ship_id || 610 == _nh8.ship_id ? (_nhb.houg = 3, _nhb.kaih = 1) : 555 == _nh8.ship_id || 560 == _nh8.ship_id ? (_nhb.houg = 3, _nhb.tais = 2, _nhb.kaih = 2) : 318 == _nh8.ship_id ? (_nhb.houg = 5, _nhb.tais = 1, _nhb.kaih = 2) : 282 == _nh8.ship_id ? (_nhb.houg = 3, _nhb.tais = 1, _nhb.kaih = 1) : 888 == _nh8.ship_id ? (_nhb.houg = 4, _nhb.tais = 2, _nhb.kaih = 2) : 883 == _nh8.ship_id && (_nhb.houg = 5, _nhb.tais = 2, _nhb.kaih = 3), !_nhb.exists()) return _nha;
+            var _nhc = _nh8.get_slotnums(345);
+            return _nha = _nhb.multiply(_nhc);
+        };
+    },
+    89058: (_nhd, _nhe, _nhf) => {
+        'use strict';
+        var _nhg = null;
+        defineModule(_nhe);
+        Object.defineProperty(_nhe, '__esModule', {
+            'value': !0
+        }), _nhe.getSlot346PersonalEffect = void 0;
+        var _nhh = _nhf(74496);
+        _nhe.getSlot346PersonalEffect = function(_nhi) {
+            var _nhj = null,
+                _nhk = new _nhh.SlotItemEffectModel();
+            return 'やましおまる' == _nhi.yomi && (_nhk.kaih += 1, _nhk.tais += 1), _nhk;
+        };
+    },
+    84372: (_nhl, _nhm, _nhn) => {
+        'use strict';
+        var _nho = null;
+        defineModule(_nhm);
+        Object.defineProperty(_nhm, '__esModule', {
+            'value': !0
+        }), _nhm.getSlot347PersonalEffect = void 0;
+        var _nhp = _nhn(74496);
+        _nhm.getSlot347PersonalEffect = function(_nhq) {
+            var _nhr = null,
+                _nhs = new _nhp.SlotItemEffectModel();
+            return 'やましおまる' == _nhq.yomi && (_nhs.kaih += 2, _nhs.tais += 2), _nhs;
+        };
+    },
+    39656: (_nht, _nhu, _nhv) => {
+        'use strict';
+        var _nhw = null;
+        defineModule(_nhu);
+        Object.defineProperty(_nhu, '__esModule', {
+            'value': !0
+        }), _nhu.getSlot356_357PersonalEffect = void 0;
+        var _nhx = _nhv(74496);
+        _nhu.getSlot356_357PersonalEffect = function(_nhy) {
+            var _nhz = null,
+                _ni0 = new _nhx.SlotItemEffectModel(),
+                _ni1 = new _nhx.SlotItemEffectModel();
+            if (95 == _nhy.ctype ? _ni1.houg = 2 : 9 == _nhy.ctype && (_ni1.houg = 1), !_ni1.exists()) return _ni0;
+            var _ni2 = _nhy.get_slotnums(356) + _nhy.get_slotnums(357);
+            return _ni0 = _ni1.multiply(_ni2);
+        };
+    },
+    66039: (_ni3, _ni4, _ni5) => {
+        'use strict';
+        var _ni6 = null;
+        defineModule(_ni4);
+        Object.defineProperty(_ni4, '__esModule', {
+            'value': !0
+        }), _ni4.getSlot358PersonalEffect = void 0;
+        var _ni7 = _ni5(74496);
+        _ni4.getSlot358PersonalEffect = function(_ni8) {
+            var _ni9 = null,
+                _nia = new _ni7.SlotItemEffectModel(),
+                _nib = new _ni7.SlotItemEffectModel();
+            if ('アメリカ' != _ni8.getCountryName() && 67 != _ni8.ctype && 78 != _ni8.ctype && 82 != _ni8.ctype && 88 != _ni8.ctype && 108 != _ni8.ctype && 112 != _ni8.ctype) return _nia;
+            _nib.houg += 1, _nib.kaih += 1, _nib.tyku += 1, 95 == _ni8.ctype && (_nib.houg += 1, _nib.kaih += 2, _nib.tyku += 2);
+            var _nic = _ni8.get_slotnums(358);
+            return _nia = _nib.multiply(_nic);
+        };
+    },
+    64679: (_nid, _nie, _nif) => {
+        'use strict';
+        var _nig = null;
+        defineModule(_nie);
+        Object.defineProperty(_nie, '__esModule', {
+            'value': !0
+        }), _nie.getSlot359PersonalEffect = void 0;
+        var _nih = _nif(74496);
+        _nie.getSlot359PersonalEffect = function(_nii) {
+            var _nij = null,
+                _nik = new _nih.SlotItemEffectModel(),
+                _nil = new _nih.SlotItemEffectModel();
+            if ('パース' == _nii.yomi ? (_nil.houg = 2, _nil.tyku = 2, _nil.kaih = 1) : 'ゆうばり' == _nii.yomi && (_nil.houg = 1, _nil.tyku = 1, _nil.kaih = 1), 622 != _nii.ship_id && 623 != _nii.ship_id && 624 != _nii.ship_id || (_nil.houg += 1, _nil.tyku += 1), !_nil.exists()) return _nik;
+            var _nim = _nii.get_slotnums(359);
+            return _nik = _nil.multiply(_nim);
+        };
+    },
+    69954: (_nin, _nio, _nip) => {
+        'use strict';
+        var _niq = null;
+        defineModule(_nio);
+        Object.defineProperty(_nio, '__esModule', {
+            'value': !0
+        }), _nio.getSlot35PersonalEffect = void 0;
+        var _nir = _nip(74496);
+        _nio.getSlot35PersonalEffect = function(_nis) {
+            var _nit = null,
+                _niu = new _nir.SlotItemEffectModel(),
+                _niv = new _nir.SlotItemEffectModel();
+            return 149 == _nis.ship_id || 591 == _nis.ship_id || 592 == _nis.ship_id ? (_niv.houg += 1, _niv.tyku += 1) : 150 == _nis.ship_id ? _niv.tyku += 1 : 151 == _nis.ship_id || 593 == _nis.ship_id || 954 == _nis.ship_id ? (_niv.tyku += 1, _niv.kaih += 1) : 152 == _nis.ship_id && (_niv.houg += 1), _niv.exists() ? _niu = _niv.multiply(1) : _niu;
+        };
+    },
+    95953: (_niw, _nix, _niy) => {
+        'use strict';
+        var _niz = null;
+        defineModule(_nix);
+        Object.defineProperty(_nix, '__esModule', {
+            'value': !0
+        }), _nix.getSlot360_361PersonalEffect = void 0;
+        var _nj0 = _niy(74496);
+        _nix.getSlot360_361PersonalEffect = function(_nj1) {
+            var _nj2 = null,
+                _nj3 = new _nj0.SlotItemEffectModel(),
+                _nj4 = new _nj0.SlotItemEffectModel();
+            if ('デ・ロイテル' == _nj1.yomi ? (_nj4.houg = 2, _nj4.tyku = 2, _nj4.kaih = 1) : 'ゴトランド' == _nj1.yomi && (_nj4.houg = 2, _nj4.tyku = 1, _nj4.kaih = 1), 41 == _nj1.ctype && (_nj4.houg = 1, _nj4.tyku = 1), !_nj4.exists()) return _nj3;
+            var _nj5 = _nj1.get_slotnums(360) + _nj1.get_slotnums(361);
+            return _nj3 = _nj4.multiply(_nj5);
+        };
+    },
+    86384: (_nj6, _nj7, _nj8) => {
+        'use strict';
+        var _nj9 = null;
+        defineModule(_nj7);
+        Object.defineProperty(_nj7, '__esModule', {
+            'value': !0
+        }), _nj7.getSlot362_363PersonalEffect = void 0;
+        var _nja = _nj8(74496);
+        _nj7.getSlot362_363PersonalEffect = function(_njb) {
+            var _njc = null,
+                _njd = new _nja.SlotItemEffectModel(),
+                _nje = new _nja.SlotItemEffectModel(),
+                _njf = !1;
+            if (99 == _njb.ctype ? (_nje.houg = 1, _nje.tyku = 2, _nje.kaih = 1, _njf = !0) : 34 == _njb.ctype || 21 == _njb.ctype ? (_nje.houg = -3, _nje.tyku = -3, _nje.kaih = -8, _njf = !0) : 4 == _njb.ctype || 20 == _njb.ctype || 16 == _njb.ctype ? (_nje.houg = -3, _nje.tyku = -2, _nje.kaih = -6, _njf = !0) : 89 == _njb.ctype || 56 == _njb.ctype ? (_nje.houg = -2, _nje.tyku = -1, _nje.kaih = -4, _njf = !0) : 52 != _njb.ctype && 41 != _njb.ctype && 98 != _njb.ctype || (_nje.tyku = -1, _nje.kaih = -2, _njf = !0), 'アメリカ' == _njb.getCountryName() && (_nje.tyku += 1, _nje.kaih += 1, _njf = !0), 0 == _njf) return _njd;
+            var _njg = _njb.get_slotnums(362) + _njb.get_slotnums(363);
+            return _njd = _nje.multiply(_njg);
+        };
+    },
+    65345: (_njh, _nji, _njj) => {
+        'use strict';
+        var _njk = null;
+        defineModule(_nji);
+        Object.defineProperty(_nji, '__esModule', {
+            'value': !0
+        }), _nji.getSlot364PersonalEffect = void 0;
+        var _njl = _njj(74496);
+        _nji.getSlot364PersonalEffect = function(_njm) {
+            var _njn = null;
+            new _njl.SlotItemEffectModel();
+            var _njo = new _njl.SlotItemEffectModel();
+            623 == _njm.ship_id || 586 == _njm.ship_id || 119 == _njm.ship_id || 118 == _njm.ship_id || 657 == _njm.ship_id || 506 == _njm.ship_id || 668 == _njm.ship_id || 507 == _njm.ship_id ? (_njo.raig = 1, _njo.kaih = -2, 119 == _njm.ship_id ? _njo.raig += 1 : 507 == _njm.ship_id ? _njo.raig += 2 : 623 == _njm.ship_id && (_njo.houg += 1, _njo.raig += 3)) : (_njo.houg = -1, _njo.kaih = -7);
+            var _njp = _njm.get_slotnums(364);
+            return _njo.multiply(_njp);
+        };
+    },
+    46514: (_njq, _njr, _njs) => {
+        'use strict';
+        var _njt = null;
+        defineModule(_njr);
+        Object.defineProperty(_njr, '__esModule', {
+            'value': !0
+        }), _njr.getSlot365PersonalEffect = void 0;
+        var _nju = _njs(74496);
+        _njr.getSlot365PersonalEffect = function(_njv) {
+            var _njw = null,
+                _njx = new _nju.SlotItemEffectModel(),
+                _njy = new _nju.SlotItemEffectModel(),
+                _njz = !1;
+            return 37 != _njv.ctype && 19 != _njv.ctype && 2 != _njv.ctype && 26 != _njv.ctype && 6 != _njv.ctype || (_njy.houg += 1, _njz = !0), 136 != _njv.ship_id && 148 != _njv.ship_id && 546 != _njv.ship_id && 541 != _njv.ship_id && 573 != _njv.ship_id && 911 != _njv.ship_id && 916 != _njv.ship_id && 593 != _njv.ship_id || (_njy.houg += 1, _njz = !0), 591 != _njv.ship_id && 592 != _njv.ship_id && 954 != _njv.ship_id || (_njy.houg += 2, _njz = !0), 0 == _njz ? _njx : _njx = _njy.multiply(1);
+        };
+    },
+    81976: (_nk0, _nk1, _nk2) => {
+        'use strict';
+        var _nk3 = null;
+        defineModule(_nk1);
+        Object.defineProperty(_nk1, '__esModule', {
+            'value': !0
+        }), _nk1.getSlot367PersonalEffect = void 0;
+        var _nk4 = _nk2(74496);
+        _nk1.getSlot367PersonalEffect = function(_nk5) {
+            var _nk6 = null,
+                _nk7 = new _nk4.SlotItemEffectModel(),
+                _nk8 = new _nk4.SlotItemEffectModel(),
+                _nk9 = !1;
+            if ('ゴトランド' == _nk5.yomi && (_nk8.houg += 2, _nk8.tais += 1, _nk8.kaih += 1, _nk8.saku += 1, _nk9 = !0), 70 == _nk5.ctype ? (_nk8.houg += 1, _nk8.tais += 1, _nk8.kaih += 1, _nk8.saku += 1, _nk9 = !0) : 72 == _nk5.ctype || 62 == _nk5.ctype ? (_nk8.houg += 1, _nk8.kaih += 1, _nk8.saku += 1, _nk9 = !0) : 67 != _nk5.ctype && 78 != _nk5.ctype && 82 != _nk5.ctype && 88 != _nk5.ctype && 108 != _nk5.ctype && 112 != _nk5.ctype || (_nk8.houg += 2, _nk8.kaih += 2, _nk8.saku += 2, _nk9 = !0), 0 == _nk9) return _nk7;
+            var _nka = _nk5.get_slotnums(367);
+            return _nk7 = _nk8.multiply(_nka);
+        };
+    },
+    89331: (_nkb, _nkc, _nkd) => {
+        'use strict';
+        var _nke = null;
+        defineModule(_nkc);
+        Object.defineProperty(_nkc, '__esModule', {
+            'value': !0
+        }), _nkc.getSlot368PersonalEffect = void 0;
+        var _nkf = _nkd(74496);
+        _nkc.getSlot368PersonalEffect = function(_nkg) {
+            var _nkh = null,
+                _nki = new _nkf.SlotItemEffectModel(),
+                _nkj = new _nkf.SlotItemEffectModel(),
+                _nkk = !1;
+            if ('ゴトランド' == _nkg.yomi && (_nkj.houg = 4, _nkj.tais = 3, _nkj.kaih = 2, _nkj.saku = 3, _nkk = !0, 630 == _nkg.ship_id && (_nki.houg += 2, _nki.raig += 2, _nki.kaih += 1, _nki.saku += 1)), 70 == _nkg.ctype ? (_nkj.houg = 2, _nkj.tais = 3, _nkj.kaih = 1, _nkj.saku = 2, _nkk = !0) : 72 == _nkg.ctype || 62 == _nkg.ctype ? (_nkj.houg += 1, _nkj.tais += 2, _nkj.kaih += 1, _nkj.saku += 2, _nkk = !0) : 67 != _nkg.ctype && 78 != _nkg.ctype && 82 != _nkg.ctype && 88 != _nkg.ctype && 108 != _nkg.ctype && 112 != _nkg.ctype || (_nkj.houg += 2, _nkj.tais += 2, _nkj.kaih += 2, _nkj.saku += 2, _nkk = !0), 0 == _nkk) return _nki;
+            var _nkl = _nkg.get_slotnums(368);
+            return _nki.add(_nkj.multiply(_nkl)), _nki;
+        };
+    },
+    73973: (_nkm, _nkn, _nko) => {
+        'use strict';
+        var _nkp = null;
+        defineModule(_nkn);
+        Object.defineProperty(_nkn, '__esModule', {
+            'value': !0
+        }), _nkn.getSlot369PersonalEffect = void 0;
+        var _nkq = _nko(74496);
+        _nkn.getSlot369PersonalEffect = function(_nkr) {
+            var _nks = null,
+                _nkt = new _nkq.SlotItemEffectModel(),
+                _nku = new _nkq.SlotItemEffectModel(),
+                _nkv = !1;
+            if ('ゴトランド' == _nkr.yomi && (_nku.houg = 5, _nku.tais = 4, _nku.kaih = 4, _nku.saku = 3, _nkv = !0, 630 == _nkr.ship_id && (_nkt.houg += 3, _nkt.raig += 3, _nkt.kaih += 2, _nkt.saku += 2)), 70 == _nkr.ctype ? (_nku.houg += 3, _nku.tais += 3, _nku.kaih += 2, _nku.saku += 3, _nkv = !0) : 72 == _nkr.ctype || 62 == _nkr.ctype ? (_nku.houg += 2, _nku.tais += 2, _nku.kaih += 1, _nku.saku += 2, _nkv = !0) : 67 != _nkr.ctype && 78 != _nkr.ctype && 82 != _nkr.ctype && 88 != _nkr.ctype && 108 != _nkr.ctype && 112 != _nkr.ctype || (_nku.houg += 2, _nku.tais += 2, _nku.kaih += 2, _nku.saku += 2, _nkv = !0), 0 == _nkv) return _nkt;
+            var _nkw = _nkr.get_slotnums(369);
+            return _nkt.add(_nku.multiply(_nkw)), _nkt;
+        };
+    },
+    21178: (_nkx, _nky, _nkz) => {
+        'use strict';
+        var _nl0 = null;
+        defineModule(_nky);
+        Object.defineProperty(_nky, '__esModule', {
+            'value': !0
+        }), _nky.getSlot370PersonalEffect = void 0;
+        var _nl1 = _nkz(74496);
+        _nky.getSlot370PersonalEffect = function(_nl2) {
+            var _nl3 = null,
+                _nl4 = new _nl1.SlotItemEffectModel(),
+                _nl5 = new _nl1.SlotItemEffectModel(),
+                _nl6 = !1;
+            if ('ゴトランド' == _nl2.yomi && (_nl5.houg = 1, _nl5.tais = 3, _nl5.kaih = 1, _nl5.saku = 2, _nl6 = !0), 70 == _nl2.ctype ? (_nl5.houg += 1, _nl5.tais += 3, _nl5.kaih += 1, _nl5.saku += 1, _nl6 = !0) : 72 == _nl2.ctype || 62 == _nl2.ctype ? (_nl5.houg += 1, _nl5.tais += 2, _nl5.kaih += 1, _nl5.saku += 1, _nl6 = !0) : 67 != _nl2.ctype && 78 != _nl2.ctype && 82 != _nl2.ctype && 88 != _nl2.ctype && 108 != _nl2.ctype && 112 != _nl2.ctype || (_nl5.houg += 2, _nl5.tais += 3, _nl5.kaih += 2, _nl5.saku += 2, _nl6 = !0, 'ウォースパイト' == _nl2.yomi && (_nl4.houg += 4, _nl4.kaih += 1, _nl4.saku += 1)), 0 == _nl6) return _nl4;
+            var _nl7 = _nl2.get_slotnums(370);
+            return _nl4.add(_nl5.multiply(_nl7)), _nl4;
+        };
+    },
+    5079: (_nl8, _nl9, _nla) => {
+        'use strict';
+        var _nlb = null;
+        defineModule(_nl9);
+        Object.defineProperty(_nl9, '__esModule', {
+            'value': !0
+        }), _nl9.getSlot371PersonalEffect = void 0;
+        var _nlc = _nla(74496);
+        _nl9.getSlot371PersonalEffect = function(_nld) {
+            var _nle = null,
+                _nlf = new _nlc.SlotItemEffectModel(),
+                _nlg = new _nlc.SlotItemEffectModel(),
+                _nlh = !1;
+            if ('ゴトランド' == _nld.yomi && (_nlg.houg = 4, _nlg.tais = 2, _nlg.kaih = 3, _nlg.saku = 6, _nlh = !0, 630 == _nld.ship_id && (_nlf.houg += 2, _nlf.kaih += 2, _nlf.saku += 3)), 70 == _nld.ctype ? (_nlg.houg += 2, _nlg.tais += 1, _nlg.kaih += 2, _nlg.saku += 4, _nlh = !0) : 79 == _nld.ctype ? (_nlg.houg += 2, _nlg.kaih += 1, _nlg.saku += 3, _nlh = !0) : 67 != _nld.ctype && 78 != _nld.ctype && 82 != _nld.ctype && 88 != _nld.ctype && 108 != _nld.ctype && 112 != _nld.ctype || (_nlg.houg += 3, _nlg.tais += 1, _nlg.kaih += 2, _nlg.saku += 3, _nlh = !0, 88 == _nld.ctype && (_nlf.houg += 3, _nlf.kaih += 2, _nlf.saku += 2)), 0 == _nlh) return _nlf;
+            var _nli = _nld.get_slotnums(371);
+            return _nlf.add(_nlg.multiply(_nli)), _nlf;
+        };
+    },
+    95014: (_nlj, _nlk, _nll) => {
+        'use strict';
+        var _nlm = null;
+        defineModule(_nlk);
+        Object.defineProperty(_nlk, '__esModule', {
+            'value': !0
+        }), _nlk.getSlot372PersonalEffect = void 0;
+        var _nln = _nll(74496);
+        _nlk.getSlot372PersonalEffect = function(_nlo) {
+            var _nlp = null,
+                _nlq = new _nln.SlotItemEffectModel(),
+                _nlr = !1,
+                _nls = new _nln.SlotItemEffectModel();
+            if ('しょうかく' == _nlo.yomi || 'ずいかく' == _nlo.yomi || 'たいほう' == _nlo.yomi ? (_nls.houg += 1, _nlr = !0, _nlq.raig += 1) : 'じゅんよう' != _nlo.yomi && 'ひよう' != _nlo.yomi || (_nls.houg += 1, _nlr = !0), 108 == _nlo.ship_id || 109 == _nlo.ship_id || 291 == _nlo.ship_id || 292 == _nlo.ship_id || 296 == _nlo.ship_id || 297 == _nlo.ship_id ? (_nls.houg += 1, _nlr = !0) : 116 == _nlo.ship_id || 74 == _nlo.ship_id || 117 == _nlo.ship_id || 282 == _nlo.ship_id || 185 == _nlo.ship_id ? (_nls.tais += 1, _nlr = !0) : 560 == _nlo.ship_id || 555 == _nlo.ship_id || 318 == _nlo.ship_id ? (_nls.tais += 1, _nlr = !0, _nlq.raig += 1) : 508 == _nlo.ship_id || 509 == _nlo.ship_id ? (_nls.houg += 1, _nlr = !0) : 883 != _nlo.ship_id && 888 != _nlo.ship_id || (_nls.houg += 2, _nls.tais += 1, _nlr = !0, _nlq.raig += 2), 0 == _nlr) return _nlq;
+            var _nlt = _nlo.get_slotnums(372);
+            return _nlq.add(_nls.multiply(_nlt)), _nlq;
+        };
+    },
+    53099: (_nlu, _nlv, _nlw) => {
+        'use strict';
+        var _nlx = null;
+        defineModule(_nlv);
+        Object.defineProperty(_nlv, '__esModule', {
+            'value': !0
+        }), _nlv.getSlot373PersonalEffect = void 0;
+        var _nly = _nlw(74496);
+        _nlv.getSlot373PersonalEffect = function(_nlz) {
+            var _nm0 = null,
+                _nm1 = new _nly.SlotItemEffectModel(),
+                _nm2 = new _nly.SlotItemEffectModel(),
+                _nm3 = !1;
+            if ('しょうかく' == _nlz.yomi ? (_nm2.houg += 2, _nm3 = !0, _nm1.raig += 2, _nm1.kaih += 2) : 'ずいかく' == _nlz.yomi ? (_nm2.houg += 1, _nm3 = !0, _nm1.raig += 2, _nm1.kaih += 3) : 'たいほう' == _nlz.yomi ? (_nm2.houg += 1, _nm3 = !0, _nm1.raig += 2, _nm1.kaih += 2) : 'じゅんよう' != _nlz.yomi && 'ひよう' != _nlz.yomi || (_nm2.houg += 1, _nm3 = !0, _nm1.raig += 1, _nm1.kaih += 1), 108 == _nlz.ship_id || 109 == _nlz.ship_id ? (_nm2.houg += 1, _nm3 = !0) : 291 == _nlz.ship_id || 292 == _nlz.ship_id ? (_nm2.houg += 1, _nm3 = !0, _nm1.raig += 1) : 296 == _nlz.ship_id || 297 == _nlz.ship_id ? (_nm2.houg += 1, _nm3 = !0, _nm1.raig += 1, _nm1.kaih += 1) : 116 == _nlz.ship_id || 74 == _nlz.ship_id ? (_nm2.tais += 1, _nm3 = !0) : 117 == _nlz.ship_id || 282 == _nlz.ship_id || 185 == _nlz.ship_id ? (_nm2.houg += 1, _nm2.tais += 1, _nm3 = !0, _nm1.raig += 1) : 560 == _nlz.ship_id || 555 == _nlz.ship_id || 318 == _nlz.ship_id ? (_nm2.houg += 1, _nm2.tais += 2, _nm3 = !0, _nm1.raig += 1, _nm1.kaih += 1) : 508 == _nlz.ship_id || 509 == _nlz.ship_id ? (_nm2.houg += 1, _nm3 = !0, _nm1.raig += 2, _nm1.kaih += 2) : 888 == _nlz.ship_id ? (_nm2.houg += 2, _nm2.tais += 2, _nm3 = !0, _nm1.raig += 2, _nm1.kaih += 2) : 883 == _nlz.ship_id && (_nm2.houg += 1, _nm2.tais += 2, _nm3 = !0, _nm1.raig += 3, _nm1.kaih += 4), 0 == _nm3) return _nm1;
+            var _nm4 = _nlz.get_slotnums(373);
+            return _nm1.add(_nm2.multiply(_nm4)), _nm1;
+        };
+    },
+    76201: (_nm5, _nm6, _nm7) => {
+        'use strict';
+        var _nm8 = null;
+        defineModule(_nm6);
+        Object.defineProperty(_nm6, '__esModule', {
+            'value': !0
+        }), _nm6.getSlot374PersonalEffect = void 0;
+        var _nm9 = _nm7(74496);
+        _nm6.getSlot374PersonalEffect = function(_nma) {
+            var _nmb = null,
+                _nmc = new _nm9.SlotItemEffectModel(),
+                _nmd = new _nm9.SlotItemEffectModel(),
+                _nme = !1;
+            if ('しょうかく' == _nma.yomi ? (_nmd.houg += 3, _nme = !0, _nmc.raig += 3, _nmc.kaih += 3) : 'ずいかく' == _nma.yomi ? (_nmd.houg += 2, _nme = !0, _nmc.raig += 3, _nmc.kaih += 4) : 'たいほう' == _nma.yomi ? (_nmd.houg += 2, _nme = !0, _nmc.raig += 3, _nmc.kaih += 2) : 'じゅんよう' != _nma.yomi && 'ひよう' != _nma.yomi || (_nmd.houg += 1, _nme = !0, _nmc.raig += 2, _nmc.kaih += 2), 108 == _nma.ship_id || 109 == _nma.ship_id ? (_nmd.houg += 1, _nme = !0, _nmc.raig += 1) : 291 == _nma.ship_id || 292 == _nma.ship_id ? (_nmd.houg += 1, _nmd.tais += 1, _nme = !0, _nmc.raig += 1) : 296 == _nma.ship_id || 297 == _nma.ship_id ? (_nmd.houg += 1, _nmd.tais += 1, _nme = !0, _nmc.raig += 1, _nmc.kaih += 1) : 116 == _nma.ship_id || 74 == _nma.ship_id ? (_nmd.houg += 1, _nmd.tais += 1, _nme = !0) : 117 == _nma.ship_id || 282 == _nma.ship_id || 185 == _nma.ship_id ? (_nmd.houg += 1, _nmd.tais += 2, _nme = !0, _nmc.raig += 1, _nmc.kaih += 1) : 560 == _nma.ship_id || 555 == _nma.ship_id || 318 == _nma.ship_id ? (_nmd.houg += 1, _nmd.tais += 3, _nme = !0, _nmc.raig += 1, _nmc.kaih += 2) : 508 == _nma.ship_id || 509 == _nma.ship_id ? (_nmd.houg += 1, _nmd.tais += 2, _nme = !0, _nmc.raig += 2, _nmc.kaih += 3) : 888 == _nma.ship_id ? (_nmd.houg += 3, _nmd.tais += 3, _nme = !0, _nmc.raig += 2, _nmc.kaih += 3) : 883 == _nma.ship_id && (_nmd.houg += 2, _nmd.tais += 3, _nme = !0, _nmc.raig += 3, _nmc.kaih += 5), 0 == _nme) return _nmc;
+            var _nmf = _nma.get_slotnums(374);
+            return _nmc.add(_nmd.multiply(_nmf)), _nmc;
+        };
+    },
+    24931: (_nmg, _nmh, _nmi) => {
+        'use strict';
+        var _nmj = null;
+        defineModule(_nmh);
+        Object.defineProperty(_nmh, '__esModule', {
+            'value': !0
+        }), _nmh.getSlot375PersonalEffect = void 0;
+        var _nmk = _nmi(74496);
+        _nmh.getSlot375PersonalEffect = function(_nml) {
+            var _nmm = null,
+                _nmn = new _nmk.SlotItemEffectModel(),
+                _nmo = new _nmk.SlotItemEffectModel(),
+                _nmp = !1;
+            if (69 != _nml.ctype && 83 != _nml.ctype && 84 != _nml.ctype && 105 != _nml.ctype && 116 != _nml.ctype && 118 != _nml.ctype || (_nmo.tyku += 3, _nmo.houg += 3, _nmo.kaih += 3, _nmo.tais += 3, _nmp = !0), 'かが' == _nml.yomi && (_nmo.tyku += 1, _nmo.houg += 1, _nmo.kaih += 1, _nmo.tais += 1, _nmp = !0), 0 == _nmp) return _nmn;
+            var _nmq = _nml.get_slotnums(375);
+            return _nmn.add(_nmo.multiply(_nmq)), _nmn;
+        };
+    },
+    60978: (_nmr, _nms, _nmt) => {
+        'use strict';
+        var _nmu = null;
+        defineModule(_nms);
+        Object.defineProperty(_nms, '__esModule', {
+            'value': !0
+        }), _nms.getSlot376PersonalEffect = void 0;
+        var _nmv = _nmt(74496);
+        _nms.getSlot376PersonalEffect = function(_nmw) {
+            var _nmx = null,
+                _nmy = new _nmv.SlotItemEffectModel(),
+                _nmz = new _nmv.SlotItemEffectModel(),
+                _nn0 = !1;
+            if ('アメリカ' == _nmw.getCountryName() ? (_nmz.houg += 2, _nmz.raig += 4, _nn0 = !0) : 67 == _nmw.ctype || 78 == _nmw.ctype || 82 == _nmw.ctype || 88 == _nmw.ctype || 108 == _nmw.ctype || 112 == _nmw.ctype ? (_nmz.houg += 1, _nmz.raig += 2, _nn0 = !0) : 96 == _nmw.ctype && (_nmz.houg += 1, _nmz.raig += 1, _nn0 = !0), 0 == _nn0) return _nmy;
+            var _nn1 = _nmw.get_slotnums(376);
+            return _nmy.add(_nmz.multiply(_nn1)), _nmy;
+        };
+    },
+    74312: (_nn2, _nn3, _nn4) => {
+        'use strict';
+        var _nn5 = null;
+        defineModule(_nn3);
+        Object.defineProperty(_nn3, '__esModule', {
+            'value': !0
+        }), _nn3.getSlot377PersonalEffect = void 0;
+        var _nn6 = _nn4(74496);
+        _nn3.getSlot377PersonalEffect = function(_nn7) {
+            var _nn8 = null,
+                _nn9 = new _nn6.SlotItemEffectModel();
+            return 'アメリカ' == _nn7.getCountryName() ? (_nn9.tais += 2, _nn9.kaih += 1, 629 == _nn7.ship_id && (_nn9.tais += 1, _nn9.kaih += 2)) : 67 != _nn7.ctype && 78 != _nn7.ctype && 82 != _nn7.ctype && 88 != _nn7.ctype && 108 != _nn7.ctype && 112 != _nn7.ctype && 96 != _nn7.ctype || (_nn9.tais += 1, _nn9.kaih += 1), 651 != _nn7.ship_id && 656 != _nn7.ship_id || (_nn9.tais += 1, _nn9.kaih += 2), _nn9;
+        };
+    },
+    54350: (_nna, _nnb, _nnc) => {
+        'use strict';
+        var _nnd = null;
+        defineModule(_nnb);
+        Object.defineProperty(_nnb, '__esModule', {
+            'value': !0
+        }), _nnb.getSlot378PersonalEffect = void 0;
+        var _nne = _nnc(74496);
+        _nnb.getSlot378PersonalEffect = function(_nnf) {
+            var _nng = null,
+                _nnh = new _nne.SlotItemEffectModel();
+            return 'アメリカ' == _nnf.getCountryName() ? (_nnh.tais += 3, _nnh.kaih += 1, 629 == _nnf.ship_id && (_nnh.tais += 1, _nnh.kaih += 1)) : 67 == _nnf.ctype || 78 == _nnf.ctype || 82 == _nnf.ctype || 88 == _nnf.ctype || 108 == _nnf.ctype || 112 == _nnf.ctype ? (_nnh.tais += 2, _nnh.kaih += 1) : 96 == _nnf.ctype && (_nnh.tais += 1, _nnh.kaih += 1), 651 != _nnf.ship_id && 656 != _nnf.ship_id || (_nnh.tais += 1, _nnh.kaih += 1), _nnh;
+        };
+    },
+    26262: function(_nni, _nnj, _nnk) {
+        'use strict';
+        var _nnl = null;
+        var _nnm = this && this.__importDefault || function(_nnn) {
+            var _nno = null;
+            return _nnn && _nnn.__esModule ? _nnn : {
+                'default': _nnn
+            };
+        };
+        defineModule(_nnj);
+        Object.defineProperty(_nnj, '__esModule', {
+            'value': !0
+        }), _nnj.getSlot379PersonalEffect = void 0;
+        var _nnp = _nnk(74496),
+            _nnq = _nnm(_nnk(18622));
+        _nnj.getSlot379PersonalEffect = function(_nnr) {
+            var _nns = null,
+                _nnt = new _nnp.SlotItemEffectModel(),
+                _nnu = !1,
+                _nnv = new _nnp.SlotItemEffectModel();
+            if (1 == _nnr.stype ? (_nnv.tyku += 2, _nnv.houg += 1, _nnu = !0) : 21 != _nnr.stype && 16 != _nnr.stype || (_nnv.tyku += 1, _nnv.houg += 1, _nnu = !0), 66 == _nnr.ctype || 28 == _nnr.ctype ? (_nnv.houg += 1, _nnv.tyku += 2, _nnu = !0) : 101 == _nnr.ctype && (_nnv.tyku += 2, _nnv.houg += 1, _nnt.tyku += 2, _nnt.houg += 2, _nnu = !0), 'ゆら' == _nnr.yomi || 'なか' == _nnr.yomi || 'きぬ' == _nnr.yomi || 'いすず' == _nnr.yomi ? (_nnv.houg += 2, _nnu = !0) : 'おおい' != _nnr.yomi && 'きたかみ' != _nnr.yomi || (_nnv.tyku += 2, _nnv.houg += 2, _nnu = !0), 'ゆら' != _nnr.yomi && 'なか' != _nnr.yomi && 'きぬ' != _nnr.yomi && 'いすず' != _nnr.yomi && 'ゆうばり' != _nnr.yomi || (_nnv.tais += 1, _nnu = !0), 'てんりゅう' != _nnr.yomi && 'たつた' != _nnr.yomi && 'ゆうばり' != _nnr.yomi || (_nnv.houg += 1, _nnu = !0), 488 == _nnr.ship_id ? (_nnv.tyku += 4, _nnu = !0) : 220 == _nnr.ship_id ? (_nnv.tyku += 3, _nnu = !0) : 23 == _nnr.ship_id ? (_nnv.tyku += 2, _nnu = !0) : 160 == _nnr.ship_id || 487 == _nnr.ship_id || 141 == _nnr.ship_id ? (_nnv.tyku += 3, _nnu = !0) : 224 == _nnr.ship_id || 289 == _nnr.ship_id || 219 == _nnr.ship_id || 56 == _nnr.ship_id || 113 == _nnr.ship_id || 22 == _nnr.ship_id ? (_nnv.tyku += 2, _nnu = !0) : 651 != _nnr.ship_id && 656 != _nnr.ship_id || (_nnv.tyku += 3, _nnv.houg += 3, 656 == _nnr.ship_id && (_nnv.kaih += 3, _nnv.tais += 2), _nnu = !0), 488 != _nnr.ship_id && 160 != _nnr.ship_id && 487 != _nnr.ship_id && 141 != _nnr.ship_id || (_nnv.tais += 1, _nnu = !0), 477 != _nnr.ship_id && 478 != _nnr.ship_id && 624 != _nnr.ship_id || (_nnv.tais += 2, _nnu = !0), 477 != _nnr.ship_id && 478 != _nnr.ship_id && 624 != _nnr.ship_id && 622 != _nnr.ship_id || (_nnv.tyku += 2, _nnu = !0), 652 != _nnr.ship_id && 657 != _nnr.ship_id && 547 != _nnr.ship_id && 146 != _nnr.ship_id || (_nnt.houg += 2), 652 != _nnr.ship_id && 657 != _nnr.ship_id && 547 != _nnr.ship_id && 146 != _nnr.ship_id || (_nnt.tyku += 2), _nnu) {
+                var _nnw = _nnr.get_slotnums(379);
+                _nnt.add(_nnv.multiply(_nnw));
+            }
+            var _nnx = new _nnp.SlotItemEffectModel(),
+                _nny = !1;
+            16 == _nnr.stype || 3 == _nnr.stype || 4 == _nnr.stype || 21 == _nnr.stype ? (_nnx.houg += 1, _nnx.kaih += 2, _nny = !0) : 1 == _nnr.stype && (_nnx.houg += 1, _nnx.kaih += 4, _nny = !0), 66 == _nnr.ctype || 28 == _nnr.ctype || 21 == _nnr.ctype || 34 == _nnr.ctype ? (_nnx.houg += 2, _nnx.kaih += 3, _nny = !0) : 101 == _nnr.ctype && (_nnx.houg += 4, _nnx.kaih += 3, _nny = !0), 488 == _nnr.ship_id || 651 == _nnr.ship_id || 656 == _nnr.ship_id ? (_nnx.houg += 2, _nnx.kaih += 2, _nny = !0) : 487 == _nnr.ship_id || 160 == _nnr.ship_id || 141 == _nnr.ship_id || 118 == _nnr.ship_id || 119 == _nnr.ship_id ? (_nnx.houg += 1, _nnx.kaih += 1, _nny = !0) : 652 != _nnr.ship_id && 657 != _nnr.ship_id && 547 != _nnr.ship_id && 146 != _nnr.ship_id || (_nnx.houg += 1, _nnx.kaih += 1, _nny = !0);
+            var _nnz = new _nnp.SlotItemEffectModel(),
+                _no0 = !1;
+            if (656 == _nnr.ship_id && (_nnz.tyku += 3, _nnz.kaih += 2, _no0 = !0), _nny || _no0) {
+                for (var _no1 = 0, _no2 = 0, _no3 = 0, _no4 = _nnr.have_slot_ids(); _no3 < _no4.length; _no3++) {
+                    var _no5 = _no4[_no3],
+                        _no6 = _nnq.default.model.slot.getMst(_no5),
+                        _no7 = _no6.equipType;
+                    12 != _no7 && 13 != _no7 || (_no6.sakuteki >= 5 && (_no1 += _nnr.get_slotnums(parseInt(_no5))), _no6.taiku >= 2 && (_no2 += _nnr.get_slotnums(parseInt(_no5))));
+                }
+                _nny && _no1 > 0 && _nnt.add(_nnx), _no0 && _no2 > 0 && _nnt.add(_nnz);
+            }
+            return _nnt;
+        };
+    },
+    45530: function(_no8, _no9, _noa) {
+        'use strict';
+        var _nob = null;
+        var _noc = this && this.__importDefault || function(_nod) {
+            var _noe = null;
+            return _nod && _nod.__esModule ? _nod : {
+                'default': _nod
+            };
+        };
+        defineModule(_no9);
+        Object.defineProperty(_no9, '__esModule', {
+            'value': !0
+        }), _no9.getSlot380PersonalEffect = void 0;
+        var _nof = _noa(74496),
+            _nog = _noc(_noa(18622));
+        _no9.getSlot380PersonalEffect = function(_noh) {
+            var _noi = null,
+                _noj = new _nof.SlotItemEffectModel(),
+                _nok = !1,
+                _nol = new _nof.SlotItemEffectModel();
+            if (21 != _noh.stype && 16 != _noh.stype || (_nol.tyku += 2, _nol.houg += 1, _nok = !0), 101 == _noh.ctype && (_nol.tyku += 2, _nol.houg += 1, _nok = !0, _noj.tyku += 2, _noj.houg += 2), 'ゆら' == _noh.yomi || 'なか' == _noh.yomi || 'きぬ' == _noh.yomi || 'いすず' == _noh.yomi ? (_nol.houg += 2, _nok = !0) : 'おおい' != _noh.yomi && 'きたかみ' != _noh.yomi || (_nol.tyku += 2, _nol.houg += 3, _nok = !0), 'ゆら' != _noh.yomi && 'なか' != _noh.yomi && 'きぬ' != _noh.yomi && 'いすず' != _noh.yomi && 'ゆうばり' != _noh.yomi || (_nol.tais += 1, _nok = !0), 'てんりゅう' != _noh.yomi && 'たつた' != _noh.yomi && 'ゆうばり' != _noh.yomi || (_nol.houg += 1, _nok = !0), 488 == _noh.ship_id ? (_nol.tyku += 4, _nok = !0) : 220 == _noh.ship_id ? (_nol.tyku += 3, _nok = !0) : 23 == _noh.ship_id ? (_nol.tyku += 2, _nok = !0) : 160 == _noh.ship_id || 487 == _noh.ship_id || 141 == _noh.ship_id ? (_nol.tyku += 3, _nok = !0) : 224 == _noh.ship_id || 289 == _noh.ship_id || 219 == _noh.ship_id || 56 == _noh.ship_id || 113 == _noh.ship_id || 22 == _noh.ship_id ? (_nol.tyku += 2, _nok = !0) : 651 == _noh.ship_id || 656 == _noh.ship_id ? (_nol.tyku += 3, _nol.houg += 3, _nok = !0) : 407 != _noh.ship_id && 665 != _noh.ship_id || (_nol.houg += 2, _nol.tyku += 2, _nok = !0, _noj.houg += 1, _noj.tyku += 1, _noj.kaih += 2), 488 != _noh.ship_id && 160 != _noh.ship_id && 487 != _noh.ship_id && 141 != _noh.ship_id || (_nol.tais += 1, _nok = !0), 477 != _noh.ship_id && 478 != _noh.ship_id && 624 != _noh.ship_id || (_nol.tais += 2, _nok = !0), 477 != _noh.ship_id && 478 != _noh.ship_id && 624 != _noh.ship_id && 622 != _noh.ship_id || (_nol.tyku += 2, _nok = !0), 652 != _noh.ship_id && 657 != _noh.ship_id || (_nol.houg += 3, _nok = !0), 547 != _noh.ship_id && 146 != _noh.ship_id || (_noj.houg += 2), 652 != _noh.ship_id && 657 != _noh.ship_id && 547 != _noh.ship_id && 146 != _noh.ship_id || (_noj.tyku += 2), _nok) {
+                var _nom = _noh.get_slotnums(380);
+                _noj.add(_nol.multiply(_nom));
+            }
+            var _non = new _nof.SlotItemEffectModel(),
+                _noo = !1,
+                _nop = new _nof.SlotItemEffectModel(),
+                _noq = !1,
+                _nor = !1;
+            if (16 != _noh.stype && 3 != _noh.stype && 4 != _noh.stype && 21 != _noh.stype || (_non.houg += 2, _non.kaih += 1, _noo = !0), 101 == _noh.ctype && (_non.houg += 4, _non.kaih += 3, _noo = !0), 488 != _noh.ship_id && 487 != _noh.ship_id && 160 != _noh.ship_id && 141 != _noh.ship_id && 118 != _noh.ship_id && 119 != _noh.ship_id && 651 != _noh.ship_id && 656 != _noh.ship_id || (_non.houg += 1, _non.kaih += 2, _noo = !0), 652 == _noh.ship_id || 657 == _noh.ship_id || 547 == _noh.ship_id || 146 == _noh.ship_id ? (_non.houg += 1, _non.kaih += 3, _noo = !0) : 407 != _noh.ship_id && 665 != _noh.ship_id || (_nor = !0, _noo = !0, _non.houg += 2, _non.kaih += 1, _noq = !0, _nop.houg += 1, _nop.tyku += 2, _nop.kaih += 1), _noo || _nor) {
+                for (var _nos = 0, _not = 0, _nou = 0, _nov = _noh.have_slot_ids(); _nou < _nov.length; _nou++) {
+                    var _now = _nov[_nou],
+                        _nox = _nog.default.model.slot.getMst(_now),
+                        _noy = _nox.equipType;
+                    12 == _noy || 13 == _noy ? _nox.sakuteki >= 5 && (_nos += _noh.get_slotnums(parseInt(_now))) : 21 == _noy && (_not += _noh.get_slotnums(parseInt(_now)));
+                }
+                _noo && _nos > 0 && _noj.add(_non), _noq && _not > 0 && _noj.add(_nop);
+            }
+            return _noj;
+        };
+    },
+    44053: (_noz, _np0, _np1) => {
+        'use strict';
+        var _np2 = null;
+        defineModule(_np0);
+        Object.defineProperty(_np0, '__esModule', {
+            'value': !0
+        }), _np0.getSlot381PersonalEffect = void 0;
+        var _np3 = _np1(74496);
+        _np0.getSlot381PersonalEffect = function(_np4) {
+            var _np5 = null,
+                _np6 = new _np3.SlotItemEffectModel(),
+                _np7 = !1,
+                _np8 = new _np3.SlotItemEffectModel(),
+                _np9 = 0;
+            if ('アメリカ' == _np4.getCountryName() && (_np8.houg += 1, 102 == _np4.ctype && (_np8.houg += 1), _np7 = !0, _np9 = 1), 0 == _np7) return _np6;
+            var _npa = _np4.get_slotnums(381);
+            if (_np6.add(_np8.multiply(_npa)), 0 == _np9) return _np6;
+            var _npb = _np4.get_each_level_nums(381),
+                _npc = 0;
+            return _npb.map(function(_npd, _npe) {
+                _npe >= 6 && (_npc += _npd);
+            }), 1 == _np9 && (_np6.houg += 1 * _npc), _np6;
+        };
+    },
+    65441: function(_npf, _npg, _nph) {
+        'use strict';
+        var _npi = null;
+        var _npj = this && this.__importDefault || function(_npk) {
+            var _npl = null;
+            return _npk && _npk.__esModule ? _npk : {
+                'default': _npk
+            };
+        };
+        defineModule(_npg);
+        Object.defineProperty(_npg, '__esModule', {
+            'value': !0
+        }), _npg.getSlot382PersonalEffect = void 0;
+        var _npm = _nph(74496),
+            _npn = _npj(_nph(18622));
+        _npg.getSlot382PersonalEffect = function(_npo) {
+            var _npp = null,
+                _npq = new _npm.SlotItemEffectModel(),
+                _npr = !1,
+                _nps = new _npm.SlotItemEffectModel(),
+                _npt = !1,
+                _npu = new _npm.SlotItemEffectModel(),
+                _npv = new _npm.SlotItemEffectModel(),
+                _npw = 2;
+            1 == _npo.stype && (_nps.tyku += 2, _nps.kaih += 2, _nps.tais += 1, _npr = !0, _npu.houg += 2, _npu.kaih += 3, _npv.tyku += 2, _npv.kaih += 3, _npt = !0, _npw = 1), 66 != _npo.ctype && 28 != _npo.ctype && 101 != _npo.ctype || (_nps.tyku += 2, _nps.kaih += 1, _npr = !0, _npu.houg += 1, _npu.kaih += 2, _npv.tyku += 2, _npv.kaih += 2, _npt = !0, _npw = 1), 'ゆら' != _npo.yomi && 'なか' != _npo.yomi && 'きぬ' != _npo.yomi || (_nps.tyku += 1, _npr = !0), 488 == _npo.ship_id || 220 == _npo.ship_id ? (_nps.kaih += 1, _npr = !0, 488 == _npo.ship_id && (_npu.houg += 1, _npu.kaih += 1, _npv.tyku += 2, _npv.kaih += 2, _npt = !0, _npw = 1)) : 160 == _npo.ship_id || 224 == _npo.ship_id ? (_nps.kaih += 1, _npr = !0, 160 == _npo.ship_id && (_npu.houg += 1, _npu.kaih += 1, _npv.tyku += 2, _npv.kaih += 2, _npt = !0)) : 487 == _npo.ship_id || 289 == _npo.ship_id ? (_nps.kaih += 1, _npr = !0, 487 == _npo.ship_id && (_npu.houg += 1, _npu.kaih += 1, _npv.tyku += 2, _npv.kaih += 2, _npt = !0)) : 656 == _npo.ship_id ? (_nps.tyku += 3, _nps.kaih += 2, _npr = !0, _npu.houg += 2, _npu.kaih += 2, _npv.tyku += 3, _npv.kaih += 2, _npt = !0, _npw = 1) : 145 != _npo.ship_id && 961 != _npo.ship_id || (_npw = 1);
+            for (var _npx = 0, _npy = 0, _npz = 0, _nq0 = _npo.have_slot_ids(); _npz < _nq0.length; _npz++) {
+                var _nq1 = _nq0[_npz],
+                    _nq2 = _npn.default.model.slot.getMst(_nq1),
+                    _nq3 = _nq2.equipType;
+                12 != _nq3 && 13 != _nq3 || (_nq2.sakuteki >= 5 && (_npx += _npo.get_slotnums(parseInt(_nq1))), _nq2.taiku >= 2 && (_npy += _npo.get_slotnums(parseInt(_nq1))));
+            }
+            for (var _nq4 = [], _nq5 = function(_nq6) {
+                    var _nq7 = null;
+                    if (null == _npo.have_slots_dict[_nq6]) return 'continue';
+                    var _nq8 = _npo.get_each_level_nums(_nq6);
+                    null == _nq4[_nq6] && (_nq4[_nq6] = []), _nq8.forEach(function(_nq9, _nqa) {
+                        var _nqb = null;
+                        for (var _nqc = 1; _nqc <= _npo.SLOT_LEVEL_MAX; _nqc++) null == _nq4[_nq6][_nqc] && (_nq4[_nq6][_nqc] = 0), _nqa >= _nqc && (_nq4[_nq6][_nqc] += _nq9);
+                    });
+                }, _nqd = 0, _nqe = [509]; _nqd < _nqe.length; _nqd++) {
+                _nq5(_nqe[_nqd]);
+            }
+            var _nqf = 0,
+                _nqg = 0,
+                _nqh = 0,
+                _nqi = 0,
+                _nqj = 0,
+                _nqk = 0;
+            null != _nq4[509] && (_nqf = _nq4[509][1], _nqg = _nq4[509][2], _nqh = _nq4[509][4], _nqi = _nq4[509][6], _nqj = _nq4[509][8], _nqk = _nq4[509][10], 1 == _npw ? (_nqf >= 1 && (_npq.tyku += 1 * _nqf), _nqg >= 1 && (_npq.kaih += 2 * _nqg), _nqh >= 1 && (_npq.houg += 1 * _nqh), _nqi >= 1 && (_npq.tyku += 1 * _nqi), _nqj >= 1 && (_npq.houm += 1 * _nqj), _nqk >= 1 && (_npq.tyku += 1 * _nqk)) : 2 == _npw && (_nqg >= 1 && (_npq.tyku += 1 * _nqg), _nqh >= 1 && (_npq.kaih += 2 * _nqh), _nqi >= 1 && (_npq.houg += 1 * _nqi), _nqj >= 1 && (_npq.tyku += 1 * _nqj), _nqk >= 1 && (_npq.houm += 1 * _nqk)));
+            var _nql = _npo.get_slotnums(509),
+                _nqm = _nql + _npo.get_slotnums(382);
+            return _npr && _npq.add(_nps.multiply(_nqm)), 3 != _npo.stype && 21 != _npo.stype && 4 != _npo.stype || _nqg >= 1 && (_npx > 0 && (_npq.houg += 1, _npq.kaih += 1), _npy > 0 && (_npq.tyku += 2, _npq.kaih += 1)), 145 == _npo.ship_id ? _nqg >= 1 && (_npx > 0 && (_npq.houg += 1, _npq.tyku += 1, _npq.kaih += 2), _npy > 0 && (_npq.tyku += 4, _npq.kaih += 2)) : 961 == _npo.ship_id && _nql > 0 && (_npx > 0 && (_npq.houg += 2, _npq.tyku += 2, _npq.kaih += 3), _npy > 0 && (_npq.houg += 1, _npq.tyku += 5, _npq.kaih += 3)), _npt && _npx > 0 && _npq.add(_npu), _npt && _npy > 0 && _npq.add(_npv), _npq;
+        };
+    },
+    33258: (_nqn, _nqo, _nqp) => {
+        'use strict';
+        var _nqq = null;
+        defineModule(_nqo);
+        Object.defineProperty(_nqo, '__esModule', {
+            'value': !0
+        }), _nqo.getSlot383PersonalEffect = void 0;
+        var _nqr = _nqp(74496);
+        _nqo.getSlot383PersonalEffect = function(_nqs) {
+            var _nqt = null,
+                _nqu = new _nqr.SlotItemEffectModel(),
+                _nqv = !1,
+                _nqw = new _nqr.SlotItemEffectModel(),
+                _nqx = _nqs.get_each_level_over_nums([383])[383];
+            if (44 == _nqs.ctype && (_nqw.raig += 2, _nqv = !0, _nqx[4] > 0 && (_nqu.raig += 1), _nqx[6] > 0 && (_nqu.houm += 1)), 'い58' == _nqs.yomi && (_nqw.raig += 1, _nqv = !0), 636 == _nqs.ship_id ? (_nqw.raig += 3, _nqv = !0) : 607 == _nqs.ship_id && (_nqw.raig += 4, _nqv = !0), _nqx[8] > 0 && (_nqu.raig += 1), _nqx[10] > 0 && (_nqu.houm += 1), 'い58' != _nqs.yomi && 'い47' != _nqs.yomi || _nqx[5] > 0 && (_nqu.houm += 1), 0 == _nqv) return _nqu;
+            var _nqy = _nqs.get_slotnums(383);
+            return _nqu.add(_nqw.multiply(_nqy)), _nqu;
+        };
+    },
+    92168: (_nqz, _nr0, _nr1) => {
+        'use strict';
+        var _nr2 = null;
+        defineModule(_nr0);
+        Object.defineProperty(_nr0, '__esModule', {
+            'value': !0
+        }), _nr0.getSlot384PersonalEffect = void 0;
+        var _nr3 = _nr1(74496);
+        _nr0.getSlot384PersonalEffect = function(_nr4) {
+            var _nr5 = null,
+                _nr6 = new _nr3.SlotItemEffectModel(),
+                _nr7 = !1,
+                _nr8 = new _nr3.SlotItemEffectModel();
+            44 == _nr4.ctype && (_nr8.kaih += 3, _nr7 = !0), 'い58' == _nr4.yomi && (_nr8.kaih += 2, _nr7 = !0), 636 == _nr4.ship_id ? (_nr8.kaih += 3, _nr7 = !0) : 607 == _nr4.ship_id && (_nr8.kaih += 4, _nr7 = !0);
+            var _nr9 = _nr4.get_slotnums(384);
+            _nr7 && _nr6.add(_nr8.multiply(_nr9));
+            var _nra = _nr9,
+                _nrb = _nr4.get_slotnums(213),
+                _nrc = _nr4.get_slotnums(214),
+                _nrd = _nr4.get_slotnums(383);
+            return _nra > 0 && _nrb + _nrc + _nrd > 0 && (_nr6.raig += 3, _nr6.kaih += 2), _nr6;
+        };
+    },
+    85975: (_nre, _nrf, _nrg) => {
+        'use strict';
+        var _nrh = null;
+        defineModule(_nrf);
+        Object.defineProperty(_nrf, '__esModule', {
+            'value': !0
+        }), _nrf.getSlot385PersonalEffect = void 0;
+        var _nri = _nrg(74496);
+        _nrf.getSlot385PersonalEffect = function(_nrj) {
+            var _nrk = null,
+                _nrl = new _nri.SlotItemEffectModel(),
+                _nrm = !1,
+                _nrn = new _nri.SlotItemEffectModel(),
+                _nro = 0;
+            if ('アメリカ' == _nrj.getCountryName() && (_nrn.houg += 1, 102 == _nrj.ctype || 107 == _nrj.ctype ? (_nrn.houg += 1, _nrn.souk += 1) : 93 == _nrj.ctype && (_nrn.houg += 1), _nrm = !0, _nro = 1), 8 == _nrj.stype && (_nrn.houg += 1, _nrm = !0), 0 == _nrm) return _nrl;
+            var _nrp = _nrj.get_slotnums(385);
+            if (_nrl.add(_nrn.multiply(_nrp)), 0 == _nro) return _nrl;
+            var _nrq = _nrj.get_each_level_nums(385),
+                _nrr = 0;
+            return _nrq.forEach(function(_nrs, _nrt) {
+                _nrt >= 6 && (_nrr += _nrs);
+            }), 1 == _nro && (_nrl.houg += 1 * _nrr, _nrl.souk += 1 * _nrq[10]), _nrl;
+        };
+    },
+    98467: (_nru, _nrv, _nrw) => {
+        'use strict';
+        var _nrx = null;
+        defineModule(_nrv);
+        Object.defineProperty(_nrv, '__esModule', {
+            'value': !0
+        }), _nrv.getSlot386PersonalEffect = void 0;
+        var _nry = _nrw(74496);
+        _nrv.getSlot386PersonalEffect = function(_nrz) {
+            var _ns0 = null,
+                _ns1 = new _nry.SlotItemEffectModel(),
+                _ns2 = !1,
+                _ns3 = new _nry.SlotItemEffectModel(),
+                _ns4 = 0;
+            if ('アメリカ' == _nrz.getCountryName() && (_ns3.houg += 1, _ns2 = !0, _ns4 = 1), 0 == _ns2) return _ns1;
+            var _ns5 = _nrz.get_slotnums(386);
+            if (_ns1.add(_ns3.multiply(_ns5)), 0 == _ns4) return _ns1;
+            var _ns6 = _nrz.get_each_level_nums(386),
+                _ns7 = 0,
+                _ns8 = 0;
+            return _ns6.forEach(function(_ns9, _nsa) {
+                _nsa >= 2 && (_ns7 += _ns9), _nsa >= 7 && (_ns8 += _ns9);
+            }), 1 == _ns4 && (_ns1.houg += 1 * _ns7, _ns1.houg += 1 * _ns8), _ns1;
+        };
+    },
+    88348: (_nsb, _nsc, _nsd) => {
+        'use strict';
+        var _nse = null;
+        defineModule(_nsc);
+        Object.defineProperty(_nsc, '__esModule', {
+            'value': !0
+        }), _nsc.getSlot387PersonalEffect = void 0;
+        var _nsf = _nsd(74496);
+        _nsc.getSlot387PersonalEffect = function(_nsg) {
+            var _nsh = null,
+                _nsi = new _nsf.SlotItemEffectModel(),
+                _nsj = !1,
+                _nsk = new _nsf.SlotItemEffectModel(),
+                _nsl = 0;
+            if ('アメリカ' == _nsg.getCountryName() && (_nsk.houg += 1, _nsj = !0, _nsl = 1), 0 == _nsj) return _nsi;
+            var _nsm = _nsg.get_slotnums(387);
+            if (_nsi.add(_nsk.multiply(_nsm)), 0 == _nsl) return _nsi;
+            var _nsn = _nsg.get_each_level_nums(387),
+                _nso = 0,
+                _nsp = 0;
+            return _nsn.forEach(function(_nsq, _nsr) {
+                _nsr >= 2 && (_nso += _nsq), _nsr >= 7 && (_nsp += _nsq);
+            }), 1 == _nsl && (_nsi.houg += 1 * _nso, _nsi.houg += 1 * _nsp), _nsi;
+        };
+    },
+    21097: (_nss, _nst, _nsu) => {
+        'use strict';
+        var _nsv = null;
+        defineModule(_nst);
+        Object.defineProperty(_nst, '__esModule', {
+            'value': !0
+        }), _nst.getSlot389PersonalEffect = void 0;
+        var _nsw = _nsu(74496);
+        _nst.getSlot389PersonalEffect = function(_nsx) {
+            var _nsy = null,
+                _nsz = new _nsw.SlotItemEffectModel(),
+                _nt0 = !1,
+                _nt1 = new _nsw.SlotItemEffectModel();
+            if (594 == _nsx.ship_id || 599 == _nsx.ship_id) _nt1.houg += 2, _nt1.kaih += 2, _nt0 = !0;
+            else {
+                if (698 == _nsx.ship_id || 610 == _nsx.ship_id) _nt1.houg += 3, _nt1.kaih += 2, _nt0 = !0;
+                else 646 == _nsx.ship_id && (_nt1.houg += 4, _nt1.tais += 4, _nt1.kaih += 3, _nt0 = !0, _nsx.get_type3_nums(25) > 0 && (_nsz.houg += 3, _nsz.tais += 6), _nsx.get_slotnums(326) + _nsx.get_slotnums(327) > 0 && (_nsz.houg += 5, _nsz.tais += 4));
+            }
+            if ('アメリカ' == _nsx.getCountryName() && (_nt1.houg += 2, _nt1.tais += 3, _nt1.kaih += 1, _nt0 = !0), 0 == _nt0) return _nsz;
+            var _nt2 = _nsx.get_slotnums(389);
+            return _nsz.add(_nt1.multiply(_nt2)), _nsz;
+        };
+    },
+    43607: (_nt3, _nt4, _nt5) => {
+        'use strict';
+        var _nt6 = null;
+        defineModule(_nt4);
+        Object.defineProperty(_nt4, '__esModule', {
+            'value': !0
+        }), _nt4.getSlot38cmFourBarrelGunPersonalEffect = void 0;
+        var _nt7 = _nt5(74496);
+        _nt4.getSlot38cmFourBarrelGunPersonalEffect = function(_nt8) {
+            var _nt9 = null,
+                _nta = new _nt7.SlotItemEffectModel(),
+                _ntb = _nt8.get_slotnums(245),
+                _ntc = _nt8.get_slotnums(246),
+                _ntd = _nt8.get_slotnums(468),
+                _nte = _ntb + _ntc + _ntd,
+                _ntf = 0,
+                _ntg = 0,
+                _nth = new Array();
+            if (79 != _nt8.ctype) return _nta;
+            _nta.houg += 2 * _nte, _nta.houm += 1 * _nte, _ntd >= 1 && (_nta.houg += 1 * _ntd, _ntg = 1, _nth.push(468)), _ntf = 1;
+            var _nti = _nt8.get_slotnums(247);
+            if (1 == _ntf && _nti >= 1 && (_nta.kaih += 2 * _nti, _nta.houg += 2 * _nti, _nta.houm += 2 * _nti), 0 == _ntg) return _nta;
+            for (var _ntj = {}, _ntk = {}, _ntl = {}, _ntm = 0, _ntn = _nth; _ntm < _ntn.length; _ntm++) {
+                var _nto = _ntn[_ntm];
+                _ntk[_nto] = 0, _ntl[_nto] = 0, _ntj[_nto] = 0;
+                for (var _ntp = 0, _ntq = _nt8.have_slots_dict[_nto]; _ntp < _ntq.length; _ntp++) {
+                    var _ntr = _ntq[_ntp].level;
+                    _ntr >= 4 && _ntk[_nto]++, _ntr >= 8 && _ntl[_nto]++, _ntr >= 10 && _ntj[_nto]++;
+                }
+            }
+            if (1 == _ntg && _ntd > 0) {
+                var _nts = _ntk[468],
+                    _ntt = _ntl[468],
+                    _ntu = _ntj[468];
+                _nts >= 1 && (_nta.houg += 1 * _nts, _nta.houm += 1 * _nts), _ntt >= 1 && (_nta.houg += 1 * _ntt, _nta.houm += 1 * _ntt), _ntu >= 1 && (_nta.houm += 1 * _ntu);
+            }
+            return _nta;
+        };
+    },
+    37273: (_ntv, _ntw, _ntx) => {
+        'use strict';
+        var _nty = null;
+        defineModule(_ntw);
+        Object.defineProperty(_ntw, '__esModule', {
+            'value': !0
+        }), _ntw.getSlot390PersonalEffect = void 0;
+        var _ntz = _ntx(74496);
+        _ntw.getSlot390PersonalEffect = function(_nu0) {
+            var _nu1 = null,
+                _nu2 = new _ntz.SlotItemEffectModel(),
+                _nu3 = !1,
+                _nu4 = new _ntz.SlotItemEffectModel(),
+                _nu5 = 0;
+            if ('アメリカ' == _nu0.getCountryName() && (_nu4.houg += 1, _nu3 = !0, _nu5 = 1), 102 == _nu0.ctype || 107 == _nu0.ctype ? (_nu4.houg += 1, _nu4.souk += 1, _nu3 = !0) : 93 == _nu0.ctype && (_nu4.houg += 1, _nu3 = !0), 8 == _nu0.stype && (_nu4.houg += 1, _nu3 = !0), 0 == _nu3) return _nu2;
+            var _nu6 = _nu0.get_slotnums(390);
+            if (_nu2.add(_nu4.multiply(_nu6)), 0 == _nu5) return _nu2;
+            var _nu7 = _nu0.get_each_level_nums(390),
+                _nu8 = 0,
+                _nu9 = 0;
+            return _nu7.forEach(function(_nua, _nub) {
+                _nub >= 3 && (_nu8 += _nua), _nub >= 6 && (_nu9 += _nua);
+            }), 1 == _nu5 && (_nu2.houg += 1 * _nu8, _nu2.kaih += 1 * _nu9, _nu2.souk += 1 * _nu7[10]), _nu2;
+        };
+    },
+    72694: (_nuc, _nud, _nue) => {
+        'use strict';
+        var _nuf = null;
+        defineModule(_nud);
+        Object.defineProperty(_nud, '__esModule', {
+            'value': !0
+        }), _nud.getSlot391PersonalEffect = void 0;
+        var _nug = _nue(74496);
+        _nud.getSlot391PersonalEffect = function(_nuh) {
+            var _nui = null,
+                _nuj = new _nug.SlotItemEffectModel(),
+                _nuk = !1,
+                _nul = new _nug.SlotItemEffectModel();
+            if ('しょうかく' == _nuh.yomi || 'ずいかく' == _nuh.yomi ? (_nul.houg += 1, _nuk = !0) : 'じゅんよう' != _nuh.yomi && 'ひよう' != _nuh.yomi || (_nul.houg += 1, _nuk = !0), 116 == _nuh.ship_id || 185 == _nuh.ship_id || 282 == _nuh.ship_id ? (_nul.houg += 1, _nuk = !0) : 117 == _nuh.ship_id || 318 == _nuh.ship_id || 883 == _nuh.ship_id || 888 == _nuh.ship_id ? (_nul.houg += 1, _nuj.kaih += 1, _nuk = !0) : 560 != _nuh.ship_id && 555 != _nuh.ship_id || (_nul.houg += 1, _nul.kaih += 1, _nuk = !0), 0 == _nuk) return _nuj;
+            var _num = _nuh.get_slotnums(391);
+            return _nuj.add(_nul.multiply(_num)), _nuj;
+        };
+    },
+    62067: (_nun, _nuo, _nup) => {
+        'use strict';
+        var _nuq = null;
+        defineModule(_nuo);
+        Object.defineProperty(_nuo, '__esModule', {
+            'value': !0
+        }), _nuo.getSlot392PersonalEffect = void 0;
+        var _nur = _nup(74496);
+        _nuo.getSlot392PersonalEffect = function(_nus) {
+            var _nut = null,
+                _nuu = new _nur.SlotItemEffectModel(),
+                _nuv = !1,
+                _nuw = new _nur.SlotItemEffectModel();
+            if ('しょうかく' == _nus.yomi || 'ずいかく' == _nus.yomi ? (_nuw.houg += 2, _nuw.kaih += 1, _nuv = !0) : 'じゅんよう' != _nus.yomi && 'ひよう' != _nus.yomi || (_nuw.houg += 1, _nuw.kaih += 1, _nuv = !0), 116 == _nus.ship_id || 185 == _nus.ship_id || 282 == _nus.ship_id ? (_nuw.houg += 2, _nuw.kaih += 1, _nuv = !0) : 117 == _nus.ship_id || 318 == _nus.ship_id || 883 == _nus.ship_id || 888 == _nus.ship_id ? (_nuw.houg += 2, _nuw.kaih += 2, _nuv = !0) : 560 != _nus.ship_id && 555 != _nus.ship_id || (_nuw.houg += 3, _nuw.kaih += 2, _nuv = !0), 0 == _nuv) return _nuu;
+            var _nux = _nus.get_slotnums(392);
+            return _nuu.add(_nuw.multiply(_nux)), _nuu;
+        };
+    },
+    87817: function(_nuy, _nuz, _nv0) {
+        'use strict';
+        var _nv1 = null;
+        var _nv2 = this && this.__importDefault || function(_nv3) {
+            var _nv4 = null;
+            return _nv3 && _nv3.__esModule ? _nv3 : {
+                'default': _nv3
+            };
+        };
+        defineModule(_nuz);
+        Object.defineProperty(_nuz, '__esModule', {
+            'value': !0
+        }), _nuz.getSlot397PersonalEffect = void 0;
+        var _nv5 = _nv0(74496),
+            _nv6 = _nv2(_nv0(18622));
+        _nuz.getSlot397PersonalEffect = function(_nv7) {
+            var _nv8 = null,
+                _nv9 = new _nv5.SlotItemEffectModel(),
+                _nva = !1,
+                _nvb = new _nv5.SlotItemEffectModel(),
+                _nvc = 0,
+                _nvd = 0,
+                _nve = !1;
+            if (651 == _nv7.ship_id ? (_nvb.houg += 5, _nvb.tyku += 2, _nvb.kaih += 1, _nva = !0, _nve = !0, _nvc = 1, _nvd = 1) : 656 == _nv7.ship_id && (_nvb.houg += 3, _nvb.tyku += 1, _nvb.kaih += 1, _nva = !0, _nve = !0, _nvc = 1), 0 == _nva) return _nv9;
+            var _nvf = _nv7.get_slotnums(397);
+            _nv9.add(_nvb.multiply(_nvf));
+            var _nvg = 0,
+                _nvh = _nv7.get_each_level_nums(397),
+                _nvi = 0;
+            if (_nve) {
+                _nvh.forEach(function(_nvj, _nvk) {
+                    _nvk >= 4 && (_nvi += _nvj);
+                });
+                for (var _nvl = 0, _nvm = _nv7.have_slot_ids(); _nvl < _nvm.length; _nvl++) {
+                    var _nvn = _nvm[_nvl],
+                        _nvo = _nv6.default.model.slot.getMst(_nvn),
+                        _nvp = _nvo.equipType;
+                    12 != _nvp && 13 != _nvp || (_nvo.sakuteki >= 5 && (_nvg += _nv7.get_slotnums(parseInt(_nvn))), _nvo.taiku >= 2 && _nv7.get_slotnums(parseInt(_nvn)));
+                }
+            }
+            return 1 == _nvc && _nvg > 0 && (_nv9.houg += 3, _nv9.kaih += 3), 1 == _nvd && (_nv9.houg += 4 * _nvi, _nv9.kaih += 1 * _nvi), _nv9;
+        };
+    },
+    93526: function(_nvq, _nvr, _nvs) {
+        'use strict';
+        var _nvt = null;
+        var _nvu = this && this.__importDefault || function(_nvv) {
+            var _nvw = null;
+            return _nvv && _nvv.__esModule ? _nvv : {
+                'default': _nvv
+            };
+        };
+        defineModule(_nvr);
+        Object.defineProperty(_nvr, '__esModule', {
+            'value': !0
+        }), _nvr.getSlot398PersonalEffect = void 0;
+        var _nvx = _nvs(74496),
+            _nvy = _nvu(_nvs(18622));
+        _nvr.getSlot398PersonalEffect = function(_nvz) {
+            var _nw0 = null,
+                _nw1 = new _nvx.SlotItemEffectModel(),
+                _nw2 = !1,
+                _nw3 = new _nvx.SlotItemEffectModel(),
+                _nw4 = 0,
+                _nw5 = 0,
+                _nw6 = !1;
+            if (651 == _nvz.ship_id ? (_nw3.houg += 4, _nw3.tyku += 4, _nw3.kaih += 2, _nw2 = !0, _nw6 = !0, _nw4 = 1, _nw5 = 1) : 656 == _nvz.ship_id && (_nw3.houg += 3, _nw3.tyku += 2, _nw3.kaih += 2, _nw2 = !0, _nw6 = !0, _nw4 = 1, _nw5 = 2), 0 == _nw2) return _nw1;
+            var _nw7 = _nvz.get_slotnums(398);
+            _nw1.add(_nw3.multiply(_nw7));
+            var _nw8 = 0,
+                _nw9 = 0,
+                _nwa = _nvz.get_each_level_nums(398),
+                _nwb = 0;
+            if (_nw6) {
+                _nwa.forEach(function(_nwc, _nwd) {
+                    _nwd >= 4 && (_nwb += _nwc);
+                });
+                for (var _nwe = 0, _nwf = _nvz.have_slot_ids(); _nwe < _nwf.length; _nwe++) {
+                    var _nwg = _nwf[_nwe],
+                        _nwh = _nvy.default.model.slot.getMst(_nwg),
+                        _nwi = _nwh.equipType;
+                    12 != _nwi && 13 != _nwi || (_nwh.sakuteki >= 5 && (_nw8 += _nvz.get_slotnums(parseInt(_nwg))), _nwh.taiku >= 2 && (_nw9 += _nvz.get_slotnums(parseInt(_nwg))));
+                }
+            }
+            return 1 == _nw4 && (_nw8 > 0 && (_nw1.houg += 3, _nw1.kaih += 3), _nw9 > 0 && (_nw1.tyku += 3, _nw1.kaih += 3)), 1 == _nw5 ? (_nw1.houg += 3 * _nwb, _nw1.kaih += 2 * _nwb) : 2 == _nw5 && (_nw1.houg += 2 * _nwb, _nw1.kaih += 1 * _nwb), _nw1;
+        };
+    },
+    33084: (_nwj, _nwk, _nwl) => {
+        'use strict';
+        var _nwm = null;
+        defineModule(_nwk);
+        Object.defineProperty(_nwk, '__esModule', {
+            'value': !0
+        }), _nwk.getSlot399PersonalEffect = void 0;
+        var _nwn = _nwl(74496);
+        _nwk.getSlot399PersonalEffect = function(_nwo) {
+            var _nwp = null,
+                _nwq = new _nwn.SlotItemEffectModel(),
+                _nwr = !1,
+                _nws = new _nwn.SlotItemEffectModel(),
+                _nwt = 0;
+            if (108 == _nwo.ctype && (_nws.houg += 1, _nws.kaih += 2, _nwt = 1, _nwr = !0), 0 == _nwr) return _nwq;
+            var _nwu = _nwo.get_slotnums(399);
+            if (_nwq.add(_nws.multiply(_nwu)), 0 == _nwt) return _nwq;
+            var _nwv = _nwo.get_each_level_nums(399),
+                _nww = 0,
+                _nwx = 0;
+            return _nwv.map(function(_nwy, _nwz) {
+                _nwz >= 3 && (_nww += _nwy), _nwz >= 5 && (_nwx += _nwy);
+            }), 1 == _nwt && (_nwq.houg += 1 * _nww, _nwq.houg += 1 * _nwx), _nwq;
+        };
+    },
+    80225: (_nx0, _nx1, _nx2) => {
+        'use strict';
+        var _nx3 = null;
+        defineModule(_nx1);
+        Object.defineProperty(_nx1, '__esModule', {
+            'value': !0
+        }), _nx1.getSlot3_122PersonalEffect = void 0;
+        var _nx4 = _nx2(74496);
+        _nx1.getSlot3_122PersonalEffect = function(_nx5) {
+            var _nx6 = null,
+                _nx7 = new _nx4.SlotItemEffectModel(),
+                _nx8 = !1,
+                _nx9 = new _nx4.SlotItemEffectModel();
+            if (54 == _nx5.ctype && (_nx9.houg += 1, _nx9.tyku += 2, _nx9.kaih += 1, _nx8 = !0), 0 == _nx8) return _nx7;
+            var _nxa = _nx5.get_slotnums(3) + _nx5.get_slotnums(122);
+            return _nx7.add(_nx9.multiply(_nxa)), _nx7;
+        };
+    },
+    97831: (_nxb, _nxc, _nxd) => {
+        'use strict';
+        var _nxe = null;
+        defineModule(_nxc);
+        Object.defineProperty(_nxc, '__esModule', {
+            'value': !0
+        }), _nxc.getSlot400PersonalEffect = void 0;
+        var _nxf = _nxd(74496);
+        _nxc.getSlot400PersonalEffect = function(_nxg) {
+            var _nxh = null,
+                _nxi = new _nxf.SlotItemEffectModel(),
+                _nxj = !1,
+                _nxk = new _nxf.SlotItemEffectModel(),
+                _nxl = 0,
+                _nxm = !1;
+            if (147 != _nxg.ship_id && 73 != _nxg.ctype && 81 != _nxg.ctype || (_nxm = !0), _nxm && (_nxk.kaih += 2, _nxk.raig += 5, _nxk.houg += 1, _nxk.souk += 1, _nxj = !0, _nxl = 1), 0 == _nxj) return _nxi;
+            var _nxn = _nxg.get_slotnums(400);
+            return _nxi.add(_nxk.multiply(_nxn)), _nxg.get_slotnums(282) > 0 && 1 == _nxl && (_nxi.houg += 2), _nxi;
+        };
+    },
+    4050: function(_nxo, _nxp, _nxq) {
+        'use strict';
+        var _nxr = null;
+        var _nxs = this && this.__importDefault || function(_nxt) {
+            var _nxu = null;
+            return _nxt && _nxt.__esModule ? _nxt : {
+                'default': _nxt
+            };
+        };
+        defineModule(_nxp);
+        Object.defineProperty(_nxp, '__esModule', {
+            'value': !0
+        }), _nxp.getSlot407PersonalEffect = void 0;
+        var _nxv = _nxq(74496),
+            _nxw = _nxs(_nxq(18622));
+        _nxp.getSlot407PersonalEffect = function(_nxx) {
+            var _nxy = null,
+                _nxz = new _nxv.SlotItemEffectModel(),
+                _ny0 = !1,
+                _ny1 = new _nxv.SlotItemEffectModel(),
+                _ny2 = 0;
+            if (662 != _nxx.ship_id && 663 != _nxx.ship_id && 668 != _nxx.ship_id || (_ny1.houg += 4, _ny1.tyku += 2, _ny1.kaih += 1, _ny0 = !0, _ny2 = 1), 0 == _ny0) return _nxz;
+            var _ny3 = _nxx.get_slotnums(407);
+            _nxz.add(_ny1.multiply(_ny3));
+            for (var _ny4 = 0, _ny5 = 0, _ny6 = 0, _ny7 = _nxx.have_slot_ids(); _ny6 < _ny7.length; _ny6++) {
+                var _ny8 = _ny7[_ny6],
+                    _ny9 = _nxw.default.model.slot.getMst(_ny8),
+                    _nya = _ny9.equipType;
+                12 != _nya && 13 != _nya || (_ny9.sakuteki >= 5 && (_ny4 += _nxx.get_slotnums(parseInt(_ny8))), _ny9.taiku >= 2 && (_ny5 += _nxx.get_slotnums(parseInt(_ny8))));
+            }
+            return _ny4 >= 1 && 1 == _ny2 && (_nxz.houg += 2, _nxz.kaih += 2, _nxz.raig += 2), _ny5 >= 1 && 1 == _ny2 && (_nxz.tyku += 2, _nxz.kaih += 3), _nxz;
+        };
+    },
+    78466: (_nyb, _nyc, _nyd) => {
+        'use strict';
+        var _nye = null;
+        defineModule(_nyc);
+        Object.defineProperty(_nyc, '__esModule', {
+            'value': !0
+        }), _nyc.getSlot408PersonalEffect = void 0;
+        var _nyf = _nyd(74496);
+        _nyc.getSlot408PersonalEffect = function(_nyg) {
+            var _nyh = null,
+                _nyi = new _nyf.SlotItemEffectModel(),
+                _nyj = !1,
+                _nyk = new _nyf.SlotItemEffectModel();
+            if ('しんしゅうまる' == _nyg.yomi ? (_nyk.houg += 2, _nyk.saku += 2, _nyk.kaih += 2, _nyj = !0) : 'あきつまる' == _nyg.yomi && (_nyk.houg += 1, _nyk.saku += 1, _nyk.kaih += 1, _nyk.tais += 1, _nyj = !0), 2 == _nyg.stype && (_nyk.houg += 1, _nyk.saku += 1, _nyk.kaih -= 5, _nyj = !0), 0 == _nyj) return _nyi;
+            var _nyl = _nyg.get_slotnums(408);
+            return _nyi.add(_nyk.multiply(_nyl)), _nyi;
+        };
+    },
+    40061: (_nym, _nyn, _nyo) => {
+        'use strict';
+        var _nyp = null;
+        defineModule(_nyn);
+        Object.defineProperty(_nyn, '__esModule', {
+            'value': !0
+        }), _nyn.getSlot409PersonalEffect = void 0;
+        var _nyq = _nyo(74496);
+        _nyn.getSlot409PersonalEffect = function(_nyr) {
+            var _nys = null,
+                _nyt = new _nyq.SlotItemEffectModel(),
+                _nyu = !1,
+                _nyv = new _nyq.SlotItemEffectModel();
+            if ('しんしゅうまる' == _nyr.yomi ? (_nyv.houg += 1, _nyv.tyku += 2, _nyv.kaih += 3, _nyu = !0) : 'あきつまる' == _nyr.yomi && (_nyv.houg += 1, _nyv.tyku += 1, _nyv.kaih += 2, _nyv.tais += 1, _nyu = !0), 0 == _nyu) return _nyt;
+            var _nyw = _nyr.get_slotnums(409);
+            return _nyt.add(_nyv.multiply(_nyw)), _nyt;
+        };
+    },
+    79988: (_nyx, _nyy, _nyz) => {
+        'use strict';
+        var _nz0 = null;
+        defineModule(_nyy);
+        Object.defineProperty(_nyy, '__esModule', {
+            'value': !0
+        }), _nyy.getSlot411PersonalEffect = void 0;
+        var _nz1 = _nyz(74496);
+        _nyy.getSlot411PersonalEffect = function(_nz2) {
+            var _nz3 = null,
+                _nz4 = new _nz1.SlotItemEffectModel(),
+                _nz5 = new _nz1.SlotItemEffectModel(),
+                _nz6 = !1,
+                _nz7 = 0;
+            if (2 == _nz2.stype && (_nz5.kaih -= 9, _nz6 = !0), 3 != _nz2.stype && 4 != _nz2.stype || (_nz5.kaih -= 7, _nz6 = !0), 21 == _nz2.stype && (_nz5.kaih -= 6, _nz6 = !0), 5 != _nz2.stype && 6 != _nz2.stype || (_nz5.kaih -= 5, _nz6 = !0), 593 == _nz2.ship_id && (_nz4.houg += 1, _nz4.tyku += 2, _nz4.kaih += 3), 151 == _nz2.ship_id || 411 == _nz2.ship_id || 412 == _nz2.ship_id || 593 == _nz2.ship_id || 954 == _nz2.ship_id ? (_nz4.houg += 3, _nz4.tyku += 4, _nz7 = 1) : 541 != _nz2.ship_id && 573 != _nz2.ship_id && 553 != _nz2.ship_id && 554 != _nz2.ship_id || (_nz4.houg += 2, _nz4.tyku += 2, _nz7 = 1), _nz6) {
+                var _nz8 = _nz2.get_slotnums(411);
+                _nz4.add(_nz5.multiply(_nz8));
+            }
+            if (0 == _nz7) return _nz4;
+            var _nz9 = _nz2.get_each_level_nums(411),
+                _nza = 0;
+            return _nz7 > 0 && _nz9.forEach(function(_nzb, _nzc) {
+                _nzc >= 4 && (_nza += _nzb);
+            }), 1 == _nz7 && (_nza >= 1 && (_nz4.houg += 1, _nz4.tyku += 1), _nz9[10] >= 1 && (_nz4.houg += 1, _nz4.tyku += 1)), _nz4;
+        };
+    },
+    74428: (_nzd, _nze, _nzf) => {
+        'use strict';
+        var _nzg = null;
+        defineModule(_nze);
+        Object.defineProperty(_nze, '__esModule', {
+            'value': !0
+        }), _nze.getSlot412PersonalEffect = void 0;
+        var _nzh = _nzf(74496);
+        _nze.getSlot412PersonalEffect = function(_nzi) {
+            var _nzj = null,
+                _nzk = new _nzh.SlotItemEffectModel(),
+                _nzl = !1,
+                _nzm = 0,
+                _nzn = new _nzh.SlotItemEffectModel();
+            if ([66, 28, 12, 1, 5, 10, 23, 18, 30, 38, 22, 54, 101].indexOf(_nzi.ctype) >= 0 ? (_nzk.houg += 2, _nzk.raig += 4, _nzk.tais += 2, _nzn.kaih += 3, _nzn.saku += 1, _nzl = !0, _nzm = 1) : [21, 4, 20, 16, 34, 56, 41, 52].indexOf(_nzi.ctype) >= 0 ? (_nzk.houg += 3, _nzk.raig += 3, _nzn.kaih += 2, _nzn.saku += 3, _nzl = !0, _nzm = 1) : [7, 13, 29, 8, 9, 31].indexOf(_nzi.ctype) >= 0 && (_nzk.houg += 1, _nzn.kaih += 1, _nzn.saku += 1, _nzl = !0), 0 == _nzl) return _nzk;
+            var _nzo = _nzi.get_slotnums(412);
+            if (_nzk.add(_nzn.multiply(_nzo)), 0 == _nzm) return _nzk;
+            var _nzp = _nzi.get_each_level_nums(412),
+                _nzq = 0,
+                _nzr = 0;
+            return _nzm > 0 && _nzp.forEach(function(_nzs, _nzt) {
+                _nzt >= 4 && (_nzq += _nzs), _nzt >= 8 && (_nzr += _nzs);
+            }), 1 == _nzm && (_nzq > 0 && (_nzk.houg += 1), _nzr > 0 && (_nzk.raig += 1)), _nzk;
+        };
+    },
+    2631: (_nzu, _nzv, _nzw) => {
+        'use strict';
+        var _nzx = null;
+        defineModule(_nzv);
+        Object.defineProperty(_nzv, '__esModule', {
+            'value': !0
+        }), _nzv.getSlot413PersonalEffect = void 0;
+        var _nzy = _nzw(74496);
+        _nzv.getSlot413PersonalEffect = function(_nzz) {
+            var _o00 = null,
+                _o01 = new _nzy.SlotItemEffectModel();
+            return [66, 28, 12, 1, 5, 10, 23, 18, 30, 38, 22, 54, 101].indexOf(_nzz.ctype) >= 0 ? (_o01.houg += 2, _o01.raig += 2, _o01.kaih += 4) : [21, 4, 20, 16, 34, 56, 41, 52].indexOf(_nzz.ctype) >= 0 && (_o01.houg += 4, _o01.raig += 2, _o01.kaih += 2), 38 == _nzz.ctype || 54 == _nzz.ctype ? (_o01.houg += 2, _o01.raig += 3, _o01.kaih += 3) : 4 == _nzz.ctype || 20 == _nzz.ctype || 16 == _nzz.ctype || 41 == _nzz.ctype || 52 == _nzz.ctype ? (_o01.houg += 1, _o01.raig += 2, _o01.kaih += 2) : 21 != _nzz.ctype && 34 != _nzz.ctype || (_o01.tyku += 2, _o01.raig += 1, _o01.kaih += 1), 'なか' == _nzz.yomi || 'ゆら' == _nzz.yomi || 'やはぎ' == _nzz.yomi || 'のしろ' == _nzz.yomi || 'はまなみ' == _nzz.yomi || 'しまかぜ' == _nzz.yomi || 'きよしも' == _nzz.yomi || 'はつしも' == _nzz.yomi ? (_o01.tyku += 1, _o01.kaih += 1) : 'じんつう' != _nzz.yomi && 'せんだい' != _nzz.yomi && 'ながなみ' != _nzz.yomi && 'はつしも' != _nzz.yomi && 'てるづき' != _nzz.yomi || (_o01.houg += 1, _o01.raig += 1), 543 == _nzz.ship_id ? (_o01.houg += 1, _o01.kaih += 1) : 159 == _nzz.ship_id && (_o01.houg += 2), _o01;
+        };
+    },
+    16498: (_o02, _o03, _o04) => {
+        'use strict';
+        var _o05 = null;
+        defineModule(_o03);
+        Object.defineProperty(_o03, '__esModule', {
+            'value': !0
+        }), _o03.getSlot414PersonalEffect = void 0;
+        var _o06 = _o04(74496);
+        _o03.getSlot414PersonalEffect = function(_o07) {
+            var _o08 = null,
+                _o09 = new _o06.SlotItemEffectModel(),
+                _o0a = 0;
+            if ('アメリカ' == _o07.getCountryName() && (_o09.saku += 1, _o0a = 1), 95 != _o07.ctype && 99 != _o07.ctype && 106 != _o07.ctype && 110 != _o07.ctype && 121 != _o07.ctype || (_o09.houg += 1, _o09.saku += 1, _o0a = 2), 0 == _o0a) return _o09;
+            var _o0b = _o07.get_each_level_nums(414),
+                _o0c = 0,
+                _o0d = 0,
+                _o0e = 0;
+            return _o0a > 0 && _o0b.forEach(function(_o0f, _o0g) {
+                _o0g >= 5 && (_o0c += _o0f), _o0g >= 3 && (_o0d += _o0f), _o0g >= 8 && (_o0e += _o0f);
+            }), _o0a > 0 && _o0c >= 1 && (_o09.kaih += 1), 2 == _o0a && (_o0d >= 1 && (_o09.saku += 1), _o0e >= 1 && (_o09.kaih += 1), _o0b[10] >= 1 && (_o09.houg += 1)), _o09;
+        };
+    },
+    27177: (_o0h, _o0i, _o0j) => {
+        'use strict';
+        var _o0k = null;
+        defineModule(_o0i);
+        Object.defineProperty(_o0i, '__esModule', {
+            'value': !0
+        }), _o0i.getSlot415PersonalEffect = void 0;
+        var _o0l = _o0j(74496);
+        _o0i.getSlot415PersonalEffect = function(_o0m) {
+            var _o0n = null,
+                _o0o = new _o0l.SlotItemEffectModel(),
+                _o0p = [];
+            if ('アメリカ' == _o0m.getCountryName() && (_o0o.saku += 1, _o0o.tais += 1, _o0p.push(1)), 95 != _o0m.ctype && 99 != _o0m.ctype && 106 != _o0m.ctype && 110 != _o0m.ctype && 121 != _o0m.ctype || (_o0o.houg += 1, _o0p.push(2)), 0 == _o0p.length) return _o0o;
+            var _o0q = _o0m.get_each_level_nums(415),
+                _o0r = 0,
+                _o0s = 0,
+                _o0t = 0;
+            return _o0p.length > 0 && (_o0q.forEach(function(_o0u, _o0v) {
+                _o0v >= 5 && (_o0r += _o0u), _o0v >= 3 && (_o0s += _o0u), _o0v >= 8 && (_o0t += _o0u);
+            }), _o0p.forEach(function(_o0w) {
+                var _o0x = null;
+                1 == _o0w ? _o0r >= 1 && (_o0o.kaih += 1) : 2 == _o0w && (_o0s >= 1 && (_o0o.kaih += 1), _o0t >= 1 && (_o0o.houg += 1));
+            })), _o0o;
+        };
+    },
+    53908: (_o0y, _o0z, _o10) => {
+        'use strict';
+        var _o11 = null;
+        defineModule(_o0z);
+        Object.defineProperty(_o0z, '__esModule', {
+            'value': !0
+        }), _o0z.getSlot419PersonalEffect = void 0;
+        var _o12 = _o10(74496);
+        _o0z.getSlot419PersonalEffect = function(_o13) {
+            var _o14 = null,
+                _o15 = new _o12.SlotItemEffectModel(),
+                _o16 = !1,
+                _o17 = new _o12.SlotItemEffectModel(),
+                _o18 = 0;
+            if ('アメリカ' == _o13.getCountryName() && (_o17.houg += 2, _o16 = !0, _o18 = 1), 0 == _o16) return _o15;
+            var _o19 = _o13.get_slotnums(419);
+            if (_o15.add(_o17.multiply(_o19)), 0 == _o18) return _o15;
+            var _o1a = _o13.get_each_level_nums(419),
+                _o1b = 0,
+                _o1c = 0;
+            return _o18 > 0 && _o1a.forEach(function(_o1d, _o1e) {
+                _o1e >= 2 && (_o1b += _o1d), _o1e >= 7 && (_o1c += _o1d);
+            }), 1 == _o18 && (_o1b >= 1 && (_o15.houg += 1 * _o1b), _o1c >= 1 && (_o15.houg += 1 * _o1c)), _o15;
+        };
+    },
+    79813: (_o1f, _o1g, _o1h) => {
+        'use strict';
+        var _o1i = null;
+        defineModule(_o1g);
+        Object.defineProperty(_o1g, '__esModule', {
+            'value': !0
+        }), _o1g.getSlot420PersonalEffect = void 0;
+        var _o1j = _o1h(74496);
+        _o1g.getSlot420PersonalEffect = function(_o1k) {
+            var _o1l = null,
+                _o1m = new _o1j.SlotItemEffectModel(),
+                _o1n = !1,
+                _o1o = new _o1j.SlotItemEffectModel(),
+                _o1p = 0;
+            if ('アメリカ' != _o1k.getCountryName() && 67 != _o1k.ctype && 78 != _o1k.ctype && 82 != _o1k.ctype && 88 != _o1k.ctype && 108 != _o1k.ctype && 112 != _o1k.ctype || (_o1o.houg += 1, _o1p = 1, _o1n = !0), 84 == _o1k.ctype ? (_o1o.houg += 1, _o1n = !0) : 78 == _o1k.ctype && (_o1o.houg -= 1, _o1n = !0), 7 == _o1k.stype && (_o1o.houg -= 2, _o1o.kaih -= 1, _o1o.souk -= 2, _o1n = !0), 0 == _o1n) return _o1m;
+            var _o1q = _o1k.get_slotnums(420);
+            if (_o1m.add(_o1o.multiply(_o1q)), 0 == _o1p) return _o1m;
+            var _o1r = _o1k.get_each_level_nums(420),
+                _o1s = 0;
+            return _o1p > 0 && _o1r.forEach(function(_o1t, _o1u) {
+                _o1u >= 3 && (_o1s += _o1t);
+            }), 1 == _o1p && _o1s >= 1 && (_o1m.houg += 1 * _o1s), _o1m;
+        };
+    },
+    16088: (_o1v, _o1w, _o1x) => {
+        'use strict';
+        var _o1y = null;
+        defineModule(_o1w);
+        Object.defineProperty(_o1w, '__esModule', {
+            'value': !0
+        }), _o1w.getSlot421PersonalEffect = void 0;
+        var _o1z = _o1x(74496);
+        _o1w.getSlot421PersonalEffect = function(_o20) {
+            var _o21 = null,
+                _o22 = new _o1z.SlotItemEffectModel(),
+                _o23 = !1,
+                _o24 = new _o1z.SlotItemEffectModel(),
+                _o25 = 0;
+            if ('アメリカ' != _o20.getCountryName() && 67 != _o20.ctype && 78 != _o20.ctype && 82 != _o20.ctype && 88 != _o20.ctype && 108 != _o20.ctype && 112 != _o20.ctype || (_o24.houg += 2, _o23 = !0, _o25 = 1), 84 == _o20.ctype ? (_o24.houg += 1, _o23 = !0) : 78 == _o20.ctype && (_o24.houg -= 1, _o23 = !0), 7 == _o20.stype && (_o24.houg -= 2, _o24.kaih -= 1, _o24.souk -= 2, _o23 = !0), 0 == _o23) return _o22;
+            var _o26 = _o20.get_slotnums(421);
+            if (_o22.add(_o24.multiply(_o26)), 0 == _o25) return _o22;
+            var _o27 = _o20.get_each_level_nums(421),
+                _o28 = 0;
+            return _o25 > 0 && _o27.forEach(function(_o29, _o2a) {
+                _o2a >= 5 && (_o28 += _o29);
+            }), 1 == _o25 && _o28 >= 1 && (_o22.houg += 1 * _o28), _o22;
+        };
+    },
+    69939: (_o2b, _o2c, _o2d) => {
+        'use strict';
+        var _o2e = null;
+        defineModule(_o2c);
+        Object.defineProperty(_o2c, '__esModule', {
+            'value': !0
+        }), _o2c.getSlot422PersonalEffect = void 0;
+        var _o2f = _o2d(74496);
+        _o2c.getSlot422PersonalEffect = function(_o2g) {
+            var _o2h = null,
+                _o2i = new _o2f.SlotItemEffectModel(),
+                _o2j = !1,
+                _o2k = new _o2f.SlotItemEffectModel();
+            if ('アメリカ' != _o2g.getCountryName() && 67 != _o2g.ctype && 78 != _o2g.ctype && 82 != _o2g.ctype && 88 != _o2g.ctype && 108 != _o2g.ctype && 112 != _o2g.ctype || (_o2k.houg += 1, _o2k.kaih += 1, _o2j = !0), 84 == _o2g.ctype && (_o2k.houg += 1, _o2k.tyku += 1, _o2j = !0), 707 == _o2g.ship_id && (_o2k.houg += 2, _o2k.kaih += 2, _o2k.tyku += 2, _o2j = !0), 0 == _o2j) return _o2i;
+            var _o2l = _o2g.get_slotnums(422);
+            return _o2i.add(_o2k.multiply(_o2l)), _o2i;
+        };
+    },
+    33734: (_o2m, _o2n, _o2o) => {
+        'use strict';
+        var _o2p = null;
+        defineModule(_o2n);
+        Object.defineProperty(_o2n, '__esModule', {
+            'value': !0
+        }), _o2n.getSlot423PersonalEffect = void 0;
+        var _o2q = _o2o(74496);
+        _o2n.getSlot423PersonalEffect = function(_o2r) {
+            var _o2s = null,
+                _o2t = new _o2q.SlotItemEffectModel(),
+                _o2u = !1,
+                _o2v = new _o2q.SlotItemEffectModel();
+            78 != _o2r.ctype && 112 != _o2r.ctype || (_o2v.houg += 2, _o2v.tyku += 2, _o2v.kaih += 2, _o2v.saku += 2, _o2u = !0);
+            var _o2w = _o2r.getCountryName();
+            if (67 == _o2r.ctype || 78 == _o2r.ctype || 82 == _o2r.ctype || 88 == _o2r.ctype || 108 == _o2r.ctype || 112 == _o2r.ctype ? (_o2v.houg += 2, _o2v.tyku += 2, _o2v.kaih += 2, _o2v.saku += 2, _o2u = !0) : 'アメリカ' == _o2w && (_o2v.houg += 1, _o2v.tyku += 1, _o2v.kaih += 1, _o2v.saku += 1, _o2u = !0), 0 == _o2u) return _o2t;
+            var _o2x = _o2r.get_slotnums(423);
+            return _o2t.add(_o2v.multiply(_o2x)), _o2t;
+        };
+    },
+    34432: (_o2y, _o2z, _o30) => {
+        'use strict';
+        var _o31 = null;
+        defineModule(_o2z);
+        Object.defineProperty(_o2z, '__esModule', {
+            'value': !0
+        }), _o2z.getSlot424PersonalEffect = void 0;
+        var _o32 = _o30(74496);
+        _o2z.getSlot424PersonalEffect = function(_o33) {
+            var _o34 = null,
+                _o35 = new _o32.SlotItemEffectModel(),
+                _o36 = !1,
+                _o37 = new _o32.SlotItemEffectModel(),
+                _o38 = 0;
+            67 != _o33.ctype && 78 != _o33.ctype && 82 != _o33.ctype && 88 != _o33.ctype && 108 != _o33.ctype && 112 != _o33.ctype || (_o37.houg += 2, _o37.raig += 3, _o36 = !0, _o38 = 1);
+            var _o39 = _o33.get_slotnums(424);
+            _o36 && _o35.add(_o37.multiply(_o39));
+            var _o3a = _o33.get_each_level_nums(424),
+                _o3b = 0,
+                _o3c = 0,
+                _o3d = 0;
+            _o3a.forEach(function(_o3e, _o3f) {
+                _o3f >= 2 && (_o3b += _o3e), _o3f >= 6 && (_o3c += _o3e), _o3f >= 8 && (_o3d += _o3e);
+            });
+            var _o3g = _o3a[10];
+            return 1 == _o38 && (_o3b >= 1 && (_o35.houg += 1 * _o3b), _o3c >= 1 && (_o35.houg += 1 * _o3c), _o3d >= 1 && (_o35.houm += 1 * _o3d)), _o3g > 0 && (_o35.houm += 1 * _o3g), _o35;
+        };
+    },
+    97423: (_o3h, _o3i, _o3j) => {
+        'use strict';
+        var _o3k = null;
+        defineModule(_o3i);
+        Object.defineProperty(_o3i, '__esModule', {
+            'value': !0
+        }), _o3i.getSlot425PersonalEffect = void 0;
+        var _o3l = _o3j(74496);
+        _o3i.getSlot425PersonalEffect = function(_o3m) {
+            var _o3n = null,
+                _o3o = new _o3l.SlotItemEffectModel(),
+                _o3p = !1,
+                _o3q = new _o3l.SlotItemEffectModel(),
+                _o3r = 0;
+            67 != _o3m.ctype && 78 != _o3m.ctype && 82 != _o3m.ctype && 88 != _o3m.ctype && 108 != _o3m.ctype && 112 != _o3m.ctype || (_o3q.houg += 2, _o3q.tais += 2, _o3q.raig += 1, _o3q.saku += 1, _o3p = !0, _o3r = 1);
+            var _o3s = _o3m.get_slotnums(425);
+            _o3p && _o3o.add(_o3q.multiply(_o3s));
+            var _o3t = _o3m.get_each_level_nums(425),
+                _o3u = 0,
+                _o3v = 0,
+                _o3w = 0,
+                _o3x = 0,
+                _o3y = 0,
+                _o3z = 0;
+            _o3t.forEach(function(_o40, _o41) {
+                _o41 >= 2 && (_o3u += _o40), _o41 >= 4 && (_o3v += _o40), _o41 >= 6 && (_o3w += _o40), _o41 >= 7 && (_o3x += _o40), _o41 >= 8 && (_o3y += _o40), _o41 >= 9 && (_o3z += _o40);
+            });
+            var _o42 = _o3t[10];
+            return 1 == _o3r && (_o3u >= 1 && (_o3o.tais += 1 * _o3u), _o3v >= 1 && (_o3o.houg += 1 * _o3v), _o3w >= 1 && (_o3o.tais += 1 * _o3w), _o3x >= 1 && (_o3o.houm += 1 * _o3x), _o3y >= 1 && (_o3o.raig += 1 * _o3y), _o3z >= 1 && (_o3o.houg += 1 * _o3z), _o42 >= 1 && (_o3o.tais += 1 * _o42)), _o3x >= 1 && (_o3o.houg += 1 * _o3x), _o3y >= 1 && (_o3o.tais += 1 * _o3y), _o3z >= 1 && (_o3o.houm += 1 * _o3z), _o42 >= 1 && (_o3o.houm += 1 * _o42), _o3o;
+        };
+    },
+    23551: (_o43, _o44, _o45) => {
+        'use strict';
+        var _o46 = null;
+        defineModule(_o44);
+        Object.defineProperty(_o44, '__esModule', {
+            'value': !0
+        }), _o44.getSlot430PersonalEffect = void 0;
+        var _o47 = _o45(74496);
+        _o44.getSlot430PersonalEffect = function(_o48) {
+            var _o49 = null,
+                _o4a = new _o47.SlotItemEffectModel(),
+                _o4b = !1,
+                _o4c = new _o47.SlotItemEffectModel(),
+                _o4d = 0;
+            if (113 == _o48.ctype && (_o4c.tyku += 1, _o4c.kaih += 1, _o4b = !0), 58 != _o48.ctype && 61 != _o48.ctype && 64 != _o48.ctype && 68 != _o48.ctype && 80 != _o48.ctype && 92 != _o48.ctype && 113 != _o48.ctype && 124 != _o48.ctype || (_o4c.tyku += 2, _o4c.kaih += 1, _o4b = !0, _o4d = 1), 0 == _o4b) return _o4a;
+            var _o4e = _o48.get_slotnums(430);
+            if (_o4a.add(_o4c.multiply(_o4e)), 0 == _o4d) return _o4a;
+            var _o4f = _o48.get_each_level_nums(430),
+                _o4g = 0,
+                _o4h = 0,
+                _o4i = 0;
+            if (_o4d > 0 && _o4f.forEach(function(_o4j, _o4k) {
+                    _o4k >= 2 && (_o4g += _o4j), _o4k >= 4 && (_o4h += _o4j), _o4k >= 7 && (_o4i += _o4j);
+                }), 1 == _o4d) {
+                _o4g >= 1 && (_o4a.kaih += 1 * _o4g), _o4h >= 1 && (_o4a.tyku += 1 * _o4h), _o4i >= 1 && (_o4a.kaih += 1 * _o4i);
+                var _o4l = _o4f[10];
+                _o4l >= 1 && (_o4a.tyku += 1 * _o4l);
+            }
+            return _o4a;
+        };
+    },
+    6173: (_o4m, _o4n, _o4o) => {
+        'use strict';
+        var _o4p = null;
+        defineModule(_o4n);
+        Object.defineProperty(_o4n, '__esModule', {
+            'value': !0
+        }), _o4n.getSlot437PersonalEffect = void 0;
+        var _o4q = _o4o(74496);
+        _o4n.getSlot437PersonalEffect = function(_o4r) {
+            var _o4s = null,
+                _o4t = new _o4q.SlotItemEffectModel(),
+                _o4u = !1,
+                _o4v = new _o4q.SlotItemEffectModel();
+            if (285 == _o4r.ship_id ? (_o4v.houg += 3, _o4v.tyku += 3, _o4v.kaih += 4, _o4u = !0) : 894 == _o4r.ship_id || 899 == _o4r.ship_id ? (_o4v.houg += 4, _o4v.tyku += 4, _o4v.kaih += 4, _o4u = !0) : 196 == _o4r.ship_id || 197 == _o4r.ship_id ? (_o4v.houg += 2, _o4v.tyku += 2, _o4v.kaih += 3, _o4u = !0) : 508 == _o4r.ship_id || 509 == _o4r.ship_id || 646 == _o4r.ship_id ? (_o4v.houg += 2, _o4v.tyku += 2, _o4v.kaih += 2, _o4u = !0) : 888 != _o4r.ship_id && 883 != _o4r.ship_id && 553 != _o4r.ship_id && 554 != _o4r.ship_id || (_o4v.houg += 1, _o4v.tyku += 2, _o4v.kaih += 2, _o4u = !0), 0 == _o4u) return _o4t;
+            var _o4w = _o4r.get_slotnums(437);
+            return _o4t.add(_o4v.multiply(_o4w)), _o4t;
+        };
+    },
+    53709: (_o4x, _o4y, _o4z) => {
+        'use strict';
+        var _o50 = null;
+        defineModule(_o4y);
+        Object.defineProperty(_o4y, '__esModule', {
+            'value': !0
+        }), _o4y.getSlot438PersonalEffect = void 0;
+        var _o51 = _o4z(74496);
+        _o4y.getSlot438PersonalEffect = function(_o52) {
+            var _o53 = null,
+                _o54 = new _o51.SlotItemEffectModel(),
+                _o55 = 0;
+            if ([66, 28, 12, 1, 5, 10, 23, 18, 30, 38, 22, 54, 101].indexOf(_o52.ctype) > -1 && (_o54.tais += 1, _o54.kaih += 1), 160 == _o52.ship_id || 488 == _o52.ship_id || 141 == _o52.ship_id ? (_o54.tais += 1, _o54.kaih += 1) : 145 != _o52.ship_id && 588 != _o52.ship_id && 667 != _o52.ship_id && 578 != _o52.ship_id && 476 != _o52.ship_id && 363 != _o52.ship_id && 961 != _o52.ship_id || (_o55 = 1), 'うしお' == _o52.yomi || 'まいかぜ' == _o52.yomi || 'いそかぜ' == _o52.yomi || 'はまかぜ' == _o52.yomi || 'いかづち' == _o52.yomi || 'やまぐも' == _o52.yomi || 'うみかぜ' == _o52.yomi || 'かわかぜ' == _o52.yomi || 'すずかぜ' == _o52.yomi ? _o54.tais += 1 : 'しぐれ' != _o52.yomi && 'やまかぜ' != _o52.yomi && 'かみかぜ' != _o52.yomi && 'はるかぜ' != _o52.yomi && 'みくら' != _o52.yomi && 'いしがき' != _o52.yomi || (_o54.tais += 1, _o54.kaih += 1), 0 == _o55) return _o54;
+            var _o56 = _o52.get_each_level_nums(438),
+                _o57 = 0,
+                _o58 = 0,
+                _o59 = 0,
+                _o5a = _o56[10];
+            return _o55 > 0 && _o56.forEach(function(_o5b, _o5c) {
+                _o5c >= 4 && (_o57 += _o5b), _o5c >= 6 && (_o58 += _o5b), _o5c >= 8 && (_o59 += _o5b);
+            }), 1 == _o55 && (_o57 >= 1 && (_o54.tais += 1), _o58 >= 1 && (_o54.kaih += 1), _o59 >= 1 && (_o54.tais += 1), _o5a >= 1 && (_o54.kaih += 1)), _o54;
+        };
+    },
+    99790: (_o5d, _o5e, _o5f) => {
+        'use strict';
+        var _o5g = null;
+        defineModule(_o5e);
+        Object.defineProperty(_o5e, '__esModule', {
+            'value': !0
+        }), _o5e.getSlot439PersonalEffect = void 0;
+        var _o5h = _o5f(74496);
+        _o5e.getSlot439PersonalEffect = function(_o5i) {
+            var _o5j = null,
+                _o5k = new _o5h.SlotItemEffectModel();
+            1 != _o5i.stype && 2 != _o5i.stype && 3 != _o5i.stype && 21 != _o5i.stype || (_o5k.tais += 1, _o5k.kaih += 1), 101 != _o5i.ctype && 1 != _o5i.stype || (_o5k.tais += 1);
+            var _o5l = _o5i.getCountryName();
+            return 'アメリカ' != _o5l && 'イギリス' != _o5l || (_o5k.tais += 2), _o5k;
+        };
+    },
+    18387: (_o5m, _o5n, _o5o) => {
+        'use strict';
+        var _o5p = null;
+        defineModule(_o5n);
+        Object.defineProperty(_o5n, '__esModule', {
+            'value': !0
+        }), _o5n.getSlot440_441PersonalEffect = void 0;
+        var _o5q = _o5o(74496);
+        _o5n.getSlot440_441PersonalEffect = function(_o5r) {
+            var _o5s = null,
+                _o5t = new _o5q.SlotItemEffectModel();
+            return 114 == _o5r.ctype && (_o5t.raig += 2), _o5t;
+        };
+    },
+    70941: (_o5u, _o5v, _o5w) => {
+        'use strict';
+        var _o5x = null;
+        defineModule(_o5v);
+        Object.defineProperty(_o5v, '__esModule', {
+            'value': !0
+        }), _o5v.getSlot442_443PersonalEffect = void 0;
+        var _o5y = _o5w(74496);
+        _o5v.getSlot442_443PersonalEffect = function(_o5z) {
+            var _o60 = null,
+                _o61 = new _o5y.SlotItemEffectModel();
+            return 122 == _o5z.ctype ? (_o61.raig += 1, _o61.kaih += 2) : 114 == _o5z.ctype && (_o61.raig += 2), _o61;
+        };
+    },
+    35025: (_o62, _o63, _o64) => {
+        'use strict';
+        var _o65 = null;
+        defineModule(_o63);
+        Object.defineProperty(_o63, '__esModule', {
+            'value': !0
+        }), _o63.getSlot447PersonalEffect = void 0;
+        var _o66 = _o64(74496);
+        _o63.getSlot447PersonalEffect = function(_o67) {
+            var _o68 = null,
+                _o69 = new _o66.SlotItemEffectModel(),
+                _o6a = _o67.get_each_level_nums(447),
+                _o6b = 0,
+                _o6c = 0,
+                _o6d = 0,
+                _o6e = 0;
+            _o6a.forEach(function(_o6f, _o6g) {
+                _o6g >= 2 && (_o6b += _o6f), _o6g >= 4 && (_o6c += _o6f), _o6g >= 6 && (_o6d += _o6f), _o6g >= 8 && (_o6e += _o6f);
+            }), _o6b >= 1 && (_o69.houg += 1 * _o6b), _o6c >= 1 && (_o69.tyku += 1 * _o6c), _o6d >= 1 && (_o69.tais += 1 * _o6d), _o6e >= 1 && (_o69.kaih += 1 * _o6e);
+            var _o6h = _o6a[10];
+            _o6h >= 1 && (_o69.tais += 1 * _o6h);
+            var _o6i = !1,
+                _o6j = new _o66.SlotItemEffectModel();
+            if (76 == _o67.ctype && (_o6j.houg += 1, _o6j.tais += 1, _o6j.kaih += 2, _o6i = !0), 'うんよう' == _o67.yomi ? (_o6j.houg += 1, _o6j.tais += 1, _o6j.kaih += 1, _o6i = !0) : 'ほうしょう' != _o67.yomi && 'たいげい・りゅうほう' != _o67.yomi || (_o6j.houg += 1, _o6j.tais += 2, _o6j.kaih += 1, _o6i = !0), 0 == _o6i) return _o69;
+            894 != _o67.ship_id && 899 != _o67.ship_id || (_o6j.houg += 1, _o6j.kaih += 1, _o6j.tais += 1, _o6j.tyku += 1, _o6i = !0);
+            var _o6k = _o67.get_slotnums(447);
+            return _o69.add(_o6j.multiply(_o6k)), _o69;
+        };
+    },
+    96804: (_o6l, _o6m, _o6n) => {
+        'use strict';
+        var _o6o = null;
+        defineModule(_o6m);
+        Object.defineProperty(_o6m, '__esModule', {
+            'value': !0
+        }), _o6m.getSlot450PersonalEffect = void 0;
+        var _o6p = _o6n(74496);
+        _o6m.getSlot450PersonalEffect = function(_o6q) {
+            var _o6r = null,
+                _o6s = new _o6p.SlotItemEffectModel(),
+                _o6t = !1,
+                _o6u = new _o6p.SlotItemEffectModel();
+            if (101 == _o6q.ctype && (_o6u.houg += 1, _o6u.tyku += 2, _o6u.souk += 1, _o6u.kaih += 3, _o6t = !0), 1 == _o6q.stype && (_o6u.tyku += 1, _o6u.souk += 1, _o6u.kaih += 2, _o6t = !0), 0 == _o6t) return _o6s;
+            var _o6v = _o6q.get_slotnums(450);
+            return _o6s.add(_o6u.multiply(_o6v)), _o6s;
+        };
+    },
+    33896: (_o6w, _o6x, _o6y) => {
+        'use strict';
+        var _o6z = null;
+        defineModule(_o6x);
+        Object.defineProperty(_o6x, '__esModule', {
+            'value': !0
+        }), _o6x.getSlot451PersonalEffect = void 0;
+        var _o70 = _o6y(74496);
+        _o6x.getSlot451PersonalEffect = function(_o71) {
+            var _o72 = null,
+                _o73 = new _o70.SlotItemEffectModel(),
+                _o74 = !1,
+                _o75 = new _o70.SlotItemEffectModel(),
+                _o76 = 0;
+            if ('あきつまる' == _o71.yomi ? (_o75.houg += 1, _o75.tais += 2, _o74 = !0, 166 == _o71.ship_id && (_o76 = 2)) : 'やましおまる' == _o71.yomi && (_o75.houg += 1, _o75.tais += 3, _o74 = !0, _o76 = 1), 0 == _o74) return _o73;
+            var _o77 = _o71.get_slotnums(451);
+            if (_o73.add(_o75.multiply(_o77)), 0 == _o76) return _o73;
+            var _o78 = _o71.get_each_level_nums(451),
+                _o79 = [];
+            return _o76 > 0 && _o78.forEach(function(_o7a, _o7b) {
+                var _o7c = null;
+                for (var _o7d = 1; _o7d <= _o71.SLOT_LEVEL_MAX; _o7d++) _o7b >= _o7d && (null == _o79[_o7d] && (_o79[_o7d] = 0), _o79[_o7d] += _o7a);
+            }), 1 == _o76 ? (_o79[1] >= 1 && (_o73.houg += 2 * _o79[1]), _o79[2] >= 1 && (_o73.houm += 1 * _o79[2]), _o79[3] >= 1 && (_o73.tais += 1 * _o79[3]), _o79[4] >= 1 && (_o73.houg += 1 * _o79[4]), _o79[6] >= 1 && (_o73.houm += 1 * _o79[6]), _o79[8] >= 1 && (_o73.tais += 1 * _o79[8]), _o79[10] >= 1 && (_o73.houg += 1 * _o79[10])) : 2 == _o76 && (_o79[1] >= 1 && (_o73.houg += 1 * _o79[1]), _o79[3] >= 1 && (_o73.tais += 1 * _o79[3]), _o79[5] >= 1 && (_o73.houm += 1 * _o79[5]), _o79[7] >= 1 && (_o73.tais += 1 * _o79[7]), _o79[10] >= 1 && (_o73.houg += 1 * _o79[10])), _o73;
+        };
+    },
+    11031: function(_o7e, _o7f, _o7g) {
+        'use strict';
+        var _o7h = null;
+        var _o7i = this && this.__importDefault || function(_o7j) {
+            var _o7k = null;
+            return _o7j && _o7j.__esModule ? _o7j : {
+                'default': _o7j
+            };
+        };
+        defineModule(_o7f);
+        Object.defineProperty(_o7f, '__esModule', {
+            'value': !0
+        }), _o7f.getSlot455PersonalEffect = void 0;
+        var _o7l = _o7g(74496),
+            _o7m = _o7i(_o7g(18622));
+        _o7f.getSlot455PersonalEffect = function(_o7n) {
+            var _o7o = null,
+                _o7p = new _o7l.SlotItemEffectModel(),
+                _o7q = !1,
+                _o7r = new _o7l.SlotItemEffectModel(),
+                _o7s = 0,
+                _o7t = _o7n.get_slotnums(455);
+            if (1 != _o7n.ctype && 5 != _o7n.ctype && 12 != _o7n.ctype || (_o7r.houg += 2, _o7r.tyku += 1, 12 == _o7n.ctype && (_o7r.houg += 1), 666 == _o7n.ship_id ? (_o7r.houg += 1, _o7r.tais += 1) : 959 == _o7n.ship_id && (_o7r.houg += 2, _o7t >= 2 && (_o7p.houg += 2), _o7t >= 3 && (_o7p.houg += 3)), _o7s = 1, _o7q = !0), 'うらなみ' == _o7n.yomi && (_o7r.houg += 1, 647 == _o7n.ship_id && (_o7r.houg += 1, _o7r.raig += 1, _o7r.tais += 1, _o7r.kaih += 1), _o7q = !0), 0 == _o7q) return _o7p;
+            if (_o7p.add(_o7r.multiply(_o7t)), 0 == _o7s) return _o7p;
+            for (var _o7u = 0, _o7v = 0, _o7w = 0, _o7x = _o7n.have_slot_ids(); _o7w < _o7x.length; _o7w++) {
+                var _o7y = _o7x[_o7w],
+                    _o7z = _o7m.default.model.slot.getMst(_o7y),
+                    _o80 = _o7z.equipType;
+                12 != _o80 && 13 != _o80 || (_o7z.sakuteki >= 5 && (_o7u += _o7n.get_slotnums(parseInt(_o7y))), _o7z.taiku >= 2 && (_o7v += _o7n.get_slotnums(parseInt(_o7y))));
+            }
+            if (1 == _o7s) {
+                _o7u >= 1 && (_o7p.houg += 3, _o7p.kaih += 2, _o7p.raig += 1);
+                var _o81 = _o7n.get_slotnums(13),
+                    _o82 = _o7n.get_slotnums(125),
+                    _o83 = _o7n.get_slotnums(285),
+                    _o84 = _o81 + _o82 + _o83;
+                1 == _o84 ? (_o7p.houg += 1, _o7p.raig += 3) : _o84 >= 2 && (_o7p.houg += 2, _o7p.raig += 5), _o83 >= 1 && (_o7p.raig += 1), _o7v >= 1 && (_o7p.tyku += 4);
+            }
+            return _o7p;
+        };
+    },
+    71383: (_o85, _o86, _o87) => {
+        'use strict';
+        var _o88 = null;
+        defineModule(_o86);
+        Object.defineProperty(_o86, '__esModule', {
+            'value': !0
+        }), _o86.getSlot456PersonalEffect = void 0;
+        var _o89 = _o87(74496);
+        _o86.getSlot456PersonalEffect = function(_o8a) {
+            var _o8b = null,
+                _o8c = new _o89.SlotItemEffectModel(),
+                _o8d = !1,
+                _o8e = new _o89.SlotItemEffectModel(),
+                _o8f = _o8a.getCountryName();
+            if ('アメリカ' == _o8f && (_o8e.houg += 3, _o8e.kaih += 4, _o8e.saku += 4, _o8c.houm += 3, _o8d = !0), 'イギリス' != _o8f && 'オーストラリア' != _o8f || (_o8e.houg += 2, _o8e.kaih += 2, _o8e.saku += 2, _o8c.houm += 2, _o8d = !0), 87 != _o8a.ctype && 91 != _o8a.ctype || (_o8e.houg += 1, _o8c.leng += 1, _o8d = !0), 651 != _o8a.ship_id && 656 != _o8a.ship_id || (_o8c.houg += 2, _o8c.kaih += 2, _o8c.saku += 3, _o8c.leng += 1, _o8c.houm += 2), 0 == _o8d) return _o8c;
+            var _o8g = _o8a.get_slotnums(456);
+            return _o8c.add(_o8e.multiply(_o8g)), _o8c;
+        };
+    },
+    55888: (_o8h, _o8i, _o8j) => {
+        'use strict';
+        var _o8k = null;
+        defineModule(_o8i);
+        Object.defineProperty(_o8i, '__esModule', {
+            'value': !0
+        }), _o8i.getSlot457PersonalEffect = void 0;
+        var _o8l = _o8j(74496);
+        _o8i.getSlot457PersonalEffect = function(_o8m) {
+            var _o8n = null,
+                _o8o = new _o8l.SlotItemEffectModel(),
+                _o8p = 0;
+            if (109 == _o8m.ctype ? (_o8o.raig += 3, _o8o.kaih += 3, _o8p = 1) : 71 == _o8m.ctype || 103 == _o8m.ctype ? (_o8o.raig += 2, _o8o.kaih += 2, _o8p = 2) : 44 == _o8m.ctype && (_o8o.raig += 1, _o8o.kaih += 4, _o8p = 3), 0 == _o8p) return _o8o;
+            var _o8q = _o8m.get_each_level_nums(461),
+                _o8r = [];
+            return _o8p > 0 && _o8q.forEach(function(_o8s, _o8t) {
+                var _o8u = null;
+                for (var _o8v = 1; _o8v <= _o8m.SLOT_LEVEL_MAX; _o8v++) null == _o8r[_o8v] && (_o8r[_o8v] = 0), _o8t >= _o8v && (_o8r[_o8v] += _o8s);
+            }), 1 == _o8p ? (_o8r[2] >= 1 && (_o8o.raig += 1 * _o8r[2]), _o8r[3] >= 1 && (_o8o.kaih += 1 * _o8r[3]), _o8r[4] >= 1 && (_o8o.raig += 1 * _o8r[4]), _o8r[5] >= 1 && (_o8o.houm += 1 * _o8r[5]), _o8r[6] >= 1 && (_o8o.raig += 1 * _o8r[6]), _o8r[8] >= 1 && (_o8o.raig += 1 * _o8r[8]), _o8r[10] >= 1 && (_o8o.houm += 1 * _o8r[10])) : 2 == _o8p ? (_o8r[3] >= 1 && (_o8o.kaih += 1 * _o8r[3]), _o8r[4] >= 1 && (_o8o.raig += 1 * _o8r[4]), _o8r[6] >= 1 && (_o8o.raig += 1 * _o8r[6]), _o8r[8] >= 1 && (_o8o.raig += 1 * _o8r[8]), _o8r[10] >= 1 && (_o8o.houm += 1 * _o8r[10])) : 3 == _o8p && (_o8r[4] >= 1 && (_o8o.raig += 1 * _o8r[4]), _o8r[6] >= 1 && (_o8o.raig += 1 * _o8r[6]), _o8r[8] >= 1 && (_o8o.raig += 1 * _o8r[8]), _o8r[10] >= 1 && (_o8o.houm += 1 * _o8r[10])), _o8o;
+        };
+    },
+    2258: (_o8w, _o8x, _o8y) => {
+        'use strict';
+        var _o8z = null;
+        defineModule(_o8x);
+        Object.defineProperty(_o8x, '__esModule', {
+            'value': !0
+        }), _o8x.getSlot458PersonalEffect = void 0;
+        var _o90 = _o8y(74496);
+        _o8x.getSlot458PersonalEffect = function(_o91) {
+            var _o92 = null,
+                _o93 = new _o90.SlotItemEffectModel(),
+                _o94 = 0,
+                _o95 = !1;
+            if (13 != _o91.stype && 14 != _o91.stype || (_o95 = !0), 109 == _o91.ctype ? (_o93.raig += 3, _o93.kaih += 6, _o94 = 1) : 71 == _o91.ctype || 103 == _o91.ctype ? (_o93.raig += 3, _o93.kaih += 4, _o94 = 2) : 44 == _o91.ctype && (_o93.raig += 3, _o93.kaih += 3, _o94 = 3), 0 == _o95 && 0 == _o94) return _o93;
+            var _o96 = [];
+            [458, 461].forEach(function(_o97) {
+                var _o98 = null,
+                    _o99 = _o91.get_each_level_nums(_o97);
+                null == _o96[_o97] && (_o96[_o97] = []), _o99.forEach(function(_o9a, _o9b) {
+                    var _o9c = null;
+                    for (var _o9d = 1; _o9d <= _o91.SLOT_LEVEL_MAX; _o9d++) null == _o96[_o97][_o9d] && (_o96[_o97][_o9d] = 0), _o9b >= _o9d && (_o96[_o97][_o9d] += _o9a);
+                });
+            });
+            var _o9e = _o96[458][2],
+                _o9f = _o96[458][3],
+                _o9g = _o96[458][4],
+                _o9h = _o96[458][5],
+                _o9i = _o96[458][6],
+                _o9j = _o96[458][8],
+                _o9k = _o96[458][10],
+                _o9l = _o96[461][4];
+            return _o94 >= 1 && _o94 <= 3 && (_o9g >= 1 && (_o93.houm += 1 * _o9g), _o9i >= 1 && (_o93.kaih += 1 * _o9i), _o9j >= 1 && (_o93.raig += 1 * _o9j)), _o95 && (_o9f >= 1 && (_o93.kaih += 1 * _o9f), _o9h >= 1 && (_o93.raig += 1 * _o9h), _o9k >= 1 && (_o93.houm += 1 * _o9k), _o9e >= 1 && _o9l >= 1 && (_o93.raig += 7, _o93.houm += 5)), _o93;
+        };
+    },
+    43768: (_o9m, _o9n, _o9o) => {
+        'use strict';
+        var _o9p = null;
+        defineModule(_o9n);
+        Object.defineProperty(_o9n, '__esModule', {
+            'value': !0
+        }), _o9n.getSlot463PersonalEffect = void 0;
+        var _o9q = _o9o(74496);
+        _o9n.getSlot463PersonalEffect = function(_o9r) {
+            var _o9s = null,
+                _o9t = new _o9q.SlotItemEffectModel(),
+                _o9u = !1,
+                _o9v = new _o9q.SlotItemEffectModel(),
+                _o9w = _o9r.get_slotnums(142),
+                _o9x = _o9r.get_slotnums(460),
+                _o9y = _o9w + _o9x;
+            if (37 == _o9r.ctype && (_o9v.houg += 1, _o9v.tyku += 2, _o9v.kaih += 1, _o9v.houm += 1, _o9y >= 1 && (_o9t.tyku += 1, _o9t.kaih += 1, _o9t.houm += 1), _o9u = !0), 916 != _o9r.ship_id && 911 != _o9r.ship_id && 546 != _o9r.ship_id || (_o9v.houg += 1, _o9v.kaih += 1, _o9v.houm += 2, _o9x >= 1 && (_o9t.houg += 1, _o9t.kaih += 1, _o9t.houm += 2), _o9u = !0), 0 == _o9u) return _o9t;
+            var _o9z = _o9r.get_slotnums(463);
+            return _o9t.add(_o9v.multiply(_o9z)), _o9t;
+        };
+    },
+    92174: (_oa0, _oa1, _oa2) => {
+        'use strict';
+        var _oa3 = null;
+        defineModule(_oa1);
+        Object.defineProperty(_oa1, '__esModule', {
+            'value': !0
+        }), _oa1.getSlot464PersonalEffect = void 0;
+        var _oa4 = _oa2(74496);
+        _oa1.getSlot464PersonalEffect = function(_oa5) {
+            var _oa6 = null,
+                _oa7 = new _oa4.SlotItemEffectModel(),
+                _oa8 = !1,
+                _oa9 = new _oa4.SlotItemEffectModel(),
+                _oaa = _oa5.get_slotnums(142),
+                _oab = _oa5.get_slotnums(460),
+                _oac = _oaa + _oab;
+            if (37 == _oa5.ctype ? (_oa9.tyku += 3, _oa9.kaih += 2, _oac >= 1 && (_oa7.tyku += 2, _oa7.kaih += 1, _oa7.houm += 1), _oa8 = !0) : 6 != _oa5.ctype && 73 != _oa5.ctype && 113 != _oa5.ctype || (_oa9.tyku = _oa9.tyku - 2, _oa9.kaih = _oa9.kaih - 2, _oa8 = !0), 916 != _oa5.ship_id && 911 != _oa5.ship_id && 546 != _oa5.ship_id && 593 != _oa5.ship_id && 954 != _oa5.ship_id || (_oa9.tyku += 2, _oa9.kaih += 2, _oab >= 1 && (_oa7.houg += 2, _oa7.tyku += 2, _oa7.kaih += 2, _oa7.houm += 3), _oa8 = !0), 0 == _oa8) return _oa7;
+            var _oad = _oa5.get_slotnums(464);
+            return _oa7.add(_oa9.multiply(_oad)), _oa7;
+        };
+    },
+    38003: (_oae, _oaf, _oag) => {
+        'use strict';
+        var _oah = null;
+        defineModule(_oaf);
+        Object.defineProperty(_oaf, '__esModule', {
+            'value': !0
+        }), _oaf.getSlot465PersonalEffect = void 0;
+        var _oai = _oag(74496);
+        _oaf.getSlot465PersonalEffect = function(_oaj) {
+            var _oak = null,
+                _oal = new _oai.SlotItemEffectModel(),
+                _oam = !1,
+                _oan = new _oai.SlotItemEffectModel(),
+                _oao = _oaj.get_slotnums(142),
+                _oap = _oaj.get_slotnums(460),
+                _oaq = _oao + _oap;
+            if (916 == _oaj.ship_id ? (_oan.houg += 2, _oan.kaih += 8, _oan.houm += 2, _oap >= 1 && (_oal.kaih += 2, _oal.houm += 1), _oam = !0) : 911 != _oaj.ship_id && 546 != _oaj.ship_id || (_oan.houg += 1, _oan.kaih += 2, _oan.houm += 1, _oap >= 1 && (_oal.kaih += 1, _oal.houm += 1), _oam = !0), 37 == _oaj.ctype && _oaq >= 1 && (_oal.houg += 2, _oal.houm += 2), 0 == _oam) return _oal;
+            var _oar = _oaj.get_slotnums(465);
+            return _oal.add(_oan.multiply(_oar)), _oal;
+        };
+    },
+    65455: (_oas, _oat, _oau) => {
+        'use strict';
+        var _oav = null;
+        defineModule(_oat);
+        Object.defineProperty(_oat, '__esModule', {
+            'value': !0
+        }), _oat.getSlot466PersonalEffect = void 0;
+        var _oaw = _oau(74496);
+        _oat.getSlot466PersonalEffect = function(_oax) {
+            var _oay = null,
+                _oaz = new _oaw.SlotItemEffectModel(),
+                _ob0 = !1,
+                _ob1 = new _oaw.SlotItemEffectModel();
+            if (277 == _oax.ship_id || 278 == _oax.ship_id || 156 == _oax.ship_id || 288 == _oax.ship_id || 112 == _oax.ship_id || 280 == _oax.ship_id || 279 == _oax.ship_id ? (_ob1.houg += 1, _ob1.houm += 1, _ob0 = !0) : 461 == _oax.ship_id || 462 == _oax.ship_id || 466 == _oax.ship_id || 467 == _oax.ship_id ? (_ob1.houg += 2, _ob1.kaih += 2, _ob1.houm += 1, _ob0 = !0) : 594 != _oax.ship_id && 698 != _oax.ship_id && 646 != _oax.ship_id && 599 != _oax.ship_id && 610 != _oax.ship_id && 196 != _oax.ship_id && 197 != _oax.ship_id || (_ob1.houg += 1, _ob1.kaih += 1, _ob1.houm += 2, _ob0 = !0), 0 == _ob0) return _oaz;
+            var _ob2 = _oax.get_slotnums(466);
+            return _oaz.add(_ob1.multiply(_ob2)), _oaz;
+        };
+    },
+    70362: (_ob3, _ob4, _ob5) => {
+        'use strict';
+        var _ob6 = null;
+        defineModule(_ob4);
+        Object.defineProperty(_ob4, '__esModule', {
+            'value': !0
+        }), _ob4.getSlot467PersonalEffect = void 0;
+        var _ob7 = _ob5(74496);
+        _ob4.getSlot467PersonalEffect = function(_ob8) {
+            var _ob9 = null,
+                _oba = new _ob7.SlotItemEffectModel(),
+                _obb = !1,
+                _obc = new _ob7.SlotItemEffectModel();
+            if ('アメリカ' == _ob8.getCountryName()) {
+                for (var _obd = _ob8.getUSSWaterRaderDict(), _obe = _ob8.getUSSAirRaderDict(), _obf = 0, _obg = 0, _obh = 0, _obi = _ob8.have_slot_ids(); _obh < _obi.length; _obh++) {
+                    var _obj = _obi[_obh];
+                    _obd[parseInt(_obj)] && (_obf += _ob8.get_slotnums(parseInt(_obj))), _obe[parseInt(_obj)] && (_obg += _ob8.get_slotnums(parseInt(_obj)));
+                }
+                _obc.houg += 1, _obc.tyku += 1, _obc.kaih += 2, _obf >= 1 && (_oba.houg += 1, _oba.tyku += 1, _oba.kaih += 1, _oba.houm += 2), _obg >= 1 && (_oba.tyku += 2, _oba.kaih += 2), 65 != _ob8.ctype && 93 != _ob8.ctype && 102 != _ob8.ctype && 107 != _ob8.ctype && 125 != _ob8.ctype || (_obc.tyku += 2, _obc.kaih += 1), _obb = !0;
+            }
+            if (0 == _obb) return _oba;
+            var _obk = _ob8.get_slotnums(467);
+            return _oba.add(_obc.multiply(_obk)), _oba;
+        };
+    },
+    68086: function(_obl, _obm, _obn) {
+        'use strict';
+        var _obo = null;
+        var _obp = this && this.__importDefault || function(_obq) {
+            var _obr = null;
+            return _obq && _obq.__esModule ? _obq : {
+                'default': _obq
+            };
+        };
+        defineModule(_obm);
+        Object.defineProperty(_obm, '__esModule', {
+            'value': !0
+        }), _obm.getSlot470PersonalEffect = void 0;
+        var _obs = _obn(74496),
+            _obt = _obp(_obn(18622));
+        _obm.getSlot470PersonalEffect = function(_obu) {
+            var _obv = null,
+                _obw = new _obs.SlotItemEffectModel(),
+                _obx = !1,
+                _oby = new _obs.SlotItemEffectModel(),
+                _obz = 0,
+                _oc0 = 0;
+            23 == _obu.ctype || 18 == _obu.ctype ? (_oby.houg += 1, _obx = !0, _obz = 1) : 30 == _obu.ctype && (_oby.houg += 2, _obx = !0, _obz = 2), ('しぐれ' == _obu.yomi || 'ゆきかぜ' == _obu.yomi || 'いそかぜ' == _obu.yomi) && (_oby.kaih += 2, _obx = !0), 961 == _obu.ship_id && (_oby.houg += 3, _oby.houm += 3, _oby.kaih += 2, _obx = !0);
+            var _oc1 = _obu.get_slotnums(470);
+            566 != _obu.ship_id && 567 != _obu.ship_id && 568 != _obu.ship_id && 656 != _obu.ship_id && 670 != _obu.ship_id && 915 != _obu.ship_id && 651 != _obu.ship_id && 145 != _obu.ship_id && 961 != _obu.ship_id && 951 != _obu.ship_id || (_obw.houg += 1, _obw.houm += 2, _oc1 >= 2 && (_obw.houg += 2), _oc0 = 1), _obx && _obw.add(_oby.multiply(_oc1));
+            var _oc2 = 0;
+            if (_obz > 0)
+                for (var _oc3 = 0, _oc4 = _obu.have_slot_ids(); _oc3 < _oc4.length; _oc3++) {
+                    var _oc5 = _oc4[_oc3],
+                        _oc6 = _obt.default.model.slot.getMst(_oc5),
+                        _oc7 = _oc6.equipType;
+                    12 != _oc7 && 13 != _oc7 || (_oc6.sakuteki >= 5 && (_oc2 += _obu.get_slotnums(parseInt(_oc5))), _oc6.taiku >= 2 && _obu.get_slotnums(parseInt(_oc5)));
+                }
+            if (1 == _obz ? _oc2 >= 1 && (_obw.houg += 1, _obw.kaih += 1, _obw.raig += 3, _obw.houm += 1) : 2 == _obz && _oc2 >= 1 && (_obw.houg += 2, _obw.kaih += 1, _obw.raig += 3, _obw.houm += 3), 0 == _oc0) return _obw;
+            var _oc8 = _obu.get_each_level_nums(470),
+                _oc9 = 0,
+                _oca = 0;
+            if (_oc0 > 0 && _oc8.forEach(function(_ocb, _occ) {
+                    _occ >= 5 && (_oc9 += _ocb), _occ >= 8 && (_oca += _ocb);
+                }), 1 == _oc0) {
+                _oc9 >= 1 && (_obw.houm += 1 * _oc9), _oca >= 1 && (_obw.houg += 1 * _oca);
+                var _ocd = _oc8[10];
+                _ocd >= 1 && (_obw.houm += 1 * _ocd);
+            }
+            return _obw;
+        };
+    },
+    78173: (_oce, _ocf, _ocg) => {
+        'use strict';
+        var _och = null;
+        defineModule(_ocf);
+        Object.defineProperty(_ocf, '__esModule', {
+            'value': !0
+        }), _ocf.getSlot471PersonalEffect = void 0;
+        var _oci = _ocg(74496);
+        _ocf.getSlot471PersonalEffect = function(_ocj) {
+            var _ock = null,
+                _ocl = new _oci.SlotItemEffectModel(),
+                _ocm = !1,
+                _ocn = new _oci.SlotItemEffectModel(),
+                _oco = 0;
+            if ('フランス' == _ocj.getCountryName() && (_ocn.houg += 2, _ocn.kaih += 2, _ocn.houm += 2, _ocm = !0, _oco = 1), 79 == _ocj.ctype && (_ocn.houg += 2, _ocn.houm += 1, _ocm = !0), 0 == _ocm) return _ocl;
+            var _ocp = _ocj.get_slotnums(471);
+            if (_ocl.add(_ocn.multiply(_ocp)), 0 == _oco) return _ocl;
+            var _ocq = _ocj.get_each_level_nums(471),
+                _ocr = 0,
+                _ocs = 0;
+            if (_oco > 0 && _ocq.forEach(function(_oct, _ocu) {
+                    _ocu >= 6 && (_ocr += _oct), _ocu >= 8 && (_ocs += _oct);
+                }), 1 == _oco) {
+                _ocr >= 1 && (_ocl.kaih += 1 * _ocr, _ocl.houm += 1 * _ocr), _ocs >= 1 && (_ocl.houg += 1 * _ocs, _ocl.kaih += 1 * _ocs, _ocl.houm += 1 * _ocs);
+                var _ocv = _ocq[10];
+                _ocv >= 1 && (_ocl.houg += 1 * _ocv, _ocl.houm += 1 * _ocv);
+            }
+            return _ocl;
+        };
+    },
+    22581: (_ocw, _ocx, _ocy) => {
+        'use strict';
+        var _ocz = null;
+        defineModule(_ocx);
+        Object.defineProperty(_ocx, '__esModule', {
+            'value': !0
+        }), _ocx.getSlot472PersonalEffect = void 0;
+        var _od0 = _ocy(74496);
+        _ocx.getSlot472PersonalEffect = function(_od1) {
+            var _od2 = null,
+                _od3 = new _od0.SlotItemEffectModel(),
+                _od4 = !1,
+                _od5 = new _od0.SlotItemEffectModel(),
+                _od6 = _od1.getCountryName();
+            if ('アメリカ' == _od6 && (_od5.tais += 2, _od4 = !0), 'イギリス' == _od6 && (_od5.tais += 1, _od4 = !0), 1 == _od1.stype && (_od5.kaih += 1, _od4 = !0), _od4) {
+                var _od7 = _od1.get_slotnums(472);
+                _od3.add(_od5.multiply(_od7));
+            }
+            return 920 == _od1.ship_id && (_od3.tais += 1, _od3.kaih += 1, _od3.houm += 1), _od3;
+        };
+    },
+    13053: (_od8, _od9, _oda) => {
+        'use strict';
+        var _odb = null;
+        defineModule(_od9);
+        Object.defineProperty(_od9, '__esModule', {
+            'value': !0
+        }), _od9.getSlot473PersonalEffect = void 0;
+        var _odc = _oda(74496);
+        _od9.getSlot473PersonalEffect = function(_odd) {
+            var _ode = null,
+                _odf = new _odc.SlotItemEffectModel(),
+                _odg = !1,
+                _odh = new _odc.SlotItemEffectModel(),
+                _odi = _odd.getCountryName();
+            if ('アメリカ' == _odi && (_odh.houg += 1, _odh.kaih += 1, _odh.tyku += 1, _odg = !0), 'イギリス' == _odi && (_odh.houg += 1, _odh.kaih += 1, _odg = !0), 0 == _odg) return _odf;
+            var _odj = _odd.get_slotnums(473);
+            return _odf.add(_odh.multiply(_odj)), _odf;
+        };
+    },
+    47874: (_odk, _odl, _odm) => {
+        'use strict';
+        var _odn = null;
+        defineModule(_odl);
+        Object.defineProperty(_odl, '__esModule', {
+            'value': !0
+        }), _odl.getSlot474PersonalEffect = void 0;
+        var _odo = _odm(74496);
+        _odl.getSlot474PersonalEffect = function(_odp) {
+            var _odq = null,
+                _odr = new _odo.SlotItemEffectModel(),
+                _ods = !1,
+                _odt = new _odo.SlotItemEffectModel(),
+                _odu = _odp.getCountryName();
+            if ('アメリカ' == _odu && (_odt.houg += 2, _odt.kaih += 1, _odt.tyku += 1, _ods = !0), 'イギリス' == _odu && (_odt.houg += 1, _odt.kaih += 1, _odt.tyku += 1, _ods = !0), 'フランス' == _odu && (_odt.houg += 1, _odt.tyku += 1, _ods = !0), 707 != _odp.ship_id && 930 != _odp.ship_id || (_odt.houg += 1, _odt.kaih += 1, _ods = !0), 0 == _ods) return _odr;
+            var _odv = _odp.get_slotnums(474);
+            return _odr.add(_odt.multiply(_odv)), _odr;
+        };
+    },
+    42788: (_odw, _odx, _ody) => {
+        'use strict';
+        var _odz = null;
+        defineModule(_odx);
+        Object.defineProperty(_odx, '__esModule', {
+            'value': !0
+        }), _odx.getSlot478PersonalEffect = void 0;
+        var _oe0 = _ody(74496);
+        _odx.getSlot478PersonalEffect = function(_oe1) {
+            var _oe2 = null,
+                _oe3 = new _oe0.SlotItemEffectModel(),
+                _oe4 = _oe1.get_each_level_nums(478),
+                _oe5 = [];
+            return _oe4.forEach(function(_oe6, _oe7) {
+                var _oe8 = null;
+                for (var _oe9 = 1; _oe9 <= _oe1.SLOT_LEVEL_MAX; _oe9++) _oe7 >= _oe9 && (null == _oe5[_oe9] && (_oe5[_oe9] = 0), _oe5[_oe9] += _oe6);
+            }), _oe5.every(function(_oea) {
+                return 0 == _oea;
+            }) || (_oe5[1] >= 1 && (_oe3.houg += 1), _oe5[2] >= 1 && (_oe3.houm += 1), _oe5[3] >= 1 && (_oe3.kaih += 1), _oe5[4] >= 1 && (_oe3.baku += 1), _oe5[5] >= 1 && (_oe3.raig += 1), _oe5[6] >= 1 && (_oe3.tyku += 1), _oe5[7] >= 1 && (_oe3.houg += 1), _oe5[8] >= 1 && (_oe3.houm += 1), _oe5[9] >= 1 && (_oe3.kaih += 1), _oe5[10] >= 1 && (_oe3.houg += 1)), _oe3;
+        };
+    },
+    22218: (_oeb, _oec, _oed) => {
+        'use strict';
+        var _oee = null;
+        defineModule(_oec);
+        Object.defineProperty(_oec, '__esModule', {
+            'value': !0
+        }), _oec.getSlot47PersonalEffect = void 0;
+        var _oef = _oed(74496);
+        _oec.getSlot47PersonalEffect = function(_oeg) {
+            var _oeh = null,
+                _oei = new _oef.SlotItemEffectModel(),
+                _oej = new _oef.SlotItemEffectModel();
+            if (['あさしも', 'はるかぜ', 'かみかぜ', 'やまかぜ', 'まいかぜ', 'しぐれ'].indexOf(_oeg.yomi) >= 0 ? (_oej.tais += 3, _oej.kaih += 2, _oej.houg += 1) : ['きしなみ', 'いそかぜ', 'はまかぜ', 'うしお', 'いかづち', 'やまぐも'].indexOf(_oeg.yomi) >= 0 && (_oej.tais += 2, _oej.kaih += 2), !_oej.exists()) return _oei;
+            var _oek = _oeg.get_slotnums(47) + _oeg.get_slotnums(438);
+            return _oei = _oej.multiply(_oek);
+        };
+    },
+    57664: (_oel, _oem, _oen) => {
+        'use strict';
+        var _oeo = null;
+        defineModule(_oem);
+        Object.defineProperty(_oem, '__esModule', {
+            'value': !0
+        }), _oem.getSlot483PersonalEffect = void 0;
+        var _oep = _oen(74496);
+        _oem.getSlot483PersonalEffect = function(_oeq) {
+            var _oer = null,
+                _oes = new _oep.SlotItemEffectModel(),
+                _oet = 0,
+                _oeu = 0,
+                _oev = 0,
+                _oew = 0,
+                _oex = 0,
+                _oey = 0,
+                _oez = 0;
+            if (6 == _oeq.ctype ? (_oes.houg += 2, _oes.tyku += 3, _oes.houm += 1, _oet = 1) : 2 == _oeq.ctype ? (_oes.houg += 1, _oes.tyku += 2, _oes.kaih += 2, _oes.houm += 1, _oeu = 1) : 37 == _oeq.ctype && (_oev = 1), 8 == _oeq.stype || 9 == _oeq.stype || 10 == _oeq.stype ? _oew = 1 : 5 != _oeq.stype && 6 != _oeq.stype || (_oex = 1), 149 == _oeq.ship_id ? (_oes.houg += 2, _oes.tyku += 2) : 591 == _oeq.ship_id ? (_oes.houg += 3, _oes.tyku += 3, _oes.kaih += 1) : 150 == _oeq.ship_id ? (_oes.houg += 1, _oes.tyku += 1) : 592 == _oeq.ship_id ? (_oes.houg += 2, _oes.tyku += 2, _oes.kaih += 2) : 151 == _oeq.ship_id ? (_oes.houg += 1, _oes.tyku += 2, _oes.kaih += 2) : 593 == _oeq.ship_id ? (_oes.houg += 2, _oes.tyku += 5, _oes.kaih += 3) : 954 == _oeq.ship_id ? (_oes.houg += 2, _oes.tyku += 4, _oes.kaih += 2) : 152 == _oeq.ship_id ? (_oes.houg += 2, _oes.tyku += 2) : 911 == _oeq.ship_id || 916 == _oeq.ship_id || 546 == _oeq.ship_id ? (_oes.houg += 2, _oes.tyku += 2, _oes.kaih += 2, _oey = 1) : 553 == _oeq.ship_id || 554 == _oeq.ship_id ? (_oes.houg += 1, _oes.tyku += 2, _oes.kaih += 1, _oez = 1) : 541 == _oeq.ship_id || 411 == _oeq.ship_id || 412 == _oeq.ship_id ? (_oes.houg += 1, _oes.tyku += 2) : 573 == _oeq.ship_id && (_oes.houg += 2, _oes.tyku += 2, _oes.kaih += 1), 0 == [_oet, _oeu, _oev, _oew, _oex, _oey, _oez].reduce(function(_of0, _of1) {
+                    return _of0 + _of1;
+                }, 0)) return _oes;
+            var _of2 = _oeq.get_each_level_nums(483),
+                _of3 = 0,
+                _of4 = [];
+            return _of2.forEach(function(_of5, _of6) {
+                var _of7 = null;
+                _of6 >= 6 && (_of3 += _of5);
+                for (var _of8 = 1; _of8 <= _oeq.SLOT_LEVEL_MAX; _of8++) null == _of4[_of8] && (_of4[_of8] = 0), _of6 >= _of8 && (_of4[_of8] += _of5);
+            }), 1 == _oet ? (_of3 >= 1 && (_oes.houm += 1), _of2[10] >= 1 && (_oes.houm += 1)) : 1 == _oeu ? (_of4[5] >= 1 && (_oes.kaih += 1), _of4[6] >= 1 && (_oes.houm += 1), _of4[10] >= 1 && (_oes.kaih += 1)) : 1 == _oev && (_of4[6] >= 1 && (_oes.houm += 1), _of4[10] >= 1 && (_oes.kaih += 1)), 1 == _oew ? (_of4[2] >= 1 && (_oes.tyku += 1), _of4[4] >= 1 && (_oes.houg += 1), _of4[7] >= 1 && (_oes.kaih += 1), _of4[8] >= 1 && (_oes.tyku += 1), _of4[9] >= 1 && (_oes.houg += 1)) : 1 == _oex && (_of4[2] >= 1 && (_oes.tyku += 1), _of4[4] >= 1 && (_oes.houg += 1), _of4[6] >= 1 && (_oes.kaih += 1), _of4[8] >= 1 && (_oes.houm += 1), _of4[10] >= 1 && (_oes.houg += 1)), 1 == _oey ? _of4[5] >= 1 && (_oes.houm += 1) : 1 == _oez && (_of4[1] >= 1 && (_oes.houm += 1), _of4[3] >= 1 && (_oes.houm += 1)), _oes;
+        };
+    },
+    44990: (_of9, _ofa, _ofb) => {
+        'use strict';
+        var _ofc = null;
+        defineModule(_ofa);
+        Object.defineProperty(_ofa, '__esModule', {
+            'value': !0
+        }), _ofa.getSlot485PersonalEffect = void 0;
+        var _ofd = _ofb(74496);
+        _ofa.getSlot485PersonalEffect = function(_ofe) {
+            var _off = null,
+                _ofg = new _ofd.SlotItemEffectModel(),
+                _ofh = !1,
+                _ofi = new _ofd.SlotItemEffectModel();
+            if (9 == _ofe.ctype && (_ofi.houg += 1, _ofi.kaih += 2, _ofi.tyku += 3, _ofh = !0), 501 == _ofe.ship_id || 506 == _ofe.ship_id ? (_ofi.kaih += 1, _ofi.tyku += 2, _ofi.houm += 1, _ofh = !0) : 502 != _ofe.ship_id && 507 != _ofe.ship_id || (_ofi.kaih += 1, _ofi.tyku += 1, _ofi.houm += 1, _ofh = !0), _ofh) {
+                var _ofj = _ofe.get_slotnums(485);
+                _ofg.add(_ofi.multiply(_ofj));
+            }
+            var _ofk = _ofe.get_each_level_nums(485),
+                _ofl = 0,
+                _ofm = 0,
+                _ofn = 0,
+                _ofo = _ofk[10];
+            return _ofk.forEach(function(_ofp, _ofq) {
+                _ofq >= 3 && (_ofl += _ofp), _ofq >= 5 && (_ofm += _ofp), _ofq >= 7 && (_ofn += _ofp);
+            }), _ofl > 0 && (_ofg.houg += 1 * _ofl), _ofm > 0 && (_ofg.tyku += 1 * _ofm), _ofn > 0 && (_ofg.kaih += 1 * _ofn), _ofo > 0 && (_ofg.houm += 1 * _ofo), _ofg;
+        };
+    },
+    83957: (_ofr, _ofs, _oft) => {
+        'use strict';
+        var _ofu = null;
+        defineModule(_ofs);
+        Object.defineProperty(_ofs, '__esModule', {
+            'value': !0
+        }), _ofs.getSlot486PersonalEffect = void 0;
+        var _ofv = _oft(74496);
+        _ofs.getSlot486PersonalEffect = function(_ofw) {
+            var _ofx = null,
+                _ofy = new _ofv.SlotItemEffectModel(),
+                _ofz = !1,
+                _og0 = new _ofv.SlotItemEffectModel();
+            if (894 == _ofw.ship_id || 899 == _ofw.ship_id ? (_og0.houg += 4, _og0.tyku += 4, _og0.kaih += 3, _og0.houm += 2, _ofz = !0) : 888 != _ofw.ship_id && 883 != _ofw.ship_id || (_og0.houg += 2, _og0.tyku += 2, _og0.kaih += 2, _og0.houm += 1, _ofz = !0), _ofz) {
+                var _og1 = _ofw.get_slotnums(486);
+                _ofy.add(_og0.multiply(_og1));
+            }
+            var _og2 = _ofw.get_each_level_nums(486),
+                _og3 = 0,
+                _og4 = 0,
+                _og5 = _og2[10];
+            return _og2.forEach(function(_og6, _og7) {
+                _og7 >= 6 && (_og3 += _og6), _og7 >= 8 && (_og4 += _og6);
+            }), _og3 > 0 && (_ofy.kaih += 1 * _og3, _ofy.houm += 1 * _og3), _og4 > 0 && (_ofy.tyku += 1 * _og4, _ofy.kaih += 1 * _og4), _og5 > 0 && (_ofy.houg += 1 * _og5, _ofy.houm += 1 * _og5), _ofy;
+        };
+    },
+    78539: (_og8, _og9, _oga) => {
+        'use strict';
+        var _ogb = null;
+        defineModule(_og9);
+        Object.defineProperty(_og9, '__esModule', {
+            'value': !0
+        }), _og9.getSlot487PersonalEffect = void 0;
+        var _ogc = _oga(74496);
+        _og9.getSlot487PersonalEffect = function(_ogd) {
+            var _oge = null,
+                _ogf = new _ogc.SlotItemEffectModel(),
+                _ogg = !1,
+                _ogh = new _ogc.SlotItemEffectModel();
+            if (894 == _ogd.ship_id || 899 == _ogd.ship_id ? (_ogh.houg += 5, _ogh.tyku += 3, _ogh.kaih += 2, _ogh.houm += 4, _ogg = !0) : 888 != _ogd.ship_id && 883 != _ogd.ship_id || (_ogh.houg += 3, _ogh.tyku += 1, _ogh.kaih += 1, _ogh.houm += 2, _ogg = !0), _ogg) {
+                var _ogi = _ogd.get_slotnums(487);
+                _ogf.add(_ogh.multiply(_ogi));
+            }
+            var _ogj = _ogd.get_each_level_nums(487),
+                _ogk = 0,
+                _ogl = 0,
+                _ogm = _ogj[10];
+            return _ogj.forEach(function(_ogn, _ogo) {
+                _ogo >= 6 && (_ogk += _ogn), _ogo >= 8 && (_ogl += _ogn);
+            }), _ogk > 0 && (_ogf.houg += 1 * _ogk, _ogf.kaih += 1 * _ogk), _ogl > 0 && (_ogf.tyku += 1 * _ogl, _ogf.houm += 1 * _ogl), _ogm > 0 && (_ogf.houg += 1 * _ogm, _ogf.houm += 1 * _ogm), _ogf;
+        };
+    },
+    96282: (_ogp, _ogq, _ogr) => {
+        'use strict';
+        var _ogs = null;
+        defineModule(_ogq);
+        Object.defineProperty(_ogq, '__esModule', {
+            'value': !0
+        }), _ogq.getSlot488PersonalEffect = void 0;
+        var _ogt = _ogr(74496);
+        _ogq.getSlot488PersonalEffect = function(_ogu) {
+            var _ogv = null,
+                _ogw = new _ogt.SlotItemEffectModel(),
+                _ogx = !1,
+                _ogy = new _ogt.SlotItemEffectModel(),
+                _ogz = 0,
+                _oh0 = _ogu.getCountryName(),
+                _oh1 = {
+                    145: 1,
+                    961: 1,
+                    557: 2,
+                    558: 2,
+                    228: 2,
+                    656: 2,
+                    651: 2,
+                    243: 2,
+                    412: 3,
+                    411: 3,
+                    419: 3,
+                    235: 3,
+                    407: 3,
+                    538: 3,
+                    537: 3,
+                    663: 3,
+                    668: 3,
+                    43: 3
+                }[_ogu.ship_id];
+            if (('日本' == _oh0 && 2 == _ogu.stype || {
+                    74: 1,
+                    77: 1,
+                    85: 1,
+                    117: 1,
+                    104: 1
+                }[_ogu.ctype] && 1 == _ogu.stype) && (_ogy.tais += 1, _ogy.kaih += 1, _ogx = !0), 1 == _oh1 ? (_ogy.tais += 5, _ogy.kaih += 4, _ogy.houm += 2, _ogx = !0, _ogz = 1) : 2 == _oh1 ? (_ogy.tais += 2, _ogy.kaih += 1, _ogy.houm += 1, _ogx = !0, _ogz = 2) : 3 == _oh1 && (_ogy.tais += 1, _ogx = !0, _ogz = 2), 0 == _ogx) return _ogw;
+            var _oh2 = _ogu.get_slotnums(488);
+            if (_ogw.add(_ogy.multiply(_oh2)), 0 == _ogz) return _ogw;
+            var _oh3 = _ogu.get_each_level_nums(488),
+                _oh4 = [];
+            return _oh3.forEach(function(_oh5, _oh6) {
+                var _oh7 = null;
+                for (var _oh8 = 1; _oh8 <= _ogu.SLOT_LEVEL_MAX; _oh8++) _oh6 >= _oh8 && (null == _oh4[_oh8] && (_oh4[_oh8] = 0), _oh4[_oh8] += _oh5);
+            }), 1 == _ogz ? (_oh4[3] >= 1 && (_ogw.kaih += 1 * _oh4[3]), _oh4[5] >= 1 && (_ogw.tais += 1 * _oh4[5]), _oh4[7] >= 1 && (_ogw.houm += 1 * _oh4[7]), _oh4[8] >= 1 && (_ogw.kaih += 1 * _oh4[8]), _oh4[9] >= 1 && (_ogw.tais += 1 * _oh4[9]), _oh4[10] >= 1 && (_ogw.tais += 1 * _oh4[10])) : 2 == _ogz && (_oh4[5] >= 1 && (_ogw.tais += 1 * _oh4[5]), _oh4[7] >= 1 && (_ogw.kaih += 1 * _oh4[7]), _oh4[9] >= 1 && (_ogw.houm += 1 * _oh4[9]), _oh4[10] >= 1 && (_ogw.tais += 1 * _oh4[10])), _ogw;
+        };
+    },
+    49679: (_oh9, _oha, _ohb) => {
+        'use strict';
+        var _ohc = null;
+        defineModule(_oha);
+        Object.defineProperty(_oha, '__esModule', {
+            'value': !0
+        }), _oha.getSlot489PersonalEffect = void 0;
+        var _ohd = _ohb(74496);
+        _oha.getSlot489PersonalEffect = function(_ohe) {
+            var _ohf = null,
+                _ohg = new _ohd.SlotItemEffectModel(),
+                _ohh = !1,
+                _ohi = new _ohd.SlotItemEffectModel();
+            if ('あきつまる' != _ohe.yomi && 'やましおまる' != _ohe.yomi && 'くまのまる' != _ohe.yomi || (_ohi.tyku = _ohi.tyku + 2, _ohi.kaih = _ohi.kaih + 1, _ohi.houg = _ohi.houg + 1, _ohi.tais = _ohi.tais + 1, _ohi.houm = _ohi.houm + 1, _ohh = !0), 717 != _ohe.ship_id && 948 != _ohe.ship_id || (_ohi.tyku = _ohi.tyku + 2, _ohi.kaih = _ohi.kaih + 2, _ohi.houg = _ohi.houg + 2, _ohi.tais = _ohi.tais + 1, _ohi.houm = _ohi.houm + 1, _ohh = !0), _ohh) {
+                var _ohj = _ohe.get_slotnums(489) + _ohe.get_slotnums(491);
+                _ohg.add(_ohi.multiply(_ohj));
+            }
+            var _ohk = _ohe.get_each_level_nums(489),
+                _ohl = _ohe.get_each_level_nums(491),
+                _ohm = 0,
+                _ohn = 0,
+                _oho = 0;
+            _ohk.forEach(function(_ohp, _ohq) {
+                _ohq >= 3 && (_ohm += _ohp), _ohq >= 6 && (_ohn += _ohp), _ohq >= 8 && (_oho += _ohp);
+            }), _ohl.forEach(function(_ohr, _ohs) {
+                _ohs >= 3 && (_ohm += _ohr), _ohs >= 6 && (_ohn += _ohr), _ohs >= 8 && (_oho += _ohr);
+            });
+            var _oht = _ohk[10] + _ohl[10];
+            return _ohm >= 1 && (_ohg.kaih = _ohg.kaih + 1 * _ohm), _ohn >= 1 && (_ohg.tais = _ohg.tais + 1 * _ohn), _oho >= 1 && (_ohg.houm = _ohg.houm + 1 * _oho), _oht >= 1 && (_ohg.houg = _ohg.houg + 1 * _oht), _ohg;
+        };
+    },
+    90312: function(_ohu, _ohv, _ohw) {
+        'use strict';
+        var _ohx = null;
+        var _ohy = this && this.__importDefault || function(_ohz) {
+            var _oi0 = null;
+            return _ohz && _ohz.__esModule ? _ohz : {
+                'default': _ohz
+            };
+        };
+        defineModule(_ohv);
+        Object.defineProperty(_ohv, '__esModule', {
+            'value': !0
+        }), _ohv.getSlot502PersonalEffect = void 0;
+        var _oi1 = _ohw(74496),
+            _oi2 = _ohy(_ohw(18622));
+        _ohv.getSlot502PersonalEffect = function(_oi3) {
+            var _oi4 = null,
+                _oi5 = new _oi1.SlotItemEffectModel(),
+                _oi6 = _oi3.get_slotnums(502),
+                _oi7 = {
+                    149: 2,
+                    591: 2,
+                    150: 1,
+                    592: 1,
+                    152: 1,
+                    151: 2,
+                    593: 5,
+                    954: 3
+                },
+                _oi8 = {
+                    149: 1,
+                    591: 1,
+                    592: 1,
+                    151: 2,
+                    593: 4,
+                    954: 3
+                },
+                _oi9 = {
+                    593: 1,
+                    954: 1,
+                    151: 2,
+                    591: 2,
+                    150: 3,
+                    592: 3,
+                    149: 3,
+                    152: 3
+                },
+                _oia = {
+                    593: 1,
+                    151: 2,
+                    149: 2,
+                    591: 2,
+                    954: 2
+                },
+                _oib = {
+                    151: 1,
+                    593: 1,
+                    954: 1
+                };
+            if (_oi7[_oi3.ship_id]) {
+                var _oic = _oi7[_oi3.ship_id];
+                _oi5.houg += _oi6 * _oic;
+            }
+            if (_oi8[_oi3.ship_id]) {
+                var _oid = _oi8[_oi3.ship_id];
+                _oi5.tyku += _oi6 * _oid;
+            }
+            if (_oi9[_oi3.ship_id]) {
+                var _oie = _oi9[_oi3.ship_id],
+                    _oif = _oi3.get_each_level_nums(502),
+                    _oig = [];
+                _oif.forEach(function(_oih, _oii) {
+                    var _oij = null;
+                    for (var _oik = 1; _oik <= _oi3.SLOT_LEVEL_MAX; _oik++) _oii >= _oik && (null == _oig[_oik] && (_oig[_oik] = 0), _oig[_oik] += _oih);
+                }), 1 == _oie ? (_oi5.kaih += 3 * _oi6, _oig[1] > 0 && (_oi5.kaih += 1 * _oig[1]), _oig[3] > 0 && (_oi5.tyku += 1 * _oig[3]), _oig[5] > 0 && (_oi5.houg += 1 * _oig[5]), _oig[7] > 0 && (_oi5.kaih += 1 * _oig[7]), _oig[8] > 0 && (_oi5.tyku += 1 * _oig[8]), _oig[9] > 0 && (_oi5.houg += 1 * _oig[9]), _oig[10] > 0 && (_oi5.tyku += 1 * _oig[10])) : 2 == _oie ? (_oi5.kaih += 1 * _oi6, _oig[2] > 0 && 151 == _oi3.ship_id && (_oi5.kaih += 1 * _oig[2]), _oig[4] > 0 && (_oi5.tyku += 1 * _oig[4]), _oig[6] > 0 && (_oi5.houg += 1 * _oig[6]), _oig[8] > 0 && (_oi5.kaih += 1 * _oig[8]), _oig[10] > 0 && (_oi5.tyku += 1 * _oig[10])) : 3 == _oie && (_oig[5] > 0 && (_oi5.kaih += 1 * _oig[5]), _oig[8] > 0 && (_oi5.houg += 1 * _oig[8]), _oig[10] > 0 && (_oi5.tyku += 1 * _oig[10]));
+            }
+            if (_oia[_oi3.ship_id]) {
+                for (var _oil = 0, _oim = 0, _oin = _oi3.have_slot_ids(); _oim < _oin.length; _oim++) {
+                    var _oio = _oin[_oim],
+                        _oip = _oi2.default.model.slot.getMst(_oio),
+                        _oiq = _oip.equipType;
+                    12 != _oiq && 13 != _oiq || (_oip.sakuteki >= 5 && (_oil += _oi3.get_slotnums(parseInt(_oio))), _oip.taiku >= 2 && _oi3.get_slotnums(parseInt(_oio)));
+                }
+                0;
+                var _oir = _oia[_oi3.ship_id];
+                1 == _oir && _oil >= 1 ? (_oi5.houg += 3, _oi5.kaih += 4) : 2 == _oir && _oil >= 1 && (_oi5.houg += 2, _oi5.kaih += 2);
+            }
+            if (_oib[_oi3.ship_id]) {
+                var _ois = _oib[_oi3.ship_id],
+                    _oit = [],
+                    _oiu = [],
+                    _oiv = _oi3.have_slot_ids();
+                [410, 411].forEach(function(_oiw) {
+                    var _oix = null;
+                    _oiv.indexOf(_oiw.toString()) > -1 && (_oiu[_oiw] = _oi3.get_each_level_nums(_oiw), null == _oit[_oiw] && (_oit[_oiw] = []), _oiu[_oiw].forEach(function(_oiy, _oiz) {
+                        var _oj0 = null;
+                        for (var _oj1 = 1; _oj1 <= _oi3.SLOT_LEVEL_MAX; _oj1++) null == _oit[_oiw][_oj1] && (_oit[_oiw][_oj1] = 0), _oiz >= _oj1 && (_oit[_oiw][_oj1] += _oiy);
+                    }));
+                });
+                var _oj2 = _oiu[410],
+                    _oj3 = _oiu[411];
+                if (1 == _ois) {
+                    if (_oj2) {
+                        _oi5.tyku += 1;
+                        var _oj4 = _oit[410];
+                        _oj4[7] >= 1 && (_oi5.houg += 1), _oj4[10] >= 1 && (_oi5.kaih += 1);
+                    }
+                    if (_oj3) {
+                        _oi5.tyku += 2;
+                        var _oj5 = _oit[411];
+                        _oj5[2] >= 1 && (_oi5.houg += 1), _oj5[4] >= 1 && (_oi5.kaih += 1), _oj5[6] >= 1 && (_oi5.houm += 1), _oj5[8] >= 1 && (_oi5.tyku += 1), _oj5[10] >= 1 && (_oi5.houg += 1);
+                    }
+                }
+            }
+            return _oi5;
+        };
+    },
+    86856: function(_oj6, _oj7, _oj8) {
+        'use strict';
+        var _oj9 = null;
+        var _oja = this && this.__importDefault || function(_ojb) {
+            var _ojc = null;
+            return _ojb && _ojb.__esModule ? _ojb : {
+                'default': _ojb
+            };
+        };
+        defineModule(_oj7);
+        Object.defineProperty(_oj7, '__esModule', {
+            'value': !0
+        }), _oj7.getSlot503PersonalEffect = void 0;
+        var _ojd = _oj8(74496),
+            _oje = _oja(_oj8(18622));
+        _oj7.getSlot503PersonalEffect = function(_ojf) {
+            var _ojg = null,
+                _ojh = new _ojd.SlotItemEffectModel(),
+                _oji = _ojf.get_slotnums(503),
+                _ojj = {
+                    149: 2,
+                    150: 2,
+                    151: 2,
+                    152: 2,
+                    591: 3,
+                    592: 3,
+                    593: 4,
+                    954: 4
+                },
+                _ojk = {
+                    149: 1,
+                    591: 1,
+                    592: 1,
+                    151: 2,
+                    593: 4,
+                    954: 3
+                },
+                _ojl = {
+                    593: 1,
+                    954: 1,
+                    151: 2,
+                    591: 2,
+                    592: 2,
+                    149: 3,
+                    150: 3,
+                    152: 3
+                },
+                _ojm = {
+                    954: 1,
+                    151: 2,
+                    591: 2,
+                    592: 2,
+                    593: 2
+                },
+                _ojn = {
+                    591: 1,
+                    592: 1,
+                    593: 1,
+                    954: 1
+                },
+                _ojo = {
+                    591: 1,
+                    592: 2,
+                    593: 2,
+                    954: 3
+                };
+            if (_ojj[_ojf.ship_id]) {
+                var _ojp = _ojj[_ojf.ship_id];
+                _ojh.houg += _oji * _ojp;
+            }
+            if (_ojk[_ojf.ship_id]) {
+                var _ojq = _ojk[_ojf.ship_id];
+                _ojh.tyku += _oji * _ojq;
+            }
+            if (_ojl[_ojf.ship_id]) {
+                var _ojr = _ojl[_ojf.ship_id],
+                    _ojs = _ojf.get_each_level_nums(503),
+                    _ojt = [];
+                _ojs.forEach(function(_oju, _ojv) {
+                    var _ojw = null;
+                    for (var _ojx = 1; _ojx <= _ojf.SLOT_LEVEL_MAX; _ojx++) _ojv >= _ojx && (null == _ojt[_ojx] && (_ojt[_ojx] = 0), _ojt[_ojx] += _oju);
+                }), 1 == _ojr ? (_ojh.houm += 2 * _oji, _ojt[1] > 0 && (_ojh.houg += 1 * _ojt[1]), _ojt[2] > 0 && (_ojh.tyku += 1 * _ojt[2]), _ojt[4] > 0 && (_ojh.houm += 1 * _ojt[4]), _ojt[6] > 0 && (_ojh.houg += 1 * _ojt[6]), _ojt[8] > 0 && (_ojh.tyku += 1 * _ojt[8]), _ojt[10] > 0 && (_ojh.houm += 1 * _ojt[10])) : 2 == _ojr ? (_ojh.houm += 1 * _oji, _ojt[2] > 0 && (_ojh.houg += 1 * _ojt[2]), _ojt[4] > 0 && (_ojh.tyku += 1 * _ojt[4]), _ojt[6] > 0 && (_ojh.houm += 1 * _ojt[6]), _ojt[8] > 0 && (_ojh.houg += 1 * _ojt[8]), _ojt[10] > 0 && (_ojh.houm += 1 * _ojt[10])) : 3 == _ojr && (_ojt[4] > 0 && (_ojh.houm += 1 * _ojt[4]), _ojt[7] > 0 && (_ojh.houg += 1 * _ojt[7]), _ojt[10] > 0 && (_ojh.tyku += 1 * _ojt[10]));
+            }
+            var _ojy = 0;
+            _ojm[_ojf.ship_id] && (_ojy = _ojm[_ojf.ship_id]);
+            var _ojz = 0;
+            _ojo[_ojf.ship_id] && (_ojz = _ojo[_ojf.ship_id]);
+            var _ok0 = 0,
+                _ok1 = 0,
+                _ok2 = _ojf.have_slot_ids();
+            if (_ojy + _ojz > 0)
+                for (var _ok3 = 0, _ok4 = _ok2; _ok3 < _ok4.length; _ok3++) {
+                    var _ok5 = _ok4[_ok3],
+                        _ok6 = _oje.default.model.slot.getMst(_ok5),
+                        _ok7 = _ok6.equipType;
+                    12 != _ok7 && 13 != _ok7 || (_ok6.sakuteki >= 5 && (_ok0 += _ojf.get_slotnums(parseInt(_ok5))), _ok6.taiku >= 2 && _ojf.get_slotnums(parseInt(_ok5)), _ok6.meichu >= 8 && (_ok1 += _ojf.get_slotnums(parseInt(_ok5))));
+                }
+            1 == _ojy ? _ok0 >= 1 && (_ojh.houg += 3, _ojh.houm += 3, _ojh.kaih += 2) : 2 == _ojy && _ok0 >= 1 && (_ojh.houg += 2, _ojh.houm += 2, _ojh.kaih += 1);
+            var _ok8 = 0,
+                _ok9 = [],
+                _oka = [];
+            if (_ojn[_ojf.ship_id]) {
+                _ok8 = _ojn[_ojf.ship_id];
+                var _okb = _ojf.have_slot_ids();
+                [174].forEach(function(_okc) {
+                    var _okd = null;
+                    _okb.indexOf(_okc.toString()) > -1 && (_oka[_okc] = _ojf.get_each_level_nums(_okc), null == _ok9[_okc] && (_ok9[_okc] = []), _oka[_okc].forEach(function(_oke, _okf) {
+                        var _okg = null;
+                        for (var _okh = 1; _okh <= _ojf.SLOT_LEVEL_MAX; _okh++) null == _ok9[_okc][_okh] && (_ok9[_okc][_okh] = 0), _okf >= _okh && (_ok9[_okc][_okh] += _oke);
+                    }));
+                });
+            }
+            if (_ok8 > 0) {
+                var _oki = _oka[174];
+                if (1 == _ok8 && _oki) {
+                    var _okj = _ok9[174];
+                    _ojh.raig += 4, _okj[6] >= 1 && (_ojh.raig += 1), _okj[8] >= 1 && (_ojh.houm += 1), _okj[10] >= 1 && (_ojh.houg += 1);
+                }
+            }
+            return _ok1 > 0 && (_ojz >= 1 && _ojz <= 3 && (_ojh.houg += 2, _ojh.houm += 2, _ojh.kaih += 2), 1 == _ojz ? _ojh.houg += 1 : 3 == _ojz && (_ojh.houg += 2)), _ojh;
+        };
+    },
+    78123: function(_okk, _okl, _okm) {
+        'use strict';
+        var _okn = null;
+        var _oko = this && this.__importDefault || function(_okp) {
+            var _okq = null;
+            return _okp && _okp.__esModule ? _okp : {
+                'default': _okp
+            };
+        };
+        defineModule(_okl);
+        Object.defineProperty(_okl, '__esModule', {
+            'value': !0
+        }), _okl.getSlot505PersonalEffect = void 0;
+        var _okr = _okm(74496),
+            _oks = _oko(_okm(18622));
+        _okl.getSlot505PersonalEffect = function(_okt) {
+            var _oku = null,
+                _okv = new _okr.SlotItemEffectModel(),
+                _okw = !1,
+                _okx = new _okr.SlotItemEffectModel();
+            if (2 == _okt.stype ? (_okx.houg += 1, _okx.tyku += 2, _okx.kaih += 2, _okw = !0) : 1 == _okt.stype ? (_okx.houg += 1, _okx.tyku += 1, _okx.kaih += 1, _okw = !0) : 3 == _okt.stype || 21 == _okt.stype || 4 == _okt.stype ? (_okx.tyku += 1, _okx.kaih += 2, _okw = !0) : 5 != _okt.stype && 6 != _okt.stype && 16 != _okt.stype || (_okx.tyku += 1, _okx.kaih += 1, _okw = !0), _okw) {
+                var _oky = _okt.get_slotnums(505);
+                _okv.add(_okx.multiply(_oky));
+            }
+            var _okz = {
+                    961: 1,
+                    145: 2,
+                    497: 2,
+                    656: 2,
+                    668: 2,
+                    951: 2,
+                    498: 3,
+                    144: 3,
+                    242: 3,
+                    243: 3,
+                    228: 3,
+                    651: 3,
+                    244: 4,
+                    245: 4,
+                    323: 4,
+                    557: 5,
+                    558: 5,
+                    578: 5,
+                    419: 5,
+                    464: 5,
+                    470: 5,
+                    407: 5,
+                    235: 5,
+                    147: 5,
+                    955: 5,
+                    960: 5
+                },
+                _ol0 = {
+                    961: 1,
+                    145: 2,
+                    497: 2,
+                    656: 2,
+                    419: 2,
+                    951: 2
+                },
+                _ol1 = {
+                    961: 1,
+                    656: 1,
+                    951: 1
+                };
+            1 == _okz[_okt.ship_id] ? (_okv.houg += 2, _okv.tyku += 3, _okv.kaih += 4) : 2 == _okz[_okt.ship_id] ? (_okv.houg += 1, _okv.tyku += 2, _okv.kaih += 3) : 3 == _okz[_okt.ship_id] ? (_okv.tyku += 2, _okv.kaih += 2) : 4 == _okz[_okt.ship_id] ? (_okv.tyku += 1, _okv.kaih += 2) : 5 == _okz[_okt.ship_id] && (_okv.houg += 1, _okv.tyku += 1, _okv.kaih += 1);
+            var _ol2 = 0;
+            if (_ol0[_okt.ship_id] && _ol2++, _ol1[_okt.ship_id] && _ol2++, 0 == _ol2) return _okv;
+            for (var _ol3 = 0, _ol4 = 0, _ol5 = 0, _ol6 = _okt.have_slot_ids(); _ol5 < _ol6.length; _ol5++) {
+                var _ol7 = _ol6[_ol5],
+                    _ol8 = _oks.default.model.slot.getMst(_ol7),
+                    _ol9 = _ol8.equipType;
+                12 != _ol9 && 13 != _ol9 || (_ol8.sakuteki >= 5 && (_ol3 += _okt.get_slotnums(parseInt(_ol7))), _ol8.taiku >= 2 && (_ol4 += _okt.get_slotnums(parseInt(_ol7))));
+            }
+            var _ola = _ol0[_okt.ship_id];
+            _ol4 > 0 && _ola > 0 && (1 == _ola ? (_okv.houg += 1, _okv.tyku += 2, _okv.kaih += 3) : 2 == _ola && (_okv.tyku += 2, _okv.kaih += 2));
+            var _olb = _ol1[_okt.ship_id];
+            return _ol3 > 0 && _olb > 0 && 1 == _olb && (_okv.houg += 1, _okv.kaih += 1), _okv;
+        };
+    },
+    25765: (_olc, _old, _ole) => {
+        'use strict';
+        var _olf = null;
+        defineModule(_old);
+        Object.defineProperty(_old, '__esModule', {
+            'value': !0
+        }), _old.getSlot506PersonalEffect = void 0;
+        var _olg = _ole(74496);
+        _old.getSlot506PersonalEffect = function(_olh) {
+            var _oli = null,
+                _olj = new _olg.SlotItemEffectModel();
+            return 961 == _olh.ship_id ? (_olj.houg += 2, _olj.houm += 3, _olj.tyku += 2, _olj.kaih += 4) : 145 == _olh.ship_id || 497 == _olh.ship_id || 656 == _olh.ship_id || 557 == _olh.ship_id || 558 == _olh.ship_id || 951 == _olh.ship_id ? (_olj.houg += 1, _olj.houm += 2, _olj.tyku += 1, _olj.kaih += 3) : 578 != _olh.ship_id && 419 != _olh.ship_id && 464 != _olh.ship_id && 470 != _olh.ship_id && 407 != _olh.ship_id && 235 != _olh.ship_id && 147 != _olh.ship_id && 538 != _olh.ship_id && 537 != _olh.ship_id && 955 != _olh.ship_id && 960 != _olh.ship_id || (_olj.houg += 1, _olj.houm += 1, _olj.tyku += 1, _olj.kaih += 2), _olj;
+        };
+    },
+    88271: function(_olk, _oll, _olm) {
+        'use strict';
+        var _oln = null;
+        var _olo = this && this.__importDefault || function(_olp) {
+            var _olq = null;
+            return _olp && _olp.__esModule ? _olp : {
+                'default': _olp
+            };
+        };
+        defineModule(_oll);
+        Object.defineProperty(_oll, '__esModule', {
+            'value': !0
+        }), _oll.getSlot50PersonalEffect = void 0;
+        var _olr = _olm(74496),
+            _ols = _olo(_olm(18622));
+        _oll.getSlot50PersonalEffect = function(_olt) {
+            var _olu = null,
+                _olv = new _olr.SlotItemEffectModel(),
+                _olw = !1,
+                _olx = new _olr.SlotItemEffectModel();
+            7 != _olt.ctype && 13 != _olt.ctype && 8 != _olt.ctype && 29 != _olt.ctype && 9 != _olt.ctype && 31 != _olt.ctype || (_olx.houg += 1, _olw = !0), 8 != _olt.ctype && 29 != _olt.ctype && 9 != _olt.ctype && 31 != _olt.ctype || (_olx.houg += 1, _olx.kaih += 1, _olw = !0);
+            var _oly = _olt.get_slotnums(50);
+            9 != _olt.ctype && 31 != _olt.ctype || _oly >= 2 && (_olx.houg += 1, _olw = !0);
+            var _olz = 0;
+            if (501 != _olt.ship_id && 506 != _olt.ship_id && 502 != _olt.ship_id && 507 != _olt.ship_id || (_olx.houg += 1, _olw = !0, _olz = 1), 0 == _olw) return _olv;
+            _olv = _olx.multiply(_oly);
+            for (var _om0 = 0, _om1 = 0, _om2 = _olt.have_slot_ids(); _om1 < _om2.length; _om1++) {
+                var _om3 = _om2[_om1],
+                    _om4 = _ols.default.model.slot.getMst(_om3),
+                    _om5 = _om4.equipType;
+                12 != _om5 && 13 != _om5 || _om4.sakuteki >= 5 && (_om0 += _olt.get_slotnums(parseInt(_om3)));
+            }
+            if (_om0 > 0) {
+                if (7 == _olt.ctype || 13 == _olt.ctype) 0 == _olt.get_slotnums(90) && (_olv.houg += 1, _olv.kaih += 1, _olv.raig += 1);
+                else 8 != _olt.ctype && 29 != _olt.ctype && 9 != _olt.ctype && 31 != _olt.ctype || (_olv.houg += 3, _olv.kaih += 2, _olv.raig += 2);
+                501 != _olt.ship_id && 506 != _olt.ship_id || (_olv.houg += 1, _olv.kaih += 1);
+            }
+            var _om6 = _olt.get_slotnums(30),
+                _om7 = _olt.get_slotnums(410);
+            return 1 == _olz && (_om6 + _om7 > 0 && (_olv.houg += 1, _olv.tyku += 3, _olv.kaih += 2), _om7 > 0 && (_olv.houg += 2)), _olv;
+        };
+    },
+    28221: (_om8, _om9, _oma) => {
+        'use strict';
+        var _omb = null;
+        defineModule(_om9);
+        Object.defineProperty(_om9, '__esModule', {
+            'value': !0
+        }), _om9.getSlot510PersonalEffect = void 0;
+        var _omc = _oma(74496);
+        _om9.getSlot510PersonalEffect = function(_omd) {
+            var _ome = null,
+                _omf = new _omc.SlotItemEffectModel(),
+                _omg = !1,
+                _omh = new _omc.SlotItemEffectModel();
+            if ('イギリス' == _omd.getCountryName() && (_omh.houg += 2, _omh.tais += 3, _omh.kaih += 2, _omh.saku += 2, _omg = !0), 88 == _omd.ctype && (_omf.houg += 4, _omf.kaih += 2, _omh.saku += 3, _omh.houm += 2, _omg = !0), 0 == _omg) return _omf;
+            var _omi = _omd.get_slotnums(510);
+            return _omf.add(_omh.multiply(_omi)), _omf;
+        };
+    },
+    14830: (_omj, _omk, _oml) => {
+        'use strict';
+        var _omm = null;
+        defineModule(_omk);
+        Object.defineProperty(_omk, '__esModule', {
+            'value': !0
+        }), _omk.getSlot511PersonalEffect = void 0;
+        var _omn = _oml(74496);
+        _omk.getSlot511PersonalEffect = function(_omo) {
+            var _omp = null,
+                _omq = new _omn.SlotItemEffectModel();
+            return 122 == _omo.ctype ? (_omq.raig += 3, _omq.kaih += 4) : 114 == _omo.ctype && (_omq.raig += 1, _omq.kaih += 2), _omq;
+        };
+    },
+    54047: (_omr, _oms, _omt) => {
+        'use strict';
+        var _omu = null;
+        defineModule(_oms);
+        Object.defineProperty(_oms, '__esModule', {
+            'value': !0
+        }), _oms.getSlot517PersonalEffect = void 0;
+        var _omv = _omt(74496);
+        _oms.getSlot517PersonalEffect = function(_omw) {
+            var _omx = null,
+                _omy = new _omv.SlotItemEffectModel();
+            null == {
+                66: 0,
+                28: 0,
+                12: 0,
+                1: 0,
+                5: 0,
+                10: 0,
+                23: 0,
+                18: 0,
+                30: 0,
+                38: 0,
+                22: 0,
+                54: 0,
+                101: 0
+            }[_omw.ctype] && 74 != _omw.ctype && 77 != _omw.ctype && 85 != _omw.ctype && 117 != _omw.ctype && 104 != _omw.ctype || (_omy.houm += 1, _omy.kaih += 1, _omy.saku += 1), 38 == _omw.ctype && (_omy.houg += 1, _omy.houm += 1), 960 == _omw.ship_id ? (_omy.houg += 2, _omy.houm += 1, _omy.kaih += 3, _omy.saku += 2) : 955 != _omw.ship_id && 578 != _omw.ship_id && 961 != _omw.ship_id && 656 != _omw.ship_id && 464 != _omw.ship_id && 470 != _omw.ship_id && 419 != _omw.ship_id && 407 != _omw.ship_id && 235 != _omw.ship_id && 147 != _omw.ship_id || (_omy.houg += 1, _omy.houm += 1, _omy.kaih += 2, _omy.saku += 1);
+            for (var _omz = [], _on0 = function(_on1) {
+                    var _on2 = null,
+                        _on3 = _omw.get_each_level_nums(_on1);
+                    null == _omz[_on1] && (_omz[_on1] = []), _on3.forEach(function(_on4, _on5) {
+                        var _on6 = null;
+                        for (var _on7 = 1; _on7 <= _omw.SLOT_LEVEL_MAX; _on7++) null == _omz[_on1][_on7] && (_omz[_on1][_on7] = 0), _on5 >= _on7 && (_omz[_on1][_on7] += _on4);
+                    });
+                }, _on8 = 0, _on9 = [267, 366, 450, 517]; _on8 < _on9.length; _on8++) {
+                _on0(_on9[_on8]);
+            }
+            var _ona = _omz[517];
+            return _ona[7] > 0 && (_omy.houm += 1), _ona[8] > 0 && (_omy.kaih += 1), _ona[9] > 0 && (_omy.houg += 1), _ona[10] > 0 && (_omy.houm += 1), (_omz[267][3] > 0 || _omz[366][3] > 0) && (_omy.houg += 1, _omy.houm += 1, 38 == _omw.ctype && (_omy.houg += 1, _omy.houm += 1), _omz[450][4] > 0 && (_omy.houg += 1, _omy.houm += 1, _omy.tyku += 4, _omy.kaih += 3)), _omy;
+        };
+    },
+    76054: (_onb, _onc, _ond) => {
+        'use strict';
+        var _one = null;
+        defineModule(_onc);
+        Object.defineProperty(_onc, '__esModule', {
+            'value': !0
+        }), _onc.getSlot518PersonalEffect = void 0;
+        var _onf = _ond(74496);
+        _onc.getSlot518PersonalEffect = function(_ong) {
+            var _onh = null,
+                _oni = new _onf.SlotItemEffectModel(),
+                _onj = !1,
+                _onk = new _onf.SlotItemEffectModel();
+            if (34 != _ong.ctype && 56 != _ong.ctype || (_onk.houg += 1, _onk.tyku += 1, _onk.tais += 1, _onk.kaih += 1, _onj = !0), 16 == _ong.stype && (_onk.houg += 1, _onk.raig += 1, _onk.kaih += 1, _onj = !0), 622 != _ong.ship_id && 624 != _ong.ship_id && 623 != _ong.ship_id || (_onk.houg += 1, _onj = !0), 622 != _ong.ship_id && 624 != _ong.ship_id || (_onk.tyku += 1, _onj = !0), 624 == _ong.ship_id && (_onk.tais += 2, _onj = !0), 0 == _onj) return _oni;
+            var _onl = _ong.get_slotnums(518);
+            return _oni.add(_onk.multiply(_onl)), _oni;
+        };
+    },
+    93053: (_onm, _onn, _ono) => {
+        'use strict';
+        var _onp = null;
+        defineModule(_onn);
+        Object.defineProperty(_onn, '__esModule', {
+            'value': !0
+        }), _onn.getSlot519PersonalEffect = void 0;
+        var _onq = _ono(74496);
+        _onn.getSlot519PersonalEffect = function(_onr) {
+            var _ons = null,
+                _ont = new _onq.SlotItemEffectModel();
+            return 122 == _onr.ctype && (_ont.houm += 2, _ont.kaih += 2), 114 == _onr.ctype && (_ont.raig += 1, _ont.houm += 2, _ont.kaih += 2), _ont;
+        };
+    },
+    81254: (_onu, _onv, _onw) => {
+        'use strict';
+        var _onx = null;
+        defineModule(_onv);
+        Object.defineProperty(_onv, '__esModule', {
+            'value': !0
+        }), _onv.getSlot51cmSeriesGunPersonalEffect = void 0;
+        var _ony = _onw(74496);
+        _onv.getSlot51cmSeriesGunPersonalEffect = function(_onz) {
+            var _oo0 = null,
+                _oo1 = new _ony.SlotItemEffectModel(),
+                _oo2 = !1,
+                _oo3 = new _ony.SlotItemEffectModel(),
+                _oo4 = _onz.get_slotnums(142),
+                _oo5 = _onz.get_slotnums(460),
+                _oo6 = _oo4 + _oo5;
+            if (916 != _onz.ship_id && 911 != _onz.ship_id && 546 != _onz.ship_id || (_oo3.houg += 1, _oo3.houm += 1, _oo5 >= 1 && (_oo1.kaih += 1, _oo1.houm += 1), _oo2 = !0), 37 == _onz.ctype && _oo6 >= 1 && (_oo1.houg += 1, _oo1.houm += 2), 0 == _oo2) return _oo1;
+            var _oo7 = _onz.get_slotnums(128) + _onz.get_slotnums(281);
+            return _oo1.add(_oo3.multiply(_oo7)), _oo1;
+        };
+    },
+    88792: (_oo8, _oo9, _ooa) => {
+        'use strict';
+        var _oob = null;
+        defineModule(_oo9);
+        Object.defineProperty(_oo9, '__esModule', {
+            'value': !0
+        }), _oo9.getSlot520PersonalEffect = void 0;
+        var _ooc = _ooa(74496);
+        _oo9.getSlot520PersonalEffect = function(_ood) {
+            var _ooe = null,
+                _oof = new _ooc.SlotItemEffectModel(),
+                _oog = !1,
+                _ooh = new _ooc.SlotItemEffectModel(),
+                _ooi = 0,
+                _ooj = 0,
+                _ook = 0,
+                _ool = _ood.get_slotnums(520);
+            7 == _ood.ctype || 13 == _ood.ctype ? (_ooh.houg += 1, _oog = !0, _ooj = 1, _ook = 1) : 8 == _ood.ctype || 29 == _ood.ctype ? (_ooh.houg += 2, _ooh.kaih += 1, _oog = !0, _ooj = 2, _ook = 1) : 9 != _ood.ctype && 31 != _ood.ctype || (_ooh.houg += 3, _ooh.kaih += 1, _ooh.houm += 1, _oog = !0, _ooj = 2, _ook = 1, 2 == _ool && (_oof.houg += 2), _ool >= 3 && (_oof.houg += 4));
+            var _oom = _ood.get_have_rader_nums().water_rader,
+                _oon = 0,
+                _ooo = 0;
+            if (_ooj + _ook > 0) {
+                for (var _oop = _ood.getSpItemDict_FukuhouTaikuHeisou(), _ooq = _ood.getSpItemDict_Tansou21GouDentan(), _oor = 0, _oos = _ood.have_slot_ids(); _oor < _oos.length; _oor++) {
+                    var _oot = _oos[_oor],
+                        _oou = parseInt(_oot);
+                    null != _oop[_oou] ? (_oop[_oou] += _ood.get_slotnums(_oou), _oon += _ood.get_slotnums(_oou)) : null != _ooq[_oou] && (_ooq[_oou] += _ood.get_slotnums(_oou), _ooo += _ood.get_slotnums(_oou));
+                }
+                _oom > 0 && (1 == _ooj ? (_oof.houg += 2, _oof.raig += 2, _oof.kaih += 1, _oof.houm += 1) : 2 == _ooj && (_oof.houg += 3, _oof.raig += 2, _oof.kaih += 2, _oof.houm += 1)), _oon > 0 && 1 == _ook && (_oof.houg += 1, _oof.tyku += 4, _oof.kaih += 4, _oof.houm += 1);
+            }
+            if (269 == _ood.ship_id || 265 == _ood.ship_id || 319 == _ood.ship_id ? (2 == _ool && (_oof.houg += 2), _ool >= 3 && (_oof.houg += 4)) : 501 != _ood.ship_id && 506 != _ood.ship_id && 502 != _ood.ship_id && 507 != _ood.ship_id && 503 != _ood.ship_id && 504 != _ood.ship_id || (_ooh.houg += 1, _oog = !0, _oom >= 1 && (_oof.houg += 1, _oof.kaih += 1, _oof.houm += 2), _ooo >= 1 && (_oof.houg += 1, _oof.tyku += 3, _oof.kaih += 2, _oof.houm += 1), _ood.get_slotnums(410) > 0 && (_oof.houg += 2, _oof.tyku += 3, _oof.kaih += 2, _oof.houm += 1), _ooi = 1), 502 == _ood.ship_id || 269 == _ood.ship_id || 265 == _ood.ship_id || 319 == _ood.ship_id ? (_ooh.houg += 1, _ooh.houm += 1, _oog = !0) : 507 == _ood.ship_id && (_ooh.houg += 1, _ooh.houm += 2, _ooh.tyku += 1, _oog = !0), _oog && _oof.add(_ooh.multiply(_ool)), 0 == _ooi) return _oof;
+            var _oov = _ood.get_each_level_over_nums([520]),
+                _oow = _oov[520][7],
+                _oox = _oov[520][10];
+            return 1 == _ooi && (_oow > 0 && (_oof.houg += 1 * _oow), _oox > 0 && (_oof.houm += 1 * _oox)), _oof;
+        };
+    },
+    23035: (_ooy, _ooz, _op0) => {
+        'use strict';
+        var _op1 = null;
+        defineModule(_ooz);
+        Object.defineProperty(_ooz, '__esModule', {
+            'value': !0
+        }), _ooz.getSlot58PersonalEffect = void 0;
+        var _op2 = _op0(74496);
+        _ooz.getSlot58PersonalEffect = function(_op3) {
+            var _op4 = null,
+                _op5 = new _op2.SlotItemEffectModel(),
+                _op6 = new _op2.SlotItemEffectModel();
+            if ('しまかぜ' != _op3.yomi && 4 != _op3.stype && 54 != _op3.ctype || (_op6.raig = 1), !_op6.exists()) return _op5;
+            var _op7 = _op3.get_slotnums(58);
+            return _op5 = _op6.multiply(_op7);
+        };
+    },
+    47169: (_op8, _op9, _opa) => {
+        'use strict';
+        var _opb = null;
+        defineModule(_op9);
+        Object.defineProperty(_op9, '__esModule', {
+            'value': !0
+        }), _op9.getSlot59PersonalEffect = void 0;
+        var _opc = _opa(74496);
+        _op9.getSlot59PersonalEffect = function(_opd) {
+            var _ope = null,
+                _opf = new _opc.SlotItemEffectModel();
+            return 501 != _opd.ship_id && 506 != _opd.ship_id && 502 != _opd.ship_id && 507 != _opd.ship_id || (_opf.tyku += 1, _opf.kaih += 1), _opf;
+        };
+    },
+    87845: (_opg, _oph, _opi) => {
+        'use strict';
+        var _opj = null;
+        defineModule(_oph);
+        Object.defineProperty(_oph, '__esModule', {
+            'value': !0
+        }), _oph.getSlot5PersonalEffect = void 0;
+        var _opk = _opi(74496);
+        _oph.getSlot5PersonalEffect = function(_opl) {
+            var _opm = null,
+                _opn = new _opk.SlotItemEffectModel(),
+                _opo = !1,
+                _opp = new _opk.SlotItemEffectModel();
+            if (52 != _opl.ctype && 9 != _opl.ctype || (_opp.houg += 1, 52 == _opl.ctype && (_opp.houg = _opp.houg + 1), _opo = !0), 0 == _opo) return _opn;
+            var _opq = _opl.get_slotnums(5);
+            return _opn.add(_opp.multiply(_opq)), _opn;
+        };
+    },
+    92253: (_opr, _ops, _opt) => {
+        'use strict';
+        var _opu = null;
+        defineModule(_ops);
+        Object.defineProperty(_ops, '__esModule', {
+            'value': !0
+        }), _ops.getSlot60_154_219PersonalEffec = void 0;
+        var _opv = _opt(74496);
+        _ops.getSlot60_154_219PersonalEffec = function(_opw) {
+            var _opx = null,
+                _opy = new _opv.SlotItemEffectModel(),
+                _opz = !1,
+                _oq0 = new _opv.SlotItemEffectModel();
+            if ('じゅんよう' != _opw.yomi && 'ひよう' != _opw.yomi && 'ずいほう' != _opw.yomi && 'ちとせ' != _opw.yomi && 'ちよだ' != _opw.yomi || (_oq0.houg += 1, _oq0.tyku += 1, _oq0.kaih += 1, _opz = !0), 185 != _opw.ship_id && 318 != _opw.ship_id && 282 != _opw.ship_id || (_oq0.houg += 1, _oq0.tyku += 1, _oq0.kaih += 1, _opz = !0), 888 != _opw.ship_id && 883 != _opw.ship_id || (_oq0.houg += 2, _oq0.tyku += 1, _oq0.kaih += 2, _opz = !0), 0 == _opz) return _opy;
+            var _oq1 = _opw.get_slotnums(60) + _opw.get_slotnums(154) + _opw.get_slotnums(219);
+            return _opy.add(_oq0.multiply(_oq1)), _opy;
+        };
+    },
+    2578: (_oq2, _oq3, _oq4) => {
+        'use strict';
+        var _oq5 = null;
+        defineModule(_oq3);
+        Object.defineProperty(_oq3, '__esModule', {
+            'value': !0
+        }), _oq3.getSlot61PersonalEffect2 = _oq3.getSlot61PersonalEffect = void 0;
+        var _oq6 = _oq4(74496);
+        _oq3.getSlot61PersonalEffect = function(_oq7) {
+            var _oq8 = null,
+                _oq9 = new _oq6.SlotItemEffectModel();
+            if (553 == _oq7.ship_id) _oq9.houg = 3, _oq9.kaih = 2, _oq9.souk = 1, _oq9.houm = 5, _oq9.leng = 1;
+            else {
+                if (554 == _oq7.ship_id) _oq9.houg = 3, _oq9.kaih = 3, _oq9.souk = 3, _oq9.houm = 5, _oq9.leng = 1;
+                else {
+                    if (196 == _oq7.ship_id) _oq9.houm = 5, _oq9.leng = 1;
+                    else {
+                        if (197 != _oq7.ship_id) return _oq9;
+                        _oq9.houm = 5, _oq9.leng = 1;
+                    }
+                }
+            }
+            return _oq9;
+        }, _oq3.getSlot61PersonalEffect2 = function(_oqa) {
+            var _oqb = null,
+                _oqc = new _oq6.SlotItemEffectModel();
+            if (null == _oqa.have_slots_dict[61]) return _oqc;
+            for (var _oqd = 0, _oqe = 0, _oqf = _oqa.have_slots_dict[61]; _oqe < _oqf.length; _oqe++) {
+                var _oqg = _oqf[_oqe].level;
+                _oqd < _oqg && (_oqd = _oqg);
+            }
+            return 0 == _oqd || ('そうりゅう' == _oqa.yomi ? (_oqc.houg += 3, _oqc.saku += 3) : 'ひりゅう' == _oqa.yomi && (_oqc.houg += 2, _oqc.saku += 2), 508 != _oqa.ship_id && 509 != _oqa.ship_id && 560 != _oqa.ship_id || (_oqc.houg += 1, _oqc.saku += 1), _oqd >= 8 && 197 == _oqa.ship_id && (_oqc.houg += 1, _oqc.saku += 1)), _oqc;
+        };
+    },
+    17143: (_oqh, _oqi, _oqj) => {
+        'use strict';
+        var _oqk = null;
+        defineModule(_oqi);
+        Object.defineProperty(_oqi, '__esModule', {
+            'value': !0
+        }), _oqi.getSlot63PersonalEffect = void 0;
+        var _oql = _oqj(74496);
+        _oqi.getSlot63PersonalEffect = function(_oqm) {
+            var _oqn = null,
+                _oqo = new _oql.SlotItemEffectModel(),
+                _oqp = new _oql.SlotItemEffectModel();
+            1 != _oqm.ctype && 5 != _oqm.ctype && 10 != _oqm.ctype || (_oqp.tyku += 1), 'ゆうだち' == _oqm.yomi && (_oqp.houg += 1, _oqp.tyku += 1, _oqp.kaih += 2), 145 == _oqm.ship_id || 961 == _oqm.ship_id ? _oqp.houg += 1 : 144 == _oqm.ship_id ? _oqp.raig += 1 : 469 == _oqm.ship_id ? _oqp.kaih += 2 : 242 == _oqm.ship_id || 497 == _oqm.ship_id || 244 == _oqm.ship_id || 498 == _oqm.ship_id ? _oqp.kaih += 1 : 627 == _oqm.ship_id ? _oqp.houg += 1 : 903 != _oqm.ship_id && 908 != _oqm.ship_id || (_oqp.houg += 2);
+            var _oqq = !0;
+            if (_oqp.exists() || (_oqq = !1), 0 == _oqq) return _oqo;
+            var _oqr = _oqm.get_slotnums(63);
+            return _oqo = _oqp.multiply(_oqr);
+        };
+    },
+    16164: (_oqs, _oqt, _oqu) => {
+        'use strict';
+        var _oqv = null;
+        defineModule(_oqt);
+        Object.defineProperty(_oqt, '__esModule', {
+            'value': !0
+        }), _oqt.getSlot67PersonalEffect = void 0;
+        var _oqw = _oqu(74496);
+        _oqt.getSlot67PersonalEffect = function(_oqx) {
+            var _oqy = null,
+                _oqz = new _oqw.SlotItemEffectModel(),
+                _or0 = new _oqw.SlotItemEffectModel();
+            if (13 != _oqx.stype && 14 != _oqx.stype && (_or0.raig = -5), !_or0.exists()) return _oqz;
+            var _or1 = _oqx.get_slotnums(67);
+            return _oqz = _or0.multiply(_or1);
+        };
+    },
+    35023: (_or2, _or3, _or4) => {
+        'use strict';
+        var _or5 = null;
+        defineModule(_or3);
+        Object.defineProperty(_or3, '__esModule', {
+            'value': !0
+        }), _or3.getSlot69PersonalEffect = void 0;
+        var _or6 = _or4(74496);
+        _or3.getSlot69PersonalEffect = function(_or7) {
+            var _or8 = null,
+                _or9 = new _or6.SlotItemEffectModel(),
+                _ora = !1,
+                _orb = new _or6.SlotItemEffectModel();
+            if (554 == _or7.ship_id || 646 == _or7.ship_id ? (_orb.houg += 1, _orb.tais += 2, _ora = !0) : 553 == _or7.ship_id && (_orb.houg += 1, _orb.tais += 1, _ora = !0), 0 == _ora) return _or9;
+            var _orc = _or7.get_slotnums(69);
+            return _or9.add(_orb.multiply(_orc)), _or9;
+        };
+    },
+    78707: (_ord, _ore, _orf) => {
+        'use strict';
+        var _org = null;
+        defineModule(_ore);
+        Object.defineProperty(_ore, '__esModule', {
+            'value': !0
+        }), _ore.getSlot70PersonalEffect = void 0;
+        var _orh = _orf(74496);
+        _ore.getSlot70PersonalEffect = function(_ori) {
+            var _orj = null,
+                _ork = new _orh.SlotItemEffectModel(),
+                _orl = !1,
+                _orm = new _orh.SlotItemEffectModel();
+            if ('やましおまる' == _ori.yomi && (_orm.houg += 1, _orm.tais += 1, _orl = !0), 0 == _orl) return _ork;
+            var _orn = _ori.get_slotnums(70);
+            return _ork.add(_orm.multiply(_orn)), _ork;
+        };
+    },
+    44680: function(_oro, _orp, _orq) {
+        'use strict';
+        var _orr = null;
+        var _ors = this && this.__importDefault || function(_ort) {
+            var _oru = null;
+            return _ort && _ort.__esModule ? _ort : {
+                'default': _ort
+            };
+        };
+        defineModule(_orp);
+        Object.defineProperty(_orp, '__esModule', {
+            'value': !0
+        }), _orp.getSlot78PersonalEffect = void 0;
+        var _orv = _orq(74496),
+            _orw = _ors(_orq(18622));
+        _orp.getSlot78PersonalEffect = function(_orx) {
+            var _ory = null,
+                _orz = new _orv.SlotItemEffectModel(),
+                _os0 = !1,
+                _os1 = new _orv.SlotItemEffectModel(),
+                _os2 = 0,
+                _os3 = 0,
+                _os4 = !1;
+            if (48 == _orx.ctype && (_os1.houg += 1, _os1.kaih += 1, _os2 = 1, _os3 = 1, _os4 = !0, _os0 = !0), 0 == _os0) return _orz;
+            var _os5 = _orx.get_slotnums(78);
+            _orz.add(_os1.multiply(_os5));
+            var _os6 = 0,
+                _os7 = _orx.get_each_level_nums(78),
+                _os8 = 0;
+            if (_os4) {
+                _os7.map(function(_os9, _osa) {
+                    _osa >= 7 && (_os8 += _os9);
+                });
+                for (var _osb = 0, _osc = _orx.have_slot_ids(); _osb < _osc.length; _osb++) {
+                    var _osd = _osc[_osb],
+                        _ose = _orw.default.model.slot.getMst(_osd),
+                        _osf = _ose.equipType;
+                    12 != _osf && 13 != _osf || _ose.sakuteki >= 5 && (_os6 += _orx.get_slotnums(parseInt(_osd)));
+                }
+            }
+            if (1 == _os2 && _os6 > 0 && (_orz.houg += 2, _orz.kaih += 2, _orz.raig += 2), 1 == _os3) {
+                _orz.houg += 1 * _os8;
+                var _osg = _os7[10];
+                _orz.souk += 1 * _osg;
+            }
+            return _orz;
+        };
+    },
+    45749: (_osh, _osi, _osj) => {
+        'use strict';
+        var _osk = null;
+        defineModule(_osi);
+        Object.defineProperty(_osi, '__esModule', {
+            'value': !0
+        }), _osi.getSlot79And81PersonalEffect = void 0;
+        var _osl = _osj(74496);
+        _osi.getSlot79And81PersonalEffect = function(_osm) {
+            var _osn = null,
+                _oso = new _osl.SlotItemEffectModel(),
+                _osp = new _osl.SlotItemEffectModel();
+            if (553 == _osm.ship_id) _osp.houg = 3;
+            else {
+                if (82 == _osm.ship_id) _osp.houg = 2;
+                else {
+                    if (88 == _osm.ship_id) _osp.houg = 2;
+                    else {
+                        if (554 == _osm.ship_id) _osp.houg = 3;
+                        else {
+                            if (411 == _osm.ship_id) _osp.houg = 2;
+                            else {
+                                if (412 != _osm.ship_id) return _oso;
+                                _osp.houg = 2;
+                            }
+                        }
+                    }
+                }
+            }
+            var _osq = _osm.get_slotnums(79) + _osm.get_slotnums(81);
+            return _oso = _osp.multiply(_osq);
+        };
+    },
+    37334: (_osr, _oss, _ost) => {
+        'use strict';
+        var _osu = null;
+        defineModule(_oss);
+        Object.defineProperty(_oss, '__esModule', {
+            'value': !0
+        }), _oss.getSlot82PersonalEffect = void 0;
+        var _osv = _ost(74496);
+        _oss.getSlot82PersonalEffect = function(_osw) {
+            var _osx = null,
+                _osy = new _osv.SlotItemEffectModel(),
+                _osz = new _osv.SlotItemEffectModel();
+            if (76 == _osw.ctype && (_osz.tais = 1, _osz.kaih = 1), !_osz.exists()) return _osy;
+            var _ot0 = _osw.get_slotnums(82);
+            return _osy = _osz.multiply(_ot0);
+        };
+    },
+    2603: function(_ot1, _ot2, _ot3) {
+        'use strict';
+        var _ot4 = null;
+        var _ot5 = this && this.__importDefault || function(_ot6) {
+            var _ot7 = null;
+            return _ot6 && _ot6.__esModule ? _ot6 : {
+                'default': _ot6
+            };
+        };
+        defineModule(_ot2);
+        Object.defineProperty(_ot2, '__esModule', {
+            'value': !0
+        }), _ot2.getSlot84PersonalEffect = void 0;
+        var _ot8 = _ot3(74496),
+            _ot9 = _ot5(_ot3(18622));
+        _ot2.getSlot84PersonalEffect = function(_ota) {
+            var _otb = null,
+                _otc = new _ot8.SlotItemEffectModel(),
+                _otd = _ota.get_each_level_nums(84),
+                _ote = 0,
+                _otf = 0;
+            if (_otd.forEach(function(_otg, _oth) {
+                    _oth >= 4 && (_ote += _otg), _oth >= 7 && (_otf += _otg);
+                }), 0 == _ote) return _otc;
+            for (var _oti = 0, _otj = 0, _otk = _ota.have_slot_ids(); _otj < _otk.length; _otj++) {
+                var _otl = _otk[_otj],
+                    _otm = _ot9.default.model.slot.getMst(_otl),
+                    _otn = _otm.equipType;
+                12 != _otn && 13 != _otn || (_otm.sakuteki >= 5 && _ota.get_slotnums(parseInt(_otl)), _otm.taiku >= 2 && (_oti += _ota.get_slotnums(parseInt(_otl))));
+            }
+            var _oto = _ota.getCountryName();
+            _ote >= 1 && (_otc.tyku += 1 * _ote, _otc.kaih += 1 * _ote, 'ドイツ' != _oto && 'イタリア' != _oto || (_otc.tyku += 1 * _ote, _otc.kaih += 1 * _ote), _oti >= 1 && (_otc.tyku += 1)), _otf >= 1 && (_otc.tyku += 1 * _otf, _otc.houg += 1 * _otf);
+            var _otp = _otd[10];
+            return _otp >= 1 && (_otc.tyku += 1 * _otp, _otc.kaih += 1 * _otp, 'ドイツ' != _oto && 'イタリア' != _oto || (_otc.houg += 1)), _otc;
+        };
+    },
+    90725: (_otq, _otr, _ots) => {
+        'use strict';
+        var _ott = null;
+        defineModule(_otr);
+        Object.defineProperty(_otr, '__esModule', {
+            'value': !0
+        }), _otr.getSlot85PersonalEffect = void 0;
+        var _otu = _ots(74496);
+        _otr.getSlot85PersonalEffect = function(_otv) {
+            var _otw = null,
+                _otx = new _otu.SlotItemEffectModel(),
+                _oty = _otv.get_each_level_over_nums([85]),
+                _otz = _oty[85][6],
+                _ou0 = _oty[85][8],
+                _ou1 = _oty[85][10],
+                _ou2 = _otv.get_have_rader_nums().air_rader,
+                _ou3 = _otv.getCountryName();
+            return _otz > 0 && (_otx.tyku += 1 * _otz, _otx.kaih += 1 * _otz, _ou2 >= 1 && (_otx.tyku += 2)), _ou0 > 0 && (_otx.houg += 1 * _ou0, 'ドイツ' != _ou3 && 'イタリア' != _ou3 || (_otx.tyku += 1 * _ou0, _otx.kaih += 1 * _ou0)), _ou1 > 0 && (_otx.kaih += 1 * _ou1, _otx.houm += 1 * _ou1, 'ドイツ' != _ou3 && 'イタリア' != _ou3 || (_otx.houg += 1)), _otx;
+        };
+    },
+    29180: (_ou4, _ou5, _ou6) => {
+        'use strict';
+        var _ou7 = null;
+        defineModule(_ou5);
+        Object.defineProperty(_ou5, '__esModule', {
+            'value': !0
+        }), _ou5.getSlot87PersonalEffect = void 0;
+        var _ou8 = _ou6(74496);
+        _ou5.getSlot87PersonalEffect = function(_ou9) {
+            var _oua = null,
+                _oub = new _ou8.SlotItemEffectModel(),
+                _ouc = !1,
+                _oud = new _ou8.SlotItemEffectModel(),
+                _oue = 0;
+            if (951 == _ou9.ship_id ? (_oud.houg += 1, _oud.kaih += 1, _oud.raig += 1, _oud.houm += 1, _ouc = !0, _oue = 1) : 181 == _ou9.ship_id || 316 == _ou9.ship_id || 50 == _ou9.ship_id || 229 == _ou9.ship_id || 961 == _ou9.ship_id ? _oue = 2 : 591 != _ou9.ship_id && 592 != _ou9.ship_id && 593 != _ou9.ship_id && 954 != _ou9.ship_id || (_oub.kaih += 2, _oub.raig += 1, _oue = 3), 38 != _ou9.ctype && 54 != _ou9.ctype && 101 != _ou9.ctype || (_oue = 4), _ouc) {
+                var _ouf = _ou9.get_slotnums(87);
+                _oub.add(_oud.multiply(_ouf));
+            }
+            if (0 == _oue) return _oub;
+            var _oug = _ou9.get_each_level_nums(87),
+                _ouh = [];
+            return _oue > 0 && _oug.forEach(function(_oui, _ouj) {
+                var _ouk = null;
+                for (var _oul = 1; _oul <= _ou9.SLOT_LEVEL_MAX; _oul++) null == _ouh[_oul] && (_ouh[_oul] = 0), _ouj >= _oul && (_ouh[_oul] += _oui);
+            }), 1 == _oue ? (_ouh[6] >= 1 && (_oub.tyku += 1 * _ouh[6]), _ouh[7] >= 1 && (_oub.kaih += 1 * _ouh[7]), _ouh[8] >= 1 && (_oub.raig += 1 * _ouh[8]), _ouh[9] >= 1 && (_oub.houg += 1 * _ouh[9]), _ouh[10] >= 1 && (_oub.houm += 1 * _ouh[10])) : 2 == _oue ? (_ouh[6] >= 1 && (_oub.kaih += 1 * _ouh[6]), _ouh[7] >= 1 && (_oub.raig += 1 * _ouh[7]), _ouh[8] >= 1 && (_oub.houg += 1 * _ouh[8]), _ouh[9] >= 1 && (_oub.houm += 1 * _ouh[9]), _ouh[10] >= 1 && (_oub.kaih += 1 * _ouh[10])) : 3 == _oue ? (_ouh[6] > 0 && (_oub.kaih += 1), _ouh[8] > 0 && (_oub.raig += 1), _ouh[10] > 0 && (_oub.houg += 1)) : 4 == _oue && (_ouh[7] >= 1 && (_oub.kaih += 1 * _ouh[7]), _ouh[8] >= 1 && (_oub.raig += 1 * _ouh[8]), _ouh[10] >= 1 && (_oub.houm += 1 * _ouh[10])), _oub;
+        };
+    },
+    68685: function(_oum, _oun, _ouo) {
+        'use strict';
+        var _oup = null;
+        var _ouq = this && this.__importDefault || function(_our) {
+            var _ous = null;
+            return _our && _our.__esModule ? _our : {
+                'default': _our
+            };
+        };
+        defineModule(_oun);
+        Object.defineProperty(_oun, '__esModule', {
+            'value': !0
+        }), _oun.getSlot90PersonalEffect = void 0;
+        var _out = _ouo(74496),
+            _ouu = _ouq(_ouo(18622));
+        _oun.getSlot90PersonalEffect = function(_ouv) {
+            var _ouw = null,
+                _oux = new _out.SlotItemEffectModel(),
+                _ouy = new _out.SlotItemEffectModel();
+            if (142 == _ouv.ship_id ? (_ouy.houg += 2, _ouy.kaih += 1) : 295 == _ouv.ship_id || 416 == _ouv.ship_id || 417 == _ouv.ship_id ? _ouy.houg += 1 : 264 == _ouv.ship_id ? (_ouy.houg += 1, _ouy.tyku += 1) : 501 != _ouv.ship_id && 506 != _ouv.ship_id && 502 != _ouv.ship_id && 507 != _ouv.ship_id || (_ouy.houg += 1), 7 != _ouv.ctype && 13 != _ouv.ctype && 8 != _ouv.ctype && 29 != _ouv.ctype && 9 != _ouv.ctype && 31 != _ouv.ctype || (_ouy.houg += 1), _ouy.exists()) {
+                var _ouz = _ouv.get_slotnums(90);
+                _oux = _ouy.multiply(_ouz);
+            }
+            var _ov0 = [];
+            if ('あおば' == _ouv.yomi && (_ov0[1] = 1), 13 != _ouv.ctype && 7 != _ouv.ctype || (_ov0[2] = 1), 0 == _ov0.length) return _oux;
+            for (var _ov1 = 0, _ov2 = 0, _ov3 = 0, _ov4 = _ouv.have_slot_ids(); _ov3 < _ov4.length; _ov3++) {
+                var _ov5 = _ov4[_ov3],
+                    _ov6 = _ouu.default.model.slot.getMst(_ov5),
+                    _ov7 = _ov6.equipType;
+                12 != _ov7 && 13 != _ov7 || (_ov6.sakuteki >= 5 && (_ov1 += _ouv.get_slotnums(parseInt(_ov5))), _ov6.taiku >= 2 && (_ov2 += _ouv.get_slotnums(parseInt(_ov5))));
+            }
+            return _ov2 > 0 && null != _ov0[1] && (_oux.tyku += 5, _oux.kaih += 2), _ov1 > 0 && null != _ov0[2] && (_oux.houg += 3, _oux.kaih += 2, _oux.raig += 2), _oux;
+        };
+    },
+    26078: (_ov8, _ov9, _ova) => {
+        'use strict';
+        var _ovb = null;
+        defineModule(_ov9);
+        Object.defineProperty(_ov9, '__esModule', {
+            'value': !0
+        }), _ov9.getSlot93PersonalEffect = void 0;
+        var _ovc = _ova(74496);
+        _ov9.getSlot93PersonalEffect = function(_ovd) {
+            var _ove = null,
+                _ovf = new _ovc.SlotItemEffectModel();
+            return 'そうりゅう' == _ovd.yomi ? _ovf.houg = 1 : 'ひりゅう' == _ovd.yomi && (_ovf.houg = 3), _ovf;
+        };
+    },
+    20829: (_ovg, _ovh, _ovi) => {
+        'use strict';
+        var _ovj = null;
+        defineModule(_ovh);
+        Object.defineProperty(_ovh, '__esModule', {
+            'value': !0
+        }), _ovh.getSlot94PersonalEffect = void 0;
+        var _ovk = _ovi(74496);
+        _ovh.getSlot94PersonalEffect = function(_ovl) {
+            var _ovm = null,
+                _ovn = new _ovk.SlotItemEffectModel();
+            if (196 == _ovl.ship_id) _ovn.houg = 7;
+            else {
+                if (197 != _ovl.ship_id) return _ovn;
+                _ovn.houg = 3;
+            }
+            return _ovn;
+        };
+    },
+    6880: (_ovo, _ovp, _ovq) => {
+        'use strict';
+        var _ovr = null;
+        defineModule(_ovp);
+        Object.defineProperty(_ovp, '__esModule', {
+            'value': !0
+        }), _ovp.getSlot99PersonalEffect = void 0;
+        var _ovs = _ovq(74496);
+        _ovp.getSlot99PersonalEffect = function(_ovt) {
+            var _ovu = null,
+                _ovv = new _ovs.SlotItemEffectModel();
+            return 'そうりゅう' == _ovt.yomi ? _ovv.houg = 4 : 'ひりゅう' == _ovt.yomi && (_ovv.houg = 1), _ovv;
+        };
+    },
+    21403: (_ovw, _ovx, _ovy) => {
+        'use strict';
+        var _ovz = null;
+        defineModule(_ovx);
+        Object.defineProperty(_ovx, '__esModule', {
+            'value': !0
+        }), _ovx.getSlotCorsairMkIIPersonalEffect = void 0;
+        var _ow0 = _ovy(74496);
+        _ovx.getSlotCorsairMkIIPersonalEffect = function(_ow1) {
+            var _ow2 = null,
+                _ow3 = new _ow0.SlotItemEffectModel(),
+                _ow4 = !1,
+                _ow5 = new _ow0.SlotItemEffectModel();
+            112 == _ow1.ctype && (_ow5.houg += 1, _ow5.tyku += 1, _ow5.kaih += 2, _ow4 = !0);
+            var _ow6 = _ow1.getCountryName();
+            if (67 == _ow1.ctype || 78 == _ow1.ctype || 82 == _ow1.ctype || 88 == _ow1.ctype || 108 == _ow1.ctype || 112 == _ow1.ctype ? (_ow5.houg += 1, _ow5.tyku += 2, _ow5.kaih += 3, _ow4 = !0) : 'アメリカ' == _ow6 && (_ow5.houg += 1, _ow5.tyku += 1, _ow5.kaih += 2, _ow4 = !0), 0 == _ow4) return _ow3;
+            var _ow7 = _ow1.get_slotnums(434) + _ow1.get_slotnums(435);
+            return _ow3.add(_ow5.multiply(_ow7)), _ow3;
+        };
+    },
+    9195: (_ow8, _ow9, _owa) => {
+        'use strict';
+        var _owb = null;
+        defineModule(_ow9);
+        Object.defineProperty(_ow9, '__esModule', {
+            'value': !0
+        }), _ow9.getSlotDomesticAntiSubmarineToushakiPersonalEffect = void 0;
+        var _owc = _owa(74496);
+        _ow9.getSlotDomesticAntiSubmarineToushakiPersonalEffect = function(_owd) {
+            var _owe = null,
+                _owf = new _owc.SlotItemEffectModel(),
+                _owg = !1,
+                _owh = new _owc.SlotItemEffectModel();
+            if (56 == _owd.ctype && (_owh.tais += 3, _owh.kaih += 2, _owg = !0), 0 == _owg) return _owf;
+            var _owi = _owd.get_slotnums(44) + _owd.get_slotnums(45) + _owd.get_slotnums(287) + _owd.get_slotnums(288);
+            return _owf.add(_owh.multiply(_owi)), _owf;
+        };
+    },
+    93297: (_owj, _owk, _owl) => {
+        'use strict';
+        var _owm = null;
+        defineModule(_owk);
+        Object.defineProperty(_owk, '__esModule', {
+            'value': !0
+        }), _owk.getSlotDomesticSonarPersonalEffect = void 0;
+        var _own = _owl(74496);
+        _owk.getSlotDomesticSonarPersonalEffect = function(_owo) {
+            var _owp = null,
+                _owq = new _own.SlotItemEffectModel();
+            return 56 == _owo.ctype && (_owq.tais += 2, _owq.kaih += 3), _owq;
+        };
+    },
+    45482: (_owr, _ows, _owt) => {
+        'use strict';
+        var _owu = null;
+        defineModule(_ows);
+        Object.defineProperty(_ows, '__esModule', {
+            'value': !0
+        }), _ows.getSlotOtherSuiseiPersonalEffect = void 0;
+        var _owv = _owt(74496);
+        _ows.getSlotOtherSuiseiPersonalEffect = function(_oww) {
+            var _owx = null,
+                _owy = new _owv.SlotItemEffectModel(),
+                _owz = new _owv.SlotItemEffectModel();
+            if (553 == _oww.ship_id) _owz.houg = 2;
+            else {
+                if (554 != _oww.ship_id) return _owy;
+                _owz.houg = 2;
+            }
+            var _ox0 = _oww.get_slotnums(24) + _oww.get_slotnums(57) + _oww.get_slotnums(111);
+            return _owy = _owz.multiply(_ox0);
+        };
+    },
+    45927: (_ox1, _ox2, _ox3) => {
+        'use strict';
+        var _ox4 = null;
+        defineModule(_ox2);
+        Object.defineProperty(_ox2, '__esModule', {
+            'value': !0
+        }), _ox2.getSlotSmokePersonalEffect = void 0;
+        var _ox5 = _ox3(74496);
+        _ox2.getSlotSmokePersonalEffect = function(_ox6) {
+            var _ox7 = null,
+                _ox8 = new _ox5.SlotItemEffectModel(),
+                _ox9 = !1,
+                _oxa = new _ox5.SlotItemEffectModel();
+            if (959 == _ox6.ship_id && (_oxa.kaih += 4, _ox9 = !0), 'ジョンストン' == _ox6.yomi || 'サミュエル・B・ロバーツ' == _ox6.yomi || 'せんだい' == _ox6.yomi || 'はるかぜ' == _ox6.yomi || 'かみかぜ' == _ox6.yomi || 'しきなみ' == _ox6.yomi || 'うらなみ' == _ox6.yomi || 'あおば' == _ox6.yomi ? (_oxa.kaih += 3, _ox9 = !0) : 'いなづま' != _ox6.yomi && 'はぐろ' != _ox6.yomi && 'はつしも' != _ox6.yomi && 'かすみ' != _ox6.yomi && 'ふぶき' != _ox6.yomi && 'あたご' != _ox6.yomi && 'あまぎり' != _ox6.yomi && 'はまなみ' != _ox6.yomi || (_oxa.kaih += 2, _ox9 = !0), 0 == _ox9) return _ox8;
+            var _oxb = _ox6.get_slotnums(500) + _ox6.get_slotnums(501);
+            return _ox8.add(_oxa.multiply(_oxb)), _ox8;
+        };
+    },
+    29805: (_oxc, _oxd, _oxe) => {
+        'use strict';
+        var _oxf = null;
+        defineModule(_oxd);
+        Object.defineProperty(_oxd, '__esModule', {
+            'value': !0
+        }), _oxd.getSlotType10PersonalEffect = void 0;
+        var _oxg = _oxe(74496);
+        _oxd.getSlotType10PersonalEffect = function(_oxh) {
+            var _oxi = null,
+                _oxj = new _oxg.SlotItemEffectModel();
+            return 662 == _oxh.ship_id || 663 == _oxh.ship_id || 668 == _oxh.ship_id ? (_oxj.houg += 2, _oxj.kaih += 1, _oxj.tais += 3) : 501 != _oxh.ship_id && 506 != _oxh.ship_id && 502 != _oxh.ship_id && 507 != _oxh.ship_id || (_oxj.houg += 2), _oxj;
+        };
+    },
+    58913: (_oxk, _oxl, _oxm) => {
+        'use strict';
+        var _oxn = null;
+        defineModule(_oxl);
+        Object.defineProperty(_oxl, '__esModule', {
+            'value': !0
+        }), _oxl.getSlotType11PersonalEffect = void 0;
+        var _oxo = _oxm(74496);
+        _oxl.getSlotType11PersonalEffect = function(_oxp) {
+            var _oxq = null,
+                _oxr = new _oxo.SlotItemEffectModel();
+            return 662 == _oxp.ship_id || 663 == _oxp.ship_id || 668 == _oxp.ship_id ? (_oxr.houg += 1, _oxr.kaih += 1, _oxr.tais += 1) : 501 != _oxp.ship_id && 506 != _oxp.ship_id && 502 != _oxp.ship_id && 507 != _oxp.ship_id || (_oxr.houg += 1, _oxr.kaih += 1), _oxr;
+        };
+    },
+    55421: (_oxs, _oxt, _oxu) => {
+        'use strict';
+        var _oxv = null;
+        defineModule(_oxt);
+        Object.defineProperty(_oxt, '__esModule', {
+            'value': !0
+        }), _oxt.getSlotType25PersonalEffect = void 0;
+        var _oxw = _oxu(74496);
+        _oxt.getSlotType25PersonalEffect = function(_oxx) {
+            var _oxy = null,
+                _oxz = new _oxw.SlotItemEffectModel();
+            return 662 == _oxx.ship_id ? (_oxz.tais += 4, _oxz.kaih += 1) : 663 != _oxx.ship_id && 668 != _oxx.ship_id || (_oxz.tais += 3, _oxz.kaih += 1), _oxz;
+        };
+    },
+    272: function(_oy0, _oy1, _oy2) {
+        'use strict';
+        var _oy3 = null;
+        var _oy4 = this && this.__importDefault || function(_oy5) {
+            var _oy6 = null;
+            return _oy5 && _oy5.__esModule ? _oy5 : {
+                'default': _oy5
+            };
+        };
+        defineModule(_oy1);
+        Object.defineProperty(_oy1, '__esModule', {
+            'value': !0
+        }), _oy1.getSlotType9PersonalEffect = void 0;
+        var _oy7 = _oy2(74496),
+            _oy8 = _oy4(_oy2(18622));
+        _oy1.getSlotType9PersonalEffect = function(_oy9) {
+            var _oya = null,
+                _oyb = new _oy7.SlotItemEffectModel();
+            if (null == {
+                    11: 1,
+                    18: 1,
+                    7: 1,
+                    10: 1
+                }[_oy9.stype]) return _oyb;
+            for (var _oyc = 0, _oyd = 0, _oye = _oy9.have_slot_ids(); _oyd < _oye.length; _oyd++) {
+                var _oyf = _oye[_oyd];
+                if (9 == _oy8.default.model.slot.getMst(_oyf).equipType)
+                    for (var _oyg = 0, _oyh = _oy9.have_slots_dict[parseInt(_oyf)]; _oyg < _oyh.length; _oyg++) {
+                        var _oyi = _oyh[_oyg].level;
+                        _oyc < _oyi && (_oyc = _oyi);
+                    }
+            }
+            return _oyc >= 2 && (_oyb.saku += 1), _oyc >= 4 && (_oyb.houg += 1), _oyc >= 6 && (_oyb.saku += 1), _oyc >= 10 && (_oyb.houg += 1, _oyb.saku += 1), _oyb;
+        };
+    },
+    54518: (_oyj, _oyk, _oyl) => {
+        'use strict';
+        var _oym = null;
+        defineModule(_oyk);
+        Object.defineProperty(_oyk, '__esModule', {
+            'value': !0
+        }), _oyk.getSlot_16InchMkXRensouhou_PersonalEffect = void 0;
+        var _oyn = _oyl(74496);
+        _oyk.getSlot_16InchMkXRensouhou_PersonalEffect = function(_oyo) {
+            var _oyp = null,
+                _oyq = new _oyn.SlotItemEffectModel();
+            if (93 == _oyo.ctype) {
+                var _oyr = _oyo.get_slotnums(330);
+                _oyr > 0 && (_oyq.houg = _oyq.houg + 1 * _oyr);
+                var _oys = _oyo.get_slotnums(331);
+                _oys > 0 && (_oyq.houg = _oyq.houg + 1 * _oys, 1496 != _oyo.ship_id && 918 != _oyo.ship_id || (_oyq.houg = _oyq.houg + 1 * _oys, _oyq.kaih = _oyq.kaih + 1 * _oys));
+                var _oyt = _oyo.get_slotnums(332);
+                return _oyt > 0 && (_oyq.houg = _oyq.houg + 1 * _oyt, 1496 != _oyo.ship_id && 918 != _oyo.ship_id || (_oyq.houg = _oyq.houg + 1 * _oyt, _oyq.kaih = _oyq.kaih + 1 * _oyt, _oyq.tyku = _oyq.tyku + 1 * _oyt)), _oyq;
+            }
+            var _oyu = new _oyn.SlotItemEffectModel();
+            if (19 == _oyo.ctype ? (_oyu.houg = 1, (541 == _oyo.ship_id || 573 == _oyo.ship_id) && (_oyu.houg += 1)) : 88 == _oyo.ctype && (_oyu.houg = 1, 576 == _oyo.ship_id && (_oyu.houg += 1)), !_oyu.exists()) return _oyq;
+            var _oyv = _oyo.get_slotnums(330) + _oyo.get_slotnums(331) + _oyo.get_slotnums(332);
+            return _oyq = _oyu.multiply(_oyv);
+        };
+    },
+    79353: (_oyw, _oyx, _oyy) => {
+        'use strict';
+        var _oyz = null;
+        defineModule(_oyx);
+        Object.defineProperty(_oyx, '__esModule', {
+            'value': !0
+        }), _oyx.getZuiunSeriesEffect = void 0;
+        var _oz0 = _oyy(74496);
+        _oyx.getZuiunSeriesEffect = function(_oz1) {
+            var _oz2 = null,
+                _oz3 = new _oz0.SlotItemEffectModel(),
+                _oz4 = !1,
+                _oz5 = new _oz0.SlotItemEffectModel();
+            if (662 == _oz1.ship_id ? (_oz3.houg += 2, _oz3.kaih += 1) : 663 == _oz1.ship_id || 668 == _oz1.ship_id || 501 == _oz1.ship_id || 506 == _oz1.ship_id ? (_oz3.houg += 2, _oz5.kaih += 1, _oz5.tyku += 1, _oz4 = !0) : 502 != _oz1.ship_id && 507 != _oz1.ship_id || (_oz3.houg += 1, _oz5.kaih += 1, _oz5.tyku += 1, _oz4 = !0), 0 == _oz4) return _oz3;
+            var _oz6 = 0;
+            return [26, 62, 79, 80, 81, 207, 208].forEach(function(_oz7) {
+                var _oz8 = null;
+                _oz6 += _oz1.get_slotnums(_oz7);
+            }), _oz3.add(_oz5.multiply(_oz6)), _oz3;
+        };
+    },
+    89051: function(_oz9, _oza, _ozb) {
+        'use strict';
+        var _ozc = null;
+        var _ozd = this && this.__createBinding || (Object.create ? function(_oze, _ozf, _ozg, _ozh) {
+                var _ozi = null;
+                void 0 === _ozh && (_ozh = _ozg);
+                var _ozj = Object.getOwnPropertyDescriptor(_ozf, _ozg);
+                _ozj && !('get' in _ozj ? !_ozf.__esModule : _ozj.writable || _ozj.configurable) || (_ozj = {
+                    'enumerable': !0,
+                    'get': function() {
+                        return _ozf[_ozg];
+                    }
+                }), Object.defineProperty(_oze, _ozh, _ozj);
+            } : function(_ozk, _ozl, _ozm, _ozn) {
+                void 0 === _ozn && (_ozn = _ozm), _ozk[_ozn] = _ozl[_ozm];
             }),
-            _nb6 = (this._removeSlots = _nb4).map(function(_nb7) {
-                return _nb7;
-            });
-        _nb6.push(_nb2), this._toSlots = _nb6;
-    }
-    _nan.TaskGetSlotItemEffectParams = _nar;
-},
-function(_nb8, _nb9, _nba) {
-    'use strict';
-    var _nbb = this && this.__importStar || function(_nbc) {
-        if (_nbc && _nbc.__esModule) return _nbc;
-        var _nbd = {};
-        if (null != _nbc)
-            for (var _nbe in _nbc) Object.hasOwnProperty.call(_nbc, _nbe) && (_nbd[_nbe] = _nbc[_nbe]);
-        return _nbd.default = _nbc, _nbd;
-    };
-    defineModule(_nb9);
-    Object.defineProperty(_nb9, '__esModule', {
-        'value': !0
-    });
-    var _nbf = _nba(948),
-        _nbg = _nbb(_nba(949)),
-        _nbh = _nba(3);
-    (_nb9.SlotItemEffectUtil || (_nb9.SlotItemEffectUtil = {})).getSlotitemEffect = function(_nbi, _nbj) {
-        if (null == _nbi || null == _nbj) return null;
-        for (var _nbk = new _nbf.SlotItemEffectParamModel(_nbi, _nbj), _nbl = [{
-                'isExecute': Boolean(_nbk.get_type3_nums(9)),
-                'execFunc': _nbg.getSlotType9PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_type3_nums(10)),
-                'execFunc': _nbg.getSlotType10PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_type3_nums(11)),
-                'execFunc': _nbg.getSlotType11PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_type3_nums(12)) || Boolean(_nbk.get_type3_nums(13)),
-                'execFunc': _nbg.getRaderPrivateEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_type3_nums(25)),
-                'execFunc': _nbg.getSlotType25PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_type3_nums(29)),
-                'execFunc': _nbg.getSearchLightEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_type3_nums(42)),
-                'execFunc': _nbg.getSearchLightLargeEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(3)) || Boolean(_nbk.get_slotnums(122)),
-                'execFunc': _nbg.getSlot3_122PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(5)),
-                'execFunc': _nbg.getSlot5PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(12)),
-                'execFunc': _nbg.getSlot12PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(15)),
-                'execFunc': _nbg.getSlot15PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(18)) || Boolean(_nbk.get_slotnums(52)),
-                'execFunc': _nbg.getSlot18_52_PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(19)),
-                'execFunc': _nbg.getSlot19PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(24)) || Boolean(_nbk.get_slotnums(57)) || Boolean(_nbk.get_slotnums(111)),
-                'execFunc': _nbg.getSlotOtherSuiseiPersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(26)) || Boolean(_nbk.get_slotnums(62)) || Boolean(_nbk.get_slotnums(79)) || Boolean(_nbk.get_slotnums(80)) || Boolean(_nbk.get_slotnums(81)) || Boolean(_nbk.get_slotnums(207)) || Boolean(_nbk.get_slotnums(208)),
-                'execFunc': _nbg.getZuiunSeriesEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(35)),
-                'execFunc': _nbg.getSlot35PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(39)) || Boolean(_nbk.get_slotnums(40)) || Boolean(_nbk.get_slotnums(49)) || Boolean(_nbk.get_slotnums(131)),
-                'execFunc': _nbg.get25mmMachinegunEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(30)) || Boolean(_nbk.get_slotnums(410)),
-                'execFunc': _nbg.getSlot30_410PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(44)) || Boolean(_nbk.get_slotnums(45)) || Boolean(_nbk.get_slotnums(287)) || Boolean(_nbk.get_slotnums(288)),
-                'execFunc': _nbg.getSlotDomesticAntiSubmarineToushakiPersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(46)) || Boolean(_nbk.get_slotnums(47)) || Boolean(_nbk.get_slotnums(149)) || Boolean(_nbk.get_slotnums(132)) || Boolean(_nbk.get_slotnums(438)),
-                'execFunc': _nbg.getSlotDomesticSonarPersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(47)) || Boolean(_nbk.get_slotnums(438)),
-                'execFunc': _nbg.getSlot47PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(50)),
-                'execFunc': _nbg.getSlot50PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(58)),
-                'execFunc': _nbg.getSlot58PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(59)),
-                'execFunc': _nbg.getSlot59PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(60)) || Boolean(_nbk.get_slotnums(154)) || Boolean(_nbk.get_slotnums(219)),
-                'execFunc': _nbg.getSlot60_154_219PersonalEffec
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(61)),
-                'execFunc': _nbg.getSlot61PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(61)),
-                'execFunc': _nbg.getSlot61PersonalEffect2
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(63)),
-                'execFunc': _nbg.getSlot63PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(66)) || Boolean(_nbk.get_slotnums(220)),
-                'execFunc': _nbg.get8cmAntiAircraftGunPersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(67)),
-                'execFunc': _nbg.getSlot67PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(69)),
-                'execFunc': _nbg.getSlot69PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(70)),
-                'execFunc': _nbg.getSlot70PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(78)),
-                'execFunc': _nbg.getSlot78PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(79)) || Boolean(_nbk.get_slotnums(81)),
-                'execFunc': _nbg.getSlot79And81PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(82)),
-                'execFunc': _nbg.getSlot82PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(84)),
-                'execFunc': _nbg.getSlot84PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(85)),
-                'execFunc': _nbg.getSlot85PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(87)),
-                'execFunc': _nbg.getSlot87PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(90)),
-                'execFunc': _nbg.getSlot90PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(93)),
-                'execFunc': _nbg.getSlot93PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(94)),
-                'execFunc': _nbg.getSlot94PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(99)),
-                'execFunc': _nbg.getSlot99PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(100)),
-                'execFunc': _nbg.getSlot100PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(104)),
-                'execFunc': _nbg.getSlot104PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(106)) || Boolean(_nbk.get_slotnums(450)),
-                'execFunc': _nbg.getSlot106PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(115)),
-                'execFunc': _nbg.getSlot115PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(118)),
-                'execFunc': _nbg.getSlot118PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(119)),
-                'execFunc': _nbg.getSlot119PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(121)),
-                'execFunc': _nbg.getSlot121PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(122)),
-                'execFunc': _nbg.getSlot122PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(128)) || Boolean(_nbk.get_slotnums(281)),
-                'execFunc': _nbg.getSlot51cmSeriesGunPersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(129)),
-                'execFunc': _nbg.getSlot129PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(132)),
-                'execFunc': _nbg.getSlot132PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(136)),
-                'execFunc': _nbg.getSlot136PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(139)),
-                'execFunc': _nbg.getSlot139PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(143)),
-                'execFunc': _nbg.getSlot143PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(144)),
-                'execFunc': _nbg.getSlot144PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(147)) || Boolean(_nbk.get_slotnums(393)) || Boolean(_nbk.get_slotnums(394)),
-                'execFunc': _nbg.getSlot120mm50GroupPersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(149)),
-                'execFunc': _nbg.getSlot149PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(165)) || Boolean(_nbk.get_slotnums(216)),
-                'execFunc': _nbg.getSlot165_216PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(171)),
-                'execFunc': _nbg.getSlot171PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(174)),
-                'execFunc': _nbg.getSlot174PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(179)),
-                'execFunc': _nbg.getSlot179PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(184)),
-                'execFunc': _nbg.getSlot184PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(188)),
-                'execFunc': _nbg.getSlot188PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(189)),
-                'execFunc': _nbg.getSlot189PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(194)),
-                'execFunc': _nbg.getSlot194PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(195)),
-                'execFunc': _nbg.getSlot195PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(204)),
-                'execFunc': _nbg.getSlot204PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(217)),
-                'execFunc': _nbg.getSlot217PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(220)),
-                'execFunc': _nbg.getSlot220PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(227)),
-                'execFunc': _nbg.getSlot227PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(228)),
-                'execFunc': _nbg.getSlot228PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(229)),
-                'execFunc': _nbg.getSlot229PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(234)),
-                'execFunc': _nbg.getSlot234PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(235)),
-                'execFunc': _nbg.getSlot235PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(237)) || Boolean(_nbk.get_slotnums(322)) || Boolean(_nbk.get_slotnums(323)) || Boolean(_nbk.get_slotnums(490)),
-                'execFunc': _nbg.getHighZuiunSeriesEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(237)),
-                'execFunc': _nbg.getSlot237PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(238)) || Boolean(_nbk.get_slotnums(239)),
-                'execFunc': _nbg.getSlot238_239PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(242)),
-                'execFunc': _nbg.getSlot242PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(243)),
-                'execFunc': _nbg.getSlot243PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(244)),
-                'execFunc': _nbg.getSlot244PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(245)) || Boolean(_nbk.get_slotnums(246)) || Boolean(_nbk.get_slotnums(468)),
-                'execFunc': _nbg.getSlot38cmFourBarrelGunPersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(247)),
-                'execFunc': _nbg.getSlot247PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(266)),
-                'execFunc': _nbg.getSlot266PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(266)),
-                'execFunc': _nbg.getSlot266PersonalEffect2
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(267)) || Boolean(_nbk.get_slotnums(366)),
-                'execFunc': _nbg.getSlot267PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(267)) || Boolean(_nbk.get_slotnums(366)),
-                'execFunc': _nbg.getSlot267PersonalEffect2
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(268)),
-                'execFunc': _nbg.getCamouflageSlotPersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(271)),
-                'execFunc': _nbg.getSlot271PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(275)),
-                'execFunc': _nbg.getSlot275PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(277)),
-                'execFunc': _nbg.getSlot277PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(278)),
-                'execFunc': _nbg.getSlot278PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(279)),
-                'execFunc': _nbg.getSlot279PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(282)),
-                'execFunc': _nbg.getSlot282PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(283)),
-                'execFunc': _nbg.getSlot283PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(285)),
-                'execFunc': _nbg.getSlot285PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(286)),
-                'execFunc': _nbg.getSlot286PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(286)),
-                'execFunc': _nbg.getSlot286PersonalEffect2
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(286)),
-                'execFunc': _nbg.getSlot286PersonalEffect3
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(287)),
-                'execFunc': _nbg.getSlot287PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(288)),
-                'execFunc': _nbg.getSlot288PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(289)),
-                'execFunc': _nbg.getSlot289PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(290)),
-                'execFunc': _nbg.getSlot290PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(291)),
-                'execFunc': _nbg.getSlot291PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(292)),
-                'execFunc': _nbg.getSlot292PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(293)),
-                'execFunc': _nbg.getSlot293PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(294)),
-                'execFunc': _nbg.getSlot294PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(295)),
-                'execFunc': _nbg.getSlot295PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(296)),
-                'execFunc': _nbg.getSlot296PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(297)),
-                'execFunc': _nbg.getSlot297PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(298)) || Boolean(_nbk.get_slotnums(299)) || Boolean(_nbk.get_slotnums(300)),
-                'execFunc': _nbg.getSlot16M1PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(301)),
-                'execFunc': _nbg.getSlot301PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(302)),
-                'execFunc': _nbg.getSlot302PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(303)),
-                'execFunc': _nbg.getSlot303PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(304)),
-                'execFunc': _nbg.getSlot304PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(305)) || Boolean(_nbk.get_slotnums(306)),
-                'execFunc': _nbg.getSlot305_And_306_PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(307)),
-                'execFunc': _nbg.getSlot307PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(308)),
-                'execFunc': _nbg.getSlot308PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(310)) || Boolean(_nbk.get_slotnums(518)),
-                'execFunc': _nbg.getSlot310PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(313)),
-                'execFunc': _nbg.getSlot313PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(314)),
-                'execFunc': _nbg.getSlot314PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(315)),
-                'execFunc': _nbg.getSlot315PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(316)),
-                'execFunc': _nbg.getSlot316PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(317)),
-                'execFunc': _nbg.getSlot317PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(318)),
-                'execFunc': _nbg.getSlot318PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(319)),
-                'execFunc': _nbg.getSlot319PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(320)),
-                'execFunc': _nbg.getSlot320PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(322)),
-                'execFunc': _nbg.getSlot322PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(323)),
-                'execFunc': _nbg.getSlot323PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(324)) || Boolean(_nbk.get_slotnums(325)),
-                'execFunc': _nbg.getSlot324And325PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(326)),
-                'execFunc': _nbg.getSlot326PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(327)),
-                'execFunc': _nbg.getSlot327PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(328)),
-                'execFunc': _nbg.getSlot328PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(329)),
-                'execFunc': _nbg.getSlot329PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(330)) || Boolean(_nbk.get_slotnums(331)) || Boolean(_nbk.get_slotnums(332)),
-                'execFunc': _nbg.getSlot_16InchMkXRensouhou_PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(335)),
-                'execFunc': _nbg.getSlot335PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(336)),
-                'execFunc': _nbg.getSlot336PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(337)),
-                'execFunc': _nbg.getSlot337PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(338)),
-                'execFunc': _nbg.getSlot338PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(339)),
-                'execFunc': _nbg.getSlot339PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(340)),
-                'execFunc': _nbg.getSlot340PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(341)),
-                'execFunc': _nbg.getSlot341PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(342)),
-                'execFunc': _nbg.getSlot342PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(343)),
-                'execFunc': _nbg.getSlot343PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(344)),
-                'execFunc': _nbg.getSlot344PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(345)),
-                'execFunc': _nbg.getSlot345PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(346)),
-                'execFunc': _nbg.getSlot346PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(347)),
-                'execFunc': _nbg.getSlot347PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(356)) || Boolean(_nbk.get_slotnums(357)),
-                'execFunc': _nbg.getSlot356_357PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(358)),
-                'execFunc': _nbg.getSlot358PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(359)),
-                'execFunc': _nbg.getSlot359PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(360)) || Boolean(_nbk.get_slotnums(361)),
-                'execFunc': _nbg.getSlot360_361PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(362)) || Boolean(_nbk.get_slotnums(363)),
-                'execFunc': _nbg.getSlot362_363PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(364)),
-                'execFunc': _nbg.getSlot364PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(365)),
-                'execFunc': _nbg.getSlot365PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(367)),
-                'execFunc': _nbg.getSlot367PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(368)),
-                'execFunc': _nbg.getSlot368PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(369)),
-                'execFunc': _nbg.getSlot369PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(370)),
-                'execFunc': _nbg.getSlot370PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(371)),
-                'execFunc': _nbg.getSlot371PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(372)),
-                'execFunc': _nbg.getSlot372PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(373)),
-                'execFunc': _nbg.getSlot373PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(374)),
-                'execFunc': _nbg.getSlot374PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(375)),
-                'execFunc': _nbg.getSlot375PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(376)),
-                'execFunc': _nbg.getSlot376PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(377)),
-                'execFunc': _nbg.getSlot377PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(378)),
-                'execFunc': _nbg.getSlot378PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(379)),
-                'execFunc': _nbg.getSlot379PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(380)),
-                'execFunc': _nbg.getSlot380PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(381)),
-                'execFunc': _nbg.getSlot381PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(382)) || Boolean(_nbk.get_slotnums(509)),
-                'execFunc': _nbg.getSlot382PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(383)),
-                'execFunc': _nbg.getSlot383PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(384)),
-                'execFunc': _nbg.getSlot384PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(385)),
-                'execFunc': _nbg.getSlot385PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(386)),
-                'execFunc': _nbg.getSlot386PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(387)),
-                'execFunc': _nbg.getSlot387PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(389)),
-                'execFunc': _nbg.getSlot389PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(390)),
-                'execFunc': _nbg.getSlot390PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(391)),
-                'execFunc': _nbg.getSlot391PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(392)),
-                'execFunc': _nbg.getSlot392PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(397)),
-                'execFunc': _nbg.getSlot397PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(398)),
-                'execFunc': _nbg.getSlot398PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(399)),
-                'execFunc': _nbg.getSlot399PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(400)),
-                'execFunc': _nbg.getSlot400PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(407)),
-                'execFunc': _nbg.getSlot407PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(408)),
-                'execFunc': _nbg.getSlot408PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(409)),
-                'execFunc': _nbg.getSlot409PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(411)),
-                'execFunc': _nbg.getSlot411PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(412)),
-                'execFunc': _nbg.getSlot412PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(413)),
-                'execFunc': _nbg.getSlot413PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(414)),
-                'execFunc': _nbg.getSlot414PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(415)),
-                'execFunc': _nbg.getSlot415PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(419)),
-                'execFunc': _nbg.getSlot419PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(420)),
-                'execFunc': _nbg.getSlot420PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(421)),
-                'execFunc': _nbg.getSlot421PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(422)),
-                'execFunc': _nbg.getSlot422PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(423)),
-                'execFunc': _nbg.getSlot423PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(424)),
-                'execFunc': _nbg.getSlot424PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(425)),
-                'execFunc': _nbg.getSlot425PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(426)) || Boolean(_nbk.get_slotnums(427)) || Boolean(_nbk.get_slotnums(428)) || Boolean(_nbk.get_slotnums(429)),
-                'execFunc': _nbg.getSlot305More320mmGunPersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(430)),
-                'execFunc': _nbg.getSlot430PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(434)) || Boolean(_nbk.get_slotnums(435)),
-                'execFunc': _nbg.getSlotCorsairMkIIPersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(437)),
-                'execFunc': _nbg.getSlot437PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(438)),
-                'execFunc': _nbg.getSlot438PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(439)),
-                'execFunc': _nbg.getSlot439PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(440)) || Boolean(_nbk.get_slotnums(441)),
-                'execFunc': _nbg.getSlot440_441PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(442)) || Boolean(_nbk.get_slotnums(443)),
-                'execFunc': _nbg.getSlot442_443PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(447)),
-                'execFunc': _nbg.getSlot447PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(450)),
-                'execFunc': _nbg.getSlot450PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(451)),
-                'execFunc': _nbg.getSlot451PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(455)),
-                'execFunc': _nbg.getSlot455PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(456)),
-                'execFunc': _nbg.getSlot456PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(457)) || Boolean(_nbk.get_slotnums(461)),
-                'execFunc': _nbg.getSlot457PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(458)),
-                'execFunc': _nbg.getSlot458PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(463)),
-                'execFunc': _nbg.getSlot463PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(464)),
-                'execFunc': _nbg.getSlot464PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(465)),
-                'execFunc': _nbg.getSlot465PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(466)),
-                'execFunc': _nbg.getSlot466PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(467)),
-                'execFunc': _nbg.getSlot467PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(470)),
-                'execFunc': _nbg.getSlot470PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(471)),
-                'execFunc': _nbg.getSlot471PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(472)),
-                'execFunc': _nbg.getSlot472PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(473)),
-                'execFunc': _nbg.getSlot473PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(474)),
-                'execFunc': _nbg.getSlot474PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(478)),
-                'execFunc': _nbg.getSlot478PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(483)),
-                'execFunc': _nbg.getSlot483PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(485)),
-                'execFunc': _nbg.getSlot485PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(486)),
-                'execFunc': _nbg.getSlot486PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(487)),
-                'execFunc': _nbg.getSlot487PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(488)),
-                'execFunc': _nbg.getSlot488PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(489)) || Boolean(_nbk.get_slotnums(491)),
-                'execFunc': _nbg.getSlot489PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(500)) || Boolean(_nbk.get_slotnums(501)),
-                'execFunc': _nbg.getSlotSmokePersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(502)),
-                'execFunc': _nbg.getSlot502PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(503)),
-                'execFunc': _nbg.getSlot503PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(505)),
-                'execFunc': _nbg.getSlot505PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(506)),
-                'execFunc': _nbg.getSlot506PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(507)) || Boolean(_nbk.get_slotnums(508)),
-                'execFunc': _nbg.getSlot14inch45CaliberGunPersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(510)),
-                'execFunc': _nbg.getSlot510PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(511)) || Boolean(_nbk.get_slotnums(512)),
-                'execFunc': _nbg.getSlot511PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(517)),
-                'execFunc': _nbg.getSlot517PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(518)),
-                'execFunc': _nbg.getSlot518PersonalEffect
-            }, {
-                'isExecute': Boolean(_nbk.get_slotnums(519)),
-                'execFunc': _nbg.getSlot519PersonalEffect
-            }], _nbm = new _nbh.SlotItemEffectModel(), _nbn = 0, _nbo = _nbl; _nbn < _nbo.length; _nbn++) {
-            var _nbp, _nbq = _nbo[_nbn];
-            _nbq.isExecute && (_nbp = _nbq.execFunc(_nbk), _nbm.add(_nbp));
-        }
-        return _nbm;
-    };
-},
-function(_nbr, _nbs, _nbt) {
-    'use strict';
-    var _nbu = this && this.__importDefault || function(_nbv) {
-        return _nbv && _nbv.__esModule ? _nbv : {
-            'default': _nbv
-        };
-    };
-    defineModule(_nbs);
-    Object.defineProperty(_nbs, '__esModule', {
-        'value': !0
-    });
-    var _nbw = _nbu(_nbt(0)),
-        _nbx = (Object.defineProperty(_nby.prototype, 'have_slots_dict', {
-            'get': function() {
-                return this._have_slots_dict;
-            },
-            'enumerable': !0,
-            'configurable': !0
-        }), Object.defineProperty(_nby.prototype, 'ship_id', {
-            'get': function() {
-                return this._ship_id;
-            },
-            'enumerable': !0,
-            'configurable': !0
-        }), Object.defineProperty(_nby.prototype, 'yomi', {
-            'get': function() {
-                return this._yomi;
-            },
-            'enumerable': !0,
-            'configurable': !0
-        }), Object.defineProperty(_nby.prototype, 'stype', {
-            'get': function() {
-                return this._stype;
-            },
-            'enumerable': !0,
-            'configurable': !0
-        }), Object.defineProperty(_nby.prototype, 'ctype', {
-            'get': function() {
-                return this._ctype;
-            },
-            'enumerable': !0,
-            'configurable': !0
-        }), _nby.prototype.get_slotnums = function(_nbz) {
-            return null == this._have_slotnums_dict[_nbz] ? 0 : this._have_slotnums_dict[_nbz];
-        }, _nby.prototype.get_type3_nums = function(_nc0) {
-            return null == this._have_type3nums_dict[_nc0] ? 0 : this._have_type3nums_dict[_nc0];
-        }, _nby.prototype.have_slot_ids = function() {
-            return Object.keys(this._have_slots_dict);
-        }, _nby.prototype.get_each_level_nums = function(_nc1) {
-            var _nc2 = this._have_slots_dict[_nc1],
-                _nc3 = Array.apply(null, new Array(this.SLOT_LEVEL_MAX + 1)).map(function() {
-                    return 0;
-                });
-            if (null != _nc2)
-                for (var _nc4 = 0, _nc5 = _nc2; _nc4 < _nc5.length; _nc4++) _nc3[_nc5[_nc4].level]++;
-            return _nc3;
-        }, _nby.prototype.get_each_level_over_nums = function(_nc6) {
-            for (var _nc7 = this, _nc8 = [], _nc9 = this, _nca = 0, _ncb = _nc6; _nca < _ncb.length; _nca++) ! function(_ncc) {
-                _nc8[_ncc] = Array.apply(null, new Array(_nc9.SLOT_LEVEL_MAX + 1)).map(function() {
-                    return 0;
-                }), null != _nc9.have_slots_dict[_ncc] && _nc9.get_each_level_nums(_ncc).forEach(function(_ncd, _nce) {
-                    for (var _ncf = 1; _ncf <= _nc7.SLOT_LEVEL_MAX; _ncf++) _ncf <= _nce && (_nc8[_ncc][_ncf] += _ncd);
-                });
-            }(_ncb[_nca]);
-            return _nc8;
-        }, _nby.prototype.get_have_rader_nums = function() {
-            for (var _ncg = 0, _nch = 0, _nci = 0, _ncj = this.have_slot_ids(); _nci < _ncj.length; _nci++) {
-                var _nck = _ncj[_nci],
-                    _ncl = _nbw.default.model.slot.getMst(_nck),
-                    _ncm = _ncl.equipType;
-                12 != _ncm && 13 != _ncm || (5 <= _ncl.sakuteki && (_ncg += this.get_slotnums(parseInt(_nck))), 2 <= _ncl.taiku && (_nch += this.get_slotnums(parseInt(_nck))));
-            }
-            return {
-                'water_rader': _ncg,
-                'air_rader': _nch
+            _ozo = this && this.__exportStar || function(_ozp, _ozq) {
+                var _ozr = null;
+                for (var _ozs in _ozp) 'default' === _ozs || Object.prototype.hasOwnProperty.call(_ozq, _ozs) || _ozd(_ozq, _ozp, _ozs);
             };
-        }, _nby.prototype.getUSSWaterRaderDict = function() {
-            return {
-                279: 1,
-                307: 1,
-                315: 1,
-                456: 1
-            };
-        }, _nby.prototype.getUSSAirRaderDict = function() {
-            return {
-                278: 1,
-                279: 1
-            };
-        }, _nby.prototype.getCountryName = function() {
-            return null == _nby.SHIP_COUNTRY[this._ctype] ? '' : _nby.SHIP_COUNTRY[this._ctype];
-        }, _nby.SHIP_COUNTRY = {
-            1: '日本',
-            2: '日本',
-            3: '日本',
-            4: '日本',
-            5: '日本',
-            6: '日本',
-            7: '日本',
-            8: '日本',
-            9: '日本',
-            10: '日本',
-            11: '日本',
-            12: '日本',
-            13: '日本',
-            14: '日本',
-            15: '日本',
-            16: '日本',
-            17: '日本',
-            18: '日本',
-            19: '日本',
-            20: '日本',
-            21: '日本',
-            22: '日本',
-            23: '日本',
-            24: '日本',
-            25: '日本',
-            26: '日本',
-            27: '日本',
-            28: '日本',
-            29: '日本',
-            30: '日本',
-            31: '日本',
-            32: '日本',
-            33: '日本',
-            34: '日本',
-            35: '日本',
-            36: '日本',
-            37: '日本',
-            38: '日本',
-            39: '日本',
-            40: '日本',
-            41: '日本',
-            42: '日本',
-            43: '日本',
-            44: '日本',
-            45: '日本',
-            46: '日本',
-            49: '日本',
-            50: '日本',
-            51: '日本',
-            52: '日本',
-            53: '日本',
-            54: '日本',
-            56: '日本',
-            59: '日本',
-            60: '日本',
-            62: '日本',
-            66: '日本',
-            71: '日本',
-            72: '日本',
-            74: '日本',
-            75: '日本',
-            76: '日本',
-            77: '日本',
-            85: '日本',
-            86: '日本',
-            90: '日本',
-            94: '日本',
-            97: '日本',
-            100: '日本',
-            101: '日本',
-            103: '日本',
-            104: '日本',
-            109: '日本',
-            111: '日本',
-            115: '日本',
-            117: '日本',
-            119: '日本',
-            120: '日本',
-            123: '日本',
-            65: 'アメリカ',
-            69: 'アメリカ',
-            83: 'アメリカ',
-            84: 'アメリカ',
-            87: 'アメリカ',
-            91: 'アメリカ',
-            93: 'アメリカ',
-            95: 'アメリカ',
-            99: 'アメリカ',
-            102: 'アメリカ',
-            105: 'アメリカ',
-            106: 'アメリカ',
-            107: 'アメリカ',
-            110: 'アメリカ',
-            114: 'アメリカ',
-            116: 'アメリカ',
-            118: 'アメリカ',
-            121: 'アメリカ',
-            122: 'アメリカ',
-            125: 'アメリカ',
-            67: 'イギリス',
-            78: 'イギリス',
-            82: 'イギリス',
-            88: 'イギリス',
-            108: 'イギリス',
-            112: 'イギリス',
-            58: 'イタリア',
-            61: 'イタリア',
-            64: 'イタリア',
-            68: 'イタリア',
-            80: 'イタリア',
-            92: 'イタリア',
-            113: 'イタリア',
-            124: 'イタリア',
-            98: 'オランダ',
-            96: 'オーストラリア',
-            89: 'スウェーデン',
-            47: 'ドイツ',
-            48: 'ドイツ',
-            55: 'ドイツ',
-            57: 'ドイツ',
-            63: 'ドイツ',
-            70: 'フランス',
-            79: 'フランス',
-            73: 'ロシア',
-            81: 'ロシア'
-        }, _nby);
-
-    function _nby(_ncn, _nco) {
-        this.SLOT_LEVEL_MAX = 10;
-        for (var _ncp = {}, _ncq = {}, _ncr = {}, _ncs = 0, _nct = _nco; _ncs < _nct.length; _ncs++) {
-            var _ncu = _nct[_ncs];
-            null != _ncu && (null == _ncp[_ncu.mstID] && (_ncp[_ncu.mstID] = new Array()), _ncp[_ncu.mstID].push(_ncu), null == _ncq[_ncu.mstID] ? _ncq[_ncu.mstID] = 1 : _ncq[_ncu.mstID] += 1, null == _ncr[_ncu.equipType] ? _ncr[_ncu.equipType] = 1 : _ncr[_ncu.equipType] += 1);
-        }
-        this._have_slots_dict = _ncp, this._have_slotnums_dict = _ncq, this._have_type3nums_dict = _ncr, this._ship_id = _ncn.mstID, this._yomi = _ncn.yomi, this._stype = _ncn.shipTypeID, this._ctype = _ncn.getClassType();
-    }
-    _nbs.SlotItemEffectParamModel = _nbx;
-},
-function(_ncv, _ncw, _ncx) {
-    'use strict';
-
-    function _ncy(_ncz) {
-        for (var _nd0 in _ncz) _ncw.hasOwnProperty(_nd0) || (_ncw[_nd0] = _ncz[_nd0]);
-    }
-    defineModule(_ncw);
-    Object.defineProperty(_ncw, '__esModule', {
-        'value': !0
-    }), _ncy(_ncx(950)), _ncy(_ncx(951)), _ncy(_ncx(952)), _ncy(_ncx(953)), _ncy(_ncx(954)), _ncy(_ncx(955)), _ncy(_ncx(956)), _ncy(_ncx(957)), _ncy(_ncx(958)), _ncy(_ncx(959)), _ncy(_ncx(960)), _ncy(_ncx(961)), _ncy(_ncx(962)), _ncy(_ncx(963)), _ncy(_ncx(964)), _ncy(_ncx(965)), _ncy(_ncx(966)), _ncy(_ncx(967)), _ncy(_ncx(968)), _ncy(_ncx(969)), _ncy(_ncx(970)), _ncy(_ncx(971)), _ncy(_ncx(972)), _ncy(_ncx(973)), _ncy(_ncx(974)), _ncy(_ncx(975)), _ncy(_ncx(976)), _ncy(_ncx(977)), _ncy(_ncx(978)), _ncy(_ncx(979)), _ncy(_ncx(980)), _ncy(_ncx(981)), _ncy(_ncx(982)), _ncy(_ncx(983)), _ncy(_ncx(984)), _ncy(_ncx(985)), _ncy(_ncx(986)), _ncy(_ncx(987)), _ncy(_ncx(988)), _ncy(_ncx(989)), _ncy(_ncx(990)), _ncy(_ncx(991)), _ncy(_ncx(992)), _ncy(_ncx(993)), _ncy(_ncx(994)), _ncy(_ncx(995)), _ncy(_ncx(996)), _ncy(_ncx(997)), _ncy(_ncx(998)), _ncy(_ncx(999)), _ncy(_ncx(1000)), _ncy(_ncx(1001)), _ncy(_ncx(1002)), _ncy(_ncx(1003)), _ncy(_ncx(1004)), _ncy(_ncx(1005)), _ncy(_ncx(1006)), _ncy(_ncx(1007)), _ncy(_ncx(1008)), _ncy(_ncx(1009)), _ncy(_ncx(1010)), _ncy(_ncx(1011)), _ncy(_ncx(1012)), _ncy(_ncx(1013)), _ncy(_ncx(1014)), _ncy(_ncx(1015)), _ncy(_ncx(1016)), _ncy(_ncx(1017)), _ncy(_ncx(1018)), _ncy(_ncx(1019)), _ncy(_ncx(1020)), _ncy(_ncx(1021)), _ncy(_ncx(1022)), _ncy(_ncx(1023)), _ncy(_ncx(1024)), _ncy(_ncx(1025)), _ncy(_ncx(1026)), _ncy(_ncx(1027)), _ncy(_ncx(1028)), _ncy(_ncx(1029)), _ncy(_ncx(1030)), _ncy(_ncx(1031)), _ncy(_ncx(1032)), _ncy(_ncx(1033)), _ncy(_ncx(1034)), _ncy(_ncx(1035)), _ncy(_ncx(1036)), _ncy(_ncx(1037)), _ncy(_ncx(1038)), _ncy(_ncx(1039)), _ncy(_ncx(1040)), _ncy(_ncx(1041)), _ncy(_ncx(1042)), _ncy(_ncx(1043)), _ncy(_ncx(1044)), _ncy(_ncx(1045)), _ncy(_ncx(1046)), _ncy(_ncx(1047)), _ncy(_ncx(1048)), _ncy(_ncx(1049)), _ncy(_ncx(1050)), _ncy(_ncx(1051)), _ncy(_ncx(1052)), _ncy(_ncx(1053)), _ncy(_ncx(1054)), _ncy(_ncx(1055)), _ncy(_ncx(1056)), _ncy(_ncx(1057)), _ncy(_ncx(1058)), _ncy(_ncx(1059)), _ncy(_ncx(1060)), _ncy(_ncx(1061)), _ncy(_ncx(1062)), _ncy(_ncx(1063)), _ncy(_ncx(1064)), _ncy(_ncx(1065)), _ncy(_ncx(1066)), _ncy(_ncx(1067)), _ncy(_ncx(1068)), _ncy(_ncx(1069)), _ncy(_ncx(1070)), _ncy(_ncx(1071)), _ncy(_ncx(1072)), _ncy(_ncx(1073)), _ncy(_ncx(1074)), _ncy(_ncx(1075)), _ncy(_ncx(1076)), _ncy(_ncx(1077)), _ncy(_ncx(1078)), _ncy(_ncx(1079)), _ncy(_ncx(1080)), _ncy(_ncx(1081)), _ncy(_ncx(1082)), _ncy(_ncx(1083)), _ncy(_ncx(1084)), _ncy(_ncx(1085)), _ncy(_ncx(1086)), _ncy(_ncx(1087)), _ncy(_ncx(1088)), _ncy(_ncx(1089)), _ncy(_ncx(1090)), _ncy(_ncx(1091)), _ncy(_ncx(1092)), _ncy(_ncx(1093)), _ncy(_ncx(1094)), _ncy(_ncx(1095)), _ncy(_ncx(1096)), _ncy(_ncx(1097)), _ncy(_ncx(1098)), _ncy(_ncx(1099)), _ncy(_ncx(1100)), _ncy(_ncx(1101)), _ncy(_ncx(1102)), _ncy(_ncx(1103)), _ncy(_ncx(1104)), _ncy(_ncx(1105)), _ncy(_ncx(1106)), _ncy(_ncx(1107)), _ncy(_ncx(1108)), _ncy(_ncx(1109)), _ncy(_ncx(1110)), _ncy(_ncx(1111)), _ncy(_ncx(1112)), _ncy(_ncx(1113)), _ncy(_ncx(1114)), _ncy(_ncx(1115)), _ncy(_ncx(1116)), _ncy(_ncx(1117)), _ncy(_ncx(1118)), _ncy(_ncx(1119)), _ncy(_ncx(1120)), _ncy(_ncx(1121)), _ncy(_ncx(1122)), _ncy(_ncx(1123)), _ncy(_ncx(1124)), _ncy(_ncx(1125)), _ncy(_ncx(1126)), _ncy(_ncx(1127)), _ncy(_ncx(1128)), _ncy(_ncx(1129)), _ncy(_ncx(1130)), _ncy(_ncx(1131)), _ncy(_ncx(1132)), _ncy(_ncx(1133)), _ncy(_ncx(1134)), _ncy(_ncx(1135)), _ncy(_ncx(1136)), _ncy(_ncx(1137)), _ncy(_ncx(1138)), _ncy(_ncx(1139)), _ncy(_ncx(1140)), _ncy(_ncx(1141)), _ncy(_ncx(1142)), _ncy(_ncx(1143)), _ncy(_ncx(1144)), _ncy(_ncx(1145)), _ncy(_ncx(1146)), _ncy(_ncx(1147)), _ncy(_ncx(1148)), _ncy(_ncx(1149)), _ncy(_ncx(1150)), _ncy(_ncx(1151)), _ncy(_ncx(1152)), _ncy(_ncx(1153)), _ncy(_ncx(1154)), _ncy(_ncx(1155)), _ncy(_ncx(1156)), _ncy(_ncx(1157)), _ncy(_ncx(1158)), _ncy(_ncx(1159)), _ncy(_ncx(1160)), _ncy(_ncx(1161)), _ncy(_ncx(1162)), _ncy(_ncx(1163)), _ncy(_ncx(1164)), _ncy(_ncx(1165)), _ncy(_ncx(1166)), _ncy(_ncx(1167)), _ncy(_ncx(1168)), _ncy(_ncx(1169)), _ncy(_ncx(1170)), _ncy(_ncx(1171)), _ncy(_ncx(1172)), _ncy(_ncx(1173)), _ncy(_ncx(1174)), _ncy(_ncx(1175)), _ncy(_ncx(1176)), _ncy(_ncx(1177)), _ncy(_ncx(1178)), _ncy(_ncx(1179)), _ncy(_ncx(1180)), _ncy(_ncx(1181)), _ncy(_ncx(1182)), _ncy(_ncx(1183)), _ncy(_ncx(1184)), _ncy(_ncx(1185)), _ncy(_ncx(1186)), _ncy(_ncx(1187));
-},
-function(_nd1, _nd2, _nd3) {
-    'use strict';
-    defineModule(_nd2);
-    Object.defineProperty(_nd2, '__esModule', {
-        'value': !0
-    });
-    var _nd4 = _nd3(3);
-    _nd2.getCamouflageSlotPersonalEffect = function(_nd5) {
-        var _nd6 = new _nd4.SlotItemEffectModel();
-        return 'きそ' != _nd5.yomi && 'たま' != _nd5.yomi || (_nd6.kaih = 7, _nd6.souk = 2), _nd6;
-    };
-},
-function(_nd7, _nd8, _nd9) {
-    'use strict';
-    var _nda = this && this.__importDefault || function(_ndb) {
-        return _ndb && _ndb.__esModule ? _ndb : {
-            'default': _ndb
-        };
-    };
-    defineModule(_nd8);
-    Object.defineProperty(_nd8, '__esModule', {
-        'value': !0
-    });
-    var _ndc = _nd9(3),
-        _ndd = _nda(_nd9(0));
-    _nd8.getRaderPrivateEffect = function(_nde) {
-        var _ndf = new _ndc.SlotItemEffectModel(),
-            _ndg = 0,
-            _ndh = 0;
-        if (569 == _nde.ship_id || 648 == _nde.ship_id || 961 == _nde.ship_id || 951 == _nde.ship_id) _ndg = 1;
-        else {
-            if (955 != _nde.ship_id && 960 != _nde.ship_id) return _ndf;
-            _ndg = 2, _ndh = 1;
-        }
-        for (var _ndi = 0, _ndj = 0, _ndk = _nde.have_slot_ids(); _ndj < _ndk.length; _ndj++) {
-            var _ndl = _ndk[_ndj],
-                _ndm = _ndd.default.model.slot.getMst(_ndl),
-                _ndn = _ndm.equipType;
-            12 != _ndn && 13 != _ndn || (5 <= _ndm.sakuteki && _nde.get_slotnums(parseInt(_ndl)), 2 <= _ndm.taiku && (_ndi += _nde.get_slotnums(parseInt(_ndl))));
-        }
-        if (0 < _ndi && (1 == _ndg ? (_ndf.houg += 1, _ndf.kaih += 3, _ndf.tyku += 2) : 2 == _ndg && (_ndf.tyku += 2, _ndf.kaih += 1)), 0 == _ndh) return _ndf;
-        for (var _ndo = [], _ndp = 0, _ndq = [450]; _ndp < _ndq.length; _ndp++) {
-            ! function(_ndr) {
-                if (null == _nde.have_slots_dict[_ndr]) return;
-                var _nds = _nde.get_each_level_nums(_ndr);
-                null == _ndo[_ndr] && (_ndo[_ndr] = []), _nds.forEach(function(_ndt, _ndu) {
-                    for (var _ndv = 1; _ndv <= _nde.SLOT_LEVEL_MAX; _ndv++) null == _ndo[_ndr][_ndv] && (_ndo[_ndr][_ndv] = 0), _ndv <= _ndu && (_ndo[_ndr][_ndv] += _ndt);
+        defineModule(_oza);
+        Object.defineProperty(_oza, '__esModule', {
+            'value': !0
+        }), _ozo(_ozb(34165), _oza), _ozo(_ozb(81018), _oza), _ozo(_ozb(56716), _oza), _ozo(_ozb(17713), _oza), _ozo(_ozb(54518), _oza), _ozo(_ozb(66985), _oza), _ozo(_ozb(88102), _oza), _ozo(_ozb(66904), _oza), _ozo(_ozb(98137), _oza), _ozo(_ozb(69954), _oza), _ozo(_ozb(22218), _oza), _ozo(_ozb(88271), _oza), _ozo(_ozb(23035), _oza), _ozo(_ozb(2578), _oza), _ozo(_ozb(17143), _oza), _ozo(_ozb(16164), _oza), _ozo(_ozb(35023), _oza), _ozo(_ozb(44680), _oza), _ozo(_ozb(45749), _oza), _ozo(_ozb(37334), _oza), _ozo(_ozb(29180), _oza), _ozo(_ozb(68685), _oza), _ozo(_ozb(26078), _oza), _ozo(_ozb(20829), _oza), _ozo(_ozb(6880), _oza), _ozo(_ozb(17213), _oza), _ozo(_ozb(40176), _oza), _ozo(_ozb(32889), _oza), _ozo(_ozb(11285), _oza), _ozo(_ozb(96200), _oza), _ozo(_ozb(9115), _oza), _ozo(_ozb(37173), _oza), _ozo(_ozb(21713), _oza), _ozo(_ozb(59823), _oza), _ozo(_ozb(57440), _oza), _ozo(_ozb(29240), _oza), _ozo(_ozb(40885), _oza), _ozo(_ozb(19614), _oza), _ozo(_ozb(87220), _oza), _ozo(_ozb(81367), _oza), _ozo(_ozb(13052), _oza), _ozo(_ozb(94968), _oza), _ozo(_ozb(48658), _oza), _ozo(_ozb(1906), _oza), _ozo(_ozb(61887), _oza), _ozo(_ozb(47970), _oza), _ozo(_ozb(31797), _oza), _ozo(_ozb(45738), _oza), _ozo(_ozb(34718), _oza), _ozo(_ozb(69245), _oza), _ozo(_ozb(18478), _oza), _ozo(_ozb(2899), _oza), _ozo(_ozb(57120), _oza), _ozo(_ozb(74985), _oza), _ozo(_ozb(9234), _oza), _ozo(_ozb(30802), _oza), _ozo(_ozb(97002), _oza), _ozo(_ozb(16748), _oza), _ozo(_ozb(53618), _oza), _ozo(_ozb(72573), _oza), _ozo(_ozb(8955), _oza), _ozo(_ozb(98947), _oza), _ozo(_ozb(44726), _oza), _ozo(_ozb(93065), _oza), _ozo(_ozb(85767), _oza), _ozo(_ozb(38314), _oza), _ozo(_ozb(59747), _oza), _ozo(_ozb(40649), _oza), _ozo(_ozb(13533), _oza), _ozo(_ozb(12138), _oza), _ozo(_ozb(30042), _oza), _ozo(_ozb(33623), _oza), _ozo(_ozb(85630), _oza), _ozo(_ozb(88736), _oza), _ozo(_ozb(49341), _oza), _ozo(_ozb(74306), _oza), _ozo(_ozb(83898), _oza), _ozo(_ozb(71873), _oza), _ozo(_ozb(53122), _oza), _ozo(_ozb(51063), _oza), _ozo(_ozb(91491), _oza), _ozo(_ozb(85495), _oza), _ozo(_ozb(65365), _oza), _ozo(_ozb(98164), _oza), _ozo(_ozb(38114), _oza), _ozo(_ozb(21003), _oza), _ozo(_ozb(77010), _oza), _ozo(_ozb(39126), _oza), _ozo(_ozb(72176), _oza), _ozo(_ozb(33846), _oza), _ozo(_ozb(97157), _oza), _ozo(_ozb(63406), _oza), _ozo(_ozb(66373), _oza), _ozo(_ozb(19707), _oza), _ozo(_ozb(63978), _oza), _ozo(_ozb(92382), _oza), _ozo(_ozb(78415), _oza), _ozo(_ozb(23090), _oza), _ozo(_ozb(18776), _oza), _ozo(_ozb(39656), _oza), _ozo(_ozb(66039), _oza), _ozo(_ozb(64679), _oza), _ozo(_ozb(95953), _oza), _ozo(_ozb(86384), _oza), _ozo(_ozb(65345), _oza), _ozo(_ozb(46514), _oza), _ozo(_ozb(81976), _oza), _ozo(_ozb(89331), _oza), _ozo(_ozb(73973), _oza), _ozo(_ozb(21178), _oza), _ozo(_ozb(5079), _oza), _ozo(_ozb(95014), _oza), _ozo(_ozb(53099), _oza), _ozo(_ozb(76201), _oza), _ozo(_ozb(24931), _oza), _ozo(_ozb(60978), _oza), _ozo(_ozb(74312), _oza), _ozo(_ozb(54350), _oza), _ozo(_ozb(26262), _oza), _ozo(_ozb(45530), _oza), _ozo(_ozb(44053), _oza), _ozo(_ozb(65441), _oza), _ozo(_ozb(33258), _oza), _ozo(_ozb(92168), _oza), _ozo(_ozb(85975), _oza), _ozo(_ozb(98467), _oza), _ozo(_ozb(88348), _oza), _ozo(_ozb(21097), _oza), _ozo(_ozb(37273), _oza), _ozo(_ozb(72694), _oza), _ozo(_ozb(62067), _oza), _ozo(_ozb(87817), _oza), _ozo(_ozb(93526), _oza), _ozo(_ozb(33084), _oza), _ozo(_ozb(97831), _oza), _ozo(_ozb(45482), _oza), _ozo(_ozb(272), _oza), _ozo(_ozb(69377), _oza), _ozo(_ozb(31127), _oza), _ozo(_ozb(79353), _oza), _ozo(_ozb(17274), _oza), _ozo(_ozb(91302), _oza), _ozo(_ozb(82229), _oza), _ozo(_ozb(10325), _oza), _ozo(_ozb(351), _oza), _ozo(_ozb(4050), _oza), _ozo(_ozb(29805), _oza), _ozo(_ozb(58913), _oza), _ozo(_ozb(55421), _oza), _ozo(_ozb(87845), _oza), _ozo(_ozb(17562), _oza), _ozo(_ozb(78466), _oza), _ozo(_ozb(40061), _oza), _ozo(_ozb(9195), _oza), _ozo(_ozb(93297), _oza), _ozo(_ozb(15133), _oza), _ozo(_ozb(55747), _oza), _ozo(_ozb(33155), _oza), _ozo(_ozb(79086), _oza), _ozo(_ozb(2306), _oza), _ozo(_ozb(14386), _oza), _ozo(_ozb(80225), _oza), _ozo(_ozb(17732), _oza), _ozo(_ozb(47169), _oza), _ozo(_ozb(77670), _oza), _ozo(_ozb(79988), _oza), _ozo(_ozb(92253), _oza), _ozo(_ozb(74428), _oza), _ozo(_ozb(16498), _oza), _ozo(_ozb(2631), _oza), _ozo(_ozb(27177), _oza), _ozo(_ozb(94781), _oza), _ozo(_ozb(53908), _oza), _ozo(_ozb(79813), _oza), _ozo(_ozb(16088), _oza), _ozo(_ozb(93733), _oza), _ozo(_ozb(69939), _oza), _ozo(_ozb(33734), _oza), _ozo(_ozb(34432), _oza), _ozo(_ozb(97423), _oza), _ozo(_ozb(23551), _oza), _ozo(_ozb(99791), _oza), _ozo(_ozb(21403), _oza), _ozo(_ozb(6173), _oza), _ozo(_ozb(23934), _oza), _ozo(_ozb(53709), _oza), _ozo(_ozb(88838), _oza), _ozo(_ozb(99790), _oza), _ozo(_ozb(18387), _oza), _ozo(_ozb(70941), _oza), _ozo(_ozb(35025), _oza), _ozo(_ozb(2603), _oza), _ozo(_ozb(78707), _oza), _ozo(_ozb(89058), _oza), _ozo(_ozb(84372), _oza), _ozo(_ozb(96804), _oza), _ozo(_ozb(33896), _oza), _ozo(_ozb(11031), _oza), _ozo(_ozb(71383), _oza), _ozo(_ozb(55888), _oza), _ozo(_ozb(2258), _oza), _ozo(_ozb(38003), _oza), _ozo(_ozb(92174), _oza), _ozo(_ozb(43768), _oza), _ozo(_ozb(73254), _oza), _ozo(_ozb(55734), _oza), _ozo(_ozb(81254), _oza), _ozo(_ozb(65455), _oza), _ozo(_ozb(70362), _oza), _ozo(_ozb(61977), _oza), _ozo(_ozb(43607), _oza), _ozo(_ozb(68086), _oza), _ozo(_ozb(78173), _oza), _ozo(_ozb(22581), _oza), _ozo(_ozb(20418), _oza), _ozo(_ozb(93373), _oza), _ozo(_ozb(13053), _oza), _ozo(_ozb(47874), _oza), _ozo(_ozb(42788), _oza), _ozo(_ozb(57664), _oza), _ozo(_ozb(44990), _oza), _ozo(_ozb(17712), _oza), _ozo(_ozb(83957), _oza), _ozo(_ozb(78539), _oza), _ozo(_ozb(96282), _oza), _ozo(_ozb(49679), _oza), _ozo(_ozb(45927), _oza), _ozo(_ozb(90312), _oza), _ozo(_ozb(86856), _oza), _ozo(_ozb(78123), _oza), _ozo(_ozb(25765), _oza), _ozo(_ozb(29493), _oza), _ozo(_ozb(28221), _oza), _ozo(_ozb(14830), _oza), _ozo(_ozb(54047), _oza), _ozo(_ozb(76054), _oza), _ozo(_ozb(90725), _oza), _ozo(_ozb(93053), _oza), _ozo(_ozb(88792), _oza);
+    },
+    82692: function(_ozt, _ozu, _ozv) {
+        'use strict';
+        var _ozw = null;
+        var _ozx = this && this.__createBinding || (Object.create ? function(_ozy, _ozz, _p00, _p01) {
+                var _p02 = null;
+                void 0 === _p01 && (_p01 = _p00);
+                var _p03 = Object.getOwnPropertyDescriptor(_ozz, _p00);
+                _p03 && !('get' in _p03 ? !_ozz.__esModule : _p03.writable || _p03.configurable) || (_p03 = {
+                    'enumerable': !0,
+                    'get': function() {
+                        return _ozz[_p00];
+                    }
+                }), Object.defineProperty(_ozy, _p01, _p03);
+            } : function(_p04, _p05, _p06, _p07) {
+                void 0 === _p07 && (_p07 = _p06), _p04[_p07] = _p05[_p06];
+            }),
+            _p08 = this && this.__setModuleDefault || (Object.create ? function(_p09, _p0a) {
+                var _p0b = null;
+                Object.defineProperty(_p09, 'default', {
+                    'enumerable': !0,
+                    'value': _p0a
                 });
-            }(_ndq[_ndp]);
-        }
-        var _ndw = null != _ndo[450] ? _ndo[450][4] : 0;
-        return 1 == _ndh && 0 < _ndw && (_ndf.houg += 1, _ndf.houm += 1, _ndf.tyku += 1, _ndf.kaih += 2), _ndf;
-    };
-},
-function(_ndx, _ndy, _ndz) {
-    'use strict';
-    defineModule(_ndy);
-    Object.defineProperty(_ndy, '__esModule', {
-        'value': !0
-    });
-    var _ne0 = _ndz(3);
-    _ndy.getSearchLightEffect = function(_ne1) {
-        var _ne2 = new _ne0.SlotItemEffectModel(),
-            _ne3 = _ne1.get_type3_nums(29);
-        return 'ひえい' == _ne1.yomi || 'きりしま' == _ne1.yomi || 'ちょうかい' == _ne1.yomi || 'じんつう' == _ne1.yomi || 'あかつき' == _ne1.yomi ? (_ne2.houg += 4, --_ne2.kaih) : 'あきぐも' == _ne1.yomi ? _ne2.houg = _ne2.houg + 2 * _ne3 : 'ゆきかぜ' == _ne1.yomi && (_ne2.houg = _ne2.houg + _ne3, _ne2.tyku = _ne2.tyku + _ne3), 662 != _ne1.ship_id && 663 != _ne1.ship_id && 668 != _ne1.ship_id || (_ne2.raig += 2, _ne2.houg += 4), 'じんつう' == _ne1.yomi && (_ne2.raig += 8, _ne2.houg += 4), _ne2;
-    };
-},
-function(_ne4, _ne5, _ne6) {
-    'use strict';
-    defineModule(_ne5);
-    Object.defineProperty(_ne5, '__esModule', {
-        'value': !0
-    });
-    var _ne7 = _ne6(3);
-    _ne5.getSearchLightLargeEffect = function(_ne8) {
-        var _ne9 = new _ne7.SlotItemEffectModel();
-        'ひえい' == _ne8.yomi || 'きりしま' == _ne8.yomi ? (_ne9.houg += 6, _ne9.kaih -= 2) : 'やまと' != _ne8.yomi && 'むさし' != _ne8.yomi || (_ne9.houg += 4, --_ne9.kaih);
-        var _nea = _ne8.get_slotnums(174);
-        return 592 == _ne8.ship_id && (_ne9.houg += 3, _ne9.raig += 3, 0 < _nea && (_ne9.raig += 5)), _ne9;
-    };
-},
-function(_neb, _nec, _ned) {
-    'use strict';
-    defineModule(_nec);
-    Object.defineProperty(_nec, '__esModule', {
-        'value': !0
-    });
-    var _nee = _ned(3);
-    _nec.getSlot_16InchMkXRensouhou_PersonalEffect = function(_nef) {
-        var _neg = new _nee.SlotItemEffectModel();
-        if (93 == _nef.ctype) {
-            var _neh = _nef.get_slotnums(330);
-            0 < _neh && (_neg.houg = _neg.houg + +_neh);
-            var _nei = _nef.get_slotnums(331);
-            0 < _nei && (_neg.houg = _neg.houg + +_nei, 1496 != _nef.ship_id && 918 != _nef.ship_id || (_neg.houg = _neg.houg + +_nei, _neg.kaih = _neg.kaih + +_nei));
-            var _nej = _nef.get_slotnums(332);
-            return 0 < _nej && (_neg.houg = _neg.houg + +_nej, 1496 != _nef.ship_id && 918 != _nef.ship_id || (_neg.houg = _neg.houg + +_nej, _neg.kaih = _neg.kaih + +_nej, _neg.tyku = _neg.tyku + +_nej)), _neg;
-        }
-        var _nek = new _nee.SlotItemEffectModel();
-        if (19 == _nef.ctype ? (_nek.houg = 1, 541 != _nef.ship_id && 573 != _nef.ship_id || (_nek.houg += 1)) : 88 == _nef.ctype && (_nek.houg = 1, 576 == _nef.ship_id && (_nek.houg += 1)), !_nek.exists()) return _neg;
-        var _nel = _nef.get_slotnums(330) + _nef.get_slotnums(331) + _nef.get_slotnums(332);
-        return _neg = _nek.multiply(_nel);
-    };
-},
-function(_nem, _nen, _neo) {
-    'use strict';
-    defineModule(_nen);
-    Object.defineProperty(_nen, '__esModule', {
-        'value': !0
-    });
-    var _nep = _neo(3);
-    _nen.getSlot15PersonalEffect = function(_neq) {
-        var _ner = new _nep.SlotItemEffectModel(),
-            _nes = !1;
-        if ((566 == _neq.ship_id || 567 == _neq.ship_id || 568 == _neq.ship_id || 648 == _neq.ship_id || 651 == _neq.ship_id || 656 == _neq.ship_id || 670 == _neq.ship_id || 915 == _neq.ship_id || 951 == _neq.ship_id || 'たけ' == _neq.yomi) && (_nes = !0), 0 == _nes) return _ner;
-        var _net = _neq.get_slotnums(15);
-        return 30 == _neq.ctype && (1 == _net ? _ner.raig = 2 : 2 <= _net && (_ner.raig = 4)), 'たけ' == _neq.yomi && (_ner.raig += 5, _ner.kaih += 1), _ner;
-    };
-},
-function(_neu, _nev, _new) {
-    'use strict';
-    defineModule(_nev);
-    Object.defineProperty(_nev, '__esModule', {
-        'value': !0
-    });
-    var _nex = _new(3);
-    _nev.getSlot16M1PersonalEffect = function(_ney) {
-        var _nez = new _nex.SlotItemEffectModel(),
-            _nf0 = new _nex.SlotItemEffectModel();
-        67 == _ney.ctype || 78 == _ney.ctype || 82 == _ney.ctype || 88 == _ney.ctype || 108 == _ney.ctype || 112 == _ney.ctype ? (_nf0.houg += 2, _nf0.souk += 1, 67 == _ney.ctype && (_nf0.kaih -= 2)) : 149 == _ney.ship_id || 150 == _ney.ship_id || 151 == _ney.ship_id || 152 == _ney.ship_id ? (_nf0.houg += 1, _nf0.souk += 1, _nf0.kaih -= 3) : 591 == _ney.ship_id || 592 == _ney.ship_id ? (_nf0.houg += 2, _nf0.souk += 1, _nf0.kaih -= 2) : 593 != _ney.ship_id && 954 != _ney.ship_id || (_nf0.houg += 1, _nf0.souk += 1, --_nf0.kaih);
-        var _nf1 = !0;
-        if (_nf0.exists() || (_nf1 = !1), 0 == _nf1) return _nez;
-        var _nf2 = _ney.get_slotnums(298) + _ney.get_slotnums(299) + _ney.get_slotnums(300);
-        return _nez = _nf0.multiply(_nf2);
-    };
-},
-function(_nf3, _nf4, _nf5) {
-    'use strict';
-    defineModule(_nf4);
-    Object.defineProperty(_nf4, '__esModule', {
-        'value': !0
-    });
-    var _nf6 = _nf5(3);
-    _nf4.getSlot18_52_PersonalEffect = function(_nf7) {
-        var _nf8 = new _nf6.SlotItemEffectModel(),
-            _nf9 = new _nf6.SlotItemEffectModel();
-        if (277 == _nf7.ship_id || 278 == _nf7.ship_id || 156 == _nf7.ship_id ? _nf9.houg = 1 : 594 == _nf7.ship_id || 698 == _nf7.ship_id || 646 == _nf7.ship_id ? (_nf9.houg = 1, _nf9.kaih = 1) : 599 != _nf7.ship_id && 610 != _nf7.ship_id || (_nf9.houg = 2, _nf9.kaih = 1), !_nf9.exists()) return _nf8;
-        var _nfa = _nf7.get_slotnums(18) + _nf7.get_slotnums(52);
-        return _nf8 = _nf9.multiply(_nfa);
-    };
-},
-function(_nfb, _nfc, _nfd) {
-    'use strict';
-    defineModule(_nfc);
-    Object.defineProperty(_nfc, '__esModule', {
-        'value': !0
-    });
-    var _nfe = _nfd(3);
-    _nfc.getSlot19PersonalEffect = function(_nff) {
-        var _nfg = new _nfe.SlotItemEffectModel(),
-            _nfh = new _nfe.SlotItemEffectModel();
-        if ('ほうしょう' == _nff.yomi && (_nfh.houg = 2, _nfh.kaih = 2, _nfh.tais = 2, _nfh.tyku = 2), 75 != _nff.ctype && 76 != _nff.ctype || (_nfh.houg = 2, _nfh.tais = 3), 7 == _nff.stype && (_nfh.tyku += 1, _nfh.kaih += 1), 894 != _nff.ship_id && 899 != _nff.ship_id || (_nfh.houg += 1, _nfh.kaih += 1, _nfh.tais += 1, _nfh.tyku += 1), !_nfh.exists()) return _nfg;
-        var _nfi = _nff.get_slotnums(19);
-        return _nfg = _nfh.multiply(_nfi);
-    };
-},
-function(_nfj, _nfk, _nfl) {
-    'use strict';
-    defineModule(_nfk);
-    Object.defineProperty(_nfk, '__esModule', {
-        'value': !0
-    });
-    var _nfm = _nfl(3);
-    _nfk.getSlot35PersonalEffect = function(_nfn) {
-        var _nfo = new _nfm.SlotItemEffectModel(),
-            _nfp = new _nfm.SlotItemEffectModel();
-        return 149 == _nfn.ship_id || 591 == _nfn.ship_id || 592 == _nfn.ship_id ? (_nfp.houg += 1, _nfp.tyku += 1) : 150 == _nfn.ship_id ? _nfp.tyku += 1 : 151 == _nfn.ship_id || 593 == _nfn.ship_id || 954 == _nfn.ship_id ? (_nfp.tyku += 1, _nfp.kaih += 1) : 152 == _nfn.ship_id && (_nfp.houg += 1), _nfp.exists() ? _nfo = _nfp.multiply(1) : _nfo;
-    };
-},
-function(_nfq, _nfr, _nfs) {
-    'use strict';
-    defineModule(_nfr);
-    Object.defineProperty(_nfr, '__esModule', {
-        'value': !0
-    });
-    var _nft = _nfs(3);
-    _nfr.getSlot47PersonalEffect = function(_nfu) {
-        var _nfv = new _nft.SlotItemEffectModel(),
-            _nfw = new _nft.SlotItemEffectModel();
-        if (0 <= ['あさしも', 'はるかぜ', 'かみかぜ', 'やまかぜ', 'まいかぜ', 'しぐれ'].indexOf(_nfu.yomi) ? (_nfw.tais += 3, _nfw.kaih += 2, _nfw.houg += 1) : 0 <= ['きしなみ', 'いそかぜ', 'はまかぜ', 'うしお', 'いかづち', 'やまぐも'].indexOf(_nfu.yomi) && (_nfw.tais += 2, _nfw.kaih += 2), !_nfw.exists()) return _nfv;
-        var _nfx = _nfu.get_slotnums(47) + _nfu.get_slotnums(438);
-        return _nfv = _nfw.multiply(_nfx);
-    };
-},
-function(_nfy, _nfz, _ng0) {
-    'use strict';
-    var _ng1 = this && this.__importDefault || function(_ng2) {
-        return _ng2 && _ng2.__esModule ? _ng2 : {
-            'default': _ng2
-        };
-    };
-    defineModule(_nfz);
-    Object.defineProperty(_nfz, '__esModule', {
-        'value': !0
-    });
-    var _ng3 = _ng0(3),
-        _ng4 = _ng1(_ng0(0));
-    _nfz.getSlot50PersonalEffect = function(_ng5) {
-        var _ng6 = new _ng3.SlotItemEffectModel(),
-            _ng7 = !1,
-            _ng8 = new _ng3.SlotItemEffectModel();
-        7 != _ng5.ctype && 13 != _ng5.ctype && 8 != _ng5.ctype && 29 != _ng5.ctype && 9 != _ng5.ctype && 31 != _ng5.ctype || (_ng8.houg += 1, _ng7 = !0), 8 != _ng5.ctype && 29 != _ng5.ctype && 9 != _ng5.ctype && 31 != _ng5.ctype || (_ng8.houg += 1, _ng8.kaih += 1, _ng7 = !0);
-        var _ng9 = _ng5.get_slotnums(50);
-        9 != _ng5.ctype && 31 != _ng5.ctype || 2 <= _ng9 && (_ng8.houg += 1, _ng7 = !0);
-        var _nga = 0;
-        if (501 != _ng5.ship_id && 506 != _ng5.ship_id || (_ng8.houg += 1, _ng7 = !0, _nga = 1), 0 == _ng7) return _ng6;
-        _ng6 = _ng8.multiply(_ng9);
-        for (var _ngb = 0, _ngc = 0, _ngd = _ng5.have_slot_ids(); _ngc < _ngd.length; _ngc++) {
-            var _nge = _ngd[_ngc],
-                _ngf = _ng4.default.model.slot.getMst(_nge),
-                _ngg = _ngf.equipType;
-            12 != _ngg && 13 != _ngg || 5 <= _ngf.sakuteki && (_ngb += _ng5.get_slotnums(parseInt(_nge)));
-        }
-        0 < _ngb && (7 == _ng5.ctype || 13 == _ng5.ctype ? 0 == _ng5.get_slotnums(90) && (_ng6.houg += 1, _ng6.kaih += 1, _ng6.raig += 1) : 8 != _ng5.ctype && 29 != _ng5.ctype && 9 != _ng5.ctype && 31 != _ng5.ctype || (_ng6.houg += 3, _ng6.kaih += 2, _ng6.raig += 2), 501 != _ng5.ship_id && 506 != _ng5.ship_id || (_ng6.houg += 1, _ng6.kaih += 1));
-        var _ngh = _ng5.get_slotnums(30),
-            _ngi = _ng5.get_slotnums(410);
-        return 1 == _nga && (0 < _ngh + _ngi && (_ng6.houg += 1, _ng6.tyku += 3, _ng6.kaih += 2), 0 < _ngi && (_ng6.houg += 2)), _ng6;
-    };
-},
-function(_ngj, _ngk, _ngl) {
-    'use strict';
-    defineModule(_ngk);
-    Object.defineProperty(_ngk, '__esModule', {
-        'value': !0
-    });
-    var _ngm = _ngl(3);
-    _ngk.getSlot58PersonalEffect = function(_ngn) {
-        var _ngo = new _ngm.SlotItemEffectModel(),
-            _ngp = new _ngm.SlotItemEffectModel();
-        if ('しまかぜ' != _ngn.yomi && 4 != _ngn.stype && 54 != _ngn.ctype || (_ngp.raig = 1), !_ngp.exists()) return _ngo;
-        var _ngq = _ngn.get_slotnums(58);
-        return _ngo = _ngp.multiply(_ngq);
-    };
-},
-function(_ngr, _ngs, _ngt) {
-    'use strict';
-    defineModule(_ngs);
-    Object.defineProperty(_ngs, '__esModule', {
-        'value': !0
-    });
-    var _ngu = _ngt(3);
-    _ngs.getSlot61PersonalEffect = function(_ngv) {
-        var _ngw = new _ngu.SlotItemEffectModel();
-        if (553 == _ngv.ship_id) _ngw.houg = 3, _ngw.kaih = 2, _ngw.souk = 1, _ngw.houm = 5, _ngw.leng = 1;
-        else if (554 == _ngv.ship_id) _ngw.houg = 3, _ngw.kaih = 3, _ngw.souk = 3, _ngw.houm = 5, _ngw.leng = 1;
-        else if (196 == _ngv.ship_id) _ngw.houm = 5, _ngw.leng = 1;
-        else {
-            if (197 != _ngv.ship_id) return _ngw;
-            _ngw.houm = 5, _ngw.leng = 1;
-        }
-        return _ngw;
-    }, _ngs.getSlot61PersonalEffect2 = function(_ngx) {
-        var _ngy = new _ngu.SlotItemEffectModel();
-        if (null == _ngx.have_slots_dict[61]) return _ngy;
-        for (var _ngz = 0, _nh0 = 0, _nh1 = _ngx.have_slots_dict[61]; _nh0 < _nh1.length; _nh0++) {
-            var _nh2 = _nh1[_nh0].level;
-            _ngz < _nh2 && (_ngz = _nh2);
-        }
-        return 0 == _ngz || ('そうりゅう' == _ngx.yomi ? (_ngy.houg += 3, _ngy.saku += 3) : 'ひりゅう' == _ngx.yomi && (_ngy.houg += 2, _ngy.saku += 2), 508 != _ngx.ship_id && 509 != _ngx.ship_id && 560 != _ngx.ship_id || (_ngy.houg += 1, _ngy.saku += 1), 8 <= _ngz && 197 == _ngx.ship_id && (_ngy.houg += 1, _ngy.saku += 1)), _ngy;
-    };
-},
-function(_nh3, _nh4, _nh5) {
-    'use strict';
-    defineModule(_nh4);
-    Object.defineProperty(_nh4, '__esModule', {
-        'value': !0
-    });
-    var _nh6 = _nh5(3);
-    _nh4.getSlot63PersonalEffect = function(_nh7) {
-        var _nh8 = new _nh6.SlotItemEffectModel(),
-            _nh9 = new _nh6.SlotItemEffectModel();
-        1 != _nh7.ctype && 5 != _nh7.ctype && 10 != _nh7.ctype || (_nh9.tyku += 1), 'ゆうだち' == _nh7.yomi && (_nh9.houg += 1, _nh9.tyku += 1, _nh9.kaih += 2), 145 == _nh7.ship_id || 961 == _nh7.ship_id ? _nh9.houg += 1 : 144 == _nh7.ship_id ? _nh9.raig += 1 : 469 == _nh7.ship_id ? _nh9.kaih += 2 : 242 == _nh7.ship_id || 497 == _nh7.ship_id || 244 == _nh7.ship_id || 498 == _nh7.ship_id ? _nh9.kaih += 1 : 627 == _nh7.ship_id ? _nh9.houg += 1 : 903 != _nh7.ship_id && 908 != _nh7.ship_id || (_nh9.houg += 2);
-        var _nha = !0;
-        if (_nh9.exists() || (_nha = !1), 0 == _nha) return _nh8;
-        var _nhb = _nh7.get_slotnums(63);
-        return _nh8 = _nh9.multiply(_nhb);
-    };
-},
-function(_nhc, _nhd, _nhe) {
-    'use strict';
-    defineModule(_nhd);
-    Object.defineProperty(_nhd, '__esModule', {
-        'value': !0
-    });
-    var _nhf = _nhe(3);
-    _nhd.getSlot67PersonalEffect = function(_nhg) {
-        var _nhh = new _nhf.SlotItemEffectModel(),
-            _nhi = new _nhf.SlotItemEffectModel();
-        if (13 != _nhg.stype && 14 != _nhg.stype && (_nhi.raig = -5), !_nhi.exists()) return _nhh;
-        var _nhj = _nhg.get_slotnums(67);
-        return _nhh = _nhi.multiply(_nhj);
-    };
-},
-function(_nhk, _nhl, _nhm) {
-    'use strict';
-    defineModule(_nhl);
-    Object.defineProperty(_nhl, '__esModule', {
-        'value': !0
-    });
-    var _nhn = _nhm(3);
-    _nhl.getSlot69PersonalEffect = function(_nho) {
-        var _nhp = new _nhn.SlotItemEffectModel(),
-            _nhq = !1,
-            _nhr = new _nhn.SlotItemEffectModel();
-        if (554 == _nho.ship_id || 646 == _nho.ship_id ? (_nhr.houg += 1, _nhr.tais += 2, _nhq = !0) : 553 == _nho.ship_id && (_nhr.houg += 1, _nhr.tais += 1, _nhq = !0), 0 == _nhq) return _nhp;
-        var _nhs = _nho.get_slotnums(69);
-        return _nhp.add(_nhr.multiply(_nhs)), _nhp;
-    };
-},
-function(_nht, _nhu, _nhv) {
-    'use strict';
-    var _nhw = this && this.__importDefault || function(_nhx) {
-        return _nhx && _nhx.__esModule ? _nhx : {
-            'default': _nhx
-        };
-    };
-    defineModule(_nhu);
-    Object.defineProperty(_nhu, '__esModule', {
-        'value': !0
-    });
-    var _nhy = _nhv(3),
-        _nhz = _nhw(_nhv(0));
-    _nhu.getSlot78PersonalEffect = function(_ni0) {
-        var _ni1 = new _nhy.SlotItemEffectModel(),
-            _ni2 = !1,
-            _ni3 = new _nhy.SlotItemEffectModel(),
-            _ni4 = 0,
-            _ni5 = 0,
-            _ni6 = !1;
-        if (48 == _ni0.ctype && (_ni3.houg += 1, _ni3.kaih += 1, _ni5 = _ni4 = 1, _ni2 = _ni6 = !0), 0 == _ni2) return _ni1;
-        var _ni7 = _ni0.get_slotnums(78);
-        _ni1.add(_ni3.multiply(_ni7));
-        var _ni8, _ni9 = 0,
-            _nia = _ni0.get_each_level_nums(78),
-            _nib = 0;
-        if (_ni6) {
-            _nia.map(function(_nic, _nid) {
-                7 <= _nid && (_nib += _nic);
-            });
-            for (var _nie = 0, _nif = _ni0.have_slot_ids(); _nie < _nif.length; _nie++) {
-                var _nig = _nif[_nie],
-                    _nih = _nhz.default.model.slot.getMst(_nig),
-                    _nii = _nih.equipType;
-                12 != _nii && 13 != _nii || 5 <= _nih.sakuteki && (_ni9 += _ni0.get_slotnums(parseInt(_nig)));
-            }
-        }
-        return 1 == _ni4 && 0 < _ni9 && (_ni1.houg += 2, _ni1.kaih += 2, _ni1.raig += 2), 1 == _ni5 && (_ni1.houg += +_nib, _ni8 = _nia[10], _ni1.souk += +_ni8), _ni1;
-    };
-},
-function(_nij, _nik, _nil) {
-    'use strict';
-    defineModule(_nik);
-    Object.defineProperty(_nik, '__esModule', {
-        'value': !0
-    });
-    var _nim = _nil(3);
-    _nik.getSlot79And81PersonalEffect = function(_nin) {
-        var _nio = new _nim.SlotItemEffectModel(),
-            _nip = new _nim.SlotItemEffectModel();
-        if (553 == _nin.ship_id) _nip.houg = 3;
-        else if (82 == _nin.ship_id) _nip.houg = 2;
-        else if (88 == _nin.ship_id) _nip.houg = 2;
-        else if (554 == _nin.ship_id) _nip.houg = 3;
-        else if (411 == _nin.ship_id) _nip.houg = 2;
-        else {
-            if (412 != _nin.ship_id) return _nio;
-            _nip.houg = 2;
-        }
-        var _niq = _nin.get_slotnums(79) + _nin.get_slotnums(81);
-        return _nio = _nip.multiply(_niq);
-    };
-},
-function(_nir, _nis, _nit) {
-    'use strict';
-    defineModule(_nis);
-    Object.defineProperty(_nis, '__esModule', {
-        'value': !0
-    });
-    var _niu = _nit(3);
-    _nis.getSlot82PersonalEffect = function(_niv) {
-        var _niw = new _niu.SlotItemEffectModel(),
-            _nix = new _niu.SlotItemEffectModel();
-        if (76 == _niv.ctype && (_nix.tais = 1, _nix.kaih = 1), !_nix.exists()) return _niw;
-        var _niy = _niv.get_slotnums(82);
-        return _niw = _nix.multiply(_niy);
-    };
-},
-function(_niz, _nj0, _nj1) {
-    'use strict';
-    defineModule(_nj0);
-    Object.defineProperty(_nj0, '__esModule', {
-        'value': !0
-    });
-    var _nj2 = _nj1(3);
-    _nj0.getSlot87PersonalEffect = function(_nj3) {
-        var _nj4, _nj5 = new _nj2.SlotItemEffectModel(),
-            _nj6 = !1,
-            _nj7 = new _nj2.SlotItemEffectModel(),
-            _nj8 = 0;
-        if (951 == _nj3.ship_id ? (_nj7.houg += 1, _nj7.kaih += 1, _nj7.raig += 1, _nj7.houm += 1, _nj6 = !0, _nj8 = 1) : 181 == _nj3.ship_id || 316 == _nj3.ship_id || 50 == _nj3.ship_id || 229 == _nj3.ship_id || 961 == _nj3.ship_id ? _nj8 = 2 : 591 != _nj3.ship_id && 592 != _nj3.ship_id && 593 != _nj3.ship_id && 954 != _nj3.ship_id || (_nj5.kaih += 2, _nj5.raig += 1, _nj8 = 3), 38 != _nj3.ctype && 54 != _nj3.ctype && 101 != _nj3.ctype || (_nj8 = 4), _nj6 && (_nj4 = _nj3.get_slotnums(87), _nj5.add(_nj7.multiply(_nj4))), 0 == _nj8) return _nj5;
-        var _nj9 = _nj3.get_each_level_nums(87),
-            _nja = [];
-        return 0 < _nj8 && _nj9.forEach(function(_njb, _njc) {
-            for (var _njd = 1; _njd <= _nj3.SLOT_LEVEL_MAX; _njd++) null == _nja[_njd] && (_nja[_njd] = 0), _njd <= _njc && (_nja[_njd] += _njb);
-        }), 1 == _nj8 ? (1 <= _nja[6] && (_nj5.tyku += +_nja[6]), 1 <= _nja[7] && (_nj5.kaih += +_nja[7]), 1 <= _nja[8] && (_nj5.raig += +_nja[8]), 1 <= _nja[9] && (_nj5.houg += +_nja[9]), 1 <= _nja[10] && (_nj5.houm += +_nja[10])) : 2 == _nj8 ? (1 <= _nja[6] && (_nj5.kaih += +_nja[6]), 1 <= _nja[7] && (_nj5.raig += +_nja[7]), 1 <= _nja[8] && (_nj5.houg += +_nja[8]), 1 <= _nja[9] && (_nj5.houm += +_nja[9]), 1 <= _nja[10] && (_nj5.kaih += +_nja[10])) : 3 == _nj8 ? (0 < _nja[6] && (_nj5.kaih += 1), 0 < _nja[8] && (_nj5.raig += 1), 0 < _nja[10] && (_nj5.houg += 1)) : 4 == _nj8 && (1 <= _nja[7] && (_nj5.kaih += +_nja[7]), 1 <= _nja[8] && (_nj5.raig += +_nja[8]), 1 <= _nja[10] && (_nj5.houm += +_nja[10])), _nj5;
-    };
-},
-function(_nje, _njf, _njg) {
-    'use strict';
-    var _njh = this && this.__importDefault || function(_nji) {
-        return _nji && _nji.__esModule ? _nji : {
-            'default': _nji
-        };
-    };
-    defineModule(_njf);
-    Object.defineProperty(_njf, '__esModule', {
-        'value': !0
-    });
-    var _njj = _njg(3),
-        _njk = _njh(_njg(0));
-    _njf.getSlot90PersonalEffect = function(_njl) {
-        var _njm, _njn = new _njj.SlotItemEffectModel(),
-            _njo = new _njj.SlotItemEffectModel();
-        142 == _njl.ship_id ? (_njo.houg += 2, _njo.kaih += 1) : 295 == _njl.ship_id || 416 == _njl.ship_id || 417 == _njl.ship_id ? _njo.houg += 1 : 264 == _njl.ship_id ? (_njo.houg += 1, _njo.tyku += 1) : 501 != _njl.ship_id && 506 != _njl.ship_id || (_njo.houg += 1), 7 != _njl.ctype && 13 != _njl.ctype && 8 != _njl.ctype && 29 != _njl.ctype && 9 != _njl.ctype && 31 != _njl.ctype || (_njo.houg += 1), _njo.exists() && (_njm = _njl.get_slotnums(90), _njn = _njo.multiply(_njm));
-        var _njp = [];
-        if ('あおば' == _njl.yomi && (_njp[1] = 1), 13 != _njl.ctype && 7 != _njl.ctype || (_njp[2] = 1), 0 == _njp.length) return _njn;
-        for (var _njq = 0, _njr = 0, _njs = 0, _njt = _njl.have_slot_ids(); _njs < _njt.length; _njs++) {
-            var _nju = _njt[_njs],
-                _njv = _njk.default.model.slot.getMst(_nju),
-                _njw = _njv.equipType;
-            12 != _njw && 13 != _njw || (5 <= _njv.sakuteki && (_njq += _njl.get_slotnums(parseInt(_nju))), 2 <= _njv.taiku && (_njr += _njl.get_slotnums(parseInt(_nju))));
-        }
-        return 0 < _njr && null != _njp[1] && (_njn.tyku += 5, _njn.kaih += 2), 0 < _njq && null != _njp[2] && (_njn.houg += 3, _njn.kaih += 2, _njn.raig += 2), _njn;
-    };
-},
-function(_njx, _njy, _njz) {
-    'use strict';
-    defineModule(_njy);
-    Object.defineProperty(_njy, '__esModule', {
-        'value': !0
-    });
-    var _nk0 = _njz(3);
-    _njy.getSlot93PersonalEffect = function(_nk1) {
-        var _nk2 = new _nk0.SlotItemEffectModel();
-        return 'そうりゅう' == _nk1.yomi ? _nk2.houg = 1 : 'ひりゅう' == _nk1.yomi && (_nk2.houg = 3), _nk2;
-    };
-},
-function(_nk3, _nk4, _nk5) {
-    'use strict';
-    defineModule(_nk4);
-    Object.defineProperty(_nk4, '__esModule', {
-        'value': !0
-    });
-    var _nk6 = _nk5(3);
-    _nk4.getSlot94PersonalEffect = function(_nk7) {
-        var _nk8 = new _nk6.SlotItemEffectModel();
-        if (196 == _nk7.ship_id) _nk8.houg = 7;
-        else {
-            if (197 != _nk7.ship_id) return _nk8;
-            _nk8.houg = 3;
-        }
-        return _nk8;
-    };
-},
-function(_nk9, _nka, _nkb) {
-    'use strict';
-    defineModule(_nka);
-    Object.defineProperty(_nka, '__esModule', {
-        'value': !0
-    });
-    var _nkc = _nkb(3);
-    _nka.getSlot99PersonalEffect = function(_nkd) {
-        var _nke = new _nkc.SlotItemEffectModel();
-        return 'そうりゅう' == _nkd.yomi ? _nke.houg = 4 : 'ひりゅう' == _nkd.yomi && (_nke.houg = 1), _nke;
-    };
-},
-function(_nkf, _nkg, _nkh) {
-    'use strict';
-    defineModule(_nkg);
-    Object.defineProperty(_nkg, '__esModule', {
-        'value': !0
-    });
-    var _nki = _nkh(3);
-    _nkg.getSlot100PersonalEffect = function(_nkj) {
-        var _nkk = new _nki.SlotItemEffectModel(),
-            _nkl = new _nki.SlotItemEffectModel();
-        if (553 == _nkj.ship_id) _nkl.houg = 4;
-        else {
-            if (554 != _nkj.ship_id) return 196 == _nkj.ship_id ? _nkk.houg = 3 : 197 == _nkj.ship_id && (_nkk.houg = 6), _nkk;
-            _nkl.houg = 4;
-        }
-        var _nkm = _nkj.get_slotnums(100);
-        return _nkk = _nkl.multiply(_nkm);
-    };
-},
-function(_nkn, _nko, _nkp) {
-    'use strict';
-    defineModule(_nko);
-    Object.defineProperty(_nko, '__esModule', {
-        'value': !0
-    });
-    var _nkq = _nkp(3);
-    _nko.getSlot104PersonalEffect = function(_nkr) {
-        var _nks = new _nkq.SlotItemEffectModel(),
-            _nkt = new _nkq.SlotItemEffectModel();
-        if (149 == _nkr.ship_id || 591 == _nkr.ship_id) _nkt.houg = 2;
-        else if (150 == _nkr.ship_id || 592 == _nkr.ship_id) _nkt.houg = 1;
-        else if (152 == _nkr.ship_id) _nkt.houg = 1;
-        else {
-            if (151 != _nkr.ship_id && 593 != _nkr.ship_id && 954 != _nkr.ship_id) return _nks;
-            _nkt.houg = 2, _nkt.tyku = 1, _nkt.kaih = 2;
-        }
-        var _nku = _nkr.get_slotnums(104);
-        return _nks = _nkt.multiply(_nku);
-    };
-},
-function(_nkv, _nkw, _nkx) {
-    'use strict';
-    defineModule(_nkw);
-    Object.defineProperty(_nkw, '__esModule', {
-        'value': !0
-    });
-    var _nky = _nkx(3);
-    _nkw.getSlot106PersonalEffect = function(_nkz) {
-        var _nl0 = new _nky.SlotItemEffectModel(),
-            _nl1 = new _nky.SlotItemEffectModel();
-        if (0 <= [407, 419, 145, 151, 541, 911, 916, 593, 954, 961].indexOf(_nkz.ship_id) ? (_nl1.houg += 1, _nl1.tyku += 2, _nl1.souk += 1, _nl1.kaih += 3) : 0 <= ['おおよど', 'ひびき', 'かしま'].indexOf(_nkz.yomi) ? (_nl1.tyku += 1, _nl1.souk += 1, _nl1.kaih += 3) : 0 <= ['やはぎ', 'ゆきかぜ', 'いそかぜ', 'あさしも', 'はまかぜ', 'かすみ', 'すずつき'].indexOf(_nkz.yomi) && (_nl1.tyku += 2, _nl1.souk += 1, _nl1.kaih += 2, 663 != _nkz.ship_id && 668 != _nkz.ship_id || (_nl0.houg += 1, _nl0.tyku += 1, _nl0.souk += 1, _nl0.kaih += 1), 668 == _nkz.ship_id && (_nl0.tyku += 1, _nl0.kaih += 1)), !_nl1.exists()) return _nl0;
-        var _nl2 = _nkz.get_slotnums(106) + _nkz.get_slotnums(450);
-        return _nl0.add(_nl1.multiply(_nl2)), _nl0;
-    };
-},
-function(_nl3, _nl4, _nl5) {
-    'use strict';
-    defineModule(_nl4);
-    Object.defineProperty(_nl4, '__esModule', {
-        'value': !0
-    });
-    var _nl6 = _nl5(3);
-    _nl4.getSlot119PersonalEffect = function(_nl7) {
-        var _nl8 = new _nl6.SlotItemEffectModel(),
-            _nl9 = new _nl6.SlotItemEffectModel();
-        34 == _nl7.ctype || 56 == _nl7.ctype ? _nl9.houg += 1 : 90 == _nl7.ctype && (_nl9.houg += 2, _nl9.raig += 1);
-        var _nla = !0;
-        if (_nl9.exists() || (_nla = !1), 0 == _nla) return _nl8;
-        var _nlb = _nl7.get_slotnums(119);
-        return _nl8 = _nl9.multiply(_nlb);
-    };
-},
-function(_nlc, _nld, _nle) {
-    'use strict';
-    defineModule(_nld);
-    Object.defineProperty(_nld, '__esModule', {
-        'value': !0
-    });
-    var _nlf = _nle(3);
-    _nld.getSlot120mm50GroupPersonalEffect = function(_nlg) {
-        var _nlh = new _nlf.SlotItemEffectModel(),
-            _nli = !1,
-            _nlj = new _nlf.SlotItemEffectModel(),
-            _nlk = _nlg.get_slotnums(147),
-            _nll = _nlg.get_slotnums(393),
-            _nlm = _nlg.get_slotnums(394),
-            _nln = new _nlf.SlotItemEffectModel(),
-            _nlo = new _nlf.SlotItemEffectModel();
-        if (61 == _nlg.ctype && (_nlj.houg += 1, _nlj.kaih += 1, _nli = !0, 1 <= _nll && (_nln.houg += 1, _nln.tyku += 1), 1 <= _nlm && (_nlo.houg += 1, _nlo.tyku += 1, _nlo.kaih += 1, 'グレカーレ' == _nlg.yomi && (_nlo.kaih += 1))), 0 == _nli) return _nlh;
-        var _nlp = _nlk + _nll + _nlm;
-        return _nlh.add(_nlj.multiply(_nlp)).add(_nln.multiply(_nll)).add(_nlo.multiply(_nlm)), _nlh;
-    };
-},
-function(_nlq, _nlr, _nls) {
-    'use strict';
-    var _nlt = this && this.__importDefault || function(_nlu) {
-        return _nlu && _nlu.__esModule ? _nlu : {
-            'default': _nlu
-        };
-    };
-    defineModule(_nlr);
-    Object.defineProperty(_nlr, '__esModule', {
-        'value': !0
-    });
-    var _nlv = _nls(3),
-        _nlw = _nlt(_nls(0));
-    _nlr.getSlot122PersonalEffect = function(_nlx) {
-        var _nly = new _nlv.SlotItemEffectModel(),
-            _nlz = 0,
-            _nm0 = 0,
-            _nm1 = !1;
-        656 == _nlx.ship_id && (_nm1 = !0, _nm0 = _nlz = 1);
-        var _nm2 = 0,
-            _nm3 = 0,
-            _nm4 = _nlx.get_each_level_nums(122),
-            _nm5 = 0;
-        if (_nm1) {
-            _nm4.forEach(function(_nm6, _nm7) {
-                4 <= _nm7 && (_nm5 += _nm6);
-            });
-            for (var _nm8 = 0, _nm9 = _nlx.have_slot_ids(); _nm8 < _nm9.length; _nm8++) {
-                var _nma = _nm9[_nm8],
-                    _nmb = _nlw.default.model.slot.getMst(_nma),
-                    _nmc = _nmb.equipType;
-                12 != _nmc && 13 != _nmc || (5 <= _nmb.sakuteki && (_nm2 += _nlx.get_slotnums(parseInt(_nma))), 2 <= _nmb.taiku && (_nm3 += _nlx.get_slotnums(parseInt(_nma))));
-            }
-        }
-        return 0 < _nm5 && (1 == _nm0 && (0 < _nm2 && (_nly.houg += 4, _nly.kaih += 3), 0 < _nm3 && (_nly.tyku += 4, _nly.kaih += 3)), 1 == _nlz && (_nly.houg += 5 * _nm5, _nly.tyku += 3 * _nm5, _nly.kaih += 2 * _nm5)), _nly;
-    };
-},
-function(_nmd, _nme, _nmf) {
-    'use strict';
-    defineModule(_nme);
-    Object.defineProperty(_nme, '__esModule', {
-        'value': !0
-    });
-    var _nmg = _nmf(3);
-    _nme.getSlot129PersonalEffect = function(_nmh) {
-        var _nmi = new _nmg.SlotItemEffectModel(),
-            _nmj = !1,
-            _nmk = new _nmg.SlotItemEffectModel();
-        if (0 <= [66, 28, 12, 1, 5, 10, 23, 18, 30, 38, 22, 54, 101].indexOf(_nmh.ctype) ? (_nmk.houg = 1, _nmk.raig = 2, _nmk.kaih = 2, _nmk.tais = 2, _nmk.saku = 1, _nmj = !0) : 0 <= [21, 4, 20, 16, 34, 56, 41, 52].indexOf(_nmh.ctype) ? (_nmk.houg = 1, _nmk.raig = 2, _nmk.kaih = 2, _nmk.saku = 3, _nmj = !0) : 0 <= [7, 13, 29, 8, 9, 31].indexOf(_nmh.ctype) && (_nmk.houg = 1, _nmk.kaih = 2, _nmk.saku = 3, _nmj = !0), 0 == _nmj) return _nmi;
-        var _nml = _nmh.get_slotnums(129);
-        return _nmi = _nmk.multiply(_nml);
-    };
-},
-function(_nmm, _nmn, _nmo) {
-    'use strict';
-    defineModule(_nmn);
-    Object.defineProperty(_nmn, '__esModule', {
-        'value': !0
-    });
-    var _nmp = _nmo(3);
-    _nmn.getSlot143PersonalEffect = function(_nmq) {
-        var _nmr = new _nmp.SlotItemEffectModel();
-        return 'あかぎ' == _nmq.yomi ? _nmr.houg = 3 : 'かが' == _nmq.yomi || 'しょうかく' == _nmq.yomi ? _nmr.houg = 2 : 'ずいかく' != _nmq.yomi && 'りゅうじょう' != _nmq.yomi || (_nmr.houg = 1), _nmr;
-    };
-},
-function(_nms, _nmt, _nmu) {
-    'use strict';
-    defineModule(_nmt);
-    Object.defineProperty(_nmt, '__esModule', {
-        'value': !0
-    });
-    var _nmv = _nmu(3);
-    _nmt.getSlot144PersonalEffect = function(_nmw) {
-        var _nmx = new _nmv.SlotItemEffectModel();
-        return 'あかぎ' == _nmw.yomi ? _nmx.houg = 3 : 'かが' == _nmw.yomi ? _nmx.houg = 2 : 'しょうかく' == _nmw.yomi ? (_nmx.houg = 2, 461 != _nmw.ship_id && 466 != _nmw.ship_id || (_nmx.houg += 2)) : 'ずいかく' == _nmw.yomi ? (_nmx.houg = 1, 462 != _nmw.ship_id && 467 != _nmw.ship_id || (_nmx.houg += 1)) : 'りゅうじょう' == _nmw.yomi && (_nmx.houg = 1), _nmx;
-    };
-},
-function(_nmy, _nmz, _nn0) {
-    'use strict';
-    defineModule(_nmz);
-    Object.defineProperty(_nmz, '__esModule', {
-        'value': !0
-    });
-    var _nn1 = _nn0(3);
-    _nmz.getSlot149PersonalEffect = function(_nn2) {
-        var _nn3 = new _nn1.SlotItemEffectModel(),
-            _nn4 = new _nn1.SlotItemEffectModel(),
-            _nn5 = !1;
-        return 488 == _nn2.ship_id || 141 == _nn2.ship_id || 160 == _nn2.ship_id || 622 == _nn2.ship_id || 623 == _nn2.ship_id || 656 == _nn2.ship_id || 961 == _nn2.ship_id ? (_nn4.tais = 1, _nn4.kaih = 3, _nn5 = !0) : 624 == _nn2.ship_id ? (_nn4.tais = 3, _nn4.kaih = 5, _nn5 = !0) : 662 == _nn2.ship_id && (_nn4.tais = 2, _nn4.kaih = 4, _nn5 = !0), 54 == _nn2.ctype && (_nn4.tais = 1, _nn4.kaih = 2, _nn5 = !0), 0 == _nn5 ? _nn3 : _nn3 = _nn4.multiply(1);
-    };
-},
-function(_nn6, _nn7, _nn8) {
-    'use strict';
-    defineModule(_nn7);
-    Object.defineProperty(_nn7, '__esModule', {
-        'value': !0
-    });
-    var _nn9 = _nn8(3);
-    _nn7.getSlot171PersonalEffect = function(_nna) {
-        var _nnb = new _nn9.SlotItemEffectModel(),
-            _nnc = 0;
-        'アメリカ' == _nna.getCountryName() && (_nnc = 1), 65 != _nna.ctype && 93 != _nna.ctype && 102 != _nna.ctype && 107 != _nna.ctype && 125 != _nna.ctype || (_nnb.houg += 1, _nnb.saku += 1, _nnc = 2);
-        var _nnd = _nna.get_each_level_nums(171),
-            _nne = 0,
-            _nnf = 0,
-            _nng = 0;
-        return 0 < _nnc && (_nnd.map(function(_nnh, _nni) {
-            5 <= _nni && (_nne += _nnh), 3 <= _nni && (_nnf += _nnh), 8 <= _nni && (_nng += _nnh);
-        }), 1 != _nnc && 2 != _nnc || (0 < _nnd[10] && (_nnb.houg += 1), 0 < _nne && (_nnb.kaih += 1)), 2 == _nnc && (0 < _nnf && (_nnb.saku += 1), 0 < _nng && (_nnb.saku += 1))), _nnb;
-    };
-},
-function(_nnj, _nnk, _nnl) {
-    'use strict';
-    defineModule(_nnk);
-    Object.defineProperty(_nnk, '__esModule', {
-        'value': !0
-    });
-    var _nnm = _nnl(3);
-    _nnk.getSlot174PersonalEffect = function(_nnn) {
-        var _nno = new _nnm.SlotItemEffectModel(),
-            _nnp = new _nnm.SlotItemEffectModel();
-        if (66 == _nnn.ctype && (_nnp.raig = 1, _nnp.kaih = 2), 591 == _nnn.ship_id || 592 == _nnn.ship_id || 954 == _nnn.ship_id ? (_nnp.raig += 6, _nnp.kaih += 3) : 593 == _nnn.ship_id ? (_nnp.raig += 5, _nnp.kaih += 2) : 488 != _nnn.ship_id && 622 != _nnn.ship_id && 623 != _nnn.ship_id && 624 != _nnn.ship_id || (_nnp.houg += 2, _nnp.raig += 4, _nnp.kaih += 4), !_nnp.exists()) return _nno;
-        var _nnq = _nnn.get_slotnums(174);
-        return _nno = _nnp.multiply(_nnq);
-    };
-},
-function(_nnr, _nns, _nnt) {
-    'use strict';
-    defineModule(_nns);
-    Object.defineProperty(_nns, '__esModule', {
-        'value': !0
-    });
-    var _nnu = _nnt(3);
-    _nns.getSlot179PersonalEffect = function(_nnv) {
-        var _nnw = new _nnu.SlotItemEffectModel(),
-            _nnx = new _nnu.SlotItemEffectModel();
-        if (54 == _nnv.ctype && (_nnx.raig = 1), !_nnx.exists()) return _nnw;
-        var _nny = _nnv.get_slotnums(179);
-        return _nnw = _nnx.multiply(_nny);
-    };
-},
-function(_nnz, _no0, _no1) {
-    'use strict';
-    defineModule(_no0);
-    Object.defineProperty(_no0, '__esModule', {
-        'value': !0
-    });
-    var _no2 = _no1(3);
-    _no0.getSlot184PersonalEffect = function(_no3) {
-        var _no4 = new _no2.SlotItemEffectModel(),
-            _no5 = new _no2.SlotItemEffectModel();
-        if (68 == _no3.ctype && (_no5.houg += 1, _no5.tyku += 2, _no5.kaih += 3), !_no5.exists()) return _no4;
-        var _no6 = _no3.get_slotnums(184);
-        return _no4 = _no5.multiply(_no6);
-    };
-},
-function(_no7, _no8, _no9) {
-    'use strict';
-    defineModule(_no8);
-    Object.defineProperty(_no8, '__esModule', {
-        'value': !0
-    });
-    var _noa = _no9(3);
-    _no8.getSlot188PersonalEffect = function(_nob) {
-        var _noc = new _noa.SlotItemEffectModel(),
-            _nod = new _noa.SlotItemEffectModel();
-        if (68 == _nob.ctype && (_nod.houg += 3, _nod.tyku += 1, _nod.kaih += 1), !_nod.exists()) return _noc;
-        var _noe = _nob.get_slotnums(188);
-        return _noc = _nod.multiply(_noe);
-    };
-},
-function(_nof, _nog, _noh) {
-    'use strict';
-    defineModule(_nog);
-    Object.defineProperty(_nog, '__esModule', {
-        'value': !0
-    });
-    var _noi = _noh(3);
-    _nog.getSlot189PersonalEffect = function(_noj) {
-        var _nok = new _noi.SlotItemEffectModel(),
-            _nol = new _noi.SlotItemEffectModel();
-        if (68 != _noj.ctype && 63 != _noj.ctype || (_nol.tyku += 1, _nol.kaih += 2), !_nol.exists()) return _nok;
-        var _nom = _noj.get_slotnums(189);
-        return _nok = _nol.multiply(_nom);
-    };
-},
-function(_non, _noo, _nop) {
-    'use strict';
-    defineModule(_noo);
-    Object.defineProperty(_noo, '__esModule', {
-        'value': !0
-    });
-    var _noq = _nop(3);
-    _noo.getSlot194PersonalEffect = function(_nor) {
-        var _nos = new _noq.SlotItemEffectModel(),
-            _not = new _noq.SlotItemEffectModel();
-        if (70 == _nor.ctype ? (_not.houg += 3, _not.kaih += 2, _not.saku += 2) : 72 != _nor.ctype && 62 != _nor.ctype || (_not.kaih += 1, _not.saku += 2), 392 == _nor.ship_id && (_not.houg += 1, _not.kaih += 2, _not.saku += 2), !_not.exists()) return _nos;
-        var _nou = _nor.get_slotnums(194);
-        return _nos = _not.multiply(_nou);
-    };
-},
-function(_nov, _now, _nox) {
-    'use strict';
-    defineModule(_now);
-    Object.defineProperty(_now, '__esModule', {
-        'value': !0
-    });
-    var _noy = _nox(3);
-    _now.getSlot204PersonalEffect = function(_noz) {
-        var _np0 = new _noy.SlotItemEffectModel();
-        if (591 != _noz.ship_id && 592 != _noz.ship_id && 593 != _noz.ship_id && 954 != _noz.ship_id) return _np0;
-        _np0.souk = _np0.souk + 1, _np0.raig = _np0.raig + 1;
-        for (var _np1 = _noz.get_each_level_nums(204), _np2 = 0, _np3 = 0; _np3 <= 10; _np3++) 7 <= _np3 && (_np2 += _np1[_np3]);
-        return 0 < _np2 && (_np0.souk = _np0.souk + 1), 0 < _np1[10] && (_np0.raig = _np0.raig + 1), _np0;
-    };
-},
-function(_np4, _np5, _np6) {
-    'use strict';
-    defineModule(_np5);
-    Object.defineProperty(_np5, '__esModule', {
-        'value': !0
-    });
-    var _np7 = _np6(3);
-    _np5.getSlot228PersonalEffect = function(_np8) {
-        var _np9 = new _np7.SlotItemEffectModel(),
-            _npa = new _np7.SlotItemEffectModel();
-        if ('ほうしょう' == _np8.yomi && (_npa.houg = 3, _npa.kaih = 4, _npa.tais = 4, _npa.tyku = 3), 75 != _np8.ctype && 76 != _np8.ctype || (_npa.houg = 2, _npa.tais = 5, _npa.tyku = 1, _npa.kaih = 1), 7 == _np8.stype && (_npa.tais += 2, _npa.tyku += 1, _npa.kaih += 1), 894 != _np8.ship_id && 899 != _np8.ship_id || (_npa.houg += 1, _npa.kaih += 2, _npa.tais += 2, _npa.tyku += 1), !_npa.exists()) return _np9;
-        var _npb = _np8.get_slotnums(228);
-        return _np9 = _npa.multiply(_npb);
-    };
-},
-function(_npc, _npd, _npe) {
-    'use strict';
-    var _npf = this && this.__importDefault || function(_npg) {
-        return _npg && _npg.__esModule ? _npg : {
-            'default': _npg
-        };
-    };
-    defineModule(_npd);
-    Object.defineProperty(_npd, '__esModule', {
-        'value': !0
-    });
-    var _nph = _npe(3),
-        _npi = _npf(_npe(0));
-    _npd.getSlot229PersonalEffect = function(_npj) {
-        for (var _npk = new _nph.SlotItemEffectModel(), _npl = 0, _npm = 0, _npn = _npj.have_slots_dict[229]; _npm < _npn.length; _npm++) {
-            7 <= _npn[_npm].level && _npl++;
-        }
-        var _npo = _npl,
-            _npp = 0,
-            _npq = 0,
-            _npr = 0,
-            _nps = _npj.get_slotnums(229);
-        if (622 == _npj.ship_id || 623 == _npj.ship_id || 624 == _npj.ship_id) _npk.houg += +_nps, _npk.tyku += +_nps, _npp = 2;
-        else if (656 == _npj.ship_id) _npk.houg += 2 * _nps, _npk.tyku += 3 * _nps, _npk.tais += 2 * _nps, _npp = 3;
-        else if (0 == _npl) return _npk;
-        if (488 == _npj.ship_id ? (_npk.tyku += 3 * _npo, _npp = 1) : 220 == _npj.ship_id ? _npk.tyku += 2 * _npo : 23 == _npj.ship_id ? _npk.tyku += +_npo : 160 == _npj.ship_id ? (_npk.tyku += 2 * _npo, _npp = 1) : 224 == _npj.ship_id ? _npk.tyku += +_npo : 487 == _npj.ship_id ? (_npk.tyku += 2 * _npo, _npp = 1) : 289 == _npj.ship_id && (_npk.tyku += +_npo), 66 != _npj.ctype && 28 != _npj.ctype || (_npk.houg += +_npo, _npk.tyku += +_npo, _npq = 1), 1 == _npj.stype && (_npk.houg += +_npo, _npk.tyku += +_npo, _npr = 1), 'ゆら' != _npj.yomi && 'なか' != _npj.yomi && 'きぬ' != _npj.yomi || (_npk.houg += 2 * _npo), 0 == _npp + _npq + _npr) return _npk;
-        for (var _npt = 0, _npu = 0, _npv = 0, _npw = _npj.have_slot_ids(); _npv < _npw.length; _npv++) {
-            var _npx = _npw[_npv],
-                _npy = _npi.default.model.slot.getMst(_npx),
-                _npz = _npy.equipType;
-            12 != _npz && 13 != _npz || (5 <= _npy.sakuteki && (_npt += _npj.get_slotnums(parseInt(_npx))), 2 <= _npy.taiku && (_npu += _npj.get_slotnums(parseInt(_npx))));
-        }
-        return 1 == _npp ? 0 < _npt && (_npk.houg += 3, _npk.kaih += 2) : 2 == _npp ? (0 < _npt && (_npk.houg += 1, _npk.kaih += 1), 0 < _npu && (_npk.tyku += 2, _npk.kaih += 2)) : 3 == _npp && (0 < _npt && (_npk.houg += 2, _npk.kaih += 2), 0 < _npu && (_npk.tyku += 3, _npk.kaih += 2)), 1 == _npq && 0 < _npt && (_npk.houg += 2, _npk.kaih += 3), 1 == _npr && 0 < _npt && (_npk.houg += 1, _npk.kaih += 4), _npk;
-    };
-},
-function(_nq0, _nq1, _nq2) {
-    'use strict';
-    defineModule(_nq1);
-    Object.defineProperty(_nq1, '__esModule', {
-        'value': !0
-    });
-    var _nq3 = _nq2(3);
-    _nq1.getSlot237PersonalEffect = function(_nq4) {
-        var _nq5 = new _nq3.SlotItemEffectModel(),
-            _nq6 = new _nq3.SlotItemEffectModel();
-        if (553 == _nq4.ship_id) _nq6.houg = 4, _nq6.kaih = 2;
-        else if (82 == _nq4.ship_id) _nq6.houg = 3, _nq6.kaih = 1;
-        else if (88 == _nq4.ship_id) _nq6.houg = 3, _nq6.kaih = 1;
-        else if (554 == _nq4.ship_id) _nq6.houg = 4, _nq6.kaih = 2;
-        else if (411 == _nq4.ship_id) _nq6.houg = 2;
-        else {
-            if (412 != _nq4.ship_id) return _nq5;
-            _nq6.houg = 2;
-        }
-        var _nq7 = _nq4.get_slotnums(237);
-        return _nq5 = _nq6.multiply(_nq7);
-    };
-},
-function(_nq8, _nq9, _nqa) {
-    'use strict';
-    var _nqb = this && this.__importDefault || function(_nqc) {
-        return _nqc && _nqc.__esModule ? _nqc : {
-            'default': _nqc
-        };
-    };
-    defineModule(_nq9);
-    Object.defineProperty(_nq9, '__esModule', {
-        'value': !0
-    });
-    var _nqd = _nqa(3),
-        _nqe = _nqb(_nqa(0));
-    _nq9.getSlot266PersonalEffect = function(_nqf) {
-        var _nqg = new _nqd.SlotItemEffectModel(),
-            _nqh = !1;
-        if (566 != _nqf.ship_id && 567 != _nqf.ship_id && 568 != _nqf.ship_id && 656 != _nqf.ship_id && 670 != _nqf.ship_id && 915 != _nqf.ship_id && 951 != _nqf.ship_id || (_nqh = !0), 0 == _nqh) return _nqg;
-        var _nqi = _nqf.get_slotnums(266);
-        return 30 == _nqf.ctype && (1 == _nqi ? _nqg.houg = 1 : 2 <= _nqi && (_nqg.houg = 3)), _nqg;
-    }, _nq9.getSlot266PersonalEffect2 = function(_nqj) {
-        var _nqk = new _nqd.SlotItemEffectModel(),
-            _nql = 0,
-            _nqm = new _nqd.SlotItemEffectModel();
-        if (23 == _nqj.ctype || 18 == _nqj.ctype ? _nql = _nqm.houg = 1 : 30 == _nqj.ctype && (_nqm.houg = 1, _nql = 2), 'しぐれ' != _nqj.yomi && 'ゆきかぜ' != _nqj.yomi && 'いそかぜ' != _nqj.yomi || (_nqm.kaih = 1), 961 == _nqj.ship_id && (_nqm.houg += 1, _nqm.houm += 1, _nqm.kaih += 1), !_nqm.exists()) return _nqk;
-        var _nqn = _nqj.get_slotnums(266),
-            _nqk = _nqm.multiply(_nqn);
-        if (0 == _nql) return _nqk;
-        for (var _nqo = 0, _nqp = 0, _nqq = _nqj.have_slot_ids(); _nqp < _nqq.length; _nqp++) {
-            var _nqr = _nqq[_nqp],
-                _nqs = _nqe.default.model.slot.getMst(_nqr),
-                _nqt = _nqs.equipType;
-            (12 == _nqt || 13 == _nqt) && 5 <= _nqs.sakuteki && (_nqo += _nqj.get_slotnums(parseInt(_nqr)));
-        }
-        return 0 < _nqo && (1 == _nql ? (_nqk.houg += 1, _nqk.kaih += 1, _nqk.raig += 3) : 2 == _nql && (_nqk.houg += 2, _nqk.kaih += 1, _nqk.raig += 3)), _nqk;
-    };
-},
-function(_nqu, _nqv, _nqw) {
-    'use strict';
-    var _nqx = this && this.__importDefault || function(_nqy) {
-        return _nqy && _nqy.__esModule ? _nqy : {
-            'default': _nqy
-        };
-    };
-    defineModule(_nqv);
-    Object.defineProperty(_nqv, '__esModule', {
-        'value': !0
-    });
-    var _nqz = _nqw(3),
-        _nr0 = _nqx(_nqw(0));
-    _nqv.getSlot267PersonalEffect = function(_nr1) {
-        var _nr2 = new _nqz.SlotItemEffectModel(),
-            _nr3 = 0,
-            _nr4 = 0;
-        if (38 == _nr1.ctype || 22 == _nr1.ctype) _nr3 = 2, _nr4 = 1;
-        else {
-            if (30 != _nr1.ctype) return _nr2;
-            _nr4 = _nr3 = 1;
-        }
-        var _nr5 = _nr1.get_slotnums(267) + _nr1.get_slotnums(366);
-        return _nr2.houg = _nr3 * _nr5, _nr2.kaih = _nr4 * _nr5, _nr2;
-    }, _nqv.getSlot267PersonalEffect2 = function(_nr6) {
-        var _nr7 = new _nqz.SlotItemEffectModel(),
-            _nr8 = _nr6.get_slotnums(267),
-            _nr9 = _nr6.get_slotnums(366),
-            _nra = _nr8 + _nr9;
-        if (566 != _nr6.ship_id && 567 != _nr6.ship_id && 568 != _nr6.ship_id && 656 != _nr6.ship_id && 670 != _nr6.ship_id && 915 != _nr6.ship_id && 951 != _nr6.ship_id || (0 < _nr8 && (_nr7.houg += 1), 1 == _nr9 ? (_nr7.houg += 1, _nr7.tyku += 2) : 2 <= _nr9 && (_nr7.houg += 2, _nr7.tyku += 4)), 38 != _nr6.ctype && 229 != _nr6.ship_id && [648, 961].indexOf(_nr6.ship_id) < 0) return _nr7;
-        var _nrb = !1,
-            _nrc = !1,
-            _nrd = !1,
-            _nre = !1,
-            _nrf = !1,
-            _nrg = !1,
-            _nrh = !1,
-            _nri = !1,
-            _nrj = !1,
-            _nrk = !1,
-            _nrl = !1,
-            _nrm = 0,
-            _nrn = 0,
-            _nro = 0;
-        543 == _nr6.ship_id ? (_nr7.houg = +_nra, _nrc = !0) : 229 == _nr6.ship_id ? _nrd = !0 : 542 == _nr6.ship_id ? (_nr7.houg = +_nra, _nre = !0) : 563 == _nr6.ship_id ? (_nr7.houg = +_nra, _nrf = !0) : 564 == _nr6.ship_id ? (_nr7.houg = +_nra, _nrg = !0) : 578 == _nr6.ship_id ? (_nr7.houg = +_nra, _nrh = !0) : 569 == _nr6.ship_id ? (_nr7.houg = +_nra, _nri = !0) : 649 == _nr6.ship_id ? (_nr7.houg = 2 * _nra, _nrk = !0) : 955 == _nr6.ship_id || 960 == _nr6.ship_id ? (_nr7.houg = 2 * _nra, _nrl = !0) : 648 == _nr6.ship_id ? (_nr7.houg = 2 * _nra, _nrj = !0, _nro = _nrn = _nrm = 1) : 961 == _nr6.ship_id && (_nr7.houg = 2 * _nra, _nrb = !0, _nro = _nrn = _nrm = 1);
-        for (var _nrp, _nrq, _nrr, _nrs, _nrt = 0, _nru = 0, _nrv = 0, _nrw = _nr6.have_slot_ids(); _nrv < _nrw.length; _nrv++) {
-            var _nrx = _nrw[_nrv],
-                _nry = _nr0.default.model.slot.getMst(_nrx),
-                _nrz = _nry.equipType;
-            12 != _nrz && 13 != _nrz || (5 <= _nry.sakuteki && (_nrt += _nr6.get_slotnums(parseInt(_nrx))), 2 <= _nry.taiku && (_nru += _nr6.get_slotnums(parseInt(_nrx))));
-        }
-        0 < _nrt && 0 < _nr8 && (38 != _nr6.ctype && !_nrj || (_nr7.houg += 2, _nr7.raig += 3, _nr7.kaih += 1, 955 == _nr6.ship_id ? --_nr7.raig : 960 == _nr6.ship_id && (_nr7.raig -= 2)), (_nre || _nrc || _nrd || _nrf || _nrg || _nrh || _nri || _nrj || _nrk || _nrl) && (_nr7.houg += 1, _nr7.raig += 3, _nr7.kaih += 2)), 0 < _nr9 && (_nre || _nrc || _nrf || _nrg || _nrh || _nrd || _nri || _nrj || _nrk || _nrb || _nrl) && (1 == _nr9 ? (_nr7.tyku += 3, _nr7.houg += 1, _nr7.houm += 1) : 2 <= _nr9 && (_nr7.tyku += 5, _nr7.houg += 3, _nr7.houm += 1, 955 == _nr6.ship_id && (_nr7.houg += 1)), (_nri || _nrj) && (_nr7.houg += 1, _nr7.tyku += 2), 0 < _nrt && (_nr7.houg += 2, _nr7.kaih += 2, _nr7.raig += 4, _nr7.houm += 2, 960 == _nr6.ship_id && (--_nr7.raig, _nr7.houg += 1)), 0 < _nru && (_nr7.houg += 1, _nr7.kaih += 3, _nr7.tyku += 5, _nr7.houm += 1), _nrp = _nr6.get_each_level_nums(366), _nrr = _nrq = 0, _nrp.forEach(function(_ns0, _ns1) {
-            5 <= _ns1 && (_nrq += _ns0), 8 <= _ns1 && (_nrr += _ns0);
-        }), 1 <= _nrq && (_nr7.houm += +_nrq), 1 <= _nrr && (_nr7.houg += +_nrr), 1 <= (_nrs = _nrp[10]) && (_nr7.houm += +_nrs));
-        var _ns2 = _nr6.get_slotnums(129),
-            _ns3 = _nr6.get_slotnums(74),
-            _ns4 = _nr6.get_slotnums(412);
-        return 0 < _nrm && 0 < _ns2 && 1 == _nrm && (_nr7.houg += 2, _nr7.kaih += 3, _nr7.tyku += 2), 0 < _nro && 0 < _ns4 && 1 == _nro && (_nr7.houg += 2, _nr7.kaih += 3, _nr7.tyku += 2), 0 < _nrn && 0 < _ns3 && 1 == _nrn && (_nr7.houg += 3, _nr7.kaih -= 3), _nr7;
-    };
-},
-function(_ns5, _ns6, _ns7) {
-    'use strict';
-    defineModule(_ns6);
-    Object.defineProperty(_ns6, '__esModule', {
-        'value': !0
-    });
-    var _ns8 = _ns7(3);
-    _ns6.getSlot278PersonalEffect = function(_ns9) {
-        var _nsa = new _ns8.SlotItemEffectModel();
-        return 'アメリカ' == _ns9.getCountryName() ? (_nsa.tyku += 1, _nsa.kaih += 3, _nsa.saku += 1) : 67 == _ns9.ctype || 78 == _ns9.ctype || 82 == _ns9.ctype || 88 == _ns9.ctype || 108 == _ns9.ctype || 112 == _ns9.ctype ? (_nsa.tyku += 1, _nsa.kaih += 2) : 96 == _ns9.ctype && (_nsa.tyku += 1, _nsa.kaih += 1), _nsa;
-    };
-},
-function(_nsb, _nsc, _nsd) {
-    'use strict';
-    defineModule(_nsc);
-    Object.defineProperty(_nsc, '__esModule', {
-        'value': !0
-    });
-    var _nse = _nsd(3);
-    _nsc.getSlot279PersonalEffect = function(_nsf) {
-        var _nsg = new _nse.SlotItemEffectModel();
-        return 'アメリカ' == _nsf.getCountryName() ? (_nsg.houg += 2, _nsg.tyku += 2, _nsg.kaih += 3, _nsg.saku += 2) : 67 == _nsf.ctype || 78 == _nsf.ctype || 82 == _nsf.ctype || 88 == _nsf.ctype || 108 == _nsf.ctype || 112 == _nsf.ctype ? (_nsg.houg += 1, _nsg.tyku += 1, _nsg.kaih += 2, _nsg.saku += 1) : 96 == _nsf.ctype && (_nsg.houg += 1, _nsg.tyku += 1, _nsg.kaih += 1), _nsg;
-    };
-},
-function(_nsh, _nsi, _nsj) {
-    'use strict';
-    defineModule(_nsi);
-    Object.defineProperty(_nsi, '__esModule', {
-        'value': !0
-    });
-    var _nsk = _nsj(3);
-    _nsi.getSlot282PersonalEffect = function(_nsl) {
-        var _nsm = new _nsk.SlotItemEffectModel(),
-            _nsn = !1,
-            _nso = !1;
-        147 != _nsl.ship_id && 73 != _nsl.ctype && 81 != _nsl.ctype || (_nsn = !0), 'ゆうばり' == _nsl.yomi && (_nso = !0);
-        var _nsp = new _nsk.SlotItemEffectModel();
-        if ((_nsn || _nso) && (_nsp.houg += 2, _nsp.souk += 1), !_nsp.exists()) return _nsm;
-        var _nsq = _nsl.get_slotnums(282);
-        return _nsm = _nsp.multiply(_nsq);
-    };
-},
-function(_nsr, _nss, _nst) {
-    'use strict';
-    defineModule(_nss);
-    Object.defineProperty(_nss, '__esModule', {
-        'value': !0
-    });
-    var _nsu = _nst(3);
-    _nss.getSlot283PersonalEffect = function(_nsv) {
-        var _nsw = new _nsu.SlotItemEffectModel(),
-            _nsx = !1;
-        147 != _nsv.ship_id && 73 != _nsv.ctype && 81 != _nsv.ctype || (_nsx = !0);
-        var _nsy = new _nsu.SlotItemEffectModel();
-        if (_nsx && (_nsy.raig += 3, _nsy.houg += 1, _nsy.souk += 1), !_nsy.exists()) return _nsw;
-        var _nsz = _nsv.get_slotnums(283);
-        return _nsw = _nsy.multiply(_nsz);
-    };
-},
-function(_nt0, _nt1, _nt2) {
-    'use strict';
-    defineModule(_nt1);
-    Object.defineProperty(_nt1, '__esModule', {
-        'value': !0
-    });
-    var _nt3 = _nt2(3);
-    _nt1.getSlot285PersonalEffect = function(_nt4) {
-        var _nt5 = new _nt3.SlotItemEffectModel(),
-            _nt6 = !1;
-        if (0 <= [195, 426, 420, 407, 437, 326, 419, 147, 627, 665, 903, 908, 647, 666, 959].indexOf(_nt4.ship_id) && (_nt6 = !0), 0 == _nt6) return _nt5;
-        var _nt7 = _nt4.get_each_level_nums(285),
-            _nt8 = _nt4.get_slotnums(285);
-        2 < _nt8 && (_nt8 = 2), _nt5.raig = 2 * _nt8, _nt5.kaih = +_nt8;
-        var _nt9 = _nt7[10];
-        1 == _nt9 && (_nt5.houg += 1, _nt5.raig += 1), 2 <= _nt9 && (_nt5.houg += 2, _nt5.raig += 1), 3 <= _nt9 && (_nt5.raig += 3);
-        var _nta = _nt4.get_slotnums(285);
-        return 903 == _nt4.ship_id ? (2 <= _nta && (_nt5.raig += 2), 3 <= _nta && (_nt5.raig += 2)) : 908 != _nt4.ship_id && 959 != _nt4.ship_id || (2 <= _nta && (_nt5.raig += 1), 3 <= _nta && (_nt5.raig += 1)), _nt5;
-    };
-},
-function(_ntb, _ntc, _ntd) {
-    'use strict';
-    var _nte = this && this.__importDefault || function(_ntf) {
-        return _ntf && _ntf.__esModule ? _ntf : {
-            'default': _ntf
-        };
-    };
-    defineModule(_ntc);
-    Object.defineProperty(_ntc, '__esModule', {
-        'value': !0
-    });
-    var _ntg = _ntd(3),
-        _nth = _nte(_ntd(0));
-    _ntc.getSlot286PersonalEffect = function(_nti) {
-        var _ntj = new _ntg.SlotItemEffectModel(),
-            _ntk = !1;
-        if (0 <= [566, 145, 961, 498, 144, 469, 463, 468, 199, 489, 490, 464, 470, 198, 543, 567, 568, 497, 542, 563, 564, 587, 578, 569, 648, 651, 656, 649, 588, 667, 670, 915, 951, 955, 960].indexOf(_nti.ship_id) && (_ntk = !0), 0 == _ntk) return _ntj;
-        var _ntl = _nti.get_each_level_nums(286),
-            _ntm = _nti.get_slotnums(286);
-        2 < _ntm && (_ntm = 2), _ntj.raig = 2 * _ntm, _ntj.kaih = +_ntm;
-        var _ntn, _nto = _ntl[10];
-        return 1 == _nto ? _ntj.houg = _ntj.houg + 1 : 2 <= _nto && (_ntj.houg = _ntj.houg + 2), 30 != _nti.ctype && 961 != _nti.ship_id || (1 == (_ntn = _ntl[5] + _ntl[6] + _ntl[7] + _ntl[8] + _ntl[9] + _ntl[10]) ? _ntj.raig = _ntj.raig + 1 : 2 <= _ntn && (_ntj.raig = _ntj.raig + 2)), _ntj;
-    }, _ntc.getSlot286PersonalEffect2 = function(_ntp) {
-        var _ntq = new _ntg.SlotItemEffectModel(),
-            _ntr = !1,
-            _nts = 0;
-        if ('たけ' == _ntp.yomi && (_ntr = !0, _nts = 1), 0 == _ntr) return _ntq;
-        var _ntt = _ntp.get_each_level_nums(286),
-            _ntu = 0;
-        return 0 < _nts && _ntt.forEach(function(_ntv, _ntw) {
-            7 <= _ntw && (_ntu += _ntv);
-        }), 'たけ' == _ntp.yomi && (_ntq.raig += 7, _ntq.kaih += 2, 1 <= _ntu && (_ntq.raig += 2), 1 <= _ntt[10] && (_ntq.raig += 2)), _ntq;
-    }, _ntc.getSlot286PersonalEffect3 = function(_ntx) {
-        var _nty = new _ntg.SlotItemEffectModel(),
-            _ntz = !1,
-            _nu0 = new _ntg.SlotItemEffectModel(),
-            _nu1 = 0;
-        if (662 != _ntx.ship_id && 663 != _ntx.ship_id && 668 != _ntx.ship_id || (_nu0.raig += 2, _ntz = !0, _nu1 = 1), 0 == _ntz) return _nty;
-        var _nu2 = _ntx.get_slotnums(286);
-        _nty.add(_nu0.multiply(_nu2));
-        for (var _nu3 = 0, _nu4 = 0, _nu5 = _ntx.have_slot_ids(); _nu4 < _nu5.length; _nu4++) {
-            var _nu6 = _nu5[_nu4],
-                _nu7 = _nth.default.model.slot.getMst(_nu6),
-                _nu8 = _nu7.equipType;
-            12 != _nu8 && 13 != _nu8 || (5 <= _nu7.sakuteki && (_nu3 += _ntx.get_slotnums(parseInt(_nu6))), 2 <= _nu7.taiku && _ntx.get_slotnums(parseInt(_nu6)));
-        }
-        return 1 <= _nu3 && 1 == _nu1 && (_nty.raig += 3, _nty.kaih += 2), _nty;
-    };
-},
-function(_nu9, _nua, _nub) {
-    'use strict';
-    defineModule(_nua);
-    Object.defineProperty(_nua, '__esModule', {
-        'value': !0
-    });
-    var _nuc = _nub(3);
-    _nua.getSlot287PersonalEffect = function(_nud) {
-        var _nue = new _nuc.SlotItemEffectModel(),
-            _nuf = new _nuc.SlotItemEffectModel(),
-            _nug = !1;
-        if (488 == _nud.ship_id || 141 == _nud.ship_id || 160 == _nud.ship_id || 624 == _nud.ship_id || 656 == _nud.ship_id ? (_nuf.tais = 1, _nuf.kaih = 1, _nug = !0) : 662 != _nud.ship_id && 961 != _nud.ship_id || (_nuf.tais = 3, _nug = !0), 0 == _nug) return _nue;
-        var _nuh = _nud.get_slotnums(287);
-        return _nue = _nuf.multiply(_nuh);
-    };
-},
-function(_nui, _nuj, _nuk) {
-    'use strict';
-    defineModule(_nuj);
-    Object.defineProperty(_nuj, '__esModule', {
-        'value': !0
-    });
-    var _nul = _nuk(3);
-    _nuj.getSlot288PersonalEffect = function(_num) {
-        var _nun = new _nul.SlotItemEffectModel(),
-            _nuo = new _nul.SlotItemEffectModel(),
-            _nup = !1;
-        if (488 == _num.ship_id || 141 == _num.ship_id || 160 == _num.ship_id || 656 == _num.ship_id ? (_nuo.tais = 2, _nuo.kaih = 1, _nup = !0) : 624 == _num.ship_id ? (_nuo.houg = 1, _nuo.tais = 3, _nuo.kaih = 2, _nup = !0) : 662 != _num.ship_id && 961 != _num.ship_id || (_nuo.tais = 4, _nuo.kaih = 1, _nup = !0), 0 == _nup) return _nun;
-        var _nuq = _num.get_slotnums(288);
-        return _nun = _nuo.multiply(_nuq);
-    };
-},
-function(_nur, _nus, _nut) {
-    'use strict';
-    var _nuu = this && this.__importDefault || function(_nuv) {
-        return _nuv && _nuv.__esModule ? _nuv : {
-            'default': _nuv
-        };
-    };
-    defineModule(_nus);
-    Object.defineProperty(_nus, '__esModule', {
-        'value': !0
-    });
-    var _nuw = _nut(3),
-        _nux = _nuu(_nut(0));
-    _nus.getSlot289PersonalEffect = function(_nuy) {
-        var _nuz = new _nuw.SlotItemEffectModel(),
-            _nv0 = {
-                151: 1,
-                593: 1,
-                954: 1,
-                591: 2,
-                149: 3,
-                150: 3,
-                592: 3,
-                152: 3
-            },
-            _nv1 = 0,
-            _nv2 = new _nuw.SlotItemEffectModel();
-        if (149 == _nuy.ship_id || 591 == _nuy.ship_id) _nv2.houg = 2, _nv1 = _nv2.tyku = 1;
-        else if (150 == _nuy.ship_id || 592 == _nuy.ship_id) _nv2.houg = 1;
-        else if (152 == _nuy.ship_id) _nv2.houg = 1;
-        else {
-            if (151 != _nuy.ship_id && 593 != _nuy.ship_id && 954 != _nuy.ship_id) return _nuz;
-            _nv2.houg = 2, _nv2.tyku = 2, _nv2.kaih = 2, _nv1 = 1;
-        }
-        var _nv3, _nv4, _nv5, _nv6 = _nuy.get_slotnums(289),
-            _nuz = _nv2.multiply(_nv6);
-        if (_nv0[_nuy.ship_id] && (_nv3 = _nuy.get_each_level_nums(289), _nv4 = new Array(), _nv3.forEach(function(_nv7, _nv8) {
-                for (var _nv9 = 1; _nv9 <= _nuy.SLOT_LEVEL_MAX; _nv9++) _nv9 <= _nv8 && (null == _nv4[_nv9] && (_nv4[_nv9] = 0), _nv4[_nv9] += _nv7);
-            }), 1 == (_nv5 = _nv0[_nuy.ship_id]) ? (1 <= _nv4[1] && (_nuz.kaih += +_nv4[1]), 1 <= _nv4[3] && (_nuz.tyku = _nuz.tyku + +_nv4[3]), 1 <= _nv4[5] && (_nuz.houg = _nuz.houg + +_nv4[5]), 1 <= _nv4[7] && (_nuz.kaih += +_nv4[7]), 1 <= _nv4[8] && (_nuz.tyku += +_nv4[8]), 1 <= _nv4[9] && (_nuz.houg += +_nv4[9]), 1 <= _nv4[10] && (_nuz.kaih += +_nv4[10])) : 2 == _nv5 ? (1 <= _nv4[4] && (_nuz.tyku += +_nv4[4]), 1 <= _nv4[6] && (_nuz.kaih += +_nv4[6]), 1 <= _nv4[8] && (_nuz.houg += +_nv4[8]), 1 <= _nv4[10] && (_nuz.kaih += +_nv4[10])) : 3 == _nv5 && (1 <= _nv4[7] && (_nuz.tyku += +_nv4[7]), 1 <= _nv4[9] && (_nuz.houg += +_nv4[9]), 1 <= _nv4[10] && (_nuz.kaih += +_nv4[10]))), 0 == _nv1) return _nuz;
-        for (var _nva = 0, _nvb = 0, _nvc = _nuy.have_slot_ids(); _nvb < _nvc.length; _nvb++) {
-            var _nvd = _nvc[_nvb],
-                _nve = _nux.default.model.slot.getMst(_nvd),
-                _nvf = _nve.equipType;
-            (12 == _nvf || 13 == _nvf) && 5 <= _nve.sakuteki && (_nva += _nuy.get_slotnums(parseInt(_nvd)));
-        }
-        return 0 < _nva && (_nuz.houg += 2, _nuz.kaih += 2), _nuz;
-    };
-},
-function(_nvg, _nvh, _nvi) {
-    'use strict';
-    var _nvj = this && this.__importDefault || function(_nvk) {
-        return _nvk && _nvk.__esModule ? _nvk : {
-            'default': _nvk
-        };
-    };
-    defineModule(_nvh);
-    Object.defineProperty(_nvh, '__esModule', {
-        'value': !0
-    });
-    var _nvl = _nvi(3),
-        _nvm = _nvj(_nvi(0));
-    _nvh.getSlot290PersonalEffect = function(_nvn) {
-        var _nvo = new _nvl.SlotItemEffectModel(),
-            _nvp = 0,
-            _nvq = new _nvl.SlotItemEffectModel();
-        if (411 == _nvn.ship_id) _nvq.houg = 1;
-        else if (412 == _nvn.ship_id) _nvq.houg = 1;
-        else if (82 == _nvn.ship_id) _nvq.houg = 2, _nvq.tyku = 2, _nvp = _nvq.kaih = 1;
-        else if (553 == _nvn.ship_id) _nvq.houg = 3, _nvq.tyku = 2, _nvq.kaih = 1, _nvq.houm = 3, _nvp = 1;
-        else if (88 == _nvn.ship_id) _nvq.houg = 2, _nvq.tyku = 2, _nvp = _nvq.kaih = 1;
-        else {
-            if (554 != _nvn.ship_id) return _nvo;
-            _nvq.houg = 3, _nvq.tyku = 2, _nvq.kaih = 2, _nvq.houm = 3, _nvp = 1;
-        }
-        var _nvr = _nvn.get_slotnums(290),
-            _nvo = _nvq.multiply(_nvr);
-        if (0 == _nvp) return _nvo;
-        for (var _nvs = 0, _nvt = 0, _nvu = _nvn.have_slot_ids(); _nvt < _nvu.length; _nvt++) {
-            var _nvv = _nvu[_nvt],
-                _nvw = _nvm.default.model.slot.getMst(_nvv),
-                _nvx = _nvw.equipType;
-            (12 == _nvx || 13 == _nvx) && 2 <= _nvw.taiku && (_nvs += _nvn.get_slotnums(parseInt(_nvv)));
-        }
-        return 0 < _nvs && (_nvo.tyku += 2, _nvo.kaih += 3), _nvo;
-    };
-},
-function(_nvy, _nvz, _nw0) {
-    'use strict';
-    defineModule(_nvz);
-    Object.defineProperty(_nvz, '__esModule', {
-        'value': !0
-    });
-    var _nw1 = _nw0(3);
-    _nvz.getSlot291PersonalEffect = function(_nw2) {
-        var _nw3 = new _nw1.SlotItemEffectModel(),
-            _nw4 = new _nw1.SlotItemEffectModel();
-        if (553 == _nw2.ship_id) _nw4.houg = 6, _nw4.kaih = 1;
-        else {
-            if (554 != _nw2.ship_id) return _nw3;
-            _nw4.houg = 6, _nw4.kaih = 1;
-        }
-        var _nw5 = _nw2.get_slotnums(291);
-        return _nw3 = _nw4.multiply(_nw5);
-    };
-},
-function(_nw6, _nw7, _nw8) {
-    'use strict';
-    defineModule(_nw7);
-    Object.defineProperty(_nw7, '__esModule', {
-        'value': !0
-    });
-    var _nw9 = _nw8(3);
-    _nw7.getSlot292PersonalEffect = function(_nwa) {
-        var _nwb = new _nw9.SlotItemEffectModel(),
-            _nwc = new _nw9.SlotItemEffectModel();
-        if (553 == _nwa.ship_id) _nwc.houg = 8, _nwc.kaih = 2, _nwc.tyku = 1;
-        else {
-            if (554 != _nwa.ship_id) return _nwb;
-            _nwc.houg = 8, _nwc.kaih = 2, _nwc.tyku = 1;
-        }
-        var _nwd = _nwa.get_slotnums(292);
-        return _nwb = _nwc.multiply(_nwd);
-    };
-},
-function(_nwe, _nwf, _nwg) {
-    'use strict';
-    var _nwh = this && this.__importDefault || function(_nwi) {
-        return _nwi && _nwi.__esModule ? _nwi : {
-            'default': _nwi
-        };
-    };
-    defineModule(_nwf);
-    Object.defineProperty(_nwf, '__esModule', {
-        'value': !0
-    });
-    var _nwj = _nwg(3),
-        _nwk = _nwh(_nwg(0));
-    _nwf.getSlot293PersonalEffect = function(_nwl) {
-        var _nwm = new _nwj.SlotItemEffectModel(),
-            _nwn = new _nwj.SlotItemEffectModel(),
-            _nwo = 0;
-        if (66 == _nwl.ctype || 28 == _nwl.ctype) _nwn.houg = 2, _nwn.tyku = 1, _nwn.kaih = 3, _nwo = 1;
-        else {
-            if (74 != _nwl.ctype && 77 != _nwl.ctype) return _nwm;
-            _nwn.houg = 1, _nwn.tyku = 1, _nwo = _nwn.kaih = 2;
-        }
-        for (var _nwp = _nwl.get_slotnums(293), _nwm = _nwn.multiply(_nwp), _nwq = 0, _nwr = 0, _nws = _nwl.have_slot_ids(); _nwr < _nws.length; _nwr++) {
-            var _nwt = _nws[_nwr],
-                _nwu = _nwk.default.model.slot.getMst(_nwt),
-                _nwv = _nwu.equipType;
-            (12 == _nwv || 13 == _nwv) && 5 <= _nwu.sakuteki && (_nwq += _nwl.get_slotnums(parseInt(_nwt)));
-        }
-        var _nww = _nwl.get_slotnums(174);
-        return 1 == _nwo ? (0 < _nwq && (_nwm.houg += 2, _nwm.kaih += 3, _nwm.raig += 1), 1 == _nww ? (_nwm.houg += 2, _nwm.raig += 4) : 2 <= _nww && (_nwm.houg += 3, _nwm.raig += 7)) : 2 == _nwo && 0 < _nwq && (_nwm.houg += 2, _nwm.kaih += 3, _nwm.tais += 1), _nwm;
-    };
-},
-function(_nwx, _nwy, _nwz) {
-    'use strict';
-    var _nx0 = this && this.__importDefault || function(_nx1) {
-        return _nx1 && _nx1.__esModule ? _nx1 : {
-            'default': _nx1
-        };
-    };
-    defineModule(_nwy);
-    Object.defineProperty(_nwy, '__esModule', {
-        'value': !0
-    });
-    var _nx2 = _nwz(3),
-        _nx3 = _nx0(_nwz(0));
-    _nwy.getSlot294PersonalEffect = function(_nx4) {
-        var _nx5 = new _nx2.SlotItemEffectModel(),
-            _nx6 = new _nx2.SlotItemEffectModel(),
-            _nx7 = 0,
-            _nx8 = _nx4.get_slotnums(294);
-        if (12 != _nx4.ctype && 1 != _nx4.ctype && 5 != _nx4.ctype) return _nx5;
-        _nx6.houg = 1, 959 == _nx4.ship_id && (_nx6.houg += 1, 2 <= _nx8 && (_nx5.houg += 2), 3 <= _nx8 && (_nx5.houg += 3), _nx7 = 1), _nx5.add(_nx6.multiply(_nx8));
-        for (var _nx9 = 0, _nxa = 0, _nxb = _nx4.have_slot_ids(); _nxa < _nxb.length; _nxa++) {
-            var _nxc = _nxb[_nxa],
-                _nxd = _nx3.default.model.slot.getMst(_nxc),
-                _nxe = _nxd.equipType;
-            (12 == _nxe || 13 == _nxe) && 5 <= _nxd.sakuteki && (_nx9 += _nx4.get_slotnums(parseInt(_nxc)));
-        }
-        var _nxf = _nx4.get_slotnums(13),
-            _nxg = _nx4.get_slotnums(125),
-            _nxh = _nx4.get_slotnums(285),
-            _nxi = _nxf + _nxg + _nxh;
-        if (0 < _nx9 && (_nx5.houg += 3, _nx5.kaih += 2, _nx5.raig += 1), 1 == _nxi ? (_nx5.houg += 1, _nx5.raig += 3) : 2 <= _nxi && (_nx5.houg += 2, _nx5.raig += 5), 1 <= _nxh && (_nx5.raig += 1), 0 == _nx7) return _nx5;
-        var _nxj = _nx4.get_each_level_nums(294),
-            _nxk = [];
-        return 0 < _nx7 && _nxj.forEach(function(_nxl, _nxm) {
-            for (var _nxn = 1; _nxn <= _nx4.SLOT_LEVEL_MAX; _nxn++) null == _nxk[_nxn] && (_nxk[_nxn] = 0), _nxn <= _nxm && (_nxk[_nxn] += _nxl);
-        }), 1 == _nx7 && (1 <= _nxk[6] && (_nx5.houm += 4 * _nxk[6]), 1 <= _nxk[7] && (_nx5.houg = _nx5.houg + 6 * _nxk[7]), 1 <= _nxk[8] && (_nx5.houg = _nx5.houg + +_nxk[8]), 1 <= _nxk[9] && (_nx5.houg = _nx5.houg + +_nxk[9]), 1 <= _nxk[10] && (_nx5.houg += +_nxk[10])), _nx5;
-    };
-},
-function(_nxo, _nxp, _nxq) {
-    'use strict';
-    var _nxr = this && this.__importDefault || function(_nxs) {
-        return _nxs && _nxs.__esModule ? _nxs : {
-            'default': _nxs
-        };
-    };
-    defineModule(_nxp);
-    Object.defineProperty(_nxp, '__esModule', {
-        'value': !0
-    });
-    var _nxt = _nxq(3),
-        _nxu = _nxr(_nxq(0));
-    _nxp.getSlot295PersonalEffect = function(_nxv) {
-        var _nxw = new _nxt.SlotItemEffectModel(),
-            _nxx = new _nxt.SlotItemEffectModel(),
-            _nxy = _nxv.get_slotnums(295);
-        if (12 != _nxv.ctype && 1 != _nxv.ctype && 5 != _nxv.ctype) return _nxw;
-        _nxx.houg = 2, _nxx.tyku = 2, 666 == _nxv.ship_id ? (_nxx.houg += 1, _nxx.tyku += 1, _nxx.tais += 1) : 959 == _nxv.ship_id && (_nxx.houg += 2, 2 <= _nxy && (_nxw.houg += 2), 3 <= _nxy && (_nxw.houg += 3)), _nxw.add(_nxx.multiply(_nxy));
-        for (var _nxz = 0, _ny0 = 0, _ny1 = 0, _ny2 = _nxv.have_slot_ids(); _ny1 < _ny2.length; _ny1++) {
-            var _ny3 = _ny2[_ny1],
-                _ny4 = _nxu.default.model.slot.getMst(_ny3),
-                _ny5 = _ny4.equipType;
-            12 != _ny5 && 13 != _ny5 || (5 <= _ny4.sakuteki && (_nxz += _nxv.get_slotnums(parseInt(_ny3))), 2 <= _ny4.taiku && (_ny0 += _nxv.get_slotnums(parseInt(_ny3))));
-        }
-        var _ny6 = _nxv.get_slotnums(13),
-            _ny7 = _nxv.get_slotnums(125),
-            _ny8 = _nxv.get_slotnums(285),
-            _ny9 = _ny6 + _ny7 + _ny8;
-        return 0 < _nxz && (_nxw.houg += 3, _nxw.kaih += 2, _nxw.raig += 1), 1 == _ny9 ? (_nxw.houg += 1, _nxw.raig += 3) : 2 <= _ny9 && (_nxw.houg += 2, _nxw.raig += 5), 1 <= _ny8 && (_nxw.raig += 1), 0 < _ny0 && (_nxw.tyku += 6), _nxw;
-    };
-},
-function(_nya, _nyb, _nyc) {
-    'use strict';
-    var _nyd = this && this.__importDefault || function(_nye) {
-        return _nye && _nye.__esModule ? _nye : {
-            'default': _nye
-        };
-    };
-    defineModule(_nyb);
-    Object.defineProperty(_nyb, '__esModule', {
-        'value': !0
-    });
-    var _nyf = _nyc(3),
-        _nyg = _nyd(_nyc(0));
-    _nyb.getSlot296PersonalEffect = function(_nyh) {
-        var _nyi = new _nyf.SlotItemEffectModel(),
-            _nyj = new _nyf.SlotItemEffectModel();
-        1 != _nyh.ctype && 5 != _nyh.ctype && 10 != _nyh.ctype && 23 != _nyh.ctype || (_nyj.houg += 1), 10 != _nyh.ctype && 23 != _nyh.ctype || (_nyj.kaih += 1), 145 == _nyh.ship_id || 961 == _nyh.ship_id ? (_nyj.houg += 1, _nyj.tyku += 1) : 144 == _nyh.ship_id ? (_nyj.houg += 1, _nyj.raig += 1) : 469 == _nyh.ship_id || 588 == _nyh.ship_id || 667 == _nyh.ship_id || 587 == _nyh.ship_id || 242 == _nyh.ship_id ? _nyj.kaih += 1 : 497 == _nyh.ship_id ? (_nyj.houg += 1, _nyj.kaih += 1) : 244 == _nyh.ship_id ? _nyj.kaih += 1 : 498 == _nyh.ship_id ? (_nyj.tyku += 1, _nyj.kaih += 1) : 627 == _nyh.ship_id ? (_nyj.houg += 2, _nyj.raig += 1) : 903 != _nyh.ship_id && 908 != _nyh.ship_id || (_nyj.houg += 3);
-        var _nyk = !0;
-        if (_nyj.exists() || (_nyk = !1), 0 == _nyk) return _nyi;
-        var _nyl = _nyh.get_slotnums(296),
-            _nyi = _nyj.multiply(_nyl),
-            _nym = 0;
-        if (1 != _nyh.ctype && 5 != _nyh.ctype && 10 != _nyh.ctype || (_nym = 1), 23 == _nyh.ctype && (_nym = 2), 0 == _nym) return _nyi;
-        for (var _nyn = 0, _nyo = 0, _nyp = 0, _nyq = _nyh.have_slot_ids(); _nyp < _nyq.length; _nyp++) {
-            var _nyr = _nyq[_nyp],
-                _nys = _nyg.default.model.slot.getMst(_nyr),
-                _nyt = _nys.equipType;
-            12 != _nyt && 13 != _nyt || (5 <= _nys.sakuteki && (_nyn += _nyh.get_slotnums(parseInt(_nyr))), 2 <= _nys.taiku && (_nyo += _nyh.get_slotnums(parseInt(_nyr))));
-        }
-        return 0 < _nyn && (1 == _nym ? (_nyi.houg += 1, _nyi.kaih += 2, _nyi.raig += 2) : 2 == _nym && (_nyi.houg += 1, _nyi.kaih += 2, _nyi.raig += 3)), 1 <= _nyh.get_slotnums(285) + _nyh.get_slotnums(125) && 1 == _nym && (_nyi.houg += 1, _nyi.raig += 3), 1 <= _nyh.get_slotnums(15) + _nyh.get_slotnums(286) && 2 == _nym && (_nyi.houg += 1, _nyi.raig += 3), 0 < _nyo && (1 == _nym ? _nyi.tyku += 5 : 2 == _nym && (_nyi.tyku += 6)), _nyi;
-    };
-},
-function(_nyu, _nyv, _nyw) {
-    'use strict';
-    defineModule(_nyv);
-    Object.defineProperty(_nyv, '__esModule', {
-        'value': !0
-    });
-    var _nyx = _nyw(3);
-    _nyv.getSlot297PersonalEffect = function(_nyy) {
-        var _nyz = new _nyx.SlotItemEffectModel(),
-            _nz0 = new _nyx.SlotItemEffectModel();
-        if (12 == _nyy.ctype) _nz0.kaih = 2;
-        else {
-            if (1 != _nyy.ctype && 5 != _nyy.ctype) return _nyz;
-            _nz0.kaih = 1;
-        }
-        var _nz1 = _nyy.get_slotnums(297);
-        return _nyz = _nz0.multiply(_nz1);
-    };
-},
-function(_nz2, _nz3, _nz4) {
-    'use strict';
-    defineModule(_nz3);
-    Object.defineProperty(_nz3, '__esModule', {
-        'value': !0
-    });
-    var _nz5 = _nz4(3);
-    _nz3.getSlot301PersonalEffect = function(_nz6) {
-        var _nz7 = new _nz5.SlotItemEffectModel(),
-            _nz8 = new _nz5.SlotItemEffectModel();
-        67 != _nz6.ctype && 78 != _nz6.ctype && 82 != _nz6.ctype && 88 != _nz6.ctype && 108 != _nz6.ctype && 112 != _nz6.ctype || (_nz8.tyku += 2, _nz8.kaih += 1, _nz8.souk += 1);
-        var _nz9 = !0;
-        if (_nz8.exists() || (_nz9 = !1), 0 == _nz9) return _nz7;
-        var _nza = _nz6.get_slotnums(301);
-        return _nz7 = _nz8.multiply(_nza);
-    };
-},
-function(_nzb, _nzc, _nzd) {
-    'use strict';
-    defineModule(_nzc);
-    Object.defineProperty(_nzc, '__esModule', {
-        'value': !0
-    });
-    var _nze = _nzd(3);
-    _nzc.getSlot302PersonalEffect = function(_nzf) {
-        var _nzg = new _nze.SlotItemEffectModel(),
-            _nzh = new _nze.SlotItemEffectModel();
-        if (76 == _nzf.ctype && (_nzh.tais = 1, _nzh.kaih = 1), !_nzh.exists()) return _nzg;
-        var _nzi = _nzf.get_slotnums(302);
-        return _nzg = _nzh.multiply(_nzi);
-    };
-},
-function(_nzj, _nzk, _nzl) {
-    'use strict';
-    defineModule(_nzk);
-    Object.defineProperty(_nzk, '__esModule', {
-        'value': !0
-    });
-    var _nzm = _nzl(3);
-    _nzk.getSlot303PersonalEffect = function(_nzn) {
-        var _nzo = new _nzm.SlotItemEffectModel(),
-            _nzp = new _nzm.SlotItemEffectModel();
-        if (16 == _nzn.ctype || 4 == _nzn.ctype || 20 == _nzn.ctype || 41 == _nzn.ctype ? (_nzp.houg = 1, _nzp.tyku = 1) : 89 == _nzn.ctype && (_nzp.houg = 1, _nzp.tyku = 2, _nzp.kaih = 1), !_nzp.exists()) return _nzo;
-        var _nzq = _nzn.get_slotnums(303);
-        return _nzo = _nzp.multiply(_nzq);
-    };
-},
-function(_nzr, _nzs, _nzt) {
-    'use strict';
-    defineModule(_nzs);
-    Object.defineProperty(_nzs, '__esModule', {
-        'value': !0
-    });
-    var _nzu = _nzt(3);
-    _nzs.getSlot304PersonalEffect = function(_nzv) {
-        var _nzw = new _nzu.SlotItemEffectModel(),
-            _nzx = new _nzu.SlotItemEffectModel();
-        if (16 == _nzv.ctype || 4 == _nzv.ctype || 20 == _nzv.ctype || 41 == _nzv.ctype ? (_nzx.houg = 1, _nzx.tais = 1, _nzx.kaih = 1) : 89 == _nzv.ctype && (_nzx.houg = 1, _nzx.tais = 2, _nzx.kaih = 2), !_nzx.exists()) return _nzw;
-        var _nzy = _nzv.get_slotnums(304);
-        return _nzw = _nzx.multiply(_nzy);
-    };
-},
-function(_nzz, _o00, _o01) {
-    'use strict';
-    defineModule(_o00);
-    Object.defineProperty(_o00, '__esModule', {
-        'value': !0
-    });
-    var _o02 = _o01(3);
-    _o00.getSlot305_And_306_PersonalEffect = function(_o03) {
-        var _o04 = new _o02.SlotItemEffectModel(),
-            _o05 = new _o02.SlotItemEffectModel();
-        if (76 == _o03.ctype && (_o05.tais = 1, _o05.kaih = 1), 'しんよう' == _o03.yomi ? (_o05.tais += 2, _o05.kaih += 1) : 'グラーフ・ツェッペリン' != _o03.yomi && 'アクィラ' != _o03.yomi || (_o05.houg = 1, _o05.kaih = 1), !_o05.exists()) return _o04;
-        var _o06 = _o03.get_slotnums(305) + _o03.get_slotnums(306);
-        return _o04 = _o05.multiply(_o06);
-    };
-},
-function(_o07, _o08, _o09) {
-    'use strict';
-    defineModule(_o08);
-    Object.defineProperty(_o08, '__esModule', {
-        'value': !0
-    });
-    var _o0a = _o09(3);
-    _o08.getSlot307PersonalEffect = function(_o0b) {
-        var _o0c = new _o0a.SlotItemEffectModel(),
-            _o0d = new _o0a.SlotItemEffectModel();
-        if ('アメリカ' == _o0b.getCountryName() && (_o0d.houg = 1, _o0d.tyku = 1, _o0d.kaih = 1), !_o0d.exists()) return _o0c;
-        var _o0e = _o0b.get_slotnums(307);
-        return _o0c = _o0d.multiply(_o0e);
-    };
-},
-function(_o0f, _o0g, _o0h) {
-    'use strict';
-    defineModule(_o0g);
-    Object.defineProperty(_o0g, '__esModule', {
-        'value': !0
-    });
-    var _o0i = _o0h(3);
-    _o0g.getSlot308PersonalEffect = function(_o0j) {
-        var _o0k = new _o0i.SlotItemEffectModel(),
-            _o0l = new _o0i.SlotItemEffectModel();
-        if ('アメリカ' == _o0j.getCountryName() && (_o0l.houg = 1, _o0l.tyku = 1, _o0l.kaih = 1), 2 == _o0j.stype ? _o0l.houg += 1 : 1 == _o0j.stype && (_o0l.tyku += 1, _o0l.kaih += 1), 651 != _o0j.ship_id && 656 != _o0j.ship_id || (_o0l.houg += 1, _o0l.tyku += 1, _o0l.kaih += 1), !_o0l.exists()) return _o0k;
-        var _o0m = _o0j.get_slotnums(308);
-        return _o0k = _o0l.multiply(_o0m);
-    };
-},
-function(_o0n, _o0o, _o0p) {
-    'use strict';
-    var _o0q = this && this.__importDefault || function(_o0r) {
-        return _o0r && _o0r.__esModule ? _o0r : {
-            'default': _o0r
-        };
-    };
-    defineModule(_o0o);
-    Object.defineProperty(_o0o, '__esModule', {
-        'value': !0
-    });
-    var _o0s = _o0p(3),
-        _o0t = _o0q(_o0p(0));
-    _o0o.getSlot310PersonalEffect = function(_o0u) {
-        var _o0v = new _o0s.SlotItemEffectModel(),
-            _o0w = new _o0s.SlotItemEffectModel(),
-            _o0x = new _o0s.SlotItemEffectModel();
-        34 == _o0u.ctype ? (_o0w.houg += 2, _o0w.tyku += 1, _o0w.kaih += 1, _o0x.houg += 2) : 56 == _o0u.ctype ? (_o0w.houg += 2, _o0w.kaih += 1, _o0x.houg += 2, _o0x.kaih += 2) : 90 == _o0u.ctype && (_o0w.houg += 3, _o0w.raig += 2, _o0w.tyku += 1, _o0w.kaih += 1, _o0x.houg += 1, _o0x.raig += 1);
-        var _o0y = new _o0s.SlotItemEffectModel(),
-            _o0z = new _o0s.SlotItemEffectModel();
-        622 != _o0u.ship_id && 623 != _o0u.ship_id && 624 != _o0u.ship_id || (_o0w.houg += 2, _o0w.kaih += 1, _o0w.tais += 1, _o0y.houg = 1, _o0y.raig = 1, _o0z.houg = 3, _o0z.kaih = 2, _o0z.raig = 2);
-        var _o10 = !0;
-        if (_o0w.exists() || (_o10 = !1), 0 == _o10) return _o0v;
-        for (var _o11 = _o0u.get_slotnums(310) + _o0u.get_slotnums(518), _o0v = _o0w.multiply(_o11), _o12 = 0, _o13 = 0, _o14 = 0, _o15 = [310, 518]; _o14 < _o15.length; _o14++) {
-            var _o16 = _o15[_o14],
-                _o17 = _o0u.have_slots_dict[_o16];
-            if (null != _o17)
-                for (var _o18 = 0, _o19 = _o17; _o18 < _o19.length; _o18++) {
-                    var _o1a = _o19[_o18];
-                    null != _o1a && (7 <= _o1a.level && _o12++, 10 <= _o1a.level && _o13++);
+            } : function(_p0c, _p0d) {
+                var _p0e = null;
+                _p0c.default = _p0d;
+            }),
+            _p0f = this && this.__importStar || function(_p0g) {
+                var _p0h = null;
+                if (_p0g && _p0g.__esModule) return _p0g;
+                var _p0i = {};
+                if (null != _p0g) {
+                    for (var _p0j in _p0g) 'default' !== _p0j && Object.prototype.hasOwnProperty.call(_p0g, _p0j) && _ozx(_p0i, _p0g, _p0j);
                 }
-        }
-        if (_o0y.exists() && 0 < _o12 && _o0v.add(_o0y.multiply(_o12)), _o0x.exists() && 0 < _o13 && _o0v.add(_o0x.multiply(_o13)), _o0z.exists()) {
-            for (var _o1b = 0, _o1c = 0, _o1d = _o0u.have_slot_ids(); _o1c < _o1d.length; _o1c++) {
-                var _o1e = _o1d[_o1c],
-                    _o1f = _o0t.default.model.slot.getMst(_o1e),
-                    _o1g = _o1f.equipType;
-                (12 == _o1g || 13 == _o1g) && 5 <= _o1f.sakuteki && (_o1b += _o0u.get_slotnums(parseInt(_o1e)));
-            }
-            0 < _o1b && _o0v.add(_o0z);
-        }
-        return _o0v;
-    };
-},
-function(_o1h, _o1i, _o1j) {
-    'use strict';
-    defineModule(_o1i);
-    Object.defineProperty(_o1i, '__esModule', {
-        'value': !0
-    });
-    var _o1k = _o1j(3);
-    _o1i.getSlot313PersonalEffect = function(_o1l) {
-        var _o1m = new _o1k.SlotItemEffectModel(),
-            _o1n = new _o1k.SlotItemEffectModel();
-        87 != _o1l.ctype && 91 != _o1l.ctype || (_o1n.houg += 2, _o1n.tyku += 2, _o1n.kaih += 1, _o1n.souk += 1), 651 != _o1l.ship_id && 656 != _o1l.ship_id || (_o1n.houg += 2, _o1n.tyku += 2, _o1n.kaih += 1, _o1n.souk += 1);
-        var _o1o = !0;
-        if (_o1n.exists() || (_o1o = !1), 0 == _o1o) return _o1m;
-        var _o1p = _o1l.get_slotnums(313);
-        return _o1m = _o1n.multiply(_o1p);
-    };
-},
-function(_o1q, _o1r, _o1s) {
-    'use strict';
-    defineModule(_o1r);
-    Object.defineProperty(_o1r, '__esModule', {
-        'value': !0
-    });
-    var _o1t = _o1s(3);
-    _o1r.getSlot314PersonalEffect = function(_o1u) {
-        var _o1v = new _o1t.SlotItemEffectModel(),
-            _o1w = new _o1t.SlotItemEffectModel();
-        87 != _o1u.ctype && 91 != _o1u.ctype || (_o1w.houg += 1, _o1w.raig += 3);
-        var _o1x = !0;
-        if (_o1w.exists() || (_o1x = !1), 0 == _o1x) return _o1v;
-        var _o1y = _o1u.get_slotnums(314);
-        return _o1v = _o1w.multiply(_o1y);
-    };
-},
-function(_o1z, _o20, _o21) {
-    'use strict';
-    defineModule(_o20);
-    Object.defineProperty(_o20, '__esModule', {
-        'value': !0
-    });
-    var _o22 = _o21(3);
-    _o20.getSlot315PersonalEffect = function(_o23) {
-        var _o24 = new _o22.SlotItemEffectModel(),
-            _o25 = new _o22.SlotItemEffectModel();
-        'アメリカ' == _o23.getCountryName() && (_o25.houg += 2, _o25.kaih += 3, _o25.saku += 4), 87 != _o23.ctype && 91 != _o23.ctype || (_o25.houg += 1, _o24.leng += 1), 651 != _o23.ship_id && 656 != _o23.ship_id || (_o24.houg += 2, _o24.kaih += 2, _o24.saku += 3, _o24.leng += 1);
-        var _o26 = !0;
-        if (_o25.exists() || (_o26 = !1), 0 == _o26) return _o24;
-        var _o27 = _o23.get_slotnums(315);
-        return _o24.add(_o25.multiply(_o27)), _o24;
-    };
-},
-function(_o28, _o29, _o2a) {
-    'use strict';
-    defineModule(_o29);
-    Object.defineProperty(_o29, '__esModule', {
-        'value': !0
-    });
-    var _o2b = _o2a(3);
-    _o29.getSlot316PersonalEffect = function(_o2c) {
-        var _o2d = new _o2b.SlotItemEffectModel(),
-            _o2e = new _o2b.SlotItemEffectModel();
-        if (68 == _o2c.ctype) {
-            if (_o2e.houg += 4, _o2e.tyku += 1, _o2e.kaih += 1, !_o2e.exists()) return _o2d;
-            var _o2f = _o2c.get_slotnums(316),
-                _o2d = _o2e.multiply(_o2f);
-        }
-        return _o2d;
-    };
-},
-function(_o2g, _o2h, _o2i) {
-    'use strict';
-    defineModule(_o2h);
-    Object.defineProperty(_o2h, '__esModule', {
-        'value': !0
-    });
-    var _o2j = _o2i(3);
-    _o2h.getSlot317PersonalEffect = function(_o2k) {
-        var _o2l = new _o2j.SlotItemEffectModel(),
-            _o2m = new _o2j.SlotItemEffectModel(),
-            _o2n = 0,
-            _o2o = !1;
-        if (6 == _o2k.ctype ? (_o2m.houg += 2, _o2m.tyku += 1, _o2n = 1, _o2o = !0) : 2 == _o2k.ctype && (_o2m.houg += 1, _o2m.tyku += 1, _o2m.kaih += 1, _o2n = 2, _o2o = !0), 149 == _o2k.ship_id || 591 == _o2k.ship_id || 592 == _o2k.ship_id ? (_o2m.houg += 2, _o2m.tyku += 2, _o2o = !0) : 150 == _o2k.ship_id ? (_o2m.houg += 1, _o2m.tyku += 1, _o2o = !0) : 151 == _o2k.ship_id ? (_o2m.houg += 1, _o2m.tyku += 1, _o2m.kaih += 1, _o2o = !0) : 593 == _o2k.ship_id ? (_o2m.houg += 1, _o2m.tyku += 3, _o2m.kaih += 2, _o2o = !0) : 954 == _o2k.ship_id ? (_o2m.houg += 2, _o2m.tyku += 2, _o2m.kaih += 1, _o2o = !0) : 152 == _o2k.ship_id ? (_o2m.houg += 2, _o2m.tyku += 1, _o2o = !0) : 541 == _o2k.ship_id ? (_o2m.houg += 1, _o2m.tyku += 2, _o2o = !0) : 573 == _o2k.ship_id && (_o2m.houg += 2, _o2m.tyku += 2, _o2m.kaih += 1, _o2o = !0), 0 == _o2o) return _o2l;
-        if (_o2l.add(_o2m), 0 == _o2n) return _o2l;
-        var _o2p = _o2k.get_each_level_nums(317),
-            _o2q = [];
-        return 0 < _o2n && _o2p.forEach(function(_o2r, _o2s) {
-            for (var _o2t = 1; _o2t <= _o2k.SLOT_LEVEL_MAX; _o2t++) null == _o2q[_o2t] && (_o2q[_o2t] = 0), _o2t <= _o2s && (_o2q[_o2t] += _o2r);
-        }), 1 == _o2n ? 1 <= _o2q[8] && (_o2l.houm += 1) : 2 == _o2n && 1 <= _o2p[10] && (_o2l.houm += 1), _o2l;
-    };
-},
-function(_o2u, _o2v, _o2w) {
-    'use strict';
-    var _o2x = this && this.__importDefault || function(_o2y) {
-        return _o2y && _o2y.__esModule ? _o2y : {
-            'default': _o2y
-        };
-    };
-    defineModule(_o2v);
-    Object.defineProperty(_o2v, '__esModule', {
-        'value': !0
-    });
-    var _o2z = _o2w(3),
-        _o30 = _o2x(_o2w(0));
-    _o2v.getSlot318PersonalEffect = function(_o31) {
-        var _o32 = new _o2z.SlotItemEffectModel(),
-            _o33 = new _o2z.SlotItemEffectModel(),
-            _o34 = new _o2z.SlotItemEffectModel(),
-            _o35 = new _o2z.SlotItemEffectModel();
-        if (411 == _o31.ship_id || 412 == _o31.ship_id ? _o33.houg += 1 : 82 == _o31.ship_id ? (_o33.houg += 2, _o33.tyku += 2, _o33.kaih += 2, _o35.tyku = 2, _o35.kaih = 3, _o35.houm = 1) : 553 == _o31.ship_id ? (_o33.houg += 2, _o33.tyku += 2, _o33.kaih += 2, _o33.houm += 3, _o35.tyku = 2, _o35.kaih = 3, _o35.houm = 1, _o34.kaih = 2, _o34.souk = 1) : 88 == _o31.ship_id ? (_o33.houg += 2, _o33.tyku += 2, _o33.kaih += 2, _o35.tyku = 2, _o35.kaih = 3, _o35.houm = 1) : 541 == _o31.ship_id || 573 == _o31.ship_id ? (_o33.houg += 3, _o33.tyku += 2, _o33.kaih += 1, _o33.houm += 2, _o34.houg = 2, _o34.kaih = 2, _o34.souk = 1, _o34.houm = 1) : 554 == _o31.ship_id && (_o33.houg += 3, _o33.tyku += 2, _o33.kaih += 2, _o33.houm += 3, _o35.tyku = 2, _o35.kaih = 3, _o35.houm = 1, _o34.houg = 1, _o34.kaih = 2, _o34.souk = 1, _o34.houm = 1), !_o33.exists()) return _o32;
-        var _o36 = _o31.get_slotnums(318),
-            _o32 = _o33.multiply(_o36);
-        if (!_o34.exists() && !_o35.exists()) return _o32;
-        for (var _o37 = 0, _o38 = 0, _o39 = _o31.have_slot_ids(); _o38 < _o39.length; _o38++) {
-            var _o3a = _o39[_o38],
-                _o3b = _o30.default.model.slot.getMst(_o3a),
-                _o3c = _o3b.equipType;
-            (12 == _o3c || 13 == _o3c) && 2 <= _o3b.taiku && (_o37 += _o31.get_slotnums(parseInt(_o3a)));
-        }
-        var _o3d = _o31.get_slotnums(290);
-        return _o35.exists() && 0 < _o37 && 0 == _o3d && _o32.add(_o35), _o34.exists() && 1 <= _o3d && _o32.add(_o34), _o32;
-    };
-},
-function(_o3e, _o3f, _o3g) {
-    'use strict';
-    defineModule(_o3f);
-    Object.defineProperty(_o3f, '__esModule', {
-        'value': !0
-    });
-    var _o3h = _o3g(3);
-    _o3f.getSlot319PersonalEffect = function(_o3i) {
-        var _o3j = new _o3h.SlotItemEffectModel(),
-            _o3k = new _o3h.SlotItemEffectModel();
-        if (554 != _o3i.ship_id && 553 != _o3i.ship_id || (_o3k.houg = 7, _o3k.tyku = 3, _o3k.kaih = 2), !_o3k.exists()) return _o3j;
-        var _o3l = _o3i.get_slotnums(319);
-        return _o3j = _o3k.multiply(_o3l);
-    };
-},
-function(_o3m, _o3n, _o3o) {
-    'use strict';
-    defineModule(_o3n);
-    Object.defineProperty(_o3n, '__esModule', {
-        'value': !0
-    });
-    var _o3p = _o3o(3);
-    _o3n.getSlot320PersonalEffect = function(_o3q) {
-        var _o3r = new _o3p.SlotItemEffectModel(),
-            _o3s = new _o3p.SlotItemEffectModel();
-        if (553 == _o3q.ship_id) _o3s.houg = 2;
-        else if (554 == _o3q.ship_id) _o3s.houg = 4;
-        else if (196 == _o3q.ship_id) _o3s.houg = 3;
-        else if (197 == _o3q.ship_id) _o3s.houg = 3;
-        else if (508 == _o3q.ship_id) _o3s.houg = 4;
-        else {
-            if (509 != _o3q.ship_id) return _o3r;
-            _o3s.houg = 4;
-        }
-        var _o3t = _o3q.get_slotnums(320);
-        return _o3r = _o3s.multiply(_o3t);
-    };
-},
-function(_o3u, _o3v, _o3w) {
-    'use strict';
-    defineModule(_o3v);
-    Object.defineProperty(_o3v, '__esModule', {
-        'value': !0
-    });
-    var _o3x = _o3w(3);
-    _o3v.getSlot322PersonalEffect = function(_o3y) {
-        var _o3z = new _o3x.SlotItemEffectModel(),
-            _o40 = new _o3x.SlotItemEffectModel();
-        if (554 != _o3y.ship_id && 553 != _o3y.ship_id || (_o40.houg = 5, _o40.tyku = 2, _o40.kaih = 2, _o40.tais = 1), !_o40.exists()) return _o3z;
-        var _o41 = _o3y.get_slotnums(322);
-        return _o3z = _o40.multiply(_o41);
-    };
-},
-function(_o42, _o43, _o44) {
-    'use strict';
-    defineModule(_o43);
-    Object.defineProperty(_o43, '__esModule', {
-        'value': !0
-    });
-    var _o45 = _o44(3);
-    _o43.getSlot323PersonalEffect = function(_o46) {
-        var _o47 = new _o45.SlotItemEffectModel(),
-            _o48 = new _o45.SlotItemEffectModel();
-        if (554 != _o46.ship_id && 553 != _o46.ship_id || (_o48.houg = 6, _o48.tyku = 3, _o48.kaih = 3, _o48.tais = 2), !_o48.exists()) return _o47;
-        var _o49 = _o46.get_slotnums(323);
-        return _o47 = _o48.multiply(_o49);
-    };
-},
-function(_o4a, _o4b, _o4c) {
-    'use strict';
-    defineModule(_o4b);
-    Object.defineProperty(_o4b, '__esModule', {
-        'value': !0
-    });
-    var _o4d = _o4c(3);
-    _o4b.getSlot324And325PersonalEffect = function(_o4e) {
-        var _o4f = new _o4d.SlotItemEffectModel(),
-            _o4g = new _o4d.SlotItemEffectModel();
-        if (554 == _o4e.ship_id || 646 == _o4e.ship_id ? (_o4g.houg = 2, _o4g.tais = 3, _o4g.kaih = 1) : 553 == _o4e.ship_id && (_o4g.houg = 1, _o4g.tais = 2, _o4g.kaih = 1), !_o4g.exists()) return _o4f;
-        var _o4h = _o4e.get_slotnums(324) + _o4e.get_slotnums(325);
-        return _o4f = _o4g.multiply(_o4h);
-    };
-},
-function(_o4i, _o4j, _o4k) {
-    'use strict';
-    defineModule(_o4j);
-    Object.defineProperty(_o4j, '__esModule', {
-        'value': !0
-    });
-    var _o4l = _o4k(3);
-    _o4j.getSlot326PersonalEffect = function(_o4m) {
-        var _o4n = new _o4l.SlotItemEffectModel(),
-            _o4o = new _o4l.SlotItemEffectModel();
-        if (646 == _o4m.ship_id ? (_o4o.houg = 3, _o4o.tais = 5, _o4o.kaih = 3) : 554 == _o4m.ship_id ? (_o4o.houg = 3, _o4o.tais = 4, _o4o.kaih = 2) : 553 == _o4m.ship_id && (_o4o.houg = 1, _o4o.tais = 3, _o4o.kaih = 1), !_o4o.exists()) return _o4n;
-        var _o4p = _o4m.get_slotnums(326);
-        return _o4n = _o4o.multiply(_o4p);
-    };
-},
-function(_o4q, _o4r, _o4s) {
-    'use strict';
-    defineModule(_o4r);
-    Object.defineProperty(_o4r, '__esModule', {
-        'value': !0
-    });
-    var _o4t = _o4s(3);
-    _o4r.getSlot327PersonalEffect = function(_o4u) {
-        var _o4v = new _o4t.SlotItemEffectModel(),
-            _o4w = new _o4t.SlotItemEffectModel();
-        if (646 == _o4u.ship_id ? (_o4w.houg = 5, _o4w.tais = 6, _o4w.kaih = 4) : 554 == _o4u.ship_id ? (_o4w.houg = 4, _o4w.tais = 5, _o4w.kaih = 2) : 553 == _o4u.ship_id && (_o4w.houg = 2, _o4w.tais = 4, _o4w.kaih = 1), !_o4w.exists()) return _o4v;
-        var _o4x = _o4u.get_slotnums(327);
-        return _o4v = _o4w.multiply(_o4x);
-    };
-},
-function(_o4y, _o4z, _o50) {
-    'use strict';
-    defineModule(_o4z);
-    Object.defineProperty(_o4z, '__esModule', {
-        'value': !0
-    });
-    var _o51 = _o50(3);
-    _o4z.getSlot328PersonalEffect = function(_o52) {
-        var _o53 = new _o51.SlotItemEffectModel(),
-            _o54 = new _o51.SlotItemEffectModel();
-        if ('こんごう' == _o52.yomi ? (_o54.houg = 1, _o54.kaih = 1, 209 == _o52.ship_id || 149 == _o52.ship_id ? _o54.houg += 1 : 591 == _o52.ship_id && (_o54.houg += 2, _o54.raig += 1)) : 'ひえい' == _o52.yomi ? (_o54.houg = 1, _o54.kaih = 1, 210 == _o52.ship_id || 150 == _o52.ship_id ? _o54.houg += 1 : 592 == _o52.ship_id && (_o54.houg += 2, _o54.tyku += 1)) : 'はるな' == _o52.yomi ? (_o54.houg = 1, _o54.kaih = 1, 211 == _o52.ship_id || 151 == _o52.ship_id ? _o54.houg += 1 : 593 == _o52.ship_id ? (_o54.houg += 1, _o54.tyku += 2) : 954 == _o52.ship_id && (_o54.houg += 2, _o54.tyku += 1)) : 'きりしま' == _o52.yomi ? (_o54.houg = 1, _o54.kaih = 1, 212 != _o52.ship_id && 152 != _o52.ship_id || (_o54.houg += 1)) : 'ふそう' != _o52.yomi && 'やましろ' != _o52.yomi && 'いせ' != _o52.yomi && 'ひゅうが' != _o52.yomi || (_o54.houg = 1), !_o54.exists()) return _o53;
-        var _o55 = _o52.get_slotnums(328);
-        return _o53 = _o54.multiply(_o55);
-    };
-},
-function(_o56, _o57, _o58) {
-    'use strict';
-    defineModule(_o57);
-    Object.defineProperty(_o57, '__esModule', {
-        'value': !0
-    });
-    var _o59 = _o58(3);
-    _o57.getSlot329PersonalEffect = function(_o5a) {
-        var _o5b = new _o59.SlotItemEffectModel(),
-            _o5c = new _o59.SlotItemEffectModel();
-        if ('こんごう' == _o5a.yomi ? (_o5c.houg = 1, _o5c.kaih = 1, 209 == _o5a.ship_id ? _o5c.houg += 1 : 149 == _o5a.ship_id ? (_o5c.houg += 2, _o5c.tyku += 1) : 591 == _o5a.ship_id && (_o5c.houg += 3, _o5c.tyku += 1, _o5c.raig += 2)) : 'ひえい' == _o5a.yomi ? (_o5c.houg = 1, _o5c.kaih = 1, 210 == _o5a.ship_id ? _o5c.houg += 1 : 150 == _o5a.ship_id ? (_o5c.houg += 2, _o5c.tyku += 1) : 592 == _o5a.ship_id && (_o5c.houg += 3, _o5c.tyku += 1, _o5c.raig += 2)) : 'はるな' == _o5a.yomi ? (_o5c.houg = 1, _o5c.kaih = 1, 211 == _o5a.ship_id ? _o5c.houg += 1 : 151 == _o5a.ship_id ? (_o5c.houg += 2, _o5c.tyku += 1) : 593 == _o5a.ship_id ? (_o5c.houg += 2, _o5c.tyku += 3, _o5c.raig += 1) : 954 == _o5a.ship_id && (_o5c.houg += 3, _o5c.tyku += 1, _o5c.raig += 2)) : 'きりしま' == _o5a.yomi ? (_o5c.houg = 1, _o5c.kaih = 1, 212 == _o5a.ship_id ? _o5c.houg += 1 : 152 == _o5a.ship_id && (_o5c.houg += 2, _o5c.tyku += 1)) : 'ふそう' != _o5a.yomi && 'やましろ' != _o5a.yomi && 'いせ' != _o5a.yomi && 'ひゅうが' != _o5a.yomi || (_o5c.houg = 1), !_o5c.exists()) return _o5b;
-        var _o5d = _o5a.get_slotnums(329);
-        return _o5b = _o5c.multiply(_o5d);
-    };
-},
-function(_o5e, _o5f, _o5g) {
-    'use strict';
-    defineModule(_o5f);
-    Object.defineProperty(_o5f, '__esModule', {
-        'value': !0
-    });
-    var _o5h = _o5g(3);
-    _o5f.getSlot335PersonalEffect = function(_o5i) {
-        var _o5j = new _o5h.SlotItemEffectModel(),
-            _o5k = new _o5h.SlotItemEffectModel();
-        if (277 == _o5i.ship_id || 278 == _o5i.ship_id ? (_o5k.tyku = 1, _o5k.kaih = 1) : 594 != _o5i.ship_id && 599 != _o5i.ship_id && 610 != _o5i.ship_id && 646 != _o5i.ship_id && 698 != _o5i.ship_id || (_o5k.tyku = 2, _o5k.kaih = 1), !_o5k.exists()) return _o5j;
-        var _o5l = _o5i.get_slotnums(335);
-        return _o5j = _o5k.multiply(_o5l);
-    };
-},
-function(_o5m, _o5n, _o5o) {
-    'use strict';
-    defineModule(_o5n);
-    Object.defineProperty(_o5n, '__esModule', {
-        'value': !0
-    });
-    var _o5p = _o5o(3);
-    _o5n.getSlot336PersonalEffect = function(_o5q) {
-        var _o5r = new _o5p.SlotItemEffectModel(),
-            _o5s = new _o5p.SlotItemEffectModel();
-        if (277 == _o5q.ship_id || 278 == _o5q.ship_id ? (_o5s.houg = 1, _o5s.tyku = 1, _o5s.kaih = 1) : 594 != _o5q.ship_id && 599 != _o5q.ship_id && 610 != _o5q.ship_id && 646 != _o5q.ship_id && 698 != _o5q.ship_id || (_o5s.houg = 1, _o5s.tyku = 2, _o5s.kaih = 1), !_o5s.exists()) return _o5r;
-        var _o5t = _o5q.get_slotnums(336);
-        return _o5r = _o5s.multiply(_o5t);
-    };
-},
-function(_o5u, _o5v, _o5w) {
-    'use strict';
-    defineModule(_o5v);
-    Object.defineProperty(_o5v, '__esModule', {
-        'value': !0
-    });
-    var _o5x = _o5w(3);
-    _o5v.getSlot337PersonalEffect = function(_o5y) {
-        var _o5z = new _o5x.SlotItemEffectModel(),
-            _o60 = new _o5x.SlotItemEffectModel();
-        if (277 == _o5y.ship_id || 278 == _o5y.ship_id ? (_o60.houg = 1, _o60.tyku = 1, _o60.kaih = 1) : 594 != _o5y.ship_id && 599 != _o5y.ship_id && 610 != _o5y.ship_id && 646 != _o5y.ship_id && 698 != _o5y.ship_id || (_o60.houg = 2, _o60.tyku = 2, _o60.kaih = 1), !_o60.exists()) return _o5z;
-        var _o61 = _o5y.get_slotnums(337);
-        return _o5z = _o60.multiply(_o61);
-    };
-},
-function(_o62, _o63, _o64) {
-    'use strict';
-    defineModule(_o63);
-    Object.defineProperty(_o63, '__esModule', {
-        'value': !0
-    });
-    var _o65 = _o64(3);
-    _o63.getSlot338PersonalEffect = function(_o66) {
-        var _o67 = new _o65.SlotItemEffectModel(),
-            _o68 = new _o65.SlotItemEffectModel();
-        if (277 == _o66.ship_id || 278 == _o66.ship_id ? (_o68.houg = 1, _o68.tyku = 1, _o68.kaih = 2) : 594 == _o66.ship_id || 646 == _o66.ship_id || 698 == _o66.ship_id ? (_o68.houg = 1, _o68.tyku = 2, _o68.kaih = 3) : 599 != _o66.ship_id && 610 != _o66.ship_id || (_o68.houg = 4, _o68.tyku = 3, _o68.kaih = 4), !_o68.exists()) return _o67;
-        var _o69 = _o66.get_slotnums(338);
-        return _o67 = _o68.multiply(_o69);
-    };
-},
-function(_o6a, _o6b, _o6c) {
-    'use strict';
-    defineModule(_o6b);
-    Object.defineProperty(_o6b, '__esModule', {
-        'value': !0
-    });
-    var _o6d = _o6c(3);
-    _o6b.getSlot339PersonalEffect = function(_o6e) {
-        var _o6f = new _o6d.SlotItemEffectModel(),
-            _o6g = new _o6d.SlotItemEffectModel();
-        if (277 == _o6e.ship_id || 278 == _o6e.ship_id ? (_o6g.houg = 1, _o6g.tyku = 2, _o6g.kaih = 2) : 594 == _o6e.ship_id || 646 == _o6e.ship_id || 698 == _o6e.ship_id ? (_o6g.houg = 1, _o6g.tyku = 3, _o6g.kaih = 4) : 599 != _o6e.ship_id && 610 != _o6e.ship_id || (_o6g.houg = 6, _o6g.tyku = 4, _o6g.kaih = 5), !_o6g.exists()) return _o6f;
-        var _o6h = _o6e.get_slotnums(339);
-        return _o6f = _o6g.multiply(_o6h);
-    };
-},
-function(_o6i, _o6j, _o6k) {
-    'use strict';
-    defineModule(_o6j);
-    Object.defineProperty(_o6j, '__esModule', {
-        'value': !0
-    });
-    var _o6l = _o6k(3);
-    _o6j.getSlot340PersonalEffect = function(_o6m) {
-        var _o6n = new _o6l.SlotItemEffectModel(),
-            _o6o = new _o6l.SlotItemEffectModel();
-        if ('ガリバルディ' != _o6m.yomi && 'アブルッツィ' != _o6m.yomi || (_o6o.houg = 1, _o6o.tyku = 1, _o6o.kaih = 1), !_o6o.exists()) return _o6n;
-        var _o6p = _o6m.get_slotnums(340);
-        return _o6n = _o6o.multiply(_o6p);
-    };
-},
-function(_o6q, _o6r, _o6s) {
-    'use strict';
-    defineModule(_o6r);
-    Object.defineProperty(_o6r, '__esModule', {
-        'value': !0
-    });
-    var _o6t = _o6s(3);
-    _o6r.getSlot341PersonalEffect = function(_o6u) {
-        var _o6v = new _o6t.SlotItemEffectModel(),
-            _o6w = new _o6t.SlotItemEffectModel();
-        if ('ガリバルディ' == _o6u.yomi || 'アブルッツィ' == _o6u.yomi ? (_o6w.houg = 2, _o6w.tyku = 1, _o6w.kaih = 1) : 'ゴトランド' == _o6u.yomi && (_o6w.houg = 1, _o6w.tyku = 1, _o6w.kaih = 1), !_o6w.exists()) return _o6v;
-        var _o6x = _o6u.get_slotnums(341);
-        return _o6v = _o6w.multiply(_o6x);
-    };
-},
-function(_o6y, _o6z, _o70) {
-    'use strict';
-    defineModule(_o6z);
-    Object.defineProperty(_o6z, '__esModule', {
-        'value': !0
-    });
-    var _o71 = _o70(3);
-    _o6z.getSlot342PersonalEffect = function(_o72) {
-        var _o73 = new _o71.SlotItemEffectModel(),
-            _o74 = new _o71.SlotItemEffectModel();
-        if (277 == _o72.ship_id || 278 == _o72.ship_id || 461 == _o72.ship_id || 466 == _o72.ship_id || 462 == _o72.ship_id || 467 == _o72.ship_id ? _o74.houg = 1 : 594 == _o72.ship_id || 646 == _o72.ship_id || 698 == _o72.ship_id ? (_o74.houg = 2, _o74.tyku = 1, _o74.kaih = 1) : 599 != _o72.ship_id && 610 != _o72.ship_id || (_o74.houg = 3, _o74.tyku = 2, _o74.kaih = 2), !_o74.exists()) return _o73;
-        var _o75 = _o72.get_slotnums(342);
-        return _o73 = _o74.multiply(_o75);
-    };
-},
-function(_o76, _o77, _o78) {
-    'use strict';
-    defineModule(_o77);
-    Object.defineProperty(_o77, '__esModule', {
-        'value': !0
-    });
-    var _o79 = _o78(3);
-    _o77.getSlot343PersonalEffect = function(_o7a) {
-        var _o7b = new _o79.SlotItemEffectModel(),
-            _o7c = new _o79.SlotItemEffectModel();
-        if (277 == _o7a.ship_id || 278 == _o7a.ship_id ? _o7c.houg = 2 : 461 == _o7a.ship_id || 466 == _o7a.ship_id || 462 == _o7a.ship_id || 467 == _o7a.ship_id ? _o7c.houg = 1 : 594 == _o7a.ship_id || 646 == _o7a.ship_id || 698 == _o7a.ship_id ? (_o7c.houg = 3, _o7c.tyku = 2, _o7c.kaih = 1) : 599 != _o7a.ship_id && 610 != _o7a.ship_id || (_o7c.houg = 5, _o7c.tyku = 3, _o7c.kaih = 3), !_o7c.exists()) return _o7b;
-        var _o7d = _o7a.get_slotnums(343);
-        return _o7b = _o7c.multiply(_o7d);
-    };
-},
-function(_o7e, _o7f, _o7g) {
-    'use strict';
-    defineModule(_o7f);
-    Object.defineProperty(_o7f, '__esModule', {
-        'value': !0
-    });
-    var _o7h = _o7g(3);
-    _o7f.getSlot344PersonalEffect = function(_o7i) {
-        var _o7j = new _o7h.SlotItemEffectModel(),
-            _o7k = new _o7h.SlotItemEffectModel();
-        if (599 == _o7i.ship_id || 610 == _o7i.ship_id ? _o7k.houg = 3 : 555 == _o7i.ship_id || 560 == _o7i.ship_id ? (_o7k.houg = 2, _o7k.tais = 2) : 318 == _o7i.ship_id ? (_o7k.houg = 4, _o7k.tais = 1) : 282 == _o7i.ship_id ? (_o7k.houg = 2, _o7k.tais = 1) : 888 == _o7i.ship_id ? (_o7k.houg = 4, _o7k.tais = 2) : 883 == _o7i.ship_id && (_o7k.houg = 5, _o7k.tais = 2), !_o7k.exists()) return _o7j;
-        var _o7l = _o7i.get_slotnums(344);
-        return _o7j = _o7k.multiply(_o7l);
-    };
-},
-function(_o7m, _o7n, _o7o) {
-    'use strict';
-    defineModule(_o7n);
-    Object.defineProperty(_o7n, '__esModule', {
-        'value': !0
-    });
-    var _o7p = _o7o(3);
-    _o7n.getSlot345PersonalEffect = function(_o7q) {
-        var _o7r = new _o7p.SlotItemEffectModel(),
-            _o7s = new _o7p.SlotItemEffectModel();
-        if (599 == _o7q.ship_id || 610 == _o7q.ship_id ? (_o7s.houg = 3, _o7s.kaih = 1) : 555 == _o7q.ship_id || 560 == _o7q.ship_id ? (_o7s.houg = 3, _o7s.tais = 2, _o7s.kaih = 2) : 318 == _o7q.ship_id ? (_o7s.houg = 5, _o7s.tais = 1, _o7s.kaih = 2) : 282 == _o7q.ship_id ? (_o7s.houg = 3, _o7s.tais = 1, _o7s.kaih = 1) : 888 == _o7q.ship_id ? (_o7s.houg = 4, _o7s.tais = 2, _o7s.kaih = 2) : 883 == _o7q.ship_id && (_o7s.houg = 5, _o7s.tais = 2, _o7s.kaih = 3), !_o7s.exists()) return _o7r;
-        var _o7t = _o7q.get_slotnums(345);
-        return _o7r = _o7s.multiply(_o7t);
-    };
-},
-function(_o7u, _o7v, _o7w) {
-    'use strict';
-    defineModule(_o7v);
-    Object.defineProperty(_o7v, '__esModule', {
-        'value': !0
-    });
-    var _o7x = _o7w(3);
-    _o7v.getSlot356_357PersonalEffect = function(_o7y) {
-        var _o7z = new _o7x.SlotItemEffectModel(),
-            _o80 = new _o7x.SlotItemEffectModel();
-        if (95 == _o7y.ctype ? _o80.houg = 2 : 9 == _o7y.ctype && (_o80.houg = 1), !_o80.exists()) return _o7z;
-        var _o81 = _o7y.get_slotnums(356) + _o7y.get_slotnums(357);
-        return _o7z = _o80.multiply(_o81);
-    };
-},
-function(_o82, _o83, _o84) {
-    'use strict';
-    defineModule(_o83);
-    Object.defineProperty(_o83, '__esModule', {
-        'value': !0
-    });
-    var _o85 = _o84(3);
-    _o83.getSlot358PersonalEffect = function(_o86) {
-        var _o87 = new _o85.SlotItemEffectModel(),
-            _o88 = new _o85.SlotItemEffectModel();
-        if ('アメリカ' != _o86.getCountryName() && 67 != _o86.ctype && 78 != _o86.ctype && 82 != _o86.ctype && 88 != _o86.ctype && 108 != _o86.ctype && 112 != _o86.ctype) return _o87;
-        _o88.houg += 1, _o88.kaih += 1, _o88.tyku += 1, 95 == _o86.ctype && (_o88.houg += 1, _o88.kaih += 2, _o88.tyku += 2);
-        var _o89 = _o86.get_slotnums(358);
-        return _o87 = _o88.multiply(_o89);
-    };
-},
-function(_o8a, _o8b, _o8c) {
-    'use strict';
-    defineModule(_o8b);
-    Object.defineProperty(_o8b, '__esModule', {
-        'value': !0
-    });
-    var _o8d = _o8c(3);
-    _o8b.getSlot359PersonalEffect = function(_o8e) {
-        var _o8f = new _o8d.SlotItemEffectModel(),
-            _o8g = new _o8d.SlotItemEffectModel();
-        if ('パース' == _o8e.yomi ? (_o8g.houg = 2, _o8g.tyku = 2, _o8g.kaih = 1) : 'ゆうばり' == _o8e.yomi && (_o8g.houg = 1, _o8g.tyku = 1, _o8g.kaih = 1), 622 != _o8e.ship_id && 623 != _o8e.ship_id && 624 != _o8e.ship_id || (_o8g.houg += 1, _o8g.tyku += 1), !_o8g.exists()) return _o8f;
-        var _o8h = _o8e.get_slotnums(359);
-        return _o8f = _o8g.multiply(_o8h);
-    };
-},
-function(_o8i, _o8j, _o8k) {
-    'use strict';
-    defineModule(_o8j);
-    Object.defineProperty(_o8j, '__esModule', {
-        'value': !0
-    });
-    var _o8l = _o8k(3);
-    _o8j.getSlot360_361PersonalEffect = function(_o8m) {
-        var _o8n = new _o8l.SlotItemEffectModel(),
-            _o8o = new _o8l.SlotItemEffectModel();
-        if ('デ・ロイテル' == _o8m.yomi ? (_o8o.houg = 2, _o8o.tyku = 2, _o8o.kaih = 1) : 'ゴトランド' == _o8m.yomi && (_o8o.houg = 2, _o8o.tyku = 1, _o8o.kaih = 1), 41 == _o8m.ctype && (_o8o.houg = 1, _o8o.tyku = 1), !_o8o.exists()) return _o8n;
-        var _o8p = _o8m.get_slotnums(360) + _o8m.get_slotnums(361);
-        return _o8n = _o8o.multiply(_o8p);
-    };
-},
-function(_o8q, _o8r, _o8s) {
-    'use strict';
-    defineModule(_o8r);
-    Object.defineProperty(_o8r, '__esModule', {
-        'value': !0
-    });
-    var _o8t = _o8s(3);
-    _o8r.getSlot362_363PersonalEffect = function(_o8u) {
-        var _o8v = new _o8t.SlotItemEffectModel(),
-            _o8w = new _o8t.SlotItemEffectModel(),
-            _o8x = !1;
-        if (99 == _o8u.ctype ? (_o8w.houg = 1, _o8w.tyku = 2, _o8w.kaih = 1, _o8x = !0) : 34 == _o8u.ctype || 21 == _o8u.ctype ? (_o8w.houg = -3, _o8w.tyku = -3, _o8w.kaih = -8, _o8x = !0) : 4 == _o8u.ctype || 20 == _o8u.ctype || 16 == _o8u.ctype ? (_o8w.houg = -3, _o8w.tyku = -2, _o8w.kaih = -6, _o8x = !0) : 89 == _o8u.ctype || 56 == _o8u.ctype ? (_o8w.houg = -2, _o8w.tyku = -1, _o8w.kaih = -4, _o8x = !0) : 52 != _o8u.ctype && 41 != _o8u.ctype && 98 != _o8u.ctype || (_o8w.tyku = -1, _o8w.kaih = -2, _o8x = !0), 'アメリカ' == _o8u.getCountryName() && (_o8w.tyku += 1, _o8w.kaih += 1, _o8x = !0), 0 == _o8x) return _o8v;
-        var _o8y = _o8u.get_slotnums(362) + _o8u.get_slotnums(363);
-        return _o8v = _o8w.multiply(_o8y);
-    };
-},
-function(_o8z, _o90, _o91) {
-    'use strict';
-    defineModule(_o90);
-    Object.defineProperty(_o90, '__esModule', {
-        'value': !0
-    });
-    var _o92 = _o91(3);
-    _o90.getSlot364PersonalEffect = function(_o93) {
-        new _o92.SlotItemEffectModel();
-        var _o94 = new _o92.SlotItemEffectModel();
-        623 == _o93.ship_id || 586 == _o93.ship_id || 119 == _o93.ship_id || 118 == _o93.ship_id || 657 == _o93.ship_id || 506 == _o93.ship_id || 668 == _o93.ship_id ? (_o94.raig = 1, _o94.kaih = -2, 119 == _o93.ship_id ? _o94.raig += 1 : 623 == _o93.ship_id && (_o94.houg += 1, _o94.raig += 3)) : (_o94.houg = -1, _o94.kaih = -7);
-        var _o95 = _o93.get_slotnums(364);
-        return _o94.multiply(_o95);
-    };
-},
-function(_o96, _o97, _o98) {
-    'use strict';
-    defineModule(_o97);
-    Object.defineProperty(_o97, '__esModule', {
-        'value': !0
-    });
-    var _o99 = _o98(3);
-    _o97.getSlot365PersonalEffect = function(_o9a) {
-        var _o9b = new _o99.SlotItemEffectModel(),
-            _o9c = new _o99.SlotItemEffectModel(),
-            _o9d = !1;
-        return 37 != _o9a.ctype && 19 != _o9a.ctype && 2 != _o9a.ctype && 26 != _o9a.ctype && 6 != _o9a.ctype || (_o9c.houg += 1, _o9d = !0), 136 != _o9a.ship_id && 148 != _o9a.ship_id && 546 != _o9a.ship_id && 541 != _o9a.ship_id && 573 != _o9a.ship_id && 911 != _o9a.ship_id && 916 != _o9a.ship_id && 593 != _o9a.ship_id || (_o9c.houg += 1, _o9d = !0), 591 != _o9a.ship_id && 592 != _o9a.ship_id && 954 != _o9a.ship_id || (_o9c.houg += 2, _o9d = !0), 0 == _o9d ? _o9b : _o9b = _o9c.multiply(1);
-    };
-},
-function(_o9e, _o9f, _o9g) {
-    'use strict';
-    defineModule(_o9f);
-    Object.defineProperty(_o9f, '__esModule', {
-        'value': !0
-    });
-    var _o9h = _o9g(3);
-    _o9f.getSlot367PersonalEffect = function(_o9i) {
-        var _o9j = new _o9h.SlotItemEffectModel(),
-            _o9k = new _o9h.SlotItemEffectModel(),
-            _o9l = !1;
-        if ('ゴトランド' == _o9i.yomi && (_o9k.houg += 2, _o9k.tais += 1, _o9k.kaih += 1, _o9k.saku += 1, _o9l = !0), 70 == _o9i.ctype ? (_o9k.houg += 1, _o9k.tais += 1, _o9k.kaih += 1, _o9k.saku += 1, _o9l = !0) : 72 == _o9i.ctype || 62 == _o9i.ctype ? (_o9k.houg += 1, _o9k.kaih += 1, _o9k.saku += 1, _o9l = !0) : 67 != _o9i.ctype && 78 != _o9i.ctype && 82 != _o9i.ctype && 88 != _o9i.ctype && 108 != _o9i.ctype && 112 != _o9i.ctype || (_o9k.houg += 2, _o9k.kaih += 2, _o9k.saku += 2, _o9l = !0), 0 == _o9l) return _o9j;
-        var _o9m = _o9i.get_slotnums(367);
-        return _o9j = _o9k.multiply(_o9m);
-    };
-},
-function(_o9n, _o9o, _o9p) {
-    'use strict';
-    defineModule(_o9o);
-    Object.defineProperty(_o9o, '__esModule', {
-        'value': !0
-    });
-    var _o9q = _o9p(3);
-    _o9o.getSlot368PersonalEffect = function(_o9r) {
-        var _o9s = new _o9q.SlotItemEffectModel(),
-            _o9t = new _o9q.SlotItemEffectModel(),
-            _o9u = !1;
-        if ('ゴトランド' == _o9r.yomi && (_o9t.houg = 4, _o9t.tais = 3, _o9t.kaih = 2, _o9t.saku = 3, _o9u = !0, 630 == _o9r.ship_id && (_o9s.houg += 2, _o9s.raig += 2, _o9s.kaih += 1, _o9s.saku += 1)), 70 == _o9r.ctype ? (_o9t.houg = 2, _o9t.tais = 3, _o9t.kaih = 1, _o9t.saku = 2, _o9u = !0) : 72 == _o9r.ctype || 62 == _o9r.ctype ? (_o9t.houg += 1, _o9t.tais += 2, _o9t.kaih += 1, _o9t.saku += 2, _o9u = !0) : 67 != _o9r.ctype && 78 != _o9r.ctype && 82 != _o9r.ctype && 88 != _o9r.ctype && 108 != _o9r.ctype && 112 != _o9r.ctype || (_o9t.houg += 2, _o9t.tais += 2, _o9t.kaih += 2, _o9t.saku += 2, _o9u = !0), 0 == _o9u) return _o9s;
-        var _o9v = _o9r.get_slotnums(368);
-        return _o9s.add(_o9t.multiply(_o9v)), _o9s;
-    };
-},
-function(_o9w, _o9x, _o9y) {
-    'use strict';
-    defineModule(_o9x);
-    Object.defineProperty(_o9x, '__esModule', {
-        'value': !0
-    });
-    var _o9z = _o9y(3);
-    _o9x.getSlot369PersonalEffect = function(_oa0) {
-        var _oa1 = new _o9z.SlotItemEffectModel(),
-            _oa2 = new _o9z.SlotItemEffectModel(),
-            _oa3 = !1;
-        if ('ゴトランド' == _oa0.yomi && (_oa2.houg = 5, _oa2.tais = 4, _oa2.kaih = 4, _oa2.saku = 3, _oa3 = !0, 630 == _oa0.ship_id && (_oa1.houg += 3, _oa1.raig += 3, _oa1.kaih += 2, _oa1.saku += 2)), 70 == _oa0.ctype ? (_oa2.houg += 3, _oa2.tais += 3, _oa2.kaih += 2, _oa2.saku += 3, _oa3 = !0) : 72 == _oa0.ctype || 62 == _oa0.ctype ? (_oa2.houg += 2, _oa2.tais += 2, _oa2.kaih += 1, _oa2.saku += 2, _oa3 = !0) : 67 != _oa0.ctype && 78 != _oa0.ctype && 82 != _oa0.ctype && 88 != _oa0.ctype && 108 != _oa0.ctype && 112 != _oa0.ctype || (_oa2.houg += 2, _oa2.tais += 2, _oa2.kaih += 2, _oa2.saku += 2, _oa3 = !0), 0 == _oa3) return _oa1;
-        var _oa4 = _oa0.get_slotnums(369);
-        return _oa1.add(_oa2.multiply(_oa4)), _oa1;
-    };
-},
-function(_oa5, _oa6, _oa7) {
-    'use strict';
-    defineModule(_oa6);
-    Object.defineProperty(_oa6, '__esModule', {
-        'value': !0
-    });
-    var _oa8 = _oa7(3);
-    _oa6.getSlot370PersonalEffect = function(_oa9) {
-        var _oaa = new _oa8.SlotItemEffectModel(),
-            _oab = new _oa8.SlotItemEffectModel(),
-            _oac = !1;
-        if ('ゴトランド' == _oa9.yomi && (_oab.houg = 1, _oab.tais = 3, _oab.kaih = 1, _oab.saku = 2, _oac = !0), 70 == _oa9.ctype ? (_oab.houg += 1, _oab.tais += 3, _oab.kaih += 1, _oab.saku += 1, _oac = !0) : 72 == _oa9.ctype || 62 == _oa9.ctype ? (_oab.houg += 1, _oab.tais += 2, _oab.kaih += 1, _oab.saku += 1, _oac = !0) : 67 != _oa9.ctype && 78 != _oa9.ctype && 82 != _oa9.ctype && 88 != _oa9.ctype && 108 != _oa9.ctype && 112 != _oa9.ctype || (_oab.houg += 2, _oab.tais += 3, _oab.kaih += 2, _oab.saku += 2, _oac = !0, 'ウォースパイト' == _oa9.yomi && (_oaa.houg += 4, _oaa.kaih += 1, _oaa.saku += 1)), 0 == _oac) return _oaa;
-        var _oad = _oa9.get_slotnums(370);
-        return _oaa.add(_oab.multiply(_oad)), _oaa;
-    };
-},
-function(_oae, _oaf, _oag) {
-    'use strict';
-    defineModule(_oaf);
-    Object.defineProperty(_oaf, '__esModule', {
-        'value': !0
-    });
-    var _oah = _oag(3);
-    _oaf.getSlot371PersonalEffect = function(_oai) {
-        var _oaj = new _oah.SlotItemEffectModel(),
-            _oak = new _oah.SlotItemEffectModel(),
-            _oal = !1;
-        if ('ゴトランド' == _oai.yomi && (_oak.houg = 4, _oak.tais = 2, _oak.kaih = 3, _oak.saku = 6, _oal = !0, 630 == _oai.ship_id && (_oaj.houg += 2, _oaj.kaih += 2, _oaj.saku += 3)), 70 == _oai.ctype ? (_oak.houg += 2, _oak.tais += 1, _oak.kaih += 2, _oak.saku += 4, _oal = !0) : 79 == _oai.ctype ? (_oak.houg += 2, _oak.kaih += 1, _oak.saku += 3, _oal = !0) : 67 != _oai.ctype && 78 != _oai.ctype && 82 != _oai.ctype && 88 != _oai.ctype && 108 != _oai.ctype && 112 != _oai.ctype || (_oak.houg += 3, _oak.tais += 1, _oak.kaih += 2, _oak.saku += 3, _oal = !0, 88 == _oai.ctype && (_oaj.houg += 3, _oaj.kaih += 2, _oaj.saku += 2)), 0 == _oal) return _oaj;
-        var _oam = _oai.get_slotnums(371);
-        return _oaj.add(_oak.multiply(_oam)), _oaj;
-    };
-},
-function(_oan, _oao, _oap) {
-    'use strict';
-    defineModule(_oao);
-    Object.defineProperty(_oao, '__esModule', {
-        'value': !0
-    });
-    var _oaq = _oap(3);
-    _oao.getSlot372PersonalEffect = function(_oar) {
-        var _oas = new _oaq.SlotItemEffectModel(),
-            _oat = !1,
-            _oau = new _oaq.SlotItemEffectModel();
-        if ('しょうかく' == _oar.yomi || 'ずいかく' == _oar.yomi || 'たいほう' == _oar.yomi ? (_oau.houg += 1, _oat = !0, _oas.raig += 1) : 'じゅんよう' != _oar.yomi && 'ひよう' != _oar.yomi || (_oau.houg += 1, _oat = !0), 108 == _oar.ship_id || 109 == _oar.ship_id || 291 == _oar.ship_id || 292 == _oar.ship_id || 296 == _oar.ship_id || 297 == _oar.ship_id ? (_oau.houg += 1, _oat = !0) : 116 == _oar.ship_id || 74 == _oar.ship_id || 117 == _oar.ship_id || 282 == _oar.ship_id || 185 == _oar.ship_id ? (_oau.tais += 1, _oat = !0) : 560 == _oar.ship_id || 555 == _oar.ship_id || 318 == _oar.ship_id ? (_oau.tais += 1, _oat = !0, _oas.raig += 1) : 508 == _oar.ship_id || 509 == _oar.ship_id ? (_oau.houg += 1, _oat = !0) : 883 != _oar.ship_id && 888 != _oar.ship_id || (_oau.houg += 2, _oau.tais += 1, _oat = !0, _oas.raig += 2), 0 == _oat) return _oas;
-        var _oav = _oar.get_slotnums(372);
-        return _oas.add(_oau.multiply(_oav)), _oas;
-    };
-},
-function(_oaw, _oax, _oay) {
-    'use strict';
-    defineModule(_oax);
-    Object.defineProperty(_oax, '__esModule', {
-        'value': !0
-    });
-    var _oaz = _oay(3);
-    _oax.getSlot373PersonalEffect = function(_ob0) {
-        var _ob1 = new _oaz.SlotItemEffectModel(),
-            _ob2 = new _oaz.SlotItemEffectModel(),
-            _ob3 = !1;
-        if ('しょうかく' == _ob0.yomi ? (_ob2.houg += 2, _ob3 = !0, _ob1.raig += 2, _ob1.kaih += 2) : 'ずいかく' == _ob0.yomi ? (_ob2.houg += 1, _ob3 = !0, _ob1.raig += 2, _ob1.kaih += 3) : 'たいほう' == _ob0.yomi ? (_ob2.houg += 1, _ob3 = !0, _ob1.raig += 2, _ob1.kaih += 2) : 'じゅんよう' != _ob0.yomi && 'ひよう' != _ob0.yomi || (_ob2.houg += 1, _ob3 = !0, _ob1.raig += 1, _ob1.kaih += 1), 108 == _ob0.ship_id || 109 == _ob0.ship_id ? (_ob2.houg += 1, _ob3 = !0) : 291 == _ob0.ship_id || 292 == _ob0.ship_id ? (_ob2.houg += 1, _ob3 = !0, _ob1.raig += 1) : 296 == _ob0.ship_id || 297 == _ob0.ship_id ? (_ob2.houg += 1, _ob3 = !0, _ob1.raig += 1, _ob1.kaih += 1) : 116 == _ob0.ship_id || 74 == _ob0.ship_id ? (_ob2.tais += 1, _ob3 = !0) : 117 == _ob0.ship_id || 282 == _ob0.ship_id || 185 == _ob0.ship_id ? (_ob2.houg += 1, _ob2.tais += 1, _ob3 = !0, _ob1.raig += 1) : 560 == _ob0.ship_id || 555 == _ob0.ship_id || 318 == _ob0.ship_id ? (_ob2.houg += 1, _ob2.tais += 2, _ob3 = !0, _ob1.raig += 1, _ob1.kaih += 1) : 508 == _ob0.ship_id || 509 == _ob0.ship_id ? (_ob2.houg += 1, _ob3 = !0, _ob1.raig += 2, _ob1.kaih += 2) : 888 == _ob0.ship_id ? (_ob2.houg += 2, _ob2.tais += 2, _ob3 = !0, _ob1.raig += 2, _ob1.kaih += 2) : 883 == _ob0.ship_id && (_ob2.houg += 1, _ob2.tais += 2, _ob3 = !0, _ob1.raig += 3, _ob1.kaih += 4), 0 == _ob3) return _ob1;
-        var _ob4 = _ob0.get_slotnums(373);
-        return _ob1.add(_ob2.multiply(_ob4)), _ob1;
-    };
-},
-function(_ob5, _ob6, _ob7) {
-    'use strict';
-    defineModule(_ob6);
-    Object.defineProperty(_ob6, '__esModule', {
-        'value': !0
-    });
-    var _ob8 = _ob7(3);
-    _ob6.getSlot374PersonalEffect = function(_ob9) {
-        var _oba = new _ob8.SlotItemEffectModel(),
-            _obb = new _ob8.SlotItemEffectModel(),
-            _obc = !1;
-        if ('しょうかく' == _ob9.yomi ? (_obb.houg += 3, _obc = !0, _oba.raig += 3, _oba.kaih += 3) : 'ずいかく' == _ob9.yomi ? (_obb.houg += 2, _obc = !0, _oba.raig += 3, _oba.kaih += 4) : 'たいほう' == _ob9.yomi ? (_obb.houg += 2, _obc = !0, _oba.raig += 3, _oba.kaih += 2) : 'じゅんよう' != _ob9.yomi && 'ひよう' != _ob9.yomi || (_obb.houg += 1, _obc = !0, _oba.raig += 2, _oba.kaih += 2), 108 == _ob9.ship_id || 109 == _ob9.ship_id ? (_obb.houg += 1, _obc = !0, _oba.raig += 1) : 291 == _ob9.ship_id || 292 == _ob9.ship_id ? (_obb.houg += 1, _obb.tais += 1, _obc = !0, _oba.raig += 1) : 296 == _ob9.ship_id || 297 == _ob9.ship_id ? (_obb.houg += 1, _obb.tais += 1, _obc = !0, _oba.raig += 1, _oba.kaih += 1) : 116 == _ob9.ship_id || 74 == _ob9.ship_id ? (_obb.houg += 1, _obb.tais += 1, _obc = !0) : 117 == _ob9.ship_id || 282 == _ob9.ship_id || 185 == _ob9.ship_id ? (_obb.houg += 1, _obb.tais += 2, _obc = !0, _oba.raig += 1, _oba.kaih += 1) : 560 == _ob9.ship_id || 555 == _ob9.ship_id || 318 == _ob9.ship_id ? (_obb.houg += 1, _obb.tais += 3, _obc = !0, _oba.raig += 1, _oba.kaih += 2) : 508 == _ob9.ship_id || 509 == _ob9.ship_id ? (_obb.houg += 1, _obb.tais += 2, _obc = !0, _oba.raig += 2, _oba.kaih += 3) : 888 == _ob9.ship_id ? (_obb.houg += 3, _obb.tais += 3, _obc = !0, _oba.raig += 2, _oba.kaih += 3) : 883 == _ob9.ship_id && (_obb.houg += 2, _obb.tais += 3, _obc = !0, _oba.raig += 3, _oba.kaih += 5), 0 == _obc) return _oba;
-        var _obd = _ob9.get_slotnums(374);
-        return _oba.add(_obb.multiply(_obd)), _oba;
-    };
-},
-function(_obe, _obf, _obg) {
-    'use strict';
-    defineModule(_obf);
-    Object.defineProperty(_obf, '__esModule', {
-        'value': !0
-    });
-    var _obh = _obg(3);
-    _obf.getSlot375PersonalEffect = function(_obi) {
-        var _obj = new _obh.SlotItemEffectModel(),
-            _obk = new _obh.SlotItemEffectModel(),
-            _obl = !1;
-        if (69 != _obi.ctype && 83 != _obi.ctype && 84 != _obi.ctype && 105 != _obi.ctype && 116 != _obi.ctype && 118 != _obi.ctype || (_obk.tyku += 3, _obk.houg += 3, _obk.kaih += 3, _obk.tais += 3, _obl = !0), 'かが' == _obi.yomi && (_obk.tyku += 1, _obk.houg += 1, _obk.kaih += 1, _obk.tais += 1, _obl = !0), 0 == _obl) return _obj;
-        var _obm = _obi.get_slotnums(375);
-        return _obj.add(_obk.multiply(_obm)), _obj;
-    };
-},
-function(_obn, _obo, _obp) {
-    'use strict';
-    defineModule(_obo);
-    Object.defineProperty(_obo, '__esModule', {
-        'value': !0
-    });
-    var _obq = _obp(3);
-    _obo.getSlot376PersonalEffect = function(_obr) {
-        var _obs = new _obq.SlotItemEffectModel(),
-            _obt = new _obq.SlotItemEffectModel(),
-            _obu = !1;
-        if ('アメリカ' == _obr.getCountryName() ? (_obt.houg += 2, _obt.raig += 4, _obu = !0) : 67 == _obr.ctype || 78 == _obr.ctype || 82 == _obr.ctype || 88 == _obr.ctype || 108 == _obr.ctype || 112 == _obr.ctype ? (_obt.houg += 1, _obt.raig += 2, _obu = !0) : 96 == _obr.ctype && (_obt.houg += 1, _obt.raig += 1, _obu = !0), 0 == _obu) return _obs;
-        var _obv = _obr.get_slotnums(376);
-        return _obs.add(_obt.multiply(_obv)), _obs;
-    };
-},
-function(_obw, _obx, _oby) {
-    'use strict';
-    defineModule(_obx);
-    Object.defineProperty(_obx, '__esModule', {
-        'value': !0
-    });
-    var _obz = _oby(3);
-    _obx.getSlot377PersonalEffect = function(_oc0) {
-        var _oc1 = new _obz.SlotItemEffectModel();
-        return 'アメリカ' == _oc0.getCountryName() ? (_oc1.tais += 2, _oc1.kaih += 1, 629 == _oc0.ship_id && (_oc1.tais += 1, _oc1.kaih += 2)) : 67 != _oc0.ctype && 78 != _oc0.ctype && 82 != _oc0.ctype && 88 != _oc0.ctype && 108 != _oc0.ctype && 112 != _oc0.ctype && 96 != _oc0.ctype || (_oc1.tais += 1, _oc1.kaih += 1), 651 != _oc0.ship_id && 656 != _oc0.ship_id || (_oc1.tais += 1, _oc1.kaih += 2), _oc1;
-    };
-},
-function(_oc2, _oc3, _oc4) {
-    'use strict';
-    defineModule(_oc3);
-    Object.defineProperty(_oc3, '__esModule', {
-        'value': !0
-    });
-    var _oc5 = _oc4(3);
-    _oc3.getSlot378PersonalEffect = function(_oc6) {
-        var _oc7 = new _oc5.SlotItemEffectModel();
-        return 'アメリカ' == _oc6.getCountryName() ? (_oc7.tais += 3, _oc7.kaih += 1, 629 == _oc6.ship_id && (_oc7.tais += 1, _oc7.kaih += 1)) : 67 == _oc6.ctype || 78 == _oc6.ctype || 82 == _oc6.ctype || 88 == _oc6.ctype || 108 == _oc6.ctype || 112 == _oc6.ctype ? (_oc7.tais += 2, _oc7.kaih += 1) : 96 == _oc6.ctype && (_oc7.tais += 1, _oc7.kaih += 1), 651 != _oc6.ship_id && 656 != _oc6.ship_id || (_oc7.tais += 1, _oc7.kaih += 1), _oc7;
-    };
-},
-function(_oc8, _oc9, _oca) {
-    'use strict';
-    var _ocb = this && this.__importDefault || function(_occ) {
-        return _occ && _occ.__esModule ? _occ : {
-            'default': _occ
-        };
-    };
-    defineModule(_oc9);
-    Object.defineProperty(_oc9, '__esModule', {
-        'value': !0
-    });
-    var _ocd = _oca(3),
-        _oce = _ocb(_oca(0));
-    _oc9.getSlot379PersonalEffect = function(_ocf) {
-        var _ocg, _och = new _ocd.SlotItemEffectModel(),
-            _oci = !1,
-            _ocj = new _ocd.SlotItemEffectModel();
-        1 == _ocf.stype ? (_ocj.tyku += 2, _ocj.houg += 1, _oci = !0) : 21 != _ocf.stype && 16 != _ocf.stype || (_ocj.tyku += 1, _ocj.houg += 1, _oci = !0), 66 == _ocf.ctype || 28 == _ocf.ctype ? (_ocj.houg += 1, _ocj.tyku += 2, _oci = !0) : 101 == _ocf.ctype && (_ocj.tyku += 2, _ocj.houg += 1, _och.tyku += 2, _och.houg += 2, _oci = !0), 'ゆら' == _ocf.yomi || 'なか' == _ocf.yomi || 'きぬ' == _ocf.yomi || 'いすず' == _ocf.yomi ? (_ocj.houg += 2, _oci = !0) : 'おおい' != _ocf.yomi && 'きたかみ' != _ocf.yomi || (_ocj.tyku += 2, _ocj.houg += 2, _oci = !0), 'ゆら' != _ocf.yomi && 'なか' != _ocf.yomi && 'きぬ' != _ocf.yomi && 'いすず' != _ocf.yomi && 'ゆうばり' != _ocf.yomi || (_ocj.tais += 1, _oci = !0), 'てんりゅう' != _ocf.yomi && 'たつた' != _ocf.yomi && 'ゆうばり' != _ocf.yomi || (_ocj.houg += 1, _oci = !0), 488 == _ocf.ship_id ? (_ocj.tyku += 4, _oci = !0) : 220 == _ocf.ship_id ? (_ocj.tyku += 3, _oci = !0) : 23 == _ocf.ship_id ? (_ocj.tyku += 2, _oci = !0) : 160 == _ocf.ship_id || 487 == _ocf.ship_id || 141 == _ocf.ship_id ? (_ocj.tyku += 3, _oci = !0) : 224 == _ocf.ship_id || 289 == _ocf.ship_id || 219 == _ocf.ship_id || 56 == _ocf.ship_id || 113 == _ocf.ship_id || 22 == _ocf.ship_id ? (_ocj.tyku += 2, _oci = !0) : 651 != _ocf.ship_id && 656 != _ocf.ship_id || (_ocj.tyku += 3, _ocj.houg += 3, 656 == _ocf.ship_id && (_ocj.kaih += 3, _ocj.tais += 2), _oci = !0), 488 != _ocf.ship_id && 160 != _ocf.ship_id && 487 != _ocf.ship_id && 141 != _ocf.ship_id || (_ocj.tais += 1, _oci = !0), 477 != _ocf.ship_id && 478 != _ocf.ship_id && 624 != _ocf.ship_id || (_ocj.tais += 2, _oci = !0), 477 != _ocf.ship_id && 478 != _ocf.ship_id && 624 != _ocf.ship_id && 622 != _ocf.ship_id || (_ocj.tyku += 2, _oci = !0), 652 != _ocf.ship_id && 657 != _ocf.ship_id && 547 != _ocf.ship_id && 146 != _ocf.ship_id || (_och.houg += 2), 652 != _ocf.ship_id && 657 != _ocf.ship_id && 547 != _ocf.ship_id && 146 != _ocf.ship_id || (_och.tyku += 2), _oci && (_ocg = _ocf.get_slotnums(379), _och.add(_ocj.multiply(_ocg)));
-        var _ock = new _ocd.SlotItemEffectModel(),
-            _ocl = !1;
-        16 == _ocf.stype || 3 == _ocf.stype || 4 == _ocf.stype || 21 == _ocf.stype ? (_ock.houg += 1, _ock.kaih += 2, _ocl = !0) : 1 == _ocf.stype && (_ock.houg += 1, _ock.kaih += 4, _ocl = !0), 66 == _ocf.ctype || 28 == _ocf.ctype || 21 == _ocf.ctype || 34 == _ocf.ctype ? (_ock.houg += 2, _ock.kaih += 3, _ocl = !0) : 101 == _ocf.ctype && (_ock.houg += 4, _ock.kaih += 3, _ocl = !0), 488 == _ocf.ship_id || 651 == _ocf.ship_id || 656 == _ocf.ship_id ? (_ock.houg += 2, _ock.kaih += 2, _ocl = !0) : 487 != _ocf.ship_id && 160 != _ocf.ship_id && 141 != _ocf.ship_id && 118 != _ocf.ship_id && 119 != _ocf.ship_id && 652 != _ocf.ship_id && 657 != _ocf.ship_id && 547 != _ocf.ship_id && 146 != _ocf.ship_id || (_ock.houg += 1, _ock.kaih += 1, _ocl = !0);
-        var _ocm = new _ocd.SlotItemEffectModel(),
-            _ocn = !1;
-        if (656 == _ocf.ship_id && (_ocm.tyku += 3, _ocm.kaih += 2, _ocn = !0), _ocl || _ocn) {
-            for (var _oco = 0, _ocp = 0, _ocq = 0, _ocr = _ocf.have_slot_ids(); _ocq < _ocr.length; _ocq++) {
-                var _ocs = _ocr[_ocq],
-                    _oct = _oce.default.model.slot.getMst(_ocs),
-                    _ocu = _oct.equipType;
-                12 != _ocu && 13 != _ocu || (5 <= _oct.sakuteki && (_oco += _ocf.get_slotnums(parseInt(_ocs))), 2 <= _oct.taiku && (_ocp += _ocf.get_slotnums(parseInt(_ocs))));
-            }
-            _ocl && 0 < _oco && _och.add(_ock), _ocn && 0 < _ocp && _och.add(_ocm);
-        }
-        return _och;
-    };
-},
-function(_ocv, _ocw, _ocx) {
-    'use strict';
-    var _ocy = this && this.__importDefault || function(_ocz) {
-        return _ocz && _ocz.__esModule ? _ocz : {
-            'default': _ocz
-        };
-    };
-    defineModule(_ocw);
-    Object.defineProperty(_ocw, '__esModule', {
-        'value': !0
-    });
-    var _od0 = _ocx(3),
-        _od1 = _ocy(_ocx(0));
-    _ocw.getSlot380PersonalEffect = function(_od2) {
-        var _od3, _od4 = new _od0.SlotItemEffectModel(),
-            _od5 = !1,
-            _od6 = new _od0.SlotItemEffectModel();
-        21 != _od2.stype && 16 != _od2.stype || (_od6.tyku += 2, _od6.houg += 1, _od5 = !0), 101 == _od2.ctype && (_od6.tyku += 2, _od6.houg += 1, _od5 = !0, _od4.tyku += 2, _od4.houg += 2), 'ゆら' == _od2.yomi || 'なか' == _od2.yomi || 'きぬ' == _od2.yomi || 'いすず' == _od2.yomi ? (_od6.houg += 2, _od5 = !0) : 'おおい' != _od2.yomi && 'きたかみ' != _od2.yomi || (_od6.tyku += 2, _od6.houg += 3, _od5 = !0), 'ゆら' != _od2.yomi && 'なか' != _od2.yomi && 'きぬ' != _od2.yomi && 'いすず' != _od2.yomi && 'ゆうばり' != _od2.yomi || (_od6.tais += 1, _od5 = !0), 'てんりゅう' != _od2.yomi && 'たつた' != _od2.yomi && 'ゆうばり' != _od2.yomi || (_od6.houg += 1, _od5 = !0), 488 == _od2.ship_id ? (_od6.tyku += 4, _od5 = !0) : 220 == _od2.ship_id ? (_od6.tyku += 3, _od5 = !0) : 23 == _od2.ship_id ? (_od6.tyku += 2, _od5 = !0) : 160 == _od2.ship_id || 487 == _od2.ship_id || 141 == _od2.ship_id ? (_od6.tyku += 3, _od5 = !0) : 224 == _od2.ship_id || 289 == _od2.ship_id || 219 == _od2.ship_id || 56 == _od2.ship_id || 113 == _od2.ship_id || 22 == _od2.ship_id ? (_od6.tyku += 2, _od5 = !0) : 651 == _od2.ship_id || 656 == _od2.ship_id ? (_od6.tyku += 3, _od6.houg += 3, _od5 = !0) : 407 != _od2.ship_id && 665 != _od2.ship_id || (_od6.houg += 2, _od6.tyku += 2, _od5 = !0, _od4.houg += 1, _od4.tyku += 1, _od4.kaih += 2), 488 != _od2.ship_id && 160 != _od2.ship_id && 487 != _od2.ship_id && 141 != _od2.ship_id || (_od6.tais += 1, _od5 = !0), 477 != _od2.ship_id && 478 != _od2.ship_id && 624 != _od2.ship_id || (_od6.tais += 2, _od5 = !0), 477 != _od2.ship_id && 478 != _od2.ship_id && 624 != _od2.ship_id && 622 != _od2.ship_id || (_od6.tyku += 2, _od5 = !0), 652 != _od2.ship_id && 657 != _od2.ship_id || (_od6.houg += 3, _od5 = !0), 547 != _od2.ship_id && 146 != _od2.ship_id || (_od4.houg += 2), 652 != _od2.ship_id && 657 != _od2.ship_id && 547 != _od2.ship_id && 146 != _od2.ship_id || (_od4.tyku += 2), _od5 && (_od3 = _od2.get_slotnums(380), _od4.add(_od6.multiply(_od3)));
-        var _od7 = new _od0.SlotItemEffectModel(),
-            _od8 = !1,
-            _od9 = new _od0.SlotItemEffectModel(),
-            _oda = !1,
-            _odb = !1;
-        if (16 != _od2.stype && 3 != _od2.stype && 4 != _od2.stype && 21 != _od2.stype || (_od7.houg += 2, _od7.kaih += 1, _od8 = !0), 101 == _od2.ctype && (_od7.houg += 4, _od7.kaih += 3, _od8 = !0), 488 != _od2.ship_id && 487 != _od2.ship_id && 160 != _od2.ship_id && 141 != _od2.ship_id && 118 != _od2.ship_id && 119 != _od2.ship_id && 651 != _od2.ship_id && 656 != _od2.ship_id || (_od7.houg += 1, _od7.kaih += 2, _od8 = !0), 652 == _od2.ship_id || 657 == _od2.ship_id || 547 == _od2.ship_id || 146 == _od2.ship_id ? (_od7.houg += 1, _od7.kaih += 3, _od8 = !0) : 407 != _od2.ship_id && 665 != _od2.ship_id || (_od8 = _odb = !0, _od7.houg += 2, _od7.kaih += 1, _oda = !0, _od9.houg += 1, _od9.tyku += 2, _od9.kaih += 1), _od8 || _odb) {
-            for (var _odc = 0, _odd = 0, _ode = 0, _odf = _od2.have_slot_ids(); _ode < _odf.length; _ode++) {
-                var _odg = _odf[_ode],
-                    _odh = _od1.default.model.slot.getMst(_odg),
-                    _odi = _odh.equipType;
-                12 == _odi || 13 == _odi ? 5 <= _odh.sakuteki && (_odc += _od2.get_slotnums(parseInt(_odg))) : 21 == _odi && (_odd += _od2.get_slotnums(parseInt(_odg)));
-            }
-            _od8 && 0 < _odc && _od4.add(_od7), _oda && 0 < _odd && _od4.add(_od9);
-        }
-        return _od4;
-    };
-},
-function(_odj, _odk, _odl) {
-    'use strict';
-    defineModule(_odk);
-    Object.defineProperty(_odk, '__esModule', {
-        'value': !0
-    });
-    var _odm = _odl(3);
-    _odk.getSlot381PersonalEffect = function(_odn) {
-        var _odo = new _odm.SlotItemEffectModel(),
-            _odp = !1,
-            _odq = new _odm.SlotItemEffectModel(),
-            _odr = 0;
-        if ('アメリカ' == _odn.getCountryName() && (_odq.houg += 1, 102 == _odn.ctype && (_odq.houg += 1), _odp = !0, _odr = 1), 0 == _odp) return _odo;
-        var _ods = _odn.get_slotnums(381);
-        if (_odo.add(_odq.multiply(_ods)), 0 == _odr) return _odo;
-        var _odt = _odn.get_each_level_nums(381),
-            _odu = 0;
-        return _odt.map(function(_odv, _odw) {
-            6 <= _odw && (_odu += _odv);
-        }), 1 == _odr && (_odo.houg += +_odu), _odo;
-    };
-},
-function(_odx, _ody, _odz) {
-    'use strict';
-    var _oe0 = this && this.__importDefault || function(_oe1) {
-        return _oe1 && _oe1.__esModule ? _oe1 : {
-            'default': _oe1
-        };
-    };
-    defineModule(_ody);
-    Object.defineProperty(_ody, '__esModule', {
-        'value': !0
-    });
-    var _oe2 = _odz(3),
-        _oe3 = _oe0(_odz(0));
-    _ody.getSlot382PersonalEffect = function(_oe4) {
-        var _oe5 = new _oe2.SlotItemEffectModel(),
-            _oe6 = !1,
-            _oe7 = new _oe2.SlotItemEffectModel(),
-            _oe8 = !1,
-            _oe9 = new _oe2.SlotItemEffectModel(),
-            _oea = new _oe2.SlotItemEffectModel(),
-            _oeb = 2;
-        1 == _oe4.stype && (_oe7.tyku += 2, _oe7.kaih += 2, _oe7.tais += 1, _oe6 = !0, _oe9.houg += 2, _oe9.kaih += 3, _oea.tyku += 2, _oea.kaih += 3, _oe8 = !0, _oeb = 1), 66 != _oe4.ctype && 28 != _oe4.ctype && 101 != _oe4.ctype || (_oe7.tyku += 2, _oe7.kaih += 1, _oe6 = !0, _oe9.houg += 1, _oe9.kaih += 2, _oea.tyku += 2, _oea.kaih += 2, _oe8 = !0, _oeb = 1), 'ゆら' != _oe4.yomi && 'なか' != _oe4.yomi && 'きぬ' != _oe4.yomi || (_oe7.tyku += 1, _oe6 = !0), 488 == _oe4.ship_id || 220 == _oe4.ship_id ? (_oe7.kaih += 1, _oe6 = !0, 488 == _oe4.ship_id && (_oe9.houg += 1, _oe9.kaih += 1, _oea.tyku += 2, _oea.kaih += 2, _oe8 = !0, _oeb = 1)) : 160 == _oe4.ship_id || 224 == _oe4.ship_id ? (_oe7.kaih += 1, _oe6 = !0, 160 == _oe4.ship_id && (_oe9.houg += 1, _oe9.kaih += 1, _oea.tyku += 2, _oea.kaih += 2, _oe8 = !0)) : 487 == _oe4.ship_id || 289 == _oe4.ship_id ? (_oe7.kaih += 1, _oe6 = !0, 487 == _oe4.ship_id && (_oe9.houg += 1, _oe9.kaih += 1, _oea.tyku += 2, _oea.kaih += 2, _oe8 = !0)) : 656 == _oe4.ship_id ? (_oe7.tyku += 3, _oe7.kaih += 2, _oe6 = !0, _oe9.houg += 2, _oe9.kaih += 2, _oea.tyku += 3, _oea.kaih += 2, _oe8 = !0, _oeb = 1) : 145 != _oe4.ship_id && 961 != _oe4.ship_id || (_oeb = 1);
-        for (var _oec = 0, _oed = 0, _oee = 0, _oef = _oe4.have_slot_ids(); _oee < _oef.length; _oee++) {
-            var _oeg = _oef[_oee],
-                _oeh = _oe3.default.model.slot.getMst(_oeg),
-                _oei = _oeh.equipType;
-            12 != _oei && 13 != _oei || (5 <= _oeh.sakuteki && (_oec += _oe4.get_slotnums(parseInt(_oeg))), 2 <= _oeh.taiku && (_oed += _oe4.get_slotnums(parseInt(_oeg))));
-        }
-        for (var _oej = [], _oek = 0, _oel = [509]; _oek < _oel.length; _oek++) {
-            ! function(_oem) {
-                if (null == _oe4.have_slots_dict[_oem]) return;
-                var _oen = _oe4.get_each_level_nums(_oem);
-                null == _oej[_oem] && (_oej[_oem] = []), _oen.forEach(function(_oeo, _oep) {
-                    for (var _oeq = 1; _oeq <= _oe4.SLOT_LEVEL_MAX; _oeq++) null == _oej[_oem][_oeq] && (_oej[_oem][_oeq] = 0), _oeq <= _oep && (_oej[_oem][_oeq] += _oeo);
-                });
-            }(_oel[_oek]);
-        }
-        var _oer = 0,
-            _oes = 0,
-            _oet = 0,
-            _oeu = 0,
-            _oev = 0,
-            _oew = 0;
-        null != _oej[509] && (_oer = _oej[509][1], _oes = _oej[509][2], _oet = _oej[509][4], _oeu = _oej[509][6], _oev = _oej[509][8], _oew = _oej[509][10], 1 == _oeb ? (1 <= _oer && (_oe5.tyku += +_oer), 1 <= _oes && (_oe5.kaih += 2 * _oes), 1 <= _oet && (_oe5.houg += +_oet), 1 <= _oeu && (_oe5.tyku += +_oeu), 1 <= _oev && (_oe5.houm += +_oev), 1 <= _oew && (_oe5.tyku += +_oew)) : 2 == _oeb && (1 <= _oes && (_oe5.tyku += +_oes), 1 <= _oet && (_oe5.kaih += 2 * _oet), 1 <= _oeu && (_oe5.houg += +_oeu), 1 <= _oev && (_oe5.tyku += +_oev), 1 <= _oew && (_oe5.houm += +_oew)));
-        var _oex = _oe4.get_slotnums(509),
-            _oey = _oex + _oe4.get_slotnums(382);
-        return _oe6 && _oe5.add(_oe7.multiply(_oey)), 3 != _oe4.stype && 21 != _oe4.stype && 4 != _oe4.stype || 1 <= _oes && (0 < _oec && (_oe5.houg += 1, _oe5.kaih += 1), 0 < _oed && (_oe5.tyku += 2, _oe5.kaih += 1)), 145 == _oe4.ship_id ? 1 <= _oes && (0 < _oec && (_oe5.houg += 1, _oe5.tyku += 1, _oe5.kaih += 2), 0 < _oed && (_oe5.tyku += 4, _oe5.kaih += 2)) : 961 == _oe4.ship_id && 0 < _oex && (0 < _oec && (_oe5.houg += 2, _oe5.tyku += 2, _oe5.kaih += 3), 0 < _oed && (_oe5.houg += 1, _oe5.tyku += 5, _oe5.kaih += 3)), _oe8 && 0 < _oec && _oe5.add(_oe9), _oe8 && 0 < _oed && _oe5.add(_oea), _oe5;
-    };
-},
-function(_oez, _of0, _of1) {
-    'use strict';
-    defineModule(_of0);
-    Object.defineProperty(_of0, '__esModule', {
-        'value': !0
-    });
-    var _of2 = _of1(3);
-    _of0.getSlot383PersonalEffect = function(_of3) {
-        var _of4 = new _of2.SlotItemEffectModel(),
-            _of5 = !1,
-            _of6 = new _of2.SlotItemEffectModel(),
-            _of7 = _of3.get_each_level_over_nums([383])[383];
-        if (44 == _of3.ctype && (_of6.raig += 2, _of5 = !0, 0 < _of7[4] && (_of4.raig += 1), 0 < _of7[6] && (_of4.houm += 1)), 'い58' == _of3.yomi && (_of6.raig += 1, _of5 = !0), 636 == _of3.ship_id ? (_of6.raig += 3, _of5 = !0) : 607 == _of3.ship_id && (_of6.raig += 4, _of5 = !0), 0 < _of7[8] && (_of4.raig += 1), 0 < _of7[10] && (_of4.houm += 1), 'い58' != _of3.yomi && 'い47' != _of3.yomi || 0 < _of7[5] && (_of4.houm += 1), 0 == _of5) return _of4;
-        var _of8 = _of3.get_slotnums(383);
-        return _of4.add(_of6.multiply(_of8)), _of4;
-    };
-},
-function(_of9, _ofa, _ofb) {
-    'use strict';
-    defineModule(_ofa);
-    Object.defineProperty(_ofa, '__esModule', {
-        'value': !0
-    });
-    var _ofc = _ofb(3);
-    _ofa.getSlot384PersonalEffect = function(_ofd) {
-        var _ofe = new _ofc.SlotItemEffectModel(),
-            _off = !1,
-            _ofg = new _ofc.SlotItemEffectModel();
-        44 == _ofd.ctype && (_ofg.kaih += 3, _off = !0), 'い58' == _ofd.yomi && (_ofg.kaih += 2, _off = !0), 636 == _ofd.ship_id ? (_ofg.kaih += 3, _off = !0) : 607 == _ofd.ship_id && (_ofg.kaih += 4, _off = !0);
-        var _ofh = _ofd.get_slotnums(384);
-        _off && _ofe.add(_ofg.multiply(_ofh));
-        var _ofi = _ofh,
-            _ofj = _ofd.get_slotnums(213),
-            _ofk = _ofd.get_slotnums(214),
-            _ofl = _ofd.get_slotnums(383);
-        return 0 < _ofi && 0 < _ofj + _ofk + _ofl && (_ofe.raig += 3, _ofe.kaih += 2), _ofe;
-    };
-},
-function(_ofm, _ofn, _ofo) {
-    'use strict';
-    defineModule(_ofn);
-    Object.defineProperty(_ofn, '__esModule', {
-        'value': !0
-    });
-    var _ofp = _ofo(3);
-    _ofn.getSlot385PersonalEffect = function(_ofq) {
-        var _ofr = new _ofp.SlotItemEffectModel(),
-            _ofs = !1,
-            _oft = new _ofp.SlotItemEffectModel(),
-            _ofu = 0;
-        if ('アメリカ' == _ofq.getCountryName() && (_oft.houg += 1, 102 == _ofq.ctype || 107 == _ofq.ctype ? (_oft.houg += 1, _oft.souk += 1) : 93 == _ofq.ctype && (_oft.houg += 1), _ofs = !0, _ofu = 1), 8 == _ofq.stype && (_oft.houg += 1, _ofs = !0), 0 == _ofs) return _ofr;
-        var _ofv = _ofq.get_slotnums(385);
-        if (_ofr.add(_oft.multiply(_ofv)), 0 == _ofu) return _ofr;
-        var _ofw = _ofq.get_each_level_nums(385),
-            _ofx = 0;
-        return _ofw.forEach(function(_ofy, _ofz) {
-            6 <= _ofz && (_ofx += _ofy);
-        }), 1 == _ofu && (_ofr.houg += +_ofx, _ofr.souk += +_ofw[10]), _ofr;
-    };
-},
-function(_og0, _og1, _og2) {
-    'use strict';
-    defineModule(_og1);
-    Object.defineProperty(_og1, '__esModule', {
-        'value': !0
-    });
-    var _og3 = _og2(3);
-    _og1.getSlot386PersonalEffect = function(_og4) {
-        var _og5 = new _og3.SlotItemEffectModel(),
-            _og6 = !1,
-            _og7 = new _og3.SlotItemEffectModel(),
-            _og8 = 0;
-        if ('アメリカ' == _og4.getCountryName() && (_og7.houg += 1, _og6 = !0, _og8 = 1), 0 == _og6) return _og5;
-        var _og9 = _og4.get_slotnums(386);
-        if (_og5.add(_og7.multiply(_og9)), 0 == _og8) return _og5;
-        var _oga = _og4.get_each_level_nums(386),
-            _ogb = 0,
-            _ogc = 0;
-        return _oga.forEach(function(_ogd, _oge) {
-            2 <= _oge && (_ogb += _ogd), 7 <= _oge && (_ogc += _ogd);
-        }), 1 == _og8 && (_og5.houg += +_ogb, _og5.houg += +_ogc), _og5;
-    };
-},
-function(_ogf, _ogg, _ogh) {
-    'use strict';
-    defineModule(_ogg);
-    Object.defineProperty(_ogg, '__esModule', {
-        'value': !0
-    });
-    var _ogi = _ogh(3);
-    _ogg.getSlot387PersonalEffect = function(_ogj) {
-        var _ogk = new _ogi.SlotItemEffectModel(),
-            _ogl = !1,
-            _ogm = new _ogi.SlotItemEffectModel(),
-            _ogn = 0;
-        if ('アメリカ' == _ogj.getCountryName() && (_ogm.houg += 1, _ogl = !0, _ogn = 1), 0 == _ogl) return _ogk;
-        var _ogo = _ogj.get_slotnums(387);
-        if (_ogk.add(_ogm.multiply(_ogo)), 0 == _ogn) return _ogk;
-        var _ogp = _ogj.get_each_level_nums(387),
-            _ogq = 0,
-            _ogr = 0;
-        return _ogp.forEach(function(_ogs, _ogt) {
-            2 <= _ogt && (_ogq += _ogs), 7 <= _ogt && (_ogr += _ogs);
-        }), 1 == _ogn && (_ogk.houg += +_ogq, _ogk.houg += +_ogr), _ogk;
-    };
-},
-function(_ogu, _ogv, _ogw) {
-    'use strict';
-    defineModule(_ogv);
-    Object.defineProperty(_ogv, '__esModule', {
-        'value': !0
-    });
-    var _ogx = _ogw(3);
-    _ogv.getSlot389PersonalEffect = function(_ogy) {
-        var _ogz = new _ogx.SlotItemEffectModel(),
-            _oh0 = !1,
-            _oh1 = new _ogx.SlotItemEffectModel();
-        if (594 == _ogy.ship_id || 599 == _ogy.ship_id ? (_oh1.houg += 2, _oh1.kaih += 2, _oh0 = !0) : 698 == _ogy.ship_id || 610 == _ogy.ship_id ? (_oh1.houg += 3, _oh1.kaih += 2, _oh0 = !0) : 646 == _ogy.ship_id && (_oh1.houg += 4, _oh1.tais += 4, _oh1.kaih += 3, _oh0 = !0, 0 < _ogy.get_type3_nums(25) && (_ogz.houg += 3, _ogz.tais += 6), 0 < _ogy.get_slotnums(326) + _ogy.get_slotnums(327) && (_ogz.houg += 5, _ogz.tais += 4)), 'アメリカ' == _ogy.getCountryName() && (_oh1.houg += 2, _oh1.tais += 3, _oh1.kaih += 1, _oh0 = !0), 0 == _oh0) return _ogz;
-        var _oh2 = _ogy.get_slotnums(389);
-        return _ogz.add(_oh1.multiply(_oh2)), _ogz;
-    };
-},
-function(_oh3, _oh4, _oh5) {
-    'use strict';
-    defineModule(_oh4);
-    Object.defineProperty(_oh4, '__esModule', {
-        'value': !0
-    });
-    var _oh6 = _oh5(3);
-    _oh4.getSlot390PersonalEffect = function(_oh7) {
-        var _oh8 = new _oh6.SlotItemEffectModel(),
-            _oh9 = !1,
-            _oha = new _oh6.SlotItemEffectModel(),
-            _ohb = 0;
-        if ('アメリカ' == _oh7.getCountryName() && (_oha.houg += 1, _oh9 = !0, _ohb = 1), 102 == _oh7.ctype || 107 == _oh7.ctype ? (_oha.houg += 1, _oha.souk += 1, _oh9 = !0) : 93 == _oh7.ctype && (_oha.houg += 1, _oh9 = !0), 8 == _oh7.stype && (_oha.houg += 1, _oh9 = !0), 0 == _oh9) return _oh8;
-        var _ohc = _oh7.get_slotnums(390);
-        if (_oh8.add(_oha.multiply(_ohc)), 0 == _ohb) return _oh8;
-        var _ohd = _oh7.get_each_level_nums(390),
-            _ohe = 0,
-            _ohf = 0;
-        return _ohd.forEach(function(_ohg, _ohh) {
-            3 <= _ohh && (_ohe += _ohg), 6 <= _ohh && (_ohf += _ohg);
-        }), 1 == _ohb && (_oh8.houg += +_ohe, _oh8.kaih += +_ohf, _oh8.souk += +_ohd[10]), _oh8;
-    };
-},
-function(_ohi, _ohj, _ohk) {
-    'use strict';
-    defineModule(_ohj);
-    Object.defineProperty(_ohj, '__esModule', {
-        'value': !0
-    });
-    var _ohl = _ohk(3);
-    _ohj.getSlot391PersonalEffect = function(_ohm) {
-        var _ohn = new _ohl.SlotItemEffectModel(),
-            _oho = !1,
-            _ohp = new _ohl.SlotItemEffectModel();
-        if ('しょうかく' != _ohm.yomi && 'ずいかく' != _ohm.yomi && 'じゅんよう' != _ohm.yomi && 'ひよう' != _ohm.yomi || (_ohp.houg += 1, _oho = !0), 116 == _ohm.ship_id || 185 == _ohm.ship_id || 282 == _ohm.ship_id ? (_ohp.houg += 1, _oho = !0) : 117 == _ohm.ship_id || 318 == _ohm.ship_id || 883 == _ohm.ship_id || 888 == _ohm.ship_id ? (_ohp.houg += 1, _ohn.kaih += 1, _oho = !0) : 560 != _ohm.ship_id && 555 != _ohm.ship_id || (_ohp.houg += 1, _ohp.kaih += 1, _oho = !0), 0 == _oho) return _ohn;
-        var _ohq = _ohm.get_slotnums(391);
-        return _ohn.add(_ohp.multiply(_ohq)), _ohn;
-    };
-},
-function(_ohr, _ohs, _oht) {
-    'use strict';
-    defineModule(_ohs);
-    Object.defineProperty(_ohs, '__esModule', {
-        'value': !0
-    });
-    var _ohu = _oht(3);
-    _ohs.getSlot392PersonalEffect = function(_ohv) {
-        var _ohw = new _ohu.SlotItemEffectModel(),
-            _ohx = !1,
-            _ohy = new _ohu.SlotItemEffectModel();
-        if ('しょうかく' == _ohv.yomi || 'ずいかく' == _ohv.yomi ? (_ohy.houg += 2, _ohy.kaih += 1, _ohx = !0) : 'じゅんよう' != _ohv.yomi && 'ひよう' != _ohv.yomi || (_ohy.houg += 1, _ohy.kaih += 1, _ohx = !0), 116 == _ohv.ship_id || 185 == _ohv.ship_id || 282 == _ohv.ship_id ? (_ohy.houg += 2, _ohy.kaih += 1, _ohx = !0) : 117 == _ohv.ship_id || 318 == _ohv.ship_id || 883 == _ohv.ship_id || 888 == _ohv.ship_id ? (_ohy.houg += 2, _ohy.kaih += 2, _ohx = !0) : 560 != _ohv.ship_id && 555 != _ohv.ship_id || (_ohy.houg += 3, _ohy.kaih += 2, _ohx = !0), 0 == _ohx) return _ohw;
-        var _ohz = _ohv.get_slotnums(392);
-        return _ohw.add(_ohy.multiply(_ohz)), _ohw;
-    };
-},
-function(_oi0, _oi1, _oi2) {
-    'use strict';
-    var _oi3 = this && this.__importDefault || function(_oi4) {
-        return _oi4 && _oi4.__esModule ? _oi4 : {
-            'default': _oi4
-        };
-    };
-    defineModule(_oi1);
-    Object.defineProperty(_oi1, '__esModule', {
-        'value': !0
-    });
-    var _oi5 = _oi2(3),
-        _oi6 = _oi3(_oi2(0));
-    _oi1.getSlot397PersonalEffect = function(_oi7) {
-        var _oi8 = new _oi5.SlotItemEffectModel(),
-            _oi9 = !1,
-            _oia = new _oi5.SlotItemEffectModel(),
-            _oib = 0,
-            _oic = 0,
-            _oid = !1;
-        if (651 == _oi7.ship_id ? (_oia.houg += 5, _oia.tyku += 2, _oia.kaih += 1, _oid = _oi9 = !0, _oic = _oib = 1) : 656 == _oi7.ship_id && (_oia.houg += 3, _oia.tyku += 1, _oia.kaih += 1, _oid = _oi9 = !0, _oib = 1), 0 == _oi9) return _oi8;
-        var _oie = _oi7.get_slotnums(397);
-        _oi8.add(_oia.multiply(_oie));
-        var _oif = 0,
-            _oig = _oi7.get_each_level_nums(397),
-            _oih = 0;
-        if (_oid) {
-            _oig.forEach(function(_oii, _oij) {
-                4 <= _oij && (_oih += _oii);
-            });
-            for (var _oik = 0, _oil = _oi7.have_slot_ids(); _oik < _oil.length; _oik++) {
-                var _oim = _oil[_oik],
-                    _oin = _oi6.default.model.slot.getMst(_oim),
-                    _oio = _oin.equipType;
-                12 != _oio && 13 != _oio || (5 <= _oin.sakuteki && (_oif += _oi7.get_slotnums(parseInt(_oim))), 2 <= _oin.taiku && _oi7.get_slotnums(parseInt(_oim)));
-            }
-        }
-        return 1 == _oib && 0 < _oif && (_oi8.houg += 3, _oi8.kaih += 3), 1 == _oic && (_oi8.houg += 4 * _oih, _oi8.kaih += +_oih), _oi8;
-    };
-},
-function(_oip, _oiq, _oir) {
-    'use strict';
-    var _ois = this && this.__importDefault || function(_oit) {
-        return _oit && _oit.__esModule ? _oit : {
-            'default': _oit
-        };
-    };
-    defineModule(_oiq);
-    Object.defineProperty(_oiq, '__esModule', {
-        'value': !0
-    });
-    var _oiu = _oir(3),
-        _oiv = _ois(_oir(0));
-    _oiq.getSlot398PersonalEffect = function(_oiw) {
-        var _oix = new _oiu.SlotItemEffectModel(),
-            _oiy = !1,
-            _oiz = new _oiu.SlotItemEffectModel(),
-            _oj0 = 0,
-            _oj1 = 0,
-            _oj2 = !1;
-        if (651 == _oiw.ship_id ? (_oiz.houg += 4, _oiz.tyku += 4, _oiz.kaih += 2, _oj2 = _oiy = !0, _oj1 = _oj0 = 1) : 656 == _oiw.ship_id && (_oiz.houg += 3, _oiz.tyku += 2, _oiz.kaih += 2, _oj2 = _oiy = !0, _oj0 = 1, _oj1 = 2), 0 == _oiy) return _oix;
-        var _oj3 = _oiw.get_slotnums(398);
-        _oix.add(_oiz.multiply(_oj3));
-        var _oj4 = 0,
-            _oj5 = 0,
-            _oj6 = _oiw.get_each_level_nums(398),
-            _oj7 = 0;
-        if (_oj2) {
-            _oj6.forEach(function(_oj8, _oj9) {
-                4 <= _oj9 && (_oj7 += _oj8);
-            });
-            for (var _oja = 0, _ojb = _oiw.have_slot_ids(); _oja < _ojb.length; _oja++) {
-                var _ojc = _ojb[_oja],
-                    _ojd = _oiv.default.model.slot.getMst(_ojc),
-                    _oje = _ojd.equipType;
-                12 != _oje && 13 != _oje || (5 <= _ojd.sakuteki && (_oj4 += _oiw.get_slotnums(parseInt(_ojc))), 2 <= _ojd.taiku && (_oj5 += _oiw.get_slotnums(parseInt(_ojc))));
-            }
-        }
-        return 1 == _oj0 && (0 < _oj4 && (_oix.houg += 3, _oix.kaih += 3), 0 < _oj5 && (_oix.tyku += 3, _oix.kaih += 3)), 1 == _oj1 ? (_oix.houg += 3 * _oj7, _oix.kaih += 2 * _oj7) : 2 == _oj1 && (_oix.houg += 2 * _oj7, _oix.kaih += +_oj7), _oix;
-    };
-},
-function(_ojf, _ojg, _ojh) {
-    'use strict';
-    defineModule(_ojg);
-    Object.defineProperty(_ojg, '__esModule', {
-        'value': !0
-    });
-    var _oji = _ojh(3);
-    _ojg.getSlot399PersonalEffect = function(_ojj) {
-        var _ojk = new _oji.SlotItemEffectModel(),
-            _ojl = !1,
-            _ojm = new _oji.SlotItemEffectModel(),
-            _ojn = 0;
-        if (108 == _ojj.ctype && (_ojm.houg += 1, _ojm.kaih += 2, _ojn = 1, _ojl = !0), 0 == _ojl) return _ojk;
-        var _ojo = _ojj.get_slotnums(399);
-        if (_ojk.add(_ojm.multiply(_ojo)), 0 == _ojn) return _ojk;
-        var _ojp = _ojj.get_each_level_nums(399),
-            _ojq = 0,
-            _ojr = 0;
-        return _ojp.map(function(_ojs, _ojt) {
-            3 <= _ojt && (_ojq += _ojs), 5 <= _ojt && (_ojr += _ojs);
-        }), 1 == _ojn && (_ojk.houg += +_ojq, _ojk.houg += +_ojr), _ojk;
-    };
-},
-function(_oju, _ojv, _ojw) {
-    'use strict';
-    defineModule(_ojv);
-    Object.defineProperty(_ojv, '__esModule', {
-        'value': !0
-    });
-    var _ojx = _ojw(3);
-    _ojv.getSlot400PersonalEffect = function(_ojy) {
-        var _ojz = new _ojx.SlotItemEffectModel(),
-            _ok0 = !1,
-            _ok1 = new _ojx.SlotItemEffectModel(),
-            _ok2 = 0,
-            _ok3 = !1;
-        if (147 != _ojy.ship_id && 73 != _ojy.ctype && 81 != _ojy.ctype || (_ok3 = !0), _ok3 && (_ok1.kaih += 2, _ok1.raig += 5, _ok1.houg += 1, _ok1.souk += 1, _ok0 = !0, _ok2 = 1), 0 == _ok0) return _ojz;
-        var _ok4 = _ojy.get_slotnums(400);
-        return _ojz.add(_ok1.multiply(_ok4)), 0 < _ojy.get_slotnums(282) && 1 == _ok2 && (_ojz.houg += 2), _ojz;
-    };
-},
-function(_ok5, _ok6, _ok7) {
-    'use strict';
-    defineModule(_ok6);
-    Object.defineProperty(_ok6, '__esModule', {
-        'value': !0
-    });
-    var _ok8 = _ok7(3);
-    _ok6.getSlotOtherSuiseiPersonalEffect = function(_ok9) {
-        var _oka = new _ok8.SlotItemEffectModel(),
-            _okb = new _ok8.SlotItemEffectModel();
-        if (553 == _ok9.ship_id) _okb.houg = 2;
-        else {
-            if (554 != _ok9.ship_id) return _oka;
-            _okb.houg = 2;
-        }
-        var _okc = _ok9.get_slotnums(24) + _ok9.get_slotnums(57) + _ok9.get_slotnums(111);
-        return _oka = _okb.multiply(_okc);
-    };
-},
-function(_okd, _oke, _okf) {
-    'use strict';
-    var _okg = this && this.__importDefault || function(_okh) {
-        return _okh && _okh.__esModule ? _okh : {
-            'default': _okh
-        };
-    };
-    defineModule(_oke);
-    Object.defineProperty(_oke, '__esModule', {
-        'value': !0
-    });
-    var _oki = _okf(3),
-        _okj = _okg(_okf(0));
-    _oke.getSlotType9PersonalEffect = function(_okk) {
-        var _okl = new _oki.SlotItemEffectModel();
-        if (null == {
-                11: 1,
-                18: 1,
-                7: 1,
-                10: 1
-            }[_okk.stype]) return _okl;
-        for (var _okm = 0, _okn = 0, _oko = _okk.have_slot_ids(); _okn < _oko.length; _okn++) {
-            var _okp = _oko[_okn];
-            if (9 == _okj.default.model.slot.getMst(_okp).equipType)
-                for (var _okq = 0, _okr = _okk.have_slots_dict[parseInt(_okp)]; _okq < _okr.length; _okq++) {
-                    var _oks = _okr[_okq].level;
-                    _okm < _oks && (_okm = _oks);
+                return _p08(_p0i, _p0g), _p0i;
+            };
+        defineModule(_ozu);
+        Object.defineProperty(_ozu, '__esModule', {
+            'value': !0
+        }), _ozu.SlotItemEffectUtil = void 0;
+        var _p0k, _p0l = _ozv(73785),
+            _p0m = _p0f(_ozv(89051)),
+            _p0n = _ozv(74496);
+        ! function(_p0o) {
+            var _p0p = null;
+            _p0o.getSlotitemEffect = function(_p0q, _p0r) {
+                var _p0s = null;
+                if (null == _p0q || null == _p0r) return null;
+                for (var _p0t = new _p0l.SlotItemEffectParamModel(_p0q, _p0r), _p0u = [{
+                        'isExecute': Boolean(_p0t.get_type3_nums(9)),
+                        'execFunc': _p0m.getSlotType9PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_type3_nums(10)),
+                        'execFunc': _p0m.getSlotType10PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_type3_nums(11)),
+                        'execFunc': _p0m.getSlotType11PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_type3_nums(12)) || Boolean(_p0t.get_type3_nums(13)),
+                        'execFunc': _p0m.getRaderPrivateEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_type3_nums(25)),
+                        'execFunc': _p0m.getSlotType25PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_type3_nums(29)),
+                        'execFunc': _p0m.getSearchLightEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_type3_nums(42)),
+                        'execFunc': _p0m.getSearchLightLargeEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(3)) || Boolean(_p0t.get_slotnums(122)),
+                        'execFunc': _p0m.getSlot3_122PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(5)),
+                        'execFunc': _p0m.getSlot5PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(12)),
+                        'execFunc': _p0m.getSlot12PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(15)),
+                        'execFunc': _p0m.getSlot15PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(18)) || Boolean(_p0t.get_slotnums(52)),
+                        'execFunc': _p0m.getSlot18_52_PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(19)),
+                        'execFunc': _p0m.getSlot19PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(24)) || Boolean(_p0t.get_slotnums(57)) || Boolean(_p0t.get_slotnums(111)),
+                        'execFunc': _p0m.getSlotOtherSuiseiPersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(26)) || Boolean(_p0t.get_slotnums(62)) || Boolean(_p0t.get_slotnums(79)) || Boolean(_p0t.get_slotnums(80)) || Boolean(_p0t.get_slotnums(81)) || Boolean(_p0t.get_slotnums(207)) || Boolean(_p0t.get_slotnums(208)),
+                        'execFunc': _p0m.getZuiunSeriesEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(35)),
+                        'execFunc': _p0m.getSlot35PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(39)) || Boolean(_p0t.get_slotnums(40)) || Boolean(_p0t.get_slotnums(49)) || Boolean(_p0t.get_slotnums(131)),
+                        'execFunc': _p0m.get25mmMachinegunEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(30)) || Boolean(_p0t.get_slotnums(410)),
+                        'execFunc': _p0m.getSlot30_410PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(44)) || Boolean(_p0t.get_slotnums(45)) || Boolean(_p0t.get_slotnums(287)) || Boolean(_p0t.get_slotnums(288)),
+                        'execFunc': _p0m.getSlotDomesticAntiSubmarineToushakiPersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(46)) || Boolean(_p0t.get_slotnums(47)) || Boolean(_p0t.get_slotnums(149)) || Boolean(_p0t.get_slotnums(132)) || Boolean(_p0t.get_slotnums(438)),
+                        'execFunc': _p0m.getSlotDomesticSonarPersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(47)) || Boolean(_p0t.get_slotnums(438)),
+                        'execFunc': _p0m.getSlot47PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(50)),
+                        'execFunc': _p0m.getSlot50PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(58)),
+                        'execFunc': _p0m.getSlot58PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(59)),
+                        'execFunc': _p0m.getSlot59PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(60)) || Boolean(_p0t.get_slotnums(154)) || Boolean(_p0t.get_slotnums(219)),
+                        'execFunc': _p0m.getSlot60_154_219PersonalEffec
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(61)),
+                        'execFunc': _p0m.getSlot61PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(61)),
+                        'execFunc': _p0m.getSlot61PersonalEffect2
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(63)),
+                        'execFunc': _p0m.getSlot63PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(66)) || Boolean(_p0t.get_slotnums(220)),
+                        'execFunc': _p0m.get8cmAntiAircraftGunPersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(67)),
+                        'execFunc': _p0m.getSlot67PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(69)),
+                        'execFunc': _p0m.getSlot69PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(70)),
+                        'execFunc': _p0m.getSlot70PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(78)),
+                        'execFunc': _p0m.getSlot78PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(79)) || Boolean(_p0t.get_slotnums(81)),
+                        'execFunc': _p0m.getSlot79And81PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(82)),
+                        'execFunc': _p0m.getSlot82PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(84)),
+                        'execFunc': _p0m.getSlot84PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(85)),
+                        'execFunc': _p0m.getSlot85PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(87)),
+                        'execFunc': _p0m.getSlot87PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(90)),
+                        'execFunc': _p0m.getSlot90PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(93)),
+                        'execFunc': _p0m.getSlot93PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(94)),
+                        'execFunc': _p0m.getSlot94PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(99)),
+                        'execFunc': _p0m.getSlot99PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(100)),
+                        'execFunc': _p0m.getSlot100PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(104)),
+                        'execFunc': _p0m.getSlot104PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(106)) || Boolean(_p0t.get_slotnums(450)),
+                        'execFunc': _p0m.getSlot106PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(115)),
+                        'execFunc': _p0m.getSlot115PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(118)),
+                        'execFunc': _p0m.getSlot118PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(119)),
+                        'execFunc': _p0m.getSlot119PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(121)),
+                        'execFunc': _p0m.getSlot121PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(122)),
+                        'execFunc': _p0m.getSlot122PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(128)) || Boolean(_p0t.get_slotnums(281)),
+                        'execFunc': _p0m.getSlot51cmSeriesGunPersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(129)),
+                        'execFunc': _p0m.getSlot129PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(132)),
+                        'execFunc': _p0m.getSlot132PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(136)),
+                        'execFunc': _p0m.getSlot136PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(139)),
+                        'execFunc': _p0m.getSlot139PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(143)),
+                        'execFunc': _p0m.getSlot143PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(144)),
+                        'execFunc': _p0m.getSlot144PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(147)) || Boolean(_p0t.get_slotnums(393)) || Boolean(_p0t.get_slotnums(394)),
+                        'execFunc': _p0m.getSlot120mm50GroupPersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(149)),
+                        'execFunc': _p0m.getSlot149PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(165)) || Boolean(_p0t.get_slotnums(216)),
+                        'execFunc': _p0m.getSlot165_216PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(171)),
+                        'execFunc': _p0m.getSlot171PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(174)),
+                        'execFunc': _p0m.getSlot174PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(179)),
+                        'execFunc': _p0m.getSlot179PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(184)),
+                        'execFunc': _p0m.getSlot184PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(188)),
+                        'execFunc': _p0m.getSlot188PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(189)),
+                        'execFunc': _p0m.getSlot189PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(194)),
+                        'execFunc': _p0m.getSlot194PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(195)),
+                        'execFunc': _p0m.getSlot195PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(204)),
+                        'execFunc': _p0m.getSlot204PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(217)),
+                        'execFunc': _p0m.getSlot217PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(220)),
+                        'execFunc': _p0m.getSlot220PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(227)),
+                        'execFunc': _p0m.getSlot227PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(228)),
+                        'execFunc': _p0m.getSlot228PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(229)),
+                        'execFunc': _p0m.getSlot229PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(234)),
+                        'execFunc': _p0m.getSlot234PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(235)),
+                        'execFunc': _p0m.getSlot235PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(237)) || Boolean(_p0t.get_slotnums(322)) || Boolean(_p0t.get_slotnums(323)) || Boolean(_p0t.get_slotnums(490)),
+                        'execFunc': _p0m.getHighZuiunSeriesEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(237)),
+                        'execFunc': _p0m.getSlot237PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(238)) || Boolean(_p0t.get_slotnums(239)),
+                        'execFunc': _p0m.getSlot238_239PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(242)),
+                        'execFunc': _p0m.getSlot242PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(243)),
+                        'execFunc': _p0m.getSlot243PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(244)),
+                        'execFunc': _p0m.getSlot244PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(245)) || Boolean(_p0t.get_slotnums(246)) || Boolean(_p0t.get_slotnums(468)),
+                        'execFunc': _p0m.getSlot38cmFourBarrelGunPersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(247)),
+                        'execFunc': _p0m.getSlot247PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(266)),
+                        'execFunc': _p0m.getSlot266PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(266)),
+                        'execFunc': _p0m.getSlot266PersonalEffect2
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(267)) || Boolean(_p0t.get_slotnums(366)),
+                        'execFunc': _p0m.getSlot267PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(267)) || Boolean(_p0t.get_slotnums(366)),
+                        'execFunc': _p0m.getSlot267PersonalEffect2
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(268)),
+                        'execFunc': _p0m.getCamouflageSlotPersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(271)),
+                        'execFunc': _p0m.getSlot271PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(275)),
+                        'execFunc': _p0m.getSlot275PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(277)),
+                        'execFunc': _p0m.getSlot277PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(278)),
+                        'execFunc': _p0m.getSlot278PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(279)),
+                        'execFunc': _p0m.getSlot279PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(282)),
+                        'execFunc': _p0m.getSlot282PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(283)),
+                        'execFunc': _p0m.getSlot283PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(285)),
+                        'execFunc': _p0m.getSlot285PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(286)),
+                        'execFunc': _p0m.getSlot286PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(286)),
+                        'execFunc': _p0m.getSlot286PersonalEffect2
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(286)),
+                        'execFunc': _p0m.getSlot286PersonalEffect3
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(287)),
+                        'execFunc': _p0m.getSlot287PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(288)),
+                        'execFunc': _p0m.getSlot288PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(289)),
+                        'execFunc': _p0m.getSlot289PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(290)),
+                        'execFunc': _p0m.getSlot290PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(291)),
+                        'execFunc': _p0m.getSlot291PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(292)),
+                        'execFunc': _p0m.getSlot292PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(293)),
+                        'execFunc': _p0m.getSlot293PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(294)),
+                        'execFunc': _p0m.getSlot294PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(295)),
+                        'execFunc': _p0m.getSlot295PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(296)),
+                        'execFunc': _p0m.getSlot296PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(297)),
+                        'execFunc': _p0m.getSlot297PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(298)) || Boolean(_p0t.get_slotnums(299)) || Boolean(_p0t.get_slotnums(300)),
+                        'execFunc': _p0m.getSlot16M1PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(301)),
+                        'execFunc': _p0m.getSlot301PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(302)),
+                        'execFunc': _p0m.getSlot302PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(303)),
+                        'execFunc': _p0m.getSlot303PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(304)),
+                        'execFunc': _p0m.getSlot304PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(305)) || Boolean(_p0t.get_slotnums(306)),
+                        'execFunc': _p0m.getSlot305_And_306_PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(307)),
+                        'execFunc': _p0m.getSlot307PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(308)),
+                        'execFunc': _p0m.getSlot308PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(310)) || Boolean(_p0t.get_slotnums(518)),
+                        'execFunc': _p0m.getSlot310PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(313)),
+                        'execFunc': _p0m.getSlot313PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(314)),
+                        'execFunc': _p0m.getSlot314PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(315)),
+                        'execFunc': _p0m.getSlot315PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(316)),
+                        'execFunc': _p0m.getSlot316PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(317)),
+                        'execFunc': _p0m.getSlot317PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(318)),
+                        'execFunc': _p0m.getSlot318PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(319)),
+                        'execFunc': _p0m.getSlot319PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(320)),
+                        'execFunc': _p0m.getSlot320PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(322)),
+                        'execFunc': _p0m.getSlot322PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(323)),
+                        'execFunc': _p0m.getSlot323PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(324)) || Boolean(_p0t.get_slotnums(325)),
+                        'execFunc': _p0m.getSlot324And325PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(326)),
+                        'execFunc': _p0m.getSlot326PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(327)),
+                        'execFunc': _p0m.getSlot327PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(328)),
+                        'execFunc': _p0m.getSlot328PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(329)),
+                        'execFunc': _p0m.getSlot329PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(330)) || Boolean(_p0t.get_slotnums(331)) || Boolean(_p0t.get_slotnums(332)),
+                        'execFunc': _p0m.getSlot_16InchMkXRensouhou_PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(335)),
+                        'execFunc': _p0m.getSlot335PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(336)),
+                        'execFunc': _p0m.getSlot336PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(337)),
+                        'execFunc': _p0m.getSlot337PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(338)),
+                        'execFunc': _p0m.getSlot338PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(339)),
+                        'execFunc': _p0m.getSlot339PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(340)),
+                        'execFunc': _p0m.getSlot340PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(341)),
+                        'execFunc': _p0m.getSlot341PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(342)),
+                        'execFunc': _p0m.getSlot342PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(343)),
+                        'execFunc': _p0m.getSlot343PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(344)),
+                        'execFunc': _p0m.getSlot344PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(345)),
+                        'execFunc': _p0m.getSlot345PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(346)),
+                        'execFunc': _p0m.getSlot346PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(347)),
+                        'execFunc': _p0m.getSlot347PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(356)) || Boolean(_p0t.get_slotnums(357)),
+                        'execFunc': _p0m.getSlot356_357PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(358)),
+                        'execFunc': _p0m.getSlot358PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(359)),
+                        'execFunc': _p0m.getSlot359PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(360)) || Boolean(_p0t.get_slotnums(361)),
+                        'execFunc': _p0m.getSlot360_361PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(362)) || Boolean(_p0t.get_slotnums(363)),
+                        'execFunc': _p0m.getSlot362_363PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(364)),
+                        'execFunc': _p0m.getSlot364PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(365)),
+                        'execFunc': _p0m.getSlot365PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(367)),
+                        'execFunc': _p0m.getSlot367PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(368)),
+                        'execFunc': _p0m.getSlot368PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(369)),
+                        'execFunc': _p0m.getSlot369PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(370)),
+                        'execFunc': _p0m.getSlot370PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(371)),
+                        'execFunc': _p0m.getSlot371PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(372)),
+                        'execFunc': _p0m.getSlot372PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(373)),
+                        'execFunc': _p0m.getSlot373PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(374)),
+                        'execFunc': _p0m.getSlot374PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(375)),
+                        'execFunc': _p0m.getSlot375PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(376)),
+                        'execFunc': _p0m.getSlot376PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(377)),
+                        'execFunc': _p0m.getSlot377PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(378)),
+                        'execFunc': _p0m.getSlot378PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(379)),
+                        'execFunc': _p0m.getSlot379PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(380)),
+                        'execFunc': _p0m.getSlot380PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(381)),
+                        'execFunc': _p0m.getSlot381PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(382)) || Boolean(_p0t.get_slotnums(509)),
+                        'execFunc': _p0m.getSlot382PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(383)),
+                        'execFunc': _p0m.getSlot383PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(384)),
+                        'execFunc': _p0m.getSlot384PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(385)),
+                        'execFunc': _p0m.getSlot385PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(386)),
+                        'execFunc': _p0m.getSlot386PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(387)),
+                        'execFunc': _p0m.getSlot387PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(389)),
+                        'execFunc': _p0m.getSlot389PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(390)),
+                        'execFunc': _p0m.getSlot390PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(391)),
+                        'execFunc': _p0m.getSlot391PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(392)),
+                        'execFunc': _p0m.getSlot392PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(397)),
+                        'execFunc': _p0m.getSlot397PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(398)),
+                        'execFunc': _p0m.getSlot398PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(399)),
+                        'execFunc': _p0m.getSlot399PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(400)),
+                        'execFunc': _p0m.getSlot400PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(407)),
+                        'execFunc': _p0m.getSlot407PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(408)),
+                        'execFunc': _p0m.getSlot408PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(409)),
+                        'execFunc': _p0m.getSlot409PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(411)),
+                        'execFunc': _p0m.getSlot411PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(412)),
+                        'execFunc': _p0m.getSlot412PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(413)),
+                        'execFunc': _p0m.getSlot413PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(414)),
+                        'execFunc': _p0m.getSlot414PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(415)),
+                        'execFunc': _p0m.getSlot415PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(419)),
+                        'execFunc': _p0m.getSlot419PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(420)),
+                        'execFunc': _p0m.getSlot420PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(421)),
+                        'execFunc': _p0m.getSlot421PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(422)),
+                        'execFunc': _p0m.getSlot422PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(423)),
+                        'execFunc': _p0m.getSlot423PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(424)),
+                        'execFunc': _p0m.getSlot424PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(425)),
+                        'execFunc': _p0m.getSlot425PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(426)) || Boolean(_p0t.get_slotnums(427)) || Boolean(_p0t.get_slotnums(428)) || Boolean(_p0t.get_slotnums(429)),
+                        'execFunc': _p0m.getSlot305More320mmGunPersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(430)),
+                        'execFunc': _p0m.getSlot430PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(434)) || Boolean(_p0t.get_slotnums(435)),
+                        'execFunc': _p0m.getSlotCorsairMkIIPersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(437)),
+                        'execFunc': _p0m.getSlot437PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(438)),
+                        'execFunc': _p0m.getSlot438PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(439)),
+                        'execFunc': _p0m.getSlot439PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(440)) || Boolean(_p0t.get_slotnums(441)),
+                        'execFunc': _p0m.getSlot440_441PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(442)) || Boolean(_p0t.get_slotnums(443)),
+                        'execFunc': _p0m.getSlot442_443PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(447)),
+                        'execFunc': _p0m.getSlot447PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(450)),
+                        'execFunc': _p0m.getSlot450PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(451)),
+                        'execFunc': _p0m.getSlot451PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(455)),
+                        'execFunc': _p0m.getSlot455PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(456)),
+                        'execFunc': _p0m.getSlot456PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(457)) || Boolean(_p0t.get_slotnums(461)),
+                        'execFunc': _p0m.getSlot457PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(458)),
+                        'execFunc': _p0m.getSlot458PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(463)),
+                        'execFunc': _p0m.getSlot463PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(464)),
+                        'execFunc': _p0m.getSlot464PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(465)),
+                        'execFunc': _p0m.getSlot465PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(466)),
+                        'execFunc': _p0m.getSlot466PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(467)),
+                        'execFunc': _p0m.getSlot467PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(470)),
+                        'execFunc': _p0m.getSlot470PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(471)),
+                        'execFunc': _p0m.getSlot471PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(472)),
+                        'execFunc': _p0m.getSlot472PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(473)),
+                        'execFunc': _p0m.getSlot473PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(474)),
+                        'execFunc': _p0m.getSlot474PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(478)),
+                        'execFunc': _p0m.getSlot478PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(483)),
+                        'execFunc': _p0m.getSlot483PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(485)),
+                        'execFunc': _p0m.getSlot485PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(486)),
+                        'execFunc': _p0m.getSlot486PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(487)),
+                        'execFunc': _p0m.getSlot487PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(488)),
+                        'execFunc': _p0m.getSlot488PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(489)) || Boolean(_p0t.get_slotnums(491)),
+                        'execFunc': _p0m.getSlot489PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(500)) || Boolean(_p0t.get_slotnums(501)),
+                        'execFunc': _p0m.getSlotSmokePersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(502)),
+                        'execFunc': _p0m.getSlot502PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(503)),
+                        'execFunc': _p0m.getSlot503PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(505)),
+                        'execFunc': _p0m.getSlot505PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(506)),
+                        'execFunc': _p0m.getSlot506PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(507)) || Boolean(_p0t.get_slotnums(508)),
+                        'execFunc': _p0m.getSlot14inch45CaliberGunPersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(510)),
+                        'execFunc': _p0m.getSlot510PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(511)) || Boolean(_p0t.get_slotnums(512)),
+                        'execFunc': _p0m.getSlot511PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(517)),
+                        'execFunc': _p0m.getSlot517PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(518)),
+                        'execFunc': _p0m.getSlot518PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(519)),
+                        'execFunc': _p0m.getSlot519PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p0t.get_slotnums(520)),
+                        'execFunc': _p0m.getSlot520PersonalEffect
+                    }], _p0v = new _p0n.SlotItemEffectModel(), _p0w = 0, _p0x = _p0u; _p0w < _p0x.length; _p0w++) {
+                    var _p0y = _p0x[_p0w];
+                    if (_p0y.isExecute) {
+                        var _p0z = _p0y.execFunc(_p0t);
+                        0, _p0v.add(_p0z);
+                    }
                 }
-        }
-        return 2 <= _okm && (_okl.saku += 1), 4 <= _okm && (_okl.houg += 1), 6 <= _okm && (_okl.saku += 1), 10 <= _okm && (_okl.houg += 1, _okl.saku += 1), _okl;
-    };
-},
-function(_okt, _oku, _okv) {
-    'use strict';
-    var _okw = this && this.__importDefault || function(_okx) {
-        return _okx && _okx.__esModule ? _okx : {
-            'default': _okx
-        };
-    };
-    defineModule(_oku);
-    Object.defineProperty(_oku, '__esModule', {
-        'value': !0
-    });
-    var _oky = _okv(3),
-        _okz = _okw(_okv(0));
-    _oku.get25mmMachinegunEffect = function(_ol0) {
-        var _ol1 = new _oky.SlotItemEffectModel(),
-            _ol2 = !1,
-            _ol3 = new _oky.SlotItemEffectModel(),
-            _ol4 = 0;
-        if (662 == _ol0.ship_id || 663 == _ol0.ship_id ? (_ol3.tyku += 2, _ol3.kaih += 1, _ol2 = !0) : 668 == _ol0.ship_id && (_ol3.tyku += 3, _ol3.kaih += 2, _ol2 = !0), 56 == _ol0.ctype && (_ol3.houg += 1, _ol3.tyku += 2, _ol3.kaih += 2, _ol2 = !0, _ol4 = 1), 0 == _ol2) return _ol1;
-        var _ol5 = _ol0.get_slotnums(39) + _ol0.get_slotnums(40) + _ol0.get_slotnums(49) + _ol0.get_slotnums(131);
-        if (_ol1.add(_ol3.multiply(_ol5)), 0 == _ol4) return _ol1;
-        for (var _ol6 = 0, _ol7 = 0, _ol8 = _ol0.have_slot_ids(); _ol7 < _ol8.length; _ol7++) {
-            var _ol9 = _ol8[_ol7],
-                _ola = _okz.default.model.slot.getMst(_ol9),
-                _olb = _ola.equipType;
-            12 != _olb && 13 != _olb || (5 <= _ola.sakuteki && _ol0.get_slotnums(parseInt(_ol9)), 2 <= _ola.taiku && (_ol6 += _ol0.get_slotnums(parseInt(_ol9))));
-        }
-        return 1 <= _ol6 && 1 == _ol4 && (_ol1.tyku += 2, _ol1.kaih += 2), _ol1;
-    };
-},
-function(_olc, _old, _ole) {
-    'use strict';
-    defineModule(_old);
-    Object.defineProperty(_old, '__esModule', {
-        'value': !0
-    });
-    var _olf = _ole(3);
-    _old.getHighZuiunSeriesEffect = function(_olg) {
-        var _olh = new _olf.SlotItemEffectModel(),
-            _oli = !1,
-            _olj = new _olf.SlotItemEffectModel();
-        if (662 == _olg.ship_id ? (_olh.houg += 3, _olh.kaih += 1) : 663 != _olg.ship_id && 668 != _olg.ship_id && 501 != _olg.ship_id && 506 != _olg.ship_id && 553 != _olg.ship_id && 554 != _olg.ship_id || (_olj.houg += 3, _olj.kaih += 2, _olj.tyku += 1, _oli = !0), 0 == _oli) return _olh;
-        var _olk = 0;
-        return [237, 322, 323, 490].forEach(function(_oll) {
-            _olk += _olg.get_slotnums(_oll);
-        }), _olh.add(_olj.multiply(_olk)), _olh;
-    };
-},
-function(_olm, _oln, _olo) {
-    'use strict';
-    defineModule(_oln);
-    Object.defineProperty(_oln, '__esModule', {
-        'value': !0
-    });
-    var _olp = _olo(3);
-    _oln.getZuiunSeriesEffect = function(_olq) {
-        var _olr = new _olp.SlotItemEffectModel(),
-            _ols = !1,
-            _olt = new _olp.SlotItemEffectModel();
-        if (662 == _olq.ship_id ? (_olr.houg += 2, _olr.kaih += 1) : 663 != _olq.ship_id && 668 != _olq.ship_id && 501 != _olq.ship_id && 506 != _olq.ship_id || (_olr.houg += 2, _olt.kaih += 1, _olt.tyku += 1, _ols = !0), 0 == _ols) return _olr;
-        var _olu = 0;
-        return [26, 62, 79, 80, 81, 207, 208].forEach(function(_olv) {
-            _olu += _olq.get_slotnums(_olv);
-        }), _olr.add(_olt.multiply(_olu)), _olr;
-    };
-},
-function(_olw, _olx, _oly) {
-    'use strict';
-    defineModule(_olx);
-    Object.defineProperty(_olx, '__esModule', {
-        'value': !0
-    });
-    var _olz = _oly(3);
-    _olx.getSlot139PersonalEffect = function(_om0) {
-        var _om1 = new _olz.SlotItemEffectModel(),
-            _om2 = !1,
-            _om3 = new _olz.SlotItemEffectModel();
-        if (662 != _om0.ship_id && 663 != _om0.ship_id && 668 != _om0.ship_id || (_om3.houg += 2, _om3.tyku += 1, _om2 = !0), 0 == _om2) return _om1;
-        var _om4 = _om0.get_slotnums(139);
-        return _om1.add(_om3.multiply(_om4)), _om1;
-    };
-},
-function(_om5, _om6, _om7) {
-    'use strict';
-    var _om8 = this && this.__importDefault || function(_om9) {
-        return _om9 && _om9.__esModule ? _om9 : {
-            'default': _om9
-        };
-    };
-    defineModule(_om6);
-    Object.defineProperty(_om6, '__esModule', {
-        'value': !0
-    });
-    var _oma = _om7(3),
-        _omb = _om8(_om7(0));
-    _om6.getSlot220PersonalEffect = function(_omc) {
-        var _omd = new _oma.SlotItemEffectModel(),
-            _ome = !1,
-            _omf = new _oma.SlotItemEffectModel(),
-            _omg = 0,
-            _omh = 0;
-        if (662 == _omc.ship_id || 663 == _omc.ship_id || 668 == _omc.ship_id || 501 == _omc.ship_id || 506 == _omc.ship_id ? (_omf.houg += 1, _omf.tyku += 3, _omf.kaih += 2, _ome = !0, _omg = 1) : 894 != _omc.ship_id && 899 != _omc.ship_id || (_omf.tyku += 2, _omf.kaih += 2, _ome = !0, _omh = _omg = 1), 0 == _ome) return _omd;
-        var _omi = _omc.get_slotnums(220);
-        _omd.add(_omf.multiply(_omi));
-        for (var _omj = 0, _omk = 0, _oml = _omc.have_slot_ids(); _omk < _oml.length; _omk++) {
-            var _omm = _oml[_omk],
-                _omn = _omb.default.model.slot.getMst(_omm),
-                _omo = _omn.equipType;
-            12 != _omo && 13 != _omo || (5 <= _omn.sakuteki && _omc.get_slotnums(parseInt(_omm)), 2 <= _omn.taiku && (_omj += _omc.get_slotnums(parseInt(_omm))));
-        }
-        if (1 <= _omj && 1 == _omg && (_omd.tyku += 3, _omd.kaih += 3), 0 == _omh) return _omd;
-        var _omp = _omc.get_each_level_nums(220)[10];
-        return 1 == _omh && 0 < _omp && (_omd.houg += +_omp, _omd.tyku += +_omp, _omd.kaih += +_omp), _omd;
-    };
-},
-function(_omq, _omr, _oms) {
-    'use strict';
-    defineModule(_omr);
-    Object.defineProperty(_omr, '__esModule', {
-        'value': !0
-    });
-    var _omt = _oms(3);
-    _omr.getSlot242PersonalEffect = function(_omu) {
-        var _omv = new _omt.SlotItemEffectModel(),
-            _omw = !1,
-            _omx = new _omt.SlotItemEffectModel();
-        if (78 == _omu.ctype && (_omx.houg += 2, _omx.kaih += 1, _omw = !0), 'ほうしょう' == _omu.yomi && (_omx.houg += 1, _omw = !0), 0 == _omw) return _omv;
-        var _omy = _omu.get_slotnums(242);
-        return _omv.add(_omx.multiply(_omy)), _omv;
-    };
-},
-function(_omz, _on0, _on1) {
-    'use strict';
-    defineModule(_on0);
-    Object.defineProperty(_on0, '__esModule', {
-        'value': !0
-    });
-    var _on2 = _on1(3);
-    _on0.getSlot243PersonalEffect = function(_on3) {
-        var _on4 = new _on2.SlotItemEffectModel(),
-            _on5 = !1,
-            _on6 = new _on2.SlotItemEffectModel();
-        if (78 == _on3.ctype && (_on6.houg += 3, _on6.kaih += 1, _on5 = !0), 'ほうしょう' == _on3.yomi && (_on6.houg += 2, _on5 = !0), 0 == _on5) return _on4;
-        var _on7 = _on3.get_slotnums(243);
-        return _on4.add(_on6.multiply(_on7)), _on4;
-    };
-},
-function(_on8, _on9, _ona) {
-    'use strict';
-    defineModule(_on9);
-    Object.defineProperty(_on9, '__esModule', {
-        'value': !0
-    });
-    var _onb = _ona(3);
-    _on9.getSlot244PersonalEffect = function(_onc) {
-        var _ond = new _onb.SlotItemEffectModel(),
-            _one = !1,
-            _onf = new _onb.SlotItemEffectModel();
-        if (78 == _onc.ctype && (_onf.houg += 4, _onf.kaih += 2, _one = !0), 'ほうしょう' == _onc.yomi && (_onf.houg += 3, _one = !0), 0 == _one) return _ond;
-        var _ong = _onc.get_slotnums(244);
-        return _ond.add(_onf.multiply(_ong)), _ond;
-    };
-},
-function(_onh, _oni, _onj) {
-    'use strict';
-    var _onk = this && this.__importDefault || function(_onl) {
-        return _onl && _onl.__esModule ? _onl : {
-            'default': _onl
-        };
-    };
-    defineModule(_oni);
-    Object.defineProperty(_oni, '__esModule', {
-        'value': !0
-    });
-    var _onm = _onj(3),
-        _onn = _onk(_onj(0));
-    _oni.getSlot407PersonalEffect = function(_ono) {
-        var _onp = new _onm.SlotItemEffectModel(),
-            _onq = !1,
-            _onr = new _onm.SlotItemEffectModel(),
-            _ons = 0;
-        if (662 != _ono.ship_id && 663 != _ono.ship_id && 668 != _ono.ship_id || (_onr.houg += 4, _onr.tyku += 2, _onr.kaih += 1, _onq = !0, _ons = 1), 0 == _onq) return _onp;
-        var _ont = _ono.get_slotnums(407);
-        _onp.add(_onr.multiply(_ont));
-        for (var _onu = 0, _onv = 0, _onw = 0, _onx = _ono.have_slot_ids(); _onw < _onx.length; _onw++) {
-            var _ony = _onx[_onw],
-                _onz = _onn.default.model.slot.getMst(_ony),
-                _oo0 = _onz.equipType;
-            12 != _oo0 && 13 != _oo0 || (5 <= _onz.sakuteki && (_onu += _ono.get_slotnums(parseInt(_ony))), 2 <= _onz.taiku && (_onv += _ono.get_slotnums(parseInt(_ony))));
-        }
-        return 1 <= _onu && 1 == _ons && (_onp.houg += 2, _onp.kaih += 2, _onp.raig += 2), 1 <= _onv && 1 == _ons && (_onp.tyku += 2, _onp.kaih += 3), _onp;
-    };
-},
-function(_oo1, _oo2, _oo3) {
-    'use strict';
-    defineModule(_oo2);
-    Object.defineProperty(_oo2, '__esModule', {
-        'value': !0
-    });
-    var _oo4 = _oo3(3);
-    _oo2.getSlotType10PersonalEffect = function(_oo5) {
-        var _oo6 = new _oo4.SlotItemEffectModel();
-        return 662 == _oo5.ship_id || 663 == _oo5.ship_id || 668 == _oo5.ship_id ? (_oo6.houg += 2, _oo6.kaih += 1, _oo6.tais += 3) : 501 != _oo5.ship_id && 506 != _oo5.ship_id || (_oo6.houg += 2), _oo6;
-    };
-},
-function(_oo7, _oo8, _oo9) {
-    'use strict';
-    defineModule(_oo8);
-    Object.defineProperty(_oo8, '__esModule', {
-        'value': !0
-    });
-    var _ooa = _oo9(3);
-    _oo8.getSlotType11PersonalEffect = function(_oob) {
-        var _ooc = new _ooa.SlotItemEffectModel();
-        return 662 == _oob.ship_id || 663 == _oob.ship_id || 668 == _oob.ship_id ? (_ooc.houg += 1, _ooc.kaih += 1, _ooc.tais += 1) : 501 != _oob.ship_id && 506 != _oob.ship_id || (_ooc.houg += 1, _ooc.kaih += 1), _ooc;
-    };
-},
-function(_ood, _ooe, _oof) {
-    'use strict';
-    defineModule(_ooe);
-    Object.defineProperty(_ooe, '__esModule', {
-        'value': !0
-    });
-    var _oog = _oof(3);
-    _ooe.getSlotType25PersonalEffect = function(_ooh) {
-        var _ooi = new _oog.SlotItemEffectModel();
-        return 662 == _ooh.ship_id ? (_ooi.tais += 4, _ooi.kaih += 1) : 663 != _ooh.ship_id && 668 != _ooh.ship_id || (_ooi.tais += 3, _ooi.kaih += 1), _ooi;
-    };
-},
-function(_ooj, _ook, _ool) {
-    'use strict';
-    defineModule(_ook);
-    Object.defineProperty(_ook, '__esModule', {
-        'value': !0
-    });
-    var _oom = _ool(3);
-    _ook.getSlot5PersonalEffect = function(_oon) {
-        var _ooo = new _oom.SlotItemEffectModel(),
-            _oop = !1,
-            _ooq = new _oom.SlotItemEffectModel();
-        if (52 != _oon.ctype && 9 != _oon.ctype || (_ooq.houg += 1, 52 == _oon.ctype && (_ooq.houg = _ooq.houg + 1), _oop = !0), 0 == _oop) return _ooo;
-        var _oor = _oon.get_slotnums(5);
-        return _ooo.add(_ooq.multiply(_oor)), _ooo;
-    };
-},
-function(_oos, _oot, _oou) {
-    'use strict';
-    var _oov = this && this.__importDefault || function(_oow) {
-        return _oow && _oow.__esModule ? _oow : {
-            'default': _oow
-        };
-    };
-    defineModule(_oot);
-    Object.defineProperty(_oot, '__esModule', {
-        'value': !0
-    });
-    var _oox = _oou(3),
-        _ooy = _oov(_oou(0));
-    _oot.getSlot235PersonalEffect = function(_ooz) {
-        var _op0 = new _oox.SlotItemEffectModel(),
-            _op1 = !1,
-            _op2 = new _oox.SlotItemEffectModel(),
-            _op3 = 0;
-        if (52 != _ooz.ctype && 9 != _ooz.ctype || (_op2.houg += 2, _op2.tyku += 1, _op1 = !0), 321 == _ooz.ship_id && (_op2.houg += 1, _op2.kaih += 1, _op3 = 1), 0 == _op1) return _op0;
-        var _op4 = _ooz.get_slotnums(235);
-        if (_op0.add(_op2.multiply(_op4)), 0 == _op3) return _op0;
-        for (var _op5 = 0, _op6 = 0, _op7 = 0, _op8 = _ooz.have_slot_ids(); _op7 < _op8.length; _op7++) {
-            var _op9 = _op8[_op7],
-                _opa = _ooy.default.model.slot.getMst(_op9),
-                _opb = _opa.equipType;
-            12 != _opb && 13 != _opb || (5 <= _opa.sakuteki && (_op5 += _ooz.get_slotnums(parseInt(_op9))), 2 <= _opa.taiku && (_op6 += _ooz.get_slotnums(parseInt(_op9))));
-        }
-        return 1 <= _op5 && 1 == _op3 && (_op0.houg += 3, _op0.kaih += 2), 1 <= _op6 && 1 == _op3 && (_op0.tyku += 3, _op0.kaih += 3), _op0;
-    };
-},
-function(_opc, _opd, _ope) {
-    'use strict';
-    defineModule(_opd);
-    Object.defineProperty(_opd, '__esModule', {
-        'value': !0
-    });
-    var _opf = _ope(3);
-    _opd.getSlot408PersonalEffect = function(_opg) {
-        var _oph = new _opf.SlotItemEffectModel(),
-            _opi = !1,
-            _opj = new _opf.SlotItemEffectModel();
-        if ('しんしゅうまる' == _opg.yomi ? (_opj.houg += 2, _opj.saku += 2, _opj.kaih += 2, _opi = !0) : 'あきつまる' == _opg.yomi && (_opj.houg += 1, _opj.saku += 1, _opj.kaih += 1, _opj.tais += 1, _opi = !0), 2 == _opg.stype && (_opj.houg += 1, _opj.saku += 1, _opj.kaih -= 5, _opi = !0), 0 == _opi) return _oph;
-        var _opk = _opg.get_slotnums(408);
-        return _oph.add(_opj.multiply(_opk)), _oph;
-    };
-},
-function(_opl, _opm, _opn) {
-    'use strict';
-    defineModule(_opm);
-    Object.defineProperty(_opm, '__esModule', {
-        'value': !0
-    });
-    var _opo = _opn(3);
-    _opm.getSlot409PersonalEffect = function(_opp) {
-        var _opq = new _opo.SlotItemEffectModel(),
-            _opr = !1,
-            _ops = new _opo.SlotItemEffectModel();
-        if ('しんしゅうまる' == _opp.yomi ? (_ops.houg += 1, _ops.tyku += 2, _ops.kaih += 3, _opr = !0) : 'あきつまる' == _opp.yomi && (_ops.houg += 1, _ops.tyku += 1, _ops.kaih += 2, _ops.tais += 1, _opr = !0), 0 == _opr) return _opq;
-        var _opt = _opp.get_slotnums(409);
-        return _opq.add(_ops.multiply(_opt)), _opq;
-    };
-},
-function(_opu, _opv, _opw) {
-    'use strict';
-    defineModule(_opv);
-    Object.defineProperty(_opv, '__esModule', {
-        'value': !0
-    });
-    var _opx = _opw(3);
-    _opv.getSlotDomesticAntiSubmarineToushakiPersonalEffect = function(_opy) {
-        var _opz = new _opx.SlotItemEffectModel(),
-            _oq0 = !1,
-            _oq1 = new _opx.SlotItemEffectModel();
-        if (56 == _opy.ctype && (_oq1.tais += 3, _oq1.kaih += 2, _oq0 = !0), 0 == _oq0) return _opz;
-        var _oq2 = _opy.get_slotnums(44) + _opy.get_slotnums(45) + _opy.get_slotnums(287) + _opy.get_slotnums(288);
-        return _opz.add(_oq1.multiply(_oq2)), _opz;
-    };
-},
-function(_oq3, _oq4, _oq5) {
-    'use strict';
-    defineModule(_oq4);
-    Object.defineProperty(_oq4, '__esModule', {
-        'value': !0
-    });
-    var _oq6 = _oq5(3);
-    _oq4.getSlotDomesticSonarPersonalEffect = function(_oq7) {
-        var _oq8 = new _oq6.SlotItemEffectModel();
-        return 56 == _oq7.ctype && (_oq8.tais += 2, _oq8.kaih += 3), _oq8;
-    };
-},
-function(_oq9, _oqa, _oqb) {
-    'use strict';
-    defineModule(_oqa);
-    Object.defineProperty(_oqa, '__esModule', {
-        'value': !0
-    });
-    var _oqc = _oqb(3);
-    _oqa.getSlot115PersonalEffect = function(_oqd) {
-        var _oqe = new _oqc.SlotItemEffectModel(),
-            _oqf = !1,
-            _oqg = new _oqc.SlotItemEffectModel(),
-            _oqh = 0;
-        if (55 != _oqd.ctype && 47 != _oqd.ctype || (_oqg.houg += 2, _oqg.saku += 2, _oqg.kaih += 1, _oqf = !0, _oqh = 1), 0 == _oqf) return _oqe;
-        var _oqi = _oqd.get_slotnums(115);
-        if (_oqe.add(_oqg.multiply(_oqi)), 0 == _oqh) return _oqe;
-        var _oqj = _oqd.get_each_level_nums(115)[10];
-        return 1 == _oqh && (_oqe.houg += +_oqj, _oqe.kaih += +_oqj), _oqe;
-    };
-},
-function(_oqk, _oql, _oqm) {
-    'use strict';
-    defineModule(_oql);
-    Object.defineProperty(_oql, '__esModule', {
-        'value': !0
-    });
-    var _oqn = _oqm(3);
-    _oql.getSlot118PersonalEffect = function(_oqo) {
-        var _oqp = new _oqn.SlotItemEffectModel(),
-            _oqq = !1,
-            _oqr = new _oqn.SlotItemEffectModel(),
-            _oqs = 0;
-        if (52 == _oqo.ctype && (_oqr.houg += 1, _oqr.saku += 2, _oqr.kaih += 2, _oqs = 1, _oqq = !0), 0 == _oqq) return _oqp;
-        var _oqt = _oqo.get_slotnums(118);
-        if (_oqp.add(_oqr.multiply(_oqt)), 0 == _oqs) return _oqp;
-        var _oqu = _oqo.get_each_level_nums(118)[10];
-        return 1 == _oqs && (_oqp.houg += 2 * _oqu, _oqp.saku += +_oqu), _oqp;
-    };
-},
-function(_oqv, _oqw, _oqx) {
-    'use strict';
-    var _oqy = this && this.__importDefault || function(_oqz) {
-        return _oqz && _oqz.__esModule ? _oqz : {
-            'default': _oqz
-        };
-    };
-    defineModule(_oqw);
-    Object.defineProperty(_oqw, '__esModule', {
-        'value': !0
-    });
-    var _or0 = _oqx(3),
-        _or1 = _oqy(_oqx(0));
-    _oqw.getSlot121PersonalEffect = function(_or2) {
-        var _or3 = new _or0.SlotItemEffectModel(),
-            _or4 = 0;
-        if (54 == _or2.ctype && (_or3.tyku += 4, _or3.kaih += 2, _or4 = 1), 0 == _or4) return _or3;
-        for (var _or5 = 0, _or6 = 0, _or7 = _or2.have_slot_ids(); _or6 < _or7.length; _or6++) {
-            var _or8 = _or7[_or6],
-                _or9 = _or1.default.model.slot.getMst(_or8),
-                _ora = _or9.equipType;
-            12 != _ora && 13 != _ora || (5 <= _or9.sakuteki && _or2.get_slotnums(parseInt(_or8)), 2 <= _or9.taiku && (_or5 += _or2.get_slotnums(parseInt(_or8))));
-        }
-        return 1 <= _or5 && (_or3.tyku += 2, _or3.kaih += 2), _or3;
-    };
-},
-function(_orb, _orc, _ord) {
-    'use strict';
-    defineModule(_orc);
-    Object.defineProperty(_orc, '__esModule', {
-        'value': !0
-    });
-    var _ore = _ord(3);
-    _orc.getSlot165_216PersonalEffect = function(_orf) {
-        var _org = new _ore.SlotItemEffectModel();
-        return 501 != _orf.ship_id && 506 != _orf.ship_id || (_org.tyku += 2, _org.kaih += 2), _org;
-    };
-},
-function(_orh, _ori, _orj) {
-    'use strict';
-    defineModule(_ori);
-    Object.defineProperty(_ori, '__esModule', {
-        'value': !0
-    });
-    var _ork = _orj(3);
-    _ori.getSlot217PersonalEffect = function(_orl) {
-        var _orm = new _ork.SlotItemEffectModel(),
-            _orn = !1,
-            _oro = new _ork.SlotItemEffectModel();
-        if (501 != _orl.ship_id && 506 != _orl.ship_id || (_oro.houg += 1, _oro.kaih += 3, _oro.tyku += 5, _orn = !0), 0 == _orn) return _orm;
-        var _orp = _orl.get_slotnums(217);
-        return _orm.add(_oro.multiply(_orp)), _orm;
-    };
-},
-function(_orq, _orr, _ors) {
-    'use strict';
-    defineModule(_orr);
-    Object.defineProperty(_orr, '__esModule', {
-        'value': !0
-    });
-    var _ort = _ors(3);
-    _orr.getSlot238_239PersonalEffect = function(_oru) {
-        var _orv = new _ort.SlotItemEffectModel();
-        return 501 != _oru.ship_id && 506 != _oru.ship_id || (_orv.kaih += 1, _orv.raig += 1), _orv;
-    };
-},
-function(_orw, _orx, _ory) {
-    'use strict';
-    defineModule(_orx);
-    Object.defineProperty(_orx, '__esModule', {
-        'value': !0
-    });
-    var _orz = _ory(3);
-    _orx.getSlot3_122PersonalEffect = function(_os0) {
-        var _os1 = new _orz.SlotItemEffectModel(),
-            _os2 = !1,
-            _os3 = new _orz.SlotItemEffectModel();
-        if (54 == _os0.ctype && (_os3.houg += 1, _os3.tyku += 2, _os3.kaih += 1, _os2 = !0), 0 == _os2) return _os1;
-        var _os4 = _os0.get_slotnums(3) + _os0.get_slotnums(122);
-        return _os1.add(_os3.multiply(_os4)), _os1;
-    };
-},
-function(_os5, _os6, _os7) {
-    'use strict';
-    defineModule(_os6);
-    Object.defineProperty(_os6, '__esModule', {
-        'value': !0
-    });
-    var _os8 = _os7(3);
-    _os6.getSlot30_410PersonalEffect = function(_os9) {
-        var _osa = new _os8.SlotItemEffectModel();
-        return 73 != _os9.ship_id && 501 != _os9.ship_id && 506 != _os9.ship_id || (_osa.tyku += 3, _osa.kaih += 2, _osa.saku += 2, 1 <= _os9.get_slotnums(410) && (_osa.tyku += 2, _osa.kaih += 2, _osa.houg += 1, _osa.souk += 1)), 54 == _os9.ctype && (_osa.tyku += 3, _osa.kaih += 2, _osa.saku += 2, 1 <= _os9.get_slotnums(410) && (_osa.tyku += 2, _osa.kaih += 2, _osa.houg += 1, _osa.souk += 1)), _osa;
-    };
-},
-function(_osb, _osc, _osd) {
-    'use strict';
-    defineModule(_osc);
-    Object.defineProperty(_osc, '__esModule', {
-        'value': !0
-    });
-    var _ose = _osd(3);
-    _osc.getSlot59PersonalEffect = function(_osf) {
-        var _osg = new _ose.SlotItemEffectModel();
-        return 501 != _osf.ship_id && 506 != _osf.ship_id || (_osg.tyku += 1, _osg.kaih += 1), _osg;
-    };
-},
-function(_osh, _osi, _osj) {
-    'use strict';
-    var _osk = this && this.__importDefault || function(_osl) {
-        return _osl && _osl.__esModule ? _osl : {
-            'default': _osl
-        };
-    };
-    defineModule(_osi);
-    Object.defineProperty(_osi, '__esModule', {
-        'value': !0
-    });
-    var _osm = _osj(3),
-        _osn = _osk(_osj(0));
-    _osi.get8cmAntiAircraftGunPersonalEffect = function(_oso) {
-        var _osp = new _osm.SlotItemEffectModel(),
-            _osq = !1,
-            _osr = new _osm.SlotItemEffectModel(),
-            _oss = 0;
-        if (662 != _oso.ship_id && 663 != _oso.ship_id && 668 != _oso.ship_id || (_osr.tyku += 2, _osr.kaih += 1, _osq = !0, _oss = 1), 501 != _oso.ship_id && 506 != _oso.ship_id || (_osr.houg += 1, _osr.tyku += 2, _osr.kaih += 2, _osq = !0, _oss = 1), 0 == _osq) return _osp;
-        var _ost = _oso.get_slotnums(66) + _oso.get_slotnums(220);
-        _osp.add(_osr.multiply(_ost));
-        for (var _osu = 0, _osv = 0, _osw = _oso.have_slot_ids(); _osv < _osw.length; _osv++) {
-            var _osx = _osw[_osv],
-                _osy = _osn.default.model.slot.getMst(_osx),
-                _osz = _osy.equipType;
-            12 != _osz && 13 != _osz || (5 <= _osy.sakuteki && _oso.get_slotnums(parseInt(_osx)), 2 <= _osy.taiku && (_osu += _oso.get_slotnums(parseInt(_osx))));
-        }
-        return 0 == _oss || 1 <= _osu && (_osp.tyku += 1, _osp.kaih += 2), _osp;
-    };
-},
-function(_ot0, _ot1, _ot2) {
-    'use strict';
-    defineModule(_ot1);
-    Object.defineProperty(_ot1, '__esModule', {
-        'value': !0
-    });
-    var _ot3 = _ot2(3);
-    _ot1.getSlot411PersonalEffect = function(_ot4) {
-        var _ot5, _ot6 = new _ot3.SlotItemEffectModel(),
-            _ot7 = new _ot3.SlotItemEffectModel(),
-            _ot8 = !1,
-            _ot9 = 0;
-        if (2 == _ot4.stype && (_ot7.kaih -= 9, _ot8 = !0), 3 != _ot4.stype && 4 != _ot4.stype || (_ot7.kaih -= 7, _ot8 = !0), 21 == _ot4.stype && (_ot7.kaih -= 6, _ot8 = !0), 5 != _ot4.stype && 6 != _ot4.stype || (_ot7.kaih -= 5, _ot8 = !0), 593 == _ot4.ship_id && (_ot6.houg += 1, _ot6.tyku += 2, _ot6.kaih += 3), 151 == _ot4.ship_id || 411 == _ot4.ship_id || 412 == _ot4.ship_id || 593 == _ot4.ship_id || 954 == _ot4.ship_id ? (_ot6.houg += 3, _ot6.tyku += 4, _ot9 = 1) : 541 != _ot4.ship_id && 573 != _ot4.ship_id && 553 != _ot4.ship_id && 554 != _ot4.ship_id || (_ot6.houg += 2, _ot6.tyku += 2, _ot9 = 1), _ot8 && (_ot5 = _ot4.get_slotnums(411), _ot6.add(_ot7.multiply(_ot5))), 0 == _ot9) return _ot6;
-        var _ota = _ot4.get_each_level_nums(411),
-            _otb = 0;
-        return 0 < _ot9 && _ota.forEach(function(_otc, _otd) {
-            4 <= _otd && (_otb += _otc);
-        }), 1 == _ot9 && (1 <= _otb && (_ot6.houg += 1, _ot6.tyku += 1), 1 <= _ota[10] && (_ot6.houg += 1, _ot6.tyku += 1)), _ot6;
-    };
-},
-function(_ote, _otf, _otg) {
-    'use strict';
-    defineModule(_otf);
-    Object.defineProperty(_otf, '__esModule', {
-        'value': !0
-    });
-    var _oth = _otg(3);
-    _otf.getSlot60_154_219PersonalEffec = function(_oti) {
-        var _otj = new _oth.SlotItemEffectModel(),
-            _otk = !1,
-            _otl = new _oth.SlotItemEffectModel();
-        if ('じゅんよう' != _oti.yomi && 'ひよう' != _oti.yomi && 'ずいほう' != _oti.yomi && 'ちとせ' != _oti.yomi && 'ちよだ' != _oti.yomi || (_otl.houg += 1, _otl.tyku += 1, _otl.kaih += 1, _otk = !0), 185 != _oti.ship_id && 318 != _oti.ship_id && 282 != _oti.ship_id || (_otl.houg += 1, _otl.tyku += 1, _otl.kaih += 1, _otk = !0), 888 != _oti.ship_id && 883 != _oti.ship_id || (_otl.houg += 2, _otl.tyku += 1, _otl.kaih += 2, _otk = !0), 0 == _otk) return _otj;
-        var _otm = _oti.get_slotnums(60) + _oti.get_slotnums(154) + _oti.get_slotnums(219);
-        return _otj.add(_otl.multiply(_otm)), _otj;
-    };
-},
-function(_otn, _oto, _otp) {
-    'use strict';
-    defineModule(_oto);
-    Object.defineProperty(_oto, '__esModule', {
-        'value': !0
-    });
-    var _otq = _otp(3);
-    _oto.getSlot412PersonalEffect = function(_otr) {
-        var _ots = new _otq.SlotItemEffectModel(),
-            _ott = !1,
-            _otu = 0,
-            _otv = new _otq.SlotItemEffectModel();
-        if (0 <= [66, 28, 12, 1, 5, 10, 23, 18, 30, 38, 22, 54, 101].indexOf(_otr.ctype) ? (_ots.houg += 2, _ots.raig += 4, _ots.tais += 2, _otv.kaih += 3, _otv.saku += 1, _ott = !0, _otu = 1) : 0 <= [21, 4, 20, 16, 34, 56, 41, 52].indexOf(_otr.ctype) ? (_ots.houg += 3, _ots.raig += 3, _otv.kaih += 2, _otv.saku += 3, _ott = !0, _otu = 1) : 0 <= [7, 13, 29, 8, 9, 31].indexOf(_otr.ctype) && (_ots.houg += 1, _otv.kaih += 1, _otv.saku += 1, _ott = !0), 0 == _ott) return _ots;
-        var _otw = _otr.get_slotnums(412);
-        if (_ots.add(_otv.multiply(_otw)), 0 == _otu) return _ots;
-        var _otx = _otr.get_each_level_nums(412),
-            _oty = 0,
-            _otz = 0;
-        return 0 < _otu && _otx.forEach(function(_ou0, _ou1) {
-            4 <= _ou1 && (_oty += _ou0), 8 <= _ou1 && (_otz += _ou0);
-        }), 1 == _otu && (0 < _oty && (_ots.houg += 1), 0 < _otz && (_ots.raig += 1)), _ots;
-    };
-},
-function(_ou2, _ou3, _ou4) {
-    'use strict';
-    defineModule(_ou3);
-    Object.defineProperty(_ou3, '__esModule', {
-        'value': !0
-    });
-    var _ou5 = _ou4(3);
-    _ou3.getSlot414PersonalEffect = function(_ou6) {
-        var _ou7 = new _ou5.SlotItemEffectModel(),
-            _ou8 = 0;
-        if ('アメリカ' == _ou6.getCountryName() && (_ou7.saku += 1, _ou8 = 1), 95 != _ou6.ctype && 99 != _ou6.ctype && 106 != _ou6.ctype && 110 != _ou6.ctype && 121 != _ou6.ctype || (_ou7.houg += 1, _ou7.saku += 1, _ou8 = 2), 0 == _ou8) return _ou7;
-        var _ou9 = _ou6.get_each_level_nums(414),
-            _oua = 0,
-            _oub = 0,
-            _ouc = 0;
-        return 0 < _ou8 && _ou9.forEach(function(_oud, _oue) {
-            5 <= _oue && (_oua += _oud), 3 <= _oue && (_oub += _oud), 8 <= _oue && (_ouc += _oud);
-        }), 0 < _ou8 && 1 <= _oua && (_ou7.kaih += 1), 2 == _ou8 && (1 <= _oub && (_ou7.saku += 1), 1 <= _ouc && (_ou7.kaih += 1), 1 <= _ou9[10] && (_ou7.houg += 1)), _ou7;
-    };
-},
-function(_ouf, _oug, _ouh) {
-    'use strict';
-    defineModule(_oug);
-    Object.defineProperty(_oug, '__esModule', {
-        'value': !0
-    });
-    var _oui = _ouh(3);
-    _oug.getSlot413PersonalEffect = function(_ouj) {
-        var _ouk = new _oui.SlotItemEffectModel();
-        return 0 <= [66, 28, 12, 1, 5, 10, 23, 18, 30, 38, 22, 54, 101].indexOf(_ouj.ctype) ? (_ouk.houg += 2, _ouk.raig += 2, _ouk.kaih += 4) : 0 <= [21, 4, 20, 16, 34, 56, 41, 52].indexOf(_ouj.ctype) && (_ouk.houg += 4, _ouk.raig += 2, _ouk.kaih += 2), 38 == _ouj.ctype || 54 == _ouj.ctype ? (_ouk.houg += 2, _ouk.raig += 3, _ouk.kaih += 3) : 4 == _ouj.ctype || 20 == _ouj.ctype || 16 == _ouj.ctype || 41 == _ouj.ctype || 52 == _ouj.ctype ? (_ouk.houg += 1, _ouk.raig += 2, _ouk.kaih += 2) : 21 != _ouj.ctype && 34 != _ouj.ctype || (_ouk.tyku += 2, _ouk.raig += 1, _ouk.kaih += 1), 'なか' == _ouj.yomi || 'ゆら' == _ouj.yomi || 'やはぎ' == _ouj.yomi || 'のしろ' == _ouj.yomi || 'はまなみ' == _ouj.yomi || 'しまかぜ' == _ouj.yomi || 'きよしも' == _ouj.yomi || 'はつしも' == _ouj.yomi ? (_ouk.tyku += 1, _ouk.kaih += 1) : 'じんつう' != _ouj.yomi && 'せんだい' != _ouj.yomi && 'ながなみ' != _ouj.yomi && 'はつしも' != _ouj.yomi && 'てるづき' != _ouj.yomi || (_ouk.houg += 1, _ouk.raig += 1), 543 == _ouj.ship_id ? (_ouk.houg += 1, _ouk.kaih += 1) : 159 == _ouj.ship_id && (_ouk.houg += 2), _ouk;
-    };
-},
-function(_oul, _oum, _oun) {
-    'use strict';
-    defineModule(_oum);
-    Object.defineProperty(_oum, '__esModule', {
-        'value': !0
-    });
-    var _ouo = _oun(3);
-    _oum.getSlot415PersonalEffect = function(_oup) {
-        var _ouq = new _ouo.SlotItemEffectModel(),
-            _our = [];
-        if ('アメリカ' == _oup.getCountryName() && (_ouq.saku += 1, _ouq.tais += 1, _our.push(1)), 95 != _oup.ctype && 99 != _oup.ctype && 106 != _oup.ctype && 110 != _oup.ctype && 121 != _oup.ctype || (_ouq.houg += 1, _our.push(2)), 0 == _our.length) return _ouq;
-        var _ous = _oup.get_each_level_nums(415),
-            _out = 0,
-            _ouu = 0,
-            _ouv = 0;
-        return 0 < _our.length && (_ous.forEach(function(_ouw, _oux) {
-            5 <= _oux && (_out += _ouw), 3 <= _oux && (_ouu += _ouw), 8 <= _oux && (_ouv += _ouw);
-        }), _our.forEach(function(_ouy) {
-            1 == _ouy ? 1 <= _out && (_ouq.kaih += 1) : 2 == _ouy && (1 <= _ouu && (_ouq.kaih += 1), 1 <= _ouv && (_ouq.houg += 1));
-        })), _ouq;
-    };
-},
-function(_ouz, _ov0, _ov1) {
-    'use strict';
-    defineModule(_ov0);
-    Object.defineProperty(_ov0, '__esModule', {
-        'value': !0
-    });
-    var _ov2 = _ov1(3);
-    _ov0.getSlot195PersonalEffect = function(_ov3) {
-        var _ov4 = new _ov2.SlotItemEffectModel(),
-            _ov5 = !1,
-            _ov6 = new _ov2.SlotItemEffectModel();
-        if ('アメリカ' == _ov3.getCountryName() && (_ov6.houg += 1, _ov5 = !0), 0 == _ov5) return _ov4;
-        var _ov7 = _ov3.get_slotnums(195);
-        return _ov4.add(_ov6.multiply(_ov7));
-    };
-},
-function(_ov8, _ov9, _ova) {
-    'use strict';
-    defineModule(_ov9);
-    Object.defineProperty(_ov9, '__esModule', {
-        'value': !0
-    });
-    var _ovb = _ova(3);
-    _ov9.getSlot419PersonalEffect = function(_ovc) {
-        var _ovd = new _ovb.SlotItemEffectModel(),
-            _ove = !1,
-            _ovf = new _ovb.SlotItemEffectModel(),
-            _ovg = 0;
-        if ('アメリカ' == _ovc.getCountryName() && (_ovf.houg += 2, _ove = !0, _ovg = 1), 0 == _ove) return _ovd;
-        var _ovh = _ovc.get_slotnums(419);
-        if (_ovd.add(_ovf.multiply(_ovh)), 0 == _ovg) return _ovd;
-        var _ovi = _ovc.get_each_level_nums(419),
-            _ovj = 0,
-            _ovk = 0;
-        return 0 < _ovg && _ovi.forEach(function(_ovl, _ovm) {
-            2 <= _ovm && (_ovj += _ovl), 7 <= _ovm && (_ovk += _ovl);
-        }), 1 == _ovg && (1 <= _ovj && (_ovd.houg += +_ovj), 1 <= _ovk && (_ovd.houg += +_ovk)), _ovd;
-    };
-},
-function(_ovn, _ovo, _ovp) {
-    'use strict';
-    defineModule(_ovo);
-    Object.defineProperty(_ovo, '__esModule', {
-        'value': !0
-    });
-    var _ovq = _ovp(3);
-    _ovo.getSlot420PersonalEffect = function(_ovr) {
-        var _ovs = new _ovq.SlotItemEffectModel(),
-            _ovt = !1,
-            _ovu = new _ovq.SlotItemEffectModel(),
-            _ovv = 0;
-        if ('アメリカ' != _ovr.getCountryName() && 67 != _ovr.ctype && 78 != _ovr.ctype && 82 != _ovr.ctype && 88 != _ovr.ctype && 108 != _ovr.ctype && 112 != _ovr.ctype || (_ovu.houg += 1, _ovv = 1, _ovt = !0), 84 == _ovr.ctype ? (_ovu.houg += 1, _ovt = !0) : 78 == _ovr.ctype && (--_ovu.houg, _ovt = !0), 7 == _ovr.stype && (_ovu.houg -= 2, --_ovu.kaih, _ovu.souk -= 2, _ovt = !0), 0 == _ovt) return _ovs;
-        var _ovw = _ovr.get_slotnums(420);
-        if (_ovs.add(_ovu.multiply(_ovw)), 0 == _ovv) return _ovs;
-        var _ovx = _ovr.get_each_level_nums(420),
-            _ovy = 0;
-        return 0 < _ovv && _ovx.forEach(function(_ovz, _ow0) {
-            3 <= _ow0 && (_ovy += _ovz);
-        }), 1 == _ovv && 1 <= _ovy && (_ovs.houg += +_ovy), _ovs;
-    };
-},
-function(_ow1, _ow2, _ow3) {
-    'use strict';
-    defineModule(_ow2);
-    Object.defineProperty(_ow2, '__esModule', {
-        'value': !0
-    });
-    var _ow4 = _ow3(3);
-    _ow2.getSlot421PersonalEffect = function(_ow5) {
-        var _ow6 = new _ow4.SlotItemEffectModel(),
-            _ow7 = !1,
-            _ow8 = new _ow4.SlotItemEffectModel(),
-            _ow9 = 0;
-        if ('アメリカ' != _ow5.getCountryName() && 67 != _ow5.ctype && 78 != _ow5.ctype && 82 != _ow5.ctype && 88 != _ow5.ctype && 108 != _ow5.ctype && 112 != _ow5.ctype || (_ow8.houg += 2, _ow7 = !0, _ow9 = 1), 84 == _ow5.ctype ? (_ow8.houg += 1, _ow7 = !0) : 78 == _ow5.ctype && (--_ow8.houg, _ow7 = !0), 7 == _ow5.stype && (_ow8.houg -= 2, --_ow8.kaih, _ow8.souk -= 2, _ow7 = !0), 0 == _ow7) return _ow6;
-        var _owa = _ow5.get_slotnums(421);
-        if (_ow6.add(_ow8.multiply(_owa)), 0 == _ow9) return _ow6;
-        var _owb = _ow5.get_each_level_nums(421),
-            _owc = 0;
-        return 0 < _ow9 && _owb.forEach(function(_owd, _owe) {
-            5 <= _owe && (_owc += _owd);
-        }), 1 == _ow9 && 1 <= _owc && (_ow6.houg += +_owc), _ow6;
-    };
-},
-function(_owf, _owg, _owh) {
-    'use strict';
-    defineModule(_owg);
-    Object.defineProperty(_owg, '__esModule', {
-        'value': !0
-    });
-    var _owi = _owh(3);
-    _owg.getSlot277PersonalEffect = function(_owj) {
-        var _owk = new _owi.SlotItemEffectModel(),
-            _owl = !1,
-            _owm = new _owi.SlotItemEffectModel();
-        if ('アメリカ' != _owj.getCountryName() && 67 != _owj.ctype && 78 != _owj.ctype && 82 != _owj.ctype && 88 != _owj.ctype && 108 != _owj.ctype && 112 != _owj.ctype || (_owm.houg += 1, _owm.kaih += 1, _owl = !0), 83 == _owj.ctype && (_owm.houg += 1, _owm.kaih += 1, _owm.tyku += 1, _owl = !0), 0 == _owl) return _owk;
-        var _own = _owj.get_slotnums(277);
-        return _owk.add(_owm.multiply(_own)), _owk;
-    };
-},
-function(_owo, _owp, _owq) {
-    'use strict';
-    defineModule(_owp);
-    Object.defineProperty(_owp, '__esModule', {
-        'value': !0
-    });
-    var _owr = _owq(3);
-    _owp.getSlot422PersonalEffect = function(_ows) {
-        var _owt = new _owr.SlotItemEffectModel(),
-            _owu = !1,
-            _owv = new _owr.SlotItemEffectModel();
-        if ('アメリカ' != _ows.getCountryName() && 67 != _ows.ctype && 78 != _ows.ctype && 82 != _ows.ctype && 88 != _ows.ctype && 108 != _ows.ctype && 112 != _ows.ctype || (_owv.houg += 1, _owv.kaih += 1, _owu = !0), 84 == _ows.ctype && (_owv.houg += 1, _owv.tyku += 1, _owu = !0), 707 == _ows.ship_id && (_owv.houg += 2, _owv.kaih += 2, _owv.tyku += 2, _owu = !0), 0 == _owu) return _owt;
-        var _oww = _ows.get_slotnums(422);
-        return _owt.add(_owv.multiply(_oww)), _owt;
-    };
-},
-function(_owx, _owy, _owz) {
-    'use strict';
-    defineModule(_owy);
-    Object.defineProperty(_owy, '__esModule', {
-        'value': !0
-    });
-    var _ox0 = _owz(3);
-    _owy.getSlot423PersonalEffect = function(_ox1) {
-        var _ox2 = new _ox0.SlotItemEffectModel(),
-            _ox3 = !1,
-            _ox4 = new _ox0.SlotItemEffectModel();
-        78 != _ox1.ctype && 112 != _ox1.ctype || (_ox4.houg += 2, _ox4.tyku += 2, _ox4.kaih += 2, _ox4.saku += 2, _ox3 = !0);
-        var _ox5 = _ox1.getCountryName();
-        if (67 == _ox1.ctype || 78 == _ox1.ctype || 82 == _ox1.ctype || 88 == _ox1.ctype || 108 == _ox1.ctype || 112 == _ox1.ctype ? (_ox4.houg += 2, _ox4.tyku += 2, _ox4.kaih += 2, _ox4.saku += 2, _ox3 = !0) : 'アメリカ' == _ox5 && (_ox4.houg += 1, _ox4.tyku += 1, _ox4.kaih += 1, _ox4.saku += 1, _ox3 = !0), 0 == _ox3) return _ox2;
-        var _ox6 = _ox1.get_slotnums(423);
-        return _ox2.add(_ox4.multiply(_ox6)), _ox2;
-    };
-},
-function(_ox7, _ox8, _ox9) {
-    'use strict';
-    defineModule(_ox8);
-    Object.defineProperty(_ox8, '__esModule', {
-        'value': !0
-    });
-    var _oxa = _ox9(3);
-    _ox8.getSlot424PersonalEffect = function(_oxb) {
-        var _oxc = new _oxa.SlotItemEffectModel(),
-            _oxd = !1,
-            _oxe = new _oxa.SlotItemEffectModel(),
-            _oxf = 0;
-        67 != _oxb.ctype && 78 != _oxb.ctype && 82 != _oxb.ctype && 88 != _oxb.ctype && 108 != _oxb.ctype && 112 != _oxb.ctype || (_oxe.houg += 2, _oxe.raig += 3, _oxd = !0, _oxf = 1);
-        var _oxg = _oxb.get_slotnums(424);
-        _oxd && _oxc.add(_oxe.multiply(_oxg));
-        var _oxh = _oxb.get_each_level_nums(424),
-            _oxi = 0,
-            _oxj = 0,
-            _oxk = 0;
-        _oxh.forEach(function(_oxl, _oxm) {
-            2 <= _oxm && (_oxi += _oxl), 6 <= _oxm && (_oxj += _oxl), 8 <= _oxm && (_oxk += _oxl);
-        });
-        var _oxn = _oxh[10];
-        return 1 == _oxf && (1 <= _oxi && (_oxc.houg += +_oxi), 1 <= _oxj && (_oxc.houg += +_oxj), 1 <= _oxk && (_oxc.houm += +_oxk)), 0 < _oxn && (_oxc.houm += +_oxn), _oxc;
-    };
-},
-function(_oxo, _oxp, _oxq) {
-    'use strict';
-    defineModule(_oxp);
-    Object.defineProperty(_oxp, '__esModule', {
-        'value': !0
-    });
-    var _oxr = _oxq(3);
-    _oxp.getSlot425PersonalEffect = function(_oxs) {
-        var _oxt = new _oxr.SlotItemEffectModel(),
-            _oxu = !1,
-            _oxv = new _oxr.SlotItemEffectModel(),
-            _oxw = 0;
-        67 != _oxs.ctype && 78 != _oxs.ctype && 82 != _oxs.ctype && 88 != _oxs.ctype && 108 != _oxs.ctype && 112 != _oxs.ctype || (_oxv.houg += 2, _oxv.tais += 2, _oxv.raig += 1, _oxv.saku += 1, _oxu = !0, _oxw = 1);
-        var _oxx = _oxs.get_slotnums(425);
-        _oxu && _oxt.add(_oxv.multiply(_oxx));
-        var _oxy = _oxs.get_each_level_nums(425),
-            _oxz = 0,
-            _oy0 = 0,
-            _oy1 = 0,
-            _oy2 = 0,
-            _oy3 = 0,
-            _oy4 = 0;
-        _oxy.forEach(function(_oy5, _oy6) {
-            2 <= _oy6 && (_oxz += _oy5), 4 <= _oy6 && (_oy0 += _oy5), 6 <= _oy6 && (_oy1 += _oy5), 7 <= _oy6 && (_oy2 += _oy5), 8 <= _oy6 && (_oy3 += _oy5), 9 <= _oy6 && (_oy4 += _oy5);
-        });
-        var _oy7 = _oxy[10];
-        return 1 == _oxw && (1 <= _oxz && (_oxt.tais += +_oxz), 1 <= _oy0 && (_oxt.houg += +_oy0), 1 <= _oy1 && (_oxt.tais += +_oy1), 1 <= _oy2 && (_oxt.houm += +_oy2), 1 <= _oy3 && (_oxt.raig += +_oy3), 1 <= _oy4 && (_oxt.houg += +_oy4), 1 <= _oy7 && (_oxt.tais += +_oy7)), 1 <= _oy2 && (_oxt.houg += +_oy2), 1 <= _oy3 && (_oxt.tais += +_oy3), 1 <= _oy4 && (_oxt.houm += +_oy4), 1 <= _oy7 && (_oxt.houm += +_oy7), _oxt;
-    };
-},
-function(_oy8, _oy9, _oya) {
-    'use strict';
-    defineModule(_oy9);
-    Object.defineProperty(_oy9, '__esModule', {
-        'value': !0
-    });
-    var _oyb = _oya(3);
-    _oy9.getSlot430PersonalEffect = function(_oyc) {
-        var _oyd = new _oyb.SlotItemEffectModel(),
-            _oye = !1,
-            _oyf = new _oyb.SlotItemEffectModel(),
-            _oyg = 0;
-        if (113 == _oyc.ctype && (_oyf.tyku += 1, _oyf.kaih += 1, _oye = !0), 58 != _oyc.ctype && 61 != _oyc.ctype && 64 != _oyc.ctype && 68 != _oyc.ctype && 80 != _oyc.ctype && 92 != _oyc.ctype && 113 != _oyc.ctype && 124 != _oyc.ctype || (_oyf.tyku += 2, _oyf.kaih += 1, _oye = !0, _oyg = 1), 0 == _oye) return _oyd;
-        var _oyh = _oyc.get_slotnums(430);
-        if (_oyd.add(_oyf.multiply(_oyh)), 0 == _oyg) return _oyd;
-        var _oyi, _oyj = _oyc.get_each_level_nums(430),
-            _oyk = 0,
-            _oyl = 0,
-            _oym = 0;
-        return 0 < _oyg && _oyj.forEach(function(_oyn, _oyo) {
-            2 <= _oyo && (_oyk += _oyn), 4 <= _oyo && (_oyl += _oyn), 7 <= _oyo && (_oym += _oyn);
-        }), 1 == _oyg && (1 <= _oyk && (_oyd.kaih += +_oyk), 1 <= _oyl && (_oyd.tyku += +_oyl), 1 <= _oym && (_oyd.kaih += +_oym), 1 <= (_oyi = _oyj[10]) && (_oyd.tyku += +_oyi)), _oyd;
-    };
-},
-function(_oyp, _oyq, _oyr) {
-    'use strict';
-    defineModule(_oyq);
-    Object.defineProperty(_oyq, '__esModule', {
-        'value': !0
-    });
-    var _oys = _oyr(3);
-    _oyq.getSlot305More320mmGunPersonalEffect = function(_oyt) {
-        var _oyu = new _oys.SlotItemEffectModel(),
-            _oyv = _oyt.get_slotnums(426),
-            _oyw = _oyt.get_slotnums(427),
-            _oyx = _oyt.get_slotnums(428),
-            _oyy = _oyt.get_slotnums(429),
-            _oyz = _oyv + _oyw + _oyx + _oyy;
-        return 113 == _oyt.ctype ? (_oyu.houg = _oyu.houg + 2 * _oyz, 1 <= _oyv && (_oyu.houg = _oyu.houg + +_oyv, _oyu.kaih = _oyu.kaih + +_oyv, (2 <= _oyv || 1 <= _oyw) && (_oyu.houg = _oyu.houg + 1, _oyu.kaih = _oyu.kaih + 1)), 1 <= _oyx && (_oyu.houg = _oyu.houg + +_oyx, _oyu.kaih = _oyu.kaih + +_oyx, (2 <= _oyx || 1 <= _oyy) && (_oyu.houg = _oyu.houg + 2, _oyu.kaih = _oyu.kaih + 1))) : 73 == _oyt.ctype ? (_oyu.houg = _oyu.houg + +_oyz, 1 <= _oyv && (_oyu.houg = _oyu.houg + +_oyv, _oyu.kaih = _oyu.kaih + +_oyv, (2 <= _oyv || 1 <= _oyw) && (_oyu.houg = _oyu.houg + 1)), 1 <= _oyx && (_oyu.houg = _oyu.houg + +_oyx, _oyu.kaih = _oyu.kaih + +_oyx, (2 <= _oyx || 1 <= _oyy) && (_oyu.houg = _oyu.houg + 1))) : 58 == _oyt.ctype && 1 <= _oyx && (_oyu.houg = _oyu.houg + +_oyx, _oyu.kaih = _oyu.kaih + 2 * _oyx, (2 <= _oyx || 1 <= _oyy) && (_oyu.houg = _oyu.houg + 2, _oyu.kaih = _oyu.kaih + 1)), _oyu;
-    };
-},
-function(_oz0, _oz1, _oz2) {
-    'use strict';
-    defineModule(_oz1);
-    Object.defineProperty(_oz1, '__esModule', {
-        'value': !0
-    });
-    var _oz3 = _oz2(3);
-    _oz1.getSlotCorsairMkIIPersonalEffect = function(_oz4) {
-        var _oz5 = new _oz3.SlotItemEffectModel(),
-            _oz6 = !1,
-            _oz7 = new _oz3.SlotItemEffectModel();
-        112 == _oz4.ctype && (_oz7.houg += 1, _oz7.tyku += 1, _oz7.kaih += 2, _oz6 = !0);
-        var _oz8 = _oz4.getCountryName();
-        if (67 == _oz4.ctype || 78 == _oz4.ctype || 82 == _oz4.ctype || 88 == _oz4.ctype || 108 == _oz4.ctype || 112 == _oz4.ctype ? (_oz7.houg += 1, _oz7.tyku += 2, _oz7.kaih += 3, _oz6 = !0) : 'アメリカ' == _oz8 && (_oz7.houg += 1, _oz7.tyku += 1, _oz7.kaih += 2, _oz6 = !0), 0 == _oz6) return _oz5;
-        var _oz9 = _oz4.get_slotnums(434) + _oz4.get_slotnums(435);
-        return _oz5.add(_oz7.multiply(_oz9)), _oz5;
-    };
-},
-function(_oza, _ozb, _ozc) {
-    'use strict';
-    defineModule(_ozb);
-    Object.defineProperty(_ozb, '__esModule', {
-        'value': !0
-    });
-    var _ozd = _ozc(3);
-    _ozb.getSlot437PersonalEffect = function(_oze) {
-        var _ozf = new _ozd.SlotItemEffectModel(),
-            _ozg = !1,
-            _ozh = new _ozd.SlotItemEffectModel();
-        if (285 == _oze.ship_id ? (_ozh.houg += 3, _ozh.tyku += 3, _ozh.kaih += 4, _ozg = !0) : 894 == _oze.ship_id || 899 == _oze.ship_id ? (_ozh.houg += 4, _ozh.tyku += 4, _ozh.kaih += 4, _ozg = !0) : 196 == _oze.ship_id || 197 == _oze.ship_id ? (_ozh.houg += 2, _ozh.tyku += 2, _ozh.kaih += 3, _ozg = !0) : 508 == _oze.ship_id || 509 == _oze.ship_id || 646 == _oze.ship_id ? (_ozh.houg += 2, _ozh.tyku += 2, _ozh.kaih += 2, _ozg = !0) : 888 != _oze.ship_id && 883 != _oze.ship_id && 553 != _oze.ship_id && 554 != _oze.ship_id || (_ozh.houg += 1, _ozh.tyku += 2, _ozh.kaih += 2, _ozg = !0), 0 == _ozg) return _ozf;
-        var _ozi = _oze.get_slotnums(437);
-        return _ozf.add(_ozh.multiply(_ozi)), _ozf;
-    };
-},
-function(_ozj, _ozk, _ozl) {
-    'use strict';
-    defineModule(_ozk);
-    Object.defineProperty(_ozk, '__esModule', {
-        'value': !0
-    });
-    var _ozm = _ozl(3);
-    _ozk.getSlot271PersonalEffect = function(_ozn) {
-        var _ozo = new _ozm.SlotItemEffectModel(),
-            _ozp = 0;
-        if (508 != _ozn.ship_id && 509 != _ozn.ship_id && 888 != _ozn.ship_id && 883 != _ozn.ship_id || (_ozp = 1), 0 == _ozp) return _ozo;
-        var _ozq = _ozn.get_each_level_nums(271),
-            _ozr = 0,
-            _ozs = 0,
-            _ozt = 0,
-            _ozu = _ozq[10];
-        return 0 < _ozp && _ozq.forEach(function(_ozv, _ozw) {
-            4 <= _ozw && (_ozr += _ozv), 6 <= _ozw && (_ozs += _ozv), 8 <= _ozw && (_ozt += _ozv);
-        }), 1 == _ozp && (1 <= _ozr && (_ozo.houg += +_ozr), 1 <= _ozs && (_ozo.tyku += 2 * _ozs), 1 <= _ozt && (_ozo.kaih += 2 * _ozt), 1 <= _ozu && (_ozo.houg += +_ozu)), _ozo;
-    };
-},
-function(_ozx, _ozy, _ozz) {
-    'use strict';
-    defineModule(_ozy);
-    Object.defineProperty(_ozy, '__esModule', {
-        'value': !0
-    });
-    var _p00 = _ozz(3);
-    _ozy.getSlot438PersonalEffect = function(_p01) {
-        var _p02 = new _p00.SlotItemEffectModel(),
-            _p03 = 0;
-        if (-1 < [66, 28, 12, 1, 5, 10, 23, 18, 30, 38, 22, 54, 101].indexOf(_p01.ctype) && (_p02.tais += 1, _p02.kaih += 1), 160 == _p01.ship_id || 488 == _p01.ship_id || 141 == _p01.ship_id ? (_p02.tais += 1, _p02.kaih += 1) : 145 != _p01.ship_id && 588 != _p01.ship_id && 667 != _p01.ship_id && 578 != _p01.ship_id && 476 != _p01.ship_id && 363 != _p01.ship_id && 961 != _p01.ship_id || (_p03 = 1), 'うしお' == _p01.yomi || 'まいかぜ' == _p01.yomi || 'いそかぜ' == _p01.yomi || 'はまかぜ' == _p01.yomi || 'いかづち' == _p01.yomi || 'やまぐも' == _p01.yomi || 'うみかぜ' == _p01.yomi || 'かわかぜ' == _p01.yomi || 'すずかぜ' == _p01.yomi ? _p02.tais += 1 : 'しぐれ' != _p01.yomi && 'やまかぜ' != _p01.yomi && 'かみかぜ' != _p01.yomi && 'はるかぜ' != _p01.yomi && 'みくら' != _p01.yomi && 'いしがき' != _p01.yomi || (_p02.tais += 1, _p02.kaih += 1), 0 == _p03) return _p02;
-        var _p04 = _p01.get_each_level_nums(438),
-            _p05 = 0,
-            _p06 = 0,
-            _p07 = 0,
-            _p08 = _p04[10];
-        return 0 < _p03 && _p04.forEach(function(_p09, _p0a) {
-            4 <= _p0a && (_p05 += _p09), 6 <= _p0a && (_p06 += _p09), 8 <= _p0a && (_p07 += _p09);
-        }), 1 == _p03 && (1 <= _p05 && (_p02.tais += 1), 1 <= _p06 && (_p02.kaih += 1), 1 <= _p07 && (_p02.tais += 1), 1 <= _p08 && (_p02.kaih += 1)), _p02;
-    };
-},
-function(_p0b, _p0c, _p0d) {
-    'use strict';
-    defineModule(_p0c);
-    Object.defineProperty(_p0c, '__esModule', {
-        'value': !0
-    });
-    var _p0e = _p0d(3);
-    _p0c.getSlot136PersonalEffect = function(_p0f) {
-        var _p0g = new _p0e.SlotItemEffectModel(),
-            _p0h = 0;
-        if (58 != _p0f.ctype && 61 != _p0f.ctype && 64 != _p0f.ctype && 68 != _p0f.ctype && 80 != _p0f.ctype && 92 != _p0f.ctype && 113 != _p0f.ctype && 124 != _p0f.ctype || (_p0g.souk += 2, _p0g.kaih += 1, _p0h = 1), 879 == _p0f.ship_id && (_p0g.souk += 1, _p0g.kaih += 1), 0 == _p0h) return _p0g;
-        var _p0i = _p0f.get_each_level_nums(136),
-            _p0j = 0,
-            _p0k = 0,
-            _p0l = _p0i[10];
-        return 0 < _p0h && _p0i.forEach(function(_p0m, _p0n) {
-            3 <= _p0n && (_p0j += _p0m), 6 <= _p0n && (_p0k += _p0m);
-        }), 1 == _p0h && (1 <= _p0j && (_p0g.souk += +_p0j), 1 <= _p0k && (_p0g.souk += +_p0k), 1 <= _p0l && (_p0g.souk += +_p0l)), _p0g;
-    };
-},
-function(_p0o, _p0p, _p0q) {
-    'use strict';
-    defineModule(_p0p);
-    Object.defineProperty(_p0p, '__esModule', {
-        'value': !0
-    });
-    var _p0r = _p0q(3);
-    _p0p.getSlot439PersonalEffect = function(_p0s) {
-        var _p0t = new _p0r.SlotItemEffectModel();
-        1 != _p0s.stype && 2 != _p0s.stype && 3 != _p0s.stype && 21 != _p0s.stype || (_p0t.tais += 1, _p0t.kaih += 1), 101 != _p0s.ctype && 1 != _p0s.stype || (_p0t.tais += 1);
-        var _p0u = _p0s.getCountryName();
-        return 'アメリカ' != _p0u && 'イギリス' != _p0u || (_p0t.tais += 2), _p0t;
-    };
-},
-function(_p0v, _p0w, _p0x) {
-    'use strict';
-    defineModule(_p0w);
-    Object.defineProperty(_p0w, '__esModule', {
-        'value': !0
-    });
-    var _p0y = _p0x(3);
-    _p0w.getSlot440_441PersonalEffect = function(_p0z) {
-        var _p10 = new _p0y.SlotItemEffectModel();
-        return 114 == _p0z.ctype && (_p10.raig += 2), _p10;
-    };
-},
-function(_p11, _p12, _p13) {
-    'use strict';
-    defineModule(_p12);
-    Object.defineProperty(_p12, '__esModule', {
-        'value': !0
-    });
-    var _p14 = _p13(3);
-    _p12.getSlot442_443PersonalEffect = function(_p15) {
-        var _p16 = new _p14.SlotItemEffectModel();
-        return 122 == _p15.ctype ? (_p16.raig += 1, _p16.kaih += 2) : 114 == _p15.ctype && (_p16.raig += 2), _p16;
-    };
-},
-function(_p17, _p18, _p19) {
-    'use strict';
-    defineModule(_p18);
-    Object.defineProperty(_p18, '__esModule', {
-        'value': !0
-    });
-    var _p1a = _p19(3);
-    _p18.getSlot447PersonalEffect = function(_p1b) {
-        var _p1c = new _p1a.SlotItemEffectModel(),
-            _p1d = _p1b.get_each_level_nums(447),
-            _p1e = 0,
-            _p1f = 0,
-            _p1g = 0,
-            _p1h = 0;
-        _p1d.forEach(function(_p1i, _p1j) {
-            2 <= _p1j && (_p1e += _p1i), 4 <= _p1j && (_p1f += _p1i), 6 <= _p1j && (_p1g += _p1i), 8 <= _p1j && (_p1h += _p1i);
-        }), 1 <= _p1e && (_p1c.houg += +_p1e), 1 <= _p1f && (_p1c.tyku += +_p1f), 1 <= _p1g && (_p1c.tais += +_p1g), 1 <= _p1h && (_p1c.kaih += +_p1h);
-        var _p1k = _p1d[10];
-        1 <= _p1k && (_p1c.tais += +_p1k);
-        var _p1l = !1,
-            _p1m = new _p1a.SlotItemEffectModel();
-        if (76 == _p1b.ctype && (_p1m.houg += 1, _p1m.tais += 1, _p1m.kaih += 2, _p1l = !0), 'うんよう' == _p1b.yomi ? (_p1m.houg += 1, _p1m.tais += 1, _p1m.kaih += 1, _p1l = !0) : 'ほうしょう' != _p1b.yomi && 'たいげい・りゅうほう' != _p1b.yomi || (_p1m.houg += 1, _p1m.tais += 2, _p1m.kaih += 1, _p1l = !0), 0 == _p1l) return _p1c;
-        894 != _p1b.ship_id && 899 != _p1b.ship_id || (_p1m.houg += 1, _p1m.kaih += 1, _p1m.tais += 1, _p1m.tyku += 1, _p1l = !0);
-        var _p1n = _p1b.get_slotnums(447);
-        return _p1c.add(_p1m.multiply(_p1n)), _p1c;
-    };
-},
-function(_p1o, _p1p, _p1q) {
-    'use strict';
-    var _p1r = this && this.__importDefault || function(_p1s) {
-        return _p1s && _p1s.__esModule ? _p1s : {
-            'default': _p1s
-        };
-    };
-    defineModule(_p1p);
-    Object.defineProperty(_p1p, '__esModule', {
-        'value': !0
-    });
-    var _p1t = _p1q(3),
-        _p1u = _p1r(_p1q(0));
-    _p1p.getSlot84PersonalEffect = function(_p1v) {
-        var _p1w = new _p1t.SlotItemEffectModel(),
-            _p1x = _p1v.get_each_level_nums(84),
-            _p1y = 0,
-            _p1z = 0;
-        if (_p1x.forEach(function(_p20, _p21) {
-                4 <= _p21 && (_p1y += _p20), 7 <= _p21 && (_p1z += _p20);
-            }), 0 == _p1y) return _p1w;
-        for (var _p22 = 0, _p23 = 0, _p24 = _p1v.have_slot_ids(); _p23 < _p24.length; _p23++) {
-            var _p25 = _p24[_p23],
-                _p26 = _p1u.default.model.slot.getMst(_p25),
-                _p27 = _p26.equipType;
-            12 != _p27 && 13 != _p27 || (5 <= _p26.sakuteki && _p1v.get_slotnums(parseInt(_p25)), 2 <= _p26.taiku && (_p22 += _p1v.get_slotnums(parseInt(_p25))));
-        }
-        var _p28 = _p1v.getCountryName();
-        1 <= _p1y && (_p1w.tyku += +_p1y, _p1w.kaih += +_p1y, 'ドイツ' != _p28 && 'イタリア' != _p28 || (_p1w.tyku += +_p1y, _p1w.kaih += +_p1y), 1 <= _p22 && (_p1w.tyku += 1)), 1 <= _p1z && (_p1w.tyku += +_p1z, _p1w.houg += +_p1z);
-        var _p29 = _p1x[10];
-        return 1 <= _p29 && (_p1w.tyku += +_p29, _p1w.kaih += +_p29, 'ドイツ' != _p28 && 'イタリア' != _p28 || (_p1w.houg += 1)), _p1w;
-    };
-},
-function(_p2a, _p2b, _p2c) {
-    'use strict';
-    defineModule(_p2b);
-    Object.defineProperty(_p2b, '__esModule', {
-        'value': !0
-    });
-    var _p2d = _p2c(3);
-    _p2b.getSlot70PersonalEffect = function(_p2e) {
-        var _p2f = new _p2d.SlotItemEffectModel(),
-            _p2g = !1,
-            _p2h = new _p2d.SlotItemEffectModel();
-        if ('やましおまる' == _p2e.yomi && (_p2h.houg += 1, _p2h.tais += 1, _p2g = !0), 0 == _p2g) return _p2f;
-        var _p2i = _p2e.get_slotnums(70);
-        return _p2f.add(_p2h.multiply(_p2i)), _p2f;
-    };
-},
-function(_p2j, _p2k, _p2l) {
-    'use strict';
-    defineModule(_p2k);
-    Object.defineProperty(_p2k, '__esModule', {
-        'value': !0
-    });
-    var _p2m = _p2l(3);
-    _p2k.getSlot346PersonalEffect = function(_p2n) {
-        var _p2o = new _p2m.SlotItemEffectModel();
-        return 'やましおまる' == _p2n.yomi && (_p2o.kaih += 1, _p2o.tais += 1), _p2o;
-    };
-},
-function(_p2p, _p2q, _p2r) {
-    'use strict';
-    defineModule(_p2q);
-    Object.defineProperty(_p2q, '__esModule', {
-        'value': !0
-    });
-    var _p2s = _p2r(3);
-    _p2q.getSlot347PersonalEffect = function(_p2t) {
-        var _p2u = new _p2s.SlotItemEffectModel();
-        return 'やましおまる' == _p2t.yomi && (_p2u.kaih += 2, _p2u.tais += 2), _p2u;
-    };
-},
-function(_p2v, _p2w, _p2x) {
-    'use strict';
-    defineModule(_p2w);
-    Object.defineProperty(_p2w, '__esModule', {
-        'value': !0
-    });
-    var _p2y = _p2x(3);
-    _p2w.getSlot450PersonalEffect = function(_p2z) {
-        var _p30 = new _p2y.SlotItemEffectModel(),
-            _p31 = !1,
-            _p32 = new _p2y.SlotItemEffectModel();
-        if (101 == _p2z.ctype && (_p32.houg += 1, _p32.tyku += 2, _p32.souk += 1, _p32.kaih += 3, _p31 = !0), 1 == _p2z.stype && (_p32.tyku += 1, _p32.souk += 1, _p32.kaih += 2, _p31 = !0), 0 == _p31) return _p30;
-        var _p33 = _p2z.get_slotnums(450);
-        return _p30.add(_p32.multiply(_p33)), _p30;
-    };
-},
-function(_p34, _p35, _p36) {
-    'use strict';
-    defineModule(_p35);
-    Object.defineProperty(_p35, '__esModule', {
-        'value': !0
-    });
-    var _p37 = _p36(3);
-    _p35.getSlot451PersonalEffect = function(_p38) {
-        var _p39 = new _p37.SlotItemEffectModel(),
-            _p3a = !1,
-            _p3b = new _p37.SlotItemEffectModel(),
-            _p3c = 0;
-        if ('あきつまる' == _p38.yomi ? (_p3b.houg += 1, _p3b.tais += 2, _p3a = !0, 166 == _p38.ship_id && (_p3c = 2)) : 'やましおまる' == _p38.yomi && (_p3b.houg += 1, _p3b.tais += 3, _p3a = !0, _p3c = 1), 0 == _p3a) return _p39;
-        var _p3d = _p38.get_slotnums(451);
-        if (_p39.add(_p3b.multiply(_p3d)), 0 == _p3c) return _p39;
-        var _p3e = _p38.get_each_level_nums(451),
-            _p3f = [];
-        return 0 < _p3c && _p3e.forEach(function(_p3g, _p3h) {
-            for (var _p3i = 1; _p3i <= _p38.SLOT_LEVEL_MAX; _p3i++) _p3i <= _p3h && (null == _p3f[_p3i] && (_p3f[_p3i] = 0), _p3f[_p3i] += _p3g);
-        }), 1 == _p3c ? (1 <= _p3f[1] && (_p39.houg += 2 * _p3f[1]), 1 <= _p3f[2] && (_p39.houm += +_p3f[2]), 1 <= _p3f[3] && (_p39.tais += +_p3f[3]), 1 <= _p3f[4] && (_p39.houg += +_p3f[4]), 1 <= _p3f[6] && (_p39.houm += +_p3f[6]), 1 <= _p3f[8] && (_p39.tais += +_p3f[8]), 1 <= _p3f[10] && (_p39.houg += +_p3f[10])) : 2 == _p3c && (1 <= _p3f[1] && (_p39.houg += +_p3f[1]), 1 <= _p3f[3] && (_p39.tais += +_p3f[3]), 1 <= _p3f[5] && (_p39.houm += +_p3f[5]), 1 <= _p3f[7] && (_p39.tais += +_p3f[7]), 1 <= _p3f[10] && (_p39.houg += +_p3f[10])), _p39;
-    };
-},
-function(_p3j, _p3k, _p3l) {
-    'use strict';
-    var _p3m = this && this.__importDefault || function(_p3n) {
-        return _p3n && _p3n.__esModule ? _p3n : {
-            'default': _p3n
-        };
-    };
-    defineModule(_p3k);
-    Object.defineProperty(_p3k, '__esModule', {
-        'value': !0
-    });
-    var _p3o = _p3l(3),
-        _p3p = _p3m(_p3l(0));
-    _p3k.getSlot455PersonalEffect = function(_p3q) {
-        var _p3r = new _p3o.SlotItemEffectModel(),
-            _p3s = !1,
-            _p3t = new _p3o.SlotItemEffectModel(),
-            _p3u = 0,
-            _p3v = _p3q.get_slotnums(455);
-        if (1 != _p3q.ctype && 5 != _p3q.ctype && 12 != _p3q.ctype || (_p3t.houg += 2, _p3t.tyku += 1, 12 == _p3q.ctype && (_p3t.houg += 1), 666 == _p3q.ship_id ? (_p3t.houg += 1, _p3t.tais += 1) : 959 == _p3q.ship_id && (_p3t.houg += 2, 2 <= _p3v && (_p3r.houg += 2), 3 <= _p3v && (_p3r.houg += 3)), _p3u = 1, _p3s = !0), 'うらなみ' == _p3q.yomi && (_p3t.houg += 1, 647 == _p3q.ship_id && (_p3t.houg += 1, _p3t.raig += 1, _p3t.tais += 1, _p3t.kaih += 1), _p3s = !0), 0 == _p3s) return _p3r;
-        if (_p3r.add(_p3t.multiply(_p3v)), 0 == _p3u) return _p3r;
-        for (var _p3w, _p3x, _p3y = 0, _p3z = 0, _p40 = 0, _p41 = _p3q.have_slot_ids(); _p40 < _p41.length; _p40++) {
-            var _p42 = _p41[_p40],
-                _p43 = _p3p.default.model.slot.getMst(_p42),
-                _p44 = _p43.equipType;
-            12 != _p44 && 13 != _p44 || (5 <= _p43.sakuteki && (_p3y += _p3q.get_slotnums(parseInt(_p42))), 2 <= _p43.taiku && (_p3z += _p3q.get_slotnums(parseInt(_p42))));
-        }
-        return 1 == _p3u && (1 <= _p3y && (_p3r.houg += 3, _p3r.kaih += 2, _p3r.raig += 1), 1 == (_p3x = _p3q.get_slotnums(13) + _p3q.get_slotnums(125) + (_p3w = _p3q.get_slotnums(285))) ? (_p3r.houg += 1, _p3r.raig += 3) : 2 <= _p3x && (_p3r.houg += 2, _p3r.raig += 5), 1 <= _p3w && (_p3r.raig += 1), 1 <= _p3z && (_p3r.tyku += 4)), _p3r;
-    };
-},
-function(_p45, _p46, _p47) {
-    'use strict';
-    defineModule(_p46);
-    Object.defineProperty(_p46, '__esModule', {
-        'value': !0
-    });
-    var _p48 = _p47(3);
-    _p46.getSlot456PersonalEffect = function(_p49) {
-        var _p4a = new _p48.SlotItemEffectModel(),
-            _p4b = !1,
-            _p4c = new _p48.SlotItemEffectModel(),
-            _p4d = _p49.getCountryName();
-        if ('アメリカ' == _p4d && (_p4c.houg += 3, _p4c.kaih += 4, _p4c.saku += 4, _p4a.houm += 3, _p4b = !0), 'イギリス' != _p4d && 'オーストラリア' != _p4d || (_p4c.houg += 2, _p4c.kaih += 2, _p4c.saku += 2, _p4a.houm += 2, _p4b = !0), 87 != _p49.ctype && 91 != _p49.ctype || (_p4c.houg += 1, _p4a.leng += 1, _p4b = !0), 651 != _p49.ship_id && 656 != _p49.ship_id || (_p4a.houg += 2, _p4a.kaih += 2, _p4a.saku += 3, _p4a.leng += 1, _p4a.houm += 2), 0 == _p4b) return _p4a;
-        var _p4e = _p49.get_slotnums(456);
-        return _p4a.add(_p4c.multiply(_p4e)), _p4a;
-    };
-},
-function(_p4f, _p4g, _p4h) {
-    'use strict';
-    defineModule(_p4g);
-    Object.defineProperty(_p4g, '__esModule', {
-        'value': !0
-    });
-    var _p4i = _p4h(3);
-    _p4g.getSlot457PersonalEffect = function(_p4j) {
-        var _p4k = new _p4i.SlotItemEffectModel(),
-            _p4l = 0;
-        if (109 == _p4j.ctype ? (_p4k.raig += 3, _p4k.kaih += 3, _p4l = 1) : 71 == _p4j.ctype || 103 == _p4j.ctype ? (_p4k.raig += 2, _p4k.kaih += 2, _p4l = 2) : 44 == _p4j.ctype && (_p4k.raig += 1, _p4k.kaih += 4, _p4l = 3), 0 == _p4l) return _p4k;
-        var _p4m = _p4j.get_each_level_nums(461),
-            _p4n = [];
-        return 0 < _p4l && _p4m.forEach(function(_p4o, _p4p) {
-            for (var _p4q = 1; _p4q <= _p4j.SLOT_LEVEL_MAX; _p4q++) null == _p4n[_p4q] && (_p4n[_p4q] = 0), _p4q <= _p4p && (_p4n[_p4q] += _p4o);
-        }), 1 == _p4l ? (1 <= _p4n[2] && (_p4k.raig += +_p4n[2]), 1 <= _p4n[3] && (_p4k.kaih += +_p4n[3]), 1 <= _p4n[4] && (_p4k.raig += +_p4n[4]), 1 <= _p4n[5] && (_p4k.houm += +_p4n[5]), 1 <= _p4n[6] && (_p4k.raig += +_p4n[6]), 1 <= _p4n[8] && (_p4k.raig += +_p4n[8]), 1 <= _p4n[10] && (_p4k.houm += +_p4n[10])) : 2 == _p4l ? (1 <= _p4n[3] && (_p4k.kaih += +_p4n[3]), 1 <= _p4n[4] && (_p4k.raig += +_p4n[4]), 1 <= _p4n[6] && (_p4k.raig += +_p4n[6]), 1 <= _p4n[8] && (_p4k.raig += +_p4n[8]), 1 <= _p4n[10] && (_p4k.houm += +_p4n[10])) : 3 == _p4l && (1 <= _p4n[4] && (_p4k.raig += +_p4n[4]), 1 <= _p4n[6] && (_p4k.raig += +_p4n[6]), 1 <= _p4n[8] && (_p4k.raig += +_p4n[8]), 1 <= _p4n[10] && (_p4k.houm += +_p4n[10])), _p4k;
-    };
-},
-function(_p4r, _p4s, _p4t) {
-    'use strict';
-    defineModule(_p4s);
-    Object.defineProperty(_p4s, '__esModule', {
-        'value': !0
-    });
-    var _p4u = _p4t(3);
-    _p4s.getSlot458PersonalEffect = function(_p4v) {
-        var _p4w = new _p4u.SlotItemEffectModel(),
-            _p4x = 0,
-            _p4y = !1;
-        if (13 != _p4v.stype && 14 != _p4v.stype || (_p4y = !0), 109 == _p4v.ctype ? (_p4w.raig += 3, _p4w.kaih += 6, _p4x = 1) : 71 == _p4v.ctype || 103 == _p4v.ctype ? (_p4w.raig += 3, _p4w.kaih += 4, _p4x = 2) : 44 == _p4v.ctype && (_p4w.raig += 3, _p4w.kaih += 3, _p4x = 3), 0 == _p4y && 0 == _p4x) return _p4w;
-        var _p4z = [];
-        [458, 461].forEach(function(_p50) {
-            var _p51 = _p4v.get_each_level_nums(_p50);
-            null == _p4z[_p50] && (_p4z[_p50] = []), _p51.forEach(function(_p52, _p53) {
-                for (var _p54 = 1; _p54 <= _p4v.SLOT_LEVEL_MAX; _p54++) null == _p4z[_p50][_p54] && (_p4z[_p50][_p54] = 0), _p54 <= _p53 && (_p4z[_p50][_p54] += _p52);
-            });
-        });
-        var _p55 = _p4z[458][2],
-            _p56 = _p4z[458][3],
-            _p57 = _p4z[458][4],
-            _p58 = _p4z[458][5],
-            _p59 = _p4z[458][6],
-            _p5a = _p4z[458][8],
-            _p5b = _p4z[458][10],
-            _p5c = _p4z[461][4];
-        return 1 <= _p4x && _p4x <= 3 && (1 <= _p57 && (_p4w.houm += +_p57), 1 <= _p59 && (_p4w.kaih += +_p59), 1 <= _p5a && (_p4w.raig += +_p5a)), _p4y && (1 <= _p56 && (_p4w.kaih += +_p56), 1 <= _p58 && (_p4w.raig += +_p58), 1 <= _p5b && (_p4w.houm += +_p5b), 1 <= _p55 && 1 <= _p5c && (_p4w.raig += 7, _p4w.houm += 5)), _p4w;
-    };
-},
-function(_p5d, _p5e, _p5f) {
-    'use strict';
-    defineModule(_p5e);
-    Object.defineProperty(_p5e, '__esModule', {
-        'value': !0
-    });
-    var _p5g = _p5f(3);
-    _p5e.getSlot465PersonalEffect = function(_p5h) {
-        var _p5i = new _p5g.SlotItemEffectModel(),
-            _p5j = !1,
-            _p5k = new _p5g.SlotItemEffectModel(),
-            _p5l = _p5h.get_slotnums(142),
-            _p5m = _p5h.get_slotnums(460),
-            _p5n = _p5l + _p5m;
-        if (916 == _p5h.ship_id ? (_p5k.houg += 2, _p5k.kaih += 8, _p5k.houm += 2, 1 <= _p5m && (_p5i.kaih += 2, _p5i.houm += 1), _p5j = !0) : 911 != _p5h.ship_id && 546 != _p5h.ship_id || (_p5k.houg += 1, _p5k.kaih += 2, _p5k.houm += 1, 1 <= _p5m && (_p5i.kaih += 1, _p5i.houm += 1), _p5j = !0), 37 == _p5h.ctype && 1 <= _p5n && (_p5i.houg += 2, _p5i.houm += 2), 0 == _p5j) return _p5i;
-        var _p5o = _p5h.get_slotnums(465);
-        return _p5i.add(_p5k.multiply(_p5o)), _p5i;
-    };
-},
-function(_p5p, _p5q, _p5r) {
-    'use strict';
-    defineModule(_p5q);
-    Object.defineProperty(_p5q, '__esModule', {
-        'value': !0
-    });
-    var _p5s = _p5r(3);
-    _p5q.getSlot464PersonalEffect = function(_p5t) {
-        var _p5u = new _p5s.SlotItemEffectModel(),
-            _p5v = !1,
-            _p5w = new _p5s.SlotItemEffectModel(),
-            _p5x = _p5t.get_slotnums(142),
-            _p5y = _p5t.get_slotnums(460),
-            _p5z = _p5x + _p5y;
-        if (37 == _p5t.ctype ? (_p5w.tyku += 3, _p5w.kaih += 2, 1 <= _p5z && (_p5u.tyku += 2, _p5u.kaih += 1, _p5u.houm += 1), _p5v = !0) : 6 != _p5t.ctype && 73 != _p5t.ctype && 113 != _p5t.ctype || (_p5w.tyku = _p5w.tyku - 2, _p5w.kaih = _p5w.kaih - 2, _p5v = !0), 916 != _p5t.ship_id && 911 != _p5t.ship_id && 546 != _p5t.ship_id && 593 != _p5t.ship_id && 954 != _p5t.ship_id || (_p5w.tyku += 2, _p5w.kaih += 2, 1 <= _p5y && (_p5u.houg += 2, _p5u.tyku += 2, _p5u.kaih += 2, _p5u.houm += 3), _p5v = !0), 0 == _p5v) return _p5u;
-        var _p60 = _p5t.get_slotnums(464);
-        return _p5u.add(_p5w.multiply(_p60)), _p5u;
-    };
-},
-function(_p61, _p62, _p63) {
-    'use strict';
-    defineModule(_p62);
-    Object.defineProperty(_p62, '__esModule', {
-        'value': !0
-    });
-    var _p64 = _p63(3);
-    _p62.getSlot463PersonalEffect = function(_p65) {
-        var _p66 = new _p64.SlotItemEffectModel(),
-            _p67 = !1,
-            _p68 = new _p64.SlotItemEffectModel(),
-            _p69 = _p65.get_slotnums(142),
-            _p6a = _p65.get_slotnums(460),
-            _p6b = _p69 + _p6a;
-        if (37 == _p65.ctype && (_p68.houg += 1, _p68.tyku += 2, _p68.kaih += 1, _p68.houm += 1, 1 <= _p6b && (_p66.tyku += 1, _p66.kaih += 1, _p66.houm += 1), _p67 = !0), 916 != _p65.ship_id && 911 != _p65.ship_id && 546 != _p65.ship_id || (_p68.houg += 1, _p68.kaih += 1, _p68.houm += 2, 1 <= _p6a && (_p66.houg += 1, _p66.kaih += 1, _p66.houm += 2), _p67 = !0), 0 == _p67) return _p66;
-        var _p6c = _p65.get_slotnums(463);
-        return _p66.add(_p68.multiply(_p6c)), _p66;
-    };
-},
-function(_p6d, _p6e, _p6f) {
-    'use strict';
-    defineModule(_p6e);
-    Object.defineProperty(_p6e, '__esModule', {
-        'value': !0
-    });
-    var _p6g = _p6f(3);
-    _p6e.getSlot12PersonalEffect = function(_p6h) {
-        var _p6i = new _p6g.SlotItemEffectModel(),
-            _p6j = !1,
-            _p6k = new _p6g.SlotItemEffectModel(),
-            _p6l = _p6h.get_slotnums(142) + _p6h.get_slotnums(460);
-        if (37 == _p6h.ctype && (_p6k.houg += 1, _p6k.kaih += 1, _p6k.houm += 1, 1 <= _p6l && (_p6i.kaih += 1, _p6i.houm += 1), _p6j = !0), 0 == _p6j) return _p6i;
-        var _p6m = _p6h.get_slotnums(12);
-        return _p6i.add(_p6k.multiply(_p6m)), _p6i;
-    };
-},
-function(_p6n, _p6o, _p6p) {
-    'use strict';
-    defineModule(_p6o);
-    Object.defineProperty(_p6o, '__esModule', {
-        'value': !0
-    });
-    var _p6q = _p6p(3);
-    _p6o.getSlot234PersonalEffect = function(_p6r) {
-        var _p6s = new _p6q.SlotItemEffectModel(),
-            _p6t = !1,
-            _p6u = new _p6q.SlotItemEffectModel(),
-            _p6v = _p6r.get_slotnums(142) + _p6r.get_slotnums(460);
-        if (37 == _p6r.ctype && (_p6u.houg += 1, _p6u.tyku += 1, _p6u.kaih += 1, _p6u.houm += 1, 1 <= _p6v && (_p6s.tyku += 1, _p6s.kaih += 1, _p6s.houm += 1), _p6t = !0), 0 == _p6t) return _p6s;
-        var _p6w = _p6r.get_slotnums(234);
-        return _p6s.add(_p6u.multiply(_p6w)), _p6s;
-    };
-},
-function(_p6x, _p6y, _p6z) {
-    'use strict';
-    defineModule(_p6y);
-    Object.defineProperty(_p6y, '__esModule', {
-        'value': !0
-    });
-    var _p70 = _p6z(3);
-    _p6y.getSlot51cmSeriesGunPersonalEffect = function(_p71) {
-        var _p72 = new _p70.SlotItemEffectModel(),
-            _p73 = !1,
-            _p74 = new _p70.SlotItemEffectModel(),
-            _p75 = _p71.get_slotnums(142),
-            _p76 = _p71.get_slotnums(460),
-            _p77 = _p75 + _p76;
-        if (916 != _p71.ship_id && 911 != _p71.ship_id && 546 != _p71.ship_id || (_p74.houg += 1, _p74.houm += 1, 1 <= _p76 && (_p72.kaih += 1, _p72.houm += 1), _p73 = !0), 37 == _p71.ctype && 1 <= _p77 && (_p72.houg += 1, _p72.houm += 2), 0 == _p73) return _p72;
-        var _p78 = _p71.get_slotnums(128) + _p71.get_slotnums(281);
-        return _p72.add(_p74.multiply(_p78)), _p72;
-    };
-},
-function(_p79, _p7a, _p7b) {
-    'use strict';
-    defineModule(_p7a);
-    Object.defineProperty(_p7a, '__esModule', {
-        'value': !0
-    });
-    var _p7c = _p7b(3);
-    _p7a.getSlot466PersonalEffect = function(_p7d) {
-        var _p7e = new _p7c.SlotItemEffectModel(),
-            _p7f = !1,
-            _p7g = new _p7c.SlotItemEffectModel();
-        if (277 == _p7d.ship_id || 278 == _p7d.ship_id || 156 == _p7d.ship_id || 288 == _p7d.ship_id || 112 == _p7d.ship_id || 280 == _p7d.ship_id || 279 == _p7d.ship_id ? (_p7g.houg += 1, _p7g.houm += 1, _p7f = !0) : 461 == _p7d.ship_id || 462 == _p7d.ship_id || 466 == _p7d.ship_id || 467 == _p7d.ship_id ? (_p7g.houg += 2, _p7g.kaih += 2, _p7g.houm += 1, _p7f = !0) : 594 != _p7d.ship_id && 698 != _p7d.ship_id && 646 != _p7d.ship_id && 599 != _p7d.ship_id && 610 != _p7d.ship_id && 196 != _p7d.ship_id && 197 != _p7d.ship_id || (_p7g.houg += 1, _p7g.kaih += 1, _p7g.houm += 2, _p7f = !0), 0 == _p7f) return _p7e;
-        var _p7h = _p7d.get_slotnums(466);
-        return _p7e.add(_p7g.multiply(_p7h)), _p7e;
-    };
-},
-function(_p7i, _p7j, _p7k) {
-    'use strict';
-    defineModule(_p7j);
-    Object.defineProperty(_p7j, '__esModule', {
-        'value': !0
-    });
-    var _p7l = _p7k(3);
-    _p7j.getSlot467PersonalEffect = function(_p7m) {
-        var _p7n = new _p7l.SlotItemEffectModel(),
-            _p7o = !1,
-            _p7p = new _p7l.SlotItemEffectModel();
-        if ('アメリカ' == _p7m.getCountryName()) {
-            for (var _p7q = _p7m.getUSSWaterRaderDict(), _p7r = _p7m.getUSSAirRaderDict(), _p7s = 0, _p7t = 0, _p7u = 0, _p7v = _p7m.have_slot_ids(); _p7u < _p7v.length; _p7u++) {
-                var _p7w = _p7v[_p7u];
-                _p7q[parseInt(_p7w)] && (_p7s += _p7m.get_slotnums(parseInt(_p7w))), _p7r[parseInt(_p7w)] && (_p7t += _p7m.get_slotnums(parseInt(_p7w)));
-            }
-            _p7p.houg += 1, _p7p.tyku += 1, _p7p.kaih += 2, 1 <= _p7s && (_p7n.houg += 1, _p7n.tyku += 1, _p7n.kaih += 1, _p7n.houm += 2), 1 <= _p7t && (_p7n.tyku += 2, _p7n.kaih += 2), 65 != _p7m.ctype && 93 != _p7m.ctype && 102 != _p7m.ctype && 107 != _p7m.ctype && 125 != _p7m.ctype || (_p7p.tyku += 2, _p7p.kaih += 1), _p7o = !0;
-        }
-        if (0 == _p7o) return _p7n;
-        var _p7x = _p7m.get_slotnums(467);
-        return _p7n.add(_p7p.multiply(_p7x)), _p7n;
-    };
-},
-function(_p7y, _p7z, _p80) {
-    'use strict';
-    defineModule(_p7z);
-    Object.defineProperty(_p7z, '__esModule', {
-        'value': !0
-    });
-    var _p81 = _p80(3);
-    _p7z.getSlot247PersonalEffect = function(_p82) {
-        var _p83 = new _p81.SlotItemEffectModel(),
-            _p84 = !1,
-            _p85 = new _p81.SlotItemEffectModel(),
-            _p86 = 0;
-        if ('フランス' == _p82.getCountryName() && (_p85.houg += 2, _p85.houm += 2, _p84 = !0, _p86 = 1), 0 == _p84) return _p83;
-        var _p87 = _p82.get_slotnums(247);
-        if (_p83.add(_p85.multiply(_p87)), 0 == _p86) return _p83;
-        var _p88 = _p82.get_each_level_nums(247),
-            _p89 = 0,
-            _p8a = 0;
-        0 < _p86 && _p88.forEach(function(_p8b, _p8c) {
-            4 <= _p8c && (_p89 += _p8b), 8 <= _p8c && (_p8a += _p8b);
-        });
-        var _p8d = _p88[10];
-        return 1 == _p86 && (1 <= _p89 && (_p83.houg += +_p89, _p83.houm += +_p89), 1 <= _p8a && (_p83.kaih += +_p8a, _p83.houg += +_p8a, _p83.houm += +_p8a), 1 <= _p8d && (_p83.kaih += +_p8d, _p83.houm += +_p8d)), _p83;
-    };
-},
-function(_p8e, _p8f, _p8g) {
-    'use strict';
-    defineModule(_p8f);
-    Object.defineProperty(_p8f, '__esModule', {
-        'value': !0
-    });
-    var _p8h = _p8g(3);
-    _p8f.getSlot38cmFourBarrelGunPersonalEffect = function(_p8i) {
-        var _p8j = new _p8h.SlotItemEffectModel(),
-            _p8k = _p8i.get_slotnums(245),
-            _p8l = _p8i.get_slotnums(246),
-            _p8m = _p8i.get_slotnums(468),
-            _p8n = _p8k + _p8l + _p8m,
-            _p8o = 0,
-            _p8p = 0,
-            _p8q = new Array();
-        if (79 != _p8i.ctype) return _p8j;
-        _p8j.houg += 2 * _p8n, _p8j.houm += +_p8n, 1 <= _p8m && (_p8j.houg += +_p8m, _p8p = 1, _p8q.push(468)), _p8o = 1;
-        var _p8r = _p8i.get_slotnums(247);
-        if (1 == _p8o && 1 <= _p8r && (_p8j.kaih += 2 * _p8r, _p8j.houg += 2 * _p8r, _p8j.houm += 2 * _p8r), 0 == _p8p) return _p8j;
-        for (var _p8s, _p8t, _p8u, _p8v = {}, _p8w = {}, _p8x = {}, _p8y = 0, _p8z = _p8q; _p8y < _p8z.length; _p8y++) {
-            var _p90 = _p8z[_p8y];
-            _p8w[_p90] = 0, _p8x[_p90] = 0;
-            for (var _p91 = _p8v[_p90] = 0, _p92 = _p8i.have_slots_dict[_p90]; _p91 < _p92.length; _p91++) {
-                var _p93 = _p92[_p91].level;
-                4 <= _p93 && _p8w[_p90]++, 8 <= _p93 && _p8x[_p90]++, 10 <= _p93 && _p8v[_p90]++;
-            }
-        }
-        return 1 == _p8p && 0 < _p8m && (_p8s = _p8w[468], _p8t = _p8x[468], _p8u = _p8v[468], 1 <= _p8s && (_p8j.houg += +_p8s, _p8j.houm += +_p8s), 1 <= _p8t && (_p8j.houg += +_p8t, _p8j.houm += +_p8t), 1 <= _p8u && (_p8j.houm += +_p8u)), _p8j;
-    };
-},
-function(_p94, _p95, _p96) {
-    'use strict';
-    var _p97 = this && this.__importDefault || function(_p98) {
-        return _p98 && _p98.__esModule ? _p98 : {
-            'default': _p98
-        };
-    };
-    defineModule(_p95);
-    Object.defineProperty(_p95, '__esModule', {
-        'value': !0
-    });
-    var _p99 = _p96(3),
-        _p9a = _p97(_p96(0));
-    _p95.getSlot470PersonalEffect = function(_p9b) {
-        var _p9c = new _p99.SlotItemEffectModel(),
-            _p9d = !1,
-            _p9e = new _p99.SlotItemEffectModel(),
-            _p9f = 0,
-            _p9g = 0;
-        23 == _p9b.ctype || 18 == _p9b.ctype ? (_p9e.houg += 1, _p9d = !0, _p9f = 1) : 30 == _p9b.ctype && (_p9e.houg += 2, _p9d = !0, _p9f = 2), 'しぐれ' != _p9b.yomi && 'ゆきかぜ' != _p9b.yomi && 'いそかぜ' != _p9b.yomi || (_p9e.kaih += 2, _p9d = !0), 961 == _p9b.ship_id && (_p9e.houg += 3, _p9e.houm += 3, _p9e.kaih += 2, _p9d = !0);
-        var _p9h = _p9b.get_slotnums(470);
-        566 != _p9b.ship_id && 567 != _p9b.ship_id && 568 != _p9b.ship_id && 656 != _p9b.ship_id && 670 != _p9b.ship_id && 915 != _p9b.ship_id && 651 != _p9b.ship_id && 145 != _p9b.ship_id && 961 != _p9b.ship_id && 951 != _p9b.ship_id || (_p9c.houg += 1, _p9c.houm += 2, 2 <= _p9h && (_p9c.houg += 2), _p9g = 1), _p9d && _p9c.add(_p9e.multiply(_p9h));
-        var _p9i = 0;
-        if (0 < _p9f)
-            for (var _p9j = 0, _p9k = _p9b.have_slot_ids(); _p9j < _p9k.length; _p9j++) {
-                var _p9l = _p9k[_p9j],
-                    _p9m = _p9a.default.model.slot.getMst(_p9l),
-                    _p9n = _p9m.equipType;
-                12 != _p9n && 13 != _p9n || (5 <= _p9m.sakuteki && (_p9i += _p9b.get_slotnums(parseInt(_p9l))), 2 <= _p9m.taiku && _p9b.get_slotnums(parseInt(_p9l)));
-            }
-        if (1 == _p9f ? 1 <= _p9i && (_p9c.houg += 1, _p9c.kaih += 1, _p9c.raig += 3, _p9c.houm += 1) : 2 == _p9f && 1 <= _p9i && (_p9c.houg += 2, _p9c.kaih += 1, _p9c.raig += 3, _p9c.houm += 3), 0 == _p9g) return _p9c;
-        var _p9o, _p9p = _p9b.get_each_level_nums(470),
-            _p9q = 0,
-            _p9r = 0;
-        return 0 < _p9g && _p9p.forEach(function(_p9s, _p9t) {
-            5 <= _p9t && (_p9q += _p9s), 8 <= _p9t && (_p9r += _p9s);
-        }), 1 == _p9g && (1 <= _p9q && (_p9c.houm += +_p9q), 1 <= _p9r && (_p9c.houg += +_p9r), 1 <= (_p9o = _p9p[10]) && (_p9c.houm += +_p9o)), _p9c;
-    };
-},
-function(_p9u, _p9v, _p9w) {
-    'use strict';
-    defineModule(_p9v);
-    Object.defineProperty(_p9v, '__esModule', {
-        'value': !0
-    });
-    var _p9x = _p9w(3);
-    _p9v.getSlot471PersonalEffect = function(_p9y) {
-        var _p9z = new _p9x.SlotItemEffectModel(),
-            _pa0 = !1,
-            _pa1 = new _p9x.SlotItemEffectModel(),
-            _pa2 = 0;
-        if ('フランス' == _p9y.getCountryName() && (_pa1.houg += 2, _pa1.kaih += 2, _pa1.houm += 2, _pa0 = !0, _pa2 = 1), 79 == _p9y.ctype && (_pa1.houg += 2, _pa1.houm += 1, _pa0 = !0), 0 == _pa0) return _p9z;
-        var _pa3 = _p9y.get_slotnums(471);
-        if (_p9z.add(_pa1.multiply(_pa3)), 0 == _pa2) return _p9z;
-        var _pa4, _pa5 = _p9y.get_each_level_nums(471),
-            _pa6 = 0,
-            _pa7 = 0;
-        return 0 < _pa2 && _pa5.forEach(function(_pa8, _pa9) {
-            6 <= _pa9 && (_pa6 += _pa8), 8 <= _pa9 && (_pa7 += _pa8);
-        }), 1 == _pa2 && (1 <= _pa6 && (_p9z.kaih += +_pa6, _p9z.houm += +_pa6), 1 <= _pa7 && (_p9z.houg += +_pa7, _p9z.kaih += +_pa7, _p9z.houm += +_pa7), 1 <= (_pa4 = _pa5[10]) && (_p9z.houg += +_pa4, _p9z.houm += +_pa4)), _p9z;
-    };
-},
-function(_paa, _pab, _pac) {
-    'use strict';
-    defineModule(_pab);
-    Object.defineProperty(_pab, '__esModule', {
-        'value': !0
-    });
-    var _pad = _pac(3);
-    _pab.getSlot472PersonalEffect = function(_pae) {
-        var _paf, _pag = new _pad.SlotItemEffectModel(),
-            _pah = !1,
-            _pai = new _pad.SlotItemEffectModel(),
-            _paj = _pae.getCountryName();
-        return 'アメリカ' == _paj && (_pai.tais += 2, _pah = !0), 'イギリス' == _paj && (_pai.tais += 1, _pah = !0), 1 == _pae.stype && (_pai.kaih += 1, _pah = !0), _pah && (_paf = _pae.get_slotnums(472), _pag.add(_pai.multiply(_paf))), 920 == _pae.ship_id && (_pag.tais += 1, _pag.kaih += 1, _pag.houm += 1), _pag;
-    };
-},
-function(_pak, _pal, _pam) {
-    'use strict';
-    defineModule(_pal);
-    Object.defineProperty(_pal, '__esModule', {
-        'value': !0
-    });
-    var _pan = _pam(3);
-    _pal.getSlot227PersonalEffect = function(_pao) {
-        var _pap = new _pan.SlotItemEffectModel(),
-            _paq = _pao.get_each_level_nums(227),
-            _par = 0;
-        _paq.forEach(function(_pas, _pat) {
-            8 <= _pat && (_par += _pas);
-        }), 1 <= _par && (_pap.tais += +_par);
-        var _pau = _paq[10];
-        return 1 <= _pau && (_pap.tais += +_pau), _pap;
-    };
-},
-function(_pav, _paw, _pax) {
-    'use strict';
-    defineModule(_paw);
-    Object.defineProperty(_paw, '__esModule', {
-        'value': !0
-    });
-    var _pay = _pax(3);
-    _paw.getSlot132PersonalEffect = function(_paz) {
-        var _pb0 = new _pay.SlotItemEffectModel(),
-            _pb1 = _paz.get_each_level_nums(132),
-            _pb2 = 0,
-            _pb3 = 0,
-            _pb4 = 0,
-            _pb5 = 0,
-            _pb6 = 0;
-        return _pb1.forEach(function(_pb7, _pb8) {
-            3 <= _pb8 && (_pb2 += _pb7), 5 <= _pb8 && (_pb3 += _pb7), 7 <= _pb8 && (_pb4 += _pb7), 8 <= _pb8 && (_pb5 += _pb7), 9 <= _pb8 && (_pb6 += _pb7);
-        }), 1 <= _pb2 && (_pb0.kaih += 1), 1 <= _pb3 && (_pb0.tais += 1), 1 <= _pb4 && (_pb0.kaih += 1), 1 <= _pb5 && (_pb0.tais += 1), 1 <= _pb6 && (_pb0.houm += 1), 1 <= _pb1[10] && (_pb0.tais += 1), 911 != _paz.ship_id && 916 != _paz.ship_id && 546 != _paz.ship_id || (_pb0.kaih += 1), 461 != _paz.ship_id && 466 != _paz.ship_id && 462 != _paz.ship_id && 467 != _paz.ship_id && 156 != _paz.ship_id || (_pb0.kaih += 2), _pb0;
-    };
-},
-function(_pb9, _pba, _pbb) {
-    'use strict';
-    defineModule(_pba);
-    Object.defineProperty(_pba, '__esModule', {
-        'value': !0
-    });
-    var _pbc = _pbb(3);
-    _pba.getSlot473PersonalEffect = function(_pbd) {
-        var _pbe = new _pbc.SlotItemEffectModel(),
-            _pbf = !1,
-            _pbg = new _pbc.SlotItemEffectModel(),
-            _pbh = _pbd.getCountryName();
-        if ('アメリカ' == _pbh && (_pbg.houg += 1, _pbg.kaih += 1, _pbg.tyku += 1, _pbf = !0), 'イギリス' == _pbh && (_pbg.houg += 1, _pbg.kaih += 1, _pbf = !0), 0 == _pbf) return _pbe;
-        var _pbi = _pbd.get_slotnums(473);
-        return _pbe.add(_pbg.multiply(_pbi)), _pbe;
-    };
-},
-function(_pbj, _pbk, _pbl) {
-    'use strict';
-    defineModule(_pbk);
-    Object.defineProperty(_pbk, '__esModule', {
-        'value': !0
-    });
-    var _pbm = _pbl(3);
-    _pbk.getSlot474PersonalEffect = function(_pbn) {
-        var _pbo = new _pbm.SlotItemEffectModel(),
-            _pbp = !1,
-            _pbq = new _pbm.SlotItemEffectModel(),
-            _pbr = _pbn.getCountryName();
-        if ('アメリカ' == _pbr && (_pbq.houg += 2, _pbq.kaih += 1, _pbq.tyku += 1, _pbp = !0), 'イギリス' == _pbr && (_pbq.houg += 1, _pbq.kaih += 1, _pbq.tyku += 1, _pbp = !0), 'フランス' == _pbr && (_pbq.houg += 1, _pbq.tyku += 1, _pbp = !0), 707 != _pbn.ship_id && 930 != _pbn.ship_id || (_pbq.houg += 1, _pbq.kaih += 1, _pbp = !0), 0 == _pbp) return _pbo;
-        var _pbs = _pbn.get_slotnums(474);
-        return _pbo.add(_pbq.multiply(_pbs)), _pbo;
-    };
-},
-function(_pbt, _pbu, _pbv) {
-    'use strict';
-    defineModule(_pbu);
-    Object.defineProperty(_pbu, '__esModule', {
-        'value': !0
-    });
-    var _pbw = _pbv(3);
-    _pbu.getSlot478PersonalEffect = function(_pbx) {
-        var _pby = new _pbw.SlotItemEffectModel(),
-            _pbz = _pbx.get_each_level_nums(478),
-            _pc0 = [];
-        return _pbz.forEach(function(_pc1, _pc2) {
-            for (var _pc3 = 1; _pc3 <= _pbx.SLOT_LEVEL_MAX; _pc3++) _pc3 <= _pc2 && (null == _pc0[_pc3] && (_pc0[_pc3] = 0), _pc0[_pc3] += _pc1);
-        }), _pc0.every(function(_pc4) {
-            return 0 == _pc4;
-        }) || (1 <= _pc0[1] && (_pby.houg += 1), 1 <= _pc0[2] && (_pby.houm += 1), 1 <= _pc0[3] && (_pby.kaih += 1), 1 <= _pc0[4] && (_pby.baku += 1), 1 <= _pc0[5] && (_pby.raig += 1), 1 <= _pc0[6] && (_pby.tyku += 1), 1 <= _pc0[7] && (_pby.houg += 1), 1 <= _pc0[8] && (_pby.houm += 1), 1 <= _pc0[9] && (_pby.kaih += 1), 1 <= _pc0[10] && (_pby.houg += 1)), _pby;
-    };
-},
-function(_pc5, _pc6, _pc7) {
-    'use strict';
-    defineModule(_pc6);
-    Object.defineProperty(_pc6, '__esModule', {
-        'value': !0
-    });
-    var _pc8 = _pc7(3);
-    _pc6.getSlot483PersonalEffect = function(_pc9) {
-        var _pca = new _pc8.SlotItemEffectModel(),
-            _pcb = 0,
-            _pcc = 0,
-            _pcd = 0,
-            _pce = 0,
-            _pcf = 0,
-            _pcg = 0,
-            _pch = 0;
-        if (6 == _pc9.ctype ? (_pca.houg += 2, _pca.tyku += 3, _pca.houm += 1, _pcb = 1) : 2 == _pc9.ctype ? (_pca.houg += 1, _pca.tyku += 2, _pca.kaih += 2, _pca.houm += 1, _pcc = 1) : 37 == _pc9.ctype && (_pcd = 1), 8 == _pc9.stype || 9 == _pc9.stype || 10 == _pc9.stype ? _pce = 1 : 5 != _pc9.stype && 6 != _pc9.stype || (_pcf = 1), 149 == _pc9.ship_id ? (_pca.houg += 2, _pca.tyku += 2) : 591 == _pc9.ship_id ? (_pca.houg += 3, _pca.tyku += 3, _pca.kaih += 1) : 150 == _pc9.ship_id ? (_pca.houg += 1, _pca.tyku += 1) : 592 == _pc9.ship_id ? (_pca.houg += 2, _pca.tyku += 2, _pca.kaih += 2) : 151 == _pc9.ship_id ? (_pca.houg += 1, _pca.tyku += 2, _pca.kaih += 2) : 593 == _pc9.ship_id ? (_pca.houg += 2, _pca.tyku += 5, _pca.kaih += 3) : 954 == _pc9.ship_id ? (_pca.houg += 2, _pca.tyku += 4, _pca.kaih += 2) : 152 == _pc9.ship_id ? (_pca.houg += 2, _pca.tyku += 2) : 911 == _pc9.ship_id || 916 == _pc9.ship_id || 546 == _pc9.ship_id ? (_pca.houg += 2, _pca.tyku += 2, _pca.kaih += 2, _pcg = 1) : 553 == _pc9.ship_id || 554 == _pc9.ship_id ? (_pca.houg += 1, _pca.tyku += 2, _pca.kaih += 1, _pch = 1) : 541 == _pc9.ship_id || 411 == _pc9.ship_id || 412 == _pc9.ship_id ? (_pca.houg += 1, _pca.tyku += 2) : 573 == _pc9.ship_id && (_pca.houg += 2, _pca.tyku += 2, _pca.kaih += 1), 0 == [_pcb, _pcc, _pcd, _pce, _pcf, _pcg, _pch].reduce(function(_pci, _pcj) {
-                return _pci + _pcj;
-            }, 0)) return _pca;
-        var _pck = _pc9.get_each_level_nums(483),
-            _pcl = 0,
-            _pcm = [];
-        return _pck.forEach(function(_pcn, _pco) {
-            6 <= _pco && (_pcl += _pcn);
-            for (var _pcp = 1; _pcp <= _pc9.SLOT_LEVEL_MAX; _pcp++) null == _pcm[_pcp] && (_pcm[_pcp] = 0), _pcp <= _pco && (_pcm[_pcp] += _pcn);
-        }), 1 == _pcb ? (1 <= _pcl && (_pca.houm += 1), 1 <= _pck[10] && (_pca.houm += 1)) : 1 == _pcc ? (1 <= _pcm[5] && (_pca.kaih += 1), 1 <= _pcm[6] && (_pca.houm += 1), 1 <= _pcm[10] && (_pca.kaih += 1)) : 1 == _pcd && (1 <= _pcm[6] && (_pca.houm += 1), 1 <= _pcm[10] && (_pca.kaih += 1)), 1 == _pce ? (1 <= _pcm[2] && (_pca.tyku += 1), 1 <= _pcm[4] && (_pca.houg += 1), 1 <= _pcm[7] && (_pca.kaih += 1), 1 <= _pcm[8] && (_pca.tyku += 1), 1 <= _pcm[9] && (_pca.houg += 1)) : 1 == _pcf && (1 <= _pcm[2] && (_pca.tyku += 1), 1 <= _pcm[4] && (_pca.houg += 1), 1 <= _pcm[6] && (_pca.kaih += 1), 1 <= _pcm[8] && (_pca.houm += 1), 1 <= _pcm[10] && (_pca.houg += 1)), 1 == _pcg ? 1 <= _pcm[5] && (_pca.houm += 1) : 1 == _pch && (1 <= _pcm[1] && (_pca.houm += 1), 1 <= _pcm[3] && (_pca.houm += 1)), _pca;
-    };
-},
-function(_pcq, _pcr, _pcs) {
-    'use strict';
-    defineModule(_pcr);
-    Object.defineProperty(_pcr, '__esModule', {
-        'value': !0
-    });
-    var _pct = _pcs(3);
-    _pcr.getSlot485PersonalEffect = function(_pcu) {
-        var _pcv, _pcw = new _pct.SlotItemEffectModel(),
-            _pcx = !1,
-            _pcy = new _pct.SlotItemEffectModel();
-        9 == _pcu.ctype && (_pcy.houg += 1, _pcy.kaih += 2, _pcy.tyku += 3, _pcx = !0), 501 != _pcu.ship_id && 506 != _pcu.ship_id || (_pcy.kaih += 1, _pcy.tyku += 2, _pcy.houm += 1, _pcx = !0), _pcx && (_pcv = _pcu.get_slotnums(485), _pcw.add(_pcy.multiply(_pcv)));
-        var _pcz = _pcu.get_each_level_nums(485),
-            _pd0 = 0,
-            _pd1 = 0,
-            _pd2 = 0,
-            _pd3 = _pcz[10];
-        return _pcz.forEach(function(_pd4, _pd5) {
-            3 <= _pd5 && (_pd0 += _pd4), 5 <= _pd5 && (_pd1 += _pd4), 7 <= _pd5 && (_pd2 += _pd4);
-        }), 0 < _pd0 && (_pcw.houg += +_pd0), 0 < _pd1 && (_pcw.tyku += +_pd1), 0 < _pd2 && (_pcw.kaih += +_pd2), 0 < _pd3 && (_pcw.houm += +_pd3), _pcw;
-    };
-},
-function(_pd6, _pd7, _pd8) {
-    'use strict';
-    var _pd9 = this && this.__importDefault || function(_pda) {
-        return _pda && _pda.__esModule ? _pda : {
-            'default': _pda
-        };
-    };
-    defineModule(_pd7);
-    Object.defineProperty(_pd7, '__esModule', {
-        'value': !0
-    });
-    var _pdb = _pd8(3),
-        _pdc = _pd9(_pd8(0));
-    _pd7.getSlot275PersonalEffect = function(_pdd) {
-        var _pde = new _pdb.SlotItemEffectModel(),
-            _pdf = !1,
-            _pdg = new _pdb.SlotItemEffectModel(),
-            _pdh = 0,
-            _pdi = 0;
-        if (894 != _pdd.ship_id && 899 != _pdd.ship_id || (_pdg.houg += 1, _pdg.tyku += 3, _pdg.kaih += 2, _pdf = !0, _pdh = _pdi = 1), 0 == _pdf) return _pde;
-        var _pdj = _pdd.get_slotnums(275);
-        _pde.add(_pdg.multiply(_pdj));
-        var _pdk = 0;
-        if (0 < _pdh)
-            for (var _pdl = 0, _pdm = _pdd.have_slot_ids(); _pdl < _pdm.length; _pdl++) {
-                var _pdn = _pdm[_pdl],
-                    _pdo = _pdc.default.model.slot.getMst(_pdn),
-                    _pdp = _pdo.equipType;
-                12 != _pdp && 13 != _pdp || (5 <= _pdo.sakuteki && _pdd.get_slotnums(parseInt(_pdn)), 2 <= _pdo.taiku && (_pdk += _pdd.get_slotnums(parseInt(_pdn))));
-            }
-        if (1 == _pdh && 0 < _pdk && (_pde.tyku += 3, _pde.kaih += 3), 0 == _pdi) return _pde;
-        var _pdq = _pdd.get_each_level_nums(275),
-            _pdr = 0,
-            _pds = _pdq[10];
-        return 0 < _pdi && _pdq.forEach(function(_pdt, _pdu) {
-            7 <= _pdu && (_pdr += _pdt);
-        }), 1 == _pdi && (0 < _pdr && (_pde.tyku += +_pdr, _pde.kaih += +_pdr), 0 < _pds && (_pde.houg += +_pds, _pde.tyku += +_pds, _pde.houm += +_pds)), _pde;
-    };
-},
-function(_pdv, _pdw, _pdx) {
-    'use strict';
-    defineModule(_pdw);
-    Object.defineProperty(_pdw, '__esModule', {
-        'value': !0
-    });
-    var _pdy = _pdx(3);
-    _pdw.getSlot486PersonalEffect = function(_pdz) {
-        var _pe0, _pe1 = new _pdy.SlotItemEffectModel(),
-            _pe2 = !1,
-            _pe3 = new _pdy.SlotItemEffectModel();
-        894 == _pdz.ship_id || 899 == _pdz.ship_id ? (_pe3.houg += 4, _pe3.tyku += 4, _pe3.kaih += 3, _pe3.houm += 2, _pe2 = !0) : 888 != _pdz.ship_id && 883 != _pdz.ship_id || (_pe3.houg += 2, _pe3.tyku += 2, _pe3.kaih += 2, _pe3.houm += 1, _pe2 = !0), _pe2 && (_pe0 = _pdz.get_slotnums(486), _pe1.add(_pe3.multiply(_pe0)));
-        var _pe4 = _pdz.get_each_level_nums(486),
-            _pe5 = 0,
-            _pe6 = 0,
-            _pe7 = _pe4[10];
-        return _pe4.forEach(function(_pe8, _pe9) {
-            6 <= _pe9 && (_pe5 += _pe8), 8 <= _pe9 && (_pe6 += _pe8);
-        }), 0 < _pe5 && (_pe1.kaih += +_pe5, _pe1.houm += +_pe5), 0 < _pe6 && (_pe1.tyku += +_pe6, _pe1.kaih += +_pe6), 0 < _pe7 && (_pe1.houg += +_pe7, _pe1.houm += +_pe7), _pe1;
-    };
-},
-function(_pea, _peb, _pec) {
-    'use strict';
-    defineModule(_peb);
-    Object.defineProperty(_peb, '__esModule', {
-        'value': !0
-    });
-    var _ped = _pec(3);
-    _peb.getSlot487PersonalEffect = function(_pee) {
-        var _pef, _peg = new _ped.SlotItemEffectModel(),
-            _peh = !1,
-            _pei = new _ped.SlotItemEffectModel();
-        894 == _pee.ship_id || 899 == _pee.ship_id ? (_pei.houg += 5, _pei.tyku += 3, _pei.kaih += 2, _pei.houm += 4, _peh = !0) : 888 != _pee.ship_id && 883 != _pee.ship_id || (_pei.houg += 3, _pei.tyku += 1, _pei.kaih += 1, _pei.houm += 2, _peh = !0), _peh && (_pef = _pee.get_slotnums(487), _peg.add(_pei.multiply(_pef)));
-        var _pej = _pee.get_each_level_nums(487),
-            _pek = 0,
-            _pel = 0,
-            _pem = _pej[10];
-        return _pej.forEach(function(_pen, _peo) {
-            6 <= _peo && (_pek += _pen), 8 <= _peo && (_pel += _pen);
-        }), 0 < _pek && (_peg.houg += +_pek, _peg.kaih += +_pek), 0 < _pel && (_peg.tyku += +_pel, _peg.houm += +_pel), 0 < _pem && (_peg.houg += +_pem, _peg.houm += +_pem), _peg;
-    };
-},
-function(_pep, _peq, _per) {
-    'use strict';
-    defineModule(_peq);
-    Object.defineProperty(_peq, '__esModule', {
-        'value': !0
-    });
-    var _pes = _per(3);
-    _peq.getSlot488PersonalEffect = function(_pet) {
-        var _peu = new _pes.SlotItemEffectModel(),
-            _pev = !1,
-            _pew = new _pes.SlotItemEffectModel(),
-            _pex = 0,
-            _pey = _pet.getCountryName(),
-            _pez = {
-                145: 1,
-                961: 1,
-                557: 2,
-                558: 2,
-                228: 2,
-                656: 2,
-                651: 2,
-                243: 2,
-                412: 3,
-                411: 3,
-                419: 3,
-                235: 3,
-                407: 3,
-                538: 3,
-                537: 3,
-                663: 3,
-                668: 3,
-                43: 3
-            }[_pet.ship_id];
-        if (('日本' == _pey && 2 == _pet.stype || {
-                74: 1,
-                77: 1,
-                85: 1,
-                117: 1,
-                104: 1
-            }[_pet.ctype] && 1 == _pet.stype) && (_pew.tais += 1, _pew.kaih += 1, _pev = !0), 1 == _pez ? (_pew.tais += 5, _pew.kaih += 4, _pew.houm += 2, _pev = !0, _pex = 1) : 2 == _pez ? (_pew.tais += 2, _pew.kaih += 1, _pew.houm += 1, _pev = !0, _pex = 2) : 3 == _pez && (_pew.tais += 1, _pev = !0, _pex = 2), 0 == _pev) return _peu;
-        var _pf0 = _pet.get_slotnums(488);
-        if (_peu.add(_pew.multiply(_pf0)), 0 == _pex) return _peu;
-        var _pf1 = _pet.get_each_level_nums(488),
-            _pf2 = [];
-        return _pf1.forEach(function(_pf3, _pf4) {
-            for (var _pf5 = 1; _pf5 <= _pet.SLOT_LEVEL_MAX; _pf5++) _pf5 <= _pf4 && (null == _pf2[_pf5] && (_pf2[_pf5] = 0), _pf2[_pf5] += _pf3);
-        }), 1 == _pex ? (1 <= _pf2[3] && (_peu.kaih += +_pf2[3]), 1 <= _pf2[5] && (_peu.tais += +_pf2[5]), 1 <= _pf2[7] && (_peu.houm += +_pf2[7]), 1 <= _pf2[8] && (_peu.kaih += +_pf2[8]), 1 <= _pf2[9] && (_peu.tais += +_pf2[9]), 1 <= _pf2[10] && (_peu.tais += +_pf2[10])) : 2 == _pex && (1 <= _pf2[5] && (_peu.tais += +_pf2[5]), 1 <= _pf2[7] && (_peu.kaih += +_pf2[7]), 1 <= _pf2[9] && (_peu.houm += +_pf2[9]), 1 <= _pf2[10] && (_peu.tais += +_pf2[10])), _peu;
-    };
-},
-function(_pf6, _pf7, _pf8) {
-    'use strict';
-    defineModule(_pf7);
-    Object.defineProperty(_pf7, '__esModule', {
-        'value': !0
-    });
-    var _pf9 = _pf8(3);
-    _pf7.getSlot489PersonalEffect = function(_pfa) {
-        var _pfb, _pfc = new _pf9.SlotItemEffectModel(),
-            _pfd = !1,
-            _pfe = new _pf9.SlotItemEffectModel();
-        'あきつまる' != _pfa.yomi && 'やましおまる' != _pfa.yomi && 'くまのまる' != _pfa.yomi || (_pfe.tyku = _pfe.tyku + 2, _pfe.kaih = _pfe.kaih + 1, _pfe.houg = _pfe.houg + 1, _pfe.tais = _pfe.tais + 1, _pfe.houm = _pfe.houm + 1, _pfd = !0), 717 != _pfa.ship_id && 948 != _pfa.ship_id || (_pfe.tyku = _pfe.tyku + 2, _pfe.kaih = _pfe.kaih + 2, _pfe.houg = _pfe.houg + 2, _pfe.tais = _pfe.tais + 1, _pfe.houm = _pfe.houm + 1, _pfd = !0), _pfd && (_pfb = _pfa.get_slotnums(489) + _pfa.get_slotnums(491), _pfc.add(_pfe.multiply(_pfb)));
-        var _pff = _pfa.get_each_level_nums(489),
-            _pfg = _pfa.get_each_level_nums(491),
-            _pfh = 0,
-            _pfi = 0,
-            _pfj = 0;
-        _pff.forEach(function(_pfk, _pfl) {
-            3 <= _pfl && (_pfh += _pfk), 6 <= _pfl && (_pfi += _pfk), 8 <= _pfl && (_pfj += _pfk);
-        }), _pfg.forEach(function(_pfm, _pfn) {
-            3 <= _pfn && (_pfh += _pfm), 6 <= _pfn && (_pfi += _pfm), 8 <= _pfn && (_pfj += _pfm);
-        });
-        var _pfo = _pff[10] + _pfg[10];
-        return 1 <= _pfh && (_pfc.kaih = _pfc.kaih + +_pfh), 1 <= _pfi && (_pfc.tais = _pfc.tais + +_pfi), 1 <= _pfj && (_pfc.houm = _pfc.houm + +_pfj), 1 <= _pfo && (_pfc.houg = _pfc.houg + +_pfo), _pfc;
-    };
-},
-function(_pfp, _pfq, _pfr) {
-    'use strict';
-    defineModule(_pfq);
-    Object.defineProperty(_pfq, '__esModule', {
-        'value': !0
-    });
-    var _pfs = _pfr(3);
-    _pfq.getSlotSmokePersonalEffect = function(_pft) {
-        var _pfu = new _pfs.SlotItemEffectModel(),
-            _pfv = !1,
-            _pfw = new _pfs.SlotItemEffectModel();
-        if (959 == _pft.ship_id && (_pfw.kaih += 4, _pfv = !0), 'ジョンストン' == _pft.yomi || 'サミュエル・B・ロバーツ' == _pft.yomi || 'せんだい' == _pft.yomi || 'はるかぜ' == _pft.yomi || 'かみかぜ' == _pft.yomi || 'しきなみ' == _pft.yomi || 'うらなみ' == _pft.yomi || 'あおば' == _pft.yomi ? (_pfw.kaih += 3, _pfv = !0) : 'いなづま' != _pft.yomi && 'はぐろ' != _pft.yomi && 'はつしも' != _pft.yomi && 'かすみ' != _pft.yomi && 'ふぶき' != _pft.yomi && 'あたご' != _pft.yomi && 'あまぎり' != _pft.yomi && 'はまなみ' != _pft.yomi || (_pfw.kaih += 2, _pfv = !0), 0 == _pfv) return _pfu;
-        var _pfx = _pft.get_slotnums(500) + _pft.get_slotnums(501);
-        return _pfu.add(_pfw.multiply(_pfx)), _pfu;
-    };
-},
-function(_pfy, _pfz, _pg0) {
-    'use strict';
-    var _pg1 = this && this.__importDefault || function(_pg2) {
-        return _pg2 && _pg2.__esModule ? _pg2 : {
-            'default': _pg2
-        };
-    };
-    defineModule(_pfz);
-    Object.defineProperty(_pfz, '__esModule', {
-        'value': !0
-    });
-    var _pg3 = _pg0(3),
-        _pg4 = _pg1(_pg0(0));
-    _pfz.getSlot502PersonalEffect = function(_pg5) {
-        var _pg6, _pg7, _pg8, _pg9, _pga, _pgb, _pgc, _pgd, _pge, _pgf, _pgg, _pgh, _pgi, _pgj = new _pg3.SlotItemEffectModel(),
-            _pgk = _pg5.get_slotnums(502),
-            _pgl = {
-                149: 2,
-                591: 2,
-                150: 1,
-                592: 1,
-                152: 1,
-                151: 2,
-                593: 5,
-                954: 3
-            },
-            _pgm = {
-                149: 1,
-                591: 1,
-                592: 1,
-                151: 2,
-                593: 4,
-                954: 3
-            },
-            _pgn = {
-                593: 1,
-                954: 1,
-                151: 2,
-                591: 2,
-                150: 3,
-                592: 3,
-                149: 3,
-                152: 3
-            },
-            _pgo = {
-                593: 1,
-                151: 2,
-                149: 2,
-                591: 2,
-                954: 2
-            },
-            _pgp = {
-                151: 1,
-                593: 1,
-                954: 1
+                return _p0v;
             };
-        if (_pgl[_pg5.ship_id] && (_pg6 = _pgl[_pg5.ship_id], _pgj.houg += _pgk * _pg6), _pgm[_pg5.ship_id] && (_pg7 = _pgm[_pg5.ship_id], _pgj.tyku += _pgk * _pg7), _pgn[_pg5.ship_id] && (_pg8 = _pgn[_pg5.ship_id], _pg9 = _pg5.get_each_level_nums(502), _pga = [], _pg9.forEach(function(_pgq, _pgr) {
-                for (var _pgs = 1; _pgs <= _pg5.SLOT_LEVEL_MAX; _pgs++) _pgs <= _pgr && (null == _pga[_pgs] && (_pga[_pgs] = 0), _pga[_pgs] += _pgq);
-            }), 1 == _pg8 ? (_pgj.kaih += 3 * _pgk, 0 < _pga[1] && (_pgj.kaih += +_pga[1]), 0 < _pga[3] && (_pgj.tyku += +_pga[3]), 0 < _pga[5] && (_pgj.houg += +_pga[5]), 0 < _pga[7] && (_pgj.kaih += +_pga[7]), 0 < _pga[8] && (_pgj.tyku += +_pga[8]), 0 < _pga[9] && (_pgj.houg += +_pga[9]), 0 < _pga[10] && (_pgj.tyku += +_pga[10])) : 2 == _pg8 ? (_pgj.kaih += +_pgk, 0 < _pga[2] && 151 == _pg5.ship_id && (_pgj.kaih += +_pga[2]), 0 < _pga[4] && (_pgj.tyku += +_pga[4]), 0 < _pga[6] && (_pgj.houg += +_pga[6]), 0 < _pga[8] && (_pgj.kaih += +_pga[8]), 0 < _pga[10] && (_pgj.tyku += +_pga[10])) : 3 == _pg8 && (0 < _pga[5] && (_pgj.kaih += +_pga[5]), 0 < _pga[8] && (_pgj.houg += +_pga[8]), 0 < _pga[10] && (_pgj.tyku += +_pga[10]))), _pgo[_pg5.ship_id]) {
-            for (var _pgt = 0, _pgu = 0, _pgv = _pg5.have_slot_ids(); _pgu < _pgv.length; _pgu++) {
-                var _pgw = _pgv[_pgu],
-                    _pgx = _pg4.default.model.slot.getMst(_pgw),
-                    _pgy = _pgx.equipType;
-                12 != _pgy && 13 != _pgy || (5 <= _pgx.sakuteki && (_pgt += _pg5.get_slotnums(parseInt(_pgw))), 2 <= _pgx.taiku && _pg5.get_slotnums(parseInt(_pgw)));
-            }
-            0;
-            var _pgz = _pgo[_pg5.ship_id];
-            1 == _pgz && 1 <= _pgt ? (_pgj.houg += 3, _pgj.kaih += 4) : 2 == _pgz && 1 <= _pgt && (_pgj.houg += 2, _pgj.kaih += 2);
-        }
-        return _pgp[_pg5.ship_id] && (_pgb = _pgp[_pg5.ship_id], _pgc = [], _pgd = [], _pge = _pg5.have_slot_ids(), [410, 411].forEach(function(_ph0) {
-            -1 < _pge.indexOf(_ph0.toString()) && (_pgd[_ph0] = _pg5.get_each_level_nums(_ph0), null == _pgc[_ph0] && (_pgc[_ph0] = []), _pgd[_ph0].forEach(function(_ph1, _ph2) {
-                for (var _ph3 = 1; _ph3 <= _pg5.SLOT_LEVEL_MAX; _ph3++) null == _pgc[_ph0][_ph3] && (_pgc[_ph0][_ph3] = 0), _ph3 <= _ph2 && (_pgc[_ph0][_ph3] += _ph1);
-            }));
-        }), _pgf = _pgd[410], _pgg = _pgd[411], 1 == _pgb && (_pgf && (_pgj.tyku += 1, 1 <= (_pgh = _pgc[410])[7] && (_pgj.houg += 1), 1 <= _pgh[10] && (_pgj.kaih += 1)), _pgg && (_pgj.tyku += 2, 1 <= (_pgi = _pgc[411])[2] && (_pgj.houg += 1), 1 <= _pgi[4] && (_pgj.kaih += 1), 1 <= _pgi[6] && (_pgj.houm += 1), 1 <= _pgi[8] && (_pgj.tyku += 1), 1 <= _pgi[10] && (_pgj.houg += 1)))), _pgj;
-    };
-},
-function(_ph4, _ph5, _ph6) {
-    'use strict';
-    var _ph7 = this && this.__importDefault || function(_ph8) {
-        return _ph8 && _ph8.__esModule ? _ph8 : {
-            'default': _ph8
-        };
-    };
-    defineModule(_ph5);
-    Object.defineProperty(_ph5, '__esModule', {
-        'value': !0
-    });
-    var _ph9 = _ph6(3),
-        _pha = _ph7(_ph6(0));
-    _ph5.getSlot503PersonalEffect = function(_phb) {
-        var _phc, _phd, _phe, _phf, _phg, _phh = new _ph9.SlotItemEffectModel(),
-            _phi = _phb.get_slotnums(503),
-            _phj = {
-                149: 2,
-                150: 2,
-                151: 2,
-                152: 2,
-                591: 3,
-                592: 3,
-                593: 4,
-                954: 4
-            },
-            _phk = {
-                149: 1,
-                591: 1,
-                592: 1,
-                151: 2,
-                593: 4,
-                954: 3
-            },
-            _phl = {
-                593: 1,
-                954: 1,
-                151: 2,
-                591: 2,
-                592: 2,
-                149: 3,
-                150: 3,
-                152: 3
-            },
-            _phm = {
-                954: 1,
-                151: 2,
-                591: 2,
-                592: 2,
-                593: 2
-            },
-            _phn = {
-                591: 1,
-                592: 1,
-                593: 1,
-                954: 1
-            },
-            _pho = {
-                591: 1,
-                592: 2,
-                593: 2,
-                954: 3
-            };
-        _phj[_phb.ship_id] && (_phc = _phj[_phb.ship_id], _phh.houg += _phi * _phc), _phk[_phb.ship_id] && (_phd = _phk[_phb.ship_id], _phh.tyku += _phi * _phd), _phl[_phb.ship_id] && (_phe = _phl[_phb.ship_id], _phf = _phb.get_each_level_nums(503), _phg = [], _phf.forEach(function(_php, _phq) {
-            for (var _phr = 1; _phr <= _phb.SLOT_LEVEL_MAX; _phr++) _phr <= _phq && (null == _phg[_phr] && (_phg[_phr] = 0), _phg[_phr] += _php);
-        }), 1 == _phe ? (_phh.houm += 2 * _phi, 0 < _phg[1] && (_phh.houg += +_phg[1]), 0 < _phg[2] && (_phh.tyku += +_phg[2]), 0 < _phg[4] && (_phh.houm += +_phg[4]), 0 < _phg[6] && (_phh.houg += +_phg[6]), 0 < _phg[8] && (_phh.tyku += +_phg[8]), 0 < _phg[10] && (_phh.houm += +_phg[10])) : 2 == _phe ? (_phh.houm += +_phi, 0 < _phg[2] && (_phh.houg += +_phg[2]), 0 < _phg[4] && (_phh.tyku += +_phg[4]), 0 < _phg[6] && (_phh.houm += +_phg[6]), 0 < _phg[8] && (_phh.houg += +_phg[8]), 0 < _phg[10] && (_phh.houm += +_phg[10])) : 3 == _phe && (0 < _phg[4] && (_phh.houm += +_phg[4]), 0 < _phg[7] && (_phh.houg += +_phg[7]), 0 < _phg[10] && (_phh.tyku += +_phg[10])));
-        var _phs = 0;
-        _phm[_phb.ship_id] && (_phs = _phm[_phb.ship_id]);
-        var _pht = 0;
-        _pho[_phb.ship_id] && (_pht = _pho[_phb.ship_id]);
-        var _phu = 0,
-            _phv = 0,
-            _phw = _phb.have_slot_ids();
-        if (0 < _phs + _pht)
-            for (var _phx = 0, _phy = _phw; _phx < _phy.length; _phx++) {
-                var _phz = _phy[_phx],
-                    _pi0 = _pha.default.model.slot.getMst(_phz),
-                    _pi1 = _pi0.equipType;
-                12 != _pi1 && 13 != _pi1 || (5 <= _pi0.sakuteki && (_phu += _phb.get_slotnums(parseInt(_phz))), 2 <= _pi0.taiku && _phb.get_slotnums(parseInt(_phz)), 8 <= _pi0.meichu && (_phv += _phb.get_slotnums(parseInt(_phz))));
-            }
-        1 == _phs ? 1 <= _phu && (_phh.houg += 3, _phh.houm += 3, _phh.kaih += 2) : 2 == _phs && 1 <= _phu && (_phh.houg += 2, _phh.houm += 2, _phh.kaih += 1);
-        var _pi2, _pi3, _pi4, _pi5 = 0,
-            _pi6 = [],
-            _pi7 = [];
-        return _phn[_phb.ship_id] && (_pi5 = _phn[_phb.ship_id], _pi2 = _phb.have_slot_ids(), [174].forEach(function(_pi8) {
-            -1 < _pi2.indexOf(_pi8.toString()) && (_pi7[_pi8] = _phb.get_each_level_nums(_pi8), null == _pi6[_pi8] && (_pi6[_pi8] = []), _pi7[_pi8].forEach(function(_pi9, _pia) {
-                for (var _pib = 1; _pib <= _phb.SLOT_LEVEL_MAX; _pib++) null == _pi6[_pi8][_pib] && (_pi6[_pi8][_pib] = 0), _pib <= _pia && (_pi6[_pi8][_pib] += _pi9);
-            }));
-        })), 0 < _pi5 && (_pi3 = _pi7[174], 1 == _pi5 && _pi3 && (_pi4 = _pi6[174], _phh.raig += 4, 1 <= _pi4[6] && (_phh.raig += 1), 1 <= _pi4[8] && (_phh.houm += 1), 1 <= _pi4[10] && (_phh.houg += 1))), 0 < _phv && (1 <= _pht && _pht <= 3 && (_phh.houg += 2, _phh.houm += 2, _phh.kaih += 2), 1 == _pht ? _phh.houg += 1 : 3 == _pht && (_phh.houg += 2)), _phh;
-    };
-},
-function(_pic, _pid, _pie) {
-    'use strict';
-    var _pif = this && this.__importDefault || function(_pig) {
-        return _pig && _pig.__esModule ? _pig : {
-            'default': _pig
-        };
-    };
-    defineModule(_pid);
-    Object.defineProperty(_pid, '__esModule', {
-        'value': !0
-    });
-    var _pih = _pie(3),
-        _pii = _pif(_pie(0));
-    _pid.getSlot505PersonalEffect = function(_pij) {
-        var _pik, _pil = new _pih.SlotItemEffectModel(),
-            _pim = !1,
-            _pin = new _pih.SlotItemEffectModel();
-        2 == _pij.stype ? (_pin.houg += 1, _pin.tyku += 2, _pin.kaih += 2, _pim = !0) : 1 == _pij.stype ? (_pin.houg += 1, _pin.tyku += 1, _pin.kaih += 1, _pim = !0) : 3 == _pij.stype || 21 == _pij.stype || 4 == _pij.stype ? (_pin.tyku += 1, _pin.kaih += 2, _pim = !0) : 5 != _pij.stype && 6 != _pij.stype && 16 != _pij.stype || (_pin.tyku += 1, _pin.kaih += 1, _pim = !0), _pim && (_pik = _pij.get_slotnums(505), _pil.add(_pin.multiply(_pik)));
-        var _pio = {
-                961: 1,
-                145: 2,
-                497: 2,
-                656: 2,
-                668: 2,
-                951: 2,
-                498: 3,
-                144: 3,
-                242: 3,
-                243: 3,
-                228: 3,
-                651: 3,
-                244: 4,
-                245: 4,
-                323: 4,
-                557: 5,
-                558: 5,
-                578: 5,
-                419: 5,
-                464: 5,
-                470: 5,
-                407: 5,
-                235: 5,
-                147: 5,
-                955: 5,
-                960: 5
-            },
-            _pip = {
-                961: 1,
-                145: 2,
-                497: 2,
-                656: 2,
-                419: 2,
-                951: 2
-            },
-            _piq = {
-                961: 1,
-                656: 1,
-                951: 1
-            };
-        1 == _pio[_pij.ship_id] ? (_pil.houg += 2, _pil.tyku += 3, _pil.kaih += 4) : 2 == _pio[_pij.ship_id] ? (_pil.houg += 1, _pil.tyku += 2, _pil.kaih += 3) : 3 == _pio[_pij.ship_id] ? (_pil.tyku += 2, _pil.kaih += 2) : 4 == _pio[_pij.ship_id] ? (_pil.tyku += 1, _pil.kaih += 2) : 5 == _pio[_pij.ship_id] && (_pil.houg += 1, _pil.tyku += 1, _pil.kaih += 1);
-        var _pir = 0;
-        if (_pip[_pij.ship_id] && _pir++, _piq[_pij.ship_id] && _pir++, 0 == _pir) return _pil;
-        for (var _pis = 0, _pit = 0, _piu = 0, _piv = _pij.have_slot_ids(); _piu < _piv.length; _piu++) {
-            var _piw = _piv[_piu],
-                _pix = _pii.default.model.slot.getMst(_piw),
-                _piy = _pix.equipType;
-            12 != _piy && 13 != _piy || (5 <= _pix.sakuteki && (_pis += _pij.get_slotnums(parseInt(_piw))), 2 <= _pix.taiku && (_pit += _pij.get_slotnums(parseInt(_piw))));
-        }
-        var _piz = _pip[_pij.ship_id];
-        0 < _pit && 0 < _piz && (1 == _piz ? (_pil.houg += 1, _pil.tyku += 2, _pil.kaih += 3) : 2 == _piz && (_pil.tyku += 2, _pil.kaih += 2));
-        var _pj0 = _piq[_pij.ship_id];
-        return 0 < _pis && 0 < _pj0 && 1 == _pj0 && (_pil.houg += 1, _pil.kaih += 1), _pil;
-    };
-},
-function(_pj1, _pj2, _pj3) {
-    'use strict';
-    defineModule(_pj2);
-    Object.defineProperty(_pj2, '__esModule', {
-        'value': !0
-    });
-    var _pj4 = _pj3(3);
-    _pj2.getSlot506PersonalEffect = function(_pj5) {
-        var _pj6 = new _pj4.SlotItemEffectModel();
-        return 961 == _pj5.ship_id ? (_pj6.houg += 2, _pj6.houm += 3, _pj6.tyku += 2, _pj6.kaih += 4) : 145 == _pj5.ship_id || 497 == _pj5.ship_id || 656 == _pj5.ship_id || 557 == _pj5.ship_id || 558 == _pj5.ship_id || 951 == _pj5.ship_id ? (_pj6.houg += 1, _pj6.houm += 2, _pj6.tyku += 1, _pj6.kaih += 3) : 578 != _pj5.ship_id && 419 != _pj5.ship_id && 464 != _pj5.ship_id && 470 != _pj5.ship_id && 407 != _pj5.ship_id && 235 != _pj5.ship_id && 147 != _pj5.ship_id && 538 != _pj5.ship_id && 537 != _pj5.ship_id && 955 != _pj5.ship_id && 960 != _pj5.ship_id || (_pj6.houg += 1, _pj6.houm += 1, _pj6.tyku += 1, _pj6.kaih += 2), _pj6;
-    };
-},
-function(_pj7, _pj8, _pj9) {
-    'use strict';
-    defineModule(_pj8);
-    Object.defineProperty(_pj8, '__esModule', {
-        'value': !0
-    });
-    var _pja = _pj9(3);
-    _pj8.getSlot14inch45CaliberGunPersonalEffect = function(_pjb) {
-        var _pjc, _pjd, _pje, _pjf = new _pja.SlotItemEffectModel(),
-            _pjg = !1,
-            _pjh = new _pja.SlotItemEffectModel(),
-            _pji = {
-                507: 507,
-                508: 507
-            },
-            _pjj = _pjb.get_slotnums(507),
-            _pjk = _pjb.get_slotnums(508),
-            _pjl = _pjj + _pjk,
-            _pjm = _pjb.getCountryName(),
-            _pjn = _pjb.getUSSWaterRaderDict();
-        if (125 == _pjb.ctype && (_pjh.houg += 1, _pjh.kaih += 1, _pjh.houm += 1, _pjg = !0, 1 <= _pjj && 1 <= _pjk && (_pjf.houg += 1, _pjf.houm += 1)), 'アメリカ' == _pjm && 8 <= _pjb.stype && _pjb.stype <= 10) {
-            _pjh.houg += 2, _pjh.kaih += 1, _pjh.houm += 1, _pjg = !0;
-            for (var _pjo = 0, _pjp = 0, _pjq = _pjb.have_slot_ids(); _pjp < _pjq.length; _pjp++) {
-                var _pjr = _pjq[_pjp];
-                _pjn[Number(_pjr)] && (_pjo += _pjb.get_slotnums(parseInt(_pjr)));
-            }
-            1 <= _pjo && (_pjf.houg += 1, _pjf.kaih += 1, _pjf.houm += 2), 1 <= _pjj && 1 <= _pjk && (_pjf.houg += 1, _pjf.houm += 1, _pjf.kaih += 2);
-        }
-        else 6 != _pjb.ctype && 26 != _pjb.ctype && 2 != _pjb.ctype && 'イギリス' != _pjm || (_pjf.kaih += 1, _pjf.houm += 1, 1 <= _pjj && 1 <= _pjk && (_pjf.houg += 1, _pjf.houm += 1, _pjf.kaih += 1));
-        _pjg && _pjf.add(_pjh.multiply(_pjl));
-        for (var _pjs = {}, _pjt = {}, _pju = {}, _pjv = 0, _pjw = Object.keys(_pji); _pjv < _pjw.length; _pjv++) {
-            ! function(_pjx) {
-                var _pjy = Number(_pjx),
-                    _pjz = _pji[_pjy];
-                _pjs[_pjz] = null != (_pjc = _pjs[_pjz]) ? _pjc : 0, _pjt[_pjz] = null != (_pjd = _pjt[_pjz]) ? _pjd : 0, _pju[_pjz] = null != (_pje = _pju[_pjz]) ? _pje : 0, _pjb.get_each_level_nums(_pjy).forEach(function(_pk0, _pk1) {
-                    3 <= _pk1 && (_pjs[_pjz] += _pk0), 6 <= _pk1 && (_pjt[_pjz] += _pk0), 9 <= _pk1 && (_pju[_pjz] += _pk0);
-                });
-            }(_pjw[_pjv]);
-        }
-        return 1 <= _pjs[507] && (_pjf.houg += +_pjs[507]), 1 <= _pjt[507] && (_pjf.souk += +_pjt[507]), 1 <= _pju[507] && (_pjf.houm += +_pju[507]), _pjf;
-    };
-},
-function(_pk2, _pk3, _pk4) {
-    'use strict';
-    defineModule(_pk3);
-    Object.defineProperty(_pk3, '__esModule', {
-        'value': !0
-    });
-    var _pk5 = _pk4(3);
-    _pk3.getSlot510PersonalEffect = function(_pk6) {
-        var _pk7 = new _pk5.SlotItemEffectModel(),
-            _pk8 = !1,
-            _pk9 = new _pk5.SlotItemEffectModel();
-        if ('イギリス' == _pk6.getCountryName() && (_pk9.houg += 2, _pk9.tais += 3, _pk9.kaih += 2, _pk9.saku += 2, _pk8 = !0), 88 == _pk6.ctype && (_pk7.houg += 4, _pk7.kaih += 2, _pk9.saku += 3, _pk9.houm += 2, _pk8 = !0), 0 == _pk8) return _pk7;
-        var _pka = _pk6.get_slotnums(510);
-        return _pk7.add(_pk9.multiply(_pka)), _pk7;
-    };
-},
-function(_pkb, _pkc, _pkd) {
-    'use strict';
-    defineModule(_pkc);
-    Object.defineProperty(_pkc, '__esModule', {
-        'value': !0
-    });
-    var _pke = _pkd(3);
-    _pkc.getSlot511PersonalEffect = function(_pkf) {
-        var _pkg = new _pke.SlotItemEffectModel();
-        return 122 == _pkf.ctype ? (_pkg.raig += 3, _pkg.kaih += 4) : 114 == _pkf.ctype && (_pkg.raig += 1, _pkg.kaih += 2), _pkg;
-    };
-},
-function(_pkh, _pki, _pkj) {
-    'use strict';
-    defineModule(_pki);
-    Object.defineProperty(_pki, '__esModule', {
-        'value': !0
-    });
-    var _pkk = _pkj(3);
-    _pki.getSlot517PersonalEffect = function(_pkl) {
-        var _pkm = new _pkk.SlotItemEffectModel();
-        null == {
-            66: 0,
-            28: 0,
-            12: 0,
-            1: 0,
-            5: 0,
-            10: 0,
-            23: 0,
-            18: 0,
-            30: 0,
-            38: 0,
-            22: 0,
-            54: 0,
-            101: 0
-        }[_pkl.ctype] && 74 != _pkl.ctype && 77 != _pkl.ctype && 85 != _pkl.ctype && 117 != _pkl.ctype && 104 != _pkl.ctype || (_pkm.houm += 1, _pkm.kaih += 1, _pkm.saku += 1), 38 == _pkl.ctype && (_pkm.houg += 1, _pkm.houm += 1), 960 == _pkl.ship_id ? (_pkm.houg += 2, _pkm.houm += 1, _pkm.kaih += 3, _pkm.saku += 2) : 955 != _pkl.ship_id && 578 != _pkl.ship_id && 961 != _pkl.ship_id && 656 != _pkl.ship_id && 464 != _pkl.ship_id && 470 != _pkl.ship_id && 419 != _pkl.ship_id && 407 != _pkl.ship_id && 235 != _pkl.ship_id && 147 != _pkl.ship_id || (_pkm.houg += 1, _pkm.houm += 1, _pkm.kaih += 2, _pkm.saku += 1);
-        for (var _pkn = [], _pko = 0, _pkp = [267, 366, 450, 517]; _pko < _pkp.length; _pko++) {
-            ! function(_pkq) {
-                var _pkr = _pkl.get_each_level_nums(_pkq);
-                null == _pkn[_pkq] && (_pkn[_pkq] = []), _pkr.forEach(function(_pks, _pkt) {
-                    for (var _pku = 1; _pku <= _pkl.SLOT_LEVEL_MAX; _pku++) null == _pkn[_pkq][_pku] && (_pkn[_pkq][_pku] = 0), _pku <= _pkt && (_pkn[_pkq][_pku] += _pks);
-                });
-            }(_pkp[_pko]);
-        }
-        var _pkv = _pkn[517];
-        return 0 < _pkv[7] && (_pkm.houm += 1), 0 < _pkv[8] && (_pkm.kaih += 1), 0 < _pkv[9] && (_pkm.houg += 1), 0 < _pkv[10] && (_pkm.houm += 1), (0 < _pkn[267][3] || 0 < _pkn[366][3]) && (_pkm.houg += 1, _pkm.houm += 1, 38 == _pkl.ctype && (_pkm.houg += 1, _pkm.houm += 1), 0 < _pkn[450][4] && (_pkm.houg += 1, _pkm.houm += 1, _pkm.tyku += 4, _pkm.kaih += 3)), _pkm;
-    };
-},
-function(_pkw, _pkx, _pky) {
-    'use strict';
-    defineModule(_pkx);
-    Object.defineProperty(_pkx, '__esModule', {
-        'value': !0
-    });
-    var _pkz = _pky(3);
-    _pkx.getSlot518PersonalEffect = function(_pl0) {
-        var _pl1 = new _pkz.SlotItemEffectModel(),
-            _pl2 = !1,
-            _pl3 = new _pkz.SlotItemEffectModel();
-        if (34 != _pl0.ctype && 56 != _pl0.ctype || (_pl3.houg += 1, _pl3.tyku += 1, _pl3.tais += 1, _pl3.kaih += 1, _pl2 = !0), 16 == _pl0.stype && (_pl3.houg += 1, _pl3.raig += 1, _pl3.kaih += 1, _pl2 = !0), 622 != _pl0.ship_id && 624 != _pl0.ship_id && 623 != _pl0.ship_id || (_pl3.houg += 1, _pl2 = !0), 622 != _pl0.ship_id && 624 != _pl0.ship_id || (_pl3.tyku += 1, _pl2 = !0), 624 == _pl0.ship_id && (_pl3.tais += 2, _pl2 = !0), 0 == _pl2) return _pl1;
-        var _pl4 = _pl0.get_slotnums(518);
-        return _pl1.add(_pl3.multiply(_pl4)), _pl1;
-    };
-},
-function(_pl5, _pl6, _pl7) {
-    'use strict';
-    defineModule(_pl6);
-    Object.defineProperty(_pl6, '__esModule', {
-        'value': !0
-    });
-    var _pl8 = _pl7(3);
-    _pl6.getSlot85PersonalEffect = function(_pl9) {
-        var _pla = new _pl8.SlotItemEffectModel(),
-            _plb = _pl9.get_each_level_over_nums([85]),
-            _plc = _plb[85][6],
-            _pld = _plb[85][8],
-            _ple = _plb[85][10],
-            _plf = _pl9.get_have_rader_nums().air_rader,
-            _plg = _pl9.getCountryName();
-        return 0 < _plc && (_pla.tyku += +_plc, _pla.kaih += +_plc, 1 <= _plf && (_pla.tyku += 2)), 0 < _pld && (_pla.houg += +_pld, 'ドイツ' != _plg && 'イタリア' != _plg || (_pla.tyku += +_pld, _pla.kaih += +_pld)), 0 < _ple && (_pla.kaih += +_ple, _pla.houm += +_ple, 'ドイツ' != _plg && 'イタリア' != _plg || (_pla.houg += 1)), _pla;
-    };
-},
-function(_plh, _pli, _plj) {
-    'use strict';
-    defineModule(_pli);
-    Object.defineProperty(_pli, '__esModule', {
-        'value': !0
-    });
-    var _plk = _plj(3);
-    _pli.getSlot519PersonalEffect = function(_pll) {
-        var _plm = new _plk.SlotItemEffectModel();
-        return 122 == _pll.ctype && (_plm.houm += 2, _plm.kaih += 2), 114 == _pll.ctype && (_plm.raig += 1, _plm.houm += 2, _plm.kaih += 2), _plm;
-    };
+        }(_p0k || (_ozu.SlotItemEffectUtil = _p0k = {}));
+    },
 }
