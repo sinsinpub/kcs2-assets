@@ -4,47 +4,46 @@ const { get } = require('axios')
 const { readFileSync, outputFileSync } = require('fs-extra')
 const beautify = require('js-beautify').js
 
+const file = path => readFileSync(path).toString()
+
 const kcsConstUrl = `${process.env.GADGET_PROXY ? `${process.env.GADGET_PROXY}/` : ''}http://203.104.209.7/gadget_html5/js/kcs_const.js`
 const kcsMainUrl = 'http://203.104.209.71/kcs2/js/main.js'
 
-const decoderSource = readFileSync('src/decode-patched.js').toString()
-const patchSource = readFileSync('src/patch.js').toString()
+const decoderSource = file('src/decode-patched.js')
+const patchSource = file('src/patch.js')
 
-const createjsSource = readFileSync('node_modules/createjs/builds/1.0.0/createjs.js').toString()
+const createjsSource = file('node_modules/createjs/builds/1.0.0/createjs.js')
 const createjsPatched = createjsSource.replace('this.createjs = this.createjs||{}', 'const createjs = {}; module.exports = createjs;')
 outputFileSync('dist/createjs.js', createjsPatched)
 
 !(async () => {
   // Manually downloaded main.js and version:
-  scriptVesion = readFileSync('dist/version').toString()
+  scriptVesion = file('dist/version')
 
-  const mainSource = readFileSync('dist/main.js').toString()
+  const mainSource = file('dist/main.js')
   const [mainDecoder, mainFormatted] = beautify(mainSource, { indent_size: 2 })
   //  .split('\n! function')
     .split('), ! function')
   //outputFileSync('dist/decode.js', `${mainDecoder}\n${decoderSource}`)
   outputFileSync('dist/decode.js', `${mainDecoder}))\n${decoderSource}`)
-  outputFileSync('dist/main.patched.js', `! function${mainFormatted}`)
+  outputFileSync('dist/main.patched.js', `! function${mainFormatted}`.slice(0, -2) + ';')
 
-  const decoderStr = readFileSync('dist/decode.js').toString()
+  const decoderStr = file('dist/decode.js')
   //const decoderFunction = decoderStr.match(/\nvar (.+?) = function/)[1]
   const decoderFunction = decoderStr.match(/^function (.+?)\(.+ \{/)[1]
 
   console.info(spawnSync('node', ['dist/decode.js', decoderFunction]).stdout.toString())
 
-  const mainDecoded = readFileSync('dist/main.patched.js').toString()
-  const mainPatched = mainDecoded
+/*
+  const version = (await get('https://kcwiki.github.io/cache/gadget_html5/js/kcs_const.js')).data.match(/scriptVesion\s*?=\s*?["'](.+?)["']/)[1]
+  outputFileSync('dist/version', version)
+*/
+  const mainPatched = file('dist/main.patched.js')
+    .replace(/require\('window'\)/g, 'window')
+    .replace(/require\('axios'\)/g, 'axios')
     .replace(/Object\.defineProperty\((\S+?), '__esModule'/g, "defineModule($1); Object.defineProperty($1, '__esModule'")
-    .replace(/module\.exports = (\S+?)\(\)/, 'module.exports = registerModules($1())')
+    .replace(/module\.exports = (\S+?)\((.+?)\)/, 'module.exports = registerModules($1($2))')
 
-  const build = `${patchSource.replace('scriptVesion', scriptVesion)}\n${mainPatched}`
-  outputFileSync(
-    'dist/main.patched.js',
-    build.replace(/\\u([\d\w]{4})/gi, (_, e) => String.fromCharCode(parseInt(e, 16))),
-  )
-  /*
-  const main = require('../dist/main')
-  const api = inspect(main.modules, { maxArrayLength: 10000, depth: 10 }).replace(/\n\s*?START_TIME:\s*?\d+?,\n/g, '\n')
-  outputFileSync('dist/api', api)
-  */
+  outputFileSync('dist/main.patched.js', `${patchSource.replace('scriptVesion', scriptVesion)}\n${mainPatched}`)
+//  outputFileSync('dist/api', inspect(require('../dist/main.patched'), { maxArrayLength: 10000, depth: 10 }))
 })()

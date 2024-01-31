@@ -27,9 +27,9 @@
     "axios": "^0.19.2",
     "canvas": "^2.6.1",
     "createjs": "^1.0.1",
-    "jsdom": "^16.2.0",
+    "jsdom": "^19.0.0",
     "jsdom-global": "^3.0.2",
-    "pixi.js": "^5.2.1"
+    "pixi.js": "^5.3.12"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
