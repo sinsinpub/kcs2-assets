@@ -4,12 +4,13 @@ const vars = {}
 let i = 0
 
 const decoderFunction = process.argv[2]
-const passes = process.argv[3] || 5
+const passes = parseInt(process.argv[3] || 5)
+const removevars = !!process.argv[4]
 
 let main = readFileSync('dist/main.patched.js').toString()
 let aliases = 0;
 
-// fast 5 passes
+// fast 5~ passes
 for (let pass = 1; pass <= passes; pass++) {
     const decoderAliases = []
     const decoderRegex = new RegExp(`var ([_a-zA-Z][_a-zA-Z0-9]*?) = ${decoderFunction}[;,]`, 'g')
@@ -54,7 +55,7 @@ writeFileSync(
 //    .replace(new RegExp(`${decoderFunction}\\((0x.+?)\\)`, 'g'), x => `'${eval(x)}'`.replace(/\n/g, '\\n'))
     .replace(/([_a-zA-Z][_a-zA-Z0-9]*?)\['([_a-zA-Z][_a-zA-Z0-9]*?)'\]/g, '$1.$2')
     .replace(/\[\('([_a-zA-Z][_a-zA-Z0-9]*?)'\)\]/g, "['$1']")
-    .replace(/_(0x[a-f0-9]{4,6})/g, (_, x) => `_${(vars[x] || (vars[x] = ++i)).toString(36)}`)
+    .replace(/_(0x[a-f0-9]{4,6})/g, (_, x) => `_${removevars ? 'v' : (vars[x] || (vars[x] = ++i)).toString(36)}`)
     .replace(/(0x[a-f0-9]+?)\.toString()/g, (_, x) => `(${+x}).toString()`)
     .replace(/(0x[a-f0-9]+)/g, (_, x) => `${+x}`)
     .replace(/\)\['([_a-zA-Z][_a-zA-Z0-9]*?)'\]/g, ').$1')
@@ -63,4 +64,8 @@ writeFileSync(
     .replace(/([_a-zA-Z][_a-zA-Z0-9]*?)\['([_a-zA-Z][_a-zA-Z0-9]*?)'\]/g, '$1.$2')
     .replace(/\\u([\d\w]{4})/gi, (_, e) => String.fromCharCode(parseInt(e, 16)))
     .replace("`'symbol'`", '`symbol`')
+    .replace(/!0/g, 'true').replace(/!1/g, 'false')
+//    .replace(/void 0/g, 'undefined')
 )
+
+console.info('Patched', removevars ? 'without var names' : '')

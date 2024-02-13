@@ -32,7 +32,7 @@ outputFileSync('dist/createjs.js', createjsPatched)
   //const decoderFunction = decoderStr.match(/\nvar (.+?) = function/)[1]
   const decoderFunction = decoderStr.match(/^function (.+?)\(.+ \{/)[1]
 
-  console.info(spawnSync('node', ['dist/decode.js', decoderFunction]).stdout.toString())
+  console.info(spawnSync('node', ['dist/decode.js', decoderFunction, 9, process.argv[2] || '']).stdout.toString())
 
 /*
   const version = (await get('https://kcwiki.github.io/cache/gadget_html5/js/kcs_const.js')).data.match(/scriptVesion\s*?=\s*?["'](.+?)["']/)[1]
