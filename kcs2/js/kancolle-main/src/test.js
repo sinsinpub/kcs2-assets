@@ -18,6 +18,8 @@ equal(main.SuffixUtil.create(156, 'ship_card'), '6982')
 
 console.info(main.PORT_API_SEED)
 
+const cjkCharPattern = /[\u4e00-\u9fff\u3400-\u4dbf\u{20000}-\u{2a6df}\u{2a700}-\u{2ebef}\u{30000}-\u{323af}\ufa0e\ufa0f\ufa11\ufa13\ufa14\ufa1f\ufa21\ufa23\ufa24\ufa27\ufa28\ufa29\u3006\u3007][\ufe00-\ufe0f\u{e0100}-\u{e01ef}]?/gmu
+
 const ids = [502, 507]
 ids.forEach(id => {
   console.info('reqTorchDevmat', id, r._getRequiredBuildKitNum(id), r._getRequiredDevkitNum(id))
