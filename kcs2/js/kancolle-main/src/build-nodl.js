@@ -25,12 +25,12 @@ outputFileSync('dist/createjs.js', createjsPatched)
   //  .split('\n! function')
     .split('), ! function')
   //outputFileSync('dist/decode.js', `${mainDecoder}\n${decoderSource}`)
-  outputFileSync('dist/decode.js', `${mainDecoder}))\n${decoderSource}`)
+  outputFileSync('dist/decode.js', `${mainDecoder}))\n\n${decoderSource}`)
   outputFileSync('dist/main.patched.js', `! function${mainFormatted}`.slice(0, -2) + ';')
 
   const decoderStr = file('dist/decode.js')
   //const decoderFunction = decoderStr.match(/\nvar (.+?) = function/)[1]
-  const decoderFunction = decoderStr.match(/^function (.+?)\(.+ \{/)[1]
+  const decoderFunction = decoderStr.match(/\nfunction (.+?)\(.+ \{/)[1]
 
   console.info(spawnSync('node', ['dist/decode.js', decoderFunction, 9, process.argv[2] || '']).stdout.toString())
 

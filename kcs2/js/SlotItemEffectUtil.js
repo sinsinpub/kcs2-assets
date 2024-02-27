@@ -5460,1471 +5460,1498 @@
             return 1 == _op8 && (_opa[1] >= 1 && (_op5.houm += 1 * _opa[1]), _opa[2] >= 1 && (_op5.kaih += 1 * _opa[2]), _opa[3] >= 1 && (_op5.saku += 1 * _opa[3], _op5.raig += 1 * _opa[3]), _opa[4] >= 1 && (_op5.houg += 1 * _opa[4]), _opa[6] >= 1 && (_op5.houm += 1 * _opa[6]), _opa[8] >= 1 && (_op5.saku += 1 * _opa[8]), _opa[10] >= 1 && (_op5.houm += 1 * _opa[10])), _op5;
         };
     },
-    23035: (_opb, _opc, _opd) => {
+    59415: (_opb, _opc, _opd) => {
         'use strict';
         var _ope = null;
         defineModule(_opc);
         Object.defineProperty(_opc, '__esModule', {
             'value': true
-        }), _opc.getSlot58PersonalEffect = void 0;
+        }), _opc.getSlot524PersonalEffect = void 0;
         var _opf = _opd(74496);
-        _opc.getSlot58PersonalEffect = function(_opg) {
+        _opc.getSlot524PersonalEffect = function(_opg) {
             var _oph = null,
                 _opi = new _opf.SlotItemEffectModel(),
-                _opj = new _opf.SlotItemEffectModel();
-            if ('しまかぜ' != _opg.yomi && 4 != _opg.stype && 54 != _opg.ctype || (_opj.raig = 1), !_opj.exists()) return _opi;
-            var _opk = _opg.get_slotnums(58);
-            return _opi = _opj.multiply(_opk);
+                _opj = false,
+                _opk = new _opf.SlotItemEffectModel(),
+                _opl = 0,
+                _opm = 0;
+            if (17 != _opg.stype && 19 != _opg.stype && 20 != _opg.stype && 21 != _opg.stype && 22 != _opg.stype || (_opk.houg += 1, _opk.tyku += 2, _opk.kaih += 2, _opk.houm += 1, _opj = true, _opl = 1, _opm = 1), 0 == _opj) return _opi;
+            var _opn = _opg.get_slotnums(524);
+            _opi.add(_opk.multiply(_opn));
+            var _opo = _opg.get_have_rader_nums().air_rader;
+            if (1 == _opm && _opo >= 1 && (_opi.tyku += 2, _opi.kaih += 2), 0 == _opl) return _opi;
+            var _opp = _opg.get_each_level_over_nums([524])[524];
+            return 1 == _opl && (_opp[1] >= 1 && (_opi.kaih += 1 * _opp[1]), _opp[2] >= 1 && (_opi.kaih += 1 * _opp[2]), _opp[4] >= 1 && (_opi.tyku += 1 * _opp[4]), _opp[6] >= 1 && (_opi.kaih += 1 * _opp[6]), _opp[7] >= 1 && (_opi.houm += 1 * _opp[7]), _opp[8] >= 1 && (_opi.tyku += 1 * _opp[8]), _opp[9] >= 1 && (_opi.kaih += 1 * _opp[9]), _opp[10] >= 1 && (_opi.houg += 1 * _opp[10])), _opi;
         };
     },
-    47169: (_opl, _opm, _opn) => {
+    23035: (_opq, _opr, _ops) => {
         'use strict';
-        var _opo = null;
-        defineModule(_opm);
-        Object.defineProperty(_opm, '__esModule', {
+        var _opt = null;
+        defineModule(_opr);
+        Object.defineProperty(_opr, '__esModule', {
             'value': true
-        }), _opm.getSlot59PersonalEffect = void 0;
-        var _opp = _opn(74496);
-        _opm.getSlot59PersonalEffect = function(_opq) {
-            var _opr = null,
-                _ops = new _opp.SlotItemEffectModel();
-            return 501 != _opq.ship_id && 506 != _opq.ship_id && 502 != _opq.ship_id && 507 != _opq.ship_id || (_ops.tyku += 1, _ops.kaih += 1), _ops;
+        }), _opr.getSlot58PersonalEffect = void 0;
+        var _opu = _ops(74496);
+        _opr.getSlot58PersonalEffect = function(_opv) {
+            var _opw = null,
+                _opx = new _opu.SlotItemEffectModel(),
+                _opy = new _opu.SlotItemEffectModel();
+            if ('しまかぜ' != _opv.yomi && 4 != _opv.stype && 54 != _opv.ctype || (_opy.raig = 1), !_opy.exists()) return _opx;
+            var _opz = _opv.get_slotnums(58);
+            return _opx = _opy.multiply(_opz);
         };
     },
-    87845: (_opt, _opu, _opv) => {
+    47169: (_oq0, _oq1, _oq2) => {
         'use strict';
-        var _opw = null;
-        defineModule(_opu);
-        Object.defineProperty(_opu, '__esModule', {
+        var _oq3 = null;
+        defineModule(_oq1);
+        Object.defineProperty(_oq1, '__esModule', {
             'value': true
-        }), _opu.getSlot5PersonalEffect = void 0;
-        var _opx = _opv(74496);
-        _opu.getSlot5PersonalEffect = function(_opy) {
-            var _opz = null,
-                _oq0 = new _opx.SlotItemEffectModel(),
-                _oq1 = false,
-                _oq2 = new _opx.SlotItemEffectModel();
-            if (52 != _opy.ctype && 9 != _opy.ctype || (_oq2.houg += 1, 52 == _opy.ctype && (_oq2.houg = _oq2.houg + 1), _oq1 = true), 0 == _oq1) return _oq0;
-            var _oq3 = _opy.get_slotnums(5);
-            return _oq0.add(_oq2.multiply(_oq3)), _oq0;
+        }), _oq1.getSlot59PersonalEffect = void 0;
+        var _oq4 = _oq2(74496);
+        _oq1.getSlot59PersonalEffect = function(_oq5) {
+            var _oq6 = null,
+                _oq7 = new _oq4.SlotItemEffectModel();
+            return 501 != _oq5.ship_id && 506 != _oq5.ship_id && 502 != _oq5.ship_id && 507 != _oq5.ship_id || (_oq7.tyku += 1, _oq7.kaih += 1), _oq7;
         };
     },
-    92253: (_oq4, _oq5, _oq6) => {
+    87845: (_oq8, _oq9, _oqa) => {
         'use strict';
-        var _oq7 = null;
-        defineModule(_oq5);
-        Object.defineProperty(_oq5, '__esModule', {
+        var _oqb = null;
+        defineModule(_oq9);
+        Object.defineProperty(_oq9, '__esModule', {
             'value': true
-        }), _oq5.getSlot60_154_219PersonalEffec = void 0;
-        var _oq8 = _oq6(74496);
-        _oq5.getSlot60_154_219PersonalEffec = function(_oq9) {
-            var _oqa = null,
-                _oqb = new _oq8.SlotItemEffectModel(),
-                _oqc = false,
-                _oqd = new _oq8.SlotItemEffectModel();
-            if ('じゅんよう' != _oq9.yomi && 'ひよう' != _oq9.yomi && 'ずいほう' != _oq9.yomi && 'ちとせ' != _oq9.yomi && 'ちよだ' != _oq9.yomi || (_oqd.houg += 1, _oqd.tyku += 1, _oqd.kaih += 1, _oqc = true), 185 != _oq9.ship_id && 318 != _oq9.ship_id && 282 != _oq9.ship_id || (_oqd.houg += 1, _oqd.tyku += 1, _oqd.kaih += 1, _oqc = true), 888 != _oq9.ship_id && 883 != _oq9.ship_id || (_oqd.houg += 2, _oqd.tyku += 1, _oqd.kaih += 2, _oqc = true), 0 == _oqc) return _oqb;
-            var _oqe = _oq9.get_slotnums(60) + _oq9.get_slotnums(154) + _oq9.get_slotnums(219);
-            return _oqb.add(_oqd.multiply(_oqe)), _oqb;
+        }), _oq9.getSlot5PersonalEffect = void 0;
+        var _oqc = _oqa(74496);
+        _oq9.getSlot5PersonalEffect = function(_oqd) {
+            var _oqe = null,
+                _oqf = new _oqc.SlotItemEffectModel(),
+                _oqg = false,
+                _oqh = new _oqc.SlotItemEffectModel();
+            if (52 != _oqd.ctype && 9 != _oqd.ctype || (_oqh.houg += 1, 52 == _oqd.ctype && (_oqh.houg = _oqh.houg + 1), _oqg = true), 0 == _oqg) return _oqf;
+            var _oqi = _oqd.get_slotnums(5);
+            return _oqf.add(_oqh.multiply(_oqi)), _oqf;
         };
     },
-    2578: (_oqf, _oqg, _oqh) => {
+    92253: (_oqj, _oqk, _oql) => {
         'use strict';
-        var _oqi = null;
-        defineModule(_oqg);
-        Object.defineProperty(_oqg, '__esModule', {
+        var _oqm = null;
+        defineModule(_oqk);
+        Object.defineProperty(_oqk, '__esModule', {
             'value': true
-        }), _oqg.getSlot61PersonalEffect2 = _oqg.getSlot61PersonalEffect = void 0;
-        var _oqj = _oqh(74496);
-        _oqg.getSlot61PersonalEffect = function(_oqk) {
-            var _oql = null,
-                _oqm = new _oqj.SlotItemEffectModel();
-            if (553 == _oqk.ship_id) _oqm.houg = 3, _oqm.kaih = 2, _oqm.souk = 1, _oqm.houm = 5, _oqm.leng = 1;
-            else {
-                if (554 == _oqk.ship_id) _oqm.houg = 3, _oqm.kaih = 3, _oqm.souk = 3, _oqm.houm = 5, _oqm.leng = 1;
-                else {
-                    if (196 == _oqk.ship_id) _oqm.houm = 5, _oqm.leng = 1;
-                    else {
-                        if (197 != _oqk.ship_id) return _oqm;
-                        _oqm.houm = 5, _oqm.leng = 1;
-                    }
-                }
-            }
-            return _oqm;
-        }, _oqg.getSlot61PersonalEffect2 = function(_oqn) {
-            var _oqo = null,
-                _oqp = new _oqj.SlotItemEffectModel();
-            if (null == _oqn.have_slots_dict[61]) return _oqp;
-            for (var _oqq = 0, _oqr = 0, _oqs = _oqn.have_slots_dict[61]; _oqr < _oqs.length; _oqr++) {
-                var _oqt = _oqs[_oqr].level;
-                _oqq < _oqt && (_oqq = _oqt);
-            }
-            return 0 == _oqq || ('そうりゅう' == _oqn.yomi ? (_oqp.houg += 3, _oqp.saku += 3) : 'ひりゅう' == _oqn.yomi && (_oqp.houg += 2, _oqp.saku += 2), 508 != _oqn.ship_id && 509 != _oqn.ship_id && 560 != _oqn.ship_id || (_oqp.houg += 1, _oqp.saku += 1), _oqq >= 8 && 197 == _oqn.ship_id && (_oqp.houg += 1, _oqp.saku += 1)), _oqp;
+        }), _oqk.getSlot60_154_219PersonalEffec = void 0;
+        var _oqn = _oql(74496);
+        _oqk.getSlot60_154_219PersonalEffec = function(_oqo) {
+            var _oqp = null,
+                _oqq = new _oqn.SlotItemEffectModel(),
+                _oqr = false,
+                _oqs = new _oqn.SlotItemEffectModel();
+            if ('じゅんよう' != _oqo.yomi && 'ひよう' != _oqo.yomi && 'ずいほう' != _oqo.yomi && 'ちとせ' != _oqo.yomi && 'ちよだ' != _oqo.yomi || (_oqs.houg += 1, _oqs.tyku += 1, _oqs.kaih += 1, _oqr = true), 185 != _oqo.ship_id && 318 != _oqo.ship_id && 282 != _oqo.ship_id || (_oqs.houg += 1, _oqs.tyku += 1, _oqs.kaih += 1, _oqr = true), 888 != _oqo.ship_id && 883 != _oqo.ship_id || (_oqs.houg += 2, _oqs.tyku += 1, _oqs.kaih += 2, _oqr = true), 0 == _oqr) return _oqq;
+            var _oqt = _oqo.get_slotnums(60) + _oqo.get_slotnums(154) + _oqo.get_slotnums(219);
+            return _oqq.add(_oqs.multiply(_oqt)), _oqq;
         };
     },
-    17143: (_oqu, _oqv, _oqw) => {
+    2578: (_oqu, _oqv, _oqw) => {
         'use strict';
         var _oqx = null;
         defineModule(_oqv);
         Object.defineProperty(_oqv, '__esModule', {
             'value': true
-        }), _oqv.getSlot63PersonalEffect = void 0;
+        }), _oqv.getSlot61PersonalEffect2 = _oqv.getSlot61PersonalEffect = void 0;
         var _oqy = _oqw(74496);
-        _oqv.getSlot63PersonalEffect = function(_oqz) {
+        _oqv.getSlot61PersonalEffect = function(_oqz) {
             var _or0 = null,
-                _or1 = new _oqy.SlotItemEffectModel(),
-                _or2 = new _oqy.SlotItemEffectModel();
-            1 != _oqz.ctype && 5 != _oqz.ctype && 10 != _oqz.ctype || (_or2.tyku += 1), 'ゆうだち' == _oqz.yomi && (_or2.houg += 1, _or2.tyku += 1, _or2.kaih += 2), 145 == _oqz.ship_id || 961 == _oqz.ship_id ? _or2.houg += 1 : 144 == _oqz.ship_id ? _or2.raig += 1 : 469 == _oqz.ship_id ? _or2.kaih += 2 : 242 == _oqz.ship_id || 497 == _oqz.ship_id || 244 == _oqz.ship_id || 498 == _oqz.ship_id ? _or2.kaih += 1 : 627 == _oqz.ship_id ? _or2.houg += 1 : 903 != _oqz.ship_id && 908 != _oqz.ship_id || (_or2.houg += 2);
-            var _or3 = true;
-            if (_or2.exists() || (_or3 = false), 0 == _or3) return _or1;
-            var _or4 = _oqz.get_slotnums(63);
-            return _or1 = _or2.multiply(_or4);
-        };
-    },
-    16164: (_or5, _or6, _or7) => {
-        'use strict';
-        var _or8 = null;
-        defineModule(_or6);
-        Object.defineProperty(_or6, '__esModule', {
-            'value': true
-        }), _or6.getSlot67PersonalEffect = void 0;
-        var _or9 = _or7(74496);
-        _or6.getSlot67PersonalEffect = function(_ora) {
-            var _orb = null,
-                _orc = new _or9.SlotItemEffectModel(),
-                _ord = new _or9.SlotItemEffectModel();
-            if (13 != _ora.stype && 14 != _ora.stype && (_ord.raig = -5), !_ord.exists()) return _orc;
-            var _ore = _ora.get_slotnums(67);
-            return _orc = _ord.multiply(_ore);
-        };
-    },
-    35023: (_orf, _org, _orh) => {
-        'use strict';
-        var _ori = null;
-        defineModule(_org);
-        Object.defineProperty(_org, '__esModule', {
-            'value': true
-        }), _org.getSlot69PersonalEffect = void 0;
-        var _orj = _orh(74496);
-        _org.getSlot69PersonalEffect = function(_ork) {
-            var _orl = null,
-                _orm = new _orj.SlotItemEffectModel(),
-                _orn = false,
-                _oro = new _orj.SlotItemEffectModel();
-            if (554 == _ork.ship_id || 646 == _ork.ship_id ? (_oro.houg += 1, _oro.tais += 2, _orn = true) : 553 == _ork.ship_id && (_oro.houg += 1, _oro.tais += 1, _orn = true), 0 == _orn) return _orm;
-            var _orp = _ork.get_slotnums(69);
-            return _orm.add(_oro.multiply(_orp)), _orm;
-        };
-    },
-    78707: (_orq, _orr, _ors) => {
-        'use strict';
-        var _ort = null;
-        defineModule(_orr);
-        Object.defineProperty(_orr, '__esModule', {
-            'value': true
-        }), _orr.getSlot70PersonalEffect = void 0;
-        var _oru = _ors(74496);
-        _orr.getSlot70PersonalEffect = function(_orv) {
-            var _orw = null,
-                _orx = new _oru.SlotItemEffectModel(),
-                _ory = false,
-                _orz = new _oru.SlotItemEffectModel();
-            if ('やましおまる' == _orv.yomi && (_orz.houg += 1, _orz.tais += 1, _ory = true), 0 == _ory) return _orx;
-            var _os0 = _orv.get_slotnums(70);
-            return _orx.add(_orz.multiply(_os0)), _orx;
-        };
-    },
-    44680: function(_os1, _os2, _os3) {
-        'use strict';
-        var _os4 = null;
-        var _os5 = this && this.__importDefault || function(_os6) {
-            var _os7 = null;
-            return _os6 && _os6.__esModule ? _os6 : {
-                'default': _os6
-            };
-        };
-        defineModule(_os2);
-        Object.defineProperty(_os2, '__esModule', {
-            'value': true
-        }), _os2.getSlot78PersonalEffect = void 0;
-        var _os8 = _os3(74496),
-            _os9 = _os5(_os3(18622));
-        _os2.getSlot78PersonalEffect = function(_osa) {
-            var _osb = null,
-                _osc = new _os8.SlotItemEffectModel(),
-                _osd = false,
-                _ose = new _os8.SlotItemEffectModel(),
-                _osf = 0,
-                _osg = 0,
-                _osh = false;
-            if (48 == _osa.ctype && (_ose.houg += 1, _ose.kaih += 1, _osf = 1, _osg = 1, _osh = true, _osd = true), 0 == _osd) return _osc;
-            var _osi = _osa.get_slotnums(78);
-            _osc.add(_ose.multiply(_osi));
-            var _osj = 0,
-                _osk = _osa.get_each_level_nums(78),
-                _osl = 0;
-            if (_osh) {
-                _osk.map(function(_osm, _osn) {
-                    _osn >= 7 && (_osl += _osm);
-                });
-                for (var _oso = 0, _osp = _osa.have_slot_ids(); _oso < _osp.length; _oso++) {
-                    var _osq = _osp[_oso],
-                        _osr = _os9.default.model.slot.getMst(_osq),
-                        _oss = _osr.equipType;
-                    12 != _oss && 13 != _oss || _osr.sakuteki >= 5 && (_osj += _osa.get_slotnums(parseInt(_osq)));
+                _or1 = new _oqy.SlotItemEffectModel();
+            if (553 == _oqz.ship_id) _or1.houg = 3, _or1.kaih = 2, _or1.souk = 1, _or1.houm = 5, _or1.leng = 1;
+            else {
+                if (554 == _oqz.ship_id) _or1.houg = 3, _or1.kaih = 3, _or1.souk = 3, _or1.houm = 5, _or1.leng = 1;
+                else {
+                    if (196 == _oqz.ship_id) _or1.houm = 5, _or1.leng = 1;
+                    else {
+                        if (197 != _oqz.ship_id) return _or1;
+                        _or1.houm = 5, _or1.leng = 1;
+                    }
                 }
             }
-            if (1 == _osf && _osj > 0 && (_osc.houg += 2, _osc.kaih += 2, _osc.raig += 2), 1 == _osg) {
-                _osc.houg += 1 * _osl;
-                var _ost = _osk[10];
-                _osc.souk += 1 * _ost;
+            return _or1;
+        }, _oqv.getSlot61PersonalEffect2 = function(_or2) {
+            var _or3 = null,
+                _or4 = new _oqy.SlotItemEffectModel();
+            if (null == _or2.have_slots_dict[61]) return _or4;
+            for (var _or5 = 0, _or6 = 0, _or7 = _or2.have_slots_dict[61]; _or6 < _or7.length; _or6++) {
+                var _or8 = _or7[_or6].level;
+                _or5 < _or8 && (_or5 = _or8);
             }
-            return _osc;
+            return 0 == _or5 || ('そうりゅう' == _or2.yomi ? (_or4.houg += 3, _or4.saku += 3) : 'ひりゅう' == _or2.yomi && (_or4.houg += 2, _or4.saku += 2), 508 != _or2.ship_id && 509 != _or2.ship_id && 560 != _or2.ship_id || (_or4.houg += 1, _or4.saku += 1), _or5 >= 8 && 197 == _or2.ship_id && (_or4.houg += 1, _or4.saku += 1)), _or4;
         };
     },
-    45749: (_osu, _osv, _osw) => {
+    17143: (_or9, _ora, _orb) => {
         'use strict';
-        var _osx = null;
-        defineModule(_osv);
-        Object.defineProperty(_osv, '__esModule', {
+        var _orc = null;
+        defineModule(_ora);
+        Object.defineProperty(_ora, '__esModule', {
             'value': true
-        }), _osv.getSlot79And81PersonalEffect = void 0;
-        var _osy = _osw(74496);
-        _osv.getSlot79And81PersonalEffect = function(_osz) {
-            var _ot0 = null,
-                _ot1 = new _osy.SlotItemEffectModel(),
-                _ot2 = new _osy.SlotItemEffectModel();
-            if (553 == _osz.ship_id) _ot2.houg = 3;
+        }), _ora.getSlot63PersonalEffect = void 0;
+        var _ord = _orb(74496);
+        _ora.getSlot63PersonalEffect = function(_ore) {
+            var _orf = null,
+                _org = new _ord.SlotItemEffectModel(),
+                _orh = new _ord.SlotItemEffectModel();
+            1 != _ore.ctype && 5 != _ore.ctype && 10 != _ore.ctype || (_orh.tyku += 1), 'ゆうだち' == _ore.yomi && (_orh.houg += 1, _orh.tyku += 1, _orh.kaih += 2), 145 == _ore.ship_id || 961 == _ore.ship_id ? _orh.houg += 1 : 144 == _ore.ship_id ? _orh.raig += 1 : 469 == _ore.ship_id ? _orh.kaih += 2 : 242 == _ore.ship_id || 497 == _ore.ship_id || 244 == _ore.ship_id || 498 == _ore.ship_id ? _orh.kaih += 1 : 627 == _ore.ship_id ? _orh.houg += 1 : 903 != _ore.ship_id && 908 != _ore.ship_id || (_orh.houg += 2);
+            var _ori = true;
+            if (_orh.exists() || (_ori = false), 0 == _ori) return _org;
+            var _orj = _ore.get_slotnums(63);
+            return _org = _orh.multiply(_orj);
+        };
+    },
+    16164: (_ork, _orl, _orm) => {
+        'use strict';
+        var _orn = null;
+        defineModule(_orl);
+        Object.defineProperty(_orl, '__esModule', {
+            'value': true
+        }), _orl.getSlot67PersonalEffect = void 0;
+        var _oro = _orm(74496);
+        _orl.getSlot67PersonalEffect = function(_orp) {
+            var _orq = null,
+                _orr = new _oro.SlotItemEffectModel(),
+                _ors = new _oro.SlotItemEffectModel();
+            if (13 != _orp.stype && 14 != _orp.stype && (_ors.raig = -5), !_ors.exists()) return _orr;
+            var _ort = _orp.get_slotnums(67);
+            return _orr = _ors.multiply(_ort);
+        };
+    },
+    35023: (_oru, _orv, _orw) => {
+        'use strict';
+        var _orx = null;
+        defineModule(_orv);
+        Object.defineProperty(_orv, '__esModule', {
+            'value': true
+        }), _orv.getSlot69PersonalEffect = void 0;
+        var _ory = _orw(74496);
+        _orv.getSlot69PersonalEffect = function(_orz) {
+            var _os0 = null,
+                _os1 = new _ory.SlotItemEffectModel(),
+                _os2 = false,
+                _os3 = new _ory.SlotItemEffectModel();
+            if (554 == _orz.ship_id || 646 == _orz.ship_id ? (_os3.houg += 1, _os3.tais += 2, _os2 = true) : 553 == _orz.ship_id && (_os3.houg += 1, _os3.tais += 1, _os2 = true), 0 == _os2) return _os1;
+            var _os4 = _orz.get_slotnums(69);
+            return _os1.add(_os3.multiply(_os4)), _os1;
+        };
+    },
+    78707: (_os5, _os6, _os7) => {
+        'use strict';
+        var _os8 = null;
+        defineModule(_os6);
+        Object.defineProperty(_os6, '__esModule', {
+            'value': true
+        }), _os6.getSlot70PersonalEffect = void 0;
+        var _os9 = _os7(74496);
+        _os6.getSlot70PersonalEffect = function(_osa) {
+            var _osb = null,
+                _osc = new _os9.SlotItemEffectModel(),
+                _osd = false,
+                _ose = new _os9.SlotItemEffectModel();
+            if ('やましおまる' == _osa.yomi && (_ose.houg += 1, _ose.tais += 1, _osd = true), 0 == _osd) return _osc;
+            var _osf = _osa.get_slotnums(70);
+            return _osc.add(_ose.multiply(_osf)), _osc;
+        };
+    },
+    44680: function(_osg, _osh, _osi) {
+        'use strict';
+        var _osj = null;
+        var _osk = this && this.__importDefault || function(_osl) {
+            var _osm = null;
+            return _osl && _osl.__esModule ? _osl : {
+                'default': _osl
+            };
+        };
+        defineModule(_osh);
+        Object.defineProperty(_osh, '__esModule', {
+            'value': true
+        }), _osh.getSlot78PersonalEffect = void 0;
+        var _osn = _osi(74496),
+            _oso = _osk(_osi(18622));
+        _osh.getSlot78PersonalEffect = function(_osp) {
+            var _osq = null,
+                _osr = new _osn.SlotItemEffectModel(),
+                _oss = false,
+                _ost = new _osn.SlotItemEffectModel(),
+                _osu = 0,
+                _osv = 0,
+                _osw = false;
+            if (48 == _osp.ctype && (_ost.houg += 1, _ost.kaih += 1, _osu = 1, _osv = 1, _osw = true, _oss = true), 0 == _oss) return _osr;
+            var _osx = _osp.get_slotnums(78);
+            _osr.add(_ost.multiply(_osx));
+            var _osy = 0,
+                _osz = _osp.get_each_level_nums(78),
+                _ot0 = 0;
+            if (_osw) {
+                _osz.map(function(_ot1, _ot2) {
+                    _ot2 >= 7 && (_ot0 += _ot1);
+                });
+                for (var _ot3 = 0, _ot4 = _osp.have_slot_ids(); _ot3 < _ot4.length; _ot3++) {
+                    var _ot5 = _ot4[_ot3],
+                        _ot6 = _oso.default.model.slot.getMst(_ot5),
+                        _ot7 = _ot6.equipType;
+                    12 != _ot7 && 13 != _ot7 || _ot6.sakuteki >= 5 && (_osy += _osp.get_slotnums(parseInt(_ot5)));
+                }
+            }
+            if (1 == _osu && _osy > 0 && (_osr.houg += 2, _osr.kaih += 2, _osr.raig += 2), 1 == _osv) {
+                _osr.houg += 1 * _ot0;
+                var _ot8 = _osz[10];
+                _osr.souk += 1 * _ot8;
+            }
+            return _osr;
+        };
+    },
+    45749: (_ot9, _ota, _otb) => {
+        'use strict';
+        var _otc = null;
+        defineModule(_ota);
+        Object.defineProperty(_ota, '__esModule', {
+            'value': true
+        }), _ota.getSlot79And81PersonalEffect = void 0;
+        var _otd = _otb(74496);
+        _ota.getSlot79And81PersonalEffect = function(_ote) {
+            var _otf = null,
+                _otg = new _otd.SlotItemEffectModel(),
+                _oth = new _otd.SlotItemEffectModel();
+            if (553 == _ote.ship_id) _oth.houg = 3;
             else {
-                if (82 == _osz.ship_id) _ot2.houg = 2;
+                if (82 == _ote.ship_id) _oth.houg = 2;
                 else {
-                    if (88 == _osz.ship_id) _ot2.houg = 2;
+                    if (88 == _ote.ship_id) _oth.houg = 2;
                     else {
-                        if (554 == _osz.ship_id) _ot2.houg = 3;
+                        if (554 == _ote.ship_id) _oth.houg = 3;
                         else {
-                            if (411 == _osz.ship_id) _ot2.houg = 2;
+                            if (411 == _ote.ship_id) _oth.houg = 2;
                             else {
-                                if (412 != _osz.ship_id) return _ot1;
-                                _ot2.houg = 2;
+                                if (412 != _ote.ship_id) return _otg;
+                                _oth.houg = 2;
                             }
                         }
                     }
                 }
             }
-            var _ot3 = _osz.get_slotnums(79) + _osz.get_slotnums(81);
-            return _ot1 = _ot2.multiply(_ot3);
+            var _oti = _ote.get_slotnums(79) + _ote.get_slotnums(81);
+            return _otg = _oth.multiply(_oti);
         };
     },
-    37334: (_ot4, _ot5, _ot6) => {
+    37334: (_otj, _otk, _otl) => {
         'use strict';
-        var _ot7 = null;
-        defineModule(_ot5);
-        Object.defineProperty(_ot5, '__esModule', {
+        var _otm = null;
+        defineModule(_otk);
+        Object.defineProperty(_otk, '__esModule', {
             'value': true
-        }), _ot5.getSlot82PersonalEffect = void 0;
-        var _ot8 = _ot6(74496);
-        _ot5.getSlot82PersonalEffect = function(_ot9) {
-            var _ota = null,
-                _otb = new _ot8.SlotItemEffectModel(),
-                _otc = new _ot8.SlotItemEffectModel();
-            if (76 == _ot9.ctype && (_otc.tais = 1, _otc.kaih = 1), !_otc.exists()) return _otb;
-            var _otd = _ot9.get_slotnums(82);
-            return _otb = _otc.multiply(_otd);
+        }), _otk.getSlot82PersonalEffect = void 0;
+        var _otn = _otl(74496);
+        _otk.getSlot82PersonalEffect = function(_oto) {
+            var _otp = null,
+                _otq = new _otn.SlotItemEffectModel(),
+                _otr = new _otn.SlotItemEffectModel();
+            if (76 == _oto.ctype && (_otr.tais = 1, _otr.kaih = 1), !_otr.exists()) return _otq;
+            var _ots = _oto.get_slotnums(82);
+            return _otq = _otr.multiply(_ots);
         };
     },
-    2603: function(_ote, _otf, _otg) {
+    2603: function(_ott, _otu, _otv) {
         'use strict';
-        var _oth = null;
-        var _oti = this && this.__importDefault || function(_otj) {
-            var _otk = null;
-            return _otj && _otj.__esModule ? _otj : {
-                'default': _otj
+        var _otw = null;
+        var _otx = this && this.__importDefault || function(_oty) {
+            var _otz = null;
+            return _oty && _oty.__esModule ? _oty : {
+                'default': _oty
             };
         };
-        defineModule(_otf);
-        Object.defineProperty(_otf, '__esModule', {
+        defineModule(_otu);
+        Object.defineProperty(_otu, '__esModule', {
             'value': true
-        }), _otf.getSlot84PersonalEffect = void 0;
-        var _otl = _otg(74496),
-            _otm = _oti(_otg(18622));
-        _otf.getSlot84PersonalEffect = function(_otn) {
-            var _oto = null,
-                _otp = new _otl.SlotItemEffectModel(),
-                _otq = _otn.get_each_level_nums(84),
-                _otr = 0,
-                _ots = 0;
-            if (_otq.forEach(function(_ott, _otu) {
-                    _otu >= 4 && (_otr += _ott), _otu >= 7 && (_ots += _ott);
-                }), 0 == _otr) return _otp;
-            for (var _otv = 0, _otw = 0, _otx = _otn.have_slot_ids(); _otw < _otx.length; _otw++) {
-                var _oty = _otx[_otw],
-                    _otz = _otm.default.model.slot.getMst(_oty),
-                    _ou0 = _otz.equipType;
-                12 != _ou0 && 13 != _ou0 || (_otz.sakuteki >= 5 && _otn.get_slotnums(parseInt(_oty)), _otz.taiku >= 2 && (_otv += _otn.get_slotnums(parseInt(_oty))));
+        }), _otu.getSlot84PersonalEffect = void 0;
+        var _ou0 = _otv(74496),
+            _ou1 = _otx(_otv(18622));
+        _otu.getSlot84PersonalEffect = function(_ou2) {
+            var _ou3 = null,
+                _ou4 = new _ou0.SlotItemEffectModel(),
+                _ou5 = _ou2.get_each_level_nums(84),
+                _ou6 = 0,
+                _ou7 = 0;
+            if (_ou5.forEach(function(_ou8, _ou9) {
+                    _ou9 >= 4 && (_ou6 += _ou8), _ou9 >= 7 && (_ou7 += _ou8);
+                }), 0 == _ou6) return _ou4;
+            for (var _oua = 0, _oub = 0, _ouc = _ou2.have_slot_ids(); _oub < _ouc.length; _oub++) {
+                var _oud = _ouc[_oub],
+                    _oue = _ou1.default.model.slot.getMst(_oud),
+                    _ouf = _oue.equipType;
+                12 != _ouf && 13 != _ouf || (_oue.sakuteki >= 5 && _ou2.get_slotnums(parseInt(_oud)), _oue.taiku >= 2 && (_oua += _ou2.get_slotnums(parseInt(_oud))));
             }
-            var _ou1 = _otn.getCountryName();
-            _otr >= 1 && (_otp.tyku += 1 * _otr, _otp.kaih += 1 * _otr, 'ドイツ' != _ou1 && 'イタリア' != _ou1 || (_otp.tyku += 1 * _otr, _otp.kaih += 1 * _otr), _otv >= 1 && (_otp.tyku += 1)), _ots >= 1 && (_otp.tyku += 1 * _ots, _otp.houg += 1 * _ots);
-            var _ou2 = _otq[10];
-            return _ou2 >= 1 && (_otp.tyku += 1 * _ou2, _otp.kaih += 1 * _ou2, 'ドイツ' != _ou1 && 'イタリア' != _ou1 || (_otp.houg += 1)), _otp;
+            var _oug = _ou2.getCountryName();
+            _ou6 >= 1 && (_ou4.tyku += 1 * _ou6, _ou4.kaih += 1 * _ou6, 'ドイツ' != _oug && 'イタリア' != _oug || (_ou4.tyku += 1 * _ou6, _ou4.kaih += 1 * _ou6), _oua >= 1 && (_ou4.tyku += 1)), _ou7 >= 1 && (_ou4.tyku += 1 * _ou7, _ou4.houg += 1 * _ou7);
+            var _ouh = _ou5[10];
+            return _ouh >= 1 && (_ou4.tyku += 1 * _ouh, _ou4.kaih += 1 * _ouh, 'ドイツ' != _oug && 'イタリア' != _oug || (_ou4.houg += 1)), _ou4;
         };
     },
-    90725: (_ou3, _ou4, _ou5) => {
+    90725: (_oui, _ouj, _ouk) => {
         'use strict';
-        var _ou6 = null;
-        defineModule(_ou4);
-        Object.defineProperty(_ou4, '__esModule', {
+        var _oul = null;
+        defineModule(_ouj);
+        Object.defineProperty(_ouj, '__esModule', {
             'value': true
-        }), _ou4.getSlot85PersonalEffect = void 0;
-        var _ou7 = _ou5(74496);
-        _ou4.getSlot85PersonalEffect = function(_ou8) {
-            var _ou9 = null,
-                _oua = new _ou7.SlotItemEffectModel(),
-                _oub = _ou8.get_each_level_over_nums([85]),
-                _ouc = _oub[85][6],
-                _oud = _oub[85][8],
-                _oue = _oub[85][10],
-                _ouf = _ou8.get_have_rader_nums().air_rader,
-                _oug = _ou8.getCountryName();
-            return _ouc > 0 && (_oua.tyku += 1 * _ouc, _oua.kaih += 1 * _ouc, _ouf >= 1 && (_oua.tyku += 2)), _oud > 0 && (_oua.houg += 1 * _oud, 'ドイツ' != _oug && 'イタリア' != _oug || (_oua.tyku += 1 * _oud, _oua.kaih += 1 * _oud)), _oue > 0 && (_oua.kaih += 1 * _oue, _oua.houm += 1 * _oue, 'ドイツ' != _oug && 'イタリア' != _oug || (_oua.houg += 1)), _oua;
+        }), _ouj.getSlot85PersonalEffect = void 0;
+        var _oum = _ouk(74496);
+        _ouj.getSlot85PersonalEffect = function(_oun) {
+            var _ouo = null,
+                _oup = new _oum.SlotItemEffectModel(),
+                _ouq = _oun.get_each_level_over_nums([85]),
+                _our = _ouq[85][6],
+                _ous = _ouq[85][8],
+                _out = _ouq[85][10],
+                _ouu = _oun.get_have_rader_nums().air_rader,
+                _ouv = _oun.getCountryName();
+            return _our > 0 && (_oup.tyku += 1 * _our, _oup.kaih += 1 * _our, _ouu >= 1 && (_oup.tyku += 2)), _ous > 0 && (_oup.houg += 1 * _ous, 'ドイツ' != _ouv && 'イタリア' != _ouv || (_oup.tyku += 1 * _ous, _oup.kaih += 1 * _ous)), _out > 0 && (_oup.kaih += 1 * _out, _oup.houm += 1 * _out, 'ドイツ' != _ouv && 'イタリア' != _ouv || (_oup.houg += 1)), _oup;
         };
     },
-    29180: (_ouh, _oui, _ouj) => {
+    29180: (_ouw, _oux, _ouy) => {
         'use strict';
-        var _ouk = null;
-        defineModule(_oui);
-        Object.defineProperty(_oui, '__esModule', {
+        var _ouz = null;
+        defineModule(_oux);
+        Object.defineProperty(_oux, '__esModule', {
             'value': true
-        }), _oui.getSlot87PersonalEffect = void 0;
-        var _oul = _ouj(74496);
-        _oui.getSlot87PersonalEffect = function(_oum) {
-            var _oun = null,
-                _ouo = new _oul.SlotItemEffectModel(),
-                _oup = false,
-                _ouq = new _oul.SlotItemEffectModel(),
-                _our = 0;
-            if (951 == _oum.ship_id ? (_ouq.houg += 1, _ouq.kaih += 1, _ouq.raig += 1, _ouq.houm += 1, _oup = true, _our = 1) : 181 == _oum.ship_id || 316 == _oum.ship_id || 50 == _oum.ship_id || 229 == _oum.ship_id || 961 == _oum.ship_id ? _our = 2 : 591 != _oum.ship_id && 592 != _oum.ship_id && 593 != _oum.ship_id && 954 != _oum.ship_id || (_ouo.kaih += 2, _ouo.raig += 1, _our = 3), 38 != _oum.ctype && 54 != _oum.ctype && 101 != _oum.ctype || (_our = 4), _oup) {
-                var _ous = _oum.get_slotnums(87);
-                _ouo.add(_ouq.multiply(_ous));
+        }), _oux.getSlot87PersonalEffect = void 0;
+        var _ov0 = _ouy(74496);
+        _oux.getSlot87PersonalEffect = function(_ov1) {
+            var _ov2 = null,
+                _ov3 = new _ov0.SlotItemEffectModel(),
+                _ov4 = false,
+                _ov5 = new _ov0.SlotItemEffectModel(),
+                _ov6 = 0;
+            if (951 == _ov1.ship_id ? (_ov5.houg += 1, _ov5.kaih += 1, _ov5.raig += 1, _ov5.houm += 1, _ov4 = true, _ov6 = 1) : 181 == _ov1.ship_id || 316 == _ov1.ship_id || 50 == _ov1.ship_id || 229 == _ov1.ship_id || 961 == _ov1.ship_id ? _ov6 = 2 : 591 != _ov1.ship_id && 592 != _ov1.ship_id && 593 != _ov1.ship_id && 954 != _ov1.ship_id || (_ov3.kaih += 2, _ov3.raig += 1, _ov6 = 3), 38 != _ov1.ctype && 54 != _ov1.ctype && 101 != _ov1.ctype || (_ov6 = 4), _ov4) {
+                var _ov7 = _ov1.get_slotnums(87);
+                _ov3.add(_ov5.multiply(_ov7));
             }
-            if (0 == _our) return _ouo;
-            var _out = _oum.get_each_level_nums(87),
-                _ouu = [];
-            return _our > 0 && _out.forEach(function(_ouv, _ouw) {
-                var _oux = null;
-                for (var _ouy = 1; _ouy <= _oum.SLOT_LEVEL_MAX; _ouy++) null == _ouu[_ouy] && (_ouu[_ouy] = 0), _ouw >= _ouy && (_ouu[_ouy] += _ouv);
-            }), 1 == _our ? (_ouu[6] >= 1 && (_ouo.tyku += 1 * _ouu[6]), _ouu[7] >= 1 && (_ouo.kaih += 1 * _ouu[7]), _ouu[8] >= 1 && (_ouo.raig += 1 * _ouu[8]), _ouu[9] >= 1 && (_ouo.houg += 1 * _ouu[9]), _ouu[10] >= 1 && (_ouo.houm += 1 * _ouu[10])) : 2 == _our ? (_ouu[6] >= 1 && (_ouo.kaih += 1 * _ouu[6]), _ouu[7] >= 1 && (_ouo.raig += 1 * _ouu[7]), _ouu[8] >= 1 && (_ouo.houg += 1 * _ouu[8]), _ouu[9] >= 1 && (_ouo.houm += 1 * _ouu[9]), _ouu[10] >= 1 && (_ouo.kaih += 1 * _ouu[10])) : 3 == _our ? (_ouu[6] > 0 && (_ouo.kaih += 1), _ouu[8] > 0 && (_ouo.raig += 1), _ouu[10] > 0 && (_ouo.houg += 1)) : 4 == _our && (_ouu[7] >= 1 && (_ouo.kaih += 1 * _ouu[7]), _ouu[8] >= 1 && (_ouo.raig += 1 * _ouu[8]), _ouu[10] >= 1 && (_ouo.houm += 1 * _ouu[10])), _ouo;
+            if (0 == _ov6) return _ov3;
+            var _ov8 = _ov1.get_each_level_nums(87),
+                _ov9 = [];
+            return _ov6 > 0 && _ov8.forEach(function(_ova, _ovb) {
+                var _ovc = null;
+                for (var _ovd = 1; _ovd <= _ov1.SLOT_LEVEL_MAX; _ovd++) null == _ov9[_ovd] && (_ov9[_ovd] = 0), _ovb >= _ovd && (_ov9[_ovd] += _ova);
+            }), 1 == _ov6 ? (_ov9[6] >= 1 && (_ov3.tyku += 1 * _ov9[6]), _ov9[7] >= 1 && (_ov3.kaih += 1 * _ov9[7]), _ov9[8] >= 1 && (_ov3.raig += 1 * _ov9[8]), _ov9[9] >= 1 && (_ov3.houg += 1 * _ov9[9]), _ov9[10] >= 1 && (_ov3.houm += 1 * _ov9[10])) : 2 == _ov6 ? (_ov9[6] >= 1 && (_ov3.kaih += 1 * _ov9[6]), _ov9[7] >= 1 && (_ov3.raig += 1 * _ov9[7]), _ov9[8] >= 1 && (_ov3.houg += 1 * _ov9[8]), _ov9[9] >= 1 && (_ov3.houm += 1 * _ov9[9]), _ov9[10] >= 1 && (_ov3.kaih += 1 * _ov9[10])) : 3 == _ov6 ? (_ov9[6] > 0 && (_ov3.kaih += 1), _ov9[8] > 0 && (_ov3.raig += 1), _ov9[10] > 0 && (_ov3.houg += 1)) : 4 == _ov6 && (_ov9[7] >= 1 && (_ov3.kaih += 1 * _ov9[7]), _ov9[8] >= 1 && (_ov3.raig += 1 * _ov9[8]), _ov9[10] >= 1 && (_ov3.houm += 1 * _ov9[10])), _ov3;
         };
     },
-    68685: function(_ouz, _ov0, _ov1) {
+    68685: function(_ove, _ovf, _ovg) {
         'use strict';
-        var _ov2 = null;
-        var _ov3 = this && this.__importDefault || function(_ov4) {
-            var _ov5 = null;
-            return _ov4 && _ov4.__esModule ? _ov4 : {
-                'default': _ov4
+        var _ovh = null;
+        var _ovi = this && this.__importDefault || function(_ovj) {
+            var _ovk = null;
+            return _ovj && _ovj.__esModule ? _ovj : {
+                'default': _ovj
             };
         };
-        defineModule(_ov0);
-        Object.defineProperty(_ov0, '__esModule', {
+        defineModule(_ovf);
+        Object.defineProperty(_ovf, '__esModule', {
             'value': true
-        }), _ov0.getSlot90PersonalEffect = void 0;
-        var _ov6 = _ov1(74496),
-            _ov7 = _ov3(_ov1(18622));
-        _ov0.getSlot90PersonalEffect = function(_ov8) {
-            var _ov9 = null,
-                _ova = new _ov6.SlotItemEffectModel(),
-                _ovb = new _ov6.SlotItemEffectModel();
-            if (142 == _ov8.ship_id ? (_ovb.houg += 2, _ovb.kaih += 1) : 295 == _ov8.ship_id || 416 == _ov8.ship_id || 417 == _ov8.ship_id ? _ovb.houg += 1 : 264 == _ov8.ship_id ? (_ovb.houg += 1, _ovb.tyku += 1) : 501 != _ov8.ship_id && 506 != _ov8.ship_id && 502 != _ov8.ship_id && 507 != _ov8.ship_id || (_ovb.houg += 1), 7 != _ov8.ctype && 13 != _ov8.ctype && 8 != _ov8.ctype && 29 != _ov8.ctype && 9 != _ov8.ctype && 31 != _ov8.ctype || (_ovb.houg += 1), _ovb.exists()) {
-                var _ovc = _ov8.get_slotnums(90);
-                _ova = _ovb.multiply(_ovc);
+        }), _ovf.getSlot90PersonalEffect = void 0;
+        var _ovl = _ovg(74496),
+            _ovm = _ovi(_ovg(18622));
+        _ovf.getSlot90PersonalEffect = function(_ovn) {
+            var _ovo = null,
+                _ovp = new _ovl.SlotItemEffectModel(),
+                _ovq = new _ovl.SlotItemEffectModel();
+            if (142 == _ovn.ship_id ? (_ovq.houg += 2, _ovq.kaih += 1) : 295 == _ovn.ship_id || 416 == _ovn.ship_id || 417 == _ovn.ship_id ? _ovq.houg += 1 : 264 == _ovn.ship_id ? (_ovq.houg += 1, _ovq.tyku += 1) : 501 != _ovn.ship_id && 506 != _ovn.ship_id && 502 != _ovn.ship_id && 507 != _ovn.ship_id || (_ovq.houg += 1), 7 != _ovn.ctype && 13 != _ovn.ctype && 8 != _ovn.ctype && 29 != _ovn.ctype && 9 != _ovn.ctype && 31 != _ovn.ctype || (_ovq.houg += 1), _ovq.exists()) {
+                var _ovr = _ovn.get_slotnums(90);
+                _ovp = _ovq.multiply(_ovr);
             }
-            var _ovd = [];
-            if ('あおば' == _ov8.yomi && (_ovd[1] = 1), 13 != _ov8.ctype && 7 != _ov8.ctype || (_ovd[2] = 1), 0 == _ovd.length) return _ova;
-            for (var _ove = 0, _ovf = 0, _ovg = 0, _ovh = _ov8.have_slot_ids(); _ovg < _ovh.length; _ovg++) {
-                var _ovi = _ovh[_ovg],
-                    _ovj = _ov7.default.model.slot.getMst(_ovi),
-                    _ovk = _ovj.equipType;
-                12 != _ovk && 13 != _ovk || (_ovj.sakuteki >= 5 && (_ove += _ov8.get_slotnums(parseInt(_ovi))), _ovj.taiku >= 2 && (_ovf += _ov8.get_slotnums(parseInt(_ovi))));
+            var _ovs = [];
+            if ('あおば' == _ovn.yomi && (_ovs[1] = 1), 13 != _ovn.ctype && 7 != _ovn.ctype || (_ovs[2] = 1), 0 == _ovs.length) return _ovp;
+            for (var _ovt = 0, _ovu = 0, _ovv = 0, _ovw = _ovn.have_slot_ids(); _ovv < _ovw.length; _ovv++) {
+                var _ovx = _ovw[_ovv],
+                    _ovy = _ovm.default.model.slot.getMst(_ovx),
+                    _ovz = _ovy.equipType;
+                12 != _ovz && 13 != _ovz || (_ovy.sakuteki >= 5 && (_ovt += _ovn.get_slotnums(parseInt(_ovx))), _ovy.taiku >= 2 && (_ovu += _ovn.get_slotnums(parseInt(_ovx))));
             }
-            return _ovf > 0 && null != _ovd[1] && (_ova.tyku += 5, _ova.kaih += 2), _ove > 0 && null != _ovd[2] && (_ova.houg += 3, _ova.kaih += 2, _ova.raig += 2), _ova;
+            return _ovu > 0 && null != _ovs[1] && (_ovp.tyku += 5, _ovp.kaih += 2), _ovt > 0 && null != _ovs[2] && (_ovp.houg += 3, _ovp.kaih += 2, _ovp.raig += 2), _ovp;
         };
     },
-    26078: (_ovl, _ovm, _ovn) => {
+    26078: (_ow0, _ow1, _ow2) => {
         'use strict';
-        var _ovo = null;
-        defineModule(_ovm);
-        Object.defineProperty(_ovm, '__esModule', {
+        var _ow3 = null;
+        defineModule(_ow1);
+        Object.defineProperty(_ow1, '__esModule', {
             'value': true
-        }), _ovm.getSlot93PersonalEffect = void 0;
-        var _ovp = _ovn(74496);
-        _ovm.getSlot93PersonalEffect = function(_ovq) {
-            var _ovr = null,
-                _ovs = new _ovp.SlotItemEffectModel();
-            return 'そうりゅう' == _ovq.yomi ? _ovs.houg = 1 : 'ひりゅう' == _ovq.yomi && (_ovs.houg = 3), _ovs;
+        }), _ow1.getSlot93PersonalEffect = void 0;
+        var _ow4 = _ow2(74496);
+        _ow1.getSlot93PersonalEffect = function(_ow5) {
+            var _ow6 = null,
+                _ow7 = new _ow4.SlotItemEffectModel();
+            return 'そうりゅう' == _ow5.yomi ? _ow7.houg = 1 : 'ひりゅう' == _ow5.yomi && (_ow7.houg = 3), _ow7;
         };
     },
-    20829: (_ovt, _ovu, _ovv) => {
+    20829: (_ow8, _ow9, _owa) => {
         'use strict';
-        var _ovw = null;
-        defineModule(_ovu);
-        Object.defineProperty(_ovu, '__esModule', {
+        var _owb = null;
+        defineModule(_ow9);
+        Object.defineProperty(_ow9, '__esModule', {
             'value': true
-        }), _ovu.getSlot94PersonalEffect = void 0;
-        var _ovx = _ovv(74496);
-        _ovu.getSlot94PersonalEffect = function(_ovy) {
-            var _ovz = null,
-                _ow0 = new _ovx.SlotItemEffectModel();
-            if (196 == _ovy.ship_id) _ow0.houg = 7;
+        }), _ow9.getSlot94PersonalEffect = void 0;
+        var _owc = _owa(74496);
+        _ow9.getSlot94PersonalEffect = function(_owd) {
+            var _owe = null,
+                _owf = new _owc.SlotItemEffectModel();
+            if (196 == _owd.ship_id) _owf.houg = 7;
             else {
-                if (197 != _ovy.ship_id) return _ow0;
-                _ow0.houg = 3;
+                if (197 != _owd.ship_id) return _owf;
+                _owf.houg = 3;
             }
-            return _ow0;
+            return _owf;
         };
     },
-    6880: (_ow1, _ow2, _ow3) => {
+    6880: (_owg, _owh, _owi) => {
         'use strict';
-        var _ow4 = null;
-        defineModule(_ow2);
-        Object.defineProperty(_ow2, '__esModule', {
+        var _owj = null;
+        defineModule(_owh);
+        Object.defineProperty(_owh, '__esModule', {
             'value': true
-        }), _ow2.getSlot99PersonalEffect = void 0;
-        var _ow5 = _ow3(74496);
-        _ow2.getSlot99PersonalEffect = function(_ow6) {
-            var _ow7 = null,
-                _ow8 = new _ow5.SlotItemEffectModel();
-            return 'そうりゅう' == _ow6.yomi ? _ow8.houg = 4 : 'ひりゅう' == _ow6.yomi && (_ow8.houg = 1), _ow8;
+        }), _owh.getSlot99PersonalEffect = void 0;
+        var _owk = _owi(74496);
+        _owh.getSlot99PersonalEffect = function(_owl) {
+            var _owm = null,
+                _own = new _owk.SlotItemEffectModel();
+            return 'そうりゅう' == _owl.yomi ? _own.houg = 4 : 'ひりゅう' == _owl.yomi && (_own.houg = 1), _own;
         };
     },
-    21403: (_ow9, _owa, _owb) => {
+    21403: (_owo, _owp, _owq) => {
         'use strict';
-        var _owc = null;
-        defineModule(_owa);
-        Object.defineProperty(_owa, '__esModule', {
+        var _owr = null;
+        defineModule(_owp);
+        Object.defineProperty(_owp, '__esModule', {
             'value': true
-        }), _owa.getSlotCorsairMkIIPersonalEffect = void 0;
-        var _owd = _owb(74496);
-        _owa.getSlotCorsairMkIIPersonalEffect = function(_owe) {
-            var _owf = null,
-                _owg = new _owd.SlotItemEffectModel(),
-                _owh = false,
-                _owi = new _owd.SlotItemEffectModel();
-            112 == _owe.ctype && (_owi.houg += 1, _owi.tyku += 1, _owi.kaih += 2, _owh = true);
-            var _owj = _owe.getCountryName();
-            if (67 == _owe.ctype || 78 == _owe.ctype || 82 == _owe.ctype || 88 == _owe.ctype || 108 == _owe.ctype || 112 == _owe.ctype ? (_owi.houg += 1, _owi.tyku += 2, _owi.kaih += 3, _owh = true) : 'アメリカ' == _owj && (_owi.houg += 1, _owi.tyku += 1, _owi.kaih += 2, _owh = true), 0 == _owh) return _owg;
-            var _owk = _owe.get_slotnums(434) + _owe.get_slotnums(435);
-            return _owg.add(_owi.multiply(_owk)), _owg;
+        }), _owp.getSlotCorsairMkIIPersonalEffect = void 0;
+        var _ows = _owq(74496);
+        _owp.getSlotCorsairMkIIPersonalEffect = function(_owt) {
+            var _owu = null,
+                _owv = new _ows.SlotItemEffectModel(),
+                _oww = false,
+                _owx = new _ows.SlotItemEffectModel();
+            112 == _owt.ctype && (_owx.houg += 1, _owx.tyku += 1, _owx.kaih += 2, _oww = true);
+            var _owy = _owt.getCountryName();
+            if (67 == _owt.ctype || 78 == _owt.ctype || 82 == _owt.ctype || 88 == _owt.ctype || 108 == _owt.ctype || 112 == _owt.ctype ? (_owx.houg += 1, _owx.tyku += 2, _owx.kaih += 3, _oww = true) : 'アメリカ' == _owy && (_owx.houg += 1, _owx.tyku += 1, _owx.kaih += 2, _oww = true), 0 == _oww) return _owv;
+            var _owz = _owt.get_slotnums(434) + _owt.get_slotnums(435);
+            return _owv.add(_owx.multiply(_owz)), _owv;
         };
     },
-    9195: (_owl, _owm, _own) => {
+    9195: (_ox0, _ox1, _ox2) => {
         'use strict';
-        var _owo = null;
-        defineModule(_owm);
-        Object.defineProperty(_owm, '__esModule', {
+        var _ox3 = null;
+        defineModule(_ox1);
+        Object.defineProperty(_ox1, '__esModule', {
             'value': true
-        }), _owm.getSlotDomesticAntiSubmarineToushakiPersonalEffect = void 0;
-        var _owp = _own(74496);
-        _owm.getSlotDomesticAntiSubmarineToushakiPersonalEffect = function(_owq) {
-            var _owr = null,
-                _ows = new _owp.SlotItemEffectModel(),
-                _owt = false,
-                _owu = new _owp.SlotItemEffectModel();
-            if (56 == _owq.ctype && (_owu.tais += 3, _owu.kaih += 2, _owt = true), 0 == _owt) return _ows;
-            var _owv = _owq.get_slotnums(44) + _owq.get_slotnums(45) + _owq.get_slotnums(287) + _owq.get_slotnums(288);
-            return _ows.add(_owu.multiply(_owv)), _ows;
+        }), _ox1.getSlotDomesticAntiSubmarineToushakiPersonalEffect = void 0;
+        var _ox4 = _ox2(74496);
+        _ox1.getSlotDomesticAntiSubmarineToushakiPersonalEffect = function(_ox5) {
+            var _ox6 = null,
+                _ox7 = new _ox4.SlotItemEffectModel(),
+                _ox8 = false,
+                _ox9 = new _ox4.SlotItemEffectModel();
+            if (56 == _ox5.ctype && (_ox9.tais += 3, _ox9.kaih += 2, _ox8 = true), 0 == _ox8) return _ox7;
+            var _oxa = _ox5.get_slotnums(44) + _ox5.get_slotnums(45) + _ox5.get_slotnums(287) + _ox5.get_slotnums(288);
+            return _ox7.add(_ox9.multiply(_oxa)), _ox7;
         };
     },
-    93297: (_oww, _owx, _owy) => {
+    93297: (_oxb, _oxc, _oxd) => {
         'use strict';
-        var _owz = null;
-        defineModule(_owx);
-        Object.defineProperty(_owx, '__esModule', {
+        var _oxe = null;
+        defineModule(_oxc);
+        Object.defineProperty(_oxc, '__esModule', {
             'value': true
-        }), _owx.getSlotDomesticSonarPersonalEffect = void 0;
-        var _ox0 = _owy(74496);
-        _owx.getSlotDomesticSonarPersonalEffect = function(_ox1) {
-            var _ox2 = null,
-                _ox3 = new _ox0.SlotItemEffectModel();
-            return 56 == _ox1.ctype && (_ox3.tais += 2, _ox3.kaih += 3), _ox3;
+        }), _oxc.getSlotDomesticSonarPersonalEffect = void 0;
+        var _oxf = _oxd(74496);
+        _oxc.getSlotDomesticSonarPersonalEffect = function(_oxg) {
+            var _oxh = null,
+                _oxi = new _oxf.SlotItemEffectModel();
+            return 56 == _oxg.ctype && (_oxi.tais += 2, _oxi.kaih += 3), _oxi;
         };
     },
-    45482: (_ox4, _ox5, _ox6) => {
+    45482: (_oxj, _oxk, _oxl) => {
         'use strict';
-        var _ox7 = null;
-        defineModule(_ox5);
-        Object.defineProperty(_ox5, '__esModule', {
+        var _oxm = null;
+        defineModule(_oxk);
+        Object.defineProperty(_oxk, '__esModule', {
             'value': true
-        }), _ox5.getSlotOtherSuiseiPersonalEffect = void 0;
-        var _ox8 = _ox6(74496);
-        _ox5.getSlotOtherSuiseiPersonalEffect = function(_ox9) {
-            var _oxa = null,
-                _oxb = new _ox8.SlotItemEffectModel(),
-                _oxc = new _ox8.SlotItemEffectModel();
-            if (553 == _ox9.ship_id) _oxc.houg = 2;
+        }), _oxk.getSlotOtherSuiseiPersonalEffect = void 0;
+        var _oxn = _oxl(74496);
+        _oxk.getSlotOtherSuiseiPersonalEffect = function(_oxo) {
+            var _oxp = null,
+                _oxq = new _oxn.SlotItemEffectModel(),
+                _oxr = new _oxn.SlotItemEffectModel();
+            if (553 == _oxo.ship_id) _oxr.houg = 2;
             else {
-                if (554 != _ox9.ship_id) return _oxb;
-                _oxc.houg = 2;
+                if (554 != _oxo.ship_id) return _oxq;
+                _oxr.houg = 2;
             }
-            var _oxd = _ox9.get_slotnums(24) + _ox9.get_slotnums(57) + _ox9.get_slotnums(111);
-            return _oxb = _oxc.multiply(_oxd);
+            var _oxs = _oxo.get_slotnums(24) + _oxo.get_slotnums(57) + _oxo.get_slotnums(111);
+            return _oxq = _oxr.multiply(_oxs);
         };
     },
-    45927: (_oxe, _oxf, _oxg) => {
+    45927: (_oxt, _oxu, _oxv) => {
         'use strict';
-        var _oxh = null;
-        defineModule(_oxf);
-        Object.defineProperty(_oxf, '__esModule', {
+        var _oxw = null;
+        defineModule(_oxu);
+        Object.defineProperty(_oxu, '__esModule', {
             'value': true
-        }), _oxf.getSlotSmokePersonalEffect = void 0;
-        var _oxi = _oxg(74496);
-        _oxf.getSlotSmokePersonalEffect = function(_oxj) {
-            var _oxk = null,
-                _oxl = new _oxi.SlotItemEffectModel(),
-                _oxm = false,
-                _oxn = new _oxi.SlotItemEffectModel();
-            if (959 == _oxj.ship_id && (_oxn.kaih += 4, _oxm = true), 'ジョンストン' == _oxj.yomi || 'サミュエル・B・ロバーツ' == _oxj.yomi || 'せんだい' == _oxj.yomi || 'はるかぜ' == _oxj.yomi || 'かみかぜ' == _oxj.yomi || 'しきなみ' == _oxj.yomi || 'うらなみ' == _oxj.yomi || 'あおば' == _oxj.yomi ? (_oxn.kaih += 3, _oxm = true) : 'いなづま' != _oxj.yomi && 'はぐろ' != _oxj.yomi && 'はつしも' != _oxj.yomi && 'かすみ' != _oxj.yomi && 'ふぶき' != _oxj.yomi && 'あたご' != _oxj.yomi && 'あまぎり' != _oxj.yomi && 'はまなみ' != _oxj.yomi || (_oxn.kaih += 2, _oxm = true), 0 == _oxm) return _oxl;
-            var _oxo = _oxj.get_slotnums(500) + _oxj.get_slotnums(501);
-            return _oxl.add(_oxn.multiply(_oxo)), _oxl;
+        }), _oxu.getSlotSmokePersonalEffect = void 0;
+        var _oxx = _oxv(74496);
+        _oxu.getSlotSmokePersonalEffect = function(_oxy) {
+            var _oxz = null,
+                _oy0 = new _oxx.SlotItemEffectModel(),
+                _oy1 = false,
+                _oy2 = new _oxx.SlotItemEffectModel();
+            if (959 == _oxy.ship_id && (_oy2.kaih += 4, _oy1 = true), 'ジョンストン' == _oxy.yomi || 'サミュエル・B・ロバーツ' == _oxy.yomi || 'せんだい' == _oxy.yomi || 'はるかぜ' == _oxy.yomi || 'かみかぜ' == _oxy.yomi || 'しきなみ' == _oxy.yomi || 'うらなみ' == _oxy.yomi || 'あおば' == _oxy.yomi ? (_oy2.kaih += 3, _oy1 = true) : 'いなづま' != _oxy.yomi && 'はぐろ' != _oxy.yomi && 'はつしも' != _oxy.yomi && 'かすみ' != _oxy.yomi && 'ふぶき' != _oxy.yomi && 'あたご' != _oxy.yomi && 'あまぎり' != _oxy.yomi && 'はまなみ' != _oxy.yomi || (_oy2.kaih += 2, _oy1 = true), 0 == _oy1) return _oy0;
+            var _oy3 = _oxy.get_slotnums(500) + _oxy.get_slotnums(501);
+            return _oy0.add(_oy2.multiply(_oy3)), _oy0;
         };
     },
-    29805: (_oxp, _oxq, _oxr) => {
+    29805: (_oy4, _oy5, _oy6) => {
         'use strict';
-        var _oxs = null;
-        defineModule(_oxq);
-        Object.defineProperty(_oxq, '__esModule', {
+        var _oy7 = null;
+        defineModule(_oy5);
+        Object.defineProperty(_oy5, '__esModule', {
             'value': true
-        }), _oxq.getSlotType10PersonalEffect = void 0;
-        var _oxt = _oxr(74496);
-        _oxq.getSlotType10PersonalEffect = function(_oxu) {
-            var _oxv = null,
-                _oxw = new _oxt.SlotItemEffectModel();
-            return 662 == _oxu.ship_id || 663 == _oxu.ship_id || 668 == _oxu.ship_id ? (_oxw.houg += 2, _oxw.kaih += 1, _oxw.tais += 3) : 501 != _oxu.ship_id && 506 != _oxu.ship_id && 502 != _oxu.ship_id && 507 != _oxu.ship_id || (_oxw.houg += 2), _oxw;
+        }), _oy5.getSlotType10PersonalEffect = void 0;
+        var _oy8 = _oy6(74496);
+        _oy5.getSlotType10PersonalEffect = function(_oy9) {
+            var _oya = null,
+                _oyb = new _oy8.SlotItemEffectModel();
+            return 662 == _oy9.ship_id || 663 == _oy9.ship_id || 668 == _oy9.ship_id ? (_oyb.houg += 2, _oyb.kaih += 1, _oyb.tais += 3) : 501 != _oy9.ship_id && 506 != _oy9.ship_id && 502 != _oy9.ship_id && 507 != _oy9.ship_id || (_oyb.houg += 2), _oyb;
         };
     },
-    58913: (_oxx, _oxy, _oxz) => {
+    58913: (_oyc, _oyd, _oye) => {
         'use strict';
-        var _oy0 = null;
-        defineModule(_oxy);
-        Object.defineProperty(_oxy, '__esModule', {
+        var _oyf = null;
+        defineModule(_oyd);
+        Object.defineProperty(_oyd, '__esModule', {
             'value': true
-        }), _oxy.getSlotType11PersonalEffect = void 0;
-        var _oy1 = _oxz(74496);
-        _oxy.getSlotType11PersonalEffect = function(_oy2) {
-            var _oy3 = null,
-                _oy4 = new _oy1.SlotItemEffectModel();
-            return 662 == _oy2.ship_id || 663 == _oy2.ship_id || 668 == _oy2.ship_id ? (_oy4.houg += 1, _oy4.kaih += 1, _oy4.tais += 1) : 501 != _oy2.ship_id && 506 != _oy2.ship_id && 502 != _oy2.ship_id && 507 != _oy2.ship_id || (_oy4.houg += 1, _oy4.kaih += 1), _oy4;
+        }), _oyd.getSlotType11PersonalEffect = void 0;
+        var _oyg = _oye(74496);
+        _oyd.getSlotType11PersonalEffect = function(_oyh) {
+            var _oyi = null,
+                _oyj = new _oyg.SlotItemEffectModel();
+            return 662 == _oyh.ship_id || 663 == _oyh.ship_id || 668 == _oyh.ship_id ? (_oyj.houg += 1, _oyj.kaih += 1, _oyj.tais += 1) : 501 != _oyh.ship_id && 506 != _oyh.ship_id && 502 != _oyh.ship_id && 507 != _oyh.ship_id || (_oyj.houg += 1, _oyj.kaih += 1), _oyj;
         };
     },
-    55421: (_oy5, _oy6, _oy7) => {
+    55421: (_oyk, _oyl, _oym) => {
         'use strict';
-        var _oy8 = null;
-        defineModule(_oy6);
-        Object.defineProperty(_oy6, '__esModule', {
+        var _oyn = null;
+        defineModule(_oyl);
+        Object.defineProperty(_oyl, '__esModule', {
             'value': true
-        }), _oy6.getSlotType25PersonalEffect = void 0;
-        var _oy9 = _oy7(74496);
-        _oy6.getSlotType25PersonalEffect = function(_oya) {
-            var _oyb = null,
-                _oyc = new _oy9.SlotItemEffectModel();
-            return 662 == _oya.ship_id ? (_oyc.tais += 4, _oyc.kaih += 1) : 663 != _oya.ship_id && 668 != _oya.ship_id || (_oyc.tais += 3, _oyc.kaih += 1), _oyc;
+        }), _oyl.getSlotType25PersonalEffect = void 0;
+        var _oyo = _oym(74496);
+        _oyl.getSlotType25PersonalEffect = function(_oyp) {
+            var _oyq = null,
+                _oyr = new _oyo.SlotItemEffectModel();
+            return 662 == _oyp.ship_id ? (_oyr.tais += 4, _oyr.kaih += 1) : 663 != _oyp.ship_id && 668 != _oyp.ship_id || (_oyr.tais += 3, _oyr.kaih += 1), _oyr;
         };
     },
-    272: function(_oyd, _oye, _oyf) {
+    272: function(_oys, _oyt, _oyu) {
         'use strict';
-        var _oyg = null;
-        var _oyh = this && this.__importDefault || function(_oyi) {
-            var _oyj = null;
-            return _oyi && _oyi.__esModule ? _oyi : {
-                'default': _oyi
+        var _oyv = null;
+        var _oyw = this && this.__importDefault || function(_oyx) {
+            var _oyy = null;
+            return _oyx && _oyx.__esModule ? _oyx : {
+                'default': _oyx
             };
         };
-        defineModule(_oye);
-        Object.defineProperty(_oye, '__esModule', {
+        defineModule(_oyt);
+        Object.defineProperty(_oyt, '__esModule', {
             'value': true
-        }), _oye.getSlotType9PersonalEffect = void 0;
-        var _oyk = _oyf(74496),
-            _oyl = _oyh(_oyf(18622));
-        _oye.getSlotType9PersonalEffect = function(_oym) {
-            var _oyn = null,
-                _oyo = new _oyk.SlotItemEffectModel();
+        }), _oyt.getSlotType9PersonalEffect = void 0;
+        var _oyz = _oyu(74496),
+            _oz0 = _oyw(_oyu(18622));
+        _oyt.getSlotType9PersonalEffect = function(_oz1) {
+            var _oz2 = null,
+                _oz3 = new _oyz.SlotItemEffectModel();
             if (null == {
                     11: 1,
                     18: 1,
                     7: 1,
                     10: 1
-                }[_oym.stype]) return _oyo;
-            for (var _oyp = 0, _oyq = 0, _oyr = _oym.have_slot_ids(); _oyq < _oyr.length; _oyq++) {
-                var _oys = _oyr[_oyq];
-                if (9 == _oyl.default.model.slot.getMst(_oys).equipType)
-                    for (var _oyt = 0, _oyu = _oym.have_slots_dict[parseInt(_oys)]; _oyt < _oyu.length; _oyt++) {
-                        var _oyv = _oyu[_oyt].level;
-                        _oyp < _oyv && (_oyp = _oyv);
+                }[_oz1.stype]) return _oz3;
+            for (var _oz4 = 0, _oz5 = 0, _oz6 = _oz1.have_slot_ids(); _oz5 < _oz6.length; _oz5++) {
+                var _oz7 = _oz6[_oz5];
+                if (9 == _oz0.default.model.slot.getMst(_oz7).equipType)
+                    for (var _oz8 = 0, _oz9 = _oz1.have_slots_dict[parseInt(_oz7)]; _oz8 < _oz9.length; _oz8++) {
+                        var _oza = _oz9[_oz8].level;
+                        _oz4 < _oza && (_oz4 = _oza);
                     }
             }
-            return _oyp >= 2 && (_oyo.saku += 1), _oyp >= 4 && (_oyo.houg += 1), _oyp >= 6 && (_oyo.saku += 1), _oyp >= 10 && (_oyo.houg += 1, _oyo.saku += 1), _oyo;
+            return _oz4 >= 2 && (_oz3.saku += 1), _oz4 >= 4 && (_oz3.houg += 1), _oz4 >= 6 && (_oz3.saku += 1), _oz4 >= 10 && (_oz3.houg += 1, _oz3.saku += 1), _oz3;
         };
     },
-    54518: (_oyw, _oyx, _oyy) => {
+    54518: (_ozb, _ozc, _ozd) => {
         'use strict';
-        var _oyz = null;
-        defineModule(_oyx);
-        Object.defineProperty(_oyx, '__esModule', {
+        var _oze = null;
+        defineModule(_ozc);
+        Object.defineProperty(_ozc, '__esModule', {
             'value': true
-        }), _oyx.getSlot_16InchMkXRensouhou_PersonalEffect = void 0;
-        var _oz0 = _oyy(74496);
-        _oyx.getSlot_16InchMkXRensouhou_PersonalEffect = function(_oz1) {
-            var _oz2 = null,
-                _oz3 = new _oz0.SlotItemEffectModel();
-            if (93 == _oz1.ctype) {
-                var _oz4 = _oz1.get_slotnums(330);
-                _oz4 > 0 && (_oz3.houg = _oz3.houg + 1 * _oz4);
-                var _oz5 = _oz1.get_slotnums(331);
-                _oz5 > 0 && (_oz3.houg = _oz3.houg + 1 * _oz5, 1496 != _oz1.ship_id && 918 != _oz1.ship_id || (_oz3.houg = _oz3.houg + 1 * _oz5, _oz3.kaih = _oz3.kaih + 1 * _oz5));
-                var _oz6 = _oz1.get_slotnums(332);
-                return _oz6 > 0 && (_oz3.houg = _oz3.houg + 1 * _oz6, 1496 != _oz1.ship_id && 918 != _oz1.ship_id || (_oz3.houg = _oz3.houg + 1 * _oz6, _oz3.kaih = _oz3.kaih + 1 * _oz6, _oz3.tyku = _oz3.tyku + 1 * _oz6)), _oz3;
+        }), _ozc.getSlot_16InchMkXRensouhou_PersonalEffect = void 0;
+        var _ozf = _ozd(74496);
+        _ozc.getSlot_16InchMkXRensouhou_PersonalEffect = function(_ozg) {
+            var _ozh = null,
+                _ozi = new _ozf.SlotItemEffectModel();
+            if (93 == _ozg.ctype) {
+                var _ozj = _ozg.get_slotnums(330);
+                _ozj > 0 && (_ozi.houg = _ozi.houg + 1 * _ozj);
+                var _ozk = _ozg.get_slotnums(331);
+                _ozk > 0 && (_ozi.houg = _ozi.houg + 1 * _ozk, 1496 != _ozg.ship_id && 918 != _ozg.ship_id || (_ozi.houg = _ozi.houg + 1 * _ozk, _ozi.kaih = _ozi.kaih + 1 * _ozk));
+                var _ozl = _ozg.get_slotnums(332);
+                return _ozl > 0 && (_ozi.houg = _ozi.houg + 1 * _ozl, 1496 != _ozg.ship_id && 918 != _ozg.ship_id || (_ozi.houg = _ozi.houg + 1 * _ozl, _ozi.kaih = _ozi.kaih + 1 * _ozl, _ozi.tyku = _ozi.tyku + 1 * _ozl)), _ozi;
             }
-            var _oz7 = new _oz0.SlotItemEffectModel();
-            if (19 == _oz1.ctype ? (_oz7.houg = 1, (541 == _oz1.ship_id || 573 == _oz1.ship_id) && (_oz7.houg += 1)) : 88 == _oz1.ctype && (_oz7.houg = 1, 576 == _oz1.ship_id && (_oz7.houg += 1)), !_oz7.exists()) return _oz3;
-            var _oz8 = _oz1.get_slotnums(330) + _oz1.get_slotnums(331) + _oz1.get_slotnums(332);
-            return _oz3 = _oz7.multiply(_oz8);
+            var _ozm = new _ozf.SlotItemEffectModel();
+            if (19 == _ozg.ctype ? (_ozm.houg = 1, (541 == _ozg.ship_id || 573 == _ozg.ship_id) && (_ozm.houg += 1)) : 88 == _ozg.ctype && (_ozm.houg = 1, 576 == _ozg.ship_id && (_ozm.houg += 1)), !_ozm.exists()) return _ozi;
+            var _ozn = _ozg.get_slotnums(330) + _ozg.get_slotnums(331) + _ozg.get_slotnums(332);
+            return _ozi = _ozm.multiply(_ozn);
         };
     },
-    79353: (_oz9, _oza, _ozb) => {
+    79353: (_ozo, _ozp, _ozq) => {
         'use strict';
-        var _ozc = null;
-        defineModule(_oza);
-        Object.defineProperty(_oza, '__esModule', {
+        var _ozr = null;
+        defineModule(_ozp);
+        Object.defineProperty(_ozp, '__esModule', {
             'value': true
-        }), _oza.getZuiunSeriesEffect = void 0;
-        var _ozd = _ozb(74496);
-        _oza.getZuiunSeriesEffect = function(_oze) {
-            var _ozf = null,
-                _ozg = new _ozd.SlotItemEffectModel(),
-                _ozh = false,
-                _ozi = new _ozd.SlotItemEffectModel();
-            if (662 == _oze.ship_id ? (_ozg.houg += 2, _ozg.kaih += 1) : 663 == _oze.ship_id || 668 == _oze.ship_id || 501 == _oze.ship_id || 506 == _oze.ship_id ? (_ozg.houg += 2, _ozi.kaih += 1, _ozi.tyku += 1, _ozh = true) : 502 != _oze.ship_id && 507 != _oze.ship_id || (_ozg.houg += 1, _ozi.kaih += 1, _ozi.tyku += 1, _ozh = true), 0 == _ozh) return _ozg;
-            var _ozj = 0;
-            return [26, 62, 79, 80, 81, 207, 208].forEach(function(_ozk) {
-                var _ozl = null;
-                _ozj += _oze.get_slotnums(_ozk);
-            }), _ozg.add(_ozi.multiply(_ozj)), _ozg;
+        }), _ozp.getZuiunSeriesEffect = void 0;
+        var _ozs = _ozq(74496);
+        _ozp.getZuiunSeriesEffect = function(_ozt) {
+            var _ozu = null,
+                _ozv = new _ozs.SlotItemEffectModel(),
+                _ozw = false,
+                _ozx = new _ozs.SlotItemEffectModel();
+            if (662 == _ozt.ship_id ? (_ozv.houg += 2, _ozv.kaih += 1) : 663 == _ozt.ship_id || 668 == _ozt.ship_id || 501 == _ozt.ship_id || 506 == _ozt.ship_id ? (_ozv.houg += 2, _ozx.kaih += 1, _ozx.tyku += 1, _ozw = true) : 502 != _ozt.ship_id && 507 != _ozt.ship_id || (_ozv.houg += 1, _ozx.kaih += 1, _ozx.tyku += 1, _ozw = true), 0 == _ozw) return _ozv;
+            var _ozy = 0;
+            return [26, 62, 79, 80, 81, 207, 208].forEach(function(_ozz) {
+                var _p00 = null;
+                _ozy += _ozt.get_slotnums(_ozz);
+            }), _ozv.add(_ozx.multiply(_ozy)), _ozv;
         };
     },
-    89051: function(_ozm, _ozn, _ozo) {
+    89051: function(_p01, _p02, _p03) {
         'use strict';
-        var _ozp = null;
-        var _ozq = this && this.__createBinding || (Object.create ? function(_ozr, _ozs, _ozt, _ozu) {
-                var _ozv = null;
-                void 0 === _ozu && (_ozu = _ozt);
-                var _ozw = Object.getOwnPropertyDescriptor(_ozs, _ozt);
-                _ozw && !('get' in _ozw ? !_ozs.__esModule : _ozw.writable || _ozw.configurable) || (_ozw = {
+        var _p04 = null;
+        var _p05 = this && this.__createBinding || (Object.create ? function(_p06, _p07, _p08, _p09) {
+                var _p0a = null;
+                void 0 === _p09 && (_p09 = _p08);
+                var _p0b = Object.getOwnPropertyDescriptor(_p07, _p08);
+                _p0b && !('get' in _p0b ? !_p07.__esModule : _p0b.writable || _p0b.configurable) || (_p0b = {
                     'enumerable': true,
                     'get': function() {
-                        return _ozs[_ozt];
+                        return _p07[_p08];
                     }
-                }), Object.defineProperty(_ozr, _ozu, _ozw);
-            } : function(_ozx, _ozy, _ozz, _p00) {
-                void 0 === _p00 && (_p00 = _ozz), _ozx[_p00] = _ozy[_ozz];
+                }), Object.defineProperty(_p06, _p09, _p0b);
+            } : function(_p0c, _p0d, _p0e, _p0f) {
+                void 0 === _p0f && (_p0f = _p0e), _p0c[_p0f] = _p0d[_p0e];
             }),
-            _p01 = this && this.__exportStar || function(_p02, _p03) {
-                var _p04 = null;
-                for (var _p05 in _p02) 'default' === _p05 || Object.prototype.hasOwnProperty.call(_p03, _p05) || _ozq(_p03, _p02, _p05);
+            _p0g = this && this.__exportStar || function(_p0h, _p0i) {
+                var _p0j = null;
+                for (var _p0k in _p0h) 'default' === _p0k || Object.prototype.hasOwnProperty.call(_p0i, _p0k) || _p05(_p0i, _p0h, _p0k);
             };
-        defineModule(_ozn);
-        Object.defineProperty(_ozn, '__esModule', {
+        defineModule(_p02);
+        Object.defineProperty(_p02, '__esModule', {
             'value': true
-        }), _p01(_ozo(34165), _ozn), _p01(_ozo(81018), _ozn), _p01(_ozo(56716), _ozn), _p01(_ozo(17713), _ozn), _p01(_ozo(54518), _ozn), _p01(_ozo(66985), _ozn), _p01(_ozo(88102), _ozn), _p01(_ozo(66904), _ozn), _p01(_ozo(98137), _ozn), _p01(_ozo(69954), _ozn), _p01(_ozo(22218), _ozn), _p01(_ozo(88271), _ozn), _p01(_ozo(23035), _ozn), _p01(_ozo(2578), _ozn), _p01(_ozo(17143), _ozn), _p01(_ozo(16164), _ozn), _p01(_ozo(35023), _ozn), _p01(_ozo(44680), _ozn), _p01(_ozo(45749), _ozn), _p01(_ozo(37334), _ozn), _p01(_ozo(29180), _ozn), _p01(_ozo(68685), _ozn), _p01(_ozo(26078), _ozn), _p01(_ozo(20829), _ozn), _p01(_ozo(6880), _ozn), _p01(_ozo(17213), _ozn), _p01(_ozo(40176), _ozn), _p01(_ozo(32889), _ozn), _p01(_ozo(11285), _ozn), _p01(_ozo(96200), _ozn), _p01(_ozo(9115), _ozn), _p01(_ozo(37173), _ozn), _p01(_ozo(21713), _ozn), _p01(_ozo(59823), _ozn), _p01(_ozo(57440), _ozn), _p01(_ozo(29240), _ozn), _p01(_ozo(40885), _ozn), _p01(_ozo(19614), _ozn), _p01(_ozo(87220), _ozn), _p01(_ozo(81367), _ozn), _p01(_ozo(13052), _ozn), _p01(_ozo(94968), _ozn), _p01(_ozo(48658), _ozn), _p01(_ozo(1906), _ozn), _p01(_ozo(61887), _ozn), _p01(_ozo(47970), _ozn), _p01(_ozo(31797), _ozn), _p01(_ozo(45738), _ozn), _p01(_ozo(34718), _ozn), _p01(_ozo(69245), _ozn), _p01(_ozo(18478), _ozn), _p01(_ozo(2899), _ozn), _p01(_ozo(57120), _ozn), _p01(_ozo(74985), _ozn), _p01(_ozo(9234), _ozn), _p01(_ozo(30802), _ozn), _p01(_ozo(97002), _ozn), _p01(_ozo(16748), _ozn), _p01(_ozo(53618), _ozn), _p01(_ozo(72573), _ozn), _p01(_ozo(8955), _ozn), _p01(_ozo(98947), _ozn), _p01(_ozo(44726), _ozn), _p01(_ozo(93065), _ozn), _p01(_ozo(85767), _ozn), _p01(_ozo(38314), _ozn), _p01(_ozo(59747), _ozn), _p01(_ozo(40649), _ozn), _p01(_ozo(13533), _ozn), _p01(_ozo(12138), _ozn), _p01(_ozo(30042), _ozn), _p01(_ozo(33623), _ozn), _p01(_ozo(85630), _ozn), _p01(_ozo(88736), _ozn), _p01(_ozo(49341), _ozn), _p01(_ozo(74306), _ozn), _p01(_ozo(83898), _ozn), _p01(_ozo(71873), _ozn), _p01(_ozo(53122), _ozn), _p01(_ozo(51063), _ozn), _p01(_ozo(91491), _ozn), _p01(_ozo(85495), _ozn), _p01(_ozo(65365), _ozn), _p01(_ozo(98164), _ozn), _p01(_ozo(38114), _ozn), _p01(_ozo(21003), _ozn), _p01(_ozo(77010), _ozn), _p01(_ozo(39126), _ozn), _p01(_ozo(72176), _ozn), _p01(_ozo(33846), _ozn), _p01(_ozo(97157), _ozn), _p01(_ozo(63406), _ozn), _p01(_ozo(66373), _ozn), _p01(_ozo(19707), _ozn), _p01(_ozo(63978), _ozn), _p01(_ozo(92382), _ozn), _p01(_ozo(78415), _ozn), _p01(_ozo(23090), _ozn), _p01(_ozo(18776), _ozn), _p01(_ozo(39656), _ozn), _p01(_ozo(66039), _ozn), _p01(_ozo(64679), _ozn), _p01(_ozo(95953), _ozn), _p01(_ozo(86384), _ozn), _p01(_ozo(65345), _ozn), _p01(_ozo(46514), _ozn), _p01(_ozo(81976), _ozn), _p01(_ozo(89331), _ozn), _p01(_ozo(73973), _ozn), _p01(_ozo(21178), _ozn), _p01(_ozo(5079), _ozn), _p01(_ozo(95014), _ozn), _p01(_ozo(53099), _ozn), _p01(_ozo(76201), _ozn), _p01(_ozo(24931), _ozn), _p01(_ozo(60978), _ozn), _p01(_ozo(74312), _ozn), _p01(_ozo(54350), _ozn), _p01(_ozo(26262), _ozn), _p01(_ozo(45530), _ozn), _p01(_ozo(44053), _ozn), _p01(_ozo(65441), _ozn), _p01(_ozo(33258), _ozn), _p01(_ozo(92168), _ozn), _p01(_ozo(85975), _ozn), _p01(_ozo(98467), _ozn), _p01(_ozo(88348), _ozn), _p01(_ozo(21097), _ozn), _p01(_ozo(37273), _ozn), _p01(_ozo(72694), _ozn), _p01(_ozo(62067), _ozn), _p01(_ozo(87817), _ozn), _p01(_ozo(93526), _ozn), _p01(_ozo(33084), _ozn), _p01(_ozo(97831), _ozn), _p01(_ozo(45482), _ozn), _p01(_ozo(272), _ozn), _p01(_ozo(69377), _ozn), _p01(_ozo(31127), _ozn), _p01(_ozo(79353), _ozn), _p01(_ozo(17274), _ozn), _p01(_ozo(91302), _ozn), _p01(_ozo(82229), _ozn), _p01(_ozo(10325), _ozn), _p01(_ozo(351), _ozn), _p01(_ozo(4050), _ozn), _p01(_ozo(29805), _ozn), _p01(_ozo(58913), _ozn), _p01(_ozo(55421), _ozn), _p01(_ozo(87845), _ozn), _p01(_ozo(17562), _ozn), _p01(_ozo(78466), _ozn), _p01(_ozo(40061), _ozn), _p01(_ozo(9195), _ozn), _p01(_ozo(93297), _ozn), _p01(_ozo(15133), _ozn), _p01(_ozo(55747), _ozn), _p01(_ozo(33155), _ozn), _p01(_ozo(79086), _ozn), _p01(_ozo(2306), _ozn), _p01(_ozo(14386), _ozn), _p01(_ozo(80225), _ozn), _p01(_ozo(17732), _ozn), _p01(_ozo(47169), _ozn), _p01(_ozo(77670), _ozn), _p01(_ozo(79988), _ozn), _p01(_ozo(92253), _ozn), _p01(_ozo(74428), _ozn), _p01(_ozo(16498), _ozn), _p01(_ozo(2631), _ozn), _p01(_ozo(27177), _ozn), _p01(_ozo(94781), _ozn), _p01(_ozo(53908), _ozn), _p01(_ozo(79813), _ozn), _p01(_ozo(16088), _ozn), _p01(_ozo(93733), _ozn), _p01(_ozo(69939), _ozn), _p01(_ozo(33734), _ozn), _p01(_ozo(34432), _ozn), _p01(_ozo(97423), _ozn), _p01(_ozo(23551), _ozn), _p01(_ozo(99791), _ozn), _p01(_ozo(21403), _ozn), _p01(_ozo(6173), _ozn), _p01(_ozo(23934), _ozn), _p01(_ozo(53709), _ozn), _p01(_ozo(88838), _ozn), _p01(_ozo(99790), _ozn), _p01(_ozo(18387), _ozn), _p01(_ozo(70941), _ozn), _p01(_ozo(35025), _ozn), _p01(_ozo(2603), _ozn), _p01(_ozo(78707), _ozn), _p01(_ozo(89058), _ozn), _p01(_ozo(84372), _ozn), _p01(_ozo(96804), _ozn), _p01(_ozo(33896), _ozn), _p01(_ozo(11031), _ozn), _p01(_ozo(71383), _ozn), _p01(_ozo(55888), _ozn), _p01(_ozo(2258), _ozn), _p01(_ozo(38003), _ozn), _p01(_ozo(92174), _ozn), _p01(_ozo(43768), _ozn), _p01(_ozo(73254), _ozn), _p01(_ozo(55734), _ozn), _p01(_ozo(81254), _ozn), _p01(_ozo(65455), _ozn), _p01(_ozo(70362), _ozn), _p01(_ozo(61977), _ozn), _p01(_ozo(43607), _ozn), _p01(_ozo(68086), _ozn), _p01(_ozo(78173), _ozn), _p01(_ozo(22581), _ozn), _p01(_ozo(20418), _ozn), _p01(_ozo(93373), _ozn), _p01(_ozo(13053), _ozn), _p01(_ozo(47874), _ozn), _p01(_ozo(42788), _ozn), _p01(_ozo(57664), _ozn), _p01(_ozo(44990), _ozn), _p01(_ozo(17712), _ozn), _p01(_ozo(83957), _ozn), _p01(_ozo(78539), _ozn), _p01(_ozo(96282), _ozn), _p01(_ozo(49679), _ozn), _p01(_ozo(45927), _ozn), _p01(_ozo(90312), _ozn), _p01(_ozo(86856), _ozn), _p01(_ozo(78123), _ozn), _p01(_ozo(25765), _ozn), _p01(_ozo(29493), _ozn), _p01(_ozo(28221), _ozn), _p01(_ozo(14830), _ozn), _p01(_ozo(54047), _ozn), _p01(_ozo(76054), _ozn), _p01(_ozo(90725), _ozn), _p01(_ozo(93053), _ozn), _p01(_ozo(88792), _ozn), _p01(_ozo(33242), _ozn);
+        }), _p0g(_p03(34165), _p02), _p0g(_p03(81018), _p02), _p0g(_p03(56716), _p02), _p0g(_p03(17713), _p02), _p0g(_p03(54518), _p02), _p0g(_p03(66985), _p02), _p0g(_p03(88102), _p02), _p0g(_p03(66904), _p02), _p0g(_p03(98137), _p02), _p0g(_p03(69954), _p02), _p0g(_p03(22218), _p02), _p0g(_p03(88271), _p02), _p0g(_p03(23035), _p02), _p0g(_p03(2578), _p02), _p0g(_p03(17143), _p02), _p0g(_p03(16164), _p02), _p0g(_p03(35023), _p02), _p0g(_p03(44680), _p02), _p0g(_p03(45749), _p02), _p0g(_p03(37334), _p02), _p0g(_p03(29180), _p02), _p0g(_p03(68685), _p02), _p0g(_p03(26078), _p02), _p0g(_p03(20829), _p02), _p0g(_p03(6880), _p02), _p0g(_p03(17213), _p02), _p0g(_p03(40176), _p02), _p0g(_p03(32889), _p02), _p0g(_p03(11285), _p02), _p0g(_p03(96200), _p02), _p0g(_p03(9115), _p02), _p0g(_p03(37173), _p02), _p0g(_p03(21713), _p02), _p0g(_p03(59823), _p02), _p0g(_p03(57440), _p02), _p0g(_p03(29240), _p02), _p0g(_p03(40885), _p02), _p0g(_p03(19614), _p02), _p0g(_p03(87220), _p02), _p0g(_p03(81367), _p02), _p0g(_p03(13052), _p02), _p0g(_p03(94968), _p02), _p0g(_p03(48658), _p02), _p0g(_p03(1906), _p02), _p0g(_p03(61887), _p02), _p0g(_p03(47970), _p02), _p0g(_p03(31797), _p02), _p0g(_p03(45738), _p02), _p0g(_p03(34718), _p02), _p0g(_p03(69245), _p02), _p0g(_p03(18478), _p02), _p0g(_p03(2899), _p02), _p0g(_p03(57120), _p02), _p0g(_p03(74985), _p02), _p0g(_p03(9234), _p02), _p0g(_p03(30802), _p02), _p0g(_p03(97002), _p02), _p0g(_p03(16748), _p02), _p0g(_p03(53618), _p02), _p0g(_p03(72573), _p02), _p0g(_p03(8955), _p02), _p0g(_p03(98947), _p02), _p0g(_p03(44726), _p02), _p0g(_p03(93065), _p02), _p0g(_p03(85767), _p02), _p0g(_p03(38314), _p02), _p0g(_p03(59747), _p02), _p0g(_p03(40649), _p02), _p0g(_p03(13533), _p02), _p0g(_p03(12138), _p02), _p0g(_p03(30042), _p02), _p0g(_p03(33623), _p02), _p0g(_p03(85630), _p02), _p0g(_p03(88736), _p02), _p0g(_p03(49341), _p02), _p0g(_p03(74306), _p02), _p0g(_p03(83898), _p02), _p0g(_p03(71873), _p02), _p0g(_p03(53122), _p02), _p0g(_p03(51063), _p02), _p0g(_p03(91491), _p02), _p0g(_p03(85495), _p02), _p0g(_p03(65365), _p02), _p0g(_p03(98164), _p02), _p0g(_p03(38114), _p02), _p0g(_p03(21003), _p02), _p0g(_p03(77010), _p02), _p0g(_p03(39126), _p02), _p0g(_p03(72176), _p02), _p0g(_p03(33846), _p02), _p0g(_p03(97157), _p02), _p0g(_p03(63406), _p02), _p0g(_p03(66373), _p02), _p0g(_p03(19707), _p02), _p0g(_p03(63978), _p02), _p0g(_p03(92382), _p02), _p0g(_p03(78415), _p02), _p0g(_p03(23090), _p02), _p0g(_p03(18776), _p02), _p0g(_p03(39656), _p02), _p0g(_p03(66039), _p02), _p0g(_p03(64679), _p02), _p0g(_p03(95953), _p02), _p0g(_p03(86384), _p02), _p0g(_p03(65345), _p02), _p0g(_p03(46514), _p02), _p0g(_p03(81976), _p02), _p0g(_p03(89331), _p02), _p0g(_p03(73973), _p02), _p0g(_p03(21178), _p02), _p0g(_p03(5079), _p02), _p0g(_p03(95014), _p02), _p0g(_p03(53099), _p02), _p0g(_p03(76201), _p02), _p0g(_p03(24931), _p02), _p0g(_p03(60978), _p02), _p0g(_p03(74312), _p02), _p0g(_p03(54350), _p02), _p0g(_p03(26262), _p02), _p0g(_p03(45530), _p02), _p0g(_p03(44053), _p02), _p0g(_p03(65441), _p02), _p0g(_p03(33258), _p02), _p0g(_p03(92168), _p02), _p0g(_p03(85975), _p02), _p0g(_p03(98467), _p02), _p0g(_p03(88348), _p02), _p0g(_p03(21097), _p02), _p0g(_p03(37273), _p02), _p0g(_p03(72694), _p02), _p0g(_p03(62067), _p02), _p0g(_p03(87817), _p02), _p0g(_p03(93526), _p02), _p0g(_p03(33084), _p02), _p0g(_p03(97831), _p02), _p0g(_p03(45482), _p02), _p0g(_p03(272), _p02), _p0g(_p03(69377), _p02), _p0g(_p03(31127), _p02), _p0g(_p03(79353), _p02), _p0g(_p03(17274), _p02), _p0g(_p03(91302), _p02), _p0g(_p03(82229), _p02), _p0g(_p03(10325), _p02), _p0g(_p03(351), _p02), _p0g(_p03(4050), _p02), _p0g(_p03(29805), _p02), _p0g(_p03(58913), _p02), _p0g(_p03(55421), _p02), _p0g(_p03(87845), _p02), _p0g(_p03(17562), _p02), _p0g(_p03(78466), _p02), _p0g(_p03(40061), _p02), _p0g(_p03(9195), _p02), _p0g(_p03(93297), _p02), _p0g(_p03(15133), _p02), _p0g(_p03(55747), _p02), _p0g(_p03(33155), _p02), _p0g(_p03(79086), _p02), _p0g(_p03(2306), _p02), _p0g(_p03(14386), _p02), _p0g(_p03(80225), _p02), _p0g(_p03(17732), _p02), _p0g(_p03(47169), _p02), _p0g(_p03(77670), _p02), _p0g(_p03(79988), _p02), _p0g(_p03(92253), _p02), _p0g(_p03(74428), _p02), _p0g(_p03(16498), _p02), _p0g(_p03(2631), _p02), _p0g(_p03(27177), _p02), _p0g(_p03(94781), _p02), _p0g(_p03(53908), _p02), _p0g(_p03(79813), _p02), _p0g(_p03(16088), _p02), _p0g(_p03(93733), _p02), _p0g(_p03(69939), _p02), _p0g(_p03(33734), _p02), _p0g(_p03(34432), _p02), _p0g(_p03(97423), _p02), _p0g(_p03(23551), _p02), _p0g(_p03(99791), _p02), _p0g(_p03(21403), _p02), _p0g(_p03(6173), _p02), _p0g(_p03(23934), _p02), _p0g(_p03(53709), _p02), _p0g(_p03(88838), _p02), _p0g(_p03(99790), _p02), _p0g(_p03(18387), _p02), _p0g(_p03(70941), _p02), _p0g(_p03(35025), _p02), _p0g(_p03(2603), _p02), _p0g(_p03(78707), _p02), _p0g(_p03(89058), _p02), _p0g(_p03(84372), _p02), _p0g(_p03(96804), _p02), _p0g(_p03(33896), _p02), _p0g(_p03(11031), _p02), _p0g(_p03(71383), _p02), _p0g(_p03(55888), _p02), _p0g(_p03(2258), _p02), _p0g(_p03(38003), _p02), _p0g(_p03(92174), _p02), _p0g(_p03(43768), _p02), _p0g(_p03(73254), _p02), _p0g(_p03(55734), _p02), _p0g(_p03(81254), _p02), _p0g(_p03(65455), _p02), _p0g(_p03(70362), _p02), _p0g(_p03(61977), _p02), _p0g(_p03(43607), _p02), _p0g(_p03(68086), _p02), _p0g(_p03(78173), _p02), _p0g(_p03(22581), _p02), _p0g(_p03(20418), _p02), _p0g(_p03(93373), _p02), _p0g(_p03(13053), _p02), _p0g(_p03(47874), _p02), _p0g(_p03(42788), _p02), _p0g(_p03(57664), _p02), _p0g(_p03(44990), _p02), _p0g(_p03(17712), _p02), _p0g(_p03(83957), _p02), _p0g(_p03(78539), _p02), _p0g(_p03(96282), _p02), _p0g(_p03(49679), _p02), _p0g(_p03(45927), _p02), _p0g(_p03(90312), _p02), _p0g(_p03(86856), _p02), _p0g(_p03(78123), _p02), _p0g(_p03(25765), _p02), _p0g(_p03(29493), _p02), _p0g(_p03(28221), _p02), _p0g(_p03(14830), _p02), _p0g(_p03(54047), _p02), _p0g(_p03(76054), _p02), _p0g(_p03(90725), _p02), _p0g(_p03(93053), _p02), _p0g(_p03(88792), _p02), _p0g(_p03(33242), _p02), _p0g(_p03(59415), _p02);
     },
-    82692: function(_p06, _p07, _p08) {
+    82692: function(_p0l, _p0m, _p0n) {
         'use strict';
-        var _p09 = null;
-        var _p0a = this && this.__createBinding || (Object.create ? function(_p0b, _p0c, _p0d, _p0e) {
-                var _p0f = null;
-                void 0 === _p0e && (_p0e = _p0d);
-                var _p0g = Object.getOwnPropertyDescriptor(_p0c, _p0d);
-                _p0g && !('get' in _p0g ? !_p0c.__esModule : _p0g.writable || _p0g.configurable) || (_p0g = {
-                    'enumerable': true,
-                    'get': function() {
-                        return _p0c[_p0d];
-                    }
-                }), Object.defineProperty(_p0b, _p0e, _p0g);
-            } : function(_p0h, _p0i, _p0j, _p0k) {
-                void 0 === _p0k && (_p0k = _p0j), _p0h[_p0k] = _p0i[_p0j];
-            }),
-            _p0l = this && this.__setModuleDefault || (Object.create ? function(_p0m, _p0n) {
-                var _p0o = null;
-                Object.defineProperty(_p0m, 'default', {
-                    'enumerable': true,
-                    'value': _p0n
-                });
-            } : function(_p0p, _p0q) {
-                var _p0r = null;
-                _p0p.default = _p0q;
-            }),
-            _p0s = this && this.__importStar || function(_p0t) {
+        var _p0o = null;
+        var _p0p = this && this.__createBinding || (Object.create ? function(_p0q, _p0r, _p0s, _p0t) {
                 var _p0u = null;
-                if (_p0t && _p0t.__esModule) return _p0t;
-                var _p0v = {};
-                if (null != _p0t) {
-                    for (var _p0w in _p0t) 'default' !== _p0w && Object.prototype.hasOwnProperty.call(_p0t, _p0w) && _p0a(_p0v, _p0t, _p0w);
+                void 0 === _p0t && (_p0t = _p0s);
+                var _p0v = Object.getOwnPropertyDescriptor(_p0r, _p0s);
+                _p0v && !('get' in _p0v ? !_p0r.__esModule : _p0v.writable || _p0v.configurable) || (_p0v = {
+                    'enumerable': true,
+                    'get': function() {
+                        return _p0r[_p0s];
+                    }
+                }), Object.defineProperty(_p0q, _p0t, _p0v);
+            } : function(_p0w, _p0x, _p0y, _p0z) {
+                void 0 === _p0z && (_p0z = _p0y), _p0w[_p0z] = _p0x[_p0y];
+            }),
+            _p10 = this && this.__setModuleDefault || (Object.create ? function(_p11, _p12) {
+                var _p13 = null;
+                Object.defineProperty(_p11, 'default', {
+                    'enumerable': true,
+                    'value': _p12
+                });
+            } : function(_p14, _p15) {
+                var _p16 = null;
+                _p14.default = _p15;
+            }),
+            _p17 = this && this.__importStar || function(_p18) {
+                var _p19 = null;
+                if (_p18 && _p18.__esModule) return _p18;
+                var _p1a = {};
+                if (null != _p18) {
+                    for (var _p1b in _p18) 'default' !== _p1b && Object.prototype.hasOwnProperty.call(_p18, _p1b) && _p0p(_p1a, _p18, _p1b);
                 }
-                return _p0l(_p0v, _p0t), _p0v;
+                return _p10(_p1a, _p18), _p1a;
             };
-        defineModule(_p07);
-        Object.defineProperty(_p07, '__esModule', {
+        defineModule(_p0m);
+        Object.defineProperty(_p0m, '__esModule', {
             'value': true
-        }), _p07.SlotItemEffectUtil = void 0;
-        var _p0x, _p0y = _p08(73785),
-            _p0z = _p0s(_p08(89051)),
-            _p10 = _p08(74496);
-        ! function(_p11) {
-            var _p12 = null;
-            _p11.getSlotitemEffect = function(_p13, _p14) {
-                var _p15 = null;
-                if (null == _p13 || null == _p14) return null;
-                for (var _p16 = new _p0y.SlotItemEffectParamModel(_p13, _p14), _p17 = [{
-                        'isExecute': Boolean(_p16.get_type3_nums(9)),
-                        'execFunc': _p0z.getSlotType9PersonalEffect
+        }), _p0m.SlotItemEffectUtil = void 0;
+        var _p1c, _p1d = _p0n(73785),
+            _p1e = _p17(_p0n(89051)),
+            _p1f = _p0n(74496);
+        ! function(_p1g) {
+            var _p1h = null;
+            _p1g.getSlotitemEffect = function(_p1i, _p1j) {
+                var _p1k = null;
+                if (null == _p1i || null == _p1j) return null;
+                for (var _p1l = new _p1d.SlotItemEffectParamModel(_p1i, _p1j), _p1m = [{
+                        'isExecute': Boolean(_p1l.get_type3_nums(9)),
+                        'execFunc': _p1e.getSlotType9PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_type3_nums(10)),
-                        'execFunc': _p0z.getSlotType10PersonalEffect
+                        'isExecute': Boolean(_p1l.get_type3_nums(10)),
+                        'execFunc': _p1e.getSlotType10PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_type3_nums(11)),
-                        'execFunc': _p0z.getSlotType11PersonalEffect
+                        'isExecute': Boolean(_p1l.get_type3_nums(11)),
+                        'execFunc': _p1e.getSlotType11PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_type3_nums(12)) || Boolean(_p16.get_type3_nums(13)),
-                        'execFunc': _p0z.getRaderPrivateEffect
+                        'isExecute': Boolean(_p1l.get_type3_nums(12)) || Boolean(_p1l.get_type3_nums(13)),
+                        'execFunc': _p1e.getRaderPrivateEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_type3_nums(25)),
-                        'execFunc': _p0z.getSlotType25PersonalEffect
+                        'isExecute': Boolean(_p1l.get_type3_nums(25)),
+                        'execFunc': _p1e.getSlotType25PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_type3_nums(29)),
-                        'execFunc': _p0z.getSearchLightEffect
+                        'isExecute': Boolean(_p1l.get_type3_nums(29)),
+                        'execFunc': _p1e.getSearchLightEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_type3_nums(42)),
-                        'execFunc': _p0z.getSearchLightLargeEffect
+                        'isExecute': Boolean(_p1l.get_type3_nums(42)),
+                        'execFunc': _p1e.getSearchLightLargeEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(3)) || Boolean(_p16.get_slotnums(122)),
-                        'execFunc': _p0z.getSlot3_122PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(3)) || Boolean(_p1l.get_slotnums(122)),
+                        'execFunc': _p1e.getSlot3_122PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(5)),
-                        'execFunc': _p0z.getSlot5PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(5)),
+                        'execFunc': _p1e.getSlot5PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(12)),
-                        'execFunc': _p0z.getSlot12PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(12)),
+                        'execFunc': _p1e.getSlot12PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(15)),
-                        'execFunc': _p0z.getSlot15PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(15)),
+                        'execFunc': _p1e.getSlot15PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(18)) || Boolean(_p16.get_slotnums(52)),
-                        'execFunc': _p0z.getSlot18_52_PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(18)) || Boolean(_p1l.get_slotnums(52)),
+                        'execFunc': _p1e.getSlot18_52_PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(19)),
-                        'execFunc': _p0z.getSlot19PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(19)),
+                        'execFunc': _p1e.getSlot19PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(24)) || Boolean(_p16.get_slotnums(57)) || Boolean(_p16.get_slotnums(111)),
-                        'execFunc': _p0z.getSlotOtherSuiseiPersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(24)) || Boolean(_p1l.get_slotnums(57)) || Boolean(_p1l.get_slotnums(111)),
+                        'execFunc': _p1e.getSlotOtherSuiseiPersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(26)) || Boolean(_p16.get_slotnums(62)) || Boolean(_p16.get_slotnums(79)) || Boolean(_p16.get_slotnums(80)) || Boolean(_p16.get_slotnums(81)) || Boolean(_p16.get_slotnums(207)) || Boolean(_p16.get_slotnums(208)),
-                        'execFunc': _p0z.getZuiunSeriesEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(26)) || Boolean(_p1l.get_slotnums(62)) || Boolean(_p1l.get_slotnums(79)) || Boolean(_p1l.get_slotnums(80)) || Boolean(_p1l.get_slotnums(81)) || Boolean(_p1l.get_slotnums(207)) || Boolean(_p1l.get_slotnums(208)),
+                        'execFunc': _p1e.getZuiunSeriesEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(35)),
-                        'execFunc': _p0z.getSlot35PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(35)),
+                        'execFunc': _p1e.getSlot35PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(39)) || Boolean(_p16.get_slotnums(40)) || Boolean(_p16.get_slotnums(49)) || Boolean(_p16.get_slotnums(131)),
-                        'execFunc': _p0z.get25mmMachinegunEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(39)) || Boolean(_p1l.get_slotnums(40)) || Boolean(_p1l.get_slotnums(49)) || Boolean(_p1l.get_slotnums(131)),
+                        'execFunc': _p1e.get25mmMachinegunEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(30)) || Boolean(_p16.get_slotnums(410)),
-                        'execFunc': _p0z.getSlot30_410PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(30)) || Boolean(_p1l.get_slotnums(410)),
+                        'execFunc': _p1e.getSlot30_410PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(44)) || Boolean(_p16.get_slotnums(45)) || Boolean(_p16.get_slotnums(287)) || Boolean(_p16.get_slotnums(288)),
-                        'execFunc': _p0z.getSlotDomesticAntiSubmarineToushakiPersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(44)) || Boolean(_p1l.get_slotnums(45)) || Boolean(_p1l.get_slotnums(287)) || Boolean(_p1l.get_slotnums(288)),
+                        'execFunc': _p1e.getSlotDomesticAntiSubmarineToushakiPersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(46)) || Boolean(_p16.get_slotnums(47)) || Boolean(_p16.get_slotnums(149)) || Boolean(_p16.get_slotnums(132)) || Boolean(_p16.get_slotnums(438)),
-                        'execFunc': _p0z.getSlotDomesticSonarPersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(46)) || Boolean(_p1l.get_slotnums(47)) || Boolean(_p1l.get_slotnums(149)) || Boolean(_p1l.get_slotnums(132)) || Boolean(_p1l.get_slotnums(438)),
+                        'execFunc': _p1e.getSlotDomesticSonarPersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(47)) || Boolean(_p16.get_slotnums(438)),
-                        'execFunc': _p0z.getSlot47PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(47)) || Boolean(_p1l.get_slotnums(438)),
+                        'execFunc': _p1e.getSlot47PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(50)),
-                        'execFunc': _p0z.getSlot50PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(50)),
+                        'execFunc': _p1e.getSlot50PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(58)),
-                        'execFunc': _p0z.getSlot58PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(58)),
+                        'execFunc': _p1e.getSlot58PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(59)),
-                        'execFunc': _p0z.getSlot59PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(59)),
+                        'execFunc': _p1e.getSlot59PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(60)) || Boolean(_p16.get_slotnums(154)) || Boolean(_p16.get_slotnums(219)),
-                        'execFunc': _p0z.getSlot60_154_219PersonalEffec
+                        'isExecute': Boolean(_p1l.get_slotnums(60)) || Boolean(_p1l.get_slotnums(154)) || Boolean(_p1l.get_slotnums(219)),
+                        'execFunc': _p1e.getSlot60_154_219PersonalEffec
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(61)),
-                        'execFunc': _p0z.getSlot61PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(61)),
+                        'execFunc': _p1e.getSlot61PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(61)),
-                        'execFunc': _p0z.getSlot61PersonalEffect2
+                        'isExecute': Boolean(_p1l.get_slotnums(61)),
+                        'execFunc': _p1e.getSlot61PersonalEffect2
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(63)),
-                        'execFunc': _p0z.getSlot63PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(63)),
+                        'execFunc': _p1e.getSlot63PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(66)) || Boolean(_p16.get_slotnums(220)),
-                        'execFunc': _p0z.get8cmAntiAircraftGunPersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(66)) || Boolean(_p1l.get_slotnums(220)),
+                        'execFunc': _p1e.get8cmAntiAircraftGunPersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(67)),
-                        'execFunc': _p0z.getSlot67PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(67)),
+                        'execFunc': _p1e.getSlot67PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(69)),
-                        'execFunc': _p0z.getSlot69PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(69)),
+                        'execFunc': _p1e.getSlot69PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(70)),
-                        'execFunc': _p0z.getSlot70PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(70)),
+                        'execFunc': _p1e.getSlot70PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(78)),
-                        'execFunc': _p0z.getSlot78PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(78)),
+                        'execFunc': _p1e.getSlot78PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(79)) || Boolean(_p16.get_slotnums(81)),
-                        'execFunc': _p0z.getSlot79And81PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(79)) || Boolean(_p1l.get_slotnums(81)),
+                        'execFunc': _p1e.getSlot79And81PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(82)),
-                        'execFunc': _p0z.getSlot82PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(82)),
+                        'execFunc': _p1e.getSlot82PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(84)),
-                        'execFunc': _p0z.getSlot84PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(84)),
+                        'execFunc': _p1e.getSlot84PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(85)),
-                        'execFunc': _p0z.getSlot85PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(85)),
+                        'execFunc': _p1e.getSlot85PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(87)),
-                        'execFunc': _p0z.getSlot87PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(87)),
+                        'execFunc': _p1e.getSlot87PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(90)),
-                        'execFunc': _p0z.getSlot90PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(90)),
+                        'execFunc': _p1e.getSlot90PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(93)),
-                        'execFunc': _p0z.getSlot93PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(93)),
+                        'execFunc': _p1e.getSlot93PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(94)),
-                        'execFunc': _p0z.getSlot94PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(94)),
+                        'execFunc': _p1e.getSlot94PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(99)),
-                        'execFunc': _p0z.getSlot99PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(99)),
+                        'execFunc': _p1e.getSlot99PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(100)),
-                        'execFunc': _p0z.getSlot100PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(100)),
+                        'execFunc': _p1e.getSlot100PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(104)),
-                        'execFunc': _p0z.getSlot104PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(104)),
+                        'execFunc': _p1e.getSlot104PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(106)) || Boolean(_p16.get_slotnums(450)),
-                        'execFunc': _p0z.getSlot106PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(106)) || Boolean(_p1l.get_slotnums(450)),
+                        'execFunc': _p1e.getSlot106PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(115)),
-                        'execFunc': _p0z.getSlot115PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(115)),
+                        'execFunc': _p1e.getSlot115PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(118)) || Boolean(_p16.get_slotnums(521)),
-                        'execFunc': _p0z.getSlot118PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(118)) || Boolean(_p1l.get_slotnums(521)),
+                        'execFunc': _p1e.getSlot118PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(119)),
-                        'execFunc': _p0z.getSlot119PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(119)),
+                        'execFunc': _p1e.getSlot119PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(121)),
-                        'execFunc': _p0z.getSlot121PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(121)),
+                        'execFunc': _p1e.getSlot121PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(122)),
-                        'execFunc': _p0z.getSlot122PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(122)),
+                        'execFunc': _p1e.getSlot122PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(128)) || Boolean(_p16.get_slotnums(281)),
-                        'execFunc': _p0z.getSlot51cmSeriesGunPersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(128)) || Boolean(_p1l.get_slotnums(281)),
+                        'execFunc': _p1e.getSlot51cmSeriesGunPersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(129)),
-                        'execFunc': _p0z.getSlot129PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(129)),
+                        'execFunc': _p1e.getSlot129PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(132)),
-                        'execFunc': _p0z.getSlot132PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(132)),
+                        'execFunc': _p1e.getSlot132PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(136)),
-                        'execFunc': _p0z.getSlot136PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(136)),
+                        'execFunc': _p1e.getSlot136PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(139)),
-                        'execFunc': _p0z.getSlot139PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(139)),
+                        'execFunc': _p1e.getSlot139PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(143)),
-                        'execFunc': _p0z.getSlot143PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(143)),
+                        'execFunc': _p1e.getSlot143PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(144)),
-                        'execFunc': _p0z.getSlot144PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(144)),
+                        'execFunc': _p1e.getSlot144PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(147)) || Boolean(_p16.get_slotnums(393)) || Boolean(_p16.get_slotnums(394)),
-                        'execFunc': _p0z.getSlot120mm50GroupPersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(147)) || Boolean(_p1l.get_slotnums(393)) || Boolean(_p1l.get_slotnums(394)),
+                        'execFunc': _p1e.getSlot120mm50GroupPersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(149)),
-                        'execFunc': _p0z.getSlot149PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(149)),
+                        'execFunc': _p1e.getSlot149PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(165)) || Boolean(_p16.get_slotnums(216)),
-                        'execFunc': _p0z.getSlot165_216PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(165)) || Boolean(_p1l.get_slotnums(216)),
+                        'execFunc': _p1e.getSlot165_216PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(171)),
-                        'execFunc': _p0z.getSlot171PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(171)),
+                        'execFunc': _p1e.getSlot171PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(174)),
-                        'execFunc': _p0z.getSlot174PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(174)),
+                        'execFunc': _p1e.getSlot174PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(179)),
-                        'execFunc': _p0z.getSlot179PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(179)),
+                        'execFunc': _p1e.getSlot179PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(184)),
-                        'execFunc': _p0z.getSlot184PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(184)),
+                        'execFunc': _p1e.getSlot184PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(188)),
-                        'execFunc': _p0z.getSlot188PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(188)),
+                        'execFunc': _p1e.getSlot188PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(189)),
-                        'execFunc': _p0z.getSlot189PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(189)),
+                        'execFunc': _p1e.getSlot189PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(194)),
-                        'execFunc': _p0z.getSlot194PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(194)),
+                        'execFunc': _p1e.getSlot194PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(195)),
-                        'execFunc': _p0z.getSlot195PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(195)),
+                        'execFunc': _p1e.getSlot195PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(204)),
-                        'execFunc': _p0z.getSlot204PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(204)),
+                        'execFunc': _p1e.getSlot204PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(217)),
-                        'execFunc': _p0z.getSlot217PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(217)),
+                        'execFunc': _p1e.getSlot217PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(220)),
-                        'execFunc': _p0z.getSlot220PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(220)),
+                        'execFunc': _p1e.getSlot220PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(227)),
-                        'execFunc': _p0z.getSlot227PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(227)),
+                        'execFunc': _p1e.getSlot227PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(228)),
-                        'execFunc': _p0z.getSlot228PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(228)),
+                        'execFunc': _p1e.getSlot228PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(229)),
-                        'execFunc': _p0z.getSlot229PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(229)),
+                        'execFunc': _p1e.getSlot229PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(234)),
-                        'execFunc': _p0z.getSlot234PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(234)),
+                        'execFunc': _p1e.getSlot234PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(235)),
-                        'execFunc': _p0z.getSlot235PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(235)),
+                        'execFunc': _p1e.getSlot235PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(237)) || Boolean(_p16.get_slotnums(322)) || Boolean(_p16.get_slotnums(323)) || Boolean(_p16.get_slotnums(490)),
-                        'execFunc': _p0z.getHighZuiunSeriesEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(237)) || Boolean(_p1l.get_slotnums(322)) || Boolean(_p1l.get_slotnums(323)) || Boolean(_p1l.get_slotnums(490)),
+                        'execFunc': _p1e.getHighZuiunSeriesEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(237)),
-                        'execFunc': _p0z.getSlot237PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(237)),
+                        'execFunc': _p1e.getSlot237PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(238)) || Boolean(_p16.get_slotnums(239)),
-                        'execFunc': _p0z.getSlot238_239PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(238)) || Boolean(_p1l.get_slotnums(239)),
+                        'execFunc': _p1e.getSlot238_239PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(242)),
-                        'execFunc': _p0z.getSlot242PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(242)),
+                        'execFunc': _p1e.getSlot242PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(243)),
-                        'execFunc': _p0z.getSlot243PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(243)),
+                        'execFunc': _p1e.getSlot243PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(244)),
-                        'execFunc': _p0z.getSlot244PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(244)),
+                        'execFunc': _p1e.getSlot244PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(245)) || Boolean(_p16.get_slotnums(246)) || Boolean(_p16.get_slotnums(468)),
-                        'execFunc': _p0z.getSlot38cmFourBarrelGunPersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(245)) || Boolean(_p1l.get_slotnums(246)) || Boolean(_p1l.get_slotnums(468)),
+                        'execFunc': _p1e.getSlot38cmFourBarrelGunPersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(247)),
-                        'execFunc': _p0z.getSlot247PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(247)),
+                        'execFunc': _p1e.getSlot247PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(266)),
-                        'execFunc': _p0z.getSlot266PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(266)),
+                        'execFunc': _p1e.getSlot266PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(266)),
-                        'execFunc': _p0z.getSlot266PersonalEffect2
+                        'isExecute': Boolean(_p1l.get_slotnums(266)),
+                        'execFunc': _p1e.getSlot266PersonalEffect2
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(267)) || Boolean(_p16.get_slotnums(366)),
-                        'execFunc': _p0z.getSlot267PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(267)) || Boolean(_p1l.get_slotnums(366)),
+                        'execFunc': _p1e.getSlot267PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(267)) || Boolean(_p16.get_slotnums(366)),
-                        'execFunc': _p0z.getSlot267PersonalEffect2
+                        'isExecute': Boolean(_p1l.get_slotnums(267)) || Boolean(_p1l.get_slotnums(366)),
+                        'execFunc': _p1e.getSlot267PersonalEffect2
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(268)),
-                        'execFunc': _p0z.getCamouflageSlotPersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(268)),
+                        'execFunc': _p1e.getCamouflageSlotPersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(271)),
-                        'execFunc': _p0z.getSlot271PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(271)),
+                        'execFunc': _p1e.getSlot271PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(275)),
-                        'execFunc': _p0z.getSlot275PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(275)),
+                        'execFunc': _p1e.getSlot275PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(277)),
-                        'execFunc': _p0z.getSlot277PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(277)),
+                        'execFunc': _p1e.getSlot277PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(278)),
-                        'execFunc': _p0z.getSlot278PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(278)),
+                        'execFunc': _p1e.getSlot278PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(279)),
-                        'execFunc': _p0z.getSlot279PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(279)),
+                        'execFunc': _p1e.getSlot279PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(282)),
-                        'execFunc': _p0z.getSlot282PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(282)),
+                        'execFunc': _p1e.getSlot282PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(283)),
-                        'execFunc': _p0z.getSlot283PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(283)),
+                        'execFunc': _p1e.getSlot283PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(285)),
-                        'execFunc': _p0z.getSlot285PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(285)),
+                        'execFunc': _p1e.getSlot285PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(286)),
-                        'execFunc': _p0z.getSlot286PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(286)),
+                        'execFunc': _p1e.getSlot286PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(286)),
-                        'execFunc': _p0z.getSlot286PersonalEffect2
+                        'isExecute': Boolean(_p1l.get_slotnums(286)),
+                        'execFunc': _p1e.getSlot286PersonalEffect2
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(286)),
-                        'execFunc': _p0z.getSlot286PersonalEffect3
+                        'isExecute': Boolean(_p1l.get_slotnums(286)),
+                        'execFunc': _p1e.getSlot286PersonalEffect3
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(287)),
-                        'execFunc': _p0z.getSlot287PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(287)),
+                        'execFunc': _p1e.getSlot287PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(288)),
-                        'execFunc': _p0z.getSlot288PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(288)),
+                        'execFunc': _p1e.getSlot288PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(289)),
-                        'execFunc': _p0z.getSlot289PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(289)),
+                        'execFunc': _p1e.getSlot289PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(290)),
-                        'execFunc': _p0z.getSlot290PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(290)),
+                        'execFunc': _p1e.getSlot290PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(291)),
-                        'execFunc': _p0z.getSlot291PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(291)),
+                        'execFunc': _p1e.getSlot291PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(292)),
-                        'execFunc': _p0z.getSlot292PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(292)),
+                        'execFunc': _p1e.getSlot292PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(293)),
-                        'execFunc': _p0z.getSlot293PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(293)),
+                        'execFunc': _p1e.getSlot293PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(294)),
-                        'execFunc': _p0z.getSlot294PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(294)),
+                        'execFunc': _p1e.getSlot294PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(295)),
-                        'execFunc': _p0z.getSlot295PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(295)),
+                        'execFunc': _p1e.getSlot295PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(296)),
-                        'execFunc': _p0z.getSlot296PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(296)),
+                        'execFunc': _p1e.getSlot296PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(297)),
-                        'execFunc': _p0z.getSlot297PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(297)),
+                        'execFunc': _p1e.getSlot297PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(298)) || Boolean(_p16.get_slotnums(299)) || Boolean(_p16.get_slotnums(300)),
-                        'execFunc': _p0z.getSlot16M1PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(298)) || Boolean(_p1l.get_slotnums(299)) || Boolean(_p1l.get_slotnums(300)),
+                        'execFunc': _p1e.getSlot16M1PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(301)),
-                        'execFunc': _p0z.getSlot301PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(301)),
+                        'execFunc': _p1e.getSlot301PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(302)),
-                        'execFunc': _p0z.getSlot302PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(302)),
+                        'execFunc': _p1e.getSlot302PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(303)),
-                        'execFunc': _p0z.getSlot303PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(303)),
+                        'execFunc': _p1e.getSlot303PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(304)),
-                        'execFunc': _p0z.getSlot304PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(304)),
+                        'execFunc': _p1e.getSlot304PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(305)) || Boolean(_p16.get_slotnums(306)),
-                        'execFunc': _p0z.getSlot305_And_306_PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(305)) || Boolean(_p1l.get_slotnums(306)),
+                        'execFunc': _p1e.getSlot305_And_306_PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(307)),
-                        'execFunc': _p0z.getSlot307PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(307)),
+                        'execFunc': _p1e.getSlot307PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(308)),
-                        'execFunc': _p0z.getSlot308PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(308)),
+                        'execFunc': _p1e.getSlot308PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(310)) || Boolean(_p16.get_slotnums(518)),
-                        'execFunc': _p0z.getSlot310PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(310)) || Boolean(_p1l.get_slotnums(518)),
+                        'execFunc': _p1e.getSlot310PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(313)),
-                        'execFunc': _p0z.getSlot313PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(313)),
+                        'execFunc': _p1e.getSlot313PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(314)),
-                        'execFunc': _p0z.getSlot314PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(314)),
+                        'execFunc': _p1e.getSlot314PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(315)),
-                        'execFunc': _p0z.getSlot315PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(315)),
+                        'execFunc': _p1e.getSlot315PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(316)),
-                        'execFunc': _p0z.getSlot316PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(316)),
+                        'execFunc': _p1e.getSlot316PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(317)),
-                        'execFunc': _p0z.getSlot317PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(317)),
+                        'execFunc': _p1e.getSlot317PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(318)),
-                        'execFunc': _p0z.getSlot318PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(318)),
+                        'execFunc': _p1e.getSlot318PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(319)),
-                        'execFunc': _p0z.getSlot319PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(319)),
+                        'execFunc': _p1e.getSlot319PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(320)),
-                        'execFunc': _p0z.getSlot320PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(320)),
+                        'execFunc': _p1e.getSlot320PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(322)),
-                        'execFunc': _p0z.getSlot322PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(322)),
+                        'execFunc': _p1e.getSlot322PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(323)),
-                        'execFunc': _p0z.getSlot323PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(323)),
+                        'execFunc': _p1e.getSlot323PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(324)) || Boolean(_p16.get_slotnums(325)),
-                        'execFunc': _p0z.getSlot324And325PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(324)) || Boolean(_p1l.get_slotnums(325)),
+                        'execFunc': _p1e.getSlot324And325PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(326)),
-                        'execFunc': _p0z.getSlot326PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(326)),
+                        'execFunc': _p1e.getSlot326PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(327)),
-                        'execFunc': _p0z.getSlot327PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(327)),
+                        'execFunc': _p1e.getSlot327PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(328)),
-                        'execFunc': _p0z.getSlot328PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(328)),
+                        'execFunc': _p1e.getSlot328PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(329)),
-                        'execFunc': _p0z.getSlot329PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(329)),
+                        'execFunc': _p1e.getSlot329PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(330)) || Boolean(_p16.get_slotnums(331)) || Boolean(_p16.get_slotnums(332)),
-                        'execFunc': _p0z.getSlot_16InchMkXRensouhou_PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(330)) || Boolean(_p1l.get_slotnums(331)) || Boolean(_p1l.get_slotnums(332)),
+                        'execFunc': _p1e.getSlot_16InchMkXRensouhou_PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(335)),
-                        'execFunc': _p0z.getSlot335PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(335)),
+                        'execFunc': _p1e.getSlot335PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(336)),
-                        'execFunc': _p0z.getSlot336PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(336)),
+                        'execFunc': _p1e.getSlot336PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(337)),
-                        'execFunc': _p0z.getSlot337PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(337)),
+                        'execFunc': _p1e.getSlot337PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(338)),
-                        'execFunc': _p0z.getSlot338PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(338)),
+                        'execFunc': _p1e.getSlot338PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(339)),
-                        'execFunc': _p0z.getSlot339PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(339)),
+                        'execFunc': _p1e.getSlot339PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(340)),
-                        'execFunc': _p0z.getSlot340PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(340)),
+                        'execFunc': _p1e.getSlot340PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(341)),
-                        'execFunc': _p0z.getSlot341PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(341)),
+                        'execFunc': _p1e.getSlot341PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(342)),
-                        'execFunc': _p0z.getSlot342PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(342)),
+                        'execFunc': _p1e.getSlot342PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(343)),
-                        'execFunc': _p0z.getSlot343PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(343)),
+                        'execFunc': _p1e.getSlot343PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(344)),
-                        'execFunc': _p0z.getSlot344PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(344)),
+                        'execFunc': _p1e.getSlot344PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(345)),
-                        'execFunc': _p0z.getSlot345PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(345)),
+                        'execFunc': _p1e.getSlot345PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(346)),
-                        'execFunc': _p0z.getSlot346PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(346)),
+                        'execFunc': _p1e.getSlot346PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(347)),
-                        'execFunc': _p0z.getSlot347PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(347)),
+                        'execFunc': _p1e.getSlot347PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(356)) || Boolean(_p16.get_slotnums(357)),
-                        'execFunc': _p0z.getSlot356_357PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(356)) || Boolean(_p1l.get_slotnums(357)),
+                        'execFunc': _p1e.getSlot356_357PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(358)),
-                        'execFunc': _p0z.getSlot358PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(358)),
+                        'execFunc': _p1e.getSlot358PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(359)),
-                        'execFunc': _p0z.getSlot359PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(359)),
+                        'execFunc': _p1e.getSlot359PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(360)) || Boolean(_p16.get_slotnums(361)),
-                        'execFunc': _p0z.getSlot360_361PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(360)) || Boolean(_p1l.get_slotnums(361)),
+                        'execFunc': _p1e.getSlot360_361PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(362)) || Boolean(_p16.get_slotnums(363)),
-                        'execFunc': _p0z.getSlot362_363PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(362)) || Boolean(_p1l.get_slotnums(363)),
+                        'execFunc': _p1e.getSlot362_363PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(364)),
-                        'execFunc': _p0z.getSlot364PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(364)),
+                        'execFunc': _p1e.getSlot364PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(365)),
-                        'execFunc': _p0z.getSlot365PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(365)),
+                        'execFunc': _p1e.getSlot365PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(367)),
-                        'execFunc': _p0z.getSlot367PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(367)),
+                        'execFunc': _p1e.getSlot367PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(368)),
-                        'execFunc': _p0z.getSlot368PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(368)),
+                        'execFunc': _p1e.getSlot368PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(369)),
-                        'execFunc': _p0z.getSlot369PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(369)),
+                        'execFunc': _p1e.getSlot369PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(370)),
-                        'execFunc': _p0z.getSlot370PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(370)),
+                        'execFunc': _p1e.getSlot370PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(371)),
-                        'execFunc': _p0z.getSlot371PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(371)),
+                        'execFunc': _p1e.getSlot371PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(372)),
-                        'execFunc': _p0z.getSlot372PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(372)),
+                        'execFunc': _p1e.getSlot372PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(373)),
-                        'execFunc': _p0z.getSlot373PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(373)),
+                        'execFunc': _p1e.getSlot373PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(374)),
-                        'execFunc': _p0z.getSlot374PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(374)),
+                        'execFunc': _p1e.getSlot374PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(375)),
-                        'execFunc': _p0z.getSlot375PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(375)),
+                        'execFunc': _p1e.getSlot375PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(376)),
-                        'execFunc': _p0z.getSlot376PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(376)),
+                        'execFunc': _p1e.getSlot376PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(377)),
-                        'execFunc': _p0z.getSlot377PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(377)),
+                        'execFunc': _p1e.getSlot377PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(378)),
-                        'execFunc': _p0z.getSlot378PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(378)),
+                        'execFunc': _p1e.getSlot378PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(379)),
-                        'execFunc': _p0z.getSlot379PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(379)),
+                        'execFunc': _p1e.getSlot379PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(380)),
-                        'execFunc': _p0z.getSlot380PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(380)),
+                        'execFunc': _p1e.getSlot380PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(381)),
-                        'execFunc': _p0z.getSlot381PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(381)),
+                        'execFunc': _p1e.getSlot381PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(382)) || Boolean(_p16.get_slotnums(509)),
-                        'execFunc': _p0z.getSlot382PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(382)) || Boolean(_p1l.get_slotnums(509)),
+                        'execFunc': _p1e.getSlot382PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(383)),
-                        'execFunc': _p0z.getSlot383PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(383)),
+                        'execFunc': _p1e.getSlot383PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(384)),
-                        'execFunc': _p0z.getSlot384PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(384)),
+                        'execFunc': _p1e.getSlot384PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(385)),
-                        'execFunc': _p0z.getSlot385PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(385)),
+                        'execFunc': _p1e.getSlot385PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(386)),
-                        'execFunc': _p0z.getSlot386PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(386)),
+                        'execFunc': _p1e.getSlot386PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(387)),
-                        'execFunc': _p0z.getSlot387PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(387)),
+                        'execFunc': _p1e.getSlot387PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(389)),
-                        'execFunc': _p0z.getSlot389PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(389)),
+                        'execFunc': _p1e.getSlot389PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(390)),
-                        'execFunc': _p0z.getSlot390PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(390)),
+                        'execFunc': _p1e.getSlot390PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(391)),
-                        'execFunc': _p0z.getSlot391PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(391)),
+                        'execFunc': _p1e.getSlot391PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(392)),
-                        'execFunc': _p0z.getSlot392PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(392)),
+                        'execFunc': _p1e.getSlot392PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(397)),
-                        'execFunc': _p0z.getSlot397PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(397)),
+                        'execFunc': _p1e.getSlot397PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(398)),
-                        'execFunc': _p0z.getSlot398PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(398)),
+                        'execFunc': _p1e.getSlot398PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(399)),
-                        'execFunc': _p0z.getSlot399PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(399)),
+                        'execFunc': _p1e.getSlot399PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(400)),
-                        'execFunc': _p0z.getSlot400PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(400)),
+                        'execFunc': _p1e.getSlot400PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(407)),
-                        'execFunc': _p0z.getSlot407PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(407)),
+                        'execFunc': _p1e.getSlot407PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(408)),
-                        'execFunc': _p0z.getSlot408PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(408)),
+                        'execFunc': _p1e.getSlot408PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(409)),
-                        'execFunc': _p0z.getSlot409PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(409)),
+                        'execFunc': _p1e.getSlot409PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(411)),
-                        'execFunc': _p0z.getSlot411PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(411)),
+                        'execFunc': _p1e.getSlot411PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(412)),
-                        'execFunc': _p0z.getSlot412PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(412)),
+                        'execFunc': _p1e.getSlot412PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(413)),
-                        'execFunc': _p0z.getSlot413PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(413)),
+                        'execFunc': _p1e.getSlot413PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(414)),
-                        'execFunc': _p0z.getSlot414PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(414)),
+                        'execFunc': _p1e.getSlot414PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(415)),
-                        'execFunc': _p0z.getSlot415PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(415)),
+                        'execFunc': _p1e.getSlot415PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(419)),
-                        'execFunc': _p0z.getSlot419PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(419)),
+                        'execFunc': _p1e.getSlot419PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(420)),
-                        'execFunc': _p0z.getSlot420PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(420)),
+                        'execFunc': _p1e.getSlot420PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(421)),
-                        'execFunc': _p0z.getSlot421PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(421)),
+                        'execFunc': _p1e.getSlot421PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(422)),
-                        'execFunc': _p0z.getSlot422PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(422)),
+                        'execFunc': _p1e.getSlot422PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(423)),
-                        'execFunc': _p0z.getSlot423PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(423)),
+                        'execFunc': _p1e.getSlot423PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(424)),
-                        'execFunc': _p0z.getSlot424PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(424)),
+                        'execFunc': _p1e.getSlot424PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(425)),
-                        'execFunc': _p0z.getSlot425PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(425)),
+                        'execFunc': _p1e.getSlot425PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(426)) || Boolean(_p16.get_slotnums(427)) || Boolean(_p16.get_slotnums(428)) || Boolean(_p16.get_slotnums(429)),
-                        'execFunc': _p0z.getSlot305More320mmGunPersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(426)) || Boolean(_p1l.get_slotnums(427)) || Boolean(_p1l.get_slotnums(428)) || Boolean(_p1l.get_slotnums(429)),
+                        'execFunc': _p1e.getSlot305More320mmGunPersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(430)),
-                        'execFunc': _p0z.getSlot430PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(430)),
+                        'execFunc': _p1e.getSlot430PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(434)) || Boolean(_p16.get_slotnums(435)),
-                        'execFunc': _p0z.getSlotCorsairMkIIPersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(434)) || Boolean(_p1l.get_slotnums(435)),
+                        'execFunc': _p1e.getSlotCorsairMkIIPersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(437)),
-                        'execFunc': _p0z.getSlot437PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(437)),
+                        'execFunc': _p1e.getSlot437PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(438)),
-                        'execFunc': _p0z.getSlot438PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(438)),
+                        'execFunc': _p1e.getSlot438PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(439)),
-                        'execFunc': _p0z.getSlot439PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(439)),
+                        'execFunc': _p1e.getSlot439PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(440)) || Boolean(_p16.get_slotnums(441)),
-                        'execFunc': _p0z.getSlot440_441PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(440)) || Boolean(_p1l.get_slotnums(441)),
+                        'execFunc': _p1e.getSlot440_441PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(442)) || Boolean(_p16.get_slotnums(443)),
-                        'execFunc': _p0z.getSlot442_443PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(442)) || Boolean(_p1l.get_slotnums(443)),
+                        'execFunc': _p1e.getSlot442_443PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(447)),
-                        'execFunc': _p0z.getSlot447PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(447)),
+                        'execFunc': _p1e.getSlot447PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(450)),
-                        'execFunc': _p0z.getSlot450PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(450)),
+                        'execFunc': _p1e.getSlot450PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(451)),
-                        'execFunc': _p0z.getSlot451PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(451)),
+                        'execFunc': _p1e.getSlot451PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(455)),
-                        'execFunc': _p0z.getSlot455PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(455)),
+                        'execFunc': _p1e.getSlot455PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(456)),
-                        'execFunc': _p0z.getSlot456PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(456)),
+                        'execFunc': _p1e.getSlot456PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(457)) || Boolean(_p16.get_slotnums(461)),
-                        'execFunc': _p0z.getSlot457PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(457)) || Boolean(_p1l.get_slotnums(461)),
+                        'execFunc': _p1e.getSlot457PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(458)),
-                        'execFunc': _p0z.getSlot458PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(458)),
+                        'execFunc': _p1e.getSlot458PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(463)),
-                        'execFunc': _p0z.getSlot463PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(463)),
+                        'execFunc': _p1e.getSlot463PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(464)),
-                        'execFunc': _p0z.getSlot464PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(464)),
+                        'execFunc': _p1e.getSlot464PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(465)),
-                        'execFunc': _p0z.getSlot465PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(465)),
+                        'execFunc': _p1e.getSlot465PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(466)),
-                        'execFunc': _p0z.getSlot466PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(466)),
+                        'execFunc': _p1e.getSlot466PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(467)),
-                        'execFunc': _p0z.getSlot467PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(467)),
+                        'execFunc': _p1e.getSlot467PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(470)),
-                        'execFunc': _p0z.getSlot470PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(470)),
+                        'execFunc': _p1e.getSlot470PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(471)),
-                        'execFunc': _p0z.getSlot471PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(471)),
+                        'execFunc': _p1e.getSlot471PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(472)),
-                        'execFunc': _p0z.getSlot472PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(472)),
+                        'execFunc': _p1e.getSlot472PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(473)),
-                        'execFunc': _p0z.getSlot473PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(473)),
+                        'execFunc': _p1e.getSlot473PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(474)),
-                        'execFunc': _p0z.getSlot474PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(474)),
+                        'execFunc': _p1e.getSlot474PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(478)),
-                        'execFunc': _p0z.getSlot478PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(478)),
+                        'execFunc': _p1e.getSlot478PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(483)),
-                        'execFunc': _p0z.getSlot483PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(483)),
+                        'execFunc': _p1e.getSlot483PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(485)),
-                        'execFunc': _p0z.getSlot485PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(485)),
+                        'execFunc': _p1e.getSlot485PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(486)),
-                        'execFunc': _p0z.getSlot486PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(486)),
+                        'execFunc': _p1e.getSlot486PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(487)),
-                        'execFunc': _p0z.getSlot487PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(487)),
+                        'execFunc': _p1e.getSlot487PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(488)),
-                        'execFunc': _p0z.getSlot488PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(488)),
+                        'execFunc': _p1e.getSlot488PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(489)) || Boolean(_p16.get_slotnums(491)),
-                        'execFunc': _p0z.getSlot489PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(489)) || Boolean(_p1l.get_slotnums(491)),
+                        'execFunc': _p1e.getSlot489PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(500)) || Boolean(_p16.get_slotnums(501)),
-                        'execFunc': _p0z.getSlotSmokePersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(500)) || Boolean(_p1l.get_slotnums(501)),
+                        'execFunc': _p1e.getSlotSmokePersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(502)),
-                        'execFunc': _p0z.getSlot502PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(502)),
+                        'execFunc': _p1e.getSlot502PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(503)),
-                        'execFunc': _p0z.getSlot503PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(503)),
+                        'execFunc': _p1e.getSlot503PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(505)),
-                        'execFunc': _p0z.getSlot505PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(505)),
+                        'execFunc': _p1e.getSlot505PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(506)),
-                        'execFunc': _p0z.getSlot506PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(506)),
+                        'execFunc': _p1e.getSlot506PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(507)) || Boolean(_p16.get_slotnums(508)),
-                        'execFunc': _p0z.getSlot14inch45CaliberGunPersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(507)) || Boolean(_p1l.get_slotnums(508)),
+                        'execFunc': _p1e.getSlot14inch45CaliberGunPersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(510)),
-                        'execFunc': _p0z.getSlot510PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(510)),
+                        'execFunc': _p1e.getSlot510PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(511)) || Boolean(_p16.get_slotnums(512)),
-                        'execFunc': _p0z.getSlot511PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(511)) || Boolean(_p1l.get_slotnums(512)),
+                        'execFunc': _p1e.getSlot511PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(517)),
-                        'execFunc': _p0z.getSlot517PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(517)),
+                        'execFunc': _p1e.getSlot517PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(518)),
-                        'execFunc': _p0z.getSlot518PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(518)),
+                        'execFunc': _p1e.getSlot518PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(519)),
-                        'execFunc': _p0z.getSlot519PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(519)),
+                        'execFunc': _p1e.getSlot519PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(520)),
-                        'execFunc': _p0z.getSlot520PersonalEffect
+                        'isExecute': Boolean(_p1l.get_slotnums(520)),
+                        'execFunc': _p1e.getSlot520PersonalEffect
                     }, {
-                        'isExecute': Boolean(_p16.get_slotnums(521)),
-                        'execFunc': _p0z.getSlot521PersonalEffect
-                    }], _p18 = new _p10.SlotItemEffectModel(), _p19 = 0, _p1a = _p17; _p19 < _p1a.length; _p19++) {
-                    var _p1b = _p1a[_p19];
-                    if (_p1b.isExecute) {
-                        var _p1c = _p1b.execFunc(_p16);
-                        0, _p18.add(_p1c);
+                        'isExecute': Boolean(_p1l.get_slotnums(521)),
+                        'execFunc': _p1e.getSlot521PersonalEffect
+                    }, {
+                        'isExecute': Boolean(_p1l.get_slotnums(524)),
+                        'execFunc': _p1e.getSlot524PersonalEffect
+                    }], _p1n = new _p1f.SlotItemEffectModel(), _p1o = 0, _p1p = _p1m; _p1o < _p1p.length; _p1o++) {
+                    var _p1q = _p1p[_p1o];
+                    if (_p1q.isExecute) {
+                        var _p1r = _p1q.execFunc(_p1l);
+                        0, _p1n.add(_p1r);
                     }
                 }
-                return _p18;
+                return _p1n;
             };
-        }(_p0x || (_p07.SlotItemEffectUtil = _p0x = {}));
+        }(_p1c || (_p0m.SlotItemEffectUtil = _p1c = {}));
     },
 }
