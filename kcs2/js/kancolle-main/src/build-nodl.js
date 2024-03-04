@@ -21,15 +21,13 @@ outputFileSync('dist/createjs.js', createjsPatched)
   scriptVesion = file('dist/version')
 
   const mainSource = file('dist/main.js')
-  const [mainDecoder, mainFormatted] = beautify(mainSource, { indent_size: 2 })
-  //  .split('\n! function')
-    .split('), ! function')
-  //outputFileSync('dist/decode.js', `${mainDecoder}\n${decoderSource}`)
-  outputFileSync('dist/decode.js', `${mainDecoder}))\n\n${decoderSource}`)
-  outputFileSync('dist/main.patched.js', `! function${mainFormatted}`.slice(0, -2) + ';')
+  const [mainDecoder1, mainFormatted_] = beautify(mainSource, { indent_size: 2 }).split('), ! function')
+  const [mainFormatted, mainDecoder2] = mainFormatted_.split(';\n\nfunction')
+  const mainDecoder = mainDecoder2 ? `${mainDecoder1}))\n\nfunction${mainDecoder2}` : `${mainDecoder1}))`
+  outputFileSync('dist/decode.js', `${mainDecoder}\n\n${decoderSource}`)
+  outputFileSync('dist/main.patched.js', `! function${mainFormatted}`.slice(0, -1) + ';')
 
   const decoderStr = file('dist/decode.js')
-  //const decoderFunction = decoderStr.match(/\nvar (.+?) = function/)[1]
   const decoderFunction = decoderStr.match(/\nfunction (.+?)\(.+ \{/)[1]
 
   console.info(spawnSync('node', ['dist/decode.js', decoderFunction, 9, process.argv[2] || '']).stdout.toString())
