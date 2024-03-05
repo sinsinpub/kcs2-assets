@@ -25,10 +25,10 @@ outputFileSync('dist/createjs.js', createjsPatched)
   const [mainFormatted, mainDecoder2] = mainFormatted_.split(';\n\nfunction')
   const mainDecoder = mainDecoder2 ? `${mainDecoder1}))\n\nfunction${mainDecoder2}` : `${mainDecoder1}))`
   outputFileSync('dist/decode.js', `${mainDecoder}\n\n${decoderSource}`)
-  outputFileSync('dist/main.patched.js', `! function${mainFormatted}`.slice(0, -1) + ';')
+  outputFileSync('dist/main.patched.js', `! function${mainFormatted}`.slice(0, mainDecoder2 ? -1 : -2) + ';')
 
   const decoderStr = file('dist/decode.js')
-  const decoderFunction = decoderStr.match(/\nfunction (.+?)\(.+ \{/)[1]
+  const decoderFunction = decoderStr.match(/function (.+?)\(_.+?,.+?\) \{/)[1]
 
   console.info(spawnSync('node', ['dist/decode.js', decoderFunction, 9, process.argv[2] || '']).stdout.toString())
 
