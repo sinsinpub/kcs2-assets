@@ -10,6 +10,7 @@ Main contents:
 * `kcs2/img`: image assets and cropping script
 * `kcs2/resources/map`: assets of past event maps
 * `kcs2/js/main.*.js`: tracking versions of client-side implementation
-  * Beautifier script is no longer effective since `main.js` obfuscated by official
-  * Use following deobfuscate scripts instead
+  * Beautifier script is no longer effective since `main.js` obfuscated by `obfuscator.io`
+  * Use following [deobfuscator](https://github.com/ben-sb/obfuscator-io-deobfuscator) scripts instead
 * `kcs2/js/kancolle-main`: modified repo of deobfuscating `main.js`: https://github.com/kcwiki/kancolle-main
+  * Alternative implementation: https://github.com/Billons007/decode_kcmain
