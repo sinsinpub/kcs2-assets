@@ -40,4 +40,6 @@ const ship = main.default.model.ship.get(1)
 console.info(ship.mstID)
 const slot = ship.getSlotitems()
 console.info(main.SlotItemEffectUtil.getSlotitemEffect(ship, slot))
+console.info(main.RemodelUtil.createUnSetListEx(900, 115, 22))
 */
+
