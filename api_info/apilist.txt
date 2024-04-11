@@ -475,7 +475,7 @@ api_start2/getData	：艦娘・装備固有データその他
 		api_rarity		：レアリティ
 		api_price		：価格　ちなみに、2000以上20000未満は特注家具職人必要, 100000以上はダイナミック割引可能、割引後価格はfloor(max(0.1 * (元値 - 100000), 0))
 		api_saleflg		：1=販売中
-		api_season		：付いてくるBGMID
+		api_bgm_id		：付いてくるBGMID　2024-04-10までは api_season だった
 		api_version		：画像バージョン
 		api_outside_id	：窓の外のグラID　指定ないならデフォルトで4を表示
 		api_active_flag	：1=動くアニメーションあり
@@ -755,6 +755,8 @@ api_port/port		：母港情報
 			api_type3No			：装備カテゴリID
 			api_slot_list		：装備IDリスト []
 		api_base_convert_slot	：配置転換中の装備IDリスト []
+	api_furniture_affect_items	：家具表示に影響あるアイテムの定義　'24四月追加
+		api_payitem_dict		：課金アイテムID:0　現在「艦娘へのクッキー」21のみ？
 	api_c_flag2				：ミニイベントの度に限定アイテムの使用回数を制限用のフラグ
 	api_c_flags				：[]　上の機能と一緒、配列になってるだけ。秋刀魚とか節分豆とか南瓜とか
 
