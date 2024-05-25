@@ -876,6 +876,7 @@ api_req_kousyou/remodel_slotlist	：改修工廠　装備選択
 	api_req_remodelkit		：消費改修資材
 	api_req_slot_id			：0
 	api_req_slot_num		：0
+	api_sp_type				：0=通常, 1/2=「特別改修」の吹き出し
 
 Request.api_req_kousyou/remodel_slotlist_detail		：改修工廠　実行確認
 	api_id		：レシピID
@@ -1078,7 +1079,7 @@ api_get_member/picture_book	：艦船図鑑　図鑑登録済みのもののみ�
 		api_yomi			：艦船名読み
 		api_stype			：艦種
 		api_ctype			：艦型ID
-			 1=綾波型, 深海棲艦
+			 1=綾波型　深海棲艦
 			 2=伊勢型
 			 3=加賀型
 			 4=球磨型
@@ -1188,7 +1189,7 @@ api_get_member/picture_book	：艦船図鑑　図鑑登録済みのもののみ�
 			108=Town級
 			109=潜高型
 			110=Brooklyn級
-			111=耐氷型雑用輸送艦
+			111=耐氷型雑用運送艦　(LL01/PL107)
 			112=Illustrious級
 			113=Conte di Cavour級
 			114=Gato級
@@ -1953,7 +1954,8 @@ api_req_sortie/battle	：通常艦隊　昼戦
 	api_xal01				：1=装甲破壊状態 そうでなければ存在しない　昔はapi_boss_damagedだった?
 	api_escape_idx			：退避艦インデックス　[退避艦数]　1基点　いなければ存在しない
 	api_combat_ration		：戦闘糧食補給　発動時のみ存在　艦船IDの数値配列
-	api_search				：索敵成否　[0]=味方, [1]=敵　1=成功, 2=成功(未帰還機あり), 3=未帰還, 4=失敗, 5=発見, 6=発見できず
+	api_search				：索敵成否　[0]=味方, [1]=敵　1=成功, 2=成功(索敵機未帰還機あり), 3=失敗(「索敵機未帰還」機あり), 4=失敗, 5=発見(索敵機なし), 6=発見できず
+								「未帰還機あり」はスロットごと0~2機の減少。改によると「索敵機」は艦偵、水偵、水爆、大艇の4種。敵は演習相手の場合も判定適用されるが、深海側は常に1=成功
 	api_air_base_injection	：基地航空隊　噴式強襲攻撃
 		api_plane_from		：航空機発艦可能艦インデックス　[2] [0]=味方, [1]=敵　いなければ null　味方は常に null?
 		api_air_base_data	：参加中隊リスト　[参加中隊数]
@@ -2813,7 +2815,7 @@ api_req_combined_battle/airbattle	：連合艦隊-機動部隊 航空戦
 	api_fParam_combined	：味方随伴護衛艦隊基礎ステータス
 	api_escape_idx		：機動部隊本隊退避艦座標(1-6)
 	api_escape_idx_combined		：随伴護衛艦隊退避艦座標(1-6)
-	api_search			：索敵　[0]=味方, [1]=敵	1=成功, 2=失敗?, 5=失敗
+	api_search			：索敵　[0]=味方, [1]=敵
 	api_formation		：陣形/交戦形態?　[0]=味方, [1]=敵, [2]=交戦形態
 							[0|1]：1=単縦陣, 3=輪形陣, "11"-"14"=第n警戒航行序列
 							[2]：2=反航戦?
