@@ -1,5 +1,4 @@
 const { spawnSync } = require('child_process')
-// const { inspect } = require('util')
 const { get } = require('axios')
 const { readFileSync, outputFileSync } = require('fs-extra')
 const beautify = require('js-beautify').js
@@ -43,5 +42,9 @@ outputFileSync('dist/createjs.js', createjsPatched)
     .replace(/module\.exports = (\S+?)\((.+?)\)/, 'module.exports = registerModules($1($2))')
 
   outputFileSync('dist/main.patched.js', `${patchSource.replace('scriptVesion', scriptVesion)}\n${mainPatched}`)
-//  outputFileSync('dist/api', inspect(require('../dist/main.patched'), { maxArrayLength: 10000, depth: 10 }))
+  // Moved into build-api.js
+/*
+  const { inspect } = require('util')
+  outputFileSync('dist/api', inspect(require('../dist/main.patched'), { maxArrayLength: 10000, depth: 10 }))
+*/
 })()

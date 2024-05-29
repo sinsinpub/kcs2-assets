@@ -4,13 +4,13 @@ const vars = {}
 let i = 0
 
 const decoderFunction = process.argv[2]
-const passes = parseInt(process.argv[3] || 5)
+const passes = parseInt(process.argv[3] || 9)
 const removevars = !!process.argv[4]
 
 let main = readFileSync('dist/main.patched.js').toString()
 let aliases = 0;
 
-// fast 5~ passes
+// fast ~10 passes
 for (let pass = 1; pass <= passes; pass++) {
     const decoderAliases = []
     const decoderRegex = new RegExp(`var ([_a-zA-Z][_a-zA-Z0-9]*?) = ${decoderFunction}[;,]`, 'g')
