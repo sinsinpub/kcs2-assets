@@ -758,7 +758,7 @@ api_port/port		：母港情報
 	api_furniture_affect_items	：家具表示に影響あるアイテムの定義　'24四月追加
 		api_payitem_dict		：課金アイテムID:0　現在「艦娘へのクッキー」21のみ？
 	api_c_flag2				：ミニイベントの度に限定アイテムの使用回数を制限用のフラグ
-	api_c_flags				：[]　上の機能と一緒、配列になってるだけ。秋刀魚とか節分豆とか南瓜とか
+	api_c_flags				：[]　上の機能と一緒、配列になってるだけ。秋刀魚とか節分豆とか南瓜とかてるてる坊主とか
 
 
 Request.api_req_member/set_flagship_position	：秘書艦位置更新　一回位置変えた後もう一度母港に戻る場合発生
@@ -3828,7 +3828,7 @@ api_req_member/itemuse				：アイテム使用　api_data:null になること�
 		api_usemst		：? 2=装備 5=アイテム 6=アイテム(設計図)
 		api_mst_id		：入手アイテムID
 		api_getcount	：入手アイテム個数
-		api_slotitem	：入手装備アイテム　装備入手時のみ存在　slot_item に準じる
+		api_slotitem	：入手装備アイテム　装備入手時のみ存在　slot_item に準じる　バグってアイテム1つなのに [slot_item]になる可能性を注意
 	api_material		：入手資源　資源入手時のみ存在　[燃料, 弾薬, 鋼材, ボーキ, 高速建造材, 高速修復材, 開発資材, 改修資材]
 
 
