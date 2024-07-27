@@ -1140,9 +1140,29 @@
                 "h": 75
             }
         },
-        "common_itemicons_id_902": {
+        "common_itemicons_id_100": {
             "frame": {
                 "x": 80,
+                "y": 560,
+                "w": 75,
+                "h": 75
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 75,
+                "h": 75
+            },
+            "sourceSize": {
+                "w": 75,
+                "h": 75
+            }
+        },
+        "common_itemicons_id_899": {
+            "frame": {
+                "x": 160,
                 "y": 560,
                 "w": 75,
                 "h": 75
@@ -1170,5 +1190,64 @@
             "h": 635
         },
         "scale": 1
+    },
+    "animations": {
+        "common_itemicons_id": [
+            "common_itemicons_id_10",
+            "common_itemicons_id_11",
+            "common_itemicons_id_12",
+            "common_itemicons_id_31",
+            "common_itemicons_id_32",
+            "common_itemicons_id_33",
+            "common_itemicons_id_34",
+            "common_itemicons_id_44",
+            "common_itemicons_id_49",
+            "common_itemicons_id_50",
+            "common_itemicons_id_51",
+            "common_itemicons_id_52",
+            "common_itemicons_id_54",
+            "common_itemicons_id_55",
+            "common_itemicons_id_56",
+            "common_itemicons_id_57",
+            "common_itemicons_id_58",
+            "common_itemicons_id_59",
+            "common_itemicons_id_60",
+            "common_itemicons_id_61",
+            "common_itemicons_id_62",
+            "common_itemicons_id_63",
+            "common_itemicons_id_64",
+            "common_itemicons_id_65",
+            "common_itemicons_id_66",
+            "common_itemicons_id_67",
+            "common_itemicons_id_68",
+            "common_itemicons_id_69",
+            "common_itemicons_id_70",
+            "common_itemicons_id_71",
+            "common_itemicons_id_72",
+            "common_itemicons_id_73",
+            "common_itemicons_id_74",
+            "common_itemicons_id_75",
+            "common_itemicons_id_76",
+            "common_itemicons_id_77",
+            "common_itemicons_id_78",
+            "common_itemicons_id_80",
+            "common_itemicons_id_85",
+            "common_itemicons_id_86",
+            "common_itemicons_id_87",
+            "common_itemicons_id_88",
+            "common_itemicons_id_89",
+            "common_itemicons_id_90",
+            "common_itemicons_id_91",
+            "common_itemicons_id_92",
+            "common_itemicons_id_93",
+            "common_itemicons_id_94",
+            "common_itemicons_id_95",
+            "common_itemicons_id_96",
+            "common_itemicons_id_97",
+            "common_itemicons_id_98",
+            "common_itemicons_id_99",
+            "common_itemicons_id_10",
+            "common_itemicons_id_89"
+        ]
     }
 }

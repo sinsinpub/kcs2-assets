@@ -1039,7 +1039,7 @@ Request.api_req_quest/clearitemget：任務達成
 api_req_quest/clearitemget		：任務達成
 	api_material		：獲得資源量(基本4種)
 	api_bounus_count	：api_bounus の数 *スペルミス注意*
-	api_bounus			：アイテム *スペルミス注意*
+	api_bounus			：アイテム[] *スペルミス注意*　バグってアイテム一つのに2個nullを前にあるケースに注意
 		api_type		：1=資源(バケツその他4種), 2=艦隊解放, 3=家具箱, 4=大型艦建造解放, 5=基地航空隊開放?, 6=遠征臨時補給開放, 11=艦船, 12=装備, 13=アイテム, 14=家具, 15=機種転換, 16=装備消費, 18=???, 99=イベント海域解放
 		api_count		：取得個数
 		api_item		：アイテム追加情報 一般アイテムはnull イベント海域解放時は api_count = 1 にもかかわらず null
