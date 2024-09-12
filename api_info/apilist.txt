@@ -580,8 +580,12 @@ api_start2/getData	：艦娘・装備固有データその他
 		api_catapult_count		：試製甲板カタパルト　所要個数
 		api_report_count		：戦闘詳報　所要枚数
 		api_aviation_mat_count	：新型航空兵装資材　所要個数
+									余談ですが、同時期の「新型砲熕兵装資材」所要個数が何故かここに定義されていない
+									現在5隻(大和改3、武蔵改3、金剛改二2、比叡改二2、磯波改1)に計11個必要
 		api_arms_mat_count		：新型兵装資材　所要個数
-		api_sortno				：? (概ね図鑑IDだが、霞(改/二/乙), 利根(改/二), 筑摩(改/二)などで異なる)
+		api_boiler_count		：新型高温高圧缶　所要個数
+		api_tech_count			：海外艦最新技術　所要枚数
+		api_sortno				：順番ID (概ね図鑑IDだが、改以上などで異なることある)
 
 	api_mst_bgm			：母港BGMデータ
 		api_id			：音楽ID
@@ -1205,8 +1209,10 @@ api_get_member/picture_book	：艦船図鑑　図鑑登録済みのもののみ�
 			123=改敷島型
 			124=Marcello級
 			125=Nevada級
-			126=La Galissonnière級
-			127=Mogador級
+			126=改氷川丸級
+			127=巡潜乙型改一
+			128=La Galissonnière級
+			129=Mogador級
 		api_cnum			：艦番
 		api_taik			：耐久
 		api_souk			：装甲
@@ -2144,6 +2150,8 @@ api_req_sortie/battle	：通常艦隊　昼戦
 							101=一斉射かッ…胸が熱いな！
 							102=長門、いい？ いくわよ！ 主砲一斉射ッ！
 							103=Colorado戦隊、全力斉射ッ！
+							105=Richelieuよ！圧倒しなさいっ！
+							106=Queen Elizabeth姉妹艦連携砲撃
 							200=瑞雲立体攻撃
 							201=海空立体攻撃
 							300=潜水艦隊攻撃
@@ -2217,6 +2225,8 @@ api_req_battle_midnight/battle		：通常艦隊　夜戦
 								102=長門、いい？ いくわよ！ 主砲一斉射ッ！
 								103=Colorado戦隊、全力斉射ッ！
 								104=金剛改二丙型僚艦夜戦突撃
+								105=Richelieuよ！圧倒しなさいっ！
+								106=Queen Elizabeth姉妹艦連携砲撃
 								200=夜間瑞雲夜戦カットイン
 								300=潜水艦隊攻撃
 								301=潜水艦隊攻撃
