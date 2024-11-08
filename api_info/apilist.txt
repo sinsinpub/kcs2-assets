@@ -597,6 +597,24 @@ api_start2/getData	：艦娘・装備固有データその他
 		api_equip_type		：装備可能なカテゴリのリスト[]　当該艦の装備可否はこれで上書きされ、艦種の装備可否は無視される
 
 
+api_start2/get_option_setting	：環境設定取得　'24年11月8日メンテ後から実装
+					DMMドメインのcookiesに設定保存していたが、ブラウザCORSポリシーのせいでこの方法に変えたと思われる
+	api_skin_id				：母港スキンID　101~105
+	api_volume_setting		：音声設定　データまだ保存されたことない場合はnull
+		api_be_left			：放置Voice　0=OFF,1=ON
+		api_duty			：任務娘Voice　0=OFF,1=ON
+		api_bgm				：BGM音量　0~100、以下同
+		api_se				：SE音量
+		api_voice			：Voice音量
+Request.api_req_member/set_option_setting	：設定保存。設定歯車クリックで閉じる時、内容変更ある場合のみ発生
+	api_skin_id				：母港スキンID
+	api_vol_bgm				：BGM音量
+	api_vol_se				：SE音量
+	api_vol_voice			：Voice音量
+	api_v_be_left			：放置Voice
+	api_v_duty				：任務娘Voice
+
+
 api_req_member/get_incentive	：褒賞関連
 	api_count				：情報の個数
 	api_item				：もらえるアイテム　api_count=0だと存在しない
@@ -3940,6 +3958,8 @@ Request.api_req_member/set_friendly_request		：友軍艦隊要請
 ◇APIが呼ばれる順番
 
 《ログイン》
+api_start2/get_option_setting
+(タイトル画面のSTART押す)
 api_req_member/get_incentive
 api_start2/getData
 api_get_member/require_info
