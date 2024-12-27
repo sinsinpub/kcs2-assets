@@ -1358,6 +1358,7 @@ api_get_member/preset_deck		：編成記録情報　編成画面を開くと呼�
 			api_name		：艦隊名
 			api_name_id		：
 			api_ship		：編成された艦船のIDリスト[6] 空きは -1 除籍された艦のIDもそのまま残る
+			api_lock_flag	：ロック状態(1=ロック)
 		2			：2つめの編成　以降同様　歯抜け登録可能(2を飛ばして3とか)なので注意
 
 Request.api_req_hensei/preset_register		：編成登録
@@ -1384,6 +1385,15 @@ api_req_hensei/preset_delete		：編成削除
 Request.api_req_hensei/preset_expand		：編成枠拡張
 api_req_hensei/preset_expand				：編成枠拡張
 	(情報なし)
+
+Request.api_req_hensei/preset_lock			：編成ロック
+	api_preset_no	：編成ID
+api_req_hensei/preset_lock					：編成ロック
+
+Request.api_req_hensei/preset_order_change	：編成並び替え
+	api_preset_from	：ドラッグ元の編成ID
+	api_preset_to	：ドロップ先の編成ID
+api_req_hensei/preset_order_change			：編成並び替え
 
 
 Request.api_req_member/updatedeckname	：艦隊名変更
