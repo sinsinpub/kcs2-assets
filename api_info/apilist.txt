@@ -720,7 +720,7 @@ api_port/port		：母港情報
 		api_ndock_time		：入渠時間(ミリ秒)
 		api_ndock_item		：入渠時の消費資材　[0]=燃料, [1]=鋼材
 		api_srate			：改装☆?
-		api_cond			：コンディション
+		api_cond			：コンディション 0~100
 		api_karyoku			：火力　[0]=現在値(装備込み), [1]=最大値
 		api_raisou			：雷装　なお、最大値は基本的にLv99時点の素ステータス
 		api_taiku			：対空
@@ -2773,6 +2773,7 @@ api_get_member/base_air_corps	：基地航空隊情報　現在は直接使用�
 		api_count			：稼働機数　未配属なら存在しない
 		api_max_count		：最大機数　〃
 		api_cond			：コンディション　1=通常, 2=黄疲労, 3=赤疲労　未配属なら存在しない
+								0=士気最大　'25年1月28日メンテ後追加
 
 Request.api_req_air_corps/set_plane		：基地航空隊 - 中隊設定
 	api_area_id		：所属海域ID
