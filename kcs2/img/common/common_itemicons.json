@@ -1180,9 +1180,29 @@
                 "h": 75
             }
         },
-        "common_itemicons_id_899": {
+        "common_itemicons_id_102": {
             "frame": {
                 "x": 240,
+                "y": 560,
+                "w": 75,
+                "h": 75
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 75,
+                "h": 75
+            },
+            "sourceSize": {
+                "w": 75,
+                "h": 75
+            }
+        },
+        "common_itemicons_id_899": {
+            "frame": {
+                "x": 320,
                 "y": 560,
                 "w": 75,
                 "h": 75
@@ -1266,6 +1286,7 @@
             "common_itemicons_id_97",
             "common_itemicons_id_98",
             "common_itemicons_id_99",
+            "common_itemicons_id_10",
             "common_itemicons_id_10",
             "common_itemicons_id_10",
             "common_itemicons_id_89"

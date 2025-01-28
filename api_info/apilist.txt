@@ -2839,6 +2839,22 @@ Request.api_req_air_corps/expand_maintenance_level		：基地航空隊 - 整備L
 api_req_air_corps/expand_maintenance_level		：基地航空隊 - 整備Lv強化
 	(情報なし)
 
+Request.api_req_air_corps/cond_recovery		：基地航空隊 - コンディション回復
+	api_area_id		：所属海域ID
+	api_base_id		：航空隊ID
+
+api_req_air_corps/cond_recovery		：基地航空隊 - コンディション回復　航空特別増加食1個消費
+	api_distance		：戦闘行動半径
+	api_plane_info		：更新された中隊情報
+
+Request.api_port/airCorpsCondRecoveryWithTimer		：基地航空隊 - コンディション回復の情報再取得?
+	api_area_id		：所属海域ID
+	api_base_id		：航空隊ID
+
+api_port/airCorpsCondRecoveryWithTimer		：基地航空隊 - コンディション回復の情報再取得?
+	api_distance		：戦闘行動半径
+	api_plane_info		：更新された中隊情報
+
 
 ['17 秋イベでフォーマット変更　要再確認]
 api_req_combined_battle/airbattle	：連合艦隊-機動部隊 航空戦
