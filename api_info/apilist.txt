@@ -2766,7 +2766,7 @@ api_get_member/base_air_corps	：基地航空隊情報　現在は直接使用�
 		api_base			：基礎半径　≒半径が最小の中隊
 		api_bonus			：偵察機等による半径ボーナス
 	api_action_kind			：行動指示　0=待機, 1=出撃, 2=防空, 3=退避, 4=休息
-	api_plane_info			：中隊情報
+	api_plane_info			：中隊情報[]
 		api_squadron_id		：中隊ID
 		api_state			：0=未配属　1=配属済み　2=配置転換中
 		api_slotid			：装備固有ID　0=なし
@@ -2785,7 +2785,7 @@ api_req_air_corps/set_plane		：基地航空隊 - 中隊設定
 	api_distance		：戦闘行動半径
 		api_base			：基礎半径　≒半径が最小の中隊
 		api_bonus			：偵察機等による半径ボーナス
-	api_plane_info		：中隊情報　base_air_corps と同じ、更新したスロットのみ(配備時は[1]、交換時は[2])
+	api_plane_info		：中隊情報[]　base_air_corps と同じ、更新したスロットのみ(配備時は[1]、交換時は[2])
 	api_after_bauxite	：消費後のボーキサイト　配備時(消費時)のみ存在
 
 Request.api_req_air_corps/change_name		：基地航空隊 - 航空隊名変更
@@ -2829,7 +2829,7 @@ Request.api_req_air_corps/supply		：基地航空隊 - 補給
 api_req_air_corps/supply		：基地航空隊 - 補給
 	api_after_fuel		：補給後の燃料値
 	api_after_bauxite	：補給後のボーキサイト値
-	api_plane_info		：更新された中隊情報　base_air_corpsと同じ
+	api_plane_info		：更新された中隊情報[]　base_air_corpsと同じ
 
 api_req_air_corps/expand_base		：基地航空隊 - 飛行場拡張
 	(拡張した航空隊のデータ[1?]。 api_get_member/base_air_corps に同じ)
@@ -2844,17 +2844,17 @@ Request.api_req_air_corps/cond_recovery		：基地航空隊 - コンディショ
 	api_area_id		：所属海域ID
 	api_base_id		：航空隊ID
 
-api_req_air_corps/cond_recovery		：基地航空隊 - コンディション回復　航空特別増加食1個消費
+api_req_air_corps/cond_recovery		：基地航空隊 - コンディション回復　航空特別増加食1個消費　内部cond値46に?
 	api_distance		：戦闘行動半径
-	api_plane_info		：更新された中隊情報
+	api_plane_info		：更新された中隊情報[]　base_air_corps と同じ
 
-Request.api_port/airCorpsCondRecoveryWithTimer		：基地航空隊 - コンディション回復の情報再取得?
+Request.api_port/airCorpsCondRecoveryWithTimer		：基地航空隊 - コンディション回復の情報更新
 	api_area_id		：所属海域ID
 	api_base_id		：航空隊ID
 
-api_port/airCorpsCondRecoveryWithTimer		：基地航空隊 - コンディション回復の情報再取得?
-	api_distance		：戦闘行動半径
-	api_plane_info		：更新された中隊情報
+api_port/airCorpsCondRecoveryWithTimer		：基地航空隊 - コンディション回復の情報更新
+	api_plane_info		：更新された中隊情報[]　(時間経過による)回復情報ないなら存在しない
+	api_distance		：戦闘行動半径　〃
 
 
 ['17 秋イベでフォーマット変更　要再確認]
@@ -4099,4 +4099,10 @@ api_req_air_corps/set_action
 
 出撃後、発進準備完了したとき
 api_req_map/start_air_base
+
+中隊どれかcondは0じゃない場合「航空特別増加食」使うと
+api_req_air_corps/cond_recovery
+
+中隊どれかcondは0じゃない場合メニューを開くと
+api_port/airCorpsCondRecoveryWithTimer
 
