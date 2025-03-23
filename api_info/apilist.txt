@@ -107,7 +107,7 @@ api_start2/getData	：艦娘・装備固有データその他
 			12=超弩級戦艦	Super Dreadnoughts
 			13=潜水艦		Submarine
 			14=潜水空母		Aircraft Carrying Submarine
-			15=補給艦						(敵のほう、図鑑なし)
+			15=補給艦						(敵のほう、"輸送艦"ともいう、図鑑なし)
 			16=水上機母艦	Seaplane Carrier
 			17=揚陸艦		Amphibious Assault Ship
 			18=装甲空母		Aircraft Carrier
@@ -115,15 +115,15 @@ api_start2/getData	：艦娘・装備固有データその他
 			20=潜水母艦		Submarine Tender
 			21=練習巡洋艦	Training Cruiser
 			22=補給艦		Fleet Oiler		(味方のほう)
-			図鑑内での英語背景には特定の艦船に割り当てる特殊例(見切れてる文字あり)：
-				553,554=改装航空戦艦	sp001=Aircraft Battle(ship)
-				669=特務艦				sp002=Auxiliary Ship Utility
-				645=灯台補給船			sp003=Lighthouse Ten(der)
-				650=南極観測船			sp004=Auxiliary Ice Breaker
-				900,717=特設護衛空母	sp005=Escort Carrier
-				945,727=戦車揚陸艦		sp006=Landing Ship, Tank
-				953=練習特務艦			sp007=Auxiliary Training Utility
-				995,1000=砕氷艦			sp008=Ice Breaker
+			図鑑内での英語背景(EngStypeView)には特定の艦船に割り当てる特殊例(見切れてる文字あり)：
+				553,554=改装航空戦艦			sp001=Aircraft Battle(ship)
+				669=特務艦						sp002=Auxiliary Ship Utility
+				645=灯台補給船					sp003=Lighthouse Ten(der)
+				650=南極観測船					sp004=Auxiliary Ice Breaker
+				900,717,1003,1008=特設護衛空母	sp005=Escort Carrier
+				945,727=戦車揚陸艦				sp006=Landing Ship, Tank
+				953=練習特務艦					sp007=Auxiliary Training Utility
+				995,1000=砕氷艦					sp008=Ice Breaker
 		api_scnt		：入渠時間係数(本体ソース内では[slotCount]とある)
 		api_kcnt		：建造時のシルエット
 		api_equip_type	：装備可能カテゴリのフラグ
@@ -1924,6 +1924,7 @@ api_req_map/next		：進撃
 			3=「空襲により基地航空隊に地上撃破の損害が発生しました！」
 			4=「空襲による基地の損害はありません。」
 		api_m1		：('16秋イベ) 1=スタート地点解放ギミック発動　それ以外の場合は存在しない
+		api_m2		：('19夏イベ)ギミック解除フラグ発動　それ以外の場合存在しない
 		api_m10		：('22冬イベE4から)基地航空隊の位置ギミック発動　それ以外の場合は存在しない
 	api_m1			：イベント海域ギミック開放フラグ　1=ルート解放など　進捗によって 2 の場合もある　通常は存在しない
 	api_m10			：('22冬イベ)基地航空隊の位置ギミックフラグ　EventMapUtil.getCellOpenOption によると api_m1 も一緒に基地位置を決めるっぽい?
