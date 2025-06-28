@@ -81,14 +81,26 @@ api_start2/getData	：艦娘・装備固有データその他
 		api_show_flg	：開発結果を表示する際に装備カテゴリ名付くフラグ 0=装備名のみ
 	
 	api_mst_equip_exslot：補強スロットに装備可能なカテゴリ
-
+	
 	api_mst_equip_exslot_ship		：補強スロットへの特殊装備　'23年7月7日から仕様が変更された
 		api_slotitem_id		：装備ID　変更後これが消え、オブジェクトの子の名に移動
 		api_ship_ids		：対象となる艦娘ID　変更後配列[]から子の名がIDになるオブジェクト{}に, 値は1固定　ない場合は null
 		api_ctypes			：対象となる艦型IDが子の名になるオブジェクト　ない場合は null
 		api_stypes			：対象となる艦種IDが子の名になるオブジェクト　33[改良型艦本式タービン]のみ艦種99を指定している、全艦種対象という意味　ない場合は null
 		api_req_level		：装備必要の最低改修レベル　'23年11月2日から追加
-
+	
+	api_mst_equip_limit_exslot		：特定の艦船の補強スロットへの相殺装備カテゴリ　'25年6月27日から追加
+		艦船ID				：装備不可カテゴリ[]　使用例：一部の軽巡には中型追加装甲の装備は可能だが、多摩未改造には不可になる
+								しかし api_mst_equip_exslot_ship によって+7以上の北方迷彩(+北方装備)のみ装備可能
+	
+	api_mst_equip_ship	：特定の艦船の通常スロットへの特殊装備　'25年6月27日から仕様変更
+		艦船ID				：旧api_ship_idをオブジェクトの子の名に
+			api_equip_type	：装備可能なカテゴリのオブジェクト、子の名をリストへ変換する必要
+								カテゴリ内特定の装備のみを指定する場合は null じゃなく装備ID配列[]になる、その場合艦種の装備可否は無視される
+	変更前：
+		api_ship_id			：艦船ID
+		api_equip_type		：装備可能なカテゴリのリスト[]　当該艦の装備可否はこれで上書きされ、艦種の装備可否は無視される
+	
 	api_mst_stype		：艦船カテゴリ
 		api_id			：カテゴリID(艦船のstypeに対応)
 		api_sortno		：並べ替え順
@@ -215,6 +227,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				48=Army Units
 				49=Smoke Generator
 				50=Barrage Balloon
+				51=All Flying Wing Jet Bomber
 
 				(日本語の文字列未定義、ほかのも参考に和訳だけ)
 				 1=主砲
@@ -264,6 +277,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				48=陸戦部隊
 				49=艦載発煙装置
 				50=阻塞気球
+				51=全翼型戦闘爆撃機
 
 			[2]：カテゴリ
 				(equipType　38,93,94はequipTypeSp　95は個別定義)
@@ -326,6 +340,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				57=噴式戦闘爆撃機
 				58=噴式攻撃機
 				59=噴式偵察機
+				91=噴式戦闘爆撃機(II　(ゲーム内の図鑑表示は57と一緒、ゲームデータそのまま：括弧半角、閉じはない)
 				93=大型電探（II）　(ゲーム内の図鑑表示は13と一緒)
 				94=艦上偵察機（II）　(ゲーム内の図鑑表示は9と一緒)
 				95=副砲（II）　(ゲーム内の図鑑表示は4と一緒)
@@ -388,6 +403,8 @@ api_start2/getData	：艦娘・装備固有データその他
 				55=防空気球
 				56=噴式局地戦闘機
 				57=前翼型局地戦闘機
+				58=夜間爆撃機
+				59=全翼噴式戦闘爆撃機
 
 			[4]: 航空機グラフィックID
 				(kcs2/resources/plane/nnn.pngに対応、演習敵側'r'開始、深海側は'e')
@@ -444,6 +461,8 @@ api_start2/getData	：艦娘・装備固有データその他
 				56=Yellow Wings
 				57=試製明星
 				58=九九式練爆(夜爆)
+				59=Ju87独艦上機
+				60=Ho229全翼機
 
 		api_taik		：耐久(0)
 		api_souk		：装甲
@@ -594,10 +613,6 @@ api_start2/getData	：艦娘・装備固有データその他
 	api_mst_bgm			：母港BGMデータ
 		api_id			：音楽ID
 		api_name		：曲名
-
-	api_mst_equip_ship	：特殊装備
-		api_ship_id			：艦船ID
-		api_equip_type		：装備可能なカテゴリのリスト[]　当該艦の装備可否はこれで上書きされ、艦種の装備可否は無視される
 
 
 api_start2/get_option_setting	：環境設定取得　'24年11月8日メンテ後から実装

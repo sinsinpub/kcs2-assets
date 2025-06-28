@@ -860,7 +860,7 @@
                 "h": 645
             }
         },
-        "album_slot2_id_6": {
+        "album_slot2_id_51": {
             "frame": {
                 "x": 2670,
                 "y": 1950,
@@ -880,7 +880,7 @@
                 "h": 645
             }
         },
-        "album_slot2_id_7": {
+        "album_slot2_id_6": {
             "frame": {
                 "x": 2937,
                 "y": 0,
@@ -900,7 +900,7 @@
                 "h": 645
             }
         },
-        "album_slot2_id_8": {
+        "album_slot2_id_7": {
             "frame": {
                 "x": 2937,
                 "y": 650,
@@ -920,10 +920,30 @@
                 "h": 645
             }
         },
-        "album_slot2_id_9": {
+        "album_slot2_id_8": {
             "frame": {
                 "x": 2937,
                 "y": 1300,
+                "w": 262,
+                "h": 645
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 262,
+                "h": 645
+            },
+            "sourceSize": {
+                "w": 262,
+                "h": 645
+            }
+        },
+        "album_slot2_id_9": {
+            "frame": {
+                "x": 2937,
+                "y": 1950,
                 "w": 262,
                 "h": 645
             },
@@ -950,5 +970,48 @@
             "h": 2595
         },
         "scale": 1
+    },
+    "animations": {
+        "album_slot2_id": [
+            "album_slot2_id_10",
+            "album_slot2_id_14",
+            "album_slot2_id_15",
+            "album_slot2_id_16",
+            "album_slot2_id_17",
+            "album_slot2_id_18",
+            "album_slot2_id_19",
+            "album_slot2_id_20",
+            "album_slot2_id_21",
+            "album_slot2_id_22",
+            "album_slot2_id_23",
+            "album_slot2_id_24",
+            "album_slot2_id_25",
+            "album_slot2_id_26",
+            "album_slot2_id_27",
+            "album_slot2_id_28",
+            "album_slot2_id_29",
+            "album_slot2_id_30",
+            "album_slot2_id_31",
+            "album_slot2_id_32",
+            "album_slot2_id_33",
+            "album_slot2_id_34",
+            "album_slot2_id_35",
+            "album_slot2_id_36",
+            "album_slot2_id_37",
+            "album_slot2_id_38",
+            "album_slot2_id_39",
+            "album_slot2_id_40",
+            "album_slot2_id_41",
+            "album_slot2_id_42",
+            "album_slot2_id_43",
+            "album_slot2_id_44",
+            "album_slot2_id_45",
+            "album_slot2_id_46",
+            "album_slot2_id_47",
+            "album_slot2_id_48",
+            "album_slot2_id_49",
+            "album_slot2_id_50",
+            "album_slot2_id_51"
+        ]
     }
 }

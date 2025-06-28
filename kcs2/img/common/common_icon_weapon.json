@@ -23,7 +23,7 @@
         "common_icon_weapon_id_2": {
             "frame": {
                 "x": 413,
-                "y": 0,
+                "y": 59,
                 "w": 45,
                 "h": 45
             },
@@ -103,7 +103,7 @@
         "common_icon_weapon_id_6": {
             "frame": {
                 "x": 413,
-                "y": 50,
+                "y": 109,
                 "w": 45,
                 "h": 45
             },
@@ -123,7 +123,7 @@
         "common_icon_weapon_id_7": {
             "frame": {
                 "x": 413,
-                "y": 100,
+                "y": 159,
                 "w": 45,
                 "h": 45
             },
@@ -143,7 +143,7 @@
         "common_icon_weapon_id_8": {
             "frame": {
                 "x": 413,
-                "y": 150,
+                "y": 209,
                 "w": 45,
                 "h": 45
             },
@@ -183,7 +183,7 @@
         "common_icon_weapon_id_10": {
             "frame": {
                 "x": 413,
-                "y": 200,
+                "y": 259,
                 "w": 45,
                 "h": 45
             },
@@ -203,7 +203,7 @@
         "common_icon_weapon_id_11": {
             "frame": {
                 "x": 413,
-                "y": 250,
+                "y": 309,
                 "w": 45,
                 "h": 45
             },
@@ -283,7 +283,7 @@
         "common_icon_weapon_id_15": {
             "frame": {
                 "x": 413,
-                "y": 300,
+                "y": 359,
                 "w": 45,
                 "h": 45
             },
@@ -362,8 +362,8 @@
         },
         "common_icon_weapon_id_19": {
             "frame": {
-                "x": 413,
-                "y": 350,
+                "x": 0,
+                "y": 413,
                 "w": 45,
                 "h": 45
             },
@@ -1139,6 +1139,26 @@
                 "w": 54,
                 "h": 54
             }
+        },
+        "common_icon_weapon_id_59": {
+            "frame": {
+                "x": 413,
+                "y": 0,
+                "w": 54,
+                "h": 54
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 54,
+                "h": 54
+            },
+            "sourceSize": {
+                "w": 54,
+                "h": 54
+            }
         }
     },
     "meta": {
@@ -1146,8 +1166,8 @@
         "image": "common_icon_weapon.png",
         "format": "RGBA8888",
         "size": {
-            "w": 458,
-            "h": 408
+            "w": 467,
+            "h": 458
         },
         "scale": 1
     },
@@ -1200,7 +1220,8 @@
             "common_icon_weapon_id_55",
             "common_icon_weapon_id_56",
             "common_icon_weapon_id_57",
-            "common_icon_weapon_id_58"
+            "common_icon_weapon_id_58",
+            "common_icon_weapon_id_59"
         ]
     }
 }
