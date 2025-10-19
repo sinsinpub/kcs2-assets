@@ -4006,6 +4006,16 @@ Request.api_req_member/set_friendly_request		：友軍艦隊要請
 Request.api_req_member/set_friendly_request		：友軍艦隊要請
 	(情報なし)
 
+Rquest.api_get_member/chart_additional_info		：艦隊戦力分析用の情報取得
+	(情報なし)
+
+api_get_member/chart_additional_info			：艦隊戦力分析チャートにクライアント側計算不能の情報
+	api_deck_param[]	：最大4艦隊
+		api_seiku_value	：制空値
+		api_tp_value	：輸送力(通常資材輸送)
+		api_atp_value	：増援揚陸輸送力?　なければ存在しない
+			マップID	：マップによっての輸送力値
+
 
 ◇APIが呼ばれる順番
 
@@ -4015,7 +4025,11 @@ api_start2/get_option_setting
 api_req_member/get_incentive
 api_start2/getData
 api_get_member/require_info
+api_req_member/set_oss_condition (フィルタ設定変更ある場合)
 api_port/port
+
+[出撃・演習・遠征三択ボタン画面に入ると]
+/api_get_member/chart_additional_info
 
 《出撃》
 [出撃選択]
