@@ -1254,6 +1254,10 @@ api_get_member/picture_book	：艦船図鑑　図鑑登録済みのもののみ�
 			129=Mogador級
 			130=大泊型
 			131=Киров級
+			132=特1TL型
+			133=Norge級
+			134=Courageous級
+			135=Glorious級
 		api_cnum			：艦番
 		api_taik			：耐久
 		api_souk			：装甲
@@ -1553,6 +1557,8 @@ api_req_practice/battle	：演習　昼戦　主に api_req_sortie/battle と同
 			api_ecl_flag			：[]
 			api_fdam				：[]
 			api_edam				：[]
+			api_f_sp_list			：[][]
+			api_e_sp_list			：[][]
 	api_opening_taisen_flag	：
 	api_opening_taisen		：
 	api_opening_flag		：
@@ -2037,6 +2043,9 @@ api_req_sortie/battle	：通常艦隊　昼戦
 			api_ebak_flag		：敵被爆撃フラグ　[艦船数]
 			api_ecl_flag		：敵被クリティカルフラグ　[艦船数]
 			api_edam			：敵被ダメージ　[艦船数]
+			api_e_sp_list		：敵喰らった特殊攻撃種類[][]
+			api_f_sp_list		：存在自体がバグ
+		api_stage3_combined	：敵連合艦隊じゃなくても存在するバグがあります
 	api_injection_kouku		：噴式強襲航空攻撃
 		api_plane_from		：航空機発艦可能艦インデックス　[2] [0]=味方, [1]=敵　いなければ null 1基点
 		api_stage1			：空対空戦闘
@@ -2058,6 +2067,8 @@ api_req_sortie/battle	：通常艦隊　昼戦
 			api_ecl_flag	：敵被クリティカルフラグ
 			api_fdam		：味方被ダメージ
 			api_edam		：敵被ダメージ
+			api_f_sp_list	：
+			api_e_sp_list	：
 	api_air_base_attack	：基地航空隊攻撃　[攻撃回数]
 		api_base_id			：参加基地ID
 		api_stage_flag		：航空戦フラグ　[3]
@@ -4013,7 +4024,7 @@ api_get_member/chart_additional_info			：艦隊戦力分析チャートにク�
 	api_deck_param[]	：最大4艦隊
 		api_seiku_value	：制空値
 		api_tp_value	：輸送力(通常資材輸送)
-		api_atp_value	：増援揚陸輸送力?　なければ存在しない
+		api_atp_value	：増援揚陸輸送力　なければ存在しない
 			マップID	：マップによっての輸送力値
 
 
