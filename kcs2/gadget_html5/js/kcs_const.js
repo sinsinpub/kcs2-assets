@@ -2,7 +2,7 @@
 var KCS_DOMAIN = ".kancolle-server.com";
 
 var ConstGadgetInfo = {};
-ConstGadgetInfo.height = 860;
+ConstGadgetInfo.height = 960; //860;
 
 var ConstServerInfo = {};
 ConstServerInfo.Gadget = KCS_PROTOCOL + "w00g" + KCS_DOMAIN + "/";
@@ -41,4 +41,4 @@ var MaintenanceInfo = {};
 MaintenanceInfo.IsDoing = 0;
 
 var VersionInfo = {};
-VersionInfo.scriptVesion = "6.2.0.1";
+VersionInfo.scriptVesion = "6.2.1.0";

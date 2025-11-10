@@ -136,6 +136,10 @@ api_start2/getData	：艦娘・装備固有データその他
 				945,727=戦車揚陸艦				sp006=Landing Ship, Tank
 				953=練習特務艦					sp007=Auxiliary Training Utility
 				995,1000=砕氷艦					sp008=Ice Breaker
+				998,999,738,739=海防戦艦		sp009=Coastal Defen(ce) Ship
+				1022,740=巡洋戦艦				sp010=Battle Cruiser
+				988=冷凍船(雑役船)				sp011=Reefer Ship
+				996,1002=給糧艦					sp012=Food Supply Ship
 		api_scnt		：入渠時間係数(本体ソース内では[slotCount]とある)
 		api_kcnt		：建造時のシルエット
 		api_equip_type	：装備可能カテゴリのフラグ
@@ -463,6 +467,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				58=九九式練爆(夜爆)
 				59=Ju87独艦上機
 				60=Ho229全翼機
+				61=Sea Gladiator
 
 		api_taik		：耐久(0)
 		api_souk		：装甲
@@ -1258,6 +1263,7 @@ api_get_member/picture_book	：艦船図鑑　図鑑登録済みのもののみ�
 			133=Norge級
 			134=Courageous級
 			135=Glorious級
+			136=野埼型
 		api_cnum			：艦番
 		api_taik			：耐久
 		api_souk			：装甲
@@ -4022,10 +4028,11 @@ Rquest.api_get_member/chart_additional_info		：艦隊戦力分析用の情報�
 
 api_get_member/chart_additional_info			：艦隊戦力分析チャートにクライアント側計算不能の情報
 	api_deck_param[]	：最大4艦隊
-		api_seiku_value	：制空値
+		api_seiku_value	：制空値　連合艦隊関係なくこの艦隊のみの値
 		api_tp_value	：輸送力(通常資材輸送)
-		api_atp_value	：増援揚陸輸送力　なければ存在しない
-			マップID	：マップによっての輸送力値
+							制空値と違い、連合艦隊の場合は第一、第二艦隊の値が既に両艦隊の数値和
+		api_atp_value	：増援揚陸輸送力　なければ存在しない　そのマップの輸送ゲージたどり着くまではない
+			マップID	：マップによっての輸送力値　マップIDは605、612的な文字列
 
 
 ◇APIが呼ばれる順番
