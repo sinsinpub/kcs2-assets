@@ -20,8 +20,5 @@
     "battle_result": "6.2.1.0",
     "jukebox": "6.0.0.0",
     "wedding": "6.0.0.0",
-    "minigame": "6.0.0.0",
-    "resources": {
-        "friendly_panel": "6.2.1.4"
-    }
+    "minigame": "6.0.0.0"
 }
