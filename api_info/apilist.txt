@@ -136,7 +136,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				945,727=戦車揚陸艦				sp006=Landing Ship, Tank
 				953=練習特務艦					sp007=Auxiliary Training Utility
 				995,1000=砕氷艦					sp008=Ice Breaker
-				998,999,738,739=海防戦艦		sp009=Coastal Defen(ce) Ship
+				998,999,738,739,973,978=海防戦艦	sp009=Coastal Defen(ce) Ship
 				1022,740=巡洋戦艦				sp010=Battle Cruiser
 				988=冷凍船(雑役船)				sp011=Reefer Ship
 				996,1002=給糧艦					sp012=Food Supply Ship
@@ -1264,6 +1264,7 @@ api_get_member/picture_book	：艦船図鑑　図鑑登録済みのもののみ�
 			134=Courageous級
 			135=Glorious級
 			136=野埼型
+			137=Thonburi級
 		api_cnum			：艦番
 		api_taik			：耐久
 		api_souk			：装甲
