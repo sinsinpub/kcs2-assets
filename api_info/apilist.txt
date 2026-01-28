@@ -1417,7 +1417,7 @@ api_req_hensei/preset_delete		：編成削除
 
 Request.api_req_hensei/preset_expand		：編成枠拡張
 api_req_hensei/preset_expand				：編成枠拡張
-	(情報なし)
+	(情報なし)		今現在最大拡張上限 PRESET_FLEET_LIMIT=20
 
 Request.api_req_hensei/preset_lock			：編成ロック
 	api_preset_no	：編成ID
@@ -1776,7 +1776,46 @@ api_req_kaisou/preset_slot_update_name			：装備プリセット名変更
 
 Request.api_req_kaisou/preset_slot_expand		：装備プリセット拡張
 api_req_kaisou/preset_slot_expand				：装備プリセット拡張
+	api_max_num			：拡張後使用可能のプリセット数　今現在最大拡張上限 PRESET_SLOT_ITEM_LIMIT=18
+
+
+Request.api_get_member/preset_dev_items					：開発レシピプリセット情報取得
+api_get_member/preset_dev_items							：ゲーム内名称「開発 資源分配記録」
+	api_max_num			：使用可能の最大プリセット数
+	api_preset_items	：プリセットレシピ[]　1個もない場合は存在しない
+		api_preset_no	：プリセットID　1から
+		api_name		：プリセット名　ないなら "" デフォルト名が表示される
+		api_item1		：燃料の量
+		api_item2		：弾薬の量
+		api_item3		：鋼材の量
+		api_item4		：ボーキサイトの量
+
+Request.api_req_kousyou/preset_dev_items_register		：開発レシピプリセット記録
+	api_preset_id		：プリセットID
+	api_item1			：燃料の量
+	api_item2			：弾薬の量
+	api_item3			：鋼材の量
+	api_item4			：ボーキサイトの量
+
+api_req_kousyou/preset_dev_items_register				：開発レシピプリセット記録
 	(情報なし)
+
+Request.api_req_kousyou/preset_dev_items_delete			：開発レシピプリセット削除
+	api_preset_id		：プリセットID
+
+api_req_kousyou/preset_dev_items_delete					：開発レシピプリセット削除
+	(情報なし)
+
+Request.api_req_kousyou/preset_dev_items_update_name	：開発レシピプリセット名変更
+	api_preset_id		：プリセットID
+	api_name			：プリセット名　デフォルト名「開発レシピ1～6」つけるには可能だが、名称のみ削除にはUI上無理
+
+api_req_kousyou/preset_dev_items_update_name			：開発レシピプリセット名変更
+	(情報なし)
+
+Request.api_req_kousyou/preset_dev_items_expand			：開発レシピプリセット拡張
+api_req_kousyou/preset_dev_items_expand					：開発レシピプリセット拡張
+	api_max_num			：拡張後使用可能のプリセット数　今現在最大拡張上限 PRESET_DEVELOP_LIMIT=6
 
 
 Request.api_req_map/start	：出撃
