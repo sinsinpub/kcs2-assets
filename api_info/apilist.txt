@@ -232,6 +232,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				49=Smoke Generator
 				50=Barrage Balloon
 				51=All Flying Wing Jet Bomber
+				52=Prototype Jet Fighter
 
 				(日本語の文字列未定義、ほかのも参考に和訳だけ)
 				 1=主砲
@@ -282,6 +283,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				49=艦載発煙装置
 				50=阻塞気球
 				51=全翼型戦闘爆撃機
+				52=試製 噴式艦上戦闘機
 
 			[2]：カテゴリ
 				(equipType　38,93,94はequipTypeSp　95は個別定義)
@@ -409,6 +411,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				57=前翼型局地戦闘機
 				58=夜間爆撃機
 				59=全翼型噴式戦闘爆撃機
+				60=噴式戦闘機
 
 			[4]: 航空機グラフィックID
 				(kcs2/resources/plane/nnn.pngに対応、演習敵側'r'開始、深海側は'e')
@@ -426,7 +429,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				17=流星
 				18=局地戦闘機
 				19=大型飛行艇
-				20=震電改/試製震電
+				20=震電
 				21=米艦載機
 				22=噴式景雲改
 				23=橘花改
