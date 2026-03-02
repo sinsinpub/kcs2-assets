@@ -2193,7 +2193,7 @@ api_req_sortie/battle	：通常艦隊　昼戦
 			api_e_lostcount	：敵撃墜機数
 			api_air_fire	：対空カットイン　発動時のみ存在
 				api_idx			：発動艦のインデックス 0基点
-				api_kind		：カットイン種別　1基点, 今現在45まで実装されている(中に何種類抜けてる)
+				api_kind		：カットイン種別　1基点, 今現在53まで実装されている(中に何種類抜けてる)
 				api_use_items	：表示装備ID　数値型[装備数]
 		api_stage3		：航空攻撃　すべて[味方 or 敵の艦船数]
 			api_frai_flag	：味方被雷撃フラグ
