@@ -1818,7 +1818,7 @@ api_req_kousyou/preset_dev_items_update_name			：開発レシピプリセット
 
 Request.api_req_kousyou/preset_dev_items_expand			：開発レシピプリセット拡張
 api_req_kousyou/preset_dev_items_expand					：開発レシピプリセット拡張
-	api_max_num			：拡張後使用可能のプリセット数　今現在最大拡張上限 PRESET_DEVELOP_LIMIT=6
+	api_max_num			：拡張後使用可能のプリセット数　今現在最大拡張上限 PRESET_DEVELOP_LIMIT=8
 
 
 Request.api_req_map/start	：出撃
