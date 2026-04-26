@@ -961,6 +961,15 @@ api_req_kousyou/remodel_slot	：改修工廠　改修実行
 	api_after_slot		：更新された装備データ api_get_member/slot_item参照　失敗時存在せず
 	api_use_slot_id		：消費された装備の固有ID[]　使ったときのみ存在
 
+Request.api_req_kousyou/remodel_slot_recover	：改修工廠　状態回復
+	api_menu_id			：レシピID　装備改修レシピと同じID
+	api_slot_id			：回復する装備の固有ID
+	api_dev_num			：消費する開発資材　1から3を選択できる
+
+api_req_kousyou/remodel_slot_recover	：改修工廠　状態回復(装備改修度を初期状態(+0)に戻す)
+	api_recover_flag	：成功フラグ
+	api_after_slot		：更新された装備データ api_get_member/slot_item参照　失敗時存在せず
+
 Request.api_req_kousyou/open_new_dock	：建造ドック開放
 api_req_kousyou/open_new_dock		：建造ドック開放
 	(情報なし)
