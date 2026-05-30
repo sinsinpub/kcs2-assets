@@ -1,0 +1,32 @@
+{
+    "x": 631,
+    "y": -15,
+    "img": "image/gauge340_width",
+    "bar": {
+        "x": 120,
+        "y": 45,
+        "color": 5149696
+    },
+    "transport": {
+        "x": 17,
+        "y": 45,
+        "visible_title": true,
+        "digits": 3
+    },
+    "vertical": {
+        "x": 1053,
+        "y": 109,
+        "img": "image/gauge340",
+        "bar": {
+            "x": 58,
+            "y": 146,
+            "color": 5149696
+        },
+        "transport": {
+            "x": 24,
+            "y": 51,
+            "visible_title": true,
+            "digits": 3
+        }
+    }
+}

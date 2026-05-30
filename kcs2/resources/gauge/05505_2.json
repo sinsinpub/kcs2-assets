@@ -1,0 +1,28 @@
+{
+    "x": -21,
+    "y": 65,
+    "img": "image55/gauge236_width",
+    "bar": {
+        "x": 132,
+        "y": 39,
+        "color": 5033025
+    },
+    "transport": {
+        "x": 19,
+        "y": 40
+    },
+    "vertical": {
+        "x": 1035,
+        "y": 88,
+        "img": "image55/gauge236",
+        "bar": {
+            "x": 73,
+            "y": 166,
+            "color": 5033025
+        },
+        "transport": {
+            "x": 29,
+            "y": 72
+        }
+    }
+}

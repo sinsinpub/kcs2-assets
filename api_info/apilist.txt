@@ -512,7 +512,7 @@ api_start2/getData	：艦娘・装備固有データその他
 		api_outside_id	：窓の外のグラID　指定ないならデフォルトで4を表示
 		api_active_flag	：1=動くアニメーションあり
 
-	api_mst_furnituregraph	：可動家具プロパティ
+	api_mst_furnituregraph	：可動家具プロパティ　2026年5月29日メンテ以後削除された(専用jsonへ移行済み?)
 		api_id			：家具ID
 		api_type		：カテゴリ
 		api_no			：カテゴリ内通し番号
@@ -2822,11 +2822,11 @@ api_get_member/mapinfo				：出撃準備　未出現海域は存在しない
 			api_state					：状態　1=未攻略, 2=攻略済み
 			api_selected_rank			：作戦難易度　0=未設定, 1=丁, 2=丙, 3=乙, 4=甲
 		api_sally_flag				：出撃可能フラグ　[通常艦隊可否(0|1), 連合艦隊可否ビットフラグ(1=機動部隊, 2=水上部隊, 4=輸送部隊 のOR), 7隻編成可否(0|1)]　イベント海域のみ存在
-		api_defeat_count			：撃破回数　(未攻略海域に限り存在, イベント海域には存在せず)
-		api_required_defeat_count	：攻略に必要な撃破回数　(未攻略海域に限り存在)
+		api_defeat_count			：撃破回数　(未攻略海域に限り存在、イベント海域には存在せず　5-6-1の現在TP削り値でもある)
+		api_required_defeat_count	：攻略に必要な撃破回数　(未攻略通常海域に限り存在　5-6海域実装以後、TPゲージでも max_maphp の代わりにTP最大値として使われてる)
 		api_gauge_type				：1=撃破ゲージ 2=HPゲージ 3=揚陸(TP)ゲージ　(ゲージが存在する海域に限り存在)
 		api_gauge_num				：現在のゲージ段階(ゲージn本目)　1基点　(ゲージが存在する海域に限り存在)
-		api_s_no					：現在マップの遷移段階?　1基点　22冬イベントから、1ゲージに複数のマップ段階が存在するため?　api_m1 との関係性不明
+		api_s_no					：現在マップの遷移段階　1基点　22冬イベントから、1ゲージに複数のマップ段階が存在するため?　api_m1 との関係性不明　5-6などの通常マップも存在
 		api_m10						：現在マップの基地航空隊の位置ギミック?　22冬イベE4から、EventMapUtil.getCellOpenOption によると api_m1 も一緒に基地位置を決めるっぽい?
 		api_air_base_decks			：基地航空隊出撃可能数 1以上の時のみ存在
 	api_air_base				：基地航空隊データ なければ存在しない

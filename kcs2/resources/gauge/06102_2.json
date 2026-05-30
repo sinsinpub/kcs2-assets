@@ -1,0 +1,32 @@
+{
+    "x": -10,
+    "y": 56,
+    "img": "image61/gauge328_width",
+    "bar": {
+        "x": 120,
+        "y": 39,
+        "color": 5149696
+    },
+    "transport": {
+        "x": 11,
+        "y": 40,
+        "visible_title": false,
+        "digits": 4
+    },
+    "vertical": {
+        "x": 1045,
+        "y": 94,
+        "img": "image61/gauge328",
+        "bar": {
+            "x": 68,
+            "y": 156,
+            "color": 5149696
+        },
+        "transport": {
+            "x": 33,
+            "y": 62,
+            "visible_title": false,
+            "digits": 4
+        }
+    }
+}

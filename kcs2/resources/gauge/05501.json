@@ -1,0 +1,24 @@
+{
+    "bg": {
+        "alpha": 0.5
+    },
+    "x": 33,
+    "y": -13,
+    "img": "image55/gauge228_width",
+    "bar": {
+        "x": 69,
+        "y": 39
+    },
+    "vertical": {
+        "bg": {
+            "alpha": 0.5
+        },
+        "x": 22,
+        "y": 103,
+        "img": "image55/gauge228",
+        "bar": {
+            "x": 62,
+            "y": 146
+        }
+    }
+}

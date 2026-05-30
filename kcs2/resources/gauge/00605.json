@@ -1,0 +1,18 @@
+{
+    "x": 633,
+    "y": -22,
+    "img": "image/gauge46_width",
+    "bar": {
+        "x": 128,
+        "y": 71
+    },
+    "vertical": {
+        "x": 999,
+        "y": 51,
+        "img": "image/gauge25",
+        "bar": {
+            "x": 80,
+            "y": 180
+        }
+    }
+}

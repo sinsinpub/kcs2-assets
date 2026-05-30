@@ -1,0 +1,34 @@
+{
+    "bg": {
+        "alpha": 0.5
+    },
+    "x": -11,
+    "y": -15,
+    "img": "image55/gauge229_width",
+    "bar": {
+        "x": 120,
+        "y": 44,
+        "color": 5033025
+    },
+    "transport": {
+        "x": 8,
+        "y": 46
+    },
+    "vertical": {
+        "bg": {
+            "alpha": 0.5
+        },
+        "x": 11,
+        "y": 89,
+        "img": "image55/gauge229",
+        "bar": {
+            "x": 55,
+            "y": 162,
+            "color": 5033025
+        },
+        "transport": {
+            "x": 14,
+            "y": 67
+        }
+    }
+}

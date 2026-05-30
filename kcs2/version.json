@@ -1,6 +1,6 @@
 {
     "title": "6.1.7.0",
-    "common": "6.2.9.0",
+    "common": "6.3.0.0",
     "port": "6.1.0.4",
     "organize": "6.0.1.0",
     "supply": "6.0.0.0",
@@ -17,7 +17,7 @@
     "prac": "6.0.0.0",
     "map": "6.2.0.0",
     "battle": "6.2.5.0",
-    "battle_result": "6.2.1.0",
+    "battle_result": "6.3.0.0",
     "jukebox": "6.0.0.0",
     "wedding": "6.0.0.0",
     "minigame": "6.0.0.0"
