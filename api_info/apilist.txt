@@ -101,7 +101,7 @@ api_start2/getData	：艦娘・装備固有データその他
 		api_ship_id			：艦船ID
 		api_equip_type		：装備可能なカテゴリのリスト[]　当該艦の装備可否はこれで上書きされ、艦種の装備可否は無視される
 	
-	api_mst_stype		：艦船カテゴリ
+	api_mst_stype		：艦船カテゴリ(艦種)
 		api_id			：カテゴリID(艦船のstypeに対応)
 		api_sortno		：並べ替え順
 		api_name		：艦種名(英語は図鑑内での表示)
@@ -142,6 +142,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				996,1002=給糧艦					sp012=Food Supply Ship
 		api_scnt		：入渠時間係数(本体ソース内では[slotCount]とある)
 		api_kcnt		：建造時のシルエット
+		api_max_slotplus	：艦載機搭載数拡張の最大上昇値
 		api_equip_type	：装備可能カテゴリのフラグ
 			＊データと直接的関係はないが、このオブジェクトの子は"1"といった数字から始まる名前を持っている。
 			　この名前は規約違反であるため、正規のjsonパーサでは正常に読み込むことができないので注意すること。
@@ -735,8 +736,10 @@ api_port/port		：母港情報
 		api_maxhp			：最大HP
 		api_soku			：速力　0=基地, 5=低速, 10=高速, 15=高速+, 20=最速
 		api_leng			：射程　0=無, 1=短, 2=中, 3=長, 4=超長(, 5=超長+)
-		api_slot			：装備　-1=空き
-		api_onslot			：艦載機搭載数
+		api_slot			：装備 []　-1=空き
+		api_onslot			：艦載機現在搭載数 [5]
+		api_onslot_max		：艦載機最大搭載数 [5]　'26年6月メンテ以後アイテム「格納庫増設」より拡張可能になり、
+								拡張されてない艦には存在しない。存在するなら api_maxeq より優先的に参照される
 		api_slot_ex			：補強スロット 0=未解放, -1=未装備
 		api_kyouka			：近代化改修状態　[0]=火力, [1]=雷装, [2]=対空, [3]=装甲, [4]=運, [5]=耐久, [6]=対潜
 		api_backs			：レアリティ?
@@ -924,9 +927,8 @@ api_req_kousyou/remodel_slotlist	：改修工廠　装備選択
 	api_req_bauxite			：消費ボーキサイト
 	api_req_buildkit		：消費開発資材
 	api_req_remodelkit		：消費改修資材
-	api_req_slot_id			：0
-	api_req_slot_num		：0
-	api_sp_type				：0=通常, 1/2=「特別改修」の吹き出し
+	api_sp_type				：0=通常レシピ(明石のみで出来る), 1/2=2番艦必要の「特別改修」の吹き出しと緑枠の濃さ
+								統計によると2は「装備更新可能」レシピっぽい
 
 Request.api_req_kousyou/remodel_slotlist_detail		：改修工廠　実行確認
 	api_id		：レシピID
@@ -1710,6 +1712,13 @@ api_req_kaisou/slot_deprive		：艦娘間装備受け渡し
 		api_type3No		：受け渡した装備のカテゴリ
 		api_slot_list	：api_type3No のカテゴリに属する未装備の装備固有IDリスト
 	api_bauxite			：現在のボーキサイト保有量　更新があった場合のみ存在
+
+Request.api_req_kaisou/hangar_expand	：艦載機スロットの搭載量拡張
+	api_ship_id			：艦船固有ID
+	api_slot_pos		：スロットインデックス　0から始まる
+							拡張可能な艦種や条件、必要のアイテム消費量など色々クライアント側にも定義されてる
+api_req_kaisou/hangar_expand			：搭載数拡張結果
+	api_onslot_max		：拡張後の全スロット最大搭載数[5]
 
 Request.api_req_kaisou/remodeling	：改装
 	api_id				：艦船ID
@@ -2822,7 +2831,7 @@ api_get_member/mapinfo				：出撃準備　未出現海域は存在しない
 			api_state					：状態　1=未攻略, 2=攻略済み
 			api_selected_rank			：作戦難易度　0=未設定, 1=丁, 2=丙, 3=乙, 4=甲
 		api_sally_flag				：出撃可能フラグ　[通常艦隊可否(0|1), 連合艦隊可否ビットフラグ(1=機動部隊, 2=水上部隊, 4=輸送部隊 のOR), 7隻編成可否(0|1)]　イベント海域のみ存在
-		api_defeat_count			：撃破回数　(未攻略海域に限り存在、イベント海域には存在せず　5-6-1の現在TP削り値でもある)
+		api_defeat_count			：撃破回数　(未攻略海域に限り存在、イベント海域には存在せず　5-6-1の現在TP削り値でもある、api_now_maphpと違って0から溜まっていく仕様)
 		api_required_defeat_count	：攻略に必要な撃破回数　(未攻略通常海域に限り存在　5-6海域実装以後、TPゲージでも max_maphp の代わりにTP最大値として使われてる)
 		api_gauge_type				：1=撃破ゲージ 2=HPゲージ 3=揚陸(TP)ゲージ　(ゲージが存在する海域に限り存在)
 		api_gauge_num				：現在のゲージ段階(ゲージn本目)　1基点　(ゲージが存在する海域に限り存在)
