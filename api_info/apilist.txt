@@ -74,6 +74,7 @@ api_start2/getData	：艦娘・装備固有データその他
 		api_wedb		：〃幅[0]と高さ[1]
 		api_pa			：Colorado カットインのエフェクト座標　非対応なら [0, 0]
 		api_pab			：僚艦夜戦突撃演出用の座標　非対応なら [0, 0]
+		api_sp_flag		：特別演出フラグ　例えば天津風改二の煙突アニメーション、軽巡ム級の中破グラ
 	
 	api_mst_slotitem_equiptype		：装備カテゴリ
 		api_id			：カテゴリID(装備のtype[2]に対応)
@@ -2826,10 +2827,11 @@ api_get_member/mapinfo				：出撃準備　未出現海域は存在しない
 		api_id						：海域ID
 		api_cleared					：攻略フラグ
 		api_eventmap				：イベント海域のみ存在
-			api_now_maphp				：海域HP現在値	未設定時は9999
+			api_now_maphp				：海域HP現在値　未設定時は9999
 			api_max_maphp				：海域HP最大値　未設定時は9999
 			api_state					：状態　1=未攻略, 2=攻略済み
 			api_selected_rank			：作戦難易度　0=未設定, 1=丁, 2=丙, 3=乙, 4=甲
+			api_limit_flag				：司令部Lvによる連続丙丁選択の制限フラグ　26夏イベE2から適用。運営によると開始24h後制限解除らしい
 		api_sally_flag				：出撃可能フラグ　[通常艦隊可否(0|1), 連合艦隊可否ビットフラグ(1=機動部隊, 2=水上部隊, 4=輸送部隊 のOR), 7隻編成可否(0|1)]　イベント海域のみ存在
 		api_defeat_count			：撃破回数　(未攻略海域に限り存在、イベント海域には存在せず　5-6-1の現在TP削り値でもある、api_now_maphpと違って0から溜まっていく仕様)
 		api_required_defeat_count	：攻略に必要な撃破回数　(未攻略通常海域に限り存在　5-6海域実装以後、TPゲージでも max_maphp の代わりにTP最大値として使われてる)
