@@ -1,5 +1,5 @@
 /**
- * main.js 6.3.2.1 patched with defineModule and registerModules
+ * main.js 6.3.3.0 patched with defineModule and registerModules
  *
  * Licence unknown, available at http://203.104.209.71/kcs2/js/main.js
  */
@@ -93051,6 +93051,9 @@ global.registerModules = e => {
                 case 624:
                   this._content.position.set(-252, -219), this._content.texture = PIXI.Texture.fromImage(''.concat(_11os, '/323_10a6f.png').concat(_11ot));
                   break;
+                case 625:
+                  this._content.position.set(-286, -214), this._content.texture = PIXI.Texture.fromImage(''.concat(_11os, '/324_d92f0.png').concat(_11ot));
+                  break;
                 default:
                   this._content.texture = PIXI.Texture.EMPTY;
               }
@@ -147233,6 +147236,15 @@ global.registerModules = e => {
               } : {
                 'a': [624238920],
                 'd': [624238930]
+              } : '仏蘭西空母籠姫' == _1o2m ? {
+                'a': [625239220],
+                'd': [625239230]
+              } : '仏蘭西空母籠姫-壊' == _1o2m ? _1o2n ? {
+                'a': [625239521],
+                'd': [625239531]
+              } : {
+                'a': [625239520],
+                'd': [625239530]
               } : void 0;
             }, _1o1o._getSourGrapesVoiceIDAtNormal = function(_1o2o, _1o2p) {
               var _1o2q = null,
@@ -147255,13 +147267,13 @@ global.registerModules = e => {
               _1o30.data.model.map_info.area_id, _1o30.data.model.map_info.map_no;
               var _1o33 = _1o31.mst_id,
                 _1o34 = _1o31.name;
-              return '試作空母姫 バカンスmode' == _1o34 ? 555212640 : '深海擱座揚陸姫' == _1o34 ? 566215840 : '環礁空母泊地棲姫' == _1o34 ? 583221040 : [2294, 2295, 2296].includes(_1o33) ? 605229440 : '防空巡新棲姫' == _1o34 ? 622236240 : '高速軽空母首鬼' == _1o34 ? 623236840 : '仏蘭西哀重姫' == _1o34 ? 624238640 : -1;
+              return '試作空母姫 バカンスmode' == _1o34 ? 555212640 : '深海擱座揚陸姫' == _1o34 ? 566215840 : 'トーチカ要塞棲姫' == _1o34 ? 576218840 : '環礁空母泊地棲姫' == _1o34 ? 583221040 : [2294, 2295, 2296].includes(_1o33) ? 605229440 : '防空巡新棲姫' == _1o34 ? 622236240 : '高速軽空母首鬼' == _1o34 ? 623236840 : '仏蘭西哀重姫' == _1o34 ? 624238640 : '仏蘭西空母籠姫' == _1o34 ? 625239240 : -1;
             }, _1o1o._getLastGaspVoiceIDAtEvent = function(_1o35, _1o36) {
               var _1o37 = null;
               _1o35.data.model.map_info.area_id, _1o35.data.model.map_info.map_no;
               var _1o38 = _1o36.name,
                 _1o39 = _1o36.mst_id;
-              return _1o35.data.isBossDamaged(), [2297, 2298, 2299].includes(_1o39) ? 605229741 : '防空巡新棲姫-壊' == _1o38 ? 622236541 : '高速軽空母首鬼-壊' == _1o38 ? 623237141 : '仏蘭西哀重姫-壊' == _1o38 ? 624238941 : -1;
+              return _1o35.data.isBossDamaged(), [2297, 2298, 2299].includes(_1o39) ? 605229741 : '防空巡新棲姫-壊' == _1o38 ? 622236541 : '高速軽空母首鬼-壊' == _1o38 ? 623237141 : '仏蘭西哀重姫-壊' == _1o38 ? 624238941 : '仏蘭西空母籠姫-壊' == _1o38 ? 625239541 : -1;
             }, _1o1o;
           }());
         _1o1i.EnemyVoiceConst = _1o1m;
@@ -186192,7 +186204,7 @@ global.registerModules = e => {
                   this._img1.position.set(-483, -174), this._img2.position.set(-486, -87);
                   break;
                 case 5:
-                  this._img1.position.set(-424, -135), this._img2.position.set(-429, -48);
+                  this._img1.position.set(-404, -197), this._img2.position.set(-504, -48);
                   break;
                 default:
                   this._img1.texture = PIXI.Texture.EMPTY, this._img2.texture = PIXI.Texture.EMPTY, _2435();
@@ -188143,7 +188155,7 @@ global.registerModules = e => {
               this._maps = [];
               for (var _24vw = 0; _24vw < 5; _24vw++) {
                 var _24vx = new PIXI.Sprite();
-                _24vx.texture = [PIXI.Texture.fromFrame('battle_result_event_ed2_'.concat(this._suffix, '_strategymap1')), PIXI.Texture.fromFrame('battle_result_event_ed2_'.concat(this._suffix, '_strategymap2')), PIXI.Texture.fromFrame('battle_result_event_ed2_'.concat(this._suffix, '_strategymap3')), PIXI.Texture.fromFrame('battle_result_event_ed2_'.concat(this._suffix, '_strategymap4')), PIXI.Texture.fromFrame('battle_result_event_ed2_'.concat(this._suffix, '_strategymap5'))][_24vw], _24vx.x = 122 + 189 * _24vw, _24vx.y = 121, _24vx.alpha = 0, this._layer.addChild(_24vx), this._maps.push(_24vx);
+                _24vx.texture = [PIXI.Texture.fromFrame('battle_result_event_ed2_'.concat(this._suffix, '_strategymap1')), PIXI.Texture.fromFrame('battle_result_event_ed2_'.concat(this._suffix, '_strategymap2')), PIXI.Texture.fromFrame('battle_result_event_ed2_'.concat(this._suffix, '_strategymap3')), PIXI.Texture.fromFrame('battle_result_event_ed2_'.concat(this._suffix, '_strategymap4')), PIXI.Texture.fromFrame('battle_result_event_ed2_'.concat(this._suffix, '_strategymap5'))][_24vw], _24vx.x = 122 + 189 * _24vw, _24vx.y = 101, _24vx.alpha = 0, this._layer.addChild(_24vx), this._maps.push(_24vx);
               }
             }, _24vs.prototype._createMapShowTweens = function() {
               var _24vy = null;
@@ -188155,7 +188167,7 @@ global.registerModules = e => {
                 var _24w1 = new _24vn.Sprite();
                 _24w1.anchor.set(0.5);
                 var _24w2 = PIXI.Texture.fromFrame('battle_result_event_ed2_'.concat(this._suffix, '_stamp_common'));
-                _24w1.texture = _24w2, _24w1.x = 256 + 189 * _24w0, _24w1.y = 255, _24w1.scale.set(2), _24w1.alpha = 0, this._layer.addChild(_24w1), this._stamps.push(_24w1);
+                _24w1.texture = _24w2, _24w1.x = 256 + 189 * _24w0, _24w1.y = 235, _24w1.scale.set(2), _24w1.alpha = 0, this._layer.addChild(_24w1), this._stamps.push(_24w1);
               }
             }, _24vs.prototype._createStampShowTweens = function() {
               var _24w3 = null;
@@ -188167,7 +188179,7 @@ global.registerModules = e => {
               var _24w6 = null,
                 _24w7 = PIXI.Texture.fromFrame('battle_result_event_ed2_'.concat(this._suffix, '_stamp_e5')),
                 _24w8 = new _24vn.Sprite(_24w7);
-              return _24w8.anchor.set(0.5), _24w8.position.set(1041, 346), _24w8.alpha = 0, _24w8;
+              return _24w8.anchor.set(0.5), _24w8.position.set(1041, 324), _24w8.alpha = 0, _24w8;
             }, _24vs;
           }(_24vo.TaskEventEndingBase);
         _24v3.TaskEventEnding2 = _24vp;
@@ -188181,9 +188193,9 @@ global.registerModules = e => {
           return _24v7(_24wb, _24w9), _24wb.prototype.initialize = function() {
             var _24wd = null,
               _24we = PIXI.Texture.fromFrame('battle_result_event_ed2_'.concat(this._suffix, '_txt_open1'));
-            this._text1.texture = _24we, this._text1.position.set(108, 262);
+            this._text1.texture = _24we, this._text1.position.set(92, 242);
             var _24wf = PIXI.Texture.fromFrame('battle_result_event_ed2_'.concat(this._suffix, '_txt_open2'));
-            this._text2.texture = _24wf, this._text2.position.set(244, 523);
+            this._text2.texture = _24wf, this._text2.position.set(244, 503);
           }, _24wb;
         }(_24vo.TextsBase);
       },
