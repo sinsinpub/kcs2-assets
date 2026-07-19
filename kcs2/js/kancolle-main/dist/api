@@ -910,7 +910,7 @@
     _sleep: 48,
     _delta_cash_plus: 0,
     _delta_cash_minus: 0,
-    _timestamp_cash: 1784418411744,
+    _timestamp_cash: 1784472187178,
     _isEnabled: true
   },
   Shutter: [Function: _c76],

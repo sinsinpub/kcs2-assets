@@ -141,6 +141,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				1022,740=巡洋戦艦				sp010=Battle Cruiser
 				988=冷凍船(雑役船)				sp011=Reefer Ship
 				996,1002=給糧艦					sp012=Food Supply Ship
+				1070=特運潜母艦					sp013=Submarine Tend(er) Special Transport Sh(ip)
 		api_scnt		：入渠時間係数(本体ソース内では[slotCount]とある)
 		api_kcnt		：建造時のシルエット
 		api_max_slotplus	：艦載機搭載数拡張の最大上昇値
@@ -473,6 +474,8 @@ api_start2/getData	：艦娘・装備固有データその他
 				59=Ju87独艦上機
 				60=Ho229全翼機
 				61=Sea Gladiator
+				62=SBD/TBD/SB2系
+				63=TBF/TBM/PL101
 
 		api_taik		：耐久(0)
 		api_souk		：装甲
@@ -1280,6 +1283,11 @@ api_get_member/picture_book	：艦船図鑑　図鑑登録済みのもののみ�
 			135=Glorious級
 			136=野埼型
 			137=Thonburi級
+			138=Algérie級
+			139=Aigle級
+			140=Visby級
+			141=Béarn級
+
 		api_cnum			：艦番
 		api_taik			：耐久
 		api_souk			：装甲
@@ -2836,6 +2844,7 @@ api_get_member/mapinfo				：出撃準備　未出現海域は存在しない
 		api_defeat_count			：撃破回数　(未攻略海域に限り存在、イベント海域には存在せず　5-6-1の現在TP削り値でもある、api_now_maphpと違って0から溜まっていく仕様)
 		api_required_defeat_count	：攻略に必要な撃破回数　(未攻略通常海域に限り存在　5-6海域実装以後、TPゲージでも max_maphp の代わりにTP最大値として使われてる)
 		api_gauge_type				：1=撃破ゲージ 2=HPゲージ 3=揚陸(TP)ゲージ　(ゲージが存在する海域に限り存在)
+		api_gauge_type_e			：同じボスマスにもさらに多段ゲージ　存在しない=いつも通りか一段目, 2=リソースに「_e」が付くのラスダン用ゲージに　26夏イベE5-1から実装、ラスダンの敵は潜水夏姫IIから欧州棲姫編成へ
 		api_gauge_num				：現在のゲージ段階(ゲージn本目)　1基点　(ゲージが存在する海域に限り存在)
 		api_s_no					：現在マップの遷移段階　1基点　22冬イベントから、1ゲージに複数のマップ段階が存在するため?　api_m1 との関係性不明　5-6などの通常マップも存在
 		api_m10						：現在マップの基地航空隊の位置ギミック?　22冬イベE4から、EventMapUtil.getCellOpenOption によると api_m1 も一緒に基地位置を決めるっぽい?

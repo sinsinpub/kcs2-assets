@@ -1,5 +1,5 @@
 /**
- * main.js 6.3.3.0 patched with defineModule and registerModules
+ * main.js 6.3.3.1 patched with defineModule and registerModules
  *
  * Licence unknown, available at http://203.104.209.71/kcs2/js/main.js
  */
@@ -22588,6 +22588,8 @@ global.registerModules = e => {
                   case 745:
                   case 1036:
                     return 2;
+                  case 1061:
+                    return 1;
                   default:
                     return 0;
                 }
@@ -22816,6 +22818,7 @@ global.registerModules = e => {
                 case 681:
                 case 121:
                 case 680:
+                case 1060:
                   return 60;
                 case 501:
                 case 663:
@@ -22976,6 +22979,7 @@ global.registerModules = e => {
                 case 506:
                 case 502:
                 case 507:
+                case 1060:
                   return 40;
                 case 307:
                   return 88;
