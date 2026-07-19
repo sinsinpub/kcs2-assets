@@ -1,0 +1,32 @@
+{
+    "x": -7,
+    "y": -11,
+    "img": "image62/gauge342_width",
+    "bar": {
+        "x": 120,
+        "y": 38,
+        "color": 5149696
+    },
+    "transport": {
+        "x": 11,
+        "y": 38,
+        "visible_title": false,
+        "digits": 4
+    },
+    "vertical": {
+        "x": 1050,
+        "y": 105,
+        "img": "image62/gauge342",
+        "bar": {
+            "x": 69,
+            "y": 148,
+            "color": 5149696
+        },
+        "transport": {
+            "x": 32,
+            "y": 54,
+            "visible_title": false,
+            "digits": 4
+        }
+    }
+}

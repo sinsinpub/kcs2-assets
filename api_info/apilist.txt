@@ -802,9 +802,10 @@ api_port/port		：母港情報
 		api_m_flag			：
 		api_base_convert_slot：配置転換中の装備固有ID　1つ以上あるときのみ存在
 		api_m_flag2			：0=なし　1=ギミック解除SE再生
-	api_event_object		：('16 秋イベ版データ)
-		api_m_flag			：2
-		api_m_flag2			：ギミック解除時に1
+	api_event_object		：('16 秋イベ版データ～現在に至る)
+		api_c_num			：1~=友軍艦隊操作UIのランダム艦に関する情報テーブルナンバー
+		api_m_flag			：0~2=連合艦隊編成UIフラグ　0=機動/水上, 1=輸送, 2=機動/輸送/水上, 存在しない=不能
+		api_m_flag2			：1=ギミック解除時にSE再生
 	api_parallel_quest_count	：最大受領可能任務数
 	api_dest_ship_slot		：解体時の装備廃棄フラグ　0=保管, 1=廃棄
 	api_plane_info				：基地航空隊関連データ　要素があるときのみ存在（メンバも然り）
