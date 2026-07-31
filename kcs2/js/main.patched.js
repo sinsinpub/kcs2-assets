@@ -1,5 +1,5 @@
 /**
- * main.js 6.3.3.1 patched with defineModule and registerModules
+ * main.js 6.3.3.2 patched with defineModule and registerModules
  *
  * Licence unknown, available at http://203.104.209.71/kcs2/js/main.js
  */
@@ -15315,7 +15315,7 @@ global.registerModules = e => {
             function _5nu() {
               var _5nv = null,
                 _5nw = _5ns.call(this) || this;
-              return _5nw._bg = new _5nn.Sprite(), _5nw._bg.anchor.set(0.5), _5nw.addChild(_5nw._bg), _5nw._light = new _5nx(), _5nw.addChild(_5nw._light), _5nw._container = new _5nm.Container(), _5nw.addChild(_5nw._container), _5nw._message = new _5ny(), _5nw._message.position.set(-360, -291), _5nw.addChild(_5nw._message), _5nw._get_icon = new _5no.GetIcon(), _5nw._get_icon.position.set(223, -181), _5nw.addChild(_5nw._get_icon), _5nw._close_btn = new _5nz(), _5nw._close_btn.position.set(-90, 222), _5nw.addChild(_5nw._close_btn), _5nw;
+              return _5nw._bg = new _5nn.Sprite(), _5nw._bg.anchor.set(0.5), _5nw.addChild(_5nw._bg), _5nw._light = new _5nx(), _5nw.addChild(_5nw._light), _5nw._container = new _5nm.Container(), _5nw.addChild(_5nw._container), _5nw._message = new _5ny(), _5nw._message.position.set(-410, -291), _5nw.addChild(_5nw._message), _5nw._get_icon = new _5no.GetIcon(), _5nw._get_icon.position.set(223, -181), _5nw.addChild(_5nw._get_icon), _5nw._close_btn = new _5nz(), _5nw._close_btn.position.set(-90, 222), _5nw.addChild(_5nw._close_btn), _5nw;
             }
             return _5n5(_5nu, _5ns), Object.defineProperty(_5nu.prototype, 'bg', {
               'get': function() {
@@ -15400,7 +15400,7 @@ global.registerModules = e => {
             function _5oj() {
               var _5ok = null,
                 _5ol = _5oh.call(this) || this;
-              return _5ol.beginFill(0, 0.7), _5ol.drawRect(0, 0, 721, 76), _5ol.endFill(), _5ol._texts = [], _5ol.visible = false, _5ol;
+              return _5ol.beginFill(0, 0.7), _5ol.drawRect(0, 0, 821, 76), _5ol.endFill(), _5ol._texts = [], _5ol.visible = false, _5ol;
             }
             return _5n5(_5oj, _5oh), _5oj.prototype.update = function(_5om) {
               var _5on = null;
@@ -15410,7 +15410,7 @@ global.registerModules = e => {
               if (this._texts = [], null != _5om) {
                 for (var _5or = _5om.split('\x0a'), _5os = 9, _5ot = 0; _5ot < _5or.length; _5ot++) {
                   var _5oq;
-                  (_5oq = new _5np.TextBox(21, 16777215)).text = _5or[_5ot], _5oq.x = 360 - _5oq.width / 2, _5oq.y = _5os, this.addChild(_5oq), this._texts.push(_5oq), _5os += _5oq.height;
+                  (_5oq = new _5np.TextBox(21, 16777215)).text = _5or[_5ot], _5oq.x = 410 - _5oq.width / 2, _5oq.y = _5os, this.addChild(_5oq), this._texts.push(_5oq), _5os += _5oq.height;
                 }
                 this.visible = true;
               } else this.visible = false;
