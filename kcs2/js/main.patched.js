@@ -1,5 +1,5 @@
 /**
- * main.js 6.3.3.2 patched with defineModule and registerModules
+ * main.js 6.3.4.0 patched with defineModule and registerModules
  *
  * Licence unknown, available at http://203.104.209.71/kcs2/js/main.js
  */
@@ -5518,7 +5518,7 @@ global.registerModules = e => {
         var _1to = null;
         defineModule(_1tn); Object.defineProperty(_1tn, '__esModule', {
           'value': true
-        }), _1tn.PORT_API_SEED = void 0, _1tn.PORT_API_SEED = [3344, 3659, 4919, 7951, 2754, 6965, 3498, 6624, 8012, 9620];
+        }), _1tn.PORT_API_SEED = void 0, _1tn.PORT_API_SEED = [9236, 5967, 5717, 6160, 7639, 8808, 3668, 9828, 5495, 2369];
       },
       34170(_1tp, _1tq) {
         'use strict';
@@ -5689,7 +5689,7 @@ global.registerModules = e => {
         var _1u4 = null;
         defineModule(_1u3); Object.defineProperty(_1u3, '__esModule', {
           'value': true
-        }), _1u3.FAIRY_DUTY_LIST_SEASON = _1u3.FAIRY_ITEM_SHOP_SEASON = _1u3.FAIRY_MAP_COMPASS_SEASON = _1u3.AKASHI_SEASON = _1u3.OOYODO_SEASON = _1u3.MAMIYA_IRAKO_SEASON = void 0, _1u3.MAMIYA_IRAKO_SEASON = 0, _1u3.OOYODO_SEASON = '', _1u3.AKASHI_SEASON = '', _1u3.FAIRY_MAP_COMPASS_SEASON = '', _1u3.FAIRY_ITEM_SHOP_SEASON = '', _1u3.FAIRY_DUTY_LIST_SEASON = '';
+        }), _1u3.FAIRY_DUTY_LIST_SEASON = _1u3.FAIRY_ITEM_SHOP_SEASON = _1u3.FAIRY_MAP_COMPASS_SEASON = _1u3.AKASHI_SEASON = _1u3.OOYODO_SEASON = _1u3.MAMIYA_IRAKO_SEASON = void 0, _1u3.MAMIYA_IRAKO_SEASON = 4, _1u3.OOYODO_SEASON = 'summer_event', _1u3.AKASHI_SEASON = 'smm', _1u3.FAIRY_MAP_COMPASS_SEASON = '', _1u3.FAIRY_ITEM_SHOP_SEASON = '', _1u3.FAIRY_DUTY_LIST_SEASON = '';
       },
       70954(_1u5, _1u6) {
         'use strict';
