@@ -1850,11 +1850,10 @@ api_req_kousyou/preset_dev_items_expand					：開発レシピプリセット拡
 
 
 Request.api_req_map/start	：出撃
-	api_deck_id			：出撃艦隊ID
-	api_formation_id	：
-	api_serial_cid		：
 	api_maparea_id		：海域カテゴリID
 	api_mapinfo_no		：海域カテゴリ内番号
+	api_deck_id			：出撃艦隊ID
+	api_serial_cid		：
 
 api_req_map/start		：出撃　同じメンバはnextのほうが情報が新しいのでそちらを参照
 	api_cell_data		：当該海域の全セルデータ
