@@ -1,5 +1,5 @@
 /**
- * main.js 6.3.4.1 patched with defineModule and registerModules
+ * main.js 6.3.4.2 patched with defineModule and registerModules
  *
  * Licence unknown, available at http://203.104.209.71/kcs2/js/main.js
  */
