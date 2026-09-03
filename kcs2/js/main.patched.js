@@ -1,5 +1,5 @@
 /**
- * main.js 6.3.4.2 patched with defineModule and registerModules
+ * main.js 6.3.4.3 patched with defineModule and registerModules
  *
  * Licence unknown, available at http://203.104.209.71/kcs2/js/main.js
  */
@@ -177947,7 +177947,7 @@ global.registerModules = e => {
                 _211o = new PIXI.Sprite(_211n);
               _211o.x = this._img.x, _211o.y = this._img.y;
               var _211p = this.getChildIndex(this._img);
-              this.addChildAt(_211o, _211p), this._img.texture = this._getTexture(), this._img.alpha = 0;
+              this.addChildAt(_211o, _211p), this._updateImage(this._combined, this._friend), this._img.alpha = 0;
               var _211q = [createjs.Tween.get(this._img).wait(_211j).to({
                 'alpha': 1
               }, _211k).call(function() {
