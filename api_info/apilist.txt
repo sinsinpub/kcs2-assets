@@ -142,6 +142,7 @@ api_start2/getData	：艦娘・装備固有データその他
 				988=冷凍船(雑役船)				sp011=Reefer Ship
 				996,1002=給糧艦					sp012=Food Supply Ship
 				1070=特運潜母艦					sp013=Submarine Tend(er) Special Transport Sh(ip)
+				1071=改装多目的搭載母艦			sp014=Multi-role Tactical Cruiser
 		api_scnt		：入渠時間係数(本体ソース内では[slotCount]とある)
 		api_kcnt		：建造時のシルエット
 		api_max_slotplus	：艦載機搭載数拡張の最大上昇値
@@ -2171,7 +2172,7 @@ api_req_sortie/battle	：通常艦隊　昼戦
 			api_edam		：敵被ダメージ
 			api_e_sp_list	：敵喰らった特殊攻撃種類[]　null/[0]=なし, [1]=反跳爆撃
 	api_friendly_info		：友軍艦隊攻撃情報　発動時のみ存在
-		api_production_type		：艦隊ID?　1=(英仏艦隊), 2=(第19駆逐隊, 挺身部隊), 3=(第四戦隊)
+		api_production_type		：来援艦隊グループID?　1から3、3に強友軍が多いっぽい
 		api_ship_id				：友軍の艦船ID [艦船数]
 		api_ship_lv				：友軍のLv [艦船数]
 		api_nowhps				：友軍の現在HP [艦船数]
