@@ -26,6 +26,7 @@ ids.forEach(id => {
   console.info('isSpKaizo', id, main.RemodelUtil.isSpKaizo(id))
 })
 
+/*
 const mstId = 502
 const mm = new main.ModelManager()
 mm.ship.setMstData([{api_id: mstId, api_slot_num: 4}])
@@ -34,7 +35,7 @@ mm.slot.setMstData([{api_id: 1}])
 mm.equip.__initData__([{api_id: 1}])
 main.default.model = mm
 console.info(main.default.model.ship.getMst(mstId))
-
+*/
 /*
 const ship = main.default.model.ship.get(1)
 console.info(ship.mstID)

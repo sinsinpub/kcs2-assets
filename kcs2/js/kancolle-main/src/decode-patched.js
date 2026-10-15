@@ -8,25 +8,29 @@ const passes = parseInt(process.argv[3] || 9)
 const removevars = !!process.argv[4]
 
 let main = readFileSync('dist/main.patched.js').toString()
-let aliases = 0;
+let pass = 0, aliases = 0;
 
 // fast ~10 passes
-for (let pass = 1; pass <= passes; pass++) {
+for (pass = 1; pass <= passes; pass++) {
     const decoderAliases = []
-    const decoderRegex = new RegExp(`var ([_a-zA-Z][_a-zA-Z0-9]*?) = ${decoderFunction}[;,]`, 'g')
+    // main.js refactored with native class static/getter/setter styles since 6.3.6.0,
+    // and obfuscator new ver uses `const` instead of `var` for decoder line?
+    const decoderRegex = new RegExp(`const ([_a-zA-Z][_a-zA-Z0-9]*?) = ${decoderFunction}[;,]`, 'g')
     let m = null
     while((m = decoderRegex.exec(main)) !== null) decoderAliases.push(m[1])
     aliases += decoderAliases.length;
+    //console.info('Pass', pass, decoderAliases.length, aliases)
+    if (!decoderAliases.length) break
 
-    main = main.replace(new RegExp(`(?:${decoderAliases.join('|')})\\((.+?)\\)`, 'g'), x =>
-        `'${eval(decoderFunction + '(' + x.split('(')[1])}'`.replace(/\n/g, '\\n'),
-    ).replace(new RegExp(`var (${decoderAliases.join('|')}) = ${decoderFunction}([;,])`, 'g'), 'var $1 = null$2')
+    main = main.replace(new RegExp(`(?:${decoderAliases.join('|')})\\((.+?)\\)`, 'g'), x => (
+        `'${eval(decoderFunction + '(' + x.split('(')[1])}'`.replace(/\n/g, '\\n')
+    )).replace(new RegExp(`const (${decoderAliases.join('|')}) = ${decoderFunction}([;,])`, 'g'), 'const $1 = null$2')
 
     if (pass < passes) {
-        main = main.replace(new RegExp(`var ([_a-zA-Z][_a-zA-Z0-9]*?) = (?:${decoderAliases.join('|')})([;,])`, 'g'), `var $1 = ${decoderFunction}$2`)
+        main = main.replace(new RegExp(`const ([_a-zA-Z][_a-zA-Z0-9]*?) = (?:${decoderAliases.join('|')})([;,])`, 'g'), `const $1 = ${decoderFunction}$2`)
     }
 }
-console.info('Decoded via ', decoderFunction, '(', aliases, 'aliases) in', passes, 'passes')
+console.info('Decoded via ', decoderFunction, '(', aliases, 'aliases) in', pass - 1, '/', passes, 'passes')
 
 // slow workaround (30K+ loops)
 /*
@@ -52,7 +56,11 @@ console.info('nested decoers:', decoderAliases.length)
 writeFileSync(
   'dist/main.patched.js',
   main
-//    .replace(new RegExp(`${decoderFunction}\\((0x.+?)\\)`, 'g'), x => `'${eval(x)}'`.replace(/\n/g, '\\n'))
+    //.replace(new RegExp(`${decoderFunction}\\((0x.+?)\\)`, 'g'), x => `'${eval(x)}'`.replace(/\n/g, '\\n'))
+    // definitions of class static/getter/setter methods
+    .replace(/(static|get|set)\['([_a-zA-Z][_a-zA-Z0-9]*?)'\](\(.*?\) \{)/g, '$1 $2$3')
+    // definitions of class public methods
+    .replace(/(\}?) \['([_a-zA-Z][_a-zA-Z0-9]*?)'\](\(.*?\) \{)/g, '$1 $2$3')
     .replace(/([_a-zA-Z][_a-zA-Z0-9]*?)\['([_a-zA-Z][_a-zA-Z0-9]*?)'\]/g, '$1.$2')
     .replace(/\[\('([_a-zA-Z][_a-zA-Z0-9]*?)'\)\]/g, "['$1']")
     .replace(/_(0x[a-f0-9]{4,6})/g, (_, x) => `_${removevars ? 'v' : (vars[x] || (vars[x] = ++i)).toString(36)}`)
@@ -67,7 +75,7 @@ writeFileSync(
     .replace(/\\u([\d\w]{4})/gi, (_, e) => String.fromCharCode(parseInt(e, 16)))
     .replace("`'symbol'`", '`symbol`')
     .replace(/!0\b/g, 'true').replace(/!1\b/g, 'false')
-//    .replace(/void 0/g, 'undefined')
+    //.replace(/void 0/g, 'undefined') // void 0 shorter than undefined
 )
 
 console.info('Patched', removevars ? 'without var names' : '')

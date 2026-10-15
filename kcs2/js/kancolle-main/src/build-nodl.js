@@ -29,7 +29,9 @@ outputFileSync('dist/createjs.js', createjsPatched)
   const decoderStr = file('dist/decode.js')
   const decoderFunction = decoderStr.match(/function (.+?)\(_.+?,.+?\) \{/)[1]
 
-  console.info(spawnSync('node', ['dist/decode.js', decoderFunction, 9, process.argv[2] || '']).stdout.toString())
+  const decoderArgs = ['dist/decode.js', decoderFunction, 8, process.argv[2] || '']
+  //console.info('Invoking', decoderArgs, 'decoder part2 =', !!mainDecoder2)
+  console.info(spawnSync('node', decoderArgs).stdout.toString())
 
 /*
   const version = (await get('https://kcwiki.github.io/cache/gadget_html5/js/kcs_const.js')).data.match(/scriptVesion\s*?=\s*?["'](.+?)["']/)[1]
