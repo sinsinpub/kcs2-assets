@@ -1,7 +1,7 @@
-// require min nodejs v12
+// require min nodejs v14
 const [major, minor] = process.versions.node.split('.').map(Number)
-if (major < 12) {
-    console.error('NodeJS version ^12 required')
+if (major < 14) {
+    console.error('NodeJS version ^14 required')
     return
 }
 const { inspect } = require('util')
