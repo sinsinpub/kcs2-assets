@@ -935,6 +935,7 @@ api_req_kousyou/remodel_slotlist	：改修工廠　装備選択
 	api_req_remodelkit		：消費改修資材
 	api_sp_type				：0=通常レシピ(明石のみで出来る), 1/2=2番艦必要の「特別改修」の吹き出しと緑枠の濃さ
 								統計によると2は「装備更新可能」レシピっぽい
+	api_max_level			：現在改修可能の最大値　'26年11月から実装、「★+4まで改修可能」を表記
 
 Request.api_req_kousyou/remodel_slotlist_detail		：改修工廠　実行確認
 	api_id		：レシピID

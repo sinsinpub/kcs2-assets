@@ -29,7 +29,7 @@ outputFileSync('dist/createjs.js', createjsPatched)
   const decoderStr = file('dist/decode.js')
   const decoderFunction = decoderStr.match(/function (.+?)\(_.+?,.+?\) \{/)[1]
 
-  const decoderArgs = ['dist/decode.js', decoderFunction, 8, process.argv[2] || '']
+  const decoderArgs = ['dist/decode.js', decoderFunction, 9, process.argv[2] || '']
   //console.info('Invoking', decoderArgs, 'decoder part2 =', !!mainDecoder2)
   console.info(spawnSync('node', decoderArgs).stdout.toString())
 

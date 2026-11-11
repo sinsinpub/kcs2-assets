@@ -2,8 +2,8 @@
     "frames": {
         "remodel_powerup_0": {
             "frame": {
-                "x": 593,
-                "y": 709,
+                "x": 605,
+                "y": 553,
                 "w": 291,
                 "h": 22
             },
@@ -22,9 +22,9 @@
         },
         "remodel_powerup_1": {
             "frame": {
-                "x": 1091,
-                "y": 934,
-                "w": 129,
+                "x": 943,
+                "y": 659,
+                "w": 79,
                 "h": 21
             },
             "rotated": false,
@@ -32,19 +32,19 @@
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 129,
+                "w": 79,
                 "h": 21
             },
             "sourceSize": {
-                "w": 129,
+                "w": 79,
                 "h": 21
             }
         },
         "remodel_powerup_2": {
             "frame": {
-                "x": 1238,
-                "y": 908,
-                "w": 79,
+                "x": 901,
+                "y": 553,
+                "w": 142,
                 "h": 21
             },
             "rotated": false,
@@ -52,38 +52,38 @@
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 79,
+                "w": 142,
                 "h": 21
             },
             "sourceSize": {
-                "w": 79,
+                "w": 142,
                 "h": 21
             }
         },
         "remodel_powerup_3": {
             "frame": {
-                "x": 1091,
-                "y": 908,
-                "w": 142,
-                "h": 21
+                "x": 884,
+                "y": 479,
+                "w": 147,
+                "h": 49
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 142,
-                "h": 21
+                "w": 147,
+                "h": 49
             },
             "sourceSize": {
-                "w": 142,
-                "h": 21
+                "w": 147,
+                "h": 49
             }
         },
         "remodel_powerup_4": {
             "frame": {
-                "x": 1091,
-                "y": 796,
+                "x": 843,
+                "y": 585,
                 "w": 147,
                 "h": 49
             },
@@ -102,28 +102,28 @@
         },
         "remodel_powerup_5": {
             "frame": {
-                "x": 1091,
-                "y": 742,
-                "w": 147,
-                "h": 49
+                "x": 249,
+                "y": 866,
+                "w": 252,
+                "h": 72
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 147,
-                "h": 49
+                "w": 252,
+                "h": 72
             },
             "sourceSize": {
-                "w": 147,
-                "h": 49
+                "w": 252,
+                "h": 72
             }
         },
         "remodel_powerup_6": {
             "frame": {
-                "x": 1091,
-                "y": 77,
+                "x": 506,
+                "y": 866,
                 "w": 252,
                 "h": 72
             },
@@ -142,28 +142,28 @@
         },
         "remodel_powerup_7": {
             "frame": {
-                "x": 1091,
-                "y": 0,
-                "w": 252,
-                "h": 72
+                "x": 763,
+                "y": 866,
+                "w": 162,
+                "h": 70
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 252,
-                "h": 72
+                "w": 162,
+                "h": 70
             },
             "sourceSize": {
-                "w": 252,
-                "h": 72
+                "w": 162,
+                "h": 70
             }
         },
         "remodel_powerup_8": {
             "frame": {
-                "x": 1091,
-                "y": 595,
+                "x": 249,
+                "y": 943,
                 "w": 162,
                 "h": 70
             },
@@ -182,8 +182,8 @@
         },
         "remodel_powerup_9": {
             "frame": {
-                "x": 1091,
-                "y": 520,
+                "x": 416,
+                "y": 943,
                 "w": 162,
                 "h": 70
             },
@@ -202,8 +202,8 @@
         },
         "remodel_powerup_10": {
             "frame": {
-                "x": 1091,
-                "y": 445,
+                "x": 583,
+                "y": 943,
                 "w": 162,
                 "h": 70
             },
@@ -222,8 +222,8 @@
         },
         "remodel_powerup_11": {
             "frame": {
-                "x": 1091,
-                "y": 370,
+                "x": 750,
+                "y": 943,
                 "w": 162,
                 "h": 70
             },
@@ -242,8 +242,8 @@
         },
         "remodel_powerup_12": {
             "frame": {
-                "x": 1091,
-                "y": 295,
+                "x": 917,
+                "y": 943,
                 "w": 162,
                 "h": 70
             },
@@ -262,129 +262,129 @@
         },
         "remodel_powerup_13": {
             "frame": {
-                "x": 1091,
-                "y": 220,
-                "w": 162,
-                "h": 70
+                "x": 0,
+                "y": 0,
+                "w": 600,
+                "h": 580
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 162,
-                "h": 70
+                "w": 600,
+                "h": 580
             },
             "sourceSize": {
-                "w": 162,
-                "h": 70
+                "w": 600,
+                "h": 580
             }
         },
         "remodel_powerup_14": {
             "frame": {
-                "x": 1091,
-                "y": 154,
-                "w": 243,
-                "h": 61
+                "x": 0,
+                "y": 585,
+                "w": 280,
+                "h": 205
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 243,
-                "h": 61
+                "w": 280,
+                "h": 205
             },
             "sourceSize": {
-                "w": 243,
-                "h": 61
+                "w": 280,
+                "h": 205
             }
         },
         "remodel_powerup_15": {
             "frame": {
-                "x": 1091,
-                "y": 670,
-                "w": 109,
-                "h": 67
+                "x": 605,
+                "y": 0,
+                "w": 481,
+                "h": 474
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 109,
-                "h": 67
+                "w": 481,
+                "h": 474
             },
             "sourceSize": {
-                "w": 109,
-                "h": 67
+                "w": 481,
+                "h": 474
             }
         },
         "remodel_powerup_16": {
             "frame": {
-                "x": 285,
-                "y": 585,
-                "w": 303,
-                "h": 183
+                "x": 0,
+                "y": 795,
+                "w": 244,
+                "h": 228
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 303,
-                "h": 183
+                "w": 244,
+                "h": 228
             },
             "sourceSize": {
-                "w": 303,
-                "h": 183
+                "w": 244,
+                "h": 228
             }
         },
         "remodel_powerup_17": {
             "frame": {
-                "x": 0,
-                "y": 0,
-                "w": 600,
-                "h": 580
+                "x": 1048,
+                "y": 553,
+                "w": 12,
+                "h": 18
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 600,
-                "h": 580
+                "w": 12,
+                "h": 18
             },
             "sourceSize": {
-                "w": 600,
-                "h": 580
+                "w": 12,
+                "h": 18
             }
         },
         "remodel_powerup_18": {
             "frame": {
-                "x": 0,
-                "y": 585,
-                "w": 280,
-                "h": 205
+                "x": 1036,
+                "y": 479,
+                "w": 45,
+                "h": 45
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 280,
-                "h": 205
+                "w": 45,
+                "h": 45
             },
             "sourceSize": {
-                "w": 280,
-                "h": 205
+                "w": 45,
+                "h": 45
             }
         },
         "remodel_powerup_19": {
             "frame": {
-                "x": 593,
+                "x": 995,
                 "y": 585,
-                "w": 487,
+                "w": 45,
                 "h": 45
             },
             "rotated": false,
@@ -392,538 +392,258 @@
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 487,
+                "w": 45,
                 "h": 45
             },
             "sourceSize": {
-                "w": 487,
+                "w": 45,
                 "h": 45
             }
         },
         "remodel_powerup_20": {
             "frame": {
-                "x": 605,
-                "y": 0,
-                "w": 481,
-                "h": 474
+                "x": 843,
+                "y": 659,
+                "w": 45,
+                "h": 45
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 481,
-                "h": 474
+                "w": 45,
+                "h": 45
             },
             "sourceSize": {
-                "w": 481,
-                "h": 474
+                "w": 45,
+                "h": 45
             }
         },
         "remodel_powerup_21": {
             "frame": {
-                "x": 0,
-                "y": 795,
-                "w": 244,
-                "h": 228
+                "x": 893,
+                "y": 659,
+                "w": 45,
+                "h": 45
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 244,
-                "h": 228
+                "w": 45,
+                "h": 45
             },
             "sourceSize": {
-                "w": 244,
-                "h": 228
+                "w": 45,
+                "h": 45
             }
         },
         "remodel_powerup_22": {
             "frame": {
-                "x": 605,
-                "y": 479,
-                "w": 285,
-                "h": 100
+                "x": 285,
+                "y": 733,
+                "w": 519,
+                "h": 31
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 285,
-                "h": 100
+                "w": 519,
+                "h": 31
             },
             "sourceSize": {
-                "w": 285,
-                "h": 100
+                "w": 519,
+                "h": 31
             }
         },
         "remodel_powerup_23": {
             "frame": {
-                "x": 1258,
-                "y": 595,
-                "w": 69,
-                "h": 27
+                "x": 1045,
+                "y": 585,
+                "w": 37,
+                "h": 37
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 69,
-                "h": 27
+                "w": 37,
+                "h": 37
             },
             "sourceSize": {
-                "w": 69,
-                "h": 27
+                "w": 37,
+                "h": 37
             }
         },
         "remodel_powerup_24": {
             "frame": {
-                "x": 1258,
-                "y": 627,
-                "w": 69,
-                "h": 27
+                "x": 564,
+                "y": 659,
+                "w": 274,
+                "h": 66
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 69,
-                "h": 27
+                "w": 274,
+                "h": 66
             },
             "sourceSize": {
-                "w": 69,
-                "h": 27
+                "w": 274,
+                "h": 66
             }
         },
         "remodel_powerup_25": {
             "frame": {
-                "x": 1243,
-                "y": 742,
-                "w": 69,
-                "h": 27
+                "x": 605,
+                "y": 479,
+                "w": 274,
+                "h": 69
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 69,
-                "h": 27
+                "w": 274,
+                "h": 69
             },
             "sourceSize": {
-                "w": 69,
-                "h": 27
+                "w": 274,
+                "h": 69
             }
         },
         "remodel_powerup_26": {
             "frame": {
-                "x": 1258,
-                "y": 255,
-                "w": 69,
-                "h": 27
+                "x": 249,
+                "y": 795,
+                "w": 274,
+                "h": 66
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 69,
-                "h": 27
+                "w": 274,
+                "h": 66
             },
             "sourceSize": {
-                "w": 69,
-                "h": 27
+                "w": 274,
+                "h": 66
             }
         },
         "remodel_powerup_27": {
             "frame": {
-                "x": 1317,
-                "y": 345,
-                "w": 12,
-                "h": 18
+                "x": 285,
+                "y": 585,
+                "w": 274,
+                "h": 69
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 12,
-                "h": 18
+                "w": 274,
+                "h": 69
             },
             "sourceSize": {
-                "w": 12,
-                "h": 18
+                "w": 274,
+                "h": 69
             }
         },
         "remodel_powerup_28": {
             "frame": {
-                "x": 1258,
-                "y": 520,
-                "w": 45,
-                "h": 45
+                "x": 528,
+                "y": 795,
+                "w": 274,
+                "h": 66
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 45,
-                "h": 45
+                "w": 274,
+                "h": 66
             },
             "sourceSize": {
-                "w": 45,
-                "h": 45
+                "w": 274,
+                "h": 66
             }
         },
         "remodel_powerup_29": {
             "frame": {
-                "x": 1258,
-                "y": 445,
-                "w": 45,
-                "h": 45
+                "x": 564,
+                "y": 585,
+                "w": 274,
+                "h": 69
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 45,
-                "h": 45
+                "w": 274,
+                "h": 69
             },
             "sourceSize": {
-                "w": 45,
-                "h": 45
+                "w": 274,
+                "h": 69
             }
         },
         "remodel_powerup_30": {
             "frame": {
-                "x": 1258,
-                "y": 370,
-                "w": 45,
-                "h": 45
+                "x": 807,
+                "y": 795,
+                "w": 274,
+                "h": 66
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 45,
-                "h": 45
+                "w": 274,
+                "h": 66
             },
             "sourceSize": {
-                "w": 45,
-                "h": 45
+                "w": 274,
+                "h": 66
             }
         },
         "remodel_powerup_31": {
             "frame": {
-                "x": 1258,
-                "y": 295,
-                "w": 45,
-                "h": 45
+                "x": 285,
+                "y": 659,
+                "w": 274,
+                "h": 69
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 45,
-                "h": 45
+                "w": 274,
+                "h": 69
             },
             "sourceSize": {
-                "w": 45,
-                "h": 45
+                "w": 274,
+                "h": 69
             }
         },
         "remodel_powerup_32": {
             "frame": {
-                "x": 1243,
-                "y": 796,
-                "w": 49,
-                "h": 37
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 49,
-                "h": 37
-            },
-            "sourceSize": {
-                "w": 49,
-                "h": 37
-            }
-        },
-        "remodel_powerup_33": {
-            "frame": {
-                "x": 528,
-                "y": 940,
-                "w": 519,
-                "h": 31
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 519,
-                "h": 31
-            },
-            "sourceSize": {
-                "w": 519,
-                "h": 31
-            }
-        },
-        "remodel_powerup_34": {
-            "frame": {
-                "x": 1297,
-                "y": 796,
-                "w": 37,
-                "h": 37
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 37,
-                "h": 37
-            },
-            "sourceSize": {
-                "w": 37,
-                "h": 37
-            }
-        },
-        "remodel_powerup_35": {
-            "frame": {
-                "x": 528,
-                "y": 869,
-                "w": 274,
-                "h": 66
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 274,
-                "h": 66
-            },
-            "sourceSize": {
-                "w": 274,
-                "h": 66
-            }
-        },
-        "remodel_powerup_36": {
-            "frame": {
-                "x": 593,
-                "y": 635,
-                "w": 274,
-                "h": 69
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 274,
-                "h": 69
-            },
-            "sourceSize": {
-                "w": 274,
-                "h": 69
-            }
-        },
-        "remodel_powerup_37": {
-            "frame": {
-                "x": 249,
-                "y": 940,
-                "w": 274,
-                "h": 66
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 274,
-                "h": 66
-            },
-            "sourceSize": {
-                "w": 274,
-                "h": 66
-            }
-        },
-        "remodel_powerup_38": {
-            "frame": {
-                "x": 807,
-                "y": 795,
-                "w": 274,
-                "h": 69
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 274,
-                "h": 69
-            },
-            "sourceSize": {
-                "w": 274,
-                "h": 69
-            }
-        },
-        "remodel_powerup_39": {
-            "frame": {
-                "x": 807,
-                "y": 869,
-                "w": 274,
-                "h": 66
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 274,
-                "h": 66
-            },
-            "sourceSize": {
-                "w": 274,
-                "h": 66
-            }
-        },
-        "remodel_powerup_40": {
-            "frame": {
-                "x": 528,
-                "y": 795,
-                "w": 274,
-                "h": 69
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 274,
-                "h": 69
-            },
-            "sourceSize": {
-                "w": 274,
-                "h": 69
-            }
-        },
-        "remodel_powerup_41": {
-            "frame": {
-                "x": 249,
-                "y": 869,
-                "w": 274,
-                "h": 66
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 274,
-                "h": 66
-            },
-            "sourceSize": {
-                "w": 274,
-                "h": 66
-            }
-        },
-        "remodel_powerup_42": {
-            "frame": {
-                "x": 249,
-                "y": 795,
-                "w": 274,
-                "h": 69
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 274,
-                "h": 69
-            },
-            "sourceSize": {
-                "w": 274,
-                "h": 69
-            }
-        },
-        "remodel_powerup_43": {
-            "frame": {
-                "x": 1308,
-                "y": 295,
-                "w": 25,
-                "h": 21
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 25,
-                "h": 21
-            },
-            "sourceSize": {
-                "w": 25,
-                "h": 21
-            }
-        },
-        "remodel_powerup_44": {
-            "frame": {
-                "x": 1258,
-                "y": 345,
-                "w": 54,
-                "h": 19
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 54,
-                "h": 19
-            },
-            "sourceSize": {
-                "w": 54,
-                "h": 19
-            }
-        },
-        "remodel_powerup_45": {
-            "frame": {
-                "x": 1258,
-                "y": 420,
-                "w": 54,
-                "h": 19
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 54,
-                "h": 19
-            },
-            "sourceSize": {
-                "w": 54,
-                "h": 19
-            }
-        },
-        "remodel_powerup_46": {
-            "frame": {
-                "x": 1308,
-                "y": 321,
+                "x": 884,
+                "y": 533,
                 "w": 27,
                 "h": 13
             },
@@ -938,106 +658,6 @@
             "sourceSize": {
                 "w": 27,
                 "h": 13
-            }
-        },
-        "remodel_powerup_47": {
-            "frame": {
-                "x": 1205,
-                "y": 670,
-                "w": 136,
-                "h": 22
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 136,
-                "h": 22
-            },
-            "sourceSize": {
-                "w": 136,
-                "h": 22
-            }
-        },
-        "remodel_powerup_48": {
-            "frame": {
-                "x": 1205,
-                "y": 697,
-                "w": 136,
-                "h": 22
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 136,
-                "h": 22
-            },
-            "sourceSize": {
-                "w": 136,
-                "h": 22
-            }
-        },
-        "remodel_powerup_49": {
-            "frame": {
-                "x": 1091,
-                "y": 850,
-                "w": 196,
-                "h": 24
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 196,
-                "h": 24
-            },
-            "sourceSize": {
-                "w": 196,
-                "h": 24
-            }
-        },
-        "remodel_powerup_50": {
-            "frame": {
-                "x": 1091,
-                "y": 879,
-                "w": 196,
-                "h": 24
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 196,
-                "h": 24
-            },
-            "sourceSize": {
-                "w": 196,
-                "h": 24
-            }
-        },
-        "remodel_powerup_51": {
-            "frame": {
-                "x": 1258,
-                "y": 220,
-                "w": 85,
-                "h": 30
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 85,
-                "h": 30
-            },
-            "sourceSize": {
-                "w": 85,
-                "h": 30
             }
         }
     },
@@ -1046,9 +666,36 @@
         "image": "remodel_powerup.png",
         "format": "RGBA8888",
         "size": {
-            "w": 1343,
+            "w": 1086,
             "h": 1023
         },
         "scale": 1
+    },
+    "animations": {
+        "remodel_powerup": [
+            "remodel_powerup_10",
+            "remodel_powerup_11",
+            "remodel_powerup_12",
+            "remodel_powerup_13",
+            "remodel_powerup_14",
+            "remodel_powerup_15",
+            "remodel_powerup_16",
+            "remodel_powerup_17",
+            "remodel_powerup_18",
+            "remodel_powerup_19",
+            "remodel_powerup_20",
+            "remodel_powerup_21",
+            "remodel_powerup_22",
+            "remodel_powerup_23",
+            "remodel_powerup_24",
+            "remodel_powerup_25",
+            "remodel_powerup_26",
+            "remodel_powerup_27",
+            "remodel_powerup_28",
+            "remodel_powerup_29",
+            "remodel_powerup_30",
+            "remodel_powerup_31",
+            "remodel_powerup_32"
+        ]
     }
 }

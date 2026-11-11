@@ -759,6 +759,26 @@
                 "w": 145,
                 "h": 33
             }
+        },
+        "revamp_box_38": {
+            "frame": {
+                "x": 156,
+                "y": 644,
+                "w": 48,
+                "h": 31
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 48,
+                "h": 31
+            },
+            "sourceSize": {
+                "w": 48,
+                "h": 31
+            }
         }
     },
     "meta": {
@@ -800,7 +820,8 @@
             "revamp_box_34",
             "revamp_box_35",
             "revamp_box_36",
-            "revamp_box_37"
+            "revamp_box_37",
+            "revamp_box_38"
         ]
     }
 }
